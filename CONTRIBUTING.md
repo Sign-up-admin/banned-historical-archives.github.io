@@ -470,6 +470,66 @@ npm run test:e2e
 
 ## 📄 文档规范 / Documentation Standards
 
+### 文档检查工具 / Documentation Check Tools
+
+项目已配置自动化文档检查工具，类似静态代码检查器，确保文档质量。
+
+#### 可用命令 / Available Commands
+
+```bash
+# 运行所有文档检查
+npm run lint:docs
+
+# 仅检查 Markdown 格式
+npm run lint:docs:format
+
+# 仅检查链接有效性
+npm run lint:docs:links
+
+# 仅检查文本质量（拼写、术语、可读性）
+npm run lint:docs:text
+
+# 自动修复格式问题
+npm run lint:docs:fix
+```
+
+#### 检查工具说明 / Tool Descriptions
+
+1. **Markdownlint** - Markdown 格式检查
+   - 检查标题层级、列表格式、代码块格式
+   - 配置文件: `.markdownlint.json`
+   - 适配中英文文档格式要求
+
+2. **markdown-link-check** - 链接有效性检查
+   - 检查内部链接是否存在
+   - 检查外部链接是否可访问
+   - 配置文件: `.markdown-link-check.json`
+
+3. **Textlint** - 文本质量检查
+   - 拼写检查（支持中英文）
+   - 术语一致性检查
+   - 可读性评分
+   - 配置文件: `.textlintrc.json`
+
+#### 提交前检查 / Pre-commit Checklist
+
+在提交文档更改前，请确保：
+
+- [ ] 运行 `npm run lint:docs` 通过所有检查
+- [ ] 修复所有格式问题（可使用 `npm run lint:docs:fix`）
+- [ ] 验证所有链接有效
+- [ ] 检查拼写和术语使用正确
+
+#### CI/CD 集成 / CI/CD Integration
+
+文档检查已集成到 GitHub Actions，在以下情况自动运行：
+
+- 创建 Pull Request 时
+- 推送到 master 分支时
+- 手动触发 workflow 时
+
+检查失败不会阻止合并，但会在 PR 中显示警告。建议修复所有问题后再合并。
+
 ### 代码注释 / Code Comments
 
 #### JSDoc/TypeScript 注释

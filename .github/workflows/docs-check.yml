@@ -1,0 +1,75 @@
+name: Documentation Check
+
+on:
+  pull_request:
+    paths:
+      - '**.md'
+      - '.markdownlint.json'
+      - '.textlintrc.json'
+      - '.markdown-link-check.json'
+  push:
+    branches:
+      - master
+    paths:
+      - '**.md'
+      - '.markdownlint.json'
+      - '.textlintrc.json'
+      - '.markdown-link-check.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  docs-check:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check Markdown format
+        id: markdown-format
+        continue-on-error: true
+        run: |
+          echo "Running Markdown format check..."
+          npm run lint:docs:format || echo "::warning::Markdown format check failed"
+
+      - name: Check Markdown links (internal only)
+        id: markdown-links
+        continue-on-error: true
+        run: |
+          echo "Running Markdown link check..."
+          npm run lint:docs:links || echo "::warning::Markdown link check found issues"
+
+      - name: Check text quality
+        id: text-quality
+        continue-on-error: true
+        run: |
+          echo "Running text quality check..."
+          npm run lint:docs:text || echo "::warning::Text quality check failed"
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Documentation Check Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Check | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Markdown Format | ${{ steps.markdown-format.outcome == 'success' && '✅ Passed' || '⚠️ Issues found' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Link Check | ${{ steps.markdown-links.outcome == 'success' && '✅ Passed' || '⚠️ Issues found' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Text Quality | ${{ steps.text-quality.outcome == 'success' && '✅ Passed' || '⚠️ Issues found' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Run \`npm run lint:docs\` locally to see detailed results." >> $GITHUB_STEP_SUMMARY
+

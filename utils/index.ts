@@ -385,6 +385,42 @@ export function apply_patch_v2(
   return newResult;
 }
 
+/**
+ * 应用 V1 版本补丁到解析结果
+ * Apply V1 patch to parser result
+ *
+ * 使用 diff-match-patch 算法应用文本差异补丁，支持：
+ * - 段落文本修改（通过 diff 字符串）
+ * - 注释文本修改（通过 diff 字符串）
+ * - 描述文本修改（通过 diff 字符串）
+ *
+ * V1 补丁是较早期的补丁格式，使用 diff 字符串表示变更。
+ * 注意：此函数会直接修改 parserResult 对象。
+ *
+ * Uses diff-match-patch algorithm to apply text difference patches, supporting:
+ * - Paragraph text modification (via diff strings)
+ * - Comment text modification (via diff strings)
+ * - Description text modification (via diff strings)
+ *
+ * V1 patch is an earlier patch format using diff strings to represent changes.
+ * Note: This function directly modifies the parserResult object.
+ *
+ * @param parserResult - 要修改的解析结果对象 / Parser result object to modify
+ * @param patch - V1 版本补丁对象 / V1 patch object
+ *
+ * @example
+ * ```typescript
+ * apply_patch(parserResult, {
+ *   parts: {
+ *     '0': 'diff字符串表示第1段的修改' // diff string for part 0 modification
+ *   },
+ *   comments: {
+ *     '1': 'diff字符串表示注释1的修改' // diff string for comment 1 modification
+ *   },
+ *   description: 'diff字符串表示描述的修改' // diff string for description modification
+ * });
+ * ```
+ */
 export function apply_patch(parserResult: ParserResult, patch: Patch) {
   const d = new diff_match_patch();
   const { parts, comment_pivots } = parserResult;

@@ -1,0 +1,14 @@
+node_modules/
+.git/
+out/
+parsed/
+config/
+raw/
+ocr_cache/
+ocr_patch/
+migration/
+*.test.ts
+*.test.tsx
+*.snap
+CHANGELOG.md
+

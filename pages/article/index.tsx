@@ -56,6 +56,10 @@ pdfjs.GlobalWorkerOptions.workerSrc = `/pdfjs-dist/legacy/build/pdf.worker.min.j
 const commit_hash = process.env.COMMIT_HASH;
 const virtual_publication_id = '--preview-patch--';
 
+/**
+ * 对比类型枚举
+ * Comparison type enumeration
+ */
 enum CompareType {
   none = 'none',
   origin = 'origin',
@@ -63,23 +67,66 @@ enum CompareType {
   version = 'version',
 }
 
+/**
+ * 将内容数组连接为单个字符串
+ * Join content array into a single string
+ *
+ * @param contents - 包含text属性的内容对象数组 / Array of content objects with text property
+ * @returns 连接后的字符串 / Joined string
+ */
 function join_text(contents: { text: string }[]) {
   let s = '';
   contents.forEach((i) => (s += i.text));
   return s;
 }
+
+/**
+ * 将日期对象转换为字符串格式
+ * Convert date object to string format
+ *
+ * @param date - 日期对象 / Date object
+ * @returns 格式化的日期字符串 (年.月.日) / Formatted date string (year.month.day)
+ */
 function date_to_string(date: Date) {
   return [date.year || '', date.month || '', date.day || '']
     .filter((j) => j)
     .join('.');
 }
 
+/**
+ * 对比模式枚举
+ * Comparison mode enumeration
+ */
 enum CompareMode {
   line = '逐行对比',
   literal = '逐字对比',
   description_and_comments = '描述和注释',
 }
 
+/**
+ * 文章查看器组件
+ * Article Viewer Component
+ *
+ * 用于显示和对比历史档案文章的详细内容，支持：
+ * - 多版本文章对比（逐行、逐字、描述和注释对比）
+ * - PDF预览功能
+ * - OCR补丁预览
+ * - 版本选择和管理
+ *
+ * Displays and compares detailed content of historical archive articles, supporting:
+ * - Multi-version article comparison (line-by-line, character-by-character, description and comments)
+ * - PDF preview functionality
+ * - OCR patch preview
+ * - Version selection and management
+ *
+ * @example
+ * ```tsx
+ * // 通过URL参数访问文章
+ * // Access article via URL parameter
+ * // /article?id=883eeb87ad
+ * // /article?id=883eeb87ad&publication_id=mao1966
+ * ```
+ */
 export default function ArticleViewer() {
   const [books, setBooks] = useState<
     {
@@ -123,6 +170,16 @@ export default function ArticleViewer() {
     })();
   }, []);
 
+  /**
+   * 添加OCR补丁预览版本
+   * Add OCR patch preview version
+   *
+   * 将OCR补丁应用到指定出版物，创建一个虚拟的预览版本用于对比
+   * Applies OCR patch to specified publication and creates a virtual preview version for comparison
+   *
+   * @param publicationId - 出版物ID / Publication ID
+   * @param patch - OCR补丁数据 / OCR patch data
+   */
   const addOCRComparisonPublicationV2 = useCallback(
     (publicationId: string, patch: PatchV2) => {
       booksRef.current = booksRef.current.filter(

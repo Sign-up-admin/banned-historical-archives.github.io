@@ -1,0 +1,32 @@
+{
+  "timeout": "20s",
+  "retryOn429": true,
+  "retryCount": 3,
+  "fallbackRetryDelay": "5s",
+  "aliveStatusCodes": [200, 206, 429],
+  "ignorePatterns": [
+    {
+      "pattern": "^http://localhost",
+      "reason": "本地开发链接"
+    },
+    {
+      "pattern": "^http://127.0.0.1",
+      "reason": "本地开发链接"
+    },
+    {
+      "pattern": "^https://github.com/banned-historical-archives/banned-historical-archives.github.io/wiki",
+      "reason": "GitHub Wiki 链接需要特殊权限"
+    },
+    {
+      "pattern": "^https://huggingface.co",
+      "reason": "Hugging Face 链接可能不稳定"
+    }
+  ],
+  "replacementPatterns": [
+    {
+      "pattern": "^/",
+      "replacement": "https://banned-historical-archives.github.io/"
+    }
+  ]
+}
+

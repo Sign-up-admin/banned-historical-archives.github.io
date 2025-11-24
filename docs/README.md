@@ -29,7 +29,10 @@ If you want to understand the project architecture, do secondary development, or
 
 #### 技术文档 / Technical Documentation
 - **[dev.md](dev.md)** - 开发架构和构建流程 / Development Architecture and Build Process
-- **[API.md](API.md)** - 数据 API 详细说明 / Data API Details
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** - 系统架构设计文档（详细架构、技术选型、扩展性设计） / System Architecture Design Document
+- **[DATA_FLOW.md](DATA_FLOW.md)** - 数据流和处理流程文档（从原始文件到最终展示的完整流程） / Data Flow and Processing Pipeline Document
+- **[TYPES.md](TYPES.md)** - TypeScript类型定义文档（所有类型定义和使用示例） / TypeScript Type Definitions Documentation
+- **[API.md](API.md)** - 数据 API 详细说明（包含前端API使用方法、实际代码示例） / Data API Details (includes frontend API usage and actual code examples)
 - **[local-search-engine.md](local-search-engine.md)** - 本地搜索引擎设置 / Local Search Engine Setup
 
 #### 部署和运维 / Deployment and Operations
@@ -49,15 +52,27 @@ If you want to contribute to the project, organize data, or develop code, please
 - **[standardization.md](standardization.md)** - 数据标准化流程 / Data Standardization Process
 - **[upload-and-correction.md](upload-and-correction.md)** - 文本录入和校对指南 / Text Entry and Proofreading Guide
 
+#### 数据工程 / Data Engineering
+- **[DATA_FLOW.md](DATA_FLOW.md)** - 数据流和处理流程文档 / Data Flow and Processing Pipeline Document
+- **[DATA_PIPELINE.md](DATA_PIPELINE.md)** - 数据管道文档 / Data Pipeline Document
+- **[BUILD_SCRIPTS.md](BUILD_SCRIPTS.md)** - 构建脚本文档 / Build Scripts Documentation
+- **[DATA_QUALITY.md](DATA_QUALITY.md)** - 数据质量文档 / Data Quality Document
+- **[DATA_OPS.md](DATA_OPS.md)** - 数据工程运维手册 / Data Engineering Operations Manual
+- **[DATA_MIGRATION.md](DATA_MIGRATION.md)** - 数据迁移文档 / Data Migration Document
+- **[DATA_ENGINEERING_BEST_PRACTICES.md](DATA_ENGINEERING_BEST_PRACTICES.md)** - 数据工程最佳实践 / Data Engineering Best Practices
+- **[DATA_GLOSSARY.md](DATA_GLOSSARY.md)** - 数据工程术语表 / Data Engineering Glossary
+- **[DATA_FAQ.md](DATA_FAQ.md)** - 数据工程FAQ / Data Engineering FAQ
+
 #### 开发相关 / Development Related
 - **[dev.md](dev.md)** - 开发环境搭建 / Development Environment Setup
 - **[API.md](API.md)** - API 规范和数据格式 / API Specifications and Data Formats
 
 #### 需求文档 / Requirements Documentation
-- **[requirements/FRD.md](requirements/FRD.md)** - 功能需求文档 / Functional Requirements Document
-- **[requirements/URD.md](requirements/URD.md)** - 用户需求文档 / User Requirements Document
-- **[requirements/NFR.md](requirements/NFR.md)** - 非功能需求文档 / Non-Functional Requirements Document
-- **[requirements/SRS.md](requirements/SRS.md)** - 系统需求规格说明 / System Requirements Specification
+- **[requirements/FRD.md](requirements/FRD.md)** - 功能需求文档（包含详细用例和交互流程） / Functional Requirements Document (includes detailed use cases and interaction flows)
+- **[requirements/URD.md](requirements/URD.md)** - 用户需求文档（包含用户旅程地图） / User Requirements Document (includes user journey maps)
+- **[requirements/NFR.md](requirements/NFR.md)** - 非功能需求文档（包含量化指标和可扩展性规划） / Non-Functional Requirements Document (includes quantitative metrics and scalability planning)
+- **[requirements/SRS.md](requirements/SRS.md)** - 系统需求规格说明（包含API规格和数据格式规范） / System Requirements Specification (includes API specifications and data format specifications)
+- **[requirements/REQUIREMENTS_TRACEABILITY.md](requirements/REQUIREMENTS_TRACEABILITY.md)** - 需求追踪矩阵 / Requirements Traceability Matrix
 
 ## 文档目录 / Document Directory
 
@@ -66,7 +81,10 @@ If you want to contribute to the project, organize data, or develop code, please
 - **[CONTRIBUTING.md](../CONTRIBUTING.md)** - 贡献者指南 / Contributor's Guide
 
 ### 文档目录 / Documentation Directory
-- **[API.md](API.md)** - 数据 API 说明 / Data API Documentation
+- **[API.md](API.md)** - 数据 API 说明（包含前端API使用方法、实际代码示例和端点总结） / Data API Documentation (includes frontend API usage, actual code examples, and endpoint summary)
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** - 系统架构设计文档 / System Architecture Design Document
+- **[DATA_FLOW.md](DATA_FLOW.md)** - 数据流和处理流程文档 / Data Flow and Processing Pipeline Document
+- **[TYPES.md](TYPES.md)** - TypeScript类型定义文档 / TypeScript Type Definitions Documentation
 - **[DEPLOYMENT.md](DEPLOYMENT.md)** - 生产环境部署 / Production Deployment
 - **[dev.md](dev.md)** - 开发指南 / Development Guide
 - **[local.md](local.md)** - 本地运行 / Local Setup
@@ -74,6 +92,7 @@ If you want to contribute to the project, organize data, or develop code, please
 - **[standardization.md](standardization.md)** - 数据标准化 / Data Standardization
 - **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - 故障排查 / Troubleshooting
 - **[upload-and-correction.md](upload-and-correction.md)** - 录入和校对 / Upload and Correction
+- **[DOCUMENTATION-QUALITY-CHECKLIST.md](DOCUMENTATION-QUALITY-CHECKLIST.md)** - 文档质量检查清单 / Documentation Quality Checklist
 
 ### 需求文档目录 / Requirements Documentation Directory
 - **[requirements/FRD.md](requirements/FRD.md)** - 功能需求文档 / Functional Requirements Document
@@ -95,8 +114,15 @@ If you want to contribute to the project, organize data, or develop code, please
 - [部署到生产环境](DEPLOYMENT.md)
 
 ### 📚 深入学习 / Deep Dive
-- [项目架构](dev.md#项目架构)
-- [数据格式](API.md#数据格式)
+- [项目架构](dev.md#技术架构--technical-architecture)
+- [系统架构设计](ARCHITECTURE.md)
+- [数据流处理流程](DATA_FLOW.md)
+- [数据管道架构](DATA_PIPELINE.md)
+- [数据质量保障](DATA_QUALITY.md)
+- [构建脚本使用](BUILD_SCRIPTS.md)
+- [数据工程运维](DATA_OPS.md)
+- [类型定义参考](TYPES.md)
+- [数据格式](API.md#数据格式规范--data-format-specifications)
 - [贡献流程](../CONTRIBUTING.md#pull-request-流程)
 - [系统需求](requirements/SRS.md)
 - [功能需求](requirements/FRD.md)
@@ -121,5 +147,5 @@ Report in [GitHub Issues](https://github.com/banned-historical-archives/banned-h
 
 ---
 
-**最后更新 / Last Updated**: 2025-11-24
+**最后更新 / Last Updated**: 2025-01-XX
 **维护者 / Maintainers**: 社区贡献者 / Community Contributors

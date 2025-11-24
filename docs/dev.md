@@ -41,43 +41,138 @@
 
 ### 系统架构 / System Architecture
 
+#### 整体架构图 / Overall Architecture Diagram
+
+```mermaid
+graph TB
+    subgraph "用户访问层 / User Access Layer"
+        A[用户浏览器] --> B[GitHub Pages CDN]
+        B --> C[Next.js 静态网站]
+        C --> D[React 前端应用]
+    end
+    
+    subgraph "数据访问层 / Data Access Layer"
+        D --> E[GitHub Raw Content API]
+        E --> F[json 分支<br/>文章数据]
+        E --> G[indexes 分支<br/>索引数据]
+        E --> H[txt 分支<br/>文本数据]
+    end
+    
+    subgraph "搜索引擎层 / Search Engine Layer"
+        D --> I{环境判断}
+        I -->|本地环境| J[Elasticsearch<br/>localhost:9200]
+        I -->|生产环境| K[反向代理<br/>/search_api]
+        K --> J
+    end
+    
+    subgraph "资源仓库层 / Resource Repositories"
+        L[资源仓库0-31] --> M[main 分支<br/>原始文件]
+        L --> N[config 分支<br/>配置文件]
+        L --> O[parsed 分支<br/>解析数据]
+        L --> P[ocr_cache 分支<br/>OCR缓存]
+        L --> Q[ocr_patch 分支<br/>OCR补丁]
+    end
+    
+    F -.数据来源.-> O
+    G -.数据来源.-> O
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    用户访问层 / User Access Layer           │
-│  ┌─────────────────────────────────────────────────────┐    │
-│  │            GitHub Pages (gh-pages 分支)             │    │
-│  │  ┌─────────────────────────────────────────────────┐ │    │
-│  │  │         Next.js 静态网站 (out/)               │ │    │
-│  │  │  ┌─────────────────────────────────────────────┐ │ │    │
-│  │  │  │      React 前端应用                      │ │ │    │
-│  │  │  └─────────────────────────────────────────────┘ │ │    │
-│  │  └─────────────────────────────────────────────────┘ │    │
-│  └─────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────┘
-                                   │
-                                   ▼ HTTP 请求
-┌─────────────────────────────────────────────────────────────┐
-│                 数据访问层 / Data Access Layer              │
-│  ┌─────────────────────────────────────────────────────┐    │
-│  │         GitHub Raw Content API                    │    │
-│  │  ┌─────────────────────────────────────────────────┐ │    │
-│  │  │   json 分支: 文章数据 (JSON)                  │ │    │
-│  │  │   indexes 分支: 索引数据 (搜索)               │ │    │
-│  │  └─────────────────────────────────────────────────┘ │    │
-│  └─────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────┘
-                                   │
-                                   ▼ (可选)
-┌─────────────────────────────────────────────────────────────┐
-│               搜索引擎层 / Search Engine Layer             │
-│  ┌─────────────────────────────────────────────────────┐    │
-│  │         Elasticsearch (Docker)                    │    │
-│  │  ┌─────────────────────────────────────────────────┐ │    │
-│  │  │   全文搜索索引                               │ │    │
-│  │  │   实时搜索功能                               │ │    │
-│  │  └─────────────────────────────────────────────────┘ │    │
-│  └─────────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────────┘
+
+#### 详细架构说明 / Detailed Architecture Description
+
+**分层架构设计**:
+
+1. **用户访问层**: 基于 GitHub Pages 的静态网站，使用 Next.js 构建，React 渲染
+2. **数据访问层**: 通过 GitHub Raw Content API 提供数据，无需后端服务器
+3. **搜索引擎层**: 可选的 Elasticsearch 全文搜索，支持本地和生产环境
+4. **资源仓库层**: 32个分布式资源仓库，存储原始文件和解析数据
+
+#### 组件依赖关系图 / Component Dependency Diagram
+
+```mermaid
+graph LR
+    subgraph "页面组件 / Page Components"
+        A[pages/articles/index.tsx<br/>文章列表页]
+        B[pages/article/index.tsx<br/>文章详情页]
+        C[pages/search/index.tsx<br/>搜索页]
+        D[pages/music/index.tsx<br/>音乐页]
+        E[pages/gallery/index.tsx<br/>图库页]
+    end
+    
+    subgraph "通用组件 / Common Components"
+        F[components/Layout.tsx<br/>布局组件]
+        G[components/ArticleCard.tsx<br/>文章卡片]
+        H[components/FilterPanel.tsx<br/>筛选面板]
+        I[components/VersionCompare.tsx<br/>版本对比]
+    end
+    
+    subgraph "工具函数 / Utility Functions"
+        J[utils/index.ts<br/>工具函数集合]
+        K[utils/i18n.ts<br/>国际化]
+    end
+    
+    subgraph "类型定义 / Type Definitions"
+        L[types/index.ts<br/>TypeScript类型]
+    end
+    
+    A --> F
+    A --> G
+    A --> H
+    B --> F
+    B --> I
+    C --> F
+    D --> F
+    E --> F
+    
+    G --> J
+    H --> J
+    I --> J
+    
+    A --> L
+    B --> L
+    C --> L
+    D --> L
+    E --> L
+    G --> L
+    H --> L
+    I --> L
+```
+
+#### 数据流图 / Data Flow Diagram
+
+```mermaid
+sequenceDiagram
+    participant User as 用户
+    participant Frontend as 前端应用
+    participant API as GitHub Raw API
+    participant Indexes as 索引数据
+    participant JSON as JSON数据
+    participant ES as Elasticsearch
+    
+    Note over User,ES: 文章列表浏览流程
+    User->>Frontend: 访问文章列表页
+    Frontend->>API: 请求 file_count.json
+    API-->>Frontend: 返回文件计数
+    Frontend->>API: 请求 article_list_0.json
+    API-->>Frontend: 返回文章列表索引
+    Frontend->>Frontend: 客户端筛选和排序
+    Frontend-->>User: 显示文章列表
+    
+    Note over User,ES: 文章详情查看流程
+    User->>Frontend: 点击文章
+    Frontend->>API: 请求文章JSON数据
+    API->>JSON: 获取文章数据
+    JSON-->>API: 返回完整文章数据
+    API-->>Frontend: 返回JSON响应
+    Frontend->>Frontend: 解析和渲染内容
+    Frontend-->>User: 显示文章详情
+    
+    Note over User,ES: 全文搜索流程
+    User->>Frontend: 输入搜索关键词
+    Frontend->>ES: 发送搜索请求
+    ES-->>Frontend: 返回搜索结果
+    Frontend->>API: 根据结果ID获取文章
+    API-->>Frontend: 返回文章数据
+    Frontend-->>User: 显示搜索结果
 ```
 
 ### 技术栈 / Technology Stack
@@ -947,6 +1042,478 @@ cp -r backups/20231201_120000/config ./
 docker compose up -d
 ```
 
+## ⚠️ 错误处理机制 / Error Handling Mechanism
+
+### 前端错误处理 / Frontend Error Handling
+
+#### API 请求错误处理
+
+```typescript
+// 统一的错误处理函数
+async function safeFetch<T>(url: string, options?: RequestInit): Promise<T | null> {
+  try {
+    const response = await fetch(url, options);
+    
+    if (!response.ok) {
+      // 根据状态码处理不同错误
+      switch (response.status) {
+        case 404:
+          console.error(`资源不存在: ${url}`);
+          return null;
+        case 403:
+          console.error(`访问被拒绝: ${url}`);
+          return null;
+        case 500:
+          console.error(`服务器错误: ${url}`);
+          // 可以重试
+          return retryFetch(url, options);
+        default:
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.error(`请求失败: ${url}`, error);
+    return null;
+  }
+}
+
+// 重试机制
+async function retryFetch<T>(
+  url: string,
+  options?: RequestInit,
+  maxRetries = 3
+): Promise<T | null> {
+  for (let i = 0; i < maxRetries; i++) {
+    try {
+      await sleep(1000 * (i + 1)); // 指数退避
+      const response = await fetch(url, options);
+      if (response.ok) {
+        return await response.json();
+      }
+    } catch (error) {
+      if (i === maxRetries - 1) {
+        console.error(`重试失败 (${maxRetries}次): ${url}`, error);
+        return null;
+      }
+    }
+  }
+  return null;
+}
+```
+
+#### React 组件错误边界
+
+```typescript
+// components/ErrorBoundary.tsx
+import React, { Component, ErrorInfo, ReactNode } from 'react';
+
+interface Props {
+  children: ReactNode;
+  fallback?: ReactNode;
+}
+
+interface State {
+  hasError: boolean;
+  error?: Error;
+}
+
+class ErrorBoundary extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error: Error): State {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.error('组件错误:', error, errorInfo);
+    // 可以发送错误到监控服务
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback || (
+        <div>
+          <h2>出现错误</h2>
+          <p>{this.state.error?.message}</p>
+          <button onClick={() => this.setState({ hasError: false })}>
+            重试
+          </button>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+```
+
+### 构建错误处理 / Build Error Handling
+
+#### 数据构建错误处理
+
+```typescript
+// backend/build-indexes.ts 中的错误处理示例
+async function buildIndexes() {
+  try {
+    // 验证数据完整性
+    if (!fs.existsSync('parsed/')) {
+      throw new Error('parsed/ 目录不存在，请先运行 npm run init-parsed');
+    }
+
+    // 构建索引
+    const indexes = await processAllArticles();
+    
+    // 验证构建结果
+    if (indexes.articles.length === 0) {
+      throw new Error('构建的索引为空，请检查数据源');
+    }
+
+    // 保存索引
+    await saveIndexes(indexes);
+    
+    console.log(`成功构建 ${indexes.articles.length} 条索引`);
+  } catch (error) {
+    console.error('构建索引失败:', error);
+    process.exit(1); // 退出并返回错误码
+  }
+}
+```
+
+#### 构建验证
+
+```bash
+# 构建后验证脚本
+#!/bin/bash
+# scripts/verify-build.sh
+
+echo "验证构建结果..."
+
+# 检查必要文件是否存在
+if [ ! -f "indexes/file_count.json" ]; then
+  echo "错误: file_count.json 不存在"
+  exit 1
+fi
+
+# 检查 JSON 格式
+if ! jq empty indexes/file_count.json 2>/dev/null; then
+  echo "错误: file_count.json 格式无效"
+  exit 1
+fi
+
+# 检查文章数据
+if [ ! -d "json/json" ]; then
+  echo "错误: json/json 目录不存在"
+  exit 1
+fi
+
+echo "构建验证通过"
+```
+
+### 异常情况处理 / Exception Handling
+
+#### 常见异常情况
+
+| 异常类型 | 原因 | 处理方式 |
+|---------|------|---------|
+| 网络超时 | GitHub API 响应慢 | 实现重试机制，增加超时时间 |
+| 数据格式错误 | JSON 解析失败 | 验证数据格式，提供错误提示 |
+| 文件缺失 | 资源仓库数据未下载 | 提示用户运行初始化命令 |
+| 内存不足 | 数据量过大 | 分批处理，增加内存限制 |
+| 构建失败 | 依赖问题或代码错误 | 记录详细错误日志，提供修复建议 |
+
+#### 错误日志记录
+
+```typescript
+// utils/logger.ts
+interface LogLevel {
+  ERROR: 'error';
+  WARN: 'warn';
+  INFO: 'info';
+  DEBUG: 'debug';
+}
+
+export function logError(error: Error, context?: Record<string, any>) {
+  const logEntry = {
+    timestamp: new Date().toISOString(),
+    level: 'error',
+    message: error.message,
+    stack: error.stack,
+    context,
+  };
+
+  // 开发环境：输出到控制台
+  if (process.env.NODE_ENV === 'development') {
+    console.error('错误日志:', logEntry);
+  }
+
+  // 生产环境：发送到监控服务
+  if (process.env.NODE_ENV === 'production') {
+    // 发送到 Sentry, LogRocket 等
+    // sendToMonitoringService(logEntry);
+  }
+}
+```
+
+## 🚀 性能优化指南 / Performance Optimization Guide
+
+### 前端性能优化 / Frontend Performance Optimization
+
+#### 代码分割和懒加载
+
+```typescript
+// 动态导入大型组件
+import dynamic from 'next/dynamic';
+
+const ArticleViewer = dynamic(() => import('../components/ArticleViewer'), {
+  loading: () => <div>加载中...</div>,
+  ssr: false, // 如果组件不需要 SSR
+});
+
+// 路由级别的代码分割
+const SearchPage = dynamic(() => import('./search'), {
+  loading: () => <div>加载搜索页面...</div>,
+});
+```
+
+#### 数据缓存策略
+
+```typescript
+// utils/cache.ts
+class DataCache {
+  private cache = new Map<string, { data: any; timestamp: number }>();
+  private readonly TTL = 5 * 60 * 1000; // 5分钟
+
+  get<T>(key: string): T | null {
+    const cached = this.cache.get(key);
+    if (cached && Date.now() - cached.timestamp < this.TTL) {
+      return cached.data as T;
+    }
+    return null;
+  }
+
+  set<T>(key: string, data: T): void {
+    this.cache.set(key, { data, timestamp: Date.now() });
+  }
+
+  clear(): void {
+    this.cache.clear();
+  }
+}
+
+// 使用示例
+const cache = new DataCache();
+
+async function getArticle(id: string) {
+  const cacheKey = `article-${id}`;
+  const cached = cache.get(cacheKey);
+  if (cached) return cached;
+
+  const data = await fetchArticle(id);
+  cache.set(cacheKey, data);
+  return data;
+}
+```
+
+#### 虚拟滚动（大数据列表）
+
+```typescript
+// 使用 react-window 或 react-virtualized
+import { FixedSizeList } from 'react-window';
+
+function ArticleList({ articles }: { articles: Article[] }) {
+  const Row = ({ index, style }: { index: number; style: React.CSSProperties }) => (
+    <div style={style}>
+      <ArticleCard article={articles[index]} />
+    </div>
+  );
+
+  return (
+    <FixedSizeList
+      height={600}
+      itemCount={articles.length}
+      itemSize={120}
+      width="100%"
+    >
+      {Row}
+    </FixedSizeList>
+  );
+}
+```
+
+### 构建性能优化 / Build Performance Optimization
+
+#### 并行构建
+
+```typescript
+// backend/build-indexes.ts
+import { Worker } from 'worker_threads';
+
+async function buildIndexesParallel() {
+  const cpuCount = require('os').cpus().length;
+  const chunkSize = Math.ceil(totalArticles / cpuCount);
+  
+  const workers = [];
+  for (let i = 0; i < cpuCount; i++) {
+    const start = i * chunkSize;
+    const end = Math.min(start + chunkSize, totalArticles);
+    
+    const worker = new Worker('./build-worker.js', {
+      workerData: { start, end },
+    });
+    
+    workers.push(worker);
+  }
+
+  const results = await Promise.all(
+    workers.map(worker => new Promise((resolve, reject) => {
+      worker.on('message', resolve);
+      worker.on('error', reject);
+    }))
+  );
+
+  // 合并结果
+  return mergeResults(results);
+}
+```
+
+#### 增量构建
+
+```typescript
+// 只构建变更的数据
+interface BuildCache {
+  lastBuildTime: number;
+  processedFiles: Set<string>;
+}
+
+async function buildIncremental() {
+  const cache = loadBuildCache();
+  const now = Date.now();
+  
+  // 只处理修改时间晚于上次构建的文件
+  const filesToProcess = getAllFiles().filter(file => {
+    const stats = fs.statSync(file);
+    return stats.mtimeMs > cache.lastBuildTime || 
+           !cache.processedFiles.has(file);
+  });
+
+  // 处理变更的文件
+  for (const file of filesToProcess) {
+    await processFile(file);
+    cache.processedFiles.add(file);
+  }
+
+  cache.lastBuildTime = now;
+  saveBuildCache(cache);
+}
+```
+
+#### 内存优化
+
+```bash
+# 增加 Node.js 内存限制
+export NODE_OPTIONS="--max-old-space-size=4096"
+
+# 或使用 npm 脚本
+{
+  "scripts": {
+    "build": "NODE_OPTIONS='--max-old-space-size=4096' next build"
+  }
+}
+```
+
+### 数据加载优化 / Data Loading Optimization
+
+#### 分页加载
+
+```typescript
+// 实现分页加载，避免一次性加载所有数据
+async function loadArticlesPage(page: number, pageSize = 50) {
+  const start = page * pageSize;
+  const end = start + pageSize;
+  
+  // 只加载当前页的数据
+  const pageData = await fetch(`/api/articles?start=${start}&end=${end}`);
+  return pageData;
+}
+```
+
+#### 预加载关键资源
+
+```typescript
+// 预加载下一页数据
+useEffect(() => {
+  if (currentPage < totalPages) {
+    // 预加载下一页
+    const nextPageData = loadArticlesPage(currentPage + 1);
+    cache.set(`page-${currentPage + 1}`, nextPageData);
+  }
+}, [currentPage]);
+```
+
+#### CDN 优化
+
+```javascript
+// next.config.js
+module.exports = {
+  // 使用 CDN 加速静态资源
+  assetPrefix: process.env.NODE_ENV === 'production' 
+    ? 'https://cdn.example.com' 
+    : '',
+  
+  // 图片优化
+  images: {
+    domains: ['raw.githubusercontent.com'],
+    formats: ['image/avif', 'image/webp'],
+  },
+};
+```
+
+### 性能监控 / Performance Monitoring
+
+#### 性能指标收集
+
+```typescript
+// utils/performance.ts
+export function measurePerformance(name: string, fn: () => void) {
+  const start = performance.now();
+  fn();
+  const end = performance.now();
+  const duration = end - start;
+  
+  console.log(`[性能] ${name}: ${duration.toFixed(2)}ms`);
+  
+  // 发送到监控服务
+  if (duration > 1000) {
+    logSlowOperation(name, duration);
+  }
+}
+
+// 页面加载性能
+export function trackPageLoad() {
+  if (typeof window !== 'undefined' && 'performance' in window) {
+    window.addEventListener('load', () => {
+      const perfData = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+      
+      const metrics = {
+        dns: perfData.domainLookupEnd - perfData.domainLookupStart,
+        tcp: perfData.connectEnd - perfData.connectStart,
+        request: perfData.responseStart - perfData.requestStart,
+        response: perfData.responseEnd - perfData.responseStart,
+        dom: perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart,
+        load: perfData.loadEventEnd - perfData.loadEventStart,
+      };
+      
+      console.log('页面加载性能:', metrics);
+    });
+  }
+}
+```
+
 ## 📚 相关文档 / Related Documentation
 
 - [本地运行指南](./local.md)
@@ -956,6 +1523,8 @@ docker compose up -d
 - [部署指南](./DEPLOYMENT.md)
 - [故障排查](./TROUBLESHOOTING.md)
 - [贡献指南](../CONTRIBUTING.md)
+- [架构设计文档](./ARCHITECTURE.md)
+- [数据流文档](./DATA_FLOW.md)
 
 ---
 

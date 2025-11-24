@@ -19,6 +19,11 @@
     "postbuild": "ts-node --project ./tsconfig.build.json ./backend/build-sitemap.ts",
     "start": "npm run init-es && npx serve@latest out",
     "lint": "next lint",
+    "lint:docs": "npm run lint:docs:format && npm run lint:docs:links && npm run lint:docs:text",
+    "lint:docs:format": "markdownlint '**/*.md' --ignore node_modules --ignore .git --ignore out --ignore parsed --ignore config --ignore raw --ignore ocr_cache --ignore ocr_patch",
+    "lint:docs:links": "node scripts/check-markdown-links.js",
+    "lint:docs:text": "textlint '**/*.md' --ignore-path .textlintignore",
+    "lint:docs:fix": "markdownlint --fix '**/*.md' --ignore node_modules --ignore .git --ignore out --ignore parsed --ignore config --ignore raw --ignore ocr_cache --ignore ocr_patch",
     "prettier": "prettier -w ."
   },
   "dependencies": {
@@ -91,7 +96,13 @@
     "@types/uuid": "^8.3.4",
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.3",
+    "glob": "^10.3.10",
+    "markdown-link-check": "^3.14.2",
+    "markdownlint-cli": "^0.40.0",
     "prettier": "2.8.3",
+    "textlint": "^13.3.3",
+    "textlint-rule-terminology": "^5.2.16",
+    "textlint-rule-write-good": "^2.0.0",
     "typescript": "^4.9.5"
   }
 }

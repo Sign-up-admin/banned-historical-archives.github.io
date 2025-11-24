@@ -21,12 +21,13 @@
 本文档适用于和谐历史档案馆系统的设计、开发、测试、部署和维护全过程。
 
 ### 相关文档引用 / Related Documents
-- [FRD - 功能需求文档](./FRD.md)
-- [URD - 用户需求文档](./URD.md)
-- [NFR - 非功能需求文档](./NFR.md)
-- [API文档](../../API.md)
-- [开发文档](../../dev.md)
-- [标准化规范](../../standardization.md)
+- [FRD - 功能需求文档](./FRD.md) - 详细功能需求描述
+- [URD - 用户需求文档](./URD.md) - 用户角色和使用场景
+- [NFR - 非功能需求文档](./NFR.md) - 性能、安全等非功能需求
+- [需求追踪矩阵](./REQUIREMENTS_TRACEABILITY.md) - 需求与实现的追踪关系
+- [API文档](../../API.md) - API接口详细说明
+- [开发文档](../../dev.md) - 开发架构和构建流程
+- [标准化规范](../../standardization.md) - 数据标准化规范
 
 ### 术语定义 / Terminology
 - **文章**: 指经过处理的结构化历史文献
@@ -162,6 +163,60 @@
 - **数据处理**: TypeScript后端脚本
 - **CI/CD**: GitHub Actions自动化构建
 - **部署目标**: 多分支自动部署
+
+### 需求依赖关系 / Requirements Dependencies
+
+需求之间的依赖关系如下：
+
+```
+核心功能层 (Core Functions)
+├── FR1: 文章列表浏览功能
+│   ├── FR1.1: 文章列表展示 (依赖: 索引数据加载)
+│   └── FR1.2: 数据筛选功能 (依赖: FR1.1)
+│
+├── FR2: 文章详情展示功能
+│   ├── FR2.1: 文章内容展示 (依赖: 文章数据加载)
+│   └── FR2.2: 版本对比功能 (依赖: FR2.1, 差异算法)
+│
+├── FR5: 搜索功能
+│   ├── FR5.1: 本地搜索 (依赖: Google搜索)
+│   └── FR5.2: Elasticsearch搜索 (依赖: ES部署)
+│
+└── FR6: 数据筛选系统
+    ├── FR6.1-6.4: 各类筛选功能 (依赖: FR1.1)
+    └── FR6.5: 筛选组合 (依赖: FR6.1-6.4)
+
+高级功能层 (Advanced Functions)
+├── FR8: OCR补丁预览功能
+│   ├── FR8.1: OCR补丁应用 (依赖: FR2.1, 补丁算法)
+│   └── FR8.2: 补丁导入功能 (依赖: FR8.1)
+│
+└── FR9: PDF预览功能
+    ├── FR9.1: PDF文档预览 (依赖: PDF.js库)
+    └── FR9.2: 图片预览功能 (依赖: 图片加载)
+
+多媒体功能层 (Multimedia Functions)
+├── FR3: 音乐库管理功能
+│   ├── FR3.1: 音乐列表展示 (依赖: 音乐索引)
+│   ├── FR3.2: 音乐播放功能 (依赖: FR3.1)
+│   └── FR3.3: 歌词版本对比 (依赖: FR3.1, 差异算法)
+│
+└── FR4: 图库管理功能
+    └── FR4.1: 图片/视频列表展示 (依赖: 图库索引)
+
+数据管理功能层 (Data Management Functions)
+└── FR7: 数据录入与校对功能
+    ├── FR7.1: 数据录入 (依赖: 后台系统)
+    └── FR7.2: 数据校对 (依赖: FR7.1, FR8.1)
+```
+
+**依赖说明**:
+- **数据加载**: 所有功能都依赖GitHub Raw Content API数据加载
+- **差异算法**: 版本对比和补丁功能都依赖diff-match-patch算法
+- **索引数据**: 列表和筛选功能都依赖预构建的索引数据
+- **UI组件**: 所有前端功能都依赖Material-UI组件库
+
+**详细追踪**: 参见[需求追踪矩阵](./REQUIREMENTS_TRACEABILITY.md)
 
 ## 功能需求详述 / Functional Requirements Details
 
@@ -305,7 +360,20 @@
 **端点**: https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{path}
 **方法**: GET
 **数据格式**: JSON/文本
-**频率限制**: GitHub API限制
+**频率限制**: 
+- 未认证请求: 每小时60次
+- 认证请求: 每小时5000次
+- 按IP限制
+
+**实际使用的端点**:
+- **文章数据**: `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/json/json/{prefix}/{id}.json`
+  - prefix: 文章ID前3位
+  - id: 完整文章ID
+- **文件计数**: `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/file_count.json`
+- **文章列表**: `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/article_list_{index}.json`
+- **音乐索引**: `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/music.json`
+- **图库索引**: `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/gallery.json`
+- **音乐详情**: `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives{archiveId}/parsed/{prefix}/{id}/{id}.metadata`
 
 #### Google Search API (集成)
 **用途**: 网站内搜索
@@ -315,10 +383,59 @@
 
 #### Elasticsearch API (可选)
 **用途**: 本地全文搜索
-**端点**: http://localhost:9200
-**方法**: POST
-**数据格式**: Elasticsearch JSON
-**认证**: Basic Auth
+**端点**: 
+- 本地环境: `http://localhost:9200/article/_search/`
+- 生产环境: `{host}/search_api/article/_search/`
+**方法**: POST (通过URL参数传递)
+**数据格式**: Elasticsearch JSON查询
+**认证**: Basic Auth (可选)
+
+**查询参数**:
+- `source`: URL编码的JSON查询字符串
+- `source_content_type`: `application/json`
+
+**查询示例**:
+```json
+{
+  "from": 0,
+  "size": 10,
+  "query": {
+    "match_phrase": {
+      "content": "搜索关键词"
+    }
+  },
+  "highlight": {
+    "fields": {
+      "content": {}
+    }
+  }
+}
+```
+
+**响应格式**:
+```json
+{
+  "hits": {
+    "total": {
+      "value": 100,
+      "relation": "eq"
+    },
+    "hits": [
+      {
+        "_id": "article_id",
+        "_score": 1.5,
+        "_source": {
+          "title": "文章标题",
+          "content": "文章内容..."
+        },
+        "highlight": {
+          "content": ["高亮片段1", "高亮片段2"]
+        }
+      }
+    ]
+  }
+}
+```
 
 ### 内部接口 / Internal Interfaces
 
@@ -412,6 +529,78 @@ interface PictureMetaData {
 }
 ```
 
+### 数据格式规范 / Data Format Specifications
+
+#### OCR补丁格式 (PatchV2) / OCR Patch Format
+```typescript
+interface PatchV2 {
+  version: 2;  // 补丁版本号
+  parts: { 
+    [idx: string]: PartDiff  // 段落索引 -> 段落差异
+  };
+  comments: { 
+    [idx: string]: CommentDiff  // 注释索引 -> 注释差异
+  };
+  newComments?: string[];  // 新增注释（从空状态添加）
+  description?: StringDiff;  // 描述差异（空字符串=无变更，不存在=删除）
+}
+
+interface PartDiff {
+  insertBefore?: ContentPart[];  // 在段落前插入
+  insertAfter?: ContentPart[];   // 在段落后插入
+  delete?: boolean;               // 是否删除段落
+  diff?: StringDiff;              // 文本差异（diff字符串）
+  type?: ContentType;             // 段落类型变更
+}
+
+interface CommentDiff {
+  insertBefore?: { id?: string; text: StringDiff }[];  // 在注释前插入
+  insertAfter?: { id?: string; text: StringDiff }[];  // 在注释后插入
+  delete?: boolean;                                    // 是否删除注释
+  diff?: StringDiff;                                   // 注释文本差异
+}
+```
+
+**补丁导入格式**:
+- 文本格式: `{OCR补丁}{...JSON数据...}`
+- JSON数据包含: `{ publicationId: string, patch: PatchV2 }`
+
+#### 版本对比数据格式 / Version Comparison Data Format
+```typescript
+interface ComparisonResult {
+  mode: 'literal' | 'line' | 'description_and_comments';
+  sourceVersion: ParserResult;
+  targetVersion: ParserResult;
+  differences: Diff[];
+}
+
+interface Diff {
+  type: -1 | 0 | 1;  // -1=删除, 0=相同, 1=新增
+  text: string;      // 差异文本
+}
+```
+
+**对比算法**: 使用 `diff-match-patch` 库进行差异计算
+
+#### 文章响应数据格式 / Article Response Data Format
+```typescript
+interface ArticleResponse {
+  books: BookData[];
+}
+
+interface BookData {
+  id: string;                    // 书籍/出版物ID
+  name: string;                  // 书籍名称
+  type: string;                  // 类型 ('pdf', 'image', etc.)
+  internal: boolean;             // 是否内部文件
+  official: boolean;             // 是否官方文件
+  author: string;                // 作者信息
+  files: string[];               // 文件列表
+  tags: Tag[];                   // 标签列表
+  article: ParserResult;         // 文章内容
+}
+```
+
 ### 数据完整性 / Data Integrity
 
 #### 数据验证规则 / Data Validation Rules
@@ -419,11 +608,13 @@ interface PictureMetaData {
 - **格式验证**: 日期格式, URL格式, 邮箱格式
 - **引用完整性**: 标签ID引用, 书籍ID引用
 - **内容验证**: HTML安全, 脚本注入防护
+- **补丁验证**: PatchV2格式验证, 索引范围检查
 
 #### 数据一致性规则 / Data Consistency Rules
 - **版本一致性**: 同一文章多版本数据同步
 - **引用一致性**: 索引数据与详细数据保持同步
 - **元数据一致性**: 标签和书籍信息在各处保持一致
+- **补丁一致性**: 补丁应用后数据格式保持一致
 
 ### 数据存储要求 / Data Storage Requirements
 
@@ -577,9 +768,10 @@ indexes/
 
 ---
 
-**文档版本**: 1.0
-**最后更新**: 2025年11月24日
+**文档版本**: 2.0
+**最后更新**: 2025年1月
 **作者**: 系统分析团队
+**更新说明**: 更新系统架构描述，添加详细API接口规格和数据格式规范（包括补丁格式和版本对比格式）
 
 **审批状态**: 待审批
 **审批日期**:

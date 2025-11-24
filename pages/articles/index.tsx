@@ -59,6 +59,14 @@ import { join } from 'path';
 import { Grid2, LinearProgress } from '@mui/material';
 import { getGridFilter } from '@mui/x-data-grid/internals';
 
+/**
+ * 确保数字为两位数格式
+ * Ensure number is in two-digit format
+ *
+ * @param a - 要格式化的数字 / Number to format
+ * @param fallback - 如果数字为空时的默认值 / Default value if number is empty
+ * @returns 格式化后的字符串 / Formatted string
+ */
 function ensure_two_digits(a?: number, fallback = '') {
   if (!a && a !== 0) {
     return fallback;
@@ -66,6 +74,14 @@ function ensure_two_digits(a?: number, fallback = '') {
   return a < 10 ? `0${a}` : a;
 }
 
+/**
+ * 检查文章日期是否在指定日期范围内
+ * Check if article date is within specified date range
+ *
+ * @param a - 文章对象 / Article object
+ * @param b - 日期过滤器 / Date filter
+ * @returns 是否在范围内 / Whether date is within range
+ */
 function date_include(a: Article, b: DateFilter) {
   const date_a = b.year_a! * 10000 + b.month_a! * 100 + b.day_a!;
   const date_b = b.year_b! * 10000 + b.month_b! * 100 + b.day_b!;
@@ -113,6 +129,31 @@ type TableArticle = {
   tags: { name: string; type: string; id: string }[];
 };
 const default_authors = ['毛泽东', '江青', '王洪文', '张春桥', '姚文元'];
+
+/**
+ * 文章列表组件
+ * Articles List Component
+ *
+ * 用于显示和筛选历史档案文章列表，支持：
+ * - 分页加载文章数据
+ * - 多维度筛选（标签、作者、日期、来源）
+ * - 数据表格展示和排序
+ * - URL参数支持（tag、author）
+ *
+ * Displays and filters historical archive article list, supporting:
+ * - Paginated article data loading
+ * - Multi-dimensional filtering (tags, authors, dates, sources)
+ * - Data grid display and sorting
+ * - URL parameter support (tag, author)
+ *
+ * @example
+ * ```tsx
+ * // 通过URL参数筛选
+ * // Filter via URL parameters
+ * // /articles?tag=中央文件
+ * // /articles?author=毛泽东
+ * ```
+ */
 export default function Articles() {
   const [ready, setReady] = useState(false);
   const apiRef = useGridApiRef();

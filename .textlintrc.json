@@ -1,0 +1,47 @@
+{
+  "filters": {},
+  "rules": {
+    "terminology": {
+      "defaultTerms": true,
+      "terms": {
+        "GitHub": ["GitHub"],
+        "Git": ["Git"],
+        "npm": ["npm"],
+        "Node.js": ["Node.js"],
+        "TypeScript": ["TypeScript"],
+        "JavaScript": ["JavaScript"],
+        "React": ["React"],
+        "Next.js": ["Next.js"],
+        "Markdown": ["Markdown"],
+        "Docker": ["Docker"],
+        "Elasticsearch": ["Elasticsearch"],
+        "API": ["API", "APIs"],
+        "URL": ["URL", "URLs"],
+        "HTML": ["HTML"],
+        "CSS": ["CSS"],
+        "JSON": ["JSON"],
+        "YAML": ["YAML"],
+        "CI/CD": ["CI/CD"],
+        "PR": ["PR", "Pull Request"],
+        "UI": ["UI"],
+        "UX": ["UX"],
+        "OCR": ["OCR"],
+        "PDF": ["PDF"],
+        "EPUB": ["EPUB"]
+      }
+    },
+    "write-good": {
+      "passive": false,
+      "weasel": false,
+      "adverb": false,
+      "tooWordy": false,
+      "cliches": false
+    }
+  },
+  "plugins": [],
+  "extensions": [
+    ".md",
+    ".markdown"
+  ]
+}
+

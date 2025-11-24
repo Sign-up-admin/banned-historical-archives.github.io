@@ -1158,8 +1158,8 @@ docker compose exec app npm run init-es
 
 - [本地运行指南](./local.md)
 - [故障排查](./TROUBLESHOOTING.md)
-- [监控指南](./MONITORING.md)
-- [备份恢复](./BACKUP.md)
+- [开发环境搭建](./dev.md)
+- [API 文档](./API.md)
 
 ---
 

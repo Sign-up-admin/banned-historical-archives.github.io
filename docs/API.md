@@ -349,6 +349,312 @@ npm run init-es reset
 npm run init-es
 ```
 
+## 🔧 前端API使用方法 / Frontend API Usage
+
+### 文章数据获取 / Article Data Fetching
+
+#### 获取文章详情数据 / Get Article Details
+
+```typescript
+/**
+ * 从GitHub Raw Content API获取文章详情
+ * Fetch article details from GitHub Raw Content API
+ *
+ * @param articleId - 文章ID / Article ID
+ * @returns Promise<ArticleResponse> - 文章响应数据 / Article response data
+ *
+ * @example
+ * ```typescript
+ * const articleData = await fetch(
+ *   `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/json/json/${articleId.slice(0, 3)}/${articleId}.json`
+ * ).then(res => res.json());
+ *
+ * console.log('文章标题:', articleData.books[0].article.title);
+ * console.log('作者列表:', articleData.books[0].article.authors);
+ * ```
+ */
+async function getArticle(articleId: string): Promise<ArticleResponse> {
+  const url = `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/json/json/${articleId.slice(0, 3)}/${articleId}.json`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('获取文章数据失败:', error);
+    throw error;
+  }
+}
+```
+
+**实际使用位置 / Actual Usage Location:**
+- `pages/article/index.tsx` (行110-117) - 文章详情页面数据加载
+
+#### 获取文章列表索引 / Get Article List Index
+
+```typescript
+/**
+ * 获取文章列表文件计数
+ * Get article list file count
+ *
+ * @returns Promise<{article_list: number}> - 文件计数信息 / File count info
+ *
+ * @example
+ * ```typescript
+ * const count = await fetch(
+ *   'https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/file_count.json'
+ * ).then(res => res.json());
+ *
+ * console.log('总页数:', count.article_list);
+ * ```
+ */
+async function getArticleFileCount(): Promise<{article_list: number}> {
+  const url = 'https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/file_count.json';
+
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.json();
+}
+
+/**
+ * 获取指定页数的文章列表
+ * Get article list for specific page
+ *
+ * @param pageIndex - 页码索引 (从0开始) / Page index (starting from 0)
+ * @returns Promise<ArticleListV2> - 文章列表数据 / Article list data
+ *
+ * @example
+ * ```typescript
+ * const pageData = await fetch(
+ *   `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/article_list_${pageIndex}.json`
+ * ).then(res => res.json());
+ *
+ * console.log('本页文章数:', pageData.articles.length);
+ * console.log('标签数量:', pageData.tags.length);
+ * ```
+ */
+async function getArticleListPage(pageIndex: number): Promise<ArticleListV2> {
+  const url = `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/article_list_${pageIndex}.json`;
+
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.json();
+}
+```
+
+**实际使用位置 / Actual Usage Location:**
+- `pages/articles/index.tsx` (行337-347) - 文章列表页面数据加载
+
+### 音乐数据获取 / Music Data Fetching
+
+#### 获取音乐索引 / Get Music Index
+
+```typescript
+/**
+ * 获取音乐索引数据
+ * Get music index data
+ *
+ * @returns Promise<MusicIndex[]> - 音乐索引数组 / Music index array
+ *
+ * @example
+ * ```typescript
+ * const musicData = await fetch(
+ *   'https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/music.json'
+ * ).then(res => res.json());
+ *
+ * musicData.forEach(item => {
+ *   console.log('音乐ID:', item[0]);
+ *   console.log('音乐名称:', item[1]);
+ *   console.log('资源仓库ID:', item[2]);
+ * });
+ * ```
+ */
+async function getMusicIndex(): Promise<MusicIndex[]> {
+  const url = 'https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/music.json';
+
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.json();
+}
+```
+
+**实际使用位置 / Actual Usage Location:**
+- `pages/music/index.tsx` (行612-616) - 音乐页面索引数据加载
+
+#### 获取音乐详情 / Get Music Details
+
+```typescript
+/**
+ * 获取音乐详情数据
+ * Get music details data
+ *
+ * @param musicId - 音乐ID / Music ID
+ * @param archiveId - 资源仓库ID / Archive repository ID
+ * @returns Promise<MusicEntity> - 音乐实体数据 / Music entity data
+ *
+ * @example
+ * ```typescript
+ * const musicDetails = await fetch(
+ *   `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives${archiveId}/parsed/${musicId.substr(0, 3)}/${musicId}/${musicId}.metadata`
+ * ).then(res => res.json());
+ *
+ * console.log('音乐名称:', musicDetails.name);
+ * console.log('歌词数量:', musicDetails.lyrics?.length || 0);
+ * ```
+ */
+async function getMusicDetails(musicId: string, archiveId: number): Promise<MusicEntity> {
+  const url = `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives${archiveId}/parsed/${musicId.substr(0, 3)}/${musicId}/${musicId}.metadata`;
+
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.json();
+}
+```
+
+**实际使用位置 / Actual Usage Location:**
+- `pages/music/index.tsx` (行74-84) - 音乐详情数据获取函数
+
+### 图库数据获取 / Gallery Data Fetching
+
+#### 获取图库索引 / Get Gallery Index
+
+```typescript
+/**
+ * 获取图库索引数据
+ * Get gallery index data
+ *
+ * @returns Promise<GalleryIndexes> - 图库索引数组 / Gallery index array
+ *
+ * @example
+ * ```typescript
+ * const galleryData = await fetch(
+ *   'https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/gallery.json'
+ * ).then(res => res.json());
+ *
+ * galleryData.forEach(item => {
+ *   console.log('资源ID:', item.id);
+ *   console.log('资源名称:', item.name);
+ *   console.log('资源类型:', item.type); // 'picture' | 'video'
+ * });
+ * ```
+ */
+async function getGalleryIndex(): Promise<GalleryIndexes> {
+  const url = 'https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/gallery.json';
+
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return await response.json();
+}
+```
+
+**实际使用位置 / Actual Usage Location:**
+- `pages/gallery/index.tsx` (行150-155) - 图库页面索引数据加载
+
+### 全文搜索API / Full-text Search API
+
+#### Elasticsearch搜索 / Elasticsearch Search
+
+```typescript
+/**
+ * 执行全文搜索
+ * Perform full-text search
+ *
+ * @param keyword - 搜索关键词 / Search keyword
+ * @param options - 搜索选项 / Search options
+ * @returns Promise<SearchResponse> - 搜索响应 / Search response
+ *
+ * @example
+ * ```typescript
+ * // 本地开发环境
+ * const results = await fetch(`${location.protocol}//${location.host}:9200/article/_search/?source=${encodeURIComponent(JSON.stringify({
+ *   from: 0,
+ *   size: 10,
+ *   query: { match_phrase: { content: keyword } },
+ *   highlight: { fields: { content: {} } }
+ * }))}&source_content_type=${encodeURIComponent('application/json')}`)
+ * .then(res => res.json());
+ *
+ * console.log('搜索结果总数:', results.hits.total.value);
+ * console.log('命中结果:', results.hits.hits.length);
+ * ```
+ */
+interface SearchOptions {
+  keyword: string;
+  from?: number;
+  size?: number;
+  highlight?: boolean;
+}
+
+async function searchArticles(options: SearchOptions): Promise<SearchResponse> {
+  const { keyword, from = 0, size = 10, highlight = true } = options;
+
+  const searchBody = {
+    from,
+    size,
+    query: { match_phrase: { content: keyword } },
+    ...(highlight && {
+      highlight: {
+        fields: { content: {} }
+      }
+    })
+  };
+
+  // 构建Elasticsearch API URL
+  const baseUrl = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+    ? `${location.protocol}//${location.host}:9200`
+    : `${location.protocol}//${location.hostname}/search_api`;
+
+  const url = `${baseUrl}/article/_search/?source=${encodeURIComponent(JSON.stringify(searchBody))}&source_content_type=${encodeURIComponent('application/json')}`;
+
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Search failed: ${response.status}`);
+  }
+  return await response.json();
+}
+```
+
+**实际使用位置 / Actual Usage Location:**
+- `pages/search/index.tsx` (行47-69) - 搜索页面全文搜索功能
+
+#### 环境判断逻辑 / Environment Detection Logic
+
+```typescript
+/**
+ * 判断当前是否为本地开发环境
+ * Determine if currently in local development environment
+ *
+ * @returns boolean - 是否为本地环境 / Whether it's local environment
+ */
+function isLocalEnvironment(): boolean {
+  return location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+}
+
+/**
+ * 获取Elasticsearch API基础URL
+ * Get Elasticsearch API base URL
+ *
+ * @returns string - API基础URL / API base URL
+ */
+function getElasticsearchBaseUrl(): string {
+  return isLocalEnvironment()
+    ? `${location.protocol}//${location.host}:9200`
+    : `${location.protocol}//${location.hostname}/search_api`;
+}
+```
+
 ## 💡 使用示例 / Usage Examples
 
 ### JavaScript/TypeScript 客户端
@@ -608,6 +914,37 @@ print(f"找到 {results['hits']['total']['value']} 条结果")
   "documentation_url": "https://docs.github.com/rest"
 }
 ```
+
+## 🚀 实际API端点总结 / Actual API Endpoints Summary
+
+### 核心数据API端点 / Core Data API Endpoints
+
+| 端点用途 / Endpoint Purpose | URL模式 / URL Pattern | 返回类型 / Return Type | 使用位置 / Usage Location |
+|----------------------------|----------------------|-------------------------|---------------------------|
+| 文章详情数据 | `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/json/json/{prefix}/{id}.json` | `ArticleResponse` | `pages/article/index.tsx` |
+| 文件计数 | `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/file_count.json` | `{article_list: number}` | `pages/articles/index.tsx` |
+| 文章列表分页 | `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/article_list_{index}.json` | `ArticleListV2` | `pages/articles/index.tsx` |
+| 音乐索引 | `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/music.json` | `MusicIndex[]` | `pages/music/index.tsx` |
+| 音乐详情 | `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives{archiveId}/parsed/{prefix}/{id}/{id}.metadata` | `MusicEntity` | `pages/music/index.tsx` |
+| 图库索引 | `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/gallery.json` | `GalleryIndexes` | `pages/gallery/index.tsx` |
+| 全文搜索 | `{host}/article/_search/` | `SearchResponse` | `pages/search/index.tsx` |
+
+### API端点映射关系 / API Endpoint Mapping
+
+#### 文章相关API / Article Related APIs
+- **数据存储**: `json` 分支 - 存储完整的文章JSON数据
+- **索引文件**: `indexes` 分支 - 存储文章列表和元数据索引
+- **访问模式**: 按ID前3位分目录存储，提高访问效率
+
+#### 多媒体相关API / Multimedia Related APIs
+- **音乐数据**: 存储在独立的资源仓库中 (`banned-historical-archives{archiveId}`)
+- **图库数据**: 统一存储在主仓库的 `indexes` 分支中
+- **访问模式**: 索引文件 + 详情数据分离，提高加载性能
+
+#### 搜索相关API / Search Related APIs
+- **本地环境**: `localhost:9200` - 直接连接Elasticsearch
+- **生产环境**: `/search_api` - 通过反向代理访问
+- **搜索类型**: 支持精确短语搜索和多字段搜索
 
 ## 🛠️ 开发指南 / Development Guide
 
