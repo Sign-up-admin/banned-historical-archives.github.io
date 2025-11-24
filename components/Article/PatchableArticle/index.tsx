@@ -26,6 +26,21 @@ import { bracket_left, bracket_right, md5 } from '../../../utils';
 import CommentEditor from './CommentEditor';
 import Part from './PartEditor';
 
+/**
+ * 可编辑文章组件
+ *
+ * 提供文章的完整编辑功能，包括内容修改、注释编辑和版本控制。
+ * 支持实时预览修改差异，可以提交修改补丁到系统。
+ * 使用 diff-match-patch 库处理文本差异比较。
+ *
+ * @param articleId - 文章唯一标识符
+ * @param description - 文章描述（可选）
+ * @param contents - 文章内容数组
+ * @param comments - 文章注释数组
+ * @param article - 解析后的文章数据
+ * @param publicationName - 出版物名称（可选）
+ * @param publicationId - 出版物ID
+ */
 const commit_hash = process.env.COMMIT_HASH;
 export default function PatchableArticle({
   contents,

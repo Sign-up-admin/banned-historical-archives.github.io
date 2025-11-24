@@ -67,6 +67,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+/**
+ * 导航栏组件
+ *
+ * 提供网站的主要导航功能，包括：
+ * - 网站标题和logo
+ * - 全站搜索功能（支持本地搜索引擎和Google搜索）
+ * - 页面导航菜单
+ * - GitHub讨论链接
+ * - 移动端响应式抽屉菜单
+ */
 const routes = [
   {
     name: '首页',

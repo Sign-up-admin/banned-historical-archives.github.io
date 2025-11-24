@@ -1,10 +1,727 @@
-## 标准化文件录入
-### 前置工作
-1. 检查当前的数据库是否已经有该份文件。检查的办法：**在 Github 本库首页 Ctrl+F 检索**文件名或文件名中部分关键词；**在数据库中的“来源”过滤检索**文件名或文件名中部分关键词；最后**在 Issues 中查看**当前是否有关于该文件的录入或录入计划正在进行。如果在以上三个步骤中的某一步骤检索到了文件，则查看待录入的文件是否和已有的为同一版本，如果不是同一版本，可以继续录入。
-2. 在 Issues 中创建 issue，选择“自动化录入”，根据模板中的提示录入。如果不会使用，请新建空白 issue 请求帮助，并附带文件（图片/pdf/epub/压缩包等格式）或者链接，尽量提交可以溯源到的源头高清扫描版文件，对于国内出版物，通常指超星、读秀等处流出的文件，对于国外出版物，溯源文件会相对困难，在没有找到高清扫描版文件的情况下，可以提交模糊的扫描版文件或者二次加工排版之后的文件，对于非出版物，即各种民间流传文件，可以直接提交获得的原文件。
+# 文本录入与校对指南 / Upload & Correction Guide
 
-### 文件的解析
-完整的 OCR 模板示例如下：
+本文档详细介绍如何将历史文献录入到和谐历史档案馆，包括文件准备、OCR 参数调优、质量检查和审核流程。
+
+## 📋 目录 / Table of Contents
+
+- [📝 文件录入流程 / Upload Process](#-文件录入流程--upload-process)
+- [🔧 OCR 参数调优 / OCR Parameter Tuning](#-ocr-参数调优--ocr-parameter-tuning)
+- [❌ 错误处理与调试 / Error Handling & Debugging](#-错误处理与调试--error-handling--debugging)
+- [✅ 质量检查清单 / Quality Checklist](#-质量检查清单--quality-checklist)
+- [🔄 提交与审核流程 / Submission & Review Process](#-提交与审核流程--submission--review-process)
+- [💡 最佳实践 / Best Practices](#-最佳实践--best-practices)
+- [🔍 故障排查 / Troubleshooting](#-故障排查--troubleshooting)
+
+## 📝 文件录入流程 / Upload Process
+
+### 前置检查 / Prerequisites Check
+
+#### 1. 文件重复性检查 / File Duplication Check
+
+**检查步骤：**
+1. **GitHub 搜索**: 在仓库首页按 `Ctrl+F` 搜索文件名或关键词
+2. **数据库筛选**: 在网站中使用"来源"筛选功能搜索
+3. **Issues 检查**: 查看是否有正在进行的录入任务
+
+```bash
+# 示例搜索命令
+# 在网站搜索框中输入：
+# source:"毛泽东全集"  # 搜索来源
+# title:"讲话"        # 搜索标题
+# author:"毛泽东"     # 搜索作者
+```
+
+#### 2. 文件质量评估 / File Quality Assessment
+
+**优先级排序：**
+1. **高清扫描版** (超星、读秀等数据库导出)
+2. **清晰扫描版** (个人扫描，300dpi以上)
+3. **普通扫描版** (200-300dpi)
+4. **二次排版版** (OCR后重新排版)
+5. **民间流传版** (最后选择)
+
+### 文件提交 / File Submission
+
+#### 创建录入 Issue / Create Upload Issue
+
+1. **访问 Issues 页面**: [GitHub Issues](https://github.com/banned-historical-archives/banned-historical-archives.github.io/issues)
+
+2. **选择模板**: 点击 "New issue" → 选择 "自动化录入" 模板
+
+3. **填写信息**:
+   ```json
+   {
+     "source_name": "毛泽东全集第一卷",
+     "archive_id": 1,
+     "internal": false,
+     "official": true,
+     "author": "中共中央文献研究室",
+     "articles": [
+       {
+         "title": "在中央政治局会议上的讲话",
+         "authors": ["毛泽东"],
+         "dates": [{"year": 1966, "month": 5, "day": 16}],
+         "is_range_date": false,
+         "page_start": 1,
+         "page_end": 5
+       }
+     ]
+   }
+   ```
+
+4. **上传文件**: 附加原始文件 (PDF/图片/压缩包)
+
+### 支持的文件格式 / Supported File Formats
+
+| 格式 | 说明 | 优先级 | 示例 |
+|------|------|--------|------|
+| PDF | 扫描版PDF | ⭐⭐⭐ | `mao-1966.pdf` |
+| 图片 | 高清扫描图 | ⭐⭐⭐ | `page001.jpg` |
+| 压缩包 | 多页图片 | ⭐⭐⭐ | `mao-speech.zip` |
+| EPUB | 电子书 | ⭐⭐ | `mao-collection.epub` |
+| 其他 | 其他格式 | ⭐ | 需要评估 |
+
+## 🔧 OCR 参数调优 / OCR Parameter Tuning
+
+### 基本参数配置 / Basic Parameter Configuration
+
+#### OCR 全局配置 / Global OCR Configuration
+
+```json
+{
+  "ocr": {
+    "rec_model": "ch_ppocr_mobile_v2.0",     // 识别模型
+    "rec_backend": "onnx",                   // 推理后端
+    "det_model": "ch_PP-OCRv3_det",         // 检测模型
+    "det_backend": "onnx",                   // 检测后端
+    "resized_shape": 1496,                   // 图像缩放尺寸
+    "box_score_thresh": 0.3,                 // 检测置信度阈值
+    "min_box_size": 10,                      // 最小文本框尺寸
+    "auto_vsplit": true,                     // 自动垂直分割
+    "vsplit": 0.5,                          // 分割位置
+    "content_thresholds": [0.0, 0.0, 0.0, 0.0] // 内容区域阈值 [上,右,下,左]
+  }
+}
+```
+
+#### 文章特定配置 / Article-Specific Configuration
+
+```json
+{
+  "articles": [
+    {
+      "title": "在中央政治局会议上的讲话",
+      "authors": ["毛泽东"],
+      "dates": [{"year": 1966, "month": 5, "day": 16}],
+      "page_start": 1,
+      "page_end": 5,
+      "ocr": {
+        "min_box_size": 20,                   // 覆盖全局设置
+        "content_thresholds": [0.1, 0.0, 0.0, 0.0] // 去除页眉
+      },
+      "ocr_exceptions": {
+        "3": {                                // 第3页特殊配置
+          "content_thresholds": [0.2, 0.2, 0.1, 0.1],
+          "box_score_thresh": 0.5
+        }
+      }
+    }
+  ]
+}
+```
+
+### 参数调优指南 / Parameter Tuning Guide
+
+#### 针对不同文档类型的调优 / Document Type Tuning
+
+**书籍扫描件 (Book Scans)**:
+```json
+{
+  "ocr": {
+    "content_thresholds": [0.08, 0.0, 0.08, 0.0],  // 去除页眉页脚
+    "standard_paragraph_merge_strategy_threshold": 0.2,
+    "differential_paragraph_merge_strategy_threshold": 30
+  }
+}
+```
+
+**报纸扫描件 (Newspaper Scans)**:
+```json
+{
+  "ocr": {
+    "content_thresholds": [0.15, 0.05, 0.1, 0.05], // 去除边框
+    "auto_vsplit": false,
+    "vsplit": 0.6,                                // 报纸常见分栏
+    "min_box_size": 15
+  }
+}
+```
+
+**手写文档 (Handwritten Documents)**:
+```json
+{
+  "ocr": {
+    "rec_model": "ch_ppocr_server_v2.0",         // 使用更准确的模型
+    "box_score_thresh": 0.4,                      // 提高置信度阈值
+    "min_box_size": 25                            // 增大最小框尺寸
+  }
+}
+```
+
+**二次排版文档 (Retyped Documents)**:
+```json
+{
+  "ocr": {
+    "content_thresholds": [0.0, 0.0, 0.0, 0.0],   // 不需要去除内容
+    "standard_paragraph_merge_strategy_threshold": 0,
+    "differential_paragraph_merge_strategy_threshold": 0
+  }
+}
+```
+
+#### 常见问题调优 / Common Issue Tuning
+
+**问题**: 页眉页脚被识别为内容
+```json
+// 解决方案：调整 content_thresholds
+{
+  "content_thresholds": [0.1, 0.0, 0.1, 0.0]  // 去除上下10%的内容
+}
+```
+
+**问题**: 分栏文本识别混乱
+```json
+// 解决方案：启用垂直分割
+{
+  "auto_vsplit": false,
+  "vsplit": 0.5,                         // 在页面50%位置分割
+  "content_thresholds": [0.0, 0.02, 0.0, 0.02] // 保留左右边距
+}
+```
+
+**问题**: 小字或装饰文字被误识别
+```json
+// 解决方案：调整最小框尺寸
+{
+  "min_box_size": 20                      // 忽略过小的文本框
+}
+```
+
+**问题**: 图片或表格干扰识别
+```json
+// 解决方案：提高检测阈值
+{
+  "box_score_thresh": 0.5,                // 只识别高置信度的文本
+  "content_thresholds": [0.0, 0.0, 0.0, 0.0]
+}
+```
+
+### 参数测试方法 / Parameter Testing Method
+
+#### 本地测试 / Local Testing
+
+```bash
+# 1. 修改配置后重新运行 OCR
+npm run build-parsed
+
+# 2. 检查输出结果
+cat parsed/archives1/xxx/xxx.json
+
+# 3. 验证识别质量
+# 对比原始图像和识别结果
+```
+
+#### 批量测试 / Batch Testing
+
+```bash
+# 创建测试脚本
+#!/bin/bash
+
+# 测试不同参数组合
+PARAMS=("0.3" "0.4" "0.5")
+for thresh in "${PARAMS[@]}"; do
+  echo "Testing box_score_thresh: $thresh"
+  # 修改配置并运行测试
+  sed -i "s/box_score_thresh.*/box_score_thresh: $thresh/" config.json
+  npm run build-parsed
+  # 评估结果
+done
+```
+
+## ❌ 错误处理与调试 / Error Handling & Debugging
+
+### 常见 OCR 错误 / Common OCR Errors
+
+#### 文本识别错误 / Text Recognition Errors
+
+**字符错别字**:
+- **原因**: 图像质量差、字体特殊、印刷模糊
+- **解决方案**: 提高图像分辨率，使用更准确的模型
+- **手动修正**: 在补丁文件中添加更正
+
+**顺序错乱**:
+- **原因**: 复杂布局、多栏文本
+- **解决方案**: 调整 `vsplit` 参数，启用垂直分割
+- **手动修正**: 重新排序内容段落
+
+**内容缺失**:
+- **原因**: 检测阈值过高，内容被过滤
+- **解决方案**: 降低 `box_score_thresh`，调整 `content_thresholds`
+- **手动修正**: 添加缺失内容
+
+#### 格式解析错误 / Format Parsing Errors
+
+**段落合并错误**:
+- **原因**: 行间距不一致
+- **解决方案**: 调整合并策略阈值
+- **手动修正**: 手动调整段落边界
+
+**标题识别错误**:
+- **原因**: 字体大小差异小
+- **解决方案**: 基于位置和上下文判断
+- **手动修正**: 重新分类内容类型
+
+### 调试工具 / Debugging Tools
+
+#### 日志分析 / Log Analysis
+
+```bash
+# 查看 OCR 处理日志
+tail -f logs/ocr-processing.log
+
+# 搜索特定文件
+grep "mao-1966.pdf" logs/ocr-processing.log
+
+# 统计错误数量
+grep "ERROR" logs/ocr-processing.log | wc -l
+```
+
+#### 可视化调试 / Visual Debugging
+
+```bash
+# 生成带检测框的图像
+node scripts/visualize-ocr.js input.pdf output-with-boxes.pdf
+
+# 对比原始和识别结果
+node scripts/compare-results.js original.pdf ocr-result.json
+```
+
+#### 性能监控 / Performance Monitoring
+
+```bash
+# 监控 OCR 处理时间
+time npm run build-parsed
+
+# 查看资源使用情况
+top -p $(pgrep -f "ocr")
+
+# 检查内存使用
+ps aux --sort=-%mem | head -10
+```
+
+### 错误恢复 / Error Recovery
+
+#### 自动重试机制 / Auto Retry Mechanism
+
+```typescript
+async function processWithRetry(filePath: string, maxRetries: number = 3): Promise<OCRResult> {
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      return await processOCR(filePath);
+    } catch (error) {
+      console.warn(`OCR attempt ${attempt} failed:`, error);
+
+      if (attempt === maxRetries) {
+        throw new Error(`OCR failed after ${maxRetries} attempts`);
+      }
+
+      // 等待后重试
+      await sleep(1000 * attempt);
+    }
+  }
+}
+```
+
+#### 人工干预点 / Manual Intervention Points
+
+1. **配置验证**: 提交前验证 OCR 配置
+2. **结果预览**: 人工检查 OCR 结果
+3. **补丁应用**: 应用人工修正补丁
+4. **质量审核**: 最终质量检查
+
+## ✅ 质量检查清单 / Quality Checklist
+
+### 内容完整性检查 / Content Completeness Check
+
+#### 基本信息 / Basic Information
+- [ ] **标题准确**: 与原始文档一致，无错别字
+- [ ] **作者完整**: 包含所有相关作者
+- [ ] **日期正确**: 年月日信息准确，格式规范
+- [ ] **页码范围**: 起始和结束页码正确
+
+#### 文本内容 / Text Content
+- [ ] **识别准确率**: >95% 的字符正确识别
+- [ ] **段落完整**: 无缺失或重复内容
+- [ ] **格式保留**: 保持原始排版结构
+- [ ] **特殊字符**: 标点符号和特殊字符正确
+
+### 数据结构验证 / Data Structure Validation
+
+#### 必填字段 / Required Fields
+- [ ] `title`: 非空字符串
+- [ ] `authors`: 非空数组，至少一个作者
+- [ ] `dates`: 非空数组，至少一个日期对象
+- [ ] `parts`: 非空数组，至少一个内容段落
+
+#### 数据类型 / Data Types
+- [ ] `title`: string
+- [ ] `authors`: string[]
+- [ ] `dates`: DateObject[]
+- [ ] `is_range_date`: boolean
+- [ ] `tags`: Tag[]
+- [ ] `parts`: ContentPart[]
+
+#### 标签规范 / Tag Standards
+- [ ] **文稿大类**: 至少包含一个大类标签
+- [ ] **标签类型**: 使用预定义的标签类型
+- [ ] **标签唯一性**: 同类型标签不重复
+- [ ] **标签准确性**: 标签内容准确反映文档特征
+
+### 格式一致性检查 / Format Consistency Check
+
+#### 内容分类 / Content Classification
+- [ ] **标题正确**: 主要标题标记为 `title`
+- [ ] **段落合理**: 连续文本正确合并为段落
+- [ ] **引用识别**: 引文内容标记为 `quotation`
+- [ ] **列表规范**: 列表项正确分类
+
+#### 注释规范 / Comment Standards
+- [ ] **注释编号**: 注释序号连续无重复
+- [ ] **位置准确**: 注释位置信息正确
+- [ ] **内容完整**: 注释文本完整准确
+
+### 质量评分标准 / Quality Scoring Standard
+
+#### 评分维度 / Scoring Dimensions
+
+| 维度 | 满分 | 评分标准 |
+|------|------|----------|
+| 准确性 | 40分 | 文本识别准确率 >98% |
+| 完整性 | 30分 | 无缺失内容，无重复内容 |
+| 格式化 | 20分 | 正确的段落和标题分类 |
+| 标签化 | 10分 | 准确的标签和元数据 |
+
+#### 质量等级 / Quality Levels
+
+- **A级 (90-100分)**: 优秀，可直接发布
+- **B级 (80-89分)**: 良好，需要小幅修改
+- **C级 (70-79分)**: 合格，需要人工审核
+- **D级 (60-69分)**: 基本合格，需要大幅修改
+- **F级 (<60分)**: 不合格，需要重新处理
+
+### 自动化检查脚本 / Automated Check Script
+
+```bash
+#!/bin/bash
+
+# 质量检查脚本
+QUALITY_CHECK_SCRIPT="scripts/quality-check.js"
+
+# 检查单个文件
+node $QUALITY_CHECK_SCRIPT parsed/archives1/xxx/xxx.json
+
+# 批量检查
+find parsed/ -name "*.json" -exec node $QUALITY_CHECK_SCRIPT {} \;
+
+# 生成质量报告
+node scripts/generate-quality-report.js > quality-report.md
+```
+
+## 🔄 提交与审核流程 / Submission & Review Process
+
+### 录入流程 / Upload Process
+
+#### 1. 准备阶段 / Preparation Phase
+
+**文件收集**:
+- 获取高清原始文件
+- 验证文件来源和版权
+- 检查文件完整性
+
+**信息整理**:
+- 提取元数据（标题、作者、日期）
+- 确定文档类型和标签
+- 编写 OCR 配置
+
+#### 2. 配置阶段 / Configuration Phase
+
+**创建 Issue**:
+1. 访问 [GitHub Issues](https://github.com/banned-historical-archives/banned-historical-archives.github.io/issues)
+2. 选择 "自动化录入" 模板
+3. 填写完整的配置信息
+4. 上传原始文件
+
+**配置示例**:
+```json
+{
+  "source_name": "毛泽东全集第一卷",
+  "archive_id": 1,
+  "internal": false,
+  "official": true,
+  "author": "中共中央文献研究室",
+  "articles": [
+    {
+      "title": "在中央政治局会议上的讲话",
+      "authors": ["毛泽东"],
+      "dates": [{"year": 1966, "month": 5, "day": 16}],
+      "is_range_date": false,
+      "page_start": 1,
+      "page_end": 10,
+      "alias": "五一六通知"
+    }
+  ],
+  "ocr": {
+    "rec_model": "ch_ppocr_mobile_v2.0",
+    "content_thresholds": [0.08, 0.0, 0.08, 0.0]
+  }
+}
+```
+
+#### 3. 处理阶段 / Processing Phase
+
+**自动化处理**:
+- GitHub Actions 自动触发
+- 下载和验证文件
+- 执行 OCR 识别
+- 生成标准化数据
+- 推送到对应分支
+
+**处理时间**: 通常需要 10-30 分钟，取决于文件大小和复杂性
+
+#### 4. 审核阶段 / Review Phase
+
+**自动检查**:
+- 数据格式验证
+- 质量评分
+- 重复内容检测
+
+**人工审核**:
+- 内容准确性检查
+- 格式正确性验证
+- 标签准确性确认
+
+#### 5. 发布阶段 / Publishing Phase
+
+**合并发布**:
+- 审核通过后合并到主分支
+- 触发网站重新构建
+- 更新搜索索引
+
+### 状态跟踪 / Status Tracking
+
+#### Issue 状态 / Issue Status
+
+| 状态 | 说明 | 所需操作 |
+|------|------|----------|
+| `open` | 新建，等待处理 | 完善配置信息 |
+| `processing` | 正在处理 | 等待自动化完成 |
+| `review` | 等待审核 | 检查处理结果 |
+| `approved` | 审核通过 | 等待合并发布 |
+| `rejected` | 审核失败 | 修复问题重新提交 |
+| `closed` | 已完成 | 无需操作 |
+
+#### 处理时间 / Processing Time
+
+- **简单文档**: 5-15分钟
+- **复杂文档**: 30分钟-2小时
+- **批量处理**: 几小时到几天
+
+### 常见问题处理 / Common Issue Handling
+
+#### 配置错误 / Configuration Errors
+
+**问题**: JSON 格式错误
+```
+解决方案：使用 JSON 验证器检查语法
+在线工具：https://jsonlint.com/
+```
+
+**问题**: 必填字段缺失
+```
+解决方案：参考本文档的配置示例
+检查所有 required 字段
+```
+
+#### 文件问题 / File Issues
+
+**问题**: 文件损坏或无法读取
+```
+解决方案：重新上传文件
+检查文件格式和大小
+```
+
+**问题**: 文件过大
+```
+解决方案：压缩文件或分批处理
+联系管理员处理大文件
+```
+
+#### 处理失败 / Processing Failures
+
+**问题**: OCR 识别失败
+```
+解决方案：调整 OCR 参数
+提供更清晰的源文件
+```
+
+**问题**: 构建失败
+```
+解决方案：检查日志信息
+修复配置错误
+联系技术支持
+```
+
+## 💡 最佳实践 / Best Practices
+
+### 文件准备 / File Preparation
+
+#### 选择合适的源文件
+1. **优先高清扫描**: 超星、读秀等数据库导出文件
+2. **检查分辨率**: 至少 300dpi
+3. **验证完整性**: 确保文件未损坏
+4. **保留元数据**: 包含原始文件名和来源信息
+
+#### 文件命名规范
+```
+格式：[作者]-[年份]-[标题].[扩展名]
+示例：毛泽东-1966-五一六通知.pdf
+```
+
+### 配置优化 / Configuration Optimization
+
+#### 根据文档类型调整参数
+- **书籍**: 注重页眉页脚去除
+- **报纸**: 注意分栏处理
+- **手稿**: 使用高精度模型
+- **排版文档**: 简化参数设置
+
+#### 分批测试
+1. 先处理少量页面测试参数
+2. 验证结果后再处理全文
+3. 根据测试结果调整配置
+
+### 质量保证 / Quality Assurance
+
+#### 多轮检查
+1. **自动化检查**: 使用脚本验证数据格式
+2. **抽样检查**: 人工检查部分内容
+3. **交叉验证**: 多人审核重要文档
+4. **用户反馈**: 发布后收集使用反馈
+
+#### 持续改进
+- 收集处理失败案例
+- 优化参数配置
+- 更新处理流程
+- 改进工具链
+
+### 协作规范 / Collaboration Standards
+
+#### 沟通规范
+- 使用 Issue 跟踪任务进度
+- 及时更新处理状态
+- 详细描述问题和解决方案
+- 分享经验和最佳实践
+
+#### 文档维护
+- 及时更新处理文档
+- 记录常见问题解决方案
+- 维护配置模板库
+- 分享调优经验
+
+## 🔍 故障排查 / Troubleshooting
+
+### 快速诊断 / Quick Diagnosis
+
+#### 检查清单 / Checklist
+
+**提交前检查**:
+- [ ] 文件格式正确
+- [ ] 文件大小合理
+- [ ] 配置 JSON 有效
+- [ ] 所有必填字段已填
+
+**处理中检查**:
+- [ ] Issue 状态正常
+- [ ] 自动化流程运行
+- [ ] 日志无错误信息
+- [ ] 输出文件生成
+
+**完成后检查**:
+- [ ] 数据格式正确
+- [ ] 内容准确完整
+- [ ] 标签正确标注
+- [ ] 可正常搜索浏览
+
+### 常见错误及解决方案 / Common Errors & Solutions
+
+#### 配置错误 / Configuration Errors
+
+**错误**: `Invalid JSON format`
+```
+原因：JSON 语法错误
+解决：使用 https://jsonlint.com/ 验证
+```
+
+**错误**: `Missing required field: title`
+```
+原因：缺少标题字段
+解决：添加 title 字段到配置中
+```
+
+#### 文件错误 / File Errors
+
+**错误**: `File corrupted or unreadable`
+```
+原因：文件损坏
+解决：重新上传文件
+```
+
+**错误**: `Unsupported file format`
+```
+原因：不支持的文件格式
+解决：转换为支持的格式 (PDF/图片)
+```
+
+#### 处理错误 / Processing Errors
+
+**错误**: `OCR failed: low confidence`
+```
+原因：图像质量差
+解决：提供更清晰的源文件
+```
+
+**错误**: `Build timeout`
+```
+原因：处理时间过长
+解决：减少处理页面数量或优化参数
+```
+
+### 获取帮助 / Getting Help
+
+1. **查看文档**: 首先查看本文档和相关文档
+2. **搜索 Issues**: 在 GitHub Issues 中搜索类似问题
+3. **创建 Issue**: 描述问题并提供相关信息
+4. **联系维护者**: 通过 Issue 或其他渠道寻求帮助
+
+---
+
+## 📚 相关文档 / Related Documentation
+
+- [数据标准化规范](./standardization.md)
+- [本地运行指南](./local.md)
+- [开发环境搭建](./dev.md)
+- [故障排查](./TROUBLESHOOTING.md)
+- [贡献指南](../CONTRIBUTING.md)
 ```
 {
   source_name: '毛泽东全集第一卷', // 来源文件，书籍，数据库，报纸等等

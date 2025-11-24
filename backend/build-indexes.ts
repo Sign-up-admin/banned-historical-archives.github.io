@@ -1,3 +1,26 @@
+/**
+ * @fileoverview 索引构建脚本
+ *
+ * 此脚本扫描所有解析后的数据，构建用于前端快速查询的索引文件。
+ * 索引文件存储在 indexes/ 目录下，分片存储以提高加载性能。
+ *
+ * 生成的索引文件：
+ * - file_count.json: 文件统计信息
+ * - article_list_{n}.json: 文章列表分片
+ * - article_list_with_book_info_{n}.json: 文章与书籍关联信息
+ * - music.json: 音乐资源索引
+ * - gallery.json: 图库资源索引
+ *
+ * @example
+ * ```bash
+ * # 构建所有索引
+ * npm run build-indexes
+ *
+ * # 查看构建结果
+ * ls -la indexes/
+ * ```
+ */
+
 import fs from 'fs-extra';
 import { join, parse } from 'path';
 import JSON5 from 'json5';
@@ -16,6 +39,10 @@ import {
   Tag,
 } from '../types';
 
+/**
+ * 文章映射类型
+ * 用于在内存中构建文章索引的中间结构
+ */
 type ArticleMap = {
   [article_id: string]: {
     title: string;
@@ -28,10 +55,20 @@ type ArticleMap = {
     tags: { name: string; type: string }[];
   };
 };
-const gallery_indexes: GalleryIndexes = [];
-const music_indexes: MusicIndexes = [];
-const article_map: ArticleMap = {};
 
+/**
+ * 全局变量：存储各类资源索引
+ */
+const gallery_indexes: GalleryIndexes = [];  // 图库索引
+const music_indexes: MusicIndexes = [];      // 音乐索引
+const article_map: ArticleMap = {};          // 文章映射
+
+/**
+ * 将文章映射转换为列表格式
+ *
+ * @param c - 文章映射对象
+ * @returns 文章列表数组
+ */
 function article_map_to_list(c: ArticleMap): {
   id: string;
   title: string;
@@ -51,33 +88,64 @@ function article_map_to_list(c: ArticleMap): {
     };
   });
 }
+/**
+ * 主构建函数
+ *
+ * 扫描所有解析后的数据目录，构建完整的索引文件。
+ * 处理流程：
+ * 1. 遍历所有资源仓库 (archives0-31)
+ * 2. 读取每个资源的元数据和配置
+ * 3. 根据资源类型构建对应的索引
+ * 4. 生成分片存储的索引文件
+ *
+ * @example
+ * ```bash
+ * # 执行构建
+ * npm run build-indexes
+ *
+ * # 查看构建进度
+ * tail -f /dev/null &
+ * ```
+ */
 (async () => {
-  for (let i = 0; i <= 31; ++i) {
-    const p = join(__dirname, '../parsed/archives' + i);
-    console.log(p);
-    if (!(await fs.pathExists(p))) continue;
-    for (const prefix of (await fs.readdir(p)).filter(
-      (i) => !i.startsWith('.') && !i.endsWith('.md'),
-    )) {
-      for (const resource of await fs.readdir(join(p, prefix))) {
-        console.log('resource', resource);
-        const flist = await fs.readdir(join(p, prefix, resource));
+  console.log('开始构建索引文件...');
 
-        const metadata_path = join(p, prefix, resource, resource + '.metadata');
+  // 遍历所有资源仓库 (0-31)
+  for (let i = 0; i <= 31; ++i) {
+    const archivePath = join(__dirname, '../parsed/archives' + i);
+    console.log(`处理仓库: ${archivePath}`);
+
+    // 检查仓库目录是否存在
+    if (!(await fs.pathExists(archivePath))) {
+      console.log(`仓库 ${i} 不存在，跳过`);
+      continue;
+    }
+
+    // 遍历仓库中的所有资源目录
+    // 目录结构: parsed/archives{i}/{prefix}/{resource}/
+    for (const prefix of (await fs.readdir(archivePath)).filter(
+      (item) => !item.startsWith('.') && !item.endsWith('.md'),
+    )) {
+      const prefixPath = join(archivePath, prefix);
+
+      for (const resource of await fs.readdir(prefixPath)) {
+        console.log(`处理资源: ${resource} (仓库 ${i})`);
+        const resourcePath = join(prefixPath, resource);
+        const flist = await fs.readdir(resourcePath);
+
+        // 读取资源元数据
+        const metadataPath = join(resourcePath, resource + '.metadata');
         const metadata = JSON.parse(
-          (await fs.readFile(metadata_path)).toString(),
+          (await fs.readFile(metadataPath)).toString(),
         ) as ResourceMetaData;
 
-        const cfg = JSON5.parse(
-          (
-            await fs.readFile(
-              join(__dirname, `../config/archives${i}/${metadata.id}.ts`),
-            )
-          )
-            .toString()
-            .replace('export default', '')
-            .replace(/\;\s*$/, ''),
-        ) as Config;
+        // 读取资源配置
+        const configPath = join(__dirname, `../config/archives${i}/${metadata.id}.ts`);
+        const configContent = (await fs.readFile(configPath)).toString()
+          .replace('export default', '')  // 移除 ES6 导出语法
+          .replace(/\;\s*$/, '');        // 移除末尾分号
+
+        const cfg = JSON5.parse(configContent) as Config;
 
         if (cfg.resource_type === 'music') {
           const music_metadata = metadata as MusicMetaData;

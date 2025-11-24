@@ -1,49 +1,180 @@
 # 和谐历史档案馆 - Banned Historical Archives
-![main](https://github.com/banned-historical-archives/banned-historical-archives.github.io/actions/workflows/build.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives0/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives1/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives2/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives3/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives4/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives5/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives6/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives7/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives8/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives9/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives10/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives11/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives12/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives13/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives14/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives15/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives16/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives17/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives18/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives20/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives21/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives22/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives23/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives24/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives25/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives26/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives27/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives28/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives29/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives30/actions/workflows/build_parsed.yml/badge.svg)
-![archives0](https://github.com/banned-historical-archives/banned-historical-archives31/actions/workflows/build_parsed.yml/badge.svg)
 
-[https://banned-historical-archives.github.io](https://banned-historical-archives.github.io)
+[![main](https://github.com/banned-historical-archives/banned-historical-archives.github.io/actions/workflows/build.yml/badge.svg)](https://github.com/banned-historical-archives/banned-historical-archives.github.io/actions/workflows/build.yml)
+
+**Banned Historical Archives - 数字历史档案馆**
+
+[🌐 在线访问 / Live Demo](https://banned-historical-archives.github.io) | [📖 文档 / Documentation](./docs/) | [🔧 本地运行 / Local Setup](./docs/local.md) | [🤝 贡献 / Contribute](./CONTRIBUTING.md)
 
 和谐历史档案馆，[开源](https://github.com/banned-historical-archives/banned-historical-archives.github.io)的数字档案馆。我们致力于搜集、整合各类受官方封禁的文件、报纸、杂志和多媒体资料，对并它们进行标准化处理，通过解析、识别和分类，形成规范化的文档和多媒体档案数据库。
 
 尽管民间有许多人在进行资料收集和校验工作，但分散的工作可能难以避免重复劳动，资料的二次汇编难以确保真实性，且缺少统一的版本管理，难以维护。我们运用一系列自动化工具解决了这些问题，另外支持对每篇文档的溯源。
 
-其中[已录入的文本资料](https://github.com/banned-historical-archives/banned-historical-archives.github.io/wiki/%E6%94%B6%E5%BD%95%E7%9A%84%E6%96%87%E7%A8%BF%E5%92%8C%E4%B9%A6%E7%B1%8D)至少30万篇；[待录入的文本资料](https://huggingface.co/datasets/banned-historical-archives/banned-historical-archives)超过百万篇，正在加工和整理。文档内容包括但不限于中央发布的文件、中央高层会议纪要、主要人物的通知、著作、谈话/对话/讲话、宣言/声明、电报、通讯、书信、消息、评论/批语/批注/批示、意见、指示/命令，以及群众运动中的重要文献。涉及的主要人物包括毛泽东、江青、姚文元、张春桥、王洪文等。所收录资料立场不一，请注意辨别。我们仅进行收录和校对工作，力求保持文档原貌，其内容并不代表我们的观点。
+## 📋 目录 / Table of Contents
 
-我们还收录了一些重要的学术性、第三方解读的哲学、政治经济学、历史书籍、报纸和杂志。
-报纸和杂志也被转换为标准文档录入本站，主要包括红旗杂志、学习与批判、参考消息、人民日报、文汇报等。
+- [🚀 快速开始 / Quick Start](#-快速开始--quick-start)
+- [📊 数据概览 / Data Overview](#-数据概览--data-overview)
+- [🎯 主要功能 / Key Features](#-主要功能--key-features)
+- [📁 项目结构 / Project Structure](#-项目结构--project-structure)
+- [💻 安装与运行 / Installation & Usage](#-安装与运行--installation--usage)
+- [📚 文档 / Documentation](#-文档--documentation)
+- [🤝 贡献 / Contributing](#-贡献--contributing)
+- [❓ 常见问题 / FAQ](#-常见问题--faq)
+- [📄 许可证 / License](#-许可证--license)
 
-多媒体资料涵盖音乐及歌词、电影、照片、录音、录像等，目前主要收录社会主义中国创作的红色音乐。
+## 📊 数据概览 / Data Overview
+
+- **📝 已录入文本**: [至少30万篇](https://github.com/banned-historical-archives/banned-historical-archives.github.io/wiki/%E6%94%B6%E5%BD%95%E7%9A%84%E6%96%87%E7%A8%BF%E5%92%8C%E4%B9%A6%E7%B1%8D)
+- **📚 待录入资料**: [超过百万篇](https://huggingface.co/datasets/banned-historical-archives/banned-historical-archives)
+- **🎵 多媒体资料**: 音乐、图片、视频等
+- **🏷️ 标签系统**: 人物、地点、事件、主题分类
+
+## 🚀 快速开始 / Quick Start
+
+### 在线使用 (最简单)
+直接访问 [banned-historical-archives.github.io](https://banned-historical-archives.github.io)
+
+### 本地运行 (推荐)
+```bash
+# 克隆项目
+git clone https://github.com/banned-historical-archives/banned-historical-archives.github.io.git
+cd banned-historical-archives.github.io
+
+# 安装依赖
+npm install
+
+# 构建网站
+npm run build
+
+# 运行服务器
+npx serve@latest out
+```
+
+访问 `http://localhost:3000`
+
+### Docker 运行
+```bash
+docker run -d -p 3000:3000 ghcr.io/banned-historical-archives/banned-historical-archives.github.io:latest
+```
+
+## 📁 项目结构 / Project Structure
+
+```
+banned-historical-archives.github.io/
+├── docs/                    # 📚 技术文档 / Technical Documentation
+│   ├── local.md            # 本地运行指南 / Local Setup Guide
+│   ├── dev.md              # 开发文档 / Development Guide
+│   ├── standardization.md  # 数据标准化规范 / Data Standards
+│   ├── upload-and-correction.md # 录入校对指南 / Upload & Correction
+│   ├── local-search-engine.md # 搜索引擎配置 / Search Engine Setup
+│   └── ...
+├── backend/                # 🔧 构建脚本 / Build Scripts
+├── pages/                  # 🎨 前端页面 / Frontend Pages
+├── components/             # 🧩 React 组件 / React Components
+├── types/                  # 📝 TypeScript 类型 / TypeScript Types
+├── public/                 # 🖼️ 静态资源 / Static Assets
+├── out/                    # 🏗️ 构建输出 (静态网站) / Build Output
+├── parsed/                 # 📄 解析后数据 / Parsed Data (from repos)
+├── config/                 # ⚙️ 配置文件 / Configuration (from repos)
+├── json/                   # 📦 JSON 数据 / JSON Data
+└── indexes/                # 📇 索引文件 / Index Files
+```
+
+### 仓库架构 / Repository Architecture
+
+- **主仓库** (Main): 源代码和前端构建
+- **资源仓库** (archives0-31): 原始数据和配置
+- **构建产物**: gh-pages (HTML), json (数据), indexes (索引)
+
+## 💻 安装与运行 / Installation & Usage
+
+### 系统要求 / System Requirements
+
+- **Node.js**: >= 14.0.0
+- **npm**: >= 6.0.0
+- **Git**: >= 2.0 (可选，用于数据下载)
+- **Docker**: (可选，用于容器化部署)
+
+### 安装步骤 / Installation Steps
+
+#### 方式一：本地前端运行 (最简单)
+```bash
+# 1. 克隆项目
+git clone https://github.com/banned-historical-archives/banned-historical-archives.github.io.git
+cd banned-historical-archives.github.io
+
+# 2. 安装依赖
+npm install
+
+# 3. 构建网站
+npm run build
+
+# 4. 启动服务器
+npx serve@latest out
+```
+
+#### 方式二：完整本地开发环境
+```bash
+# 1. 克隆项目
+git clone https://github.com/banned-historical-archives/banned-historical-archives.github.io.git
+cd banned-historical-archives.github.io
+
+# 2. 安装依赖
+npm install
+
+# 3. 下载数据 (需要 Git)
+npm run init-parsed
+npm run init-config
+
+# 4. 构建数据
+npm run build-indexes
+npm run build-article-json
+
+# 5. 构建网站
+npm run build
+
+# 6. 启动服务器
+npx serve@latest out
+```
+
+#### 方式三：Docker 部署
+```bash
+# 使用预构建镜像
+docker run -d -p 3000:3000 ghcr.io/banned-historical-archives/banned-historical-archives.github.io:latest
+
+# 或使用 Docker Compose (推荐)
+docker compose up -d
+```
+
+### 开发环境 / Development Environment
+
+```bash
+# 安装依赖
+npm install
+
+# 启动开发服务器 (热重载)
+npm run dev
+
+# 访问 http://localhost:3000
+```
+
+## 🎯 主要功能 / Key Features
+
+### 文档系统
+- 📄 **文章浏览**: 支持分页、筛选、搜索
+- 🔍 **全文检索**: 本地 Elasticsearch 支持
+- 📊 **版本对比**: 多来源文档对比
+- 🏷️ **智能标签**: 人物、地点、事件标记
+
+### 多媒体系统
+- 🎵 **音乐库**: 红色经典歌曲
+- 🖼️ **图片库**: 历史照片和档案
+- 🎬 **视频库**: 历史纪录片
+
+### 数据质量
+- ✅ **标准化**: 统一的文档格式
+- 🔗 **可溯源**: 源文件验证
+- 📝 **校对记录**: 修改历史追踪
 
 ### 官方封禁的原因（包括过去官方公开的文件）
 * 自1976年10月6日怀仁堂政变以来，执政党及其统治集团的合法性持续受到质疑。尽管他们编织了无数谎言，事实终将无法掩盖，信息封锁也因此变得不可避免。
@@ -118,12 +249,91 @@
 - 文本识别的模型、训练集、代码，以及解析算法公开透明。
 - 包含完整的文档校对记录。
 
-## 源代码
+## 📚 文档 / Documentation
 
-[\[Github\]](https://github.com/banned-historical-archives/banned-historical-archives.github.io)
+### 用户文档 / User Documentation
+- [📖 完整文档索引 / Documentation Index](./docs/)
+- [🔧 本地运行指南 / Local Setup Guide](./docs/local.md)
+- [🔍 搜索功能配置 / Search Engine Setup](./docs/local-search-engine.md)
+- [❓ 故障排查 / Troubleshooting](./docs/TROUBLESHOOTING.md)
 
-* 如果以备份为目的 fork 本仓库，建议 fork 本仓库对应的资源仓库 banned-historical-archives0, banned-historical-archives1, banned-historical-archives2 ... banned-historical-archives30
-* 资源仓库的分支：main 原始文件分支；config 配置文件分支；；ocr_cache ocr识别结果(自动生成)；ocr_patch ocr补丁分支；parsed 自动构建的中间文件，用于主仓库的构建；
+### 开发者文档 / Developer Documentation
+- [⚙️ 架构与开发 / Architecture & Development](./docs/dev.md)
+- [📊 数据标准化 / Data Standardization](./docs/standardization.md)
+- [📝 录入与校对 / Upload & Correction](./docs/upload-and-correction.md)
+- [🔌 API 文档 / API Documentation](./docs/API.md)
+
+### 部署文档 / Deployment Documentation
+- [🚀 生产环境部署 / Production Deployment](./docs/DEPLOYMENT.md)
+- [🐳 Docker 部署 / Docker Deployment](./docker-compose.yml)
+- [🌐 GitHub Pages 部署 / GitHub Pages Deployment](https://github.com/banned-historical-archives/banned-historical-archives.github.io/tree/gh-pages)
+
+## 🤝 贡献 / Contributing
+
+我们欢迎各种形式的贡献！
+
+- [🤝 贡献指南 / Contributing Guide](./CONTRIBUTING.md)
+- [🐛 报告问题 / Report Issues](https://github.com/banned-historical-archives/banned-historical-archives.github.io/issues)
+- [💡 功能请求 / Feature Requests](https://github.com/banned-historical-archives/banned-historical-archives.github.io/issues)
+- [📝 文档改进 / Documentation Improvements](https://github.com/banned-historical-archives/banned-historical-archives.github.io/wiki)
+
+### 贡献类型 / Types of Contributions
+- 📊 **数据贡献**: 提供新的历史资料
+- 🔧 **代码贡献**: 改进功能和修复问题
+- 📖 **文档贡献**: 完善文档和翻译
+- 🎨 **设计贡献**: 改进用户界面和体验
+
+## ❓ 常见问题 / FAQ
+
+### 基本使用 / Basic Usage
+**Q: 如何使用这个网站？**
+A: 直接访问在线版本 [banned-historical-archives.github.io](https://banned-historical-archives.github.io)，或按照[本地运行指南](./docs/local.md)搭建本地环境。
+
+**Q: 数据来源可靠吗？**
+A: 所有数据均注明来源，支持版本对比和溯源验证。平台仅负责数据整理，不对内容真实性做最终判断。
+
+### 技术问题 / Technical Issues
+**Q: 本地运行失败怎么办？**
+A: 请查看[故障排查指南](./docs/TROUBLESHOOTING.md)或[本地运行指南](./docs/local.md)。
+
+**Q: 如何进行全文搜索？**
+A: 推荐使用本地 Elasticsearch 搜索引擎，详见[搜索功能配置](./docs/local-search-engine.md)。
+
+**Q: 数据量很大，下载很慢怎么办？**
+A: 可以只下载核心数据（`npm run init-parsed`），或直接使用在线版本。
+
+### 数据相关 / Data Related
+**Q: 如何贡献数据？**
+A: 请参考[录入与校对指南](./docs/upload-and-correction.md)，在 GitHub Issues 中提交。
+
+**Q: 支持哪些文件格式？**
+A: 支持 PDF、图片、EPUB 等常见格式，详见[数据标准化文档](./docs/standardization.md)。
+
+**Q: 如何验证数据真实性？**
+A: 每个文档都有来源标注，支持多版本对比，可以通过原始文件摘要验证一致性。
+
+### 安全与隐私 / Security & Privacy
+**Q: 使用这个平台安全吗？**
+A: 平台代码开源透明。我们建议使用 VPN 访问，并使用临时 GitHub 账户进行操作。
+
+**Q: 为什么要使用临时账户？**
+A: 为保护个人隐私，避免在 Git 操作中泄露身份信息。
+
+## 源代码 / Source Code
+
+[\[GitHub\]](https://github.com/banned-historical-archives/banned-historical-archives.github.io)
+
+### 仓库架构说明 / Repository Architecture
+* **主仓库**: 当前仓库，包含前端代码和构建脚本
+* **资源仓库**: `banned-historical-archives0` 到 `banned-historical-archives31`，存储原始数据
+* **分支说明**:
+  - `master`: 源代码
+  - `gh-pages`: 构建后的静态网站
+  - `json`: JSON 格式数据
+  - `txt`: 纯文本格式数据
+
+* 如果以备份为目的 fork 本仓库，建议 fork 本仓库对应的资源仓库 banned-historical-archives0, banned-historical-archives1, banned-historical-archives2 ... banned-historical-archives31
+* 资源仓库的分支：main 原始文件分支；config 配置文件分支；ocr_cache ocr识别结果(自动生成)；ocr_patch ocr补丁分支；parsed 自动构建的中间文件，用于主仓库的构建；
 
 ## 其他
 
@@ -215,12 +425,30 @@ https://huggingface.co/datasets/banned-historical-archives/banned-historical-arc
 
 [收录的多媒体资料](https://github.com/banned-historical-archives/banned-historical-archives.github.io/wiki/%E6%94%B6%E5%BD%95%E7%9A%84%E5%A4%9A%E5%AA%92%E4%BD%93%E8%B5%84%E6%96%99)
 
+## 📄 许可证 / License
 
-## 其他
+本项目采用 **MIT License** 开源许可证。
 
-[\[资源贡献\]](https://github.com/banned-historical-archives/banned-historical-archives.github.io/issues)  
-[本地运行](https://github.com/banned-historical-archives/banned-historical-archives.github.io/blob/master/docs/local.md)
-[本地搜索](https://github.com/banned-historical-archives/banned-historical-archives.github.io/blob/master/docs/local-search-engine.md)
-[文本录入与校对](https://github.com/banned-historical-archives/banned-historical-archives.github.io/blob/master/docs/upload-and-correction.md)
-[标准化加工及开发说明](https://github.com/banned-historical-archives/banned-historical-archives.github.io/blob/master/docs/standarization.md)
+### 数据内容声明 / Data Content Disclaimer
+- 📚 **内容立场**: 收录资料立场不一，请注意辨别
+- ⚖️ **平台立场**: 我们仅进行收录和校对工作，力求保持文档原貌，其内容并不代表我们的观点
+- 🔍 **真实性**: 建议通过多方印证来鉴别历史真实性
+- 📖 **学习态度**: 鼓励批判性思维，独立分析历史事实
+
+### 使用建议 / Usage Recommendations
+- 📖 **学习目的**: 用于历史研究和学术探讨
+- 🔒 **隐私保护**: 建议使用 VPN 访问，保护个人隐私
+- 🤝 **合规使用**: 请遵守当地法律法规，负责任地使用信息
+
+---
+
+## 🔗 快速链接 / Quick Links
+
+[\[资源贡献\]](https://github.com/banned-historical-archives/banned-historical-archives.github.io/issues) |
+[本地运行](./docs/local.md) |
+[本地搜索](./docs/local-search-engine.md) |
+[文本录入与校对](./docs/upload-and-correction.md) |
+[标准化加工及开发说明](./docs/standardization.md) |
+[故障排查](./docs/TROUBLESHOOTING.md) |
+[部署指南](./docs/DEPLOYMENT.md)
 

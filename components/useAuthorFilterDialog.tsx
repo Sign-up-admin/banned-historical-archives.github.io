@@ -18,6 +18,16 @@ import {
 } from '@mui/x-data-grid-pro';
 import { zhCN } from '@mui/x-data-grid/locales';
 
+/**
+ * 作者筛选对话框 Hook
+ *
+ * 提供一个用于筛选作者的对话框组件，显示所有可用作者的列表，
+ * 用户可以选择特定的作者进行筛选。使用 Material-UI DataGrid 显示作者列表。
+ *
+ * @param authors_all - 所有可用的作者列表
+ * @param onChange - 作者选择变化时的回调函数
+ * @returns 返回对话框的显示控制和组件
+ */
 export function useAuthorFilterDialog(
   authors_all: string[],
   onChange: (author: string) => void,

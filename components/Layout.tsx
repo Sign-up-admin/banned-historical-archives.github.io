@@ -7,6 +7,14 @@ import Footer from './Footer';
 import Skeleton from '@mui/material/Skeleton';
 import { useRouter } from 'next/router';
 
+/**
+ * 应用主布局组件
+ *
+ * 提供整个应用的统一布局结构，包含导航栏、页脚和页面内容区域。
+ * 同时处理页面切换时的加载状态显示。
+ *
+ * @param children - 子组件，通常是页面内容
+ */
 export default function Layout({ children }: { children: ReactElement }) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();

@@ -5,6 +5,14 @@ import Popover from '@mui/material/Popover';
 import { ArticleCategory, ArticleType, TagType } from '../types';
 import { Tag } from '../types';
 
+/**
+ * 图片标签显示组件
+ *
+ * 专门用于图片库的标签显示组件，显示标签名称和类型提示。
+ * 与 Tags 组件类似，但专门用于图片相关的标签展示。
+ *
+ * @param tags - 要显示的标签数组，每个标签包含 name 和 type 属性
+ */
 export default function ImageTags({
   tags,
 }: {

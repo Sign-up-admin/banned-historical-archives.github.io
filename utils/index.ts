@@ -1,3 +1,10 @@
+/**
+ * @fileoverview 通用工具函数集合
+ *
+ * 包含 MD5 哈希、文本处理、补丁应用、ID 生成等实用工具函数。
+ * 这些函数主要用于数据处理、文本分析和版本控制。
+ */
+
 import { diff_match_patch, Diff } from 'diff-match-patch';
 import crypto from 'crypto';
 import {
@@ -12,9 +19,20 @@ import {
 } from '../types';
 import { v4 } from 'uuid';
 
-//  A formatted version of a popular md5 implementation.
-//  Original copyright (c) Paul Johnston & Greg Holt.
-//  The function itself is now 42 lines long.
+/**
+ * MD5 哈希函数
+ *
+ * 基于 Paul Johnston & Greg Holt 的 MD5 实现。
+ * 用于生成字符串的 MD5 哈希值。
+ *
+ * @param inputString - 要哈希的输入字符串
+ * @returns 32位十六进制 MD5 哈希字符串
+ *
+ * @example
+ * ```typescript
+ * md5('hello world') // '5d41402abc4b2a76b9719d911017c592'
+ * ```
+ */
 export function md5(inputString: string) {
   var hc = '0123456789abcdef';
   function rh(n: number) {
@@ -185,9 +203,30 @@ export function md5(inputString: string) {
   return rh(a) + rh(b) + rh(c) + rh(d);
 }
 
+/**
+ * 注释括号字符常量
+ * 用于标识文本中的注释引用位置
+ */
 export const bracket_left = '〔';
 export const bracket_right = '〕';
 
+/**
+ * 从文本中提取注释引用位置
+ *
+ * 解析文本中的注释标记（如"〔1〕"），提取位置信息并返回清理后的文本。
+ * 用于处理文章中的注释引用，支持多级嵌套注释。
+ *
+ * @param s - 包含注释标记的文本
+ * @param part_idx - 文本段落在文章中的索引
+ * @returns 元组：[提取的注释位置数组, 清理后的文本]
+ *
+ * @example
+ * ```typescript
+ * const [pivots, cleanText] = extract_pivots('毛泽东〔1〕是伟大的领袖', 0);
+ * // pivots: [{ part_idx: 0, offset: 6, index: 1 }]
+ * // cleanText: '毛泽东是伟大的领袖'
+ * ```
+ */
 export function extract_pivots(s: string, part_idx: number): [Pivot[], string] {
   const res: Pivot[] = [];
   const exp = new RegExp(`${bracket_left}\\d+${bracket_right}`);
@@ -204,9 +243,31 @@ export function extract_pivots(s: string, part_idx: number): [Pivot[], string] {
 }
 
 /**
+ * 应用 V2 版本补丁到解析结果
+ *
+ * 支持高级补丁操作：
  * 1) 编辑/删除/插入段落，修改段落类型
  * 2) 编辑/删除/插入注释
  * 3) 编辑/删除描述
+ *
+ * V2 补丁比 V1 补丁更强大，支持插入操作和更细粒度的编辑。
+ *
+ * @param parserResult - 原始解析结果
+ * @param patch - V2 版本补丁对象
+ * @returns 应用补丁后的新解析结果（不修改原对象）
+ *
+ * @example
+ * ```typescript
+ * const patchedResult = apply_patch_v2(originalResult, {
+ *   parts: {
+ *     '0': { // 修改第1段
+ *       type: 'paragraph',
+ *       insertBefore: [{ text: '新增段落', type: 'paragraph' }]
+ *     }
+ *   },
+ *   newComments: ['新增注释']
+ * });
+ * ```
  */
 export function apply_patch_v2(
   parserResult: ParserResult,
@@ -375,6 +436,22 @@ export function apply_patch(parserResult: ParserResult, patch: Patch) {
   }
 }
 
+/**
+ * 确保数字至少显示两位
+ *
+ * 用于日期格式化，确保月份和日期始终显示两位数字。
+ *
+ * @param a - 要格式化的数字
+ * @param fallback - 当输入无效时的默认值
+ * @returns 格式化后的两位数字符串
+ *
+ * @example
+ * ```typescript
+ * ensure_two_digits(5)    // '05'
+ * ensure_two_digits(12)   // '12'
+ * ensure_two_digits(undefined) // '00'
+ * ```
+ */
 export function ensure_two_digits(a: number | undefined, fallback = '00') {
   if (!a && a !== 0) {
     return fallback;
@@ -382,9 +459,38 @@ export function ensure_two_digits(a: number | undefined, fallback = '00') {
   return a < 10 ? `0${a}` : a;
 }
 
+/**
+ * 使用 Node.js crypto 模块生成 MD5 哈希
+ *
+ * 比自定义 MD5 实现更安全和高效。
+ *
+ * @param str - 要哈希的输入字符串
+ * @returns 32位十六进制 MD5 哈希字符串
+ *
+ * @example
+ * ```typescript
+ * crypto_md5('hello world') // '5d41402abc4b2a76b9719d911017c592'
+ * ```
+ */
 export function crypto_md5(str: string) {
   return crypto.createHash('md5').update(str).digest('hex');
 }
+
+/**
+ * 根据文章内容生成唯一文章 ID
+ *
+ * 使用文章的关键信息（标题、日期、作者等）生成 MD5 哈希，
+ * 确保相同内容的文章总是生成相同的 ID。
+ *
+ * @param r - 解析后的文章结果
+ * @returns 10位十六进制文章 ID
+ *
+ * @example
+ * ```typescript
+ * const articleId = get_article_id(parserResult);
+ * // 返回类似 '883eeb87ad' 的字符串
+ * ```
+ */
 export function get_article_id(r: ParserResult) {
   const res = crypto_md5(
     JSON.stringify([
@@ -414,10 +520,49 @@ export function get_article_id(r: ParserResult) {
   return res.substr(0, 10);
 }
 
+/**
+ * 异步延迟函数
+ *
+ * 创建一个 Promise，在指定毫秒数后 resolve。
+ * 用于实现延迟、轮询重试等异步操作。
+ *
+ * @param t - 延迟的毫秒数
+ * @returns Promise，在延迟结束后 resolve
+ *
+ * @example
+ * ```typescript
+ * // 延迟 1 秒
+ * await sleep(1000);
+ *
+ * // 重试机制
+ * for (let i = 0; i < 3; i++) {
+ *   try {
+ *     await apiCall();
+ *     break;
+ *   } catch (error) {
+ *     if (i < 2) await sleep(1000 * (i + 1));
+ *   }
+ * }
+ * ```
+ */
 export async function sleep(t: number) {
   return new Promise((resolve) => setTimeout(resolve, t));
 }
 
+/**
+ * 生成 UUID v4 字符串
+ *
+ * 使用 uuid 库生成 RFC 4122 版本 4 的通用唯一标识符。
+ * 用于生成唯一的标识符，如会话 ID、临时文件名等。
+ *
+ * @returns UUID v4 格式的字符串
+ *
+ * @example
+ * ```typescript
+ * const id = uuid();
+ * // 返回类似 '550e8400-e29b-41d4-a716-446655440000' 的字符串
+ * ```
+ */
 export function uuid() {
   return v4();
 }

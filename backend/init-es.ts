@@ -1,3 +1,26 @@
+/**
+ * @fileoverview Elasticsearch 索引初始化脚本
+ *
+ * 此脚本将解析后的文章数据导入到 Elasticsearch 中，
+ * 用于提供全文搜索功能。
+ *
+ * 支持两种模式：
+ * - 正常模式：检查索引是否为空，只在空索引时导入
+ * - 重置模式：清空现有索引并重新导入所有数据
+ *
+ * @example
+ * ```bash
+ * # 初始化索引（只在空索引时导入）
+ * npm run init-es
+ *
+ * # 重置并重新初始化索引
+ * npm run init-es reset
+ *
+ * # 查看导入进度
+ * tail -f /dev/null &
+ * ```
+ */
+
 import 'reflect-metadata';
 
 import esClient from './connect-es';
@@ -8,16 +31,31 @@ import { readJSONSync } from 'fs-extra';
 import { sleep } from '../utils';
 import { get_article_indexes } from './get_article_indexes';
 
+/**
+ * Elasticsearch 文章文档类型
+ * 定义存储在 Elasticsearch 中的文章数据结构
+ */
 type ESArticle = {
+  /** 文章唯一标识 */
   article_id: string;
+  /** 出版物 ID */
   publication_id: string;
+  /** 出版物名称 */
   publication_name: string;
+  /** 文章标题 */
   title: string;
+  /** 标题别名列表 */
   aliases: string[];
+  /** 作者列表 */
   authors: string[];
+  /** 文章全文内容 */
   content: string;
 };
 
+/**
+ * 获取文章索引数据
+ * 从构建的索引文件中读取文章基本信息
+ */
 const article_indexes = get_article_indexes();
 
 (async () => {

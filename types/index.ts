@@ -1,39 +1,85 @@
+/**
+ * 标签类型定义
+ * 用于标识文章、书籍等资源的内容分类和属性
+ */
 export type Tag = {
+  /** 可选的标签唯一标识符 */
   id?: string;
+  /** 标签名称 */
   name: string;
+  /** 标签类型，如 '文稿大类'、'地点' 等 */
   type: string;
 };
 
+/**
+ * 注释类型定义
+ * 表示文档中特定位置的注释信息
+ */
 export type Comment = {
-  index: number; // 编号
+  /** 注释编号，从 0 开始 */
+  index: number;
+  /** 内容部分索引，指向具体的段落或内容块 */
   part_idx: number;
+  /** 注释的唯一标识符 */
   id: string;
+  /** 在内容中的偏移位置，表示注释应插入的字符索引 */
   offset: number;
+  /** 注释的文本内容 */
   text: string;
 };
+/**
+ * 内容块类型定义
+ * 表示文档中的一个内容单元，如段落、标题等
+ */
 export type Content = {
+  /** 内容块的唯一标识符 */
   id: string;
+  /** 内容块的类型，如 'paragraph'、'title' 等 */
   type: ContentType;
+  /** 内容块的文本内容 */
   text: string;
+  /** 内容块在文档中的顺序索引 */
   index: number;
 };
+/**
+ * 文章类型定义
+ * 表示一个历史文献的基本信息结构
+ */
 export type Article = {
+  /** 文章标题 */
   title: string;
+  /** 文章作者列表 */
   author: string[];
+  /** 文章日期列表，支持多个日期或日期范围 */
   dates: Date[];
+  /** 是否为日期范围（true 表示一段时间，false 表示多个时间点） */
   is_range_date: boolean;
+  /** 可选的文章来源信息 */
   origin?: string;
+  /** 可选的文章别名 */
   alias?: string;
+  /** 文章的标签列表，用于分类和检索 */
   tags: Tag[];
 };
 
+/**
+ * 书籍元数据类型定义
+ * 描述书籍资源的基本属性和文件信息
+ */
 export type BookMetaData = {
+  /** 书籍的唯一标识符 */
   id: string;
+  /** 书籍名称 */
   name: string;
+  /** 是否为内部资料 */
   internal: boolean;
+  /** 是否为官方出版物 */
   official: boolean;
+  /** 资源类型：图片、PDF、数据库或其他 */
   type: 'img' | 'pdf' | 'db' | 'unknown';
+  /** 书籍作者 */
   author: string;
+  /** 关联的文件列表 */
   files: string[];
 };
 
@@ -43,41 +89,82 @@ export type ResourceMetaData =
   | PictureMetaData
   | VideoMetaData;
 
+/**
+ * 文章大类枚举
+ * 定义历史文献的主要分类
+ */
 export enum ArticleCategory {
+  /** 中央文件 */
   centralFile = '中央文件',
+  /** 重要报刊和社论 */
   editorial = '重要报刊和社论',
+  /** 关键人物文稿 */
   keyFigures = '关键人物文稿',
+  /** 群众运动重要文献 */
   keyPapersFromTheMasses = '群众运动重要文献',
 }
 
+/**
+ * 标签类型枚举
+ * 定义所有可能的标签分类
+ */
 export enum TagType {
+  /** 文稿大类 */
   articleCategory = '文稿大类',
+  /** 文稿类型 */
   articleType = '文稿类型',
+  /** 地点 */
   place = '地点',
+  /** 人物 */
   character = '人物',
+  /** 出版方/发行方 */
   issuer = '出版方/发行方',
+  /** 主题/事件 */
   subject = '主题/事件',
+  /** 记录 */
   recorder = '记录',
+  /** 审核 */
   reviewer = '审核',
+  /** 翻译 */
   translator = '翻译',
+  /** 翻印/传抄 */
   reprint = '翻印/传抄',
 }
 
+/**
+ * 内容类型枚举
+ * 定义文档内容块的所有可能类型
+ */
 export enum ContentType {
+  /** 称呼 */
   appellation = 'appellation',
+  /** 标题 */
   title = 'title',
+  /** 作者 */
   authors = 'authors',
+  /** 地点 */
   place = 'place',
+  /** 副标题 */
   subtitle = 'subtitle',
+  /** 二级副标题 */
   subtitle2 = 'subtitle2',
+  /** 三级副标题 */
   subtitle3 = 'subtitle3',
+  /** 四级副标题 */
   subtitle4 = 'subtitle4',
+  /** 五级副标题 */
   subtitle5 = 'subtitle5',
+  /** 子日期 */
   subdate = 'subdate',
+  /** 段落 */
   paragraph = 'paragraph',
+  /** 引用 */
   quotation = 'quotation',
+  /** 签名 */
   signature = 'signature',
+  /** 图片 */
   image = 'image',
+  /** 图片描述 */
   image_description = 'image_description',
 }
 
@@ -90,71 +177,143 @@ export type ContentPart = {
   type: ContentType;
 };
 
+/**
+ * 日期类型定义
+ * 表示一个可选的年月日日期结构
+ */
 export type Date = {
+  /** 可选的年份 */
   year?: number;
+  /** 可选的月份（1-12） */
   month?: number;
+  /** 可选的日期（1-31） */
   day?: number;
 };
 
+/**
+ * 音乐歌词类型定义
+ * 描述一首歌的歌词和对应的音频信息
+ */
 export type MusicLyric = {
+  /** 作词人列表 */
   lyricists: string[];
+  /** 歌词版本标识 */
   version: string;
+  /** 歌词文本内容 */
   content: string;
+  /** 对应的音频资源列表 */
   audios: {
+    /** 音频文件URL */
     url: string;
+    /** 音频来源列表 */
     sources: string[];
-    art_forms: string[]; // 合唱，说书。。。
+    /** 艺术形式，如 '合唱'、'说书' 等 */
+    art_forms: string[];
+    /** 艺术家列表 */
     artists: {
+      /** 艺术家姓名 */
       name: string;
-      type: string; // 伴奏，合唱团，领唱，乐团。。。 'accompaniment' | 'choir' | 'lead singer' | 'orchestra' | 'command';
+      /** 艺术家类型，如 '伴奏'、'合唱团'、'领唱'、'乐团' 等 */
+      type: string;
     }[];
   }[];
 };
+/**
+ * 音乐作品类型定义
+ * 表示一个音乐作品的完整信息
+ */
 export type Music = {
+  /** 音乐作品的唯一标识符 */
   id: string;
+  /** 音乐作品名称 */
   name: string;
+  /** 作曲家列表 */
   composers: string[];
+  /** 作品描述 */
   description: string;
+  /** 歌词列表，可能包含多个版本 */
   lyrics: MusicLyric[];
 };
+/**
+ * 注释定位点类型定义
+ * 用于标识注释在文档内容中的精确位置
+ */
 export type Pivot = {
-  part_idx: number; // 从 0 开始
-  index: number; // 注释编号
-  offset: number; // 偏移量，从 0 开始，注释应该插入的index，比如'mzd[2]'的offset为3
+  /** 内容部分索引，从 0 开始，指向具体的段落或内容块 */
+  part_idx: number;
+  /** 注释编号，用于标识特定的注释 */
+  index: number;
+  /** 字符偏移量，从 0 开始，表示注释应插入的字符位置 */
+  offset: number;
 };
 
+/**
+ * 解析结果类型定义
+ * 表示文档解析后的完整结果，包含所有元数据和内容信息
+ */
 export type ParserResult = {
+  /** 文档标题 */
   title: string;
+  /** 可选的标题别名 */
   alias?: string;
+  /** 文档日期列表 */
   dates: Date[];
+  /** 是否为日期范围 */
   is_range_date: boolean;
+  /** 作者列表 */
   authors: string[];
+  /** 文档内容部分列表 */
   parts: ContentPart[];
+  /** 注释内容列表 */
   comments: string[];
+  /** 注释定位点列表 */
   comment_pivots: Pivot[];
+  /** 文档描述 */
   description: string;
+  /** 起始页码 */
   page_start: number;
+  /** 结束页码 */
   page_end: number;
-  origin?: string; // 起源
+  /** 可选的来源信息 */
+  origin?: string;
+  /** 可选的标签列表 */
   tags?: {
+    /** 标签名称 */
     name: string;
+    /** 标签类型 */
     type: TagType;
   }[];
+  /** 可选的文件标识符 */
   file_id?: string;
 
+  /** 可选的原始标题（解析前的格式） */
   title_raw?: string;
+  /** 可选的原始日期字符串 */
   date_raw?: string;
+  /** 可选的原始内容部分（解析前的格式） */
   parts_raw?: ContentPartRaw[];
 };
 
+/**
+ * 文章类型枚举
+ * 定义历史文献的具体类型
+ */
 export enum ArticleType {
+  /** 文章 */
   writings = '文章',
+  /** 书信 */
   mail = '书信',
+  /** 发言 */
   lecture = '发言',
+  /** 对话 */
   talk = '对话',
+  /** 宣言 */
   declaration = '宣言',
+  /** 指示 */
   instruction = '指示',
+  /** 批示 */
   comment = '批示',
+  /** 通讯 */
   telegram = '通讯',
 }
 
@@ -489,34 +648,84 @@ export type ArticleListV2 = {
   books: string[];
   tags: { name: string; type: string }[];
 };
+/**
+ * 文章列表类型
+ * 表示文章概览信息的数组
+ */
 export type ArticleList = ArticleListItem[];
+/**
+ * 文章列表项类型定义
+ * 表示文章在列表中的简要信息
+ */
 export type ArticleListItem = {
+  /** 文章的唯一标识符 */
   id: string;
+  /** 文章标题 */
   title: string;
+  /** 作者列表 */
   authors: string[];
+  /** 日期列表 */
   dates: Date[];
+  /** 是否为日期范围 */
   is_range_date: boolean;
+  /** 关联的书籍ID列表 */
   book_ids: number[];
+  /** 可选的书籍名称列表 */
   books?: string[];
+  /** 可选的标签列表 */
   tags?: Tag[];
+  /** 标签ID列表 */
   tag_ids: number[];
 };
+/**
+ * 文章索引类型定义
+ * 将文章ID映射到书籍ID数组，用于快速查找文章所属的书籍
+ */
 export type ArticleIndexes = { [aid: string]: number[] }; // book_number_id
+/**
+ * 标签索引类型定义
+ * 标签的元组数组，每个元组包含 [类型, 名称]
+ */
 export type TagIndexes = [string, string][]; // type, name
+/**
+ * 带有书籍信息的文章索引类型定义
+ * 将文章ID映射到书籍信息数组，每个书籍信息包含 [ID, 名称, 档案ID]
+ */
 export type ArticleIndexesWithBookInfo = {
   [aid: string]: [string, string, number][];
 }; // id, name, archive_id
+/**
+ * 音乐索引类型定义
+ * 音乐条目的完整索引信息，包含元数据和标签
+ */
 export type MusicIndex = [
+  /** 音乐ID */
   string,
+  /** 音乐标题 */
   string,
+  /** 起始年份 */
   number,
+  /** 结束年份 */
   number,
+  /** 艺术家列表 */
   string[],
+  /** 作曲家列表 */
   string[],
+  /** 演唱者列表 */
   string[],
+  /** 标签列表 */
   { name: string; type: string }[],
+  /** 相关书籍ID列表 */
   string[],
   string[],
 ]; // id, name, archive_id, lryic_length, tags, composers, lyricists, artists, sources, art forms
+/**
+ * 音乐索引数组类型定义
+ * 所有音乐条目的索引信息数组
+ */
 export type MusicIndexes = MusicIndex[];
+/**
+ * 画廊索引类型定义
+ * 包含视频和图片元数据的联合数组
+ */
 export type GalleryIndexes = (VideoMetaData | PictureMetaData)[];
