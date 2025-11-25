@@ -1,0 +1,37 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    ":semanticPrefixFixDepsChoreOthers",
+    ":ignoreUnstable",
+    "group:monorepos",
+    "group:recommended",
+    "workarounds:all"
+  ],
+  "schedule": ["before 4am on Monday"],
+  "timezone": "Asia/Shanghai",
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^@types/"],
+      "groupName": "@types packages"
+    },
+    {
+      "matchPackagePatterns": ["^eslint"],
+      "groupName": "ESLint packages"
+    },
+    {
+      "matchPackagePatterns": ["^@mui"],
+      "groupName": "MUI packages"
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "dependencyDashboardApproval": true
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true
+  },
+  "osvVulnerabilityAlerts": true
+}
