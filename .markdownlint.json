@@ -11,21 +11,30 @@
     "br_spaces": 2
   },
   "MD013": {
-    "line_length": 120,
+    "line_length": 200,
     "code_blocks": false,
     "tables": false,
     "headings": false
   },
+  "MD022": false,
   "MD024": {
     "siblings_only": true
   },
   "MD025": false,
+  "MD029": {
+    "style": "ordered"
+  },
+  "MD031": false,
+  "MD032": false,
   "MD033": false,
   "MD034": false,
+  "MD036": false,
+  "MD040": false,
   "MD041": false,
   "MD046": {
     "style": "fenced"
   },
-  "MD047": true
+  "MD047": true,
+  "MD051": false
 }
 

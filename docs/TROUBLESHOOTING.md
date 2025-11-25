@@ -138,12 +138,14 @@ netstat -tlnp 2>/dev/null | grep -E ':(3000|9200|80|443)' || echo "无相关端�
 ### Docker 服务无法启动
 
 **问题现象**:
+
 ```
 $ sudo systemctl start docker
 Failed to start docker.service: Unit docker.service not found.
 ```
 
 **解决方案**:
+
 ```bash
 # 检查 Docker 是否安装
 which docker
@@ -165,12 +167,14 @@ sudo usermod -aG docker $USER
 ### 容器无法启动
 
 **问题现象**:
+
 ```bash
 $ docker compose up -d
 ERROR: ... port already in use
 ```
 
 **解决方案**:
+
 ```bash
 # 检查端口占用
 netstat -tlnp | grep :3000
@@ -188,11 +192,13 @@ ports:
 ### 容器内存不足
 
 **问题现象**:
+
 ```
 Docker: write /proc/self/attr/exec: no space left on device
 ```
 
 **解决方案**:
+
 ```bash
 # 检查系统内存
 free -h
@@ -210,11 +216,13 @@ sudo systemctl restart docker
 ### 镜像下载失败
 
 **问题现象**:
+
 ```
 ERROR: pull access denied for ..., repository does not exist or may require 'docker login'
 ```
 
 **解决方案**:
+
 ```bash
 # 检查网络连接
 ping -c 4 registry-1.docker.io
@@ -242,6 +250,7 @@ docker compose pull
 容器日志显示乱码字符
 
 **解决方案**:
+
 ```bash
 # 设置正确的编码
 export LANG=C.UTF-8
@@ -260,12 +269,14 @@ services:
 ### Git 克隆失败
 
 **问题现象**:
+
 ```
 $ npm run init-parsed
 fatal: repository 'https://github.com/banned-historical-archives/banned-historical-archives0.git' not found
 ```
 
 **解决方案**:
+
 ```bash
 # 检查网络连接
 curl -I https://github.com
@@ -287,6 +298,7 @@ npm run init-parsed
 数据下载非常缓慢
 
 **解决方案**:
+
 ```bash
 # 配置 Git 并发下载
 git config --global core.compression 9
@@ -308,6 +320,7 @@ git clone --depth 1 --branch parsed https://github.com/banned-historical-archive
 下载的数据可能损坏或不完整
 
 **解决方案**:
+
 ```bash
 # 验证 Git 仓库完整性
 cd parsed/archives0
@@ -327,11 +340,13 @@ npm run init-parsed
 ### 磁盘空间不足
 
 **问题现象**:
+
 ```
 No space left on device
 ```
 
 **解决方案**:
+
 ```bash
 # 检查磁盘使用情况
 df -h
@@ -353,12 +368,14 @@ npm run init-config  # 只下载配置数据
 ### Node.js 依赖安装失败
 
 **问题现象**:
+
 ```
 npm ERR! code ENOTFOUND
 npm ERR! errno ENOTFOUND
 ```
 
 **解决方案**:
+
 ```bash
 # 检查网络连接
 npm config get registry
@@ -378,11 +395,13 @@ npm install
 ### 构建内存不足
 
 **问题现象**:
+
 ```
 FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed
 ```
 
 **解决方案**:
+
 ```bash
 # 增加 Node.js 内存限制
 export NODE_OPTIONS="--max-old-space-size=4096"
@@ -401,11 +420,13 @@ free -h
 ### TypeScript 编译错误
 
 **问题现象**:
+
 ```
 error TS2307: Cannot find module 'react'
 ```
 
 **解决方案**:
+
 ```bash
 # 重新安装依赖
 rm -rf node_modules package-lock.json
@@ -428,6 +449,7 @@ npm run build
 构建成功但页面显示异常
 
 **解决方案**:
+
 ```bash
 # 检查构建产物
 ls -la out/
@@ -451,6 +473,7 @@ npm run build
 搜索功能无法使用，控制台显示连接错误
 
 **解决方案**:
+
 ```bash
 # 检查 Elasticsearch 状态
 curl http://localhost:9200/_cluster/health
@@ -471,11 +494,13 @@ docker port banned-historical-archives-es-1
 ### 索引不存在
 
 **问题现象**:
+
 ```
 index_not_found_exception
 ```
 
 **解决方案**:
+
 ```bash
 # 检查索引状态
 curl http://localhost:9200/_cat/indices
@@ -495,6 +520,7 @@ curl http://localhost:9200/_cat/indices
 搜索结果不完整或不准确
 
 **解决方案**:
+
 ```bash
 # 检查索引文档数量
 curl http://localhost:9200/article/_count
@@ -514,6 +540,7 @@ npm run init-es
 搜索响应时间过长
 
 **解决方案**:
+
 ```bash
 # 检查 Elasticsearch 性能
 curl http://localhost:9200/_nodes/stats?pretty
@@ -537,6 +564,7 @@ environment:
 无法访问 GitHub 或下载速度慢
 
 **解决方案**:
+
 ```bash
 # 配置 GitHub 加速
 # 编辑 /etc/hosts
@@ -560,6 +588,7 @@ git config --global https.proxy http://127.0.0.1:7890
 浏览器控制台显示 CORS 错误
 
 **解决方案**:
+
 ```nginx
 # Nginx 配置添加 CORS 头
 location /api {
@@ -585,6 +614,7 @@ location /api {
 HTTPS 证书验证失败
 
 **解决方案**:
+
 ```bash
 # 检查证书状态
 openssl s_client -connect your-domain.com:443 -servername your-domain.com
@@ -604,6 +634,7 @@ export NODE_TLS_REJECT_UNAUTHORIZED=0
 页面加载缓慢，用户体验差
 
 **解决方案**:
+
 ```bash
 # 检查系统资源
 top
@@ -631,6 +662,7 @@ location /_next/static {
 应用内存占用持续增长
 
 **解决方案**:
+
 ```bash
 # 监控内存使用
 docker stats
@@ -651,6 +683,7 @@ clinic doctor -- node server.js
 系统 CPU 占用过高
 
 **解决方案**:
+
 ```bash
 # 查找高 CPU 进程
 ps aux --sort=-%cpu | head -10
@@ -671,6 +704,7 @@ limit_req zone=api burst=20 nodelay;
 数据查询响应时间长
 
 **解决方案**:
+
 ```bash
 # 优化 Elasticsearch 查询
 # 使用更精确的查询条件
@@ -692,11 +726,13 @@ curl -X PUT "http://localhost:9200/article/_settings" \
 ### 文件权限错误
 
 **问题现象**:
+
 ```
 EACCES: permission denied
 ```
 
 **解决方案**:
+
 ```bash
 # 检查文件权限
 ls -la
@@ -713,11 +749,13 @@ chmod 755 scripts/
 ### Docker 权限问题
 
 **问题现象**:
+
 ```
 Got permission denied while trying to connect to the Docker daemon socket
 ```
 
 **解决方案**:
+
 ```bash
 # 添加用户到 docker 组
 sudo usermod -aG docker $USER
@@ -735,6 +773,7 @@ sudo docker compose up -d
 安全扫描工具报告漏洞
 
 **解决方案**:
+
 ```bash
 # 更新依赖
 npm audit fix
@@ -859,6 +898,7 @@ EOF
 #### 2. 提交问题报告
 
 **GitHub Issues 模板**:
+
 ```markdown
 ## 问题描述
 [清晰描述问题]

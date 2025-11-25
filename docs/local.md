@@ -9,12 +9,14 @@
 ### 系统要求 / System Requirements
 
 #### Docker 版本 (推荐)
+
 - ✅ Docker >= 20.10.0 或 Docker Desktop
 - ✅ 至少 4GB 可用内存
 - ✅ 至少 10GB 可用磁盘空间
 - ✅ 网络连接正常（用于下载镜像和数据）
 
 #### 主机版本
+
 - ✅ Node.js >= 14.0.0 (推荐 18.x)
 - ✅ npm >= 6.0.0 (推荐最新版本)
 - ✅ Git >= 2.0.0 (用于下载数据)
@@ -48,6 +50,7 @@ ping -c 4 google.com
 ### 端口检查 / Port Availability Check
 
 确保以下端口未被占用：
+
 - **3000**: 前端应用端口
 - **9200**: Elasticsearch 端口 (仅 Docker 版本)
 
@@ -67,9 +70,11 @@ Docker 版本提供完整功能，包括内置的本地搜索引擎，适合大�
 ### 详细步骤 / Detailed Steps
 
 #### 1. 安装 Docker
+
 访问 [Docker 官网](https://www.docker.com/get-started) 下载并安装 Docker Desktop。
 
 #### 2. 下载项目
+
 ```bash
 # 克隆主仓库
 git clone https://github.com/banned-historical-archives/banned-historical-archives.github.io.git
@@ -77,6 +82,7 @@ cd banned-historical-archives.github.io
 ```
 
 #### 3. 启动服务
+
 ```bash
 # 启动所有服务 (后台运行)
 docker compose up -d
@@ -89,7 +95,9 @@ docker logs banned-historical-archives-app-1
 ```
 
 #### 4. 等待初始化
+
 初次启动时会自动：
+
 - 下载和初始化 Elasticsearch
 - 下载数据并建立索引
 - 构建前端应用
@@ -97,6 +105,7 @@ docker logs banned-historical-archives-app-1
 这个过程可能需要 **10-30 分钟**，具体时间取决于网络速度。
 
 #### 5. 访问应用
+
 ```bash
 # 打开浏览器访问
 http://localhost:3000
@@ -129,6 +138,7 @@ docker compose up -d
 ### 故障排查 / Troubleshooting
 
 #### 查看服务状态
+
 ```bash
 # 查看所有服务状态
 docker compose ps
@@ -141,6 +151,7 @@ curl http://localhost:9200/_cluster/health?pretty
 ```
 
 #### 常见问题
+
 - **端口被占用**: 修改 `docker-compose.yml` 中的端口映射
 - **内存不足**: 增加 Docker Desktop 的内存分配
 - **磁盘空间不足**: 清理 Docker 缓存 `docker system prune -a`
@@ -152,9 +163,11 @@ curl http://localhost:9200/_cluster/health?pretty
 ### 详细步骤 / Detailed Steps
 
 #### 1. 安装 Node.js
+
 访问 [Node.js 官网](https://nodejs.org/) 下载并安装 LTS 版本。
 
 #### 2. 下载项目
+
 ```bash
 # 克隆主仓库
 git clone https://github.com/banned-historical-archives/banned-historical-archives.github.io.git
@@ -162,6 +175,7 @@ cd banned-historical-archives.github.io
 ```
 
 #### 3. 安装依赖
+
 ```bash
 # 安装项目依赖
 npm install
@@ -173,6 +187,7 @@ npm install
 ```
 
 #### 4. 下载数据 (可选)
+
 ```bash
 # 下载解析后的数据 (约 2-5GB)
 npm run init-parsed
@@ -188,6 +203,7 @@ npm run init-ocr_cache
 ```
 
 #### 5. 构建数据 (如果下载了数据)
+
 ```bash
 # 构建索引文件
 npm run build-indexes
@@ -200,6 +216,7 @@ npm run build-txt
 ```
 
 #### 6. 构建前端
+
 ```bash
 # 构建生产版本
 npm run build
@@ -209,6 +226,7 @@ NODE_OPTIONS="--max-old-space-size=4096" npm run build
 ```
 
 #### 7. 启动服务器
+
 ```bash
 # 使用内置服务器
 npx serve@latest out -p 3000
@@ -220,6 +238,7 @@ php -S localhost:3000 -t out
 ```
 
 #### 8. 访问应用
+
 ```bash
 # 打开浏览器访问
 http://localhost:3000
@@ -274,6 +293,7 @@ LOCAL_INDEXES=1
 ### 进度监控
 
 #### Docker 版本
+
 ```bash
 # 查看下载进度
 docker compose logs -f app
@@ -283,6 +303,7 @@ docker compose logs elasticsearch | grep -i index
 ```
 
 #### 主机版本
+
 ```bash
 # 查看 Git 下载进度
 watch -n 5 'du -sh parsed/ config/'
@@ -303,6 +324,7 @@ npm run build-indexes 2>&1 | tee build.log
 ## 🔍 功能验证 / Feature Verification
 
 ### 基本功能检查
+
 ```bash
 # 检查前端是否正常
 curl http://localhost:3000
@@ -312,6 +334,7 @@ curl http://localhost:3000/api/health
 ```
 
 ### 搜索引擎检查 (Docker 版本)
+
 ```bash
 # 检查 Elasticsearch 健康状态
 curl http://localhost:9200/_cluster/health?pretty
@@ -321,6 +344,7 @@ curl "http://localhost:9200/article/_search?q=毛泽东&size=5"
 ```
 
 ### 数据完整性检查
+
 ```bash
 # 检查索引文件是否存在
 ls -la indexes/
@@ -337,6 +361,7 @@ ls -la out/
 ### Docker 相关问题
 
 **问题**: `docker compose up` 失败
+
 ```bash
 # 解决方案：检查 Docker 服务状态
 sudo systemctl status docker
@@ -346,12 +371,14 @@ sudo systemctl start docker
 ```
 
 **问题**: 内存不足错误
+
 ```bash
 # 解决方案：增加 Docker 内存分配
 # Docker Desktop -> Settings -> Resources -> Memory
 ```
 
 **问题**: 端口冲突
+
 ```bash
 # 解决方案：修改 docker-compose.yml 端口映射
 ports:
@@ -361,6 +388,7 @@ ports:
 ### Node.js 相关问题
 
 **问题**: `npm install` 失败
+
 ```bash
 # 解决方案：清理缓存重新安装
 npm cache clean --force
@@ -369,12 +397,14 @@ npm install
 ```
 
 **问题**: 构建内存不足
+
 ```bash
 # 解决方案：增加 Node.js 内存限制
 NODE_OPTIONS="--max-old-space-size=4096" npm run build
 ```
 
 **问题**: 权限错误
+
 ```bash
 # 解决方案：使用 sudo (不推荐) 或修复权限
 sudo npm install
@@ -385,6 +415,7 @@ sudo chown -R $(whoami) ~/.npm
 ### 数据下载问题
 
 **问题**: Git 下载缓慢或失败
+
 ```bash
 # 解决方案：使用代理或更换网络
 export https_proxy=http://proxy.company.com:8080
@@ -395,6 +426,7 @@ npm run init-parsed  # 只下载前几个仓库
 ```
 
 **问题**: 磁盘空间不足
+
 ```bash
 # 解决方案：检查并清理空间
 df -h
@@ -405,6 +437,7 @@ rm -rf ~/.npm/_cacache/*  # 清理 npm 缓存
 ### 访问问题
 
 **问题**: 无法访问 http://localhost:3000
+
 ```bash
 # 解决方案：检查服务状态和端口
 docker compose ps
@@ -418,6 +451,7 @@ sudo firewall-cmd --list-all
 ## 📈 性能优化 / Performance Optimization
 
 ### Docker 版本优化
+
 ```yaml
 # docker-compose.yml 优化配置
 services:
@@ -434,6 +468,7 @@ services:
 ```
 
 ### 主机版本优化
+
 ```bash
 # 增加 Node.js 内存
 export NODE_OPTIONS="--max-old-space-size=8192"
@@ -448,6 +483,7 @@ npm run build -- --concurrency 2
 ## 🔄 升级与维护 / Upgrade & Maintenance
 
 ### 定期更新
+
 ```bash
 # Docker 版本
 docker compose pull
@@ -460,6 +496,7 @@ npm run build
 ```
 
 ### 备份数据
+
 ```bash
 # Docker 数据卷备份
 docker run --rm -v banned-historical-archives_es-data:/data -v $(pwd):/backup alpine tar czf /backup/es-backup.tar.gz -C /data .

@@ -18,6 +18,7 @@
 ### 仓库架构 / Repository Architecture
 
 #### 主仓库 (Main Repository)
+
 **名称**: `banned-historical-archives/banned-historical-archives.github.io`
 
 | 分支 | 用途 | 构建产物 | 说明 |
@@ -29,6 +30,7 @@
 | `txt` | 文本数据 | `txt/` | 纯文本格式导出 |
 
 #### 资源仓库 (Resource Repositories)
+
 **名称**: `banned-historical-archives/banned-historical-archives0` ~ `banned-historical-archives31`
 
 | 分支 | 用途 | 数据类型 | 说明 |
@@ -178,6 +180,7 @@ sequenceDiagram
 ### 技术栈 / Technology Stack
 
 #### 前端 / Frontend
+
 - **框架**: Next.js 15 (React 18)
 - **语言**: TypeScript
 - **UI库**: Material-UI (MUI)
@@ -185,12 +188,14 @@ sequenceDiagram
 - **部署**: GitHub Pages
 
 #### 后端 / Backend
+
 - **语言**: TypeScript (Node.js)
 - **构建脚本**: 自研构建系统
 - **数据处理**: OCR + 文本解析
 - **搜索引擎**: Elasticsearch 8.x
 
 #### 数据处理 / Data Processing
+
 - **OCR引擎**: PaddleOCR
 - **数据格式**: 自定义 JSON 格式
 - **版本控制**: Git LFS (大文件)
@@ -201,12 +206,14 @@ sequenceDiagram
 ### 系统要求 / System Requirements
 
 #### 必备软件 / Required Software
+
 - **Node.js**: >= 14.0.0 (推荐 18.x LTS)
 - **npm**: >= 6.0.0 (推荐最新)
 - **Git**: >= 2.0.0
 - **Docker**: >= 20.10.0 (可选，用于本地搜索)
 
 #### 推荐配置 / Recommended Configuration
+
 - **内存**: 8GB+ RAM
 - **磁盘**: 20GB+ 可用空间
 - **网络**: 稳定的互联网连接
@@ -214,6 +221,7 @@ sequenceDiagram
 ### 安装步骤 / Installation Steps
 
 #### 1. 克隆项目 / Clone Repository
+
 ```bash
 # 克隆主仓库
 git clone https://github.com/banned-historical-archives/banned-historical-archives.github.io.git
@@ -224,6 +232,7 @@ git submodule update --init --recursive
 ```
 
 #### 2. 安装依赖 / Install Dependencies
+
 ```bash
 # 安装 Node.js 依赖
 npm install
@@ -239,6 +248,7 @@ node --version
 ```
 
 #### 3. 下载数据 (可选) / Download Data (Optional)
+
 ```bash
 # 下载解析后的数据 (推荐)
 npm run init-parsed
@@ -254,6 +264,7 @@ npm run init-ocr_cache
 ```
 
 #### 4. 构建数据 / Build Data
+
 ```bash
 # 构建索引 (必需)
 npm run build-indexes
@@ -266,6 +277,7 @@ npm run build-txt
 ```
 
 #### 5. 构建前端 / Build Frontend
+
 ```bash
 # 开发模式 (热重载)
 npm run dev
@@ -280,6 +292,7 @@ npx serve@latest out
 ### 开发环境配置 / Development Environment Configuration
 
 #### 环境变量 / Environment Variables
+
 创建 `.env.local` 文件：
 
 ```bash
@@ -302,6 +315,7 @@ DEBUG=*
 #### IDE 配置 / IDE Configuration
 
 **VS Code 推荐扩展**:
+
 - TypeScript and JavaScript Language Features
 - ESLint
 - Prettier
@@ -309,6 +323,7 @@ DEBUG=*
 - GitLens
 
 **VS Code 设置** (.vscode/settings.json):
+
 ```json
 {
   "typescript.preferences.importModuleSpecifier": "relative",
@@ -326,6 +341,7 @@ DEBUG=*
 ### 开发工作流 / Development Workflow
 
 #### 本地开发 / Local Development
+
 ```bash
 # 1. 启动开发服务器
 npm run dev
@@ -342,6 +358,7 @@ npm run lint
 ```
 
 #### 调试技巧 / Debugging Tips
+
 ```bash
 # 启用详细日志
 DEBUG=* npm run dev
@@ -372,6 +389,7 @@ graph TD
 ### 详细步骤 / Detailed Steps
 
 #### 1. 数据准备阶段 / Data Preparation Phase
+
 ```bash
 # 下载资源仓库数据
 npm run init-parsed      # 解析后的数据
@@ -382,6 +400,7 @@ ls -la parsed/ config/
 ```
 
 #### 2. 数据处理阶段 / Data Processing Phase
+
 ```bash
 # 构建搜索索引
 npm run build-indexes
@@ -397,6 +416,7 @@ npm run build-txt
 ```
 
 #### 3. 前端构建阶段 / Frontend Build Phase
+
 ```bash
 # 构建生产版本
 npm run build
@@ -408,6 +428,7 @@ npm run postbuild
 ```
 
 #### 4. 部署阶段 / Deployment Phase
+
 ```bash
 # 推送到 gh-pages 分支
 git add out/
@@ -435,6 +456,7 @@ git push origin json
 ### 构建优化 / Build Optimization
 
 #### 并行构建 / Parallel Building
+
 ```bash
 # 使用更多 CPU 核心
 export NODE_OPTIONS="--max-old-space-size=4096"
@@ -446,6 +468,7 @@ wait
 ```
 
 #### 增量构建 / Incremental Building
+
 ```bash
 # 只重新构建变更的数据
 # 修改 backend/build-indexes.ts 添加增量逻辑
@@ -459,6 +482,7 @@ npm install --prefer-offline
 ### 分支命名规范 / Branch Naming Convention
 
 #### 功能分支 / Feature Branches
+
 ```
 feature/功能名称          # 新功能开发
 feature/add-search        # 添加搜索功能
@@ -474,6 +498,7 @@ docs/update-readme       # 更新 README
 ```
 
 #### 版本分支 / Release Branches
+
 ```
 release/v1.0.0            # 版本发布分支
 hotfix/v1.0.1             # 热修复分支
@@ -482,6 +507,7 @@ hotfix/v1.0.1             # 热修复分支
 ### 分支管理流程 / Branch Management Workflow
 
 #### 开发新功能 / Develop New Feature
+
 ```bash
 # 1. 从 master 创建功能分支
 git checkout master
@@ -503,6 +529,7 @@ git push origin feature/add-dark-mode
 ```
 
 #### 合并代码 / Merge Code
+
 ```bash
 # 1. 更新主分支
 git checkout master
@@ -522,12 +549,14 @@ git push origin --delete feature/add-dark-mode
 ### 分支保护规则 / Branch Protection Rules
 
 #### Master 分支保护 / Master Branch Protection
+
 - ✅ 需要 Pull Request 审核
 - ✅ 需要 CI/CD 通过
 - ✅ 禁止直接推送
 - ✅ 需要至少一个批准
 
 #### 自动分支 / Automated Branches
+
 - `gh-pages`: 自动从 master 构建部署
 - `json`: 自动更新数据
 - `indexes`: 自动更新索引
@@ -538,6 +567,7 @@ git push origin --delete feature/add-dark-mode
 ### GitHub Actions 工作流 / GitHub Actions Workflows
 
 #### 主仓库 CI/CD (.github/workflows/build.yml)
+
 ```yaml
 name: Build and Deploy
 on:
@@ -574,6 +604,7 @@ jobs:
 ```
 
 #### 资源仓库 CI/CD (banned-historical-archives0/.github/workflows/)
+
 ```yaml
 name: Build Parsed Data
 on:
@@ -605,11 +636,13 @@ jobs:
 ### 触发条件 / Trigger Conditions
 
 #### 自动触发 / Automatic Triggers
+
 - **Push to master**: 构建主分支
 - **PR to master**: 运行测试和构建
 - **资源仓库变更**: 重新构建数据
 
 #### 手动触发 / Manual Triggers
+
 ```bash
 # 手动触发 GitHub Actions
 gh workflow run build.yml
@@ -620,12 +653,14 @@ gh workflow run build.yml
 ### 构建产物部署 / Build Artifacts Deployment
 
 #### 分支自动部署 / Branch Auto-Deployment
+
 - `gh-pages` 分支 → GitHub Pages
 - `json` 分支 → JSON 数据 API
 - `indexes` 分支 → 索引数据 API
 - `txt` 分支 → 文本导出下载
 
 #### 部署验证 / Deployment Verification
+
 ```bash
 # 检查 GitHub Pages
 curl https://banned-historical-archives.github.io
@@ -642,6 +677,7 @@ curl https://raw.githubusercontent.com/banned-historical-archives/banned-histori
 ### TypeScript 规范 / TypeScript Standards
 
 #### 文件命名 / File Naming
+
 ```typescript
 // 正确
 article-viewer.tsx
@@ -654,6 +690,7 @@ ArticleViewer.tsx
 ```
 
 #### 导入顺序 / Import Order
+
 ```typescript
 // 1. React 相关
 import React from 'react';
@@ -671,6 +708,7 @@ import { formatDate } from '../utils/date';
 ```
 
 #### 类型定义 / Type Definitions
+
 ```typescript
 // 好的类型定义
 interface Article {
@@ -692,6 +730,7 @@ interface ApiResponse<T> {
 ### React 组件规范 / React Component Standards
 
 #### 函数组件 / Functional Components
+
 ```typescript
 interface ArticleCardProps {
   article: Article;
@@ -715,6 +754,7 @@ export default ArticleCard;
 ```
 
 #### 自定义 Hook / Custom Hooks
+
 ```typescript
 const useArticle = (id: string) => {
   const [article, setArticle] = useState<Article | null>(null);
@@ -745,6 +785,7 @@ const useArticle = (id: string) => {
 ### 提交规范 / Commit Standards
 
 #### 提交信息格式 / Commit Message Format
+
 ```
 <type>(<scope>): <subject>
 
@@ -754,6 +795,7 @@ const useArticle = (id: string) => {
 ```
 
 #### 类型定义 / Type Definitions
+
 - `feat`: 新功能
 - `fix`: 修复问题
 - `docs`: 文档更新
@@ -763,6 +805,7 @@ const useArticle = (id: string) => {
 - `chore`: 构建过程或工具配置
 
 #### 示例 / Examples
+
 ```bash
 # 功能提交
 feat(search): add Elasticsearch integration
@@ -790,36 +833,63 @@ docs(readme): update installation instructions
 
 ## 🧪 测试指南 / Testing Guide
 
+### 测试框架 / Testing Framework
+
+本项目使用 **Vitest** 作为测试框架。Vitest 是一个基于 Vite 的快速测试运行器，与 Vite 构建工具深度集成，提供更快的测试执行速度和更好的开发体验。
+
+This project uses **Vitest** as the testing framework. Vitest is a fast test runner based on Vite, deeply integrated with Vite build tools, providing faster test execution and better developer experience.
+
+### 当前测试状态 / Current Test Status
+
+- **测试框架**: Vitest ^0.19.1
+- **测试文件位置**: `test/` 目录
+- **现有测试文件**:
+  - `test/utils.test.ts` - 工具函数单元测试（6个测试用例）
+  - `test/create-ocr-issue.test.ts` - OCR 自动化文稿录入测试（当前被跳过）
+  - `test/setup.ts` - 测试环境设置文件
+  - `test/__snapshots__/utils.test.ts.snap` - 工具函数快照测试
+- **测试脚本**: 已配置在 `package.json` 中，可使用 `npm test` 运行
+
 ### 测试类型 / Test Types
 
 #### 单元测试 / Unit Tests
+
 ```typescript
-// utils/date.test.ts
-import { formatDate } from './date';
+// test/utils.test.ts
+import { describe, it, expect } from 'vitest';
+import { md5, crypto_md5 } from '../utils';
 
-describe('formatDate', () => {
-  it('should format date correctly', () => {
-    const date = new Date('2023-01-01');
-    expect(formatDate(date)).toBe('2023-01-01');
+describe('md5', () => {
+  it('should generate correct MD5 hash', () => {
+    const result = md5('hello world');
+    expect(result).toBe('5eb63bbbe01eeed093cb22bb8f5acdc3');
   });
+});
 
-  it('should handle invalid dates', () => {
-    expect(() => formatDate(null)).toThrow('Invalid date');
+describe('crypto_md5', () => {
+  it('should generate correct MD5 hash using crypto', () => {
+    const result = crypto_md5('hello world');
+    expect(result).toBe('5eb63bbbe01eeed093cb22bb8f5acdc3');
   });
 });
 ```
 
 #### 组件测试 / Component Tests
+
 ```typescript
-// components/ArticleCard.test.tsx
+// test/components/ArticleCard.test.tsx
+import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import ArticleCard from './ArticleCard';
+import ArticleCard from '../../components/ArticleCard';
 
 const mockArticle = {
   id: '123',
   title: 'Test Article',
   authors: ['Author 1', 'Author 2'],
-  dates: [new Date('2023-01-01')],
+  dates: [{ year: 2023, month: 1, day: 1 }],
+  is_range_date: false,
+  parts: [{ text: 'Content', type: 'paragraph' }],
+  comments: [],
 };
 
 describe('ArticleCard', () => {
@@ -836,83 +906,438 @@ describe('ArticleCard', () => {
 ```
 
 #### 集成测试 / Integration Tests
+
 ```typescript
-// 测试数据加载流程
+// test/integration/article-loading.test.ts
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+
 describe('Article Loading', () => {
+  beforeEach(() => {
+    global.fetch = vi.fn();
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
   it('loads article data from API', async () => {
     const mockResponse = { id: '123', title: 'Test' };
-    global.fetch = jest.fn(() =>
-      Promise.resolve({
-        json: () => Promise.resolve(mockResponse),
-      })
-    );
+    vi.mocked(global.fetch).mockResolvedValueOnce({
+      json: async () => mockResponse,
+    } as Response);
 
-    const { result } = renderHook(() => useArticle('123'), {
-      wrapper: TestWrapper,
-    });
+    const response = await fetch('/api/articles/123');
+    const data = await response.json();
 
-    await waitFor(() => {
-      expect(result.current.article).toEqual(mockResponse);
-    });
+    expect(data).toEqual(mockResponse);
   });
 });
 ```
 
 ### 运行测试 / Running Tests
 
+**注意**: 当前已配置测试脚本，可以使用以下方式运行测试：
+
+**Note**: Test scripts are configured in `package.json`. You can run tests using the following methods:
+
 ```bash
+# 使用 npx 直接运行 Vitest
+# Run Vitest directly using npx
+npx vitest
+
 # 运行所有测试
-npm test
+# Run all tests
+npx vitest run
 
 # 运行特定测试文件
-npm test -- utils/date.test.ts
-
-# 运行测试并生成覆盖率报告
-npm run test:coverage
-
-# 运行 E2E 测试 (如果有)
-npm run test:e2e
+# Run specific test file
+npx vitest run test/utils.test.ts
 
 # 监听模式 (开发时)
-npm run test:watch
+# Watch mode (for development)
+npx vitest watch
+
+# 运行测试并生成覆盖率报告（需要 Vitest 4.0+，当前版本不支持）
+# Run tests with coverage report (requires Vitest 4.0+, not supported in current version)
+# 当前使用: npm run test:coverage（会显示版本要求提示）
+# Currently use: npm run test:coverage (will show version requirement message)
+npx vitest run --coverage
+
+# 运行 UI 模式（可视化界面）
+# Run UI mode (visual interface)
+npx vitest --ui
 ```
+
+**提示**: 可以使用以下npm脚本运行测试：
+
+**Tip**: You can use the following npm scripts to run tests:
 
 ### 测试配置 / Test Configuration
 
-#### Jest 配置 (jest.config.js)
-```javascript
-module.exports = {
-  testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-  moduleNameMapping: {
-    '^@/(.*)$': '<rootDir>/src/$1',
+#### Vitest 配置 (vitest.config.ts)
+
+```typescript
+import { defineConfig } from 'vitest/config';
+import path from 'path';
+
+export default defineConfig({
+  test: {
+    environment: 'jsdom', // 用于 React 组件测试
+    globals: true, // 启用全局 API（describe, it, expect 等）
+    setupFiles: ['./test/setup.ts'], // 测试设置文件
+    include: ['test/**/*.{test,spec}.{ts,tsx}'], // 测试文件匹配模式
+    // 覆盖率配置 (当前 Vitest 0.19.1 版本不支持内置覆盖率，需要升级到 4.0+ 或使用 c8)
+    // coverage: {
+    //   provider: 'v8', // 使用 v8 覆盖率提供者
+    //   reporter: ['text', 'json', 'html'], // 覆盖率报告格式
+    //   exclude: [
+    //     'node_modules/',
+    //     'test/',
+    //     '**/*.d.ts',
+    //     '**/*.config.*',
+    //     '**/dist/',
+    //     '**/out/',
+    //     '**/build/',
+    //     '**/.next/',
+    //     'docs/',
+    //     'scripts/',
+    //     'migration/',
+    //     'public/',
+    //     'styles/',
+    //   ],
+    //   thresholds: {
+    //     lines: 80,
+    //     functions: 80,
+    //     branches: 75,
+    //     statements: 80,
+    //   },
+    // },
   },
-  collectCoverageFrom: [
-    'src/**/*.{ts,tsx}',
-    '!src/**/*.d.ts',
-  ],
-  coverageThreshold: {
-    global: {
-      branches: 80,
-      functions: 80,
-      lines: 80,
-      statements: 80,
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname), // 路径别名
     },
   },
-};
+});
 ```
 
-#### 测试工具 / Testing Tools
-- **Jest**: 测试运行器和断言库
-- **React Testing Library**: React 组件测试
-- **@testing-library/jest-dom**: DOM 断言扩展
-- **msw**: API 模拟
+**注意 / Note**: 
+- 当前 Vitest 版本为 0.19.1，不支持内置覆盖率功能
+- 需要升级到 Vitest 4.0+ 才能启用覆盖率配置
+- 升级后取消注释 `coverage` 配置即可使用
+
+#### 快照测试 / Snapshot Testing
+
+Vitest 支持快照测试，用于验证复杂对象的输出。项目中的 `test/__snapshots__/utils.test.ts.snap` 包含了工具函数的快照测试。
+
+Vitest supports snapshot testing for verifying complex object outputs. The project's `test/__snapshots__/utils.test.ts.snap` contains snapshot tests for utility functions.
+
+```typescript
+import { describe, it, expect } from 'vitest';
+import { apply_patch_v2 } from '../utils';
+
+describe('apply_patch_v2', () => {
+  it('should apply patch correctly', () => {
+    const result = apply_patch_v2(originalData, patch);
+    expect(result).toMatchSnapshot();
+  });
+});
+```
+
+### 测试工具 / Testing Tools
+
+- **Vitest**: 测试运行器和断言库（基于 Vite，速度快）
+- **@testing-library/react**: React 组件测试工具
+- **@testing-library/jest-dom**: DOM 断言扩展（需要配置）
+- **jsdom**: DOM 环境模拟（用于组件测试）
+
+### 测试工程发展规划 / Testing Engineering Development Plan
+
+#### 当前状态 / Current Status
+
+根据测试代码调查，当前项目的测试覆盖情况：
+
+**Current test coverage status based on code investigation:**
+
+- ✅ **测试框架已配置**: Vitest ^0.19.1 已安装，`vitest.config.ts` 已创建
+- ✅ **测试基础设施**: `package.json` 中已配置测试脚本，`test/utils.test.ts` 已恢复
+- ⚠️ **测试覆盖率严重不足**: 
+  - 仅有 2 个测试文件，6 个测试用例通过，1 个跳过
+  - 16 个 React 组件文件完全没有测试
+  - `utils/index.ts` 中 12 个导出函数，测试覆盖很少
+  - 大量源代码文件未覆盖
+
+#### 当前测试工程存在的问题 / Current Testing Engineering Issues
+
+**基于深入分析，当前测试工程存在以下关键问题：**
+
+**Based on in-depth analysis, the current testing engineering has the following key issues:**
+
+##### 1. 测试覆盖率严重不足 / Severely Insufficient Test Coverage
+
+- **现状 / Status**: 
+  - 测试文件数量：2 个（`test/utils.test.ts`, `test/create-ocr-issue.test.ts`）
+  - 通过测试：6 个
+  - 跳过测试：1 个（OCR 集成测试）
+  - React 组件：16 个文件，0 个测试
+  - 工具函数：12 个导出函数，部分测试
+
+- **问题影响 / Impact**:
+  - 无法有效保障代码质量
+  - 难以 catch 潜在 bug
+  - 重构风险高
+  - 缺乏回归测试保障
+
+##### 2. 版本和技术栈落后 / Outdated Versions and Tech Stack
+
+- **Vitest 版本问题 / Vitest Version Issue**:
+  - 当前版本：0.19.1（2023 年发布）
+  - 问题：无法使用内置覆盖率功能（需要 4.0+）
+  - 影响：`vitest.config.ts` 中覆盖率配置被注释，无法生成覆盖率报告
+
+- **依赖缺失 / Missing Dependencies**:
+  - 缺少 `@testing-library/react`（React 组件测试必需）
+  - 缺少 `@testing-library/jest-dom`（DOM 断言扩展）
+  - 影响：无法进行 React 组件测试
+
+##### 3. 测试类型不完整 / Incomplete Test Types
+
+- ✅ **单元测试（部分）**: `utils` 函数测试存在但不完整
+- ❌ **React 组件测试**: 完全缺失（16 个组件文件）
+- ❌ **集成测试**: 只有 1 个被跳过的 OCR 集成测试
+- ❌ **端到端测试**: 完全缺失
+
+##### 4. CI/CD 集成缺失 / Missing CI/CD Integration
+
+- **现状 / Status**: 
+  - 有多个 GitHub workflows（`.github/workflows/`）
+  - 但没有测试相关的 workflow
+  - 没有自动化测试运行
+  - 没有测试报告生成
+  - 没有覆盖率检查
+
+##### 5. 测试质量和维护性问题 / Test Quality and Maintainability Issues
+
+- **跳过的重要测试**: OCR 集成测试被跳过，没有 mock 替代方案
+- **边界条件测试**: 缺少错误处理、边界条件测试
+- **快照测试维护**: 快照文件可能过期，缺少自动更新机制
+- **测试稳定性**: `test/setup.ts` 文件存在但为空，缺少全局配置
+
+##### 6. 配置和工具链不完整 / Incomplete Configuration and Toolchain
+
+- **测试环境**: `test/setup.ts` 文件存在但为空
+- **测试脚本**: 覆盖率脚本显示版本限制信息，但没有替代方案
+- **类型支持**: 缺少针对测试的 TypeScript 配置优化
+
+##### 7. 架构和组织问题 / Architecture and Organization Issues
+
+- **测试文件结构**: 缺少组件测试目录结构（如 `test/components/`）
+- **测试数据管理**: 缺少测试 fixtures 和 mock 数据
+- **测试文档**: 虽然有文档，但缺少实际测试示例
+
+#### 短期目标（1-3个月）/ Short-term Goals (1-3 months)
+
+1. **升级测试框架和依赖 / Upgrade Testing Framework and Dependencies** ⚠️ **高优先级**
+   - 升级 Vitest 到 4.0+ 版本以支持覆盖率功能
+   - 安装 `@testing-library/react` 和 `@testing-library/jest-dom`
+   - 更新 `vitest.config.ts` 启用覆盖率配置
+   - 验证所有测试在新版本下正常运行
+
+2. **提高核心功能测试覆盖率 / Improve Core Function Test Coverage** ⚠️ **高优先级**
+   - 为 `utils/index.ts` 中所有 12 个导出函数编写完整单元测试
+   - 补充边界条件测试和错误处理测试
+   - 为 `backend/` 中的关键脚本添加测试
+   - 目标覆盖率：核心工具函数 >= 80%
+
+3. **建立测试规范和 CI/CD 集成 / Establish Testing Standards and CI/CD Integration** ⚠️ **高优先级**
+   - 创建 `.github/workflows/test.yml` 测试 workflow
+   - 配置自动化测试运行和报告生成
+   - 建立测试文件组织结构（`test/components/`, `test/integration/` 等）
+   - 完善 `test/setup.ts` 全局测试配置
+
+#### 中期目标（3-6个月）/ Medium-term Goals (3-6 months)
+
+1. **组件测试 / Component Testing** ⚠️ **关键缺失**
+   - 为所有 16 个 React 组件编写测试
+   - 优先测试核心组件：Article, Navbar, Layout, DiffViewer 等
+   - 配置 React Testing Library 和 DOM 断言
+   - 目标覆盖率：组件 >= 70%
+
+2. **集成测试 / Integration Testing** ⚠️ **关键缺失**
+   - 为数据加载流程添加集成测试
+   - 为搜索功能添加集成测试
+   - 为 OCR 工作流添加 mock 测试（替代被跳过的测试）
+   - 为 API 端点添加测试
+
+3. **测试工具链完善 / Testing Toolchain Enhancement**
+   - 配置测试覆盖率报告自动生成（升级 Vitest 后）
+   - 集成测试覆盖率到 CI/CD pipeline
+   - 设置测试覆盖率阈值检查（阻止低覆盖率 PR）
+   - 建立测试 fixtures 和 mock 数据管理
+
+#### 长期目标（6-12个月）/ Long-term Goals (6-12 months)
+
+1. **E2E 测试 / End-to-End Testing**
+   - 引入 Playwright 或 Cypress
+   - 为主要用户流程编写 E2E 测试
+   - 配置 E2E 测试自动化
+
+2. **性能测试 / Performance Testing**
+   - 为关键路径添加性能测试
+   - 监控测试执行时间
+   - 建立性能基准
+
+3. **测试最佳实践 / Testing Best Practices**
+   - 建立测试代码审查流程
+   - 编写测试最佳实践文档
+   - 定期进行测试质量评估
+
+### 测试最佳实践 / Testing Best Practices
+
+#### 测试编写原则 / Test Writing Principles
+
+1. **AAA 模式 / AAA Pattern**
+   ```typescript
+   describe('functionName', () => {
+     it('should do something', () => {
+       // Arrange: 准备测试数据
+       const input = 'test input';
+       
+       // Act: 执行被测试的函数
+       const result = functionName(input);
+       
+       // Assert: 验证结果
+       expect(result).toBe('expected output');
+     });
+   });
+   ```
+
+2. **测试独立性 / Test Independence**
+   - 每个测试应该独立运行
+   - 避免测试之间的依赖关系
+   - 使用 `beforeEach` 和 `afterEach` 清理状态
+
+3. **有意义的测试名称 / Meaningful Test Names**
+   ```typescript
+   // ✅ 好的测试名称
+   it('should return error when input is empty', () => { ... });
+   it('should format date correctly for valid input', () => { ... });
+   
+   // ❌ 不好的测试名称
+   it('test1', () => { ... });
+   it('works', () => { ... });
+   ```
+
+4. **测试边界情况 / Test Edge Cases**
+   - 空值、null、undefined
+   - 边界值（最大值、最小值）
+   - 异常情况
+
+#### 测试优先级 / Test Priority
+
+1. **高优先级 / High Priority**
+   - 核心业务逻辑函数
+   - 数据处理和转换函数
+   - 安全相关功能
+
+2. **中优先级 / Medium Priority**
+   - UI 组件
+   - API 端点
+   - 工具函数
+
+3. **低优先级 / Low Priority**
+   - 简单的辅助函数
+   - 配置相关代码
+   - 第三方库封装
+
+### 测试改进建议 / Testing Improvement Recommendations
+
+#### 立即改进（已完成）/ Immediate Improvements (Completed)
+
+1. ✅ **测试脚本已添加到 package.json**
+   - `test`: `vitest run`
+   - `test:watch`: `vitest watch`
+   - `test:coverage`: 显示版本要求提示
+   - `test:ui`: `vitest --ui`
+
+2. ✅ **vitest.config.ts 已创建**
+   - 配置了 jsdom 测试环境
+   - 配置了路径别名
+   - 覆盖率配置已注释（等待 Vitest 升级）
+
+3. ✅ **test/utils.test.ts 已恢复**
+   - 基于快照文件恢复
+   - 包含 `apply_patch_v2` 测试
+   - `extract_dates` 测试已注释（函数不存在）
+
+#### 紧急改进（待完成）/ Urgent Improvements (Pending)
+
+1. **升级 Vitest 到 4.0+** ⚠️ **阻塞覆盖率功能**
+   ```bash
+   npm install -D vitest@^4.0.0 @vitest/coverage-v8@^4.0.0
+   ```
+   - 启用 `vitest.config.ts` 中的覆盖率配置
+   - 更新 `package.json` 中的 `test:coverage` 脚本
+   - 验证所有测试在新版本下正常运行
+
+2. **安装 React 测试依赖** ⚠️ **阻塞组件测试**
+   ```bash
+   npm install -D @testing-library/react @testing-library/jest-dom
+   ```
+   - 配置 `test/setup.ts` 引入 `@testing-library/jest-dom`
+   - 为 React 组件测试做准备
+
+3. **创建测试 CI/CD Workflow** ⚠️ **阻塞自动化测试**
+   - 创建 `.github/workflows/test.yml`
+   - 配置自动运行测试
+   - 配置覆盖率报告上传
+   - 设置 PR 检查
+
+4. **补充核心函数测试** ⚠️ **提高覆盖率**
+   - 为 `utils/index.ts` 中所有函数编写测试
+   - 添加边界条件和错误处理测试
+   - 目标：核心函数覆盖率 >= 80%
+
+5. **开始组件测试** ⚠️ **填补关键空白**
+   - 选择 2-3 个核心组件开始
+   - 建立组件测试模板
+   - 逐步扩展到所有组件
+
+#### 持续改进 / Continuous Improvements
+
+1. **建立测试文化 / Build Testing Culture**
+   - 在代码审查中要求测试（PR 必须包含测试）
+   - 新功能必须包含测试（否则 PR 不合并）
+   - 定期审查测试覆盖率（每月检查）
+   - 设置覆盖率阈值（阻止低覆盖率代码合并）
+
+2. **测试驱动开发 / Test-Driven Development**
+   - 鼓励先写测试再写实现（TDD）
+   - 使用测试指导重构（确保重构安全）
+   - 保持测试代码质量（测试代码也需要 review）
+
+3. **测试文档化 / Test Documentation**
+   - 为复杂测试添加注释
+   - 维护测试最佳实践文档
+   - 分享测试经验和技巧
+   - 建立测试示例库
+
+4. **测试数据管理 / Test Data Management**
+   - 创建 `test/fixtures/` 目录存储测试数据
+   - 建立 mock 数据管理规范
+   - 共享测试工具函数（`test/utils/`）
+
+5. **测试性能优化 / Test Performance Optimization**
+   - 优化测试执行时间
+   - 并行运行测试
+   - 缓存测试结果
 
 ## 🚀 部署流程 / Deployment Process
 
 ### 生产环境部署 / Production Deployment
 
 #### GitHub Pages 自动部署
+
 ```bash
 # 推送到 master 分支自动触发部署
 git add .
@@ -927,6 +1352,7 @@ git push origin master
 ```
 
 #### 手动部署 / Manual Deployment
+
 ```bash
 # 1. 本地构建
 npm run build
@@ -945,6 +1371,7 @@ git push origin gh-pages
 ### 环境配置 / Environment Configuration
 
 #### 生产环境变量 / Production Environment Variables
+
 ```bash
 # .env.production
 NODE_ENV=production
@@ -956,6 +1383,7 @@ API_BASE_URL=https://api.example.com
 ```
 
 #### CDN 配置 / CDN Configuration
+
 ```javascript
 // next.config.js
 module.exports = {
@@ -970,6 +1398,7 @@ module.exports = {
 ### 监控和维护 / Monitoring and Maintenance
 
 #### 性能监控 / Performance Monitoring
+
 ```typescript
 // pages/_app.tsx
 import { useEffect } from 'react';
@@ -990,6 +1419,7 @@ export default function App({ Component, pageProps }) {
 ```
 
 #### 错误监控 / Error Monitoring
+
 ```typescript
 // utils/errorReporting.ts
 export const reportError = (error: Error, context?: any) => {
@@ -1005,6 +1435,7 @@ export const reportError = (error: Error, context?: any) => {
 ### 备份和恢复 / Backup and Recovery
 
 #### 数据备份 / Data Backup
+
 ```bash
 # 备份脚本
 #!/bin/bash
@@ -1026,6 +1457,7 @@ tar -czf "backup_$DATE.tar.gz" "$BACKUP_DIR"
 ```
 
 #### 恢复流程 / Recovery Process
+
 ```bash
 # 1. 停止服务
 docker compose down

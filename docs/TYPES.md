@@ -27,6 +27,7 @@ type Tag = {
 ```
 
 **使用示例**:
+
 ```typescript
 const tag: Tag = {
   name: '毛泽东',
@@ -47,6 +48,7 @@ type Date = {
 ```
 
 **使用示例**:
+
 ```typescript
 // 完整日期
 const date1: Date = { year: 1966, month: 5, day: 16 };
@@ -97,6 +99,7 @@ type ContentPart = {
 ```
 
 **使用示例**:
+
 ```typescript
 const part: ContentPart = {
   text: '在中央政治局会议上的讲话',
@@ -145,6 +148,7 @@ type ParserResult = {
 ```
 
 **使用示例**:
+
 ```typescript
 const parserResult: ParserResult = {
   title: '在中央政治局会议上的讲话',
@@ -569,4 +573,3 @@ graph TB
 **最后更新 / Last Updated**: 2025-01-XX
 **维护者 / Maintainers**: 项目维护团队
 **相关文档**: [数据标准化规范](./standardization.md) | [API文档](./API.md)
-

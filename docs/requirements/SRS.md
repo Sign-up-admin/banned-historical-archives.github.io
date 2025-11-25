@@ -15,12 +15,15 @@
 ## 引言 / Introduction
 
 ### 文档目的 / Purpose
+
 本文档整合所有需求信息，为系统设计、开发、测试和验收提供完整的规格说明，是项目实施的技术依据。
 
 ### 适用范围 / Scope
+
 本文档适用于和谐历史档案馆系统的设计、开发、测试、部署和维护全过程。
 
 ### 相关文档引用 / Related Documents
+
 - [FRD - 功能需求文档](./FRD.md) - 详细功能需求描述
 - [URD - 用户需求文档](./URD.md) - 用户角色和使用场景
 - [NFR - 非功能需求文档](./NFR.md) - 性能、安全等非功能需求
@@ -30,6 +33,7 @@
 - [标准化规范](../../standardization.md) - 数据标准化规范
 
 ### 术语定义 / Terminology
+
 - **文章**: 指经过处理的结构化历史文献
 - **版本对比**: 同一内容不同来源或时期的对比分析
 - **索引**: 用于快速检索的数据索引结构
@@ -40,9 +44,11 @@
 ### 系统概述 / System Overview
 
 #### 产品愿景 / Product Vision
+
 和谐历史档案馆是一个开源的数字历史档案馆，致力于搜集、整合各类受官方封禁的文件、报纸、杂志和多媒体资料，通过标准化处理形成规范化的文档和多媒体档案数据库。
 
 #### 核心价值 / Core Value
+
 - **资料整合**: 解决民间资料收集的分散和重复劳动问题
 - **版本管理**: 支持多来源文档的溯源和版本对比
 - **数据质量**: 通过标准化处理确保资料的准确性和可用性
@@ -51,18 +57,21 @@
 ### 用户特征 / User Characteristics
 
 #### 普通访客 (Casual Visitor)
+
 - **数量**: 主要用户群体，访问频率中等
 - **技术水平**: 基础互联网使用技能
 - **使用目的**: 获取历史知识，满足好奇心
 - **使用模式**: 浏览、搜索、阅读
 
 #### 历史研究者 (Historical Researcher)
+
 - **数量**: 专业用户，访问频率高
 - **技术水平**: 熟练掌握研究工具
 - **使用目的**: 学术研究，资料分析
 - **使用模式**: 深度搜索、版本对比、数据导出
 
 #### 数据贡献者 (Data Contributor)
+
 - **数量**: 志愿者群体，贡献频率定期
 - **技术水平**: 掌握文档处理技能
 - **使用目的**: 丰富历史资料库
@@ -71,12 +80,14 @@
 ### 运行环境 / Operating Environment
 
 #### 客户端环境 / Client Environment
+
 - **浏览器**: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
 - **设备**: 桌面电脑、笔记本、平板、手机
 - **网络**: 宽带互联网连接
 - **分辨率**: 支持最小 320x568 (手机) 到 1920x1080 (桌面)
 
 #### 服务器环境 / Server Environment
+
 - **操作系统**: Linux (Ubuntu 18.04+)
 - **Web服务器**: Next.js 静态导出 + Nginx
 - **数据库**: 无 (使用静态JSON数据)
@@ -86,12 +97,14 @@
 ### 设计约束 / Design Constraints
 
 #### 技术约束 / Technical Constraints
+
 - **静态网站**: 基于GitHub Pages的静态部署
 - **数据存储**: 基于Git仓库的分布式存储
 - **离线可用**: 支持完全离线的本地部署
 - **开源要求**: 所有代码和算法公开透明
 
 #### 业务约束 / Business Constraints
+
 - **内容合规**: 严格遵守相关法律法规
 - **数据真实性**: 所有资料注明来源，支持验证
 - **中立立场**: 平台仅提供资料，不对内容立场做判断
@@ -145,6 +158,7 @@
 ### 技术架构 / Technical Architecture
 
 #### 前端架构 / Frontend Architecture
+
 - **框架**: Next.js 15 (React 18, TypeScript)
 - **UI库**: Material-UI (MUI) v6
 - **构建**: 静态网站导出 (Static HTML Export)
@@ -153,12 +167,14 @@
 - **路由**: Next.js 文件系统路由
 
 #### 数据架构 / Data Architecture
+
 - **存储方式**: Git仓库分布式存储
 - **数据格式**: 标准化JSON格式
 - **索引方式**: 预构建搜索索引
 - **缓存策略**: 浏览器本地缓存 + CDN
 
 #### 构建架构 / Build Architecture
+
 - **构建工具**: Next.js Build System
 - **数据处理**: TypeScript后端脚本
 - **CI/CD**: GitHub Actions自动化构建
@@ -211,6 +227,7 @@
 ```
 
 **依赖说明**:
+
 - **数据加载**: 所有功能都依赖GitHub Raw Content API数据加载
 - **差异算法**: 版本对比和补丁功能都依赖diff-match-patch算法
 - **索引数据**: 列表和筛选功能都依赖预构建的索引数据
@@ -223,54 +240,65 @@
 ### FR-ARTICLES: 文章管理功能 / Article Management
 
 #### FR-ARTICLES-001: 文章列表展示
+
 **优先级**: 高
 **描述**: 系统应能够分页展示所有文章的基本信息。
 
 **输入**:
+
 - 排序参数 (字段、方向)
 - 分页参数 (页码、页大小)
 - 筛选条件 (时间、作者、来源、标签)
 
 **处理**:
+
 - 从索引数据加载文章列表
 - 应用筛选和排序逻辑
 - 计算分页信息
 
 **输出**:
+
 - 文章列表HTML
 - 分页控件
 - 筛选器界面
 
 #### FR-ARTICLES-002: 文章详情展示
+
 **优先级**: 高
 **描述**: 系统应能够展示文章的完整内容和元数据。
 
 **输入**: 文章ID
 
 **处理**:
+
 - 加载文章JSON数据
 - 解析内容结构
 - 渲染格式化内容
 
 **输出**:
+
 - 文章完整内容HTML
 - 元数据显示
 - 相关操作按钮
 
 #### FR-ARTICLES-003: 版本对比功能
+
 **优先级**: 中
 **描述**: 系统应支持同一文章不同版本的对比。
 
 **输入**:
+
 - 文章ID
 - 对比版本选择
 
 **处理**:
+
 - 加载多个版本数据
 - 执行差异分析
 - 生成对比结果
 
 **输出**:
+
 - 差异高亮显示
 - 并排对比视图
 - 差异统计信息
@@ -278,12 +306,14 @@
 ### FR-SEARCH: 搜索功能 / Search Functionality
 
 #### FR-SEARCH-001: 基础搜索
+
 **优先级**: 高
 **描述**: 系统应提供基本的全文搜索功能。
 
 **输入**: 搜索关键词
 
 **处理**:
+
 - Google搜索集成
 - 关键词匹配
 - 结果排序
@@ -291,19 +321,23 @@
 **输出**: 搜索结果列表
 
 #### FR-SEARCH-002: Elasticsearch搜索
+
 **优先级**: 高
 **描述**: 系统应支持本地Elasticsearch全文搜索。
 
 **输入**:
+
 - 查询字符串
 - 搜索参数 (大小、起始位置)
 
 **处理**:
+
 - 构建Elasticsearch查询
 - 执行搜索请求
 - 处理搜索结果
 
 **输出**:
+
 - 搜索结果和高亮片段
 - 分页信息
 - 搜索统计
@@ -311,20 +345,24 @@
 ### FR-MEDIA: 多媒体管理功能 / Multimedia Management
 
 #### FR-MEDIA-001: 音乐库管理
+
 **优先级**: 中
 **描述**: 系统应支持音乐作品的展示和播放。
 
 **功能组件**:
+
 - 音乐列表展示
 - 播放器控制
 - 歌词显示
 - 版本对比
 
 #### FR-MEDIA-002: 图库管理
+
 **优先级**: 中
 **描述**: 系统应支持图片和视频资料的展示。
 
 **功能组件**:
+
 - 图库浏览
 - 图片预览
 - 元数据显示
@@ -333,19 +371,23 @@
 ### FR-FILTER: 数据筛选功能 / Data Filtering
 
 #### FR-FILTER-001: 时间筛选
+
 **优先级**: 高
 **描述**: 系统应支持按时间范围筛选数据。
 
 **筛选参数**:
+
 - 开始年月日
 - 结束年月日
 - 日期范围模式
 
 #### FR-FILTER-002: 多维度筛选
+
 **优先级**: 高
 **描述**: 系统应支持多种条件的组合筛选。
 
 **筛选维度**:
+
 - 作者筛选
 - 来源筛选
 - 标签筛选
@@ -356,16 +398,19 @@
 ### 外部接口 / External Interfaces
 
 #### GitHub Raw Content API
+
 **用途**: 获取数据文件
 **端点**: https://raw.githubusercontent.com/{owner}/{repo}/{branch}/{path}
 **方法**: GET
 **数据格式**: JSON/文本
-**频率限制**: 
+**频率限制**:
+
 - 未认证请求: 每小时60次
 - 认证请求: 每小时5000次
 - 按IP限制
 
 **实际使用的端点**:
+
 - **文章数据**: `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/json/json/{prefix}/{id}.json`
   - prefix: 文章ID前3位
   - id: 完整文章ID
@@ -376,14 +421,17 @@
 - **音乐详情**: `https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives{archiveId}/parsed/{prefix}/{id}/{id}.metadata`
 
 #### Google Search API (集成)
+
 **用途**: 网站内搜索
 **集成方式**: Google Custom Search
 **数据格式**: HTML结果
 **缓存策略**: 浏览器缓存
 
 #### Elasticsearch API (可选)
+
 **用途**: 本地全文搜索
-**端点**: 
+**端点**:
+
 - 本地环境: `http://localhost:9200/article/_search/`
 - 生产环境: `{host}/search_api/article/_search/`
 **方法**: POST (通过URL参数传递)
@@ -391,10 +439,12 @@
 **认证**: Basic Auth (可选)
 
 **查询参数**:
+
 - `source`: URL编码的JSON查询字符串
 - `source_content_type`: `application/json`
 
 **查询示例**:
+
 ```json
 {
   "from": 0,
@@ -413,6 +463,7 @@
 ```
 
 **响应格式**:
+
 ```json
 {
   "hits": {
@@ -440,6 +491,7 @@
 ### 内部接口 / Internal Interfaces
 
 #### 数据加载接口
+
 ```typescript
 interface DataLoader {
   loadArticleList(page: number): Promise<ArticleList>;
@@ -450,6 +502,7 @@ interface DataLoader {
 ```
 
 #### 搜索接口
+
 ```typescript
 interface SearchService {
   search(query: string, options: SearchOptions): Promise<SearchResult>;
@@ -458,6 +511,7 @@ interface SearchService {
 ```
 
 #### 播放器接口
+
 ```typescript
 interface MediaPlayer {
   play(url: string): Promise<void>;
@@ -472,6 +526,7 @@ interface MediaPlayer {
 ### 数据模型 / Data Models
 
 #### 文章数据模型 / Article Data Model
+
 ```typescript
 interface Article {
   id: string;
@@ -490,6 +545,7 @@ interface Article {
 ```
 
 #### 索引数据模型 / Index Data Model
+
 ```typescript
 interface ArticleIndex {
   articles: ArticleSummary[];
@@ -509,6 +565,7 @@ interface ArticleSummary {
 ```
 
 #### 多媒体数据模型 / Multimedia Data Model
+
 ```typescript
 interface MusicEntity {
   id: string;
@@ -532,6 +589,7 @@ interface PictureMetaData {
 ### 数据格式规范 / Data Format Specifications
 
 #### OCR补丁格式 (PatchV2) / OCR Patch Format
+
 ```typescript
 interface PatchV2 {
   version: 2;  // 补丁版本号
@@ -562,10 +620,12 @@ interface CommentDiff {
 ```
 
 **补丁导入格式**:
+
 - 文本格式: `{OCR补丁}{...JSON数据...}`
 - JSON数据包含: `{ publicationId: string, patch: PatchV2 }`
 
 #### 版本对比数据格式 / Version Comparison Data Format
+
 ```typescript
 interface ComparisonResult {
   mode: 'literal' | 'line' | 'description_and_comments';
@@ -583,6 +643,7 @@ interface Diff {
 **对比算法**: 使用 `diff-match-patch` 库进行差异计算
 
 #### 文章响应数据格式 / Article Response Data Format
+
 ```typescript
 interface ArticleResponse {
   books: BookData[];
@@ -604,6 +665,7 @@ interface BookData {
 ### 数据完整性 / Data Integrity
 
 #### 数据验证规则 / Data Validation Rules
+
 - **必填字段**: id, title, authors, dates
 - **格式验证**: 日期格式, URL格式, 邮箱格式
 - **引用完整性**: 标签ID引用, 书籍ID引用
@@ -611,6 +673,7 @@ interface BookData {
 - **补丁验证**: PatchV2格式验证, 索引范围检查
 
 #### 数据一致性规则 / Data Consistency Rules
+
 - **版本一致性**: 同一文章多版本数据同步
 - **引用一致性**: 索引数据与详细数据保持同步
 - **元数据一致性**: 标签和书籍信息在各处保持一致
@@ -619,6 +682,7 @@ interface BookData {
 ### 数据存储要求 / Data Storage Requirements
 
 #### 文件组织结构 / File Organization
+
 ```
 json/
 ├── 883/
@@ -633,6 +697,7 @@ indexes/
 ```
 
 #### 存储优化 / Storage Optimization
+
 - **压缩**: 使用Git LFS管理大文件
 - **分片**: 大数据集分片存储
 - **缓存**: CDN缓存静态资源
@@ -643,11 +708,13 @@ indexes/
 ### 性能要求 / Performance Requirements
 
 #### 响应时间目标 / Response Time Targets
+
 - **页面加载**: < 3秒 (首屏)
 - **搜索响应**: < 2秒 (复杂查询)
 - **数据加载**: < 1秒 (缓存命中)
 
 #### 并发处理能力 / Concurrency Capacity
+
 - **同时用户**: 1000+ 在线用户
 - **请求处理**: 100+ 请求/秒
 - **数据规模**: 支持百万级文档
@@ -655,11 +722,13 @@ indexes/
 ### 安全要求 / Security Requirements
 
 #### 数据保护措施 / Data Protection Measures
+
 - **传输安全**: HTTPS强制使用
 - **内容安全**: XSS防护, CSRF防护
 - **访问控制**: 基于角色的权限管理
 
 #### 隐私保护措施 / Privacy Protection Measures
+
 - **匿名访问**: 支持无注册使用
 - **数据收集**: 仅收集必要统计信息
 - **透明声明**: 明确的隐私政策
@@ -667,11 +736,13 @@ indexes/
 ### 可用性要求 / Availability Requirements
 
 #### 系统可用性 / System Availability
+
 - **正常运行时间**: > 99.5% (年度)
 - **故障恢复时间**: < 1小时 (平均)
 - **维护窗口**: < 4小时/月
 
 #### 数据可用性 / Data Availability
+
 - **数据完整性**: 100% 数据完整性保证
 - **备份恢复**: 支持完整数据恢复
 - **版本控制**: 完整的变更历史
@@ -679,11 +750,13 @@ indexes/
 ### 可维护性要求 / Maintainability Requirements
 
 #### 代码质量标准 / Code Quality Standards
+
 - **测试覆盖**: > 80% 核心功能
 - **代码规范**: ESLint 0错误0警告
 - **文档完整**: 100% API文档化
 
 #### 部署运维 / Deployment Operations
+
 - **自动化部署**: CI/CD流水线
 - **监控告警**: 完整的系统监控
 - **日志管理**: 结构化日志记录
@@ -693,12 +766,14 @@ indexes/
 ### 技术约束 / Technical Constraints
 
 #### 平台限制 / Platform Limitations
+
 - **GitHub Pages**: 静态网站限制
 - **文件大小**: 单个文件 < 100MB
 - **构建时间**: 限制在GitHub Actions时间限制内
 - **CDN缓存**: 依赖GitHub的CDN缓存策略
 
 #### 浏览器兼容性 / Browser Compatibility
+
 - **支持版本**: 现代浏览器最新两个版本
 - **功能降级**: 不支持的浏览器优雅降级
 - **移动端**: 完全响应式设计
@@ -706,11 +781,13 @@ indexes/
 ### 业务约束 / Business Constraints
 
 #### 内容合规性 / Content Compliance
+
 - **法律法规**: 严格遵守相关法律法规
 - **版权保护**: 注明资料来源和版权信息
 - **内容审核**: 对上传内容进行必要审核
 
 #### 资源限制 / Resource Limitations
+
 - **存储资源**: 依赖GitHub仓库存储
 - **计算资源**: 构建时受GitHub Actions限制
 - **网络资源**: 依赖稳定的网络连接
@@ -720,6 +797,7 @@ indexes/
 ### 功能验收标准 / Functional Acceptance Criteria
 
 #### 核心功能验收 / Core Function Acceptance
+
 - [ ] 文章列表正常显示和分页
 - [ ] 文章详情页正常展示
 - [ ] 基础搜索功能正常工作
@@ -727,6 +805,7 @@ indexes/
 - [ ] 响应式布局在各设备正常显示
 
 #### 高级功能验收 / Advanced Function Acceptance
+
 - [ ] Elasticsearch搜索正常工作
 - [ ] 版本对比功能完整实现
 - [ ] 音乐播放功能正常工作
@@ -735,18 +814,21 @@ indexes/
 ### 非功能验收标准 / Non-Functional Acceptance Criteria
 
 #### 性能验收 / Performance Acceptance
+
 - [ ] 首屏加载时间 < 3秒
 - [ ] 搜索响应时间 < 2秒
 - [ ] 支持100+并发用户
 - [ ] 内存使用控制在合理范围内
 
 #### 安全验收 / Security Acceptance
+
 - [ ] HTTPS强制使用
 - [ ] 无安全漏洞 (通过安全扫描)
 - [ ] 用户隐私保护到位
 - [ ] 数据传输加密
 
 #### 可用性验收 / Usability Acceptance
+
 - [ ] 系统可用率 > 99.5%
 - [ ] 无障碍访问支持
 - [ ] 跨浏览器兼容
@@ -755,12 +837,14 @@ indexes/
 ### 质量验收标准 / Quality Acceptance Criteria
 
 #### 代码质量 / Code Quality
+
 - [ ] 单元测试覆盖率 > 80%
 - [ ] ESLint检查通过
 - [ ] TypeScript编译无错误
 - [ ] 性能测试通过
 
 #### 文档完整性 / Documentation Completeness
+
 - [ ] 所有API有完整文档
 - [ ] 用户指南完整准确
 - [ ] 部署文档详细可操作

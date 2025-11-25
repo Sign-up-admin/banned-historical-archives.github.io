@@ -19,6 +19,7 @@
 #### 1. 文件重复性检查 / File Duplication Check
 
 **检查步骤：**
+
 1. **GitHub 搜索**: 在仓库首页按 `Ctrl+F` 搜索文件名或关键词
 2. **数据库筛选**: 在网站中使用"来源"筛选功能搜索
 3. **Issues 检查**: 查看是否有正在进行的录入任务
@@ -34,6 +35,7 @@
 #### 2. 文件质量评估 / File Quality Assessment
 
 **优先级排序：**
+
 1. **高清扫描版** (超星、读秀等数据库导出)
 2. **清晰扫描版** (个人扫描，300dpi以上)
 3. **普通扫描版** (200-300dpi)
@@ -49,6 +51,7 @@
 2. **选择模板**: 点击 "New issue" → 选择 "自动化录入" 模板
 
 3. **填写信息**:
+
    ```json
    {
      "source_name": "毛泽东全集第一卷",
@@ -135,6 +138,7 @@
 #### 针对不同文档类型的调优 / Document Type Tuning
 
 **书籍扫描件 (Book Scans)**:
+
 ```json
 {
   "ocr": {
@@ -146,6 +150,7 @@
 ```
 
 **报纸扫描件 (Newspaper Scans)**:
+
 ```json
 {
   "ocr": {
@@ -158,6 +163,7 @@
 ```
 
 **手写文档 (Handwritten Documents)**:
+
 ```json
 {
   "ocr": {
@@ -169,6 +175,7 @@
 ```
 
 **二次排版文档 (Retyped Documents)**:
+
 ```json
 {
   "ocr": {
@@ -182,6 +189,7 @@
 #### 常见问题调优 / Common Issue Tuning
 
 **问题**: 页眉页脚被识别为内容
+
 ```json
 // 解决方案：调整 content_thresholds
 {
@@ -190,6 +198,7 @@
 ```
 
 **问题**: 分栏文本识别混乱
+
 ```json
 // 解决方案：启用垂直分割
 {
@@ -200,6 +209,7 @@
 ```
 
 **问题**: 小字或装饰文字被误识别
+
 ```json
 // 解决方案：调整最小框尺寸
 {
@@ -208,6 +218,7 @@
 ```
 
 **问题**: 图片或表格干扰识别
+
 ```json
 // 解决方案：提高检测阈值
 {
@@ -255,16 +266,19 @@ done
 #### 文本识别错误 / Text Recognition Errors
 
 **字符错别字**:
+
 - **原因**: 图像质量差、字体特殊、印刷模糊
 - **解决方案**: 提高图像分辨率，使用更准确的模型
 - **手动修正**: 在补丁文件中添加更正
 
 **顺序错乱**:
+
 - **原因**: 复杂布局、多栏文本
 - **解决方案**: 调整 `vsplit` 参数，启用垂直分割
 - **手动修正**: 重新排序内容段落
 
 **内容缺失**:
+
 - **原因**: 检测阈值过高，内容被过滤
 - **解决方案**: 降低 `box_score_thresh`，调整 `content_thresholds`
 - **手动修正**: 添加缺失内容
@@ -272,11 +286,13 @@ done
 #### 格式解析错误 / Format Parsing Errors
 
 **段落合并错误**:
+
 - **原因**: 行间距不一致
 - **解决方案**: 调整合并策略阈值
 - **手动修正**: 手动调整段落边界
 
 **标题识别错误**:
+
 - **原因**: 字体大小差异小
 - **解决方案**: 基于位置和上下文判断
 - **手动修正**: 重新分类内容类型
@@ -354,12 +370,14 @@ async function processWithRetry(filePath: string, maxRetries: number = 3): Promi
 ### 内容完整性检查 / Content Completeness Check
 
 #### 基本信息 / Basic Information
+
 - [ ] **标题准确**: 与原始文档一致，无错别字
 - [ ] **作者完整**: 包含所有相关作者
 - [ ] **日期正确**: 年月日信息准确，格式规范
 - [ ] **页码范围**: 起始和结束页码正确
 
 #### 文本内容 / Text Content
+
 - [ ] **识别准确率**: >95% 的字符正确识别
 - [ ] **段落完整**: 无缺失或重复内容
 - [ ] **格式保留**: 保持原始排版结构
@@ -368,12 +386,14 @@ async function processWithRetry(filePath: string, maxRetries: number = 3): Promi
 ### 数据结构验证 / Data Structure Validation
 
 #### 必填字段 / Required Fields
+
 - [ ] `title`: 非空字符串
 - [ ] `authors`: 非空数组，至少一个作者
 - [ ] `dates`: 非空数组，至少一个日期对象
 - [ ] `parts`: 非空数组，至少一个内容段落
 
 #### 数据类型 / Data Types
+
 - [ ] `title`: string
 - [ ] `authors`: string[]
 - [ ] `dates`: DateObject[]
@@ -382,6 +402,7 @@ async function processWithRetry(filePath: string, maxRetries: number = 3): Promi
 - [ ] `parts`: ContentPart[]
 
 #### 标签规范 / Tag Standards
+
 - [ ] **文稿大类**: 至少包含一个大类标签
 - [ ] **标签类型**: 使用预定义的标签类型
 - [ ] **标签唯一性**: 同类型标签不重复
@@ -390,12 +411,14 @@ async function processWithRetry(filePath: string, maxRetries: number = 3): Promi
 ### 格式一致性检查 / Format Consistency Check
 
 #### 内容分类 / Content Classification
+
 - [ ] **标题正确**: 主要标题标记为 `title`
 - [ ] **段落合理**: 连续文本正确合并为段落
 - [ ] **引用识别**: 引文内容标记为 `quotation`
 - [ ] **列表规范**: 列表项正确分类
 
 #### 注释规范 / Comment Standards
+
 - [ ] **注释编号**: 注释序号连续无重复
 - [ ] **位置准确**: 注释位置信息正确
 - [ ] **内容完整**: 注释文本完整准确
@@ -444,11 +467,13 @@ node scripts/generate-quality-report.js > quality-report.md
 #### 1. 准备阶段 / Preparation Phase
 
 **文件收集**:
+
 - 获取高清原始文件
 - 验证文件来源和版权
 - 检查文件完整性
 
 **信息整理**:
+
 - 提取元数据（标题、作者、日期）
 - 确定文档类型和标签
 - 编写 OCR 配置
@@ -456,12 +481,14 @@ node scripts/generate-quality-report.js > quality-report.md
 #### 2. 配置阶段 / Configuration Phase
 
 **创建 Issue**:
+
 1. 访问 [GitHub Issues](https://github.com/banned-historical-archives/banned-historical-archives.github.io/issues)
 2. 选择 "自动化录入" 模板
 3. 填写完整的配置信息
 4. 上传原始文件
 
 **配置示例**:
+
 ```json
 {
   "source_name": "毛泽东全集第一卷",
@@ -490,6 +517,7 @@ node scripts/generate-quality-report.js > quality-report.md
 #### 3. 处理阶段 / Processing Phase
 
 **自动化处理**:
+
 - GitHub Actions 自动触发
 - 下载和验证文件
 - 执行 OCR 识别
@@ -501,11 +529,13 @@ node scripts/generate-quality-report.js > quality-report.md
 #### 4. 审核阶段 / Review Phase
 
 **自动检查**:
+
 - 数据格式验证
 - 质量评分
 - 重复内容检测
 
 **人工审核**:
+
 - 内容准确性检查
 - 格式正确性验证
 - 标签准确性确认
@@ -513,6 +543,7 @@ node scripts/generate-quality-report.js > quality-report.md
 #### 5. 发布阶段 / Publishing Phase
 
 **合并发布**:
+
 - 审核通过后合并到主分支
 - 触发网站重新构建
 - 更新搜索索引
@@ -541,12 +572,14 @@ node scripts/generate-quality-report.js > quality-report.md
 #### 配置错误 / Configuration Errors
 
 **问题**: JSON 格式错误
+
 ```
 解决方案：使用 JSON 验证器检查语法
 在线工具：https://jsonlint.com/
 ```
 
 **问题**: 必填字段缺失
+
 ```
 解决方案：参考本文档的配置示例
 检查所有 required 字段
@@ -555,12 +588,14 @@ node scripts/generate-quality-report.js > quality-report.md
 #### 文件问题 / File Issues
 
 **问题**: 文件损坏或无法读取
+
 ```
 解决方案：重新上传文件
 检查文件格式和大小
 ```
 
 **问题**: 文件过大
+
 ```
 解决方案：压缩文件或分批处理
 联系管理员处理大文件
@@ -569,12 +604,14 @@ node scripts/generate-quality-report.js > quality-report.md
 #### 处理失败 / Processing Failures
 
 **问题**: OCR 识别失败
+
 ```
 解决方案：调整 OCR 参数
 提供更清晰的源文件
 ```
 
 **问题**: 构建失败
+
 ```
 解决方案：检查日志信息
 修复配置错误
@@ -586,12 +623,14 @@ node scripts/generate-quality-report.js > quality-report.md
 ### 文件准备 / File Preparation
 
 #### 选择合适的源文件
+
 1. **优先高清扫描**: 超星、读秀等数据库导出文件
 2. **检查分辨率**: 至少 300dpi
 3. **验证完整性**: 确保文件未损坏
 4. **保留元数据**: 包含原始文件名和来源信息
 
 #### 文件命名规范
+
 ```
 格式：[作者]-[年份]-[标题].[扩展名]
 示例：毛泽东-1966-五一六通知.pdf
@@ -600,12 +639,14 @@ node scripts/generate-quality-report.js > quality-report.md
 ### 配置优化 / Configuration Optimization
 
 #### 根据文档类型调整参数
+
 - **书籍**: 注重页眉页脚去除
 - **报纸**: 注意分栏处理
 - **手稿**: 使用高精度模型
 - **排版文档**: 简化参数设置
 
 #### 分批测试
+
 1. 先处理少量页面测试参数
 2. 验证结果后再处理全文
 3. 根据测试结果调整配置
@@ -613,12 +654,14 @@ node scripts/generate-quality-report.js > quality-report.md
 ### 质量保证 / Quality Assurance
 
 #### 多轮检查
+
 1. **自动化检查**: 使用脚本验证数据格式
 2. **抽样检查**: 人工检查部分内容
 3. **交叉验证**: 多人审核重要文档
 4. **用户反馈**: 发布后收集使用反馈
 
 #### 持续改进
+
 - 收集处理失败案例
 - 优化参数配置
 - 更新处理流程
@@ -627,12 +670,14 @@ node scripts/generate-quality-report.js > quality-report.md
 ### 协作规范 / Collaboration Standards
 
 #### 沟通规范
+
 - 使用 Issue 跟踪任务进度
 - 及时更新处理状态
 - 详细描述问题和解决方案
 - 分享经验和最佳实践
 
 #### 文档维护
+
 - 及时更新处理文档
 - 记录常见问题解决方案
 - 维护配置模板库
@@ -645,18 +690,21 @@ node scripts/generate-quality-report.js > quality-report.md
 #### 检查清单 / Checklist
 
 **提交前检查**:
+
 - [ ] 文件格式正确
 - [ ] 文件大小合理
 - [ ] 配置 JSON 有效
 - [ ] 所有必填字段已填
 
 **处理中检查**:
+
 - [ ] Issue 状态正常
 - [ ] 自动化流程运行
 - [ ] 日志无错误信息
 - [ ] 输出文件生成
 
 **完成后检查**:
+
 - [ ] 数据格式正确
 - [ ] 内容准确完整
 - [ ] 标签正确标注
@@ -667,12 +715,14 @@ node scripts/generate-quality-report.js > quality-report.md
 #### 配置错误 / Configuration Errors
 
 **错误**: `Invalid JSON format`
+
 ```
 原因：JSON 语法错误
 解决：使用 https://jsonlint.com/ 验证
 ```
 
 **错误**: `Missing required field: title`
+
 ```
 原因：缺少标题字段
 解决：添加 title 字段到配置中
@@ -681,12 +731,14 @@ node scripts/generate-quality-report.js > quality-report.md
 #### 文件错误 / File Errors
 
 **错误**: `File corrupted or unreadable`
+
 ```
 原因：文件损坏
 解决：重新上传文件
 ```
 
 **错误**: `Unsupported file format`
+
 ```
 原因：不支持的文件格式
 解决：转换为支持的格式 (PDF/图片)
@@ -695,12 +747,14 @@ node scripts/generate-quality-report.js > quality-report.md
 #### 处理错误 / Processing Errors
 
 **错误**: `OCR failed: low confidence`
+
 ```
 原因：图像质量差
 解决：提供更清晰的源文件
 ```
 
 **错误**: `Build timeout`
+
 ```
 原因：处理时间过长
 解决：减少处理页面数量或优化参数
@@ -722,6 +776,7 @@ node scripts/generate-quality-report.js > quality-report.md
 - [开发环境搭建](./dev.md)
 - [故障排查](./TROUBLESHOOTING.md)
 - [贡献指南](../CONTRIBUTING.md)
+
 ```
 {
   source_name: '毛泽东全集第一卷', // 来源文件，书籍，数据库，报纸等等
@@ -782,7 +837,9 @@ node scripts/generate-quality-report.js > quality-report.md
     // 此参数将继承全局ocr参数和article中的ocr参数，并覆盖（此参数优先级更高），默认为空
 }
 ```
+
 从实践来解释一些重要的属性：
+
 - source_name：对于这个属性，保证填写好三个信息——文件名、出处和日期——为了保证这个属性相对唯一，**尽量不要直接填写文件的名字**，“毛泽东选集第一卷（人民出版社1992年）”或“毛泽东选集（1992年）”比仅仅填写“毛泽东选集第一卷”要好得多，对于书籍，**一般需要在括号内附带相应的出版社或出版公司**（是否填写全称可以随意，根本目的是为了让使用者看到 source_name 就可以获知指的是哪本书），对于以上例子，众所周知现行的《毛泽东选集》只有人民出版社的两个版本，因此出版社可以省略，但是对于其他的书籍，录入者往往无法得知是否存在其他版本，所以最好加上出版方。对于图片集的录入，可以使用“张春桥同志在市革会扩大会议上的讲话（1969.xx.xx）”这样的格式，其中**括号前的内容通常取图片集中的原文标题，如果没有标题，则根据原文自拟**。**日期的填写非常重要**，尤其是对于图片集，对于书籍来说，则可以让使用者迅速知道录入物所处的时间段（1976年前或者后）。
 - archive_id：图片集放在 1，杂志、期刊放在 2，毛时代及以后的文件放在 3，马恩时代放在 4，列斯时代的放在 5。文件属于哪个时代由录入者主观决定。
 - internal：是否属于内部文件。由录入者根据内容决定。
@@ -791,9 +848,15 @@ node scripts/generate-quality-report.js > quality-report.md
 - title：最好能根据文字的内容，确定出一个标题，比如“张春桥同志在市革会扩大会议上的讲话”，而不是直接使用原文的标题，当然如果原文标题十分符合内容，可以直接使用。
 - alias: 这里放原文标题，如果 title 和 alias 一样，这项可以删除不写。
 - authors：这里的作者范围并不很狭义。比如一篇文章内，有多个主要发言人，那么这几个发言人都是作者。但是也不要随意扩充，把握一个度就好。
-- **ocr 相关**：content_thresholds 用于排除上右下左杂物，一般每次录入都必须携带；standard_paragraph_merge_strategy_threshold 和 differential_paragraph_merge_strategy_threshold，如果录入物为二次加工排版之后的文件，一般必须设置这两项——将前者计算设置，同时将后者设零，如果录入物为书籍，则一半不需要填写此项；auto_vsplit 和 vsplit：一般在文件文字有分栏现象时使用，auto_vsplit 设置为 false 的同时填写计算好的 vsplit。（注：ocr 的参数使用有两个范围——全局和文章，可根据需要设置）
+- **ocr 相关**：content_thresholds 用于排除上右下左杂物，一般每次录入都必须携带；
+  standard_paragraph_merge_strategy_threshold 和 differential_paragraph_merge_strategy_threshold，
+  如果录入物为二次加工排版之后的文件，一般必须设置这两项——将前者计算设置，同时将后者设零，
+  如果录入物为书籍，则一半不需要填写此项；auto_vsplit 和 vsplit：一般在文件文字有分栏现象时使用，
+  auto_vsplit 设置为 false 的同时填写计算好的 vsplit。
+  （注：ocr 的参数使用有两个范围——全局和文章，可根据需要设置）
 
 以下是一份日常实践中的 OCR Issue：
+
 ```
 {
     source_name: '陈伯达最后口述回忆（阳光环球2005年）',
@@ -819,28 +882,38 @@ node scripts/generate-quality-report.js > quality-report.md
 ```
 
 ## 校对
+
 校对的原则：**完全忠于原文。原文有什么就录入与校对什么。不要删除或增加内容**。
 
 1. 页面右上角显示了文件校对记录的数量（可点击查看详情），如果为 0 表示未经过校对，注意不同来源的校对记录是分开的。
 ![image](https://user-images.githubusercontent.com/109972625/183044854-43b85c29-ec5a-4a28-be9f-f77ab7ccfb5c.png)
 2. 在将要校对的文件页面选择“对比”->“对比原始文件并校对”。
 ![图片](https://user-images.githubusercontent.com/109972625/193404100-c4b7f8d2-2d03-4508-8636-7484d19fc660.png)
-3. 校对正文。注意分清楚段落的类型。title、subtitle、subtitle1……分别代表一级、二级、三级……标题，根据原文设置；appellation：开头“同志们：”等处使用；subdate：开头日期“（一九七五年一月一日）”、地点“人民大会堂西厅”等使用；quotation：原文中引用他人的话时使用；signature：原文最后署名时使用，文末的日期也属于这个类型（联想日常生活中最后居右的文字）；image 和 image_description：插图和插图的描述使用；描述：比如“未经首长审阅”、“某某组织印发”这类内容即使在原文中放置在开头，也要填写在“描述”中；注释：正文中注释使用〔1〕〔2〕等序号实现注释功能，注意，原文中脚注、尾注等所有各类注释需要统一归在一类，即按顺序给各类注释混合编号。
+3. 校对正文。注意分清楚段落的类型。
+   - title、subtitle、subtitle1……分别代表一级、二级、三级……标题，根据原文设置
+   - appellation：开头"同志们："等处使用
+   - subdate：开头日期"（一九七五年一月一日）"、地点"人民大会堂西厅"等使用
+   - quotation：原文中引用他人的话时使用
+   - signature：原文最后署名时使用，文末的日期也属于这个类型（联想日常生活中最后居右的文字）
+   - image 和 image_description：插图和插图的描述使用
+   - 描述：比如"未经首长审阅"、"某某组织印发"这类内容即使在原文中放置在开头，也要填写在"描述"中
+   - 注释：正文中注释使用〔1〕〔2〕等序号实现注释功能，注意，原文中脚注、尾注等所有各类注释需要统一归在一类，即按顺序给各类注释混合编号
 4. 编辑完成后提交变更，如果无误也可以提交，使其他人知道此文件已经被校对。
 5. 然后会跳转到 issue 发帖页面并自动填充好内容（不要修改），点击发布后机器人会生成相应代码发起 pull request，然后等待审核。
 
 ## 校对规范
-* 使用全角符号
-* 叉号应当统一用“×”，而不是英文的“X”；人名中间的圆点用“·”
-* 正文、描述与注释出现的各种日期，尊重原文录入。
-* 正文中一般情况下不使用空格（英文单词与中文之间的空格由系统添加）
-* 段落内不要使用回车换行，请用"在上方插入"或者"在下方插入"代替
-* 添加正文中的注释或者修改注释时使用“〔”，“〕”符号
+- 使用全角符号
+- 叉号应当统一用“×”，而不是英文的“X”；人名中间的圆点用“·”
+- 正文、描述与注释出现的各种日期，尊重原文录入。
+- 正文中一般情况下不使用空格（英文单词与中文之间的空格由系统添加）
+- 段落内不要使用回车换行，请用"在上方插入"或者"在下方插入"代替
+- 添加正文中的注释或者修改注释时使用“〔”，“〕”符号
 
 ## 注意事项
+
 **请在校对前检查以下问题**
-* 标题错误（指浏览器顶部显示的标题（source_name），不是正文中的标题（title））；
-* 日期或作者错误/缺漏；
-* 大段文字缺失、原始文件页数错误；
+- 标题错误（指浏览器顶部显示的标题（source_name），不是正文中的标题（title））；
+- 日期或作者错误/缺漏；
+- 大段文字缺失、原始文件页数错误；
 
 以上问题如果出现，需要发 issue 解决。

@@ -269,11 +269,13 @@ async function updateSearchIndex(articles: Article[]): Promise<void> {
 
 **功能**: 构建文章索引文件
 
-**输入**: 
+**输入**:
+
 - `parsed/archives{0-31}/` - 解析后的数据
 - `config/archives{0-31}/` - 配置文件
 
 **输出**:
+
 - `indexes/file_count.json` - 文件统计
 - `indexes/article_list_{n}.json` - 文章列表分片
 - `indexes/article_list_with_book_info_{n}.json` - 文章与书籍关联
@@ -281,6 +283,7 @@ async function updateSearchIndex(articles: Article[]): Promise<void> {
 - `indexes/gallery.json` - 图库索引
 
 **处理流程**:
+
 1. 遍历所有资源仓库 (0-31)
 2. 读取每个资源的元数据和配置
 3. 根据资源类型构建对应的索引
@@ -291,13 +294,16 @@ async function updateSearchIndex(articles: Article[]): Promise<void> {
 **功能**: 构建文章JSON数据文件
 
 **输入**:
+
 - `parsed/archives{0-31}/` - 解析后的数据
 - 文章索引信息
 
 **输出**:
+
 - `json/{prefix}/{article_id}.json` - 文章JSON文件
 
 **处理流程**:
+
 1. 读取文章索引，获取所有文章的基本信息
 2. 为每篇文章收集其在不同出版物中的版本
 3. 合并元数据、文章内容和标签信息
@@ -308,14 +314,17 @@ async function updateSearchIndex(articles: Article[]): Promise<void> {
 **功能**: 构建网站地图
 
 **输入**:
+
 - 文章索引
 
 **输出**:
+
 - `out/sitemap-{n}.xml` - 网站地图分片
 - `out/sitemap-index.xml` - 网站地图索引
 - `out/robot.txt` - 机器人协议文件
 
 **处理流程**:
+
 1. 读取所有文章ID
 2. 按分片大小分组
 3. 生成XML格式的网站地图
@@ -326,12 +335,15 @@ async function updateSearchIndex(articles: Article[]): Promise<void> {
 **功能**: 构建文本导出文件
 
 **输入**:
+
 - `parsed/archives{0-31}/` - 解析后的数据
 
 **输出**:
+
 - `txt/{book_id}/{prefix}/{article_id}.txt` - 文本文件
 
 **处理流程**:
+
 1. 读取文章数据
 2. 格式化文本内容
 3. 生成纯文本文件
@@ -341,12 +353,15 @@ async function updateSearchIndex(articles: Article[]): Promise<void> {
 **功能**: 初始化子仓库数据
 
 **输入**:
+
 - GitHub资源仓库URL
 
 **输出**:
+
 - `{branch}/archives{0-31}/` - 下载的数据目录
 
 **处理流程**:
+
 1. 遍历所有资源仓库 (0-31)
 2. 使用Git浅克隆下载指定分支
 3. 如果目录已存在，尝试更新到最新版本
@@ -356,12 +371,15 @@ async function updateSearchIndex(articles: Article[]): Promise<void> {
 **功能**: 初始化Elasticsearch索引
 
 **输入**:
+
 - `parsed/archives{0-31}/` - 解析后的数据
 
 **输出**:
+
 - Elasticsearch索引
 
 **处理流程**:
+
 1. 检查索引是否为空
 2. 读取所有文章数据
 3. 索引到Elasticsearch
@@ -767,4 +785,3 @@ class CacheInvalidator {
 
 **最后更新 / Last Updated**: 2025-01-XX
 **维护者 / Maintainers**: 项目维护团队
-

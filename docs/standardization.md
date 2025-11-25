@@ -1062,8 +1062,9 @@ function processArticleData(rawData: any): ParserResult {
 #### 单元测试 / Unit Tests
 
 ```typescript
-// utils/__tests__/date.test.ts
-import { formatDate } from '../date';
+// test/utils/date.test.ts
+import { describe, it, expect } from 'vitest';
+import { formatDate } from '../../utils';
 
 describe('formatDate', () => {
   it('should format date correctly', () => {
@@ -1079,8 +1080,10 @@ describe('formatDate', () => {
 #### 数据验证测试 / Data Validation Tests
 
 ```typescript
-// types/__tests__/validation.test.ts
-import { validateParserResult } from '../validation';
+// test/types/validation.test.ts
+import { describe, it, expect } from 'vitest';
+import { validateParserResult } from '../../utils';
+import { ParserResult } from '../../types';
 
 describe('validateParserResult', () => {
   it('should validate complete article', () => {

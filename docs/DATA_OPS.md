@@ -106,6 +106,7 @@ const alertRules: AlertRule[] = [
 **问题**: 构建脚本执行失败
 
 **排查步骤**:
+
 1. 检查错误日志
 2. 验证输入数据完整性
 3. 检查磁盘空间
@@ -113,6 +114,7 @@ const alertRules: AlertRule[] = [
 5. 验证配置文件格式
 
 **解决方案**:
+
 ```bash
 # 查看构建日志
 tail -f build.log
@@ -132,12 +134,14 @@ npm run build-indexes
 **问题**: 数据质量分数过低
 
 **排查步骤**:
+
 1. 检查质量报告
 2. 识别问题类型
 3. 定位问题数据
 4. 分析根本原因
 
 **解决方案**:
+
 ```bash
 # 生成质量报告
 npm run quality-check
@@ -154,12 +158,14 @@ npm run validate-data
 **问题**: 搜索索引异常
 
 **排查步骤**:
+
 1. 检查Elasticsearch集群状态
 2. 检查索引健康状态
 3. 查看错误日志
 4. 验证数据格式
 
 **解决方案**:
+
 ```bash
 # 检查集群状态
 curl http://localhost:9200/_cluster/health
@@ -366,4 +372,3 @@ echo "恢复完成"
 
 **最后更新 / Last Updated**: 2025-01-XX
 **维护者 / Maintainers**: 项目维护团队
-

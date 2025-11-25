@@ -83,6 +83,7 @@ curl https://raw.githubusercontent.com/banned-historical-archives/banned-histori
 ```
 
 **响应示例**:
+
 ```json
 {
   "books": [
@@ -138,6 +139,7 @@ interface FileCountIndex {
 ```
 
 **访问地址**:
+
 ```
 https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/file_count.json
 ```
@@ -163,6 +165,7 @@ interface ArticleSummary {
 ```
 
 **访问地址**:
+
 ```
 https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/article_list_{index}.json
 ```
@@ -190,6 +193,7 @@ interface ArtistInfo {
 ```
 
 **访问地址**:
+
 ```
 https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/music.json
 ```
@@ -214,6 +218,7 @@ interface GalleryIndex {
 ```
 
 **访问地址**:
+
 ```
 https://raw.githubusercontent.com/banned-historical-archives/banned-historical-archives.github.io/refs/heads/indexes/indexes/gallery.json
 ```
@@ -229,6 +234,7 @@ https://raw.githubusercontent.com/banned-historical-archives/banned-historical-a
 **端点**: `http://localhost:9200/article/_search`
 
 **请求示例**:
+
 ```bash
 curl -X GET "http://localhost:9200/article/_search" \
   -H 'Content-Type: application/json' \
@@ -246,6 +252,7 @@ curl -X GET "http://localhost:9200/article/_search" \
 #### 高级搜索
 
 **精确短语搜索**:
+
 ```json
 {
   "query": {
@@ -257,6 +264,7 @@ curl -X GET "http://localhost:9200/article/_search" \
 ```
 
 **多字段搜索**:
+
 ```json
 {
   "query": {
@@ -269,6 +277,7 @@ curl -X GET "http://localhost:9200/article/_search" \
 ```
 
 **布尔查询**:
+
 ```json
 {
   "query": {
@@ -390,6 +399,7 @@ async function getArticle(articleId: string): Promise<ArticleResponse> {
 ```
 
 **实际使用位置 / Actual Usage Location:**
+
 - `pages/article/index.tsx` (行110-117) - 文章详情页面数据加载
 
 #### 获取文章列表索引 / Get Article List Index
@@ -449,6 +459,7 @@ async function getArticleListPage(pageIndex: number): Promise<ArticleListV2> {
 ```
 
 **实际使用位置 / Actual Usage Location:**
+
 - `pages/articles/index.tsx` (行337-347) - 文章列表页面数据加载
 
 ### 音乐数据获取 / Music Data Fetching
@@ -487,6 +498,7 @@ async function getMusicIndex(): Promise<MusicIndex[]> {
 ```
 
 **实际使用位置 / Actual Usage Location:**
+
 - `pages/music/index.tsx` (行612-616) - 音乐页面索引数据加载
 
 #### 获取音乐详情 / Get Music Details
@@ -522,6 +534,7 @@ async function getMusicDetails(musicId: string, archiveId: number): Promise<Musi
 ```
 
 **实际使用位置 / Actual Usage Location:**
+
 - `pages/music/index.tsx` (行74-84) - 音乐详情数据获取函数
 
 ### 图库数据获取 / Gallery Data Fetching
@@ -560,6 +573,7 @@ async function getGalleryIndex(): Promise<GalleryIndexes> {
 ```
 
 **实际使用位置 / Actual Usage Location:**
+
 - `pages/gallery/index.tsx` (行150-155) - 图库页面索引数据加载
 
 ### 全文搜索API / Full-text Search API
@@ -627,6 +641,7 @@ async function searchArticles(options: SearchOptions): Promise<SearchResponse> {
 ```
 
 **实际使用位置 / Actual Usage Location:**
+
 - `pages/search/index.tsx` (行47-69) - 搜索页面全文搜索功能
 
 #### 环境判断逻辑 / Environment Detection Logic
@@ -869,15 +884,18 @@ print(f"找到 {results['hits']['total']['value']} 条结果")
 ### GitHub Raw Content API 限制
 
 #### 速率限制
+
 - **未认证请求**: 每小时 60 次
 - **认证请求**: 每小时 5000 次
 - **按 IP 限制**: 防止滥用
 
 #### 文件大小限制
+
 - **单个文件**: 最大 100MB
 - **仓库大小**: 无硬性限制，但影响加载速度
 
 #### 缓存策略
+
 - **CDN 缓存**: GitHub 全球 CDN
 - **缓存时间**: 通常 5 分钟到 1 小时
 - **手动刷新**: 通过提交新版本刷新
@@ -885,11 +903,13 @@ print(f"找到 {results['hits']['total']['value']} 条结果")
 ### 安全考虑
 
 #### 数据隐私
+
 - 所有数据公开可见
 - 建议使用 HTTPS
 - 注意个人身份信息泄露
 
 #### API 使用
+
 - 遵守 GitHub 服务条款
 - 避免过度请求
 - 实现错误重试机制
@@ -932,16 +952,19 @@ print(f"找到 {results['hits']['total']['value']} 条结果")
 ### API端点映射关系 / API Endpoint Mapping
 
 #### 文章相关API / Article Related APIs
+
 - **数据存储**: `json` 分支 - 存储完整的文章JSON数据
 - **索引文件**: `indexes` 分支 - 存储文章列表和元数据索引
 - **访问模式**: 按ID前3位分目录存储，提高访问效率
 
 #### 多媒体相关API / Multimedia Related APIs
+
 - **音乐数据**: 存储在独立的资源仓库中 (`banned-historical-archives{archiveId}`)
 - **图库数据**: 统一存储在主仓库的 `indexes` 分支中
 - **访问模式**: 索引文件 + 详情数据分离，提高加载性能
 
 #### 搜索相关API / Search Related APIs
+
 - **本地环境**: `localhost:9200` - 直接连接Elasticsearch
 - **生产环境**: `/search_api` - 通过反向代理访问
 - **搜索类型**: 支持精确短语搜索和多字段搜索

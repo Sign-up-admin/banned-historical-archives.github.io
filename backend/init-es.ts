@@ -30,6 +30,22 @@ import { join } from 'path';
 import { readJSONSync } from 'fs-extra';
 import { sleep } from '../utils';
 import { get_article_indexes } from './get_article_indexes';
+import * as dotenv from 'dotenv';
+
+// 加载环境变量
+dotenv.config();
+
+/**
+ * 获取解析数据的基础路径
+ * 支持通过环境变量 PARSED_DATA_PATH 自定义路径
+ * 如果未设置，则使用默认的相对路径
+ */
+function getParsedDataPath(): string {
+  if (process.env['PARSED_DATA_PATH']) {
+    return process.env['PARSED_DATA_PATH'];
+  }
+  return join(__dirname, '../parsed');
+}
 
 /**
  * Elasticsearch 文章文档类型
@@ -102,8 +118,8 @@ const article_indexes = get_article_indexes();
       const [book_id, book_name, archive_id] = book;
       const article = readJSONSync(
         join(
-          __dirname,
-          '../parsed/archives' + archive_id,
+          getParsedDataPath(),
+          'archives' + archive_id,
           book_id.slice(0, 3),
           book_id,
           article_id.slice(0, 3),

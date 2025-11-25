@@ -2,9 +2,11 @@
 
 ## 概述 / Overview
 
-这是「和谐历史档案馆」项目的完整文档集合。本文档为不同用户角色提供了相应的文档导航，帮助您快速找到所需信息。
+这是「和谐历史档案馆」项目的完整文档集合。
+本文档为不同用户角色提供了相应的文档导航，帮助您快速找到所需信息。
 
-This is the complete documentation collection for the "Banned Historical Archives" project. This document provides documentation navigation for different user roles to help you quickly find the information you need.
+This is the complete documentation collection for the "Banned Historical Archives" project.
+This document provides documentation navigation for different user roles to help you quickly find the information you need.
 
 ## 按角色浏览 / Browse by Role
 
@@ -24,18 +26,24 @@ If you just want to use the website to view historical archives, please refer to
 If you want to understand the project architecture, do secondary development, or deploy locally, please refer to:
 
 #### 快速开始 / Quick Start
+
 - **[../README.md](../README.md)** - 项目总览和快速开始 / Project Overview and Quick Start
 - **[local.md](local.md)** - 本地运行指南 / Local Setup Guide
 
 #### 技术文档 / Technical Documentation
+
 - **[dev.md](dev.md)** - 开发架构和构建流程 / Development Architecture and Build Process
 - **[ARCHITECTURE.md](ARCHITECTURE.md)** - 系统架构设计文档（详细架构、技术选型、扩展性设计） / System Architecture Design Document
 - **[DATA_FLOW.md](DATA_FLOW.md)** - 数据流和处理流程文档（从原始文件到最终展示的完整流程） / Data Flow and Processing Pipeline Document
 - **[TYPES.md](TYPES.md)** - TypeScript类型定义文档（所有类型定义和使用示例） / TypeScript Type Definitions Documentation
+- **[TYPES_GENERATED.md](TYPES_GENERATED.md)** - 类型定义文档（自动生成） / Type Definitions Documentation (Auto-generated)
 - **[API.md](API.md)** - 数据 API 详细说明（包含前端API使用方法、实际代码示例） / Data API Details (includes frontend API usage and actual code examples)
+- **[API_GENERATED.md](API_GENERATED.md)** - API 文档（自动生成） / API Documentation (Auto-generated)
+- **[BUILD_SCRIPTS_GENERATED.md](BUILD_SCRIPTS_GENERATED.md)** - 构建脚本文档（自动生成） / Build Scripts Documentation (Auto-generated)
 - **[local-search-engine.md](local-search-engine.md)** - 本地搜索引擎设置 / Local Search Engine Setup
 
 #### 部署和运维 / Deployment and Operations
+
 - **[DEPLOYMENT.md](DEPLOYMENT.md)** - 生产环境部署指南 / Production Deployment Guide
 - **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - 故障排查和解决方案 / Troubleshooting and Solutions
 
@@ -46,13 +54,16 @@ If you want to understand the project architecture, do secondary development, or
 If you want to contribute to the project, organize data, or develop code, please refer to:
 
 #### 贡献指南 / Contribution Guidelines
+
 - **[../CONTRIBUTING.md](../CONTRIBUTING.md)** - 贡献者指南 / Contributor's Guide
 
 #### 数据处理 / Data Processing
+
 - **[standardization.md](standardization.md)** - 数据标准化流程 / Data Standardization Process
 - **[upload-and-correction.md](upload-and-correction.md)** - 文本录入和校对指南 / Text Entry and Proofreading Guide
 
 #### 数据工程 / Data Engineering
+
 - **[DATA_FLOW.md](DATA_FLOW.md)** - 数据流和处理流程文档 / Data Flow and Processing Pipeline Document
 - **[DATA_PIPELINE.md](DATA_PIPELINE.md)** - 数据管道文档 / Data Pipeline Document
 - **[BUILD_SCRIPTS.md](BUILD_SCRIPTS.md)** - 构建脚本文档 / Build Scripts Documentation
@@ -64,10 +75,12 @@ If you want to contribute to the project, organize data, or develop code, please
 - **[DATA_FAQ.md](DATA_FAQ.md)** - 数据工程FAQ / Data Engineering FAQ
 
 #### 开发相关 / Development Related
+
 - **[dev.md](dev.md)** - 开发环境搭建 / Development Environment Setup
 - **[API.md](API.md)** - API 规范和数据格式 / API Specifications and Data Formats
 
 #### 需求文档 / Requirements Documentation
+
 - **[requirements/FRD.md](requirements/FRD.md)** - 功能需求文档（包含详细用例和交互流程） / Functional Requirements Document (includes detailed use cases and interaction flows)
 - **[requirements/URD.md](requirements/URD.md)** - 用户需求文档（包含用户旅程地图） / User Requirements Document (includes user journey maps)
 - **[requirements/NFR.md](requirements/NFR.md)** - 非功能需求文档（包含量化指标和可扩展性规划） / Non-Functional Requirements Document (includes quantitative metrics and scalability planning)
@@ -77,10 +90,24 @@ If you want to contribute to the project, organize data, or develop code, please
 ## 文档目录 / Document Directory
 
 ### 项目根目录 / Project Root
+
 - **[README.md](../README.md)** - 项目总览、安装和使用指南 / Project Overview, Installation and Usage Guide
 - **[CONTRIBUTING.md](../CONTRIBUTING.md)** - 贡献者指南 / Contributor's Guide
 
 ### 文档目录 / Documentation Directory
+
+#### 自动生成文档 / Auto-generated Documentation
+
+> ⚠️ **注意**: 以下文档由脚本自动生成，请勿手动编辑。如需更新，请修改源代码中的注释。
+>
+> ⚠️ **Note**: The following documents are auto-generated. Please update code comments in source files instead of editing these files directly.
+
+- **[API_GENERATED.md](API_GENERATED.md)** - API 文档（自动生成） / API Documentation (Auto-generated)
+- **[TYPES_GENERATED.md](TYPES_GENERATED.md)** - 类型定义文档（自动生成） / Type Definitions Documentation (Auto-generated)
+- **[BUILD_SCRIPTS_GENERATED.md](BUILD_SCRIPTS_GENERATED.md)** - 构建脚本文档（自动生成） / Build Scripts Documentation (Auto-generated)
+
+#### 手动维护文档 / Manually Maintained Documentation
+
 - **[API.md](API.md)** - 数据 API 说明（包含前端API使用方法、实际代码示例和端点总结） / Data API Documentation (includes frontend API usage, actual code examples, and endpoint summary)
 - **[ARCHITECTURE.md](ARCHITECTURE.md)** - 系统架构设计文档 / System Architecture Design Document
 - **[DATA_FLOW.md](DATA_FLOW.md)** - 数据流和处理流程文档 / Data Flow and Processing Pipeline Document
@@ -95,6 +122,7 @@ If you want to contribute to the project, organize data, or develop code, please
 - **[DOCUMENTATION-QUALITY-CHECKLIST.md](DOCUMENTATION-QUALITY-CHECKLIST.md)** - 文档质量检查清单 / Documentation Quality Checklist
 
 ### 需求文档目录 / Requirements Documentation Directory
+
 - **[requirements/FRD.md](requirements/FRD.md)** - 功能需求文档 / Functional Requirements Document
 - **[requirements/URD.md](requirements/URD.md)** - 用户需求文档 / User Requirements Document
 - **[requirements/NFR.md](requirements/NFR.md)** - 非功能需求文档 / Non-Functional Requirements Document
@@ -103,17 +131,20 @@ If you want to contribute to the project, organize data, or develop code, please
 ## 快速导航 / Quick Navigation
 
 ### 🚀 快速开始 / Quick Start
+
 1. [安装项目](../README.md#安装--installation)
 2. [本地运行](local.md)
 3. [设置搜索引擎](local-search-engine.md)
 
 ### 🔧 常见任务 / Common Tasks
+
 - [数据下载问题](TROUBLESHOOTING.md#数据下载失败)
 - [构建失败解决](TROUBLESHOOTING.md#构建失败)
 - [添加新数据](upload-and-correction.md)
 - [部署到生产环境](DEPLOYMENT.md)
 
 ### 📚 深入学习 / Deep Dive
+
 - [项目架构](dev.md#技术架构--technical-architecture)
 - [系统架构设计](ARCHITECTURE.md)
 - [数据流处理流程](DATA_FLOW.md)
@@ -130,11 +161,13 @@ If you want to contribute to the project, organize data, or develop code, please
 ## 文档维护 / Documentation Maintenance
 
 ### 更新日志 / Changelog
+
 查看项目变更记录和版本更新信息。
 
 View project change logs and version update information.
 
 ### 反馈和建议 / Feedback and Suggestions
+
 如果您发现文档问题或有改进建议，请：
 
 If you find documentation issues or have improvement suggestions, please:

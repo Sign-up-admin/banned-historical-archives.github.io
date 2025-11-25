@@ -7,18 +7,21 @@ This document records the version update history of the "Banned Historical Archi
 ## [Unreleased]
 
 ### 新增功能 / Added
+
 - 完善项目文档体系，添加多语言支持
 - 新增文档索引页面 (`docs/README.md`)
 - 为所有关键组件和类型添加详细注释
 - 改进本地开发环境配置和故障排查指南
 
 ### 改进 / Changed
+
 - 重构文档结构，按用户角色分类组织
 - 优化 README.md，添加快速开始和项目结构说明
 - 完善本地运行指南，包含详细的故障排查步骤
 - 改进数据 API 文档，增加使用示例
 
 ### 修复 / Fixed
+
 - 修复文档中的链接错误
 - 统一文档格式和术语使用
 - 改进代码注释质量和一致性
@@ -26,6 +29,7 @@ This document records the version update history of the "Banned Historical Archi
 ## [1.0.0] - 2024-01-01
 
 ### 新增功能 / Added
+
 - 初始版本发布
 - 支持文档、音乐、图片三种内容类型
 - 实现本地全文搜索引擎 (Elasticsearch)
@@ -33,6 +37,7 @@ This document records the version update history of the "Banned Historical Archi
 - 多语言界面支持
 
 ### 技术栈 / Technical
+
 - 前端：Next.js + React + Material-UI
 - 后端：Node.js + TypeScript
 - 搜索引擎：Elasticsearch

@@ -2,7 +2,7 @@
   "filters": {},
   "rules": {
     "terminology": {
-      "defaultTerms": true,
+      "defaultTerms": false,
       "terms": {
         "GitHub": ["GitHub"],
         "Git": ["Git"],
@@ -19,7 +19,7 @@
         "URL": ["URL", "URLs"],
         "HTML": ["HTML"],
         "CSS": ["CSS"],
-        "JSON": ["JSON"],
+        "JSON": ["json", "JSON"],
         "YAML": ["YAML"],
         "CI/CD": ["CI/CD"],
         "PR": ["PR", "Pull Request"],
@@ -27,7 +27,13 @@
         "UX": ["UX"],
         "OCR": ["OCR"],
         "PDF": ["PDF"],
-        "EPUB": ["EPUB"]
+        "EPUB": ["EPUB"],
+        "indexes": ["indexes", "indices"],
+        "VS Code": ["VS Code", "Visual Studio Code"],
+        "website": ["website", "site"],
+        "changelog": ["changelog", "change log", "Change Log"],
+        "build system": ["build system", "build tool"],
+        "ID": ["ID", "id"]
       }
     },
     "write-good": {

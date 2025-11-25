@@ -60,16 +60,19 @@
 ### 部署选项 / Deployment Options
 
 #### 选项一：GitHub Pages (推荐)
+
 - **优点**: 免费、无需服务器维护
 - **缺点**: 功能受限、无本地搜索
 - **适用**: 基础版本展示
 
 #### 选项二：VPS + Docker
+
 - **优点**: 功能完整、性能好
 - **缺点**: 需要服务器维护费用
 - **适用**: 完整功能部署
 
 #### 选项三：云服务
+
 - **优点**: 高可用、弹性伸缩
 - **缺点**: 成本较高
 - **适用**: 大规模使用
@@ -992,6 +995,7 @@ const useLazyData = () => {
 #### 服务启动失败
 
 **问题**: `docker compose up` 失败
+
 ```bash
 # 检查 Docker 服务
 sudo systemctl status docker
@@ -1006,6 +1010,7 @@ docker compose up  # 不使用 -d 查看错误
 #### 应用无法访问
 
 **问题**: 无法访问 http://localhost:3000
+
 ```bash
 # 检查容器状态
 docker compose ps
@@ -1021,6 +1026,7 @@ docker inspect bridge
 #### Elasticsearch 连接失败
 
 **问题**: 搜索功能不工作
+
 ```bash
 # 检查 Elasticsearch 状态
 curl http://localhost:9200/_cluster/health
@@ -1035,6 +1041,7 @@ docker compose exec app npm run init-es reset
 #### 内存不足
 
 **问题**: 应用崩溃或响应慢
+
 ```bash
 # 检查内存使用
 free -h

@@ -1,0 +1,121 @@
+name: Generate Documentation
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'utils/**'
+      - 'types/**'
+      - 'backend/**'
+      - 'components/**'
+      - 'scripts/generate-docs.ts'
+  pull_request:
+    paths:
+      - 'utils/**'
+      - 'types/**'
+      - 'backend/**'
+      - 'components/**'
+      - 'scripts/generate-docs.ts'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-docs:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate documentation
+        id: generate
+        run: |
+          npm run generate:docs
+          echo "docs_generated=true" >> $GITHUB_OUTPUT
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain docs/*_GENERATED.md)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            git diff docs/*_GENERATED.md || true
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: github.event_name == 'push' && steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: 'docs: auto-generate documentation from code comments'
+          title: 'docs: Auto-generate documentation'
+          body: |
+            This PR contains automatically generated documentation from code comments.
+            
+            - API documentation from `utils/index.ts`
+            - Type definitions from `types/index.ts`
+            - Build scripts from `backend/*.ts`
+            
+            Please review the changes and merge if they look correct.
+          branch: docs/auto-generate
+          delete-branch: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment on PR
+        if: github.event_name == 'pull_request' && steps.changes.outputs.has_changes == 'true'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            const docsDir = 'docs';
+            const generatedFiles = ['API_GENERATED.md', 'TYPES_GENERATED.md', 'BUILD_SCRIPTS_GENERATED.md'];
+            
+            let comment = '## 📝 Documentation Update Required\n\n';
+            comment += 'The following documentation files need to be updated:\n\n';
+            
+            for (const file of generatedFiles) {
+              const filePath = path.join(docsDir, file);
+              if (fs.existsSync(filePath)) {
+                comment += `- \`${filePath}\`\n`;
+              }
+            }
+            
+            comment += '\nPlease run `npm run generate:docs` locally and commit the changes.\n';
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Documentation Generation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Status | Details |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|---------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Generation | ${{ steps.generate.outcome == 'success' && '✅ Success' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Changes | ${{ steps.changes.outputs.has_changes == 'true' && '📝 Changes detected' || '✅ No changes' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Run \`npm run generate:docs\` locally to generate documentation." >> $GITHUB_STEP_SUMMARY
+

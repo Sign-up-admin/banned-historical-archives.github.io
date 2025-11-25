@@ -119,7 +119,7 @@ graph TB
 
 - **模式**: Static Site Generation
 - **实现**: Next.js `output: 'export'`
-- **优势**: 
+- **优势**:
   - 无需服务器，部署到 GitHub Pages
   - 加载速度快，CDN友好
   - 安全性高，无服务器攻击面
@@ -798,4 +798,3 @@ function registerApi(extension: ApiExtension) {
 
 **最后更新 / Last Updated**: 2025-01-XX
 **维护者 / Maintainers**: 项目维护团队
-

@@ -5,12 +5,14 @@
 ## 📋 系统要求 / System Requirements
 
 ### 硬件要求 / Hardware Requirements
+
 - **内存**: 至少 4GB 可用内存 (推荐 8GB+)
 - **磁盘**: 至少 5GB 可用空间 (推荐 SSD)
 - **CPU**: 至少双核处理器
 - **网络**: Elasticsearch 镜像下载需要网络连接
 
 ### 软件要求 / Software Requirements
+
 - **Docker**: >= 20.10.0 或 Docker Desktop
 - **Elasticsearch**: 8.5.1 (项目指定版本)
 - **操作系统**: Linux, macOS, Windows
@@ -133,6 +135,7 @@ curl http://localhost:9200/article/_count?pretty
 #### 1. 系统配置 / System Configuration
 
 **Linux 系统配置**:
+
 ```bash
 # 增加虚拟内存映射数量 (必需)
 sudo sysctl -w vm.max_map_count=262144
@@ -142,6 +145,7 @@ echo 'vm.max_map_count=262144' | sudo tee -a /etc/sysctl.conf
 ```
 
 **macOS 系统配置**:
+
 ```bash
 # 检查当前限制
 sysctl -n vm.max_map_count
@@ -378,6 +382,7 @@ services:
 ### 系统层面优化 / System Level Optimization
 
 **Linux 优化**:
+
 ```bash
 # 增加文件句柄限制
 echo '* soft nofile 65536' | sudo tee -a /etc/security/limits.conf
@@ -390,6 +395,7 @@ sudo sysctl -p
 ```
 
 **SSD 优化** (如果使用 SSD):
+
 ```bash
 # 禁用透明大页
 echo never | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
@@ -423,18 +429,21 @@ curl -X PUT "http://localhost:9200/article/_settings" \
 #### Elasticsearch 启动失败 / Elasticsearch Startup Failure
 
 **问题**: `vm.max_map_count` 错误
+
 ```bash
 # 解决方案
 sudo sysctl -w vm.max_map_count=262144
 ```
 
 **问题**: 内存不足
+
 ```bash
 # 解决方案：增加 Docker 内存分配
 # Docker Desktop -> Settings -> Resources -> Memory -> 4GB+
 ```
 
 **问题**: 端口冲突
+
 ```bash
 # 解决方案：检查端口占用
 netstat -tlnp | grep :9200
@@ -446,12 +455,14 @@ docker run -p 9201:9200 ... # 使用其他端口
 #### 索引初始化失败 / Index Initialization Failure
 
 **问题**: 连接超时
+
 ```bash
 # 解决方案：等待 Elasticsearch 完全启动
 curl http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=60s
 ```
 
 **问题**: 数据导入失败
+
 ```bash
 # 解决方案：检查数据文件是否存在
 ls -la json/
@@ -465,6 +476,7 @@ npm run build-article-json
 #### 搜索功能异常 / Search Function Abnormal
 
 **问题**: 搜索无结果
+
 ```bash
 # 解决方案：检查索引状态
 curl http://localhost:9200/_cat/indices
@@ -474,6 +486,7 @@ curl "http://localhost:9200/article/_search?q=*&size=1"
 ```
 
 **问题**: 搜索慢
+
 ```bash
 # 解决方案：优化索引
 curl -X POST "http://localhost:9200/article/_forcemerge"

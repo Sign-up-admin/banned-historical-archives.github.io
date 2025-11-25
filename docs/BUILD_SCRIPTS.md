@@ -63,6 +63,7 @@ graph TD
 #### 输出数据 / Output Data
 
 - **indexes/file_count.json**: 文件统计信息
+
   ```json
   {
     "article_list": 5  // 文章列表分片数量
@@ -70,6 +71,7 @@ graph TD
   ```
 
 - **indexes/article_list_{n}.json**: 文章列表分片（每片10000条）
+
   ```json
   {
     "articles": [
@@ -89,6 +91,7 @@ graph TD
   ```
 
 - **indexes/article_list_with_book_info_{n}.json**: 文章与书籍关联信息
+
   ```json
   [
     [
@@ -159,6 +162,7 @@ for (let i = 0; i <= 31; ++i) {
 #### 输出数据 / Output Data
 
 - **json/{prefix}/{article_id}.json**: 文章JSON文件
+
   ```json
   {
     "books": [
@@ -606,4 +610,3 @@ function validateData(data: any): boolean {
 
 **最后更新 / Last Updated**: 2025-01-XX
 **维护者 / Maintainers**: 项目维护团队
-
