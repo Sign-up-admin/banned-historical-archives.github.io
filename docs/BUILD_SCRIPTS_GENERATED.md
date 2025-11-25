@@ -4,7 +4,7 @@
 >
 > ⚠️ **Note**: This document is auto-generated. Please update code comments in `backend/*.ts` instead of editing this file directly.
 
-**最后生成时间 / Last Generated**: 2025/11/25 02:55:12
+**最后生成时间 / Last Generated**: 2025/11/25 14:17:58
 
 ## 概述 / Overview
 
