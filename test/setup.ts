@@ -72,5 +72,35 @@ Object.defineProperty(window, 'location', {
   writable: true,
 });
 
+// DOMMatrix polyfill（react-pdf 需要）
+// DOMMatrix polyfill (required by react-pdf)
+if (typeof globalThis.DOMMatrix === 'undefined') {
+  try {
+    // 尝试加载 dommatrix polyfill
+    // Try to load dommatrix polyfill
+    const { DOMMatrix: DOMMatrixPolyfill } = require('dommatrix/dist/dommatrix.js');
+    globalThis.DOMMatrix = DOMMatrixPolyfill;
+  } catch (error) {
+    // 如果加载失败，创建一个简单的 polyfill
+    // If loading fails, create a simple polyfill
+    console.warn('Failed to load DOMMatrix polyfill:', error);
+    globalThis.DOMMatrix = class DOMMatrix {
+      constructor(init?: string | number[]) {
+        // 简单的实现，仅用于测试环境
+        // Simple implementation for test environment only
+      }
+      static fromMatrix(other?: DOMMatrix) {
+        return new DOMMatrix();
+      }
+      static fromFloat32Array(array32: Float32Array) {
+        return new DOMMatrix();
+      }
+      static fromFloat64Array(array64: Float64Array) {
+        return new DOMMatrix();
+      }
+    } as any;
+  }
+}
+
 // 如果需要配置其他全局设置，可以在这里添加
 // 例如：全局 mock、测试工具配置等
