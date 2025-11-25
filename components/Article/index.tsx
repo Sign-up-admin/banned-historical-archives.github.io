@@ -112,9 +112,9 @@ function PureArticle({
             }
           : undefined;
         const ext_css: CSSProperties = highlight ? { color: '#cf0000' } : {};
-        let s: string[] = [];
+        const s: string[] = [];
         const part_comments = comments.filter((i) => i.part_idx === part.index);
-        let text = part.text;
+        const text = part.text;
         let t = 0;
         const texts: string[] = [];
         if (part_comments.length) {

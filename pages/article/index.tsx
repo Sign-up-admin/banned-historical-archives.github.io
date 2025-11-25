@@ -224,10 +224,10 @@ export default function ArticleViewer() {
     const article_b = booksRef.current.find(
       (i) => i.id == comparedPublication,
     )!.article;
-    let comments_a = article_a.comments;
-    let comments_b = article_b.comments;
-    let contents_a = article_a.parts;
-    let contents_b = article_b.parts;
+    const comments_a = article_a.comments;
+    const comments_b = article_b.comments;
+    const contents_a = article_a.parts;
+    const contents_b = article_b.parts;
     let res: Diff[][] = [];
     if (compareMode === CompareMode.literal) {
       res = [

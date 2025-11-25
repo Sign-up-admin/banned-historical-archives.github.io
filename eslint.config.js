@@ -1,4 +1,6 @@
 import nextConfig from "eslint-config-next";
+import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin";
+import typescriptEslintParser from "@typescript-eslint/parser";
 
 export default [
   {
@@ -16,6 +18,17 @@ export default [
   },
   ...nextConfig,
   {
+    files: ["**/*.ts", "**/*.tsx"],
+    languageOptions: {
+      parser: typescriptEslintParser,
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+      },
+    },
+    plugins: {
+      "@typescript-eslint": typescriptEslintPlugin,
+    },
     rules: {
       // Performance optimizations
       "react/jsx-no-undef": "error",

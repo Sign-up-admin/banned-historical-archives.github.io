@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { apply_patch_v2, extract_pivots } from '../utils';
 import { ParserResult, ContentType, PatchV2 } from '../types';
 

@@ -34,9 +34,9 @@ import { v4 } from 'uuid';
  * ```
  */
 export function md5(inputString: string) {
-  var hc = '0123456789abcdef';
+  const hc = '0123456789abcdef';
   function rh(n: number) {
-    var j,
+    let j: number,
       s = '';
     for (j = 0; j <= 3; j++)
       s +=
@@ -44,8 +44,8 @@ export function md5(inputString: string) {
     return s;
   }
   function ad(x: number, y: number) {
-    var l = (x & 0xffff) + (y & 0xffff);
-    var m = (x >> 16) + (y >> 16) + (l >> 16);
+    const l = (x & 0xffff) + (y & 0xffff);
+    const m = (x >> 16) + (y >> 16) + (l >> 16);
     return (m << 16) | (l & 0xffff);
   }
   function rl(n: number, c: number) {
@@ -106,9 +106,9 @@ export function md5(inputString: string) {
     return cm(c ^ (b | ~d), a, b, x, s, t);
   }
   function sb(x: string) {
-    var i;
-    var nblk = ((x.length + 8) >> 6) + 1;
-    var blks = new Array(nblk * 16);
+    let i: number;
+    const nblk = ((x.length + 8) >> 6) + 1;
+    const blks = new Array(nblk * 16);
     for (i = 0; i < nblk * 16; i++) blks[i] = 0;
     for (i = 0; i < x.length; i++)
       blks[i >> 2] |= x.charCodeAt(i) << ((i % 4) * 8);
@@ -116,9 +116,9 @@ export function md5(inputString: string) {
     blks[nblk * 16 - 2] = x.length * 8;
     return blks;
   }
-  var i,
-    x = sb(inputString),
-    a = 1732584193,
+  let i: number;
+  const x = sb(inputString);
+  let a = 1732584193,
     b = -271733879,
     c = -1732584194,
     d = 271733878,
@@ -277,7 +277,7 @@ export function apply_patch_v2(
   const final_parts: ContentPart[] = [];
   const final_comments: string[] = [];
   const final_pivots: Pivot[] = [];
-  for (let i in parts) {
+  for (const i in parts) {
     const idx = parseInt(i);
     if (patch.parts[i]) {
       if (patch.parts[i].insertBefore)
@@ -337,7 +337,7 @@ export function apply_patch_v2(
   if (patch.newComments && patch.newComments.length) {
     final_comments.push(...patch.newComments);
   } else {
-    for (let idx_from_0 in comments) {
+    for (const idx_from_0 in comments) {
       const idx_from_1 = parseInt(idx_from_0) + 1;
       if (patch.comments[idx_from_1]) {
         if (patch.comments[idx_from_1].insertBefore)

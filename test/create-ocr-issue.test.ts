@@ -1,16 +1,7 @@
 import {
-  assert,
-  expect,
-  test,
-  it,
   describe,
-  beforeEach,
-  beforeAll,
+  it,
 } from 'vitest';
-import { join } from 'node:path';
-// import { extract_dates } from '../backend/parser/utils'; // Module not found
-import { ContentType, ParserResult } from '../types';
-import { apply_patch_v2, bracket_left, bracket_right } from '../utils';
 
 describe('create ocr issue', async () => {
   // This test is skipped because it's an integration test that:

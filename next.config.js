@@ -19,14 +19,9 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
 
-  // Performance Budget
-  experimental: {
-    ...nextConfig.experimental,
-    webVitalsAttribution: ['CLS', 'LCP'],
-  },
-
   // Experimental features
   experimental: {
+    webVitalsAttribution: ['CLS', 'LCP'],
     optimizePackageImports: ['@mui/material', '@mui/icons-material'],
   },
 

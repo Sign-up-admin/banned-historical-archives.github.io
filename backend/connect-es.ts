@@ -21,6 +21,7 @@
  * ```
  */
 
+// @ts-ignore - Elasticsearch types have compatibility issues
 import { Client } from '@elastic/elasticsearch';
 import * as dotenv from 'dotenv';
 
