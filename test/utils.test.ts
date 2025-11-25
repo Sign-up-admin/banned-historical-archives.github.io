@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { apply_patch_v2, bracket_left, bracket_right } from '../utils';
-import { ParserResult } from '../types';
+import { ParserResult, ContentType } from '../types';
 
 // Mock data for testing apply_patch_v2
 const baseParserResult: ParserResult = {
@@ -11,11 +11,11 @@ const baseParserResult: ParserResult = {
   parts: [
     {
       text: 'mzd111jq222ywy',
-      type: 'paragraph',
+      type: ContentType.paragraph,
     },
     {
       text: 'ZCQ',
-      type: 'paragraph',
+      type: ContentType.paragraph,
     },
   ],
   comments: ['MZD', 'JQ', 'ZCQ'],
@@ -103,13 +103,13 @@ describe('apply_patch_v2', () => {
           insertBefore: [
             {
               text: 'inserted before',
-              type: 'paragraph' as const,
+              type: ContentType.paragraph,
             },
           ],
           insertAfter: [
             {
               text: 'inserted after',
-              type: 'paragraph' as const,
+              type: ContentType.paragraph,
             },
           ],
         },
@@ -151,7 +151,7 @@ describe('apply_patch_v2', () => {
       version: 2 as const,
       parts: {
         '0': {
-          type: 'title' as const,
+          type: ContentType.title,
         },
       },
       comments: {},

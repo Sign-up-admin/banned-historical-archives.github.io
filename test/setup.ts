@@ -9,7 +9,7 @@ import { vi } from 'vitest';
 import '@testing-library/jest-dom';
 
 // 设置测试环境变量
-process.env.NODE_ENV = 'test';
+(process.env as any).NODE_ENV = 'test';
 process.env.COMMIT_HASH = 'test-commit-hash';
 
 // 全局 fetch mock

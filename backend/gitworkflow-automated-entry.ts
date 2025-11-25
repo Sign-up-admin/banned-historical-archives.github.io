@@ -35,7 +35,7 @@ async function download(url: string, filePath: string) {
   response.data.pipe(writer);
 
   return new Promise((resolve, reject) => {
-    writer.on('finish', resolve);
+    writer.on('finish', () => resolve(undefined));
     writer.on('error', reject);
   });
 }

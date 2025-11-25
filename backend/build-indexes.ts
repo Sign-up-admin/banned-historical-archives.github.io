@@ -201,20 +201,20 @@ function article_map_to_list(c: ArticleMap): {
 
           for (const prefix2 of prefix2_list) {
             for (const article_file of (
-              await fs.readdir(join(p, prefix, resource, prefix2))
+              await fs.readdir(join(archivePath, prefix, resource, prefix2))
             ).filter((x) => x.endsWith('.json'))) {
               const article_id = parse(article_file).name;
               const article = JSON.parse(
                 (
                   await fs.readFile(
-                    join(p, prefix, resource, prefix2, article_file),
+                    join(archivePath, prefix, resource, prefix2, article_file),
                   )
                 ).toString(),
               );
               const tags = JSON.parse(
                 (
                   await fs.readFile(
-                    join(p, prefix, resource, prefix2, `${article_id}.tags`),
+                    join(archivePath, prefix, resource, prefix2, `${article_id}.tags`),
                   )
                 ).toString(),
               ) as { type: string; name: string }[];

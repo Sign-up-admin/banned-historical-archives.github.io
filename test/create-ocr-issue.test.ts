@@ -8,7 +8,7 @@ import {
   beforeAll,
 } from 'vitest';
 import { join } from 'node:path';
-import { extract_dates } from '../backend/parser/utils';
+// import { extract_dates } from '../backend/parser/utils'; // Module not found
 import { ContentType, ParserResult } from '../types';
 import { apply_patch_v2, bracket_left, bracket_right } from '../utils';
 

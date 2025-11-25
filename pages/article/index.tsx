@@ -207,12 +207,17 @@ export default function ArticleViewer() {
     }
   }, []);
 
-  const article_diff: Diff[][] = useMemo(() => {
+  const [articleDiff, setArticleDiff] = useState<Diff[][]>([]);
+
+  useEffect(() => {
     if (!comparedPublication || !selectedPublication) {
-      return [];
+      setArticleDiff([]);
+      return;
     }
-    if (compareType !== CompareType.version || !(typeof window !== 'undefined'))
-      return [];
+    if (compareType !== CompareType.version || !(typeof window !== 'undefined')) {
+      setArticleDiff([]);
+      return;
+    }
     const article_a = booksRef.current.find(
       (i) => i.id == selectedPublication,
     )!.article;
@@ -223,8 +228,9 @@ export default function ArticleViewer() {
     let comments_b = article_b.comments;
     let contents_a = article_a.parts;
     let contents_b = article_b.parts;
+    let res: Diff[][] = [];
     if (compareMode === CompareMode.literal) {
-      return [
+      res = [
         new diff_match_patch().diff_main(
           join_text([{ text: join_text(contents_a) }]),
           join_text([{ text: join_text(contents_b) }]),
@@ -232,7 +238,7 @@ export default function ArticleViewer() {
       ];
     } else if (compareMode === CompareMode.description_and_comments) {
       const max_n_comment = Math.max(comments_a.length, comments_b.length);
-      return [
+      res = [
         new diff_match_patch().diff_main(
           article_a.description || '',
           article_b.description || '',
@@ -246,18 +252,17 @@ export default function ArticleViewer() {
             ),
           ),
       ];
+    } else {
+      const max_len = Math.max(contents_a.length, contents_b.length);
+      let i = 0;
+      while (i < max_len) {
+        const a = contents_a[i] ? contents_a[i].text : '';
+        const b = contents_b[i] ? contents_b[i].text : '';
+        res.push(new diff_match_patch().diff_main(a, b));
+        ++i;
+      }
     }
-    const max_len = Math.max(contents_a.length, contents_b.length);
-
-    let i = 0;
-    const res: Diff[][] = [];
-    while (i < max_len) {
-      const a = contents_a[i] ? contents_a[i].text : '';
-      const b = contents_b[i] ? contents_b[i].text : '';
-      res.push(new diff_match_patch().diff_main(a, b));
-      ++i;
-    }
-    return res;
+    setArticleDiff(res);
   }, [selectedPublication, compareType, compareMode, comparedPublication]);
 
   const showCompareMenu = !!anchorEl;
@@ -464,7 +469,7 @@ export default function ArticleViewer() {
           </Select>
         </FormControl>
         <Stack sx={{ overflowY: 'scroll' }}>
-          <DiffViewer diff={article_diff} />
+          <DiffViewer diff={articleDiff} />
         </Stack>
       </Stack>,
     );

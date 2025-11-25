@@ -3,9 +3,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // reactStrictMode: true,
-  reactStrictMode: false,
-  swcMinify: true,
+  reactStrictMode: process.env.NODE_ENV !== 'production',
   trailingSlash: false,
   staticPageGenerationTimeout: 800,
   output: 'export',
@@ -28,4 +26,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig
+export default nextConfig
