@@ -30,6 +30,7 @@ import { join } from 'path';
 import { ArticleIndexesWithBookInfo } from '../types';
 import { writeFileSync } from 'fs';
 import { get_article_indexes } from './get_article_indexes';
+import { resolveArticlePath, resolveBookMetadataPath } from './archive-path-resolver';
 
 /**
  * 获取所有文章的索引信息
@@ -62,27 +63,27 @@ const article_indexes = get_article_indexes();
     for (const bookInfo of book_arr) {
       const [book_id, book_name, archives_id] = bookInfo;
 
-      // 构建书籍数据路径
-      const book_path = join(
-        process.cwd(),
-        'parsed/archives' + archives_id,
-        book_id.slice(0, 3),
+      // 读取书籍元数据
+      const bookMetadataPath = resolveBookMetadataPath(
+        archives_id,
         book_id,
       );
-
-      // 读取书籍元数据
       const bookMetadata = JSON.parse(
-        (await readFile(join(book_path, `${book_id}.metadata`))).toString(),
+        (await readFile(bookMetadataPath)).toString(),
       );
 
       // 读取文章内容
-      const articlePath = join(book_path, article_id.slice(0, 3), `${article_id}.json`);
+      const articlePath = resolveArticlePath(
+        archives_id,
+        book_id,
+        article_id,
+      );
       bookMetadata.article = JSON.parse(
         (await readFile(articlePath)).toString(),
       );
 
       // 读取文章标签
-      const tagsPath = join(book_path, article_id.slice(0, 3), `${article_id}.tags`);
+      const tagsPath = articlePath.replace('.json', '.tags');
       bookMetadata.tags = JSON.parse(
         (await readFile(tagsPath)).toString(),
       );

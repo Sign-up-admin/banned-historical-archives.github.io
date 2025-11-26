@@ -13,6 +13,7 @@ import {
 } from '../types';
 import { get_article_id, uuid } from '../utils';
 import fs, { readFileSync, writeFileSync } from 'fs';
+import { resolveArticlePath, resolveBookMetadataPath } from './archive-path-resolver';
 import { ensureDirSync } from 'fs-extra';
 import { get_article_indexes } from './get_article_indexes';
 
@@ -49,12 +50,9 @@ Object.keys(article_indexes).forEach((article_id) => {
     const book_metadata = JSON.parse(
       fs
         .readFileSync(
-          join(
-            __dirname,
-            `../parsed/${archives_id}/${book_id.slice(
-              0,
-              3,
-            )}/${book_id}/${book_id}.metadata`,
+          resolveBookMetadataPath(
+            book[2],
+            book_id,
           ),
         )
         .toString(),
@@ -63,12 +61,10 @@ Object.keys(article_indexes).forEach((article_id) => {
     const article = JSON.parse(
       fs
         .readFileSync(
-          join(
-            __dirname,
-            `../parsed/${archives_id}/${book_id.slice(
-              0,
-              3,
-            )}/${book_id}/${article_id.slice(0, 3)}/${article_id}.json`,
+          resolveArticlePath(
+            book[2],
+            book_id,
+            article_id,
           ),
         )
         .toString(),
@@ -76,13 +72,11 @@ Object.keys(article_indexes).forEach((article_id) => {
     const tags = JSON.parse(
       fs
         .readFileSync(
-          join(
-            __dirname,
-            `../parsed/${archives_id}/${book_id.slice(
-              0,
-              3,
-            )}/${book_id}/${article_id.slice(0, 3)}/${article_id}.tags`,
-          ),
+          resolveArticlePath(
+            book[2],
+            book_id,
+            article_id,
+          ).replace('.json', '.tags'),
         )
         .toString(),
     ) as Tag[];

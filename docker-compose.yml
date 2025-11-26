@@ -1,23 +1,25 @@
-version: '3'
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.7.1
     hostname: elasticsearch
+    container_name: elasticsearch
     environment:
       - discovery.type=single-node
+      - xpack.security.enabled=false
       - http.cors.enabled=true
-      - http.cors.allow-origin="*"
-      - xpack.security.authc.anonymous.username=anonymous
-      - xpack.security.authc.anonymous.roles=superuser
-      - ELASTIC_USERNAME=elastic
-      - ELASTIC_PASSWORD=password
-      - xpack.security.http.ssl.enabled=false
+      - 'http.cors.allow-origin="*"'
+      - xpack.ml.enabled=false
     networks:
       - bha
-    expose:
-      - '9200'
     ports:
       - '127.0.0.1:9200:9200'
+      - '127.0.0.1:9300:9300'
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9200"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
 
   nginx:
     image: nginx:latest

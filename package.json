@@ -26,15 +26,16 @@
   ],
   "scripts": {
     "build-article-json": "ts-node --project ./tsconfig.build.json ./backend/build-article-json.ts",
-    "build-indexes": "ts-node --project ./tsconfig.build.json ./backend/build-indexes.ts",
+    "build-indexes": "node scripts/build-indexes-standalone.cjs",
     "dev": "next dev",
     "init-config": "ts-node --project ./tsconfig.build.json ./backend/init-sub-repository.ts config",
     "init-parsed": "ts-node --project ./tsconfig.build.json ./backend/init-sub-repository.ts parsed",
     "init-raw": "ts-node --project ./tsconfig.build.json ./backend/init-sub-repository.ts raw",
     "init-ocr_cache": "ts-node --project ./tsconfig.build.json ./backend/init-sub-repository ocr_cache",
     "init-ocr_patch": "ts-node --project ./tsconfig.build.json ./backend/init-sub-repository ocr_patch",
-    "init-es": "ts-node --project ./tsconfig.build.json ./backend/init-es.ts",
-    "reset-es": "ts-node --project ./tsconfig.build.json ./backend/init-es.ts reset",
+    "init-es": "node scripts/init-es-standalone.cjs",
+    "reset-es": "node scripts/init-es-standalone.cjs reset",
+    "check-es": "node scripts/check-es.cjs",
     "hack-mui": "sed -i'' -e 's/switch/return;switch/g' node_modules/@mui/x-license/Watermark/Watermark.js",
     "build": "npm run hack-mui && next build",
     "build-txt": "ts-node --project ./tsconfig.build.json ./backend/build-txt.ts",
@@ -58,7 +59,10 @@
     "test:ui": "vitest --ui",
     "build:analyze": "cross-env ANALYZE=true next build",
     "build:profile": "next build --profile",
-    "validate-env": "node scripts/validate-env.js"
+    "validate-env": "node scripts/validate-env.js",
+    "cf:deploy": "wrangler pages deploy out --project-name=banned-historical-archives",
+    "cf:dev": "wrangler pages dev out --project-name=banned-historical-archives",
+    "build:preview": "NODE_ENV=development npm run build"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.18.9",

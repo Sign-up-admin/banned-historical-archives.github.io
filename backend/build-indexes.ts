@@ -24,6 +24,7 @@
 import fs from 'fs-extra';
 import { join, parse } from 'path';
 import JSON5 from 'json5';
+import { resolveArchiveBasePath } from './archive-path-resolver';
 import {
   ArticleIndexes,
   ArticleList,
@@ -112,7 +113,7 @@ function article_map_to_list(c: ArticleMap): {
 
   // 遍历所有资源仓库 (0-31)
   for (let i = 0; i <= 31; ++i) {
-    const archivePath = join(__dirname, '../parsed/archives' + i);
+    const archivePath = resolveArchiveBasePath(i);
     console.log(`处理仓库: ${archivePath}`);
 
     // 检查仓库目录是否存在

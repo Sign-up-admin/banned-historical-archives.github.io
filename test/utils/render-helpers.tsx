@@ -136,14 +136,14 @@ export function renderWithProviders(
  */
 interface QueryHelpers {
   getByText: (text: string | RegExp) => HTMLElement;
-  getByRole: (role: string, options?: any) => HTMLElement;
+  getByRole: (role: string) => HTMLElement;
   getByLabelText: (label: string | RegExp) => HTMLElement;
   getByPlaceholderText: (placeholder: string | RegExp) => HTMLElement;
   getByDisplayValue: (value: string | RegExp) => HTMLElement;
   getAllByText: (text: string | RegExp) => HTMLElement[];
-  getAllByRole: (role: string, options?: any) => HTMLElement[];
+  getAllByRole: (role: string) => HTMLElement[];
   queryByText: (text: string | RegExp) => HTMLElement | null;
-  queryByRole: (role: string, options?: any) => HTMLElement | null;
+  queryByRole: (role: string) => HTMLElement | null;
 }
 
 /**

@@ -1,6 +1,5 @@
 import { EventEmitter } from 'events';
 import React, {
-  ReactElement,
   useEffect,
   useMemo,
   useCallback,
@@ -12,59 +11,21 @@ import {
   GridColDef,
   GridFilterModel,
   GridRenderCellParams,
-  GridValueGetter,
   useGridApiRef,
 } from '@mui/x-data-grid-pro';
 import Head from 'next/head';
-import { diff_match_patch, Diff } from 'diff-match-patch';
-import Popover from '@mui/material/Popover';
-import SkipNextIcon from '@mui/icons-material/SkipNext';
-import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
-import { useRouter } from 'next/router';
-import { NextPage } from 'next';
-import { InferGetServerSidePropsType } from 'next';
-import PlayCircleIcon from '@mui/icons-material/PlayCircle';
-import Layout from '../../components/Layout';
-import {
-  GetStaticProps,
-  GetServerSideProps,
-  GetServerSidePropsContext,
-  GetStaticPropsContext,
-} from 'next';
-
-import RepeatOneIcon from '@mui/icons-material/RepeatOne';
-import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
-import ShuffleIcon from '@mui/icons-material/Shuffle';
-import Box from '@mui/material/Box';
-import SpeedDial from '@mui/material/SpeedDial';
-import Paper from '@mui/material/Paper';
-import SpeedDialIcon from '@mui/material/SpeedDialIcon';
-import SpeedDialAction from '@mui/material/SpeedDialAction';
-import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import Menu from '@mui/material/Menu';
+import { Diff } from 'diff-match-patch';
 import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import Divider from '@mui/material/Divider';
 import {
   Music as MusicEntity,
   MusicIndexes,
-  MusicIndex,
   MusicLyric,
   Tag,
 } from '../../types';
 import Stack from '@mui/material/Stack';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import PauseCircleIcon from '@mui/icons-material/PauseCircle';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { DiffViewer } from '../../components/DiffViewer';
-import { readFile } from 'fs-extra';
-import { join } from 'path';
-import { Chip, Grid2, Skeleton } from '@mui/material';
-import { GridApiPro } from '@mui/x-data-grid-pro/models/gridApiPro';
+import { Skeleton } from '@mui/material';
 import Tags from '../../components/Tags';
 import { zhCN } from '@mui/x-data-grid/locales';
 
@@ -103,7 +64,7 @@ function Song({
       setDetails(res);
       setLyricRight(res.lyrics.length - 1);
     });
-  }, []);
+  }, [id, archiveId]);
 
   const leftContents = useMemo(
     () =>
@@ -273,7 +234,7 @@ function SongWrap({ row }: { row: Column }) {
     }
   }, [row]);
 
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+  const handleClick = () => {
     setOpen(!open)
   };
 
@@ -394,12 +355,13 @@ function Player({
     ee.on('musicChanged', musicChanged);
     ee.on('lyricChanged', lyricChanged);
 
+    const audioElement = audioRef.current;
     function onTimeupdate(e: any) {
       setProgress(e.target.currentTime/ e.target.duration);
     }
-    audioRef.current?.addEventListener('timeupdate', onTimeupdate);
+    audioElement?.addEventListener('timeupdate', onTimeupdate);
     return () => {
-      audioRef.current?.removeEventListener('timeupdate', onTimeupdate);
+      audioElement?.removeEventListener('timeupdate', onTimeupdate);
       ee.off('musicPause', musicPause);
       ee.off('musicStart', musicStart);
       ee.off('artistChanged', artistChanged);
@@ -478,10 +440,10 @@ function Player({
             const {width,left}= playerPosRef.current;
             setCursorProgress((e.pageX-left)/width);
           }}
-          onMouseLeave={(e)=>{
+          onMouseLeave={()=>{
             setCursorProgress(0);
           }}
-          onClick={(e) => {
+          onClick={() => {
             if (audioRef.current)
             audioRef.current.currentTime = cursorProgress * audioRef.current.duration;
           }}
@@ -652,7 +614,7 @@ export default function Music() {
       apiRef.current.setFilterModel(newFilter);
       filterModelRef.current = newFilter;
     };
-  }, []);
+  }, [apiRef]);
   const columns: GridColDef<Column>[] = useMemo(
     () => [
       {
@@ -790,7 +752,7 @@ export default function Music() {
         },
       },
     ],
-    [],
+    [buildHeaderOnClick],
   );
 
   useEffect(() => {
@@ -804,13 +766,13 @@ export default function Music() {
           rowIndex: idx,
         });
         apiRef.current.setExpandedDetailPanels([id]);
-      } catch (e) {}
+      } catch {}
     }
     ee.on('musicChanged', onChange);
     return () => {
       ee.off('musicChanged', onChange);
     };
-  }, []);
+  }, [apiRef]);
 
   return (
     <Stack p={2} sx={{ height: '100%', overflow: 'scroll' }}>

@@ -89,13 +89,13 @@ if (typeof globalThis.DOMMatrix === 'undefined') {
         // 简单的实现，仅用于测试环境
         // Simple implementation for test environment only
       }
-      static fromMatrix(other?: DOMMatrix) {
+      static fromMatrix() {
         return new DOMMatrix();
       }
-      static fromFloat32Array(array32: Float32Array) {
+      static fromFloat32Array() {
         return new DOMMatrix();
       }
-      static fromFloat64Array(array64: Float64Array) {
+      static fromFloat64Array() {
         return new DOMMatrix();
       }
     } as any;

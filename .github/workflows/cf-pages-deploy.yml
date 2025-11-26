@@ -1,0 +1,179 @@
+name: 🚀 Deploy to Cloudflare Pages
+
+on:
+  # 推送到主分支时部署到生产环境
+  # Deploy to production when pushing to main branch
+  push:
+    branches: [master, main]
+
+  # 拉取请求时创建预览部署
+  # Create preview deployment for pull requests
+  pull_request:
+    branches: [master, main]
+    types: [opened, synchronize, reopened, closed]
+
+# 允许并发运行，但取消旧的预览部署
+# Allow concurrent runs but cancel old preview deployments
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  # 预览部署（针对PR）
+  # Preview deployment (for PRs)
+  preview:
+    if: github.event_name == 'pull_request' && github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    outputs:
+      url: ${{ steps.deploy.outputs.url }}
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      # 下载索引数据（如果需要）
+      # Download index data (if needed)
+      - name: 📊 Download indexes
+        uses: actions/checkout@v4
+        with:
+          ref: 'indexes'
+          path: 'tmp_indexes'
+        continue-on-error: true
+
+      - name: 📁 Setup indexes
+        run: |
+          if [ -d "tmp_indexes/indexes" ]; then
+            mv tmp_indexes/indexes ./
+          fi
+
+      - name: 📄 Copy PDF.js
+        run: cp -r ./node_modules/pdfjs-dist ./public/ || true
+
+      - name: 🏗️ Build project
+        run: npm run build
+        env:
+          NODE_OPTIONS: "--max-old-space-size=4096"
+
+      - name: 🚀 Deploy to Cloudflare Pages (Preview)
+        id: deploy
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: banned-historical-archives
+          directory: out
+          # 预览部署不会更新生产环境
+          # Preview deployment doesn't update production
+          production: false
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 💬 Comment PR with preview URL
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `🚀 **Preview deployment ready!**\n\n📱 **Preview URL:** ${{ steps.deploy.outputs.url }}\n\nThis preview will be automatically updated when you push new changes to this PR.`
+            })
+
+  # 生产环境部署（推送到主分支）
+  # Production deployment (pushed to main branch)
+  production:
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    environment:
+      name: production
+      url: ${{ steps.deploy.outputs.url }}
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      # 确保有最新的索引数据
+      # Ensure latest index data
+      - name: 📊 Download indexes
+        uses: actions/checkout@v4
+        with:
+          ref: 'indexes'
+          path: 'tmp_indexes'
+        continue-on-error: true
+
+      - name: 📁 Setup indexes
+        run: |
+          if [ -d "tmp_indexes/indexes" ]; then
+            mv tmp_indexes/indexes ./
+          fi
+
+      - name: 📄 Copy PDF.js
+        run: cp -r ./node_modules/pdfjs-dist ./public/ || true
+
+      - name: 🏗️ Build project
+        run: npm run build
+        env:
+          NODE_OPTIONS: "--max-old-space-size=4096"
+
+      - name: 🚀 Deploy to Cloudflare Pages (Production)
+        id: deploy
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: banned-historical-archives
+          directory: out
+          # 生产环境部署
+          # Production deployment
+          production: true
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ✅ Update deployment status
+        uses: actions/github-script@v7
+        if: success()
+        with:
+          script: |
+            github.rest.repos.createDeploymentStatus({
+              deployment_id: context.payload.deployment.id,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'success',
+              environment_url: '${{ steps.deploy.outputs.url }}'
+            })
+
+  # 清理关闭的PR预览
+  # Cleanup closed PR previews
+  cleanup:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+
+    steps:
+      - name: 🧹 Cleanup preview deployment
+        run: |
+          echo "PR #${{ github.event.number }} closed, preview deployment will be cleaned up automatically by Cloudflare Pages"

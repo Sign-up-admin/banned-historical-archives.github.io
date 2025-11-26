@@ -5,17 +5,14 @@
  * 这些函数主要用于数据处理、文本分析和版本控制。
  */
 
-import { diff_match_patch, Diff } from 'diff-match-patch';
+import { diff_match_patch } from 'diff-match-patch';
 import crypto from 'crypto';
 import {
-  ArticleCategory,
-  ArticleType,
   ContentPart,
   ParserResult,
   Patch,
   PatchV2,
   Pivot,
-  TagType,
 } from '../types';
 import { v4 } from 'uuid';
 

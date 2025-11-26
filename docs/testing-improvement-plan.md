@@ -38,21 +38,6 @@ This document provides a detailed implementation plan for testing engineering im
 - ⚡ **可并行**: 可以与其他任务并行执行
 
 
-### 任务组 2.2: 组件测试开始 / Component Testing Start
-
-#### 任务 2.2.1: 创建组件测试模板 ⚡
-- **优先级**: 🔴 高
-- **预计时间**: 1 天
-- **依赖**: 1.1.2, 1.3.1
-- **可并行**: 是（与 2.1.x 并行）
-- **描述**:
-  - 创建 React 组件测试模板
-  - 建立测试工具函数（render helpers）
-  - 创建 mock 数据生成器
-- **验收标准**:
-  - [ ] 测试模板可以复用
-  - [ ] 工具函数可用
-  - [ ] Mock 数据生成器可用
 
 #### 任务 2.2.2: Article 组件测试 ⚡
 - **优先级**: 🔴 高

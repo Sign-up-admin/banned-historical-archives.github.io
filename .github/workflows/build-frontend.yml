@@ -1,3 +1,12 @@
+# GitHub Pages 前端部署工作流
+# GitHub Pages Frontend Deployment Workflow
+#
+# 此工作流负责将前端部署到 GitHub Pages
+# 与 Cloudflare Pages 双部署策略并存
+#
+# This workflow deploys frontend to GitHub Pages
+# Coexists with Cloudflare Pages dual deployment strategy
+
 name: build-frontend
 on:
   workflow_run:

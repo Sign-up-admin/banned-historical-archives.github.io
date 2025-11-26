@@ -1,0 +1,29 @@
+{
+  // 本地仓库路径映射配置
+  // 格式: {archive_id}: {实际仓库路径相对于 LOCAL_REPO_BASE_PATH}
+  
+  // 仓库路径映射：仓库ID -> 相对于LOCAL_REPO_BASE_PATH的路径
+  "archive_paths": {
+    "0": "banned-historical-archives0",
+    "1": "banned-historical-archives1",
+    "2": "banned-historical-archives2"
+  },
+  
+  // 数据路径模式：仓库ID -> 路径模式模板
+  // 支持变量: {book_id}, {book_prefix}, {article_id}, {article_prefix}, {book_name}
+  // banned-historical-archives0: mao/{book_name}/{article_prefix}/{article_id}.json
+  // banned-historical-archives1: {book_prefix}/{book_id}/{article_prefix}/{article_id}.json
+  // banned-historical-archives2: {book_prefix}/{book_id}/{article_prefix}/{article_id}.json
+  "data_path_patterns": {
+    "0": "mao/{book_name}/{article_prefix}/{article_id}.json",
+    "1": "{book_prefix}/{book_id}/{article_prefix}/{article_id}.json",
+    "2": "{book_prefix}/{book_id}/{article_prefix}/{article_id}.json"
+  },
+  
+  // 书籍名称映射：仓库ID -> {book_id_or_prefix: actual_name}
+  "book_name_mappings": {
+    "0": {
+      "0a4": "maoquanji27"
+    }
+  }
+}

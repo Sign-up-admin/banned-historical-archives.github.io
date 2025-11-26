@@ -28,6 +28,7 @@ import { ArticleIndexes, ParserResult } from '../types';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { readJSONSync } from 'fs-extra';
+import { resolveArticlePath } from './archive-path-resolver';
 import { sleep } from '../utils';
 import { get_article_indexes } from './get_article_indexes';
 import * as dotenv from 'dotenv';
@@ -117,13 +118,10 @@ const article_indexes = get_article_indexes();
     for (const book of article_indexes[article_id]) {
       const [book_id, book_name, archive_id] = book;
       const article = readJSONSync(
-        join(
-          getParsedDataPath(),
-          'archives' + archive_id,
-          book_id.slice(0, 3),
+        resolveArticlePath(
+          archive_id,
           book_id,
-          article_id.slice(0, 3),
-          article_id + '.json',
+          article_id,
         ),
       ) as ParserResult;
       const es_article: ESArticle = {

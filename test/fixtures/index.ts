@@ -3,16 +3,9 @@
  * 预定义的测试数据集合，用于在测试中复用
  */
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {
-  Article,
-  ParserResult,
-  Content,
-  Comment,
-  Tag,
   ContentType,
   TagType,
-  ArticleType,
 } from '../../types';
 import {
   createMockArticle,

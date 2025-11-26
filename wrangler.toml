@@ -1,0 +1,19 @@
+# Cloudflare Pages 配置文件
+# Cloudflare Pages Configuration File
+
+name = "banned-historical-archives"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "out"
+
+# 环境变量
+# Environment Variables
+[vars]
+NODE_ENV = "production"
+LOCAL_SEARCH_ENGINE = "0"
+LOCAL_INDEXES = "0"
+
+# 构建配置
+# Build Configuration
+# 注意：实际构建命令在 GitHub Actions 中执行
+# Note: Actual build command is executed in GitHub Actions
+

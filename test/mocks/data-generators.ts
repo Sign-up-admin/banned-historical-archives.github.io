@@ -3,7 +3,6 @@
  * 为测试提供可复用的模拟数据生成函数
  */
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {
   Article,
   ParserResult,
@@ -12,22 +11,8 @@ import {
   Tag,
   ContentType,
   TagType,
-  ArticleType,
   Date as DateType,
 } from '../../types';
-
-/**
- * 生成器配置选项
- */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-interface GeneratorOptions {
-  /** 是否生成随机 ID */
-  randomId?: boolean;
-  /** ID 前缀 */
-  idPrefix?: string;
-  /** 随机种子（用于可重现的随机数据） */
-  seed?: number;
-}
 
 /**
  * 创建模拟日期对象
