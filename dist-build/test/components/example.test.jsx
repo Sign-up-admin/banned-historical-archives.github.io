@@ -3,7 +3,7 @@
  * 示例测试文件
  * 验证新创建的测试基础设施是否正常工作
  */
-var __importDefault = (this && this.__importDefault) || function (mod) {
+const __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });

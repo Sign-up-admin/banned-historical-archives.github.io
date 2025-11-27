@@ -25,7 +25,7 @@ for (const i of files) {
     if (fs.statSync(join(target_dir, i)).isDirectory()) {
         const imgs_dir = join(target_dir, i);
         const imgs = fs.readdirSync(imgs_dir);
-        let x = 0;
+        const x = 0;
         for (const j of imgs) {
             if (j.endsWith('.')) {
                 // 需要修复

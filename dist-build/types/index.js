@@ -5,7 +5,7 @@ exports.ArticleType = exports.ContentType = exports.TagType = exports.ArticleCat
  * 文章大类枚举
  * 定义历史文献的主要分类
  */
-var ArticleCategory;
+let ArticleCategory;
 (function (ArticleCategory) {
     /** 中央文件 */
     ArticleCategory["centralFile"] = "\u4E2D\u592E\u6587\u4EF6";
@@ -20,7 +20,7 @@ var ArticleCategory;
  * 标签类型枚举
  * 定义所有可能的标签分类
  */
-var TagType;
+let TagType;
 (function (TagType) {
     /** 文稿大类 */
     TagType["articleCategory"] = "\u6587\u7A3F\u5927\u7C7B";
@@ -47,7 +47,7 @@ var TagType;
  * 内容类型枚举
  * 定义文档内容块的所有可能类型
  */
-var ContentType;
+let ContentType;
 (function (ContentType) {
     /** 称呼 */
     ContentType["appellation"] = "appellation";
@@ -84,7 +84,7 @@ var ContentType;
  * 文章类型枚举
  * 定义历史文献的具体类型
  */
-var ArticleType;
+let ArticleType;
 (function (ArticleType) {
     /** 文章 */
     ArticleType["writings"] = "\u6587\u7AE0";

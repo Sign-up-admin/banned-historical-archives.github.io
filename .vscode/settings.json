@@ -1,5 +1,38 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "terminal.integrated.allowWorkspaceConfiguration": true,
-  "terminal.integrated.confirmOnExit": "never"
+  // 终端配置 - 解决 Cursor 在 Windows PowerShell 上的等待问题
+  // 方案 1: 使用 Git Bash（推荐，可以完全避免问题）
+  // "terminal.integrated.defaultProfile.windows": "Git Bash",
+  
+  // 方案 2: 如果必须使用 PowerShell，启用自动换行
+  "terminal.integrated.automationProfile.windows": {
+    "path": "powershell.exe",
+    "args": [
+      "-NoProfile",
+      "-ExecutionPolicy", "Bypass",
+      "-Command", "$OutputEncoding = [System.Text.Encoding]::UTF8; $PSDefaultParameterValues['*:Encoding'] = 'utf8'; function prompt { 'PS ' + (Get-Location) + '> '; Write-Output '' }"
+    ]
+  },
+  
+  // 确保命令输出正确结束
+  "terminal.integrated.shellIntegration.enabled": true,
+  
+  // 启用命令完成检测
+  "terminal.integrated.enablePersistentSessions": true,
+  
+  // PowerShell 特定设置
+  "terminal.integrated.profiles.windows": {
+    "PowerShell (Fixed)": {
+      "source": "PowerShell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy", "Bypass",
+        "-Command", "function prompt { 'PS ' + (Get-Location) + '> '; Write-Output '' }"
+      ],
+      "icon": "terminal-powershell"
+    }
+  },
+  
+  // 确保终端正确检测命令完成
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line"
 }

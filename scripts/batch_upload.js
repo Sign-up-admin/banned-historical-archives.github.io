@@ -6,7 +6,7 @@ const {execSync } = require('child_process');
 
 const readline = require('node:readline');
 
-let [node_path, js_path, relativePath] = process.argv;
+const [node_path, js_path, relativePath] = process.argv;
 
 const is_pdf = relativePath.endsWith('.pdf');
 const is_txt = relativePath.endsWith('.txt');
@@ -88,7 +88,7 @@ async function cmd_question(q, default_v = '') {
         let page_start = 0;
         let page_end = 0;
         if (!is_txt) {
-            let page = await cmd_question(`文章${i}页码范围（使用空格分割，默认为第一页到最后一页）：`);
+            const page = await cmd_question(`文章${i}页码范围（使用空格分割，默认为第一页到最后一页）：`);
             if (page) {
                 page_start = parseInt(page.split(' ')[0]);
                 page_end = parseInt(page.split(' ')[1]);

@@ -5,7 +5,7 @@
  * 包含 MD5 哈希、文本处理、补丁应用、ID 生成等实用工具函数。
  * 这些函数主要用于数据处理、文本分析和版本控制。
  */
-var __importDefault = (this && this.__importDefault) || function (mod) {
+const __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });

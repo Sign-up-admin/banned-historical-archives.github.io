@@ -3,7 +3,7 @@
  * 测试工具函数库
  * 提供 React 组件测试的辅助函数和包装器
  */
-var __importDefault = (this && this.__importDefault) || function (mod) {
+const __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -115,13 +115,13 @@ function createQueryHelpers(result) {
     };
 }
 // 重新导出常用的 testing-library 函数，便于在测试中使用
-var react_3 = require("@testing-library/react");
+const react_3 = require("@testing-library/react");
 Object.defineProperty(exports, "screen", { enumerable: true, get: function () { return react_3.screen; } });
 Object.defineProperty(exports, "waitFor", { enumerable: true, get: function () { return react_3.waitFor; } });
 Object.defineProperty(exports, "fireEvent", { enumerable: true, get: function () { return react_3.fireEvent; } });
 Object.defineProperty(exports, "within", { enumerable: true, get: function () { return react_3.within; } });
 Object.defineProperty(exports, "cleanup", { enumerable: true, get: function () { return react_3.cleanup; } });
-var user_event_1 = require("@testing-library/user-event");
+const user_event_1 = require("@testing-library/user-event");
 Object.defineProperty(exports, "userEvent", { enumerable: true, get: function () { return user_event_1.userEvent; } });
-var test_utils_1 = require("react-dom/test-utils");
+const test_utils_1 = require("react-dom/test-utils");
 Object.defineProperty(exports, "act", { enumerable: true, get: function () { return test_utils_1.act; } });

@@ -39,73 +39,7 @@ This document provides a detailed implementation plan for testing engineering im
 
 
 
-#### 任务 2.2.2: Article 组件测试 ⚡
-- **优先级**: 🔴 高
-- **预计时间**: 2 天
-- **依赖**: 2.2.1
-- **可并行**: 是（与 2.2.3, 2.2.4 并行）
-- **描述**:
-  - 为 `components/Article/index.tsx` 编写测试
-  - 测试组件渲染
-  - 测试用户交互
-  - 测试 props 传递
-- **验收标准**:
-  - [ ] 组件可以正确渲染
-  - [ ] 用户交互测试通过
-  - [ ] 覆盖率 >= 70%
 
-#### 任务 2.2.3: Layout 组件测试 ⚡
-- **优先级**: 🔴 高
-- **预计时间**: 1.5 天
-- **依赖**: 2.2.1
-- **可并行**: 是（与 2.2.2, 2.2.4 并行）
-- **描述**:
-  - 为 `components/Layout.tsx` 编写测试
-  - 测试布局结构
-  - 测试子组件渲染
-- **验收标准**:
-  - [ ] 布局结构正确
-  - [ ] 子组件正确渲染
-  - [ ] 覆盖率 >= 70%
-
-#### 任务 2.2.4: Navbar 组件测试 ⚡
-- **优先级**: 🟡 中
-- **预计时间**: 1.5 天
-- **依赖**: 2.2.1
-- **可并行**: 是（与 2.2.2, 2.2.3 并行）
-- **描述**:
-  - 为 `components/Navbar.tsx` 编写测试
-  - 测试导航链接
-  - 测试响应式行为
-- **验收标准**:
-  - [ ] 导航链接正确
-  - [ ] 响应式行为测试通过
-  - [ ] 覆盖率 >= 70%
-
-### 阶段二并行执行图 / Phase 2 Parallel Execution Diagram
-
-```mermaid
-gantt
-    title 阶段二：核心测试补充
-    dateFormat  YYYY-MM-DD
-    section 工具函数测试
-    md5函数测试          :2.1.1, 2024-01-15, 1d
-    get_article_id测试   :2.1.2, 2024-01-15, 1d
-    apply_patch_v2完善   :2.1.3, 2024-01-15, 2d
-    其他工具函数测试     :2.1.4, 2024-01-16, 3d
-    section 组件测试
-    创建测试模板        :2.2.1, 2024-01-15, 1d
-    Article组件测试     :2.2.2, after 2.2.1, 2d
-    Layout组件测试      :2.2.3, after 2.2.1, 1.5d
-    Navbar组件测试      :2.2.4, after 2.2.1, 1.5d
-```
-
-**并行执行策略 / Parallel Execution Strategy:**
-- 所有工具函数测试（2.1.1-2.1.4）可以并行执行
-- 组件测试模板（2.2.1）完成后，所有组件测试（2.2.2-2.2.4）可以并行执行
-- 工具函数测试和组件测试可以同时进行（不同模块）
-
----
 
 ## 🚀 阶段三：全面测试覆盖（4-8周）/ Phase 3: Comprehensive Test Coverage (4-8 weeks)
 
@@ -120,19 +54,25 @@ gantt
 - **预计时间**: 3 天
 - **依赖**: 2.2.2
 - **可并行**: 是
+- **状态**: ⚠️ 部分完成 - 测试文件已创建但为空
 - **描述**:
   - 为 `PatchableArticle/index.tsx` 编写测试
   - 为 `PartEditor.tsx` 编写测试
   - 为 `CommentEditor.tsx` 编写测试
 - **验收标准**:
-  - [ ] 所有子组件都有测试
+  - [x] 所有子组件都有测试文件（但内容为空）
   - [ ] 覆盖率 >= 70%
+- **完成情况**:
+  - ✅ `test/components/Article/PatchableArticle/index.test.tsx` - 已创建但为空
+  - ✅ `test/components/Article/PatchableArticle/PartEditor.test.tsx` - 已创建但为空
+  - ✅ `test/components/Article/PatchableArticle/CommentEditor.test.tsx` - 已创建但为空
 
 #### 任务 3.1.2: 展示组件测试 ⚡
 - **优先级**: 🟡 中
 - **预计时间**: 4 天
 - **依赖**: 2.2.1
 - **可并行**: 是（与 3.1.1, 3.1.3 并行）
+- **状态**: ❌ 未开始 - 测试文件未创建
 - **描述**:
   - 为 `Authors.tsx` 编写测试
   - 为 `Tags.tsx` 编写测试
@@ -141,32 +81,47 @@ gantt
 - **验收标准**:
   - [ ] 所有组件都有测试
   - [ ] 覆盖率 >= 70%
+- **完成情况**:
+  - ❌ `test/components/Authors.test.tsx` - 未创建
+  - ❌ `test/components/Tags.test.tsx` - 未创建
+  - ❌ `test/components/ImageTags.test.tsx` - 未创建
+  - ❌ `test/components/DiffViewer.test.tsx` - 未创建
 
 #### 任务 3.1.3: 对话框组件测试 ⚡
 - **优先级**: 🟡 中
 - **预计时间**: 3 天
 - **依赖**: 2.2.1
 - **可并行**: 是（与 3.1.1, 3.1.2 并行）
+- **状态**: ⚠️ 部分完成 - 测试文件已创建但为空
 - **描述**:
   - 为 `useAuthorFilterDialog.tsx` 编写测试
   - 为 `useDateFilterDialog.tsx` 编写测试
   - 为 `useSourceFilterDialog.tsx` 编写测试
   - 为 `useTagFilterDialog.tsx` 编写测试
 - **验收标准**:
-  - [ ] 所有对话框组件都有测试
+  - [x] 所有对话框组件都有测试文件（但内容为空）
   - [ ] 覆盖率 >= 70%
+- **完成情况**:
+  - ✅ `test/components/useAuthorFilterDialog.test.tsx` - 已创建但为空
+  - ✅ `test/components/useDateFilterDialog.test.tsx` - 已创建但为空
+  - ✅ `test/components/useSourceFilterDialog.test.tsx` - 已创建但为空
+  - ✅ `test/components/useTagFilterDialog.test.tsx` - 已创建但为空
 
 #### 任务 3.1.4: 其他组件测试 ⚡
 - **优先级**: 🟡 中
 - **预计时间**: 2 天
 - **依赖**: 2.2.1
 - **可并行**: 是（与其他组件测试并行）
+- **状态**: ⚠️ 部分完成 - 测试文件已创建但为空
 - **描述**:
   - 为 `Footer.tsx` 编写测试
   - 为 `Loading.tsx` 编写测试
 - **验收标准**:
-  - [ ] 所有组件都有测试
+  - [x] 所有组件都有测试文件（但内容为空）
   - [ ] 覆盖率 >= 70%
+- **完成情况**:
+  - ✅ `test/components/Footer.test.tsx` - 已创建但为空
+  - ✅ `test/components/Loading.test.tsx` - 已创建但为空
 
 ### 任务组 3.2: 集成测试 / Integration Tests
 
@@ -175,6 +130,7 @@ gantt
 - **预计时间**: 2 天
 - **依赖**: 1.3.2
 - **可并行**: 是（与组件测试并行）
+- **状态**: ⚠️ 部分完成 - 测试文件存在但被跳过
 - **描述**:
   - 为 OCR 工作流创建 mock
   - 编写集成测试替代被跳过的测试
@@ -183,12 +139,15 @@ gantt
   - [ ] Mock 可以正常工作
   - [ ] 集成测试通过
   - [ ] 不再需要跳过测试
+- **完成情况**:
+  - ⚠️ `test/create-ocr-issue.test.ts` - 存在但被跳过（it.skip），需要 mock 替代
 
 #### 任务 3.2.2: 数据加载流程测试 ⚡
 - **优先级**: 🟡 中
 - **预计时间**: 2 天
 - **依赖**: 1.3.2
 - **可并行**: 是（与 3.2.1, 3.2.3 并行）
+- **状态**: ❌ 未开始 - 集成测试未创建
 - **描述**:
   - 为数据加载流程编写集成测试
   - 测试数据获取和解析
@@ -196,12 +155,15 @@ gantt
 - **验收标准**:
   - [ ] 数据加载测试通过
   - [ ] 错误处理测试通过
+- **完成情况**:
+  - ❌ `test/integration/data-loading.test.ts` - 未创建
 
 #### 任务 3.2.3: 搜索功能测试 ⚡
 - **优先级**: 🟡 中
 - **预计时间**: 2 天
 - **依赖**: 1.3.2
 - **可并行**: 是（与 3.2.1, 3.2.2 并行）
+- **状态**: ❌ 未开始 - 集成测试未创建
 - **描述**:
   - 为搜索功能编写集成测试
   - 测试搜索查询
@@ -209,6 +171,8 @@ gantt
 - **验收标准**:
   - [ ] 搜索功能测试通过
   - [ ] 边界条件测试通过
+- **完成情况**:
+  - ❌ `test/integration/search.test.ts` - 未创建
 
 ### 阶段三并行执行图 / Phase 3 Parallel Execution Diagram
 
@@ -485,13 +449,18 @@ gantt
 
 ### 阶段三检查清单 / Phase 3 Checklist
 
-- [ ] **3.1.1** Article 子组件测试
-- [ ] **3.1.2** 展示组件测试
-- [ ] **3.1.3** 对话框组件测试
-- [ ] **3.1.4** 其他组件测试
-- [ ] **3.2.1** OCR 工作流 Mock 测试
-- [ ] **3.2.2** 数据加载流程测试
-- [ ] **3.2.3** 搜索功能测试
+- [⚠️] **3.1.1** Article 子组件测试 - 测试文件已创建但为空
+- [❌] **3.1.2** 展示组件测试 - 测试文件未创建
+- [⚠️] **3.1.3** 对话框组件测试 - 测试文件已创建但为空
+- [⚠️] **3.1.4** 其他组件测试 - 测试文件已创建但为空
+- [⚠️] **3.2.1** OCR 工作流 Mock 测试 - 测试文件存在但被跳过
+- [❌] **3.2.2** 数据加载流程测试 - 集成测试未创建
+- [❌] **3.2.3** 搜索功能测试 - 集成测试未创建
+
+**状态说明 / Status Legend:**
+- ✅ 已完成
+- ⚠️ 部分完成
+- ❌ 未开始
 
 ### 阶段四检查清单 / Phase 4 Checklist
 

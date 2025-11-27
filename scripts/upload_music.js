@@ -33,7 +33,7 @@ for (const f of fs.readdirSync(raw_dir)) {
     }
 
     const name = f.split('.')[0].split(' ')[0].replace(/[\d\w]*/ , '');
-    let artist = f.split('.')[0].split(' ').slice(1).join(' ') || '';
+    const artist = f.split('.')[0].split(' ').slice(1).join(' ') || '';
     console.log(f, name, artist);
 
     let id = '';

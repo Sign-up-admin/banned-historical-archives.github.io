@@ -31,7 +31,7 @@
 		root["pdfjs-dist/build/pdf"] = root.pdfjsLib = factory();
 })(this, () => {
 return /******/ (() => { // webpackBootstrap
-/******/ 	var __webpack_modules__ = ([
+/******/ 	const __webpack_modules__ = ([
 /* 0 */,
 /* 1 */
 /***/ ((__unused_webpack_module, exports, __w_pdfjs_require__) => {
@@ -83,19 +83,19 @@ function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArra
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { let _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; const _arr = []; let _n = true; let _d = false; let _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
@@ -105,7 +105,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { const hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { let Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { const NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 
@@ -115,11 +115,11 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var IDENTITY_MATRIX = [1, 0, 0, 1, 0, 0];
+const IDENTITY_MATRIX = [1, 0, 0, 1, 0, 0];
 exports.IDENTITY_MATRIX = IDENTITY_MATRIX;
-var FONT_IDENTITY_MATRIX = [0.001, 0, 0, 0.001, 0, 0];
+const FONT_IDENTITY_MATRIX = [0.001, 0, 0, 0.001, 0, 0];
 exports.FONT_IDENTITY_MATRIX = FONT_IDENTITY_MATRIX;
-var RenderingIntentFlag = {
+const RenderingIntentFlag = {
   ANY: 0x01,
   DISPLAY: 0x02,
   PRINT: 0x04,
@@ -129,14 +129,14 @@ var RenderingIntentFlag = {
   OPLIST: 0x100
 };
 exports.RenderingIntentFlag = RenderingIntentFlag;
-var AnnotationMode = {
+const AnnotationMode = {
   DISABLE: 0,
   ENABLE: 1,
   ENABLE_FORMS: 2,
   ENABLE_STORAGE: 3
 };
 exports.AnnotationMode = AnnotationMode;
-var PermissionFlag = {
+const PermissionFlag = {
   PRINT: 0x04,
   MODIFY_CONTENTS: 0x08,
   COPY: 0x10,
@@ -147,7 +147,7 @@ var PermissionFlag = {
   PRINT_HIGH_QUALITY: 0x800
 };
 exports.PermissionFlag = PermissionFlag;
-var TextRenderingMode = {
+const TextRenderingMode = {
   FILL: 0,
   STROKE: 1,
   FILL_STROKE: 2,
@@ -160,13 +160,13 @@ var TextRenderingMode = {
   ADD_TO_PATH_FLAG: 4
 };
 exports.TextRenderingMode = TextRenderingMode;
-var ImageKind = {
+const ImageKind = {
   GRAYSCALE_1BPP: 1,
   RGB_24BPP: 2,
   RGBA_32BPP: 3
 };
 exports.ImageKind = ImageKind;
-var AnnotationType = {
+const AnnotationType = {
   TEXT: 1,
   LINK: 2,
   FREETEXT: 3,
@@ -195,17 +195,17 @@ var AnnotationType = {
   REDACT: 26
 };
 exports.AnnotationType = AnnotationType;
-var AnnotationStateModelType = {
+const AnnotationStateModelType = {
   MARKED: "Marked",
   REVIEW: "Review"
 };
 exports.AnnotationStateModelType = AnnotationStateModelType;
-var AnnotationMarkedState = {
+const AnnotationMarkedState = {
   MARKED: "Marked",
   UNMARKED: "Unmarked"
 };
 exports.AnnotationMarkedState = AnnotationMarkedState;
-var AnnotationReviewState = {
+const AnnotationReviewState = {
   ACCEPTED: "Accepted",
   REJECTED: "Rejected",
   CANCELLED: "Cancelled",
@@ -213,12 +213,12 @@ var AnnotationReviewState = {
   NONE: "None"
 };
 exports.AnnotationReviewState = AnnotationReviewState;
-var AnnotationReplyType = {
+const AnnotationReplyType = {
   GROUP: "Group",
   REPLY: "R"
 };
 exports.AnnotationReplyType = AnnotationReplyType;
-var AnnotationFlag = {
+const AnnotationFlag = {
   INVISIBLE: 0x01,
   HIDDEN: 0x02,
   PRINT: 0x04,
@@ -231,7 +231,7 @@ var AnnotationFlag = {
   LOCKEDCONTENTS: 0x200
 };
 exports.AnnotationFlag = AnnotationFlag;
-var AnnotationFieldFlag = {
+const AnnotationFieldFlag = {
   READONLY: 0x0000001,
   REQUIRED: 0x0000002,
   NOEXPORT: 0x0000004,
@@ -253,7 +253,7 @@ var AnnotationFieldFlag = {
   COMMITONSELCHANGE: 0x4000000
 };
 exports.AnnotationFieldFlag = AnnotationFieldFlag;
-var AnnotationBorderStyleType = {
+const AnnotationBorderStyleType = {
   SOLID: 1,
   DASHED: 2,
   BEVELED: 3,
@@ -261,7 +261,7 @@ var AnnotationBorderStyleType = {
   UNDERLINE: 5
 };
 exports.AnnotationBorderStyleType = AnnotationBorderStyleType;
-var AnnotationActionEventType = {
+const AnnotationActionEventType = {
   E: "Mouse Enter",
   X: "Mouse Exit",
   D: "Mouse Down",
@@ -278,7 +278,7 @@ var AnnotationActionEventType = {
   C: "Calculate"
 };
 exports.AnnotationActionEventType = AnnotationActionEventType;
-var DocumentActionEventType = {
+const DocumentActionEventType = {
   WC: "WillClose",
   WS: "WillSave",
   DS: "DidSave",
@@ -286,12 +286,12 @@ var DocumentActionEventType = {
   DP: "DidPrint"
 };
 exports.DocumentActionEventType = DocumentActionEventType;
-var PageActionEventType = {
+const PageActionEventType = {
   O: "PageOpen",
   C: "PageClose"
 };
 exports.PageActionEventType = PageActionEventType;
-var StreamType = {
+const StreamType = {
   UNKNOWN: "UNKNOWN",
   FLATE: "FLATE",
   LZW: "LZW",
@@ -304,7 +304,7 @@ var StreamType = {
   RLX: "RLX"
 };
 exports.StreamType = StreamType;
-var FontType = {
+const FontType = {
   UNKNOWN: "UNKNOWN",
   TYPE1: "TYPE1",
   TYPE1STANDARD: "TYPE1STANDARD",
@@ -319,19 +319,19 @@ var FontType = {
   MMTYPE1: "MMTYPE1"
 };
 exports.FontType = FontType;
-var VerbosityLevel = {
+const VerbosityLevel = {
   ERRORS: 0,
   WARNINGS: 1,
   INFOS: 5
 };
 exports.VerbosityLevel = VerbosityLevel;
-var CMapCompressionType = {
+const CMapCompressionType = {
   NONE: 0,
   BINARY: 1,
   STREAM: 2
 };
 exports.CMapCompressionType = CMapCompressionType;
-var OPS = {
+const OPS = {
   dependency: 1,
   setLineWidth: 2,
   setLineCap: 3,
@@ -425,7 +425,7 @@ var OPS = {
   constructPath: 91
 };
 exports.OPS = OPS;
-var UNSUPPORTED_FEATURES = {
+const UNSUPPORTED_FEATURES = {
   unknown: "unknown",
   forms: "forms",
   javaScript: "javaScript",
@@ -450,12 +450,12 @@ var UNSUPPORTED_FEATURES = {
   errorContentSubStream: "errorContentSubStream"
 };
 exports.UNSUPPORTED_FEATURES = UNSUPPORTED_FEATURES;
-var PasswordResponses = {
+const PasswordResponses = {
   NEED_PASSWORD: 1,
   INCORRECT_PASSWORD: 2
 };
 exports.PasswordResponses = PasswordResponses;
-var verbosity = VerbosityLevel.WARNINGS;
+let verbosity = VerbosityLevel.WARNINGS;
 
 function setVerbosityLevel(level) {
   if (Number.isInteger(level)) {
@@ -508,8 +508,8 @@ function _isValidProtocol(url) {
 }
 
 function createValidAbsoluteUrl(url) {
-  var baseUrl = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-  var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+  const baseUrl = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  const options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
   if (!url) {
     return null;
@@ -518,7 +518,7 @@ function createValidAbsoluteUrl(url) {
   try {
     if (options && typeof url === "string") {
       if (options.addDefaultProtocol && url.startsWith("www.")) {
-        var dots = url.match(/\./g);
+        const dots = url.match(/\./g);
 
         if (dots && dots.length >= 2) {
           url = "http://".concat(url);
@@ -532,7 +532,7 @@ function createValidAbsoluteUrl(url) {
       }
     }
 
-    var absoluteUrl = baseUrl ? new URL(url, baseUrl) : new URL(url);
+    const absoluteUrl = baseUrl ? new URL(url, baseUrl) : new URL(url);
 
     if (_isValidProtocol(absoluteUrl)) {
       return absoluteUrl;
@@ -552,7 +552,7 @@ function shadow(obj, prop, value) {
   return value;
 }
 
-var BaseException = function BaseExceptionClosure() {
+const BaseException = function BaseExceptionClosure() {
   function BaseException(message, name) {
     if (this.constructor === BaseException) {
       unreachable("Cannot initialize BaseException.");
@@ -569,13 +569,13 @@ var BaseException = function BaseExceptionClosure() {
 
 exports.BaseException = BaseException;
 
-var PasswordException = /*#__PURE__*/function (_BaseException) {
+const PasswordException = /*#__PURE__*/function (_BaseException) {
   _inherits(PasswordException, _BaseException);
 
-  var _super = _createSuper(PasswordException);
+  const _super = _createSuper(PasswordException);
 
   function PasswordException(msg, code) {
-    var _this;
+    let _this;
 
     _classCallCheck(this, PasswordException);
 
@@ -589,13 +589,13 @@ var PasswordException = /*#__PURE__*/function (_BaseException) {
 
 exports.PasswordException = PasswordException;
 
-var UnknownErrorException = /*#__PURE__*/function (_BaseException2) {
+const UnknownErrorException = /*#__PURE__*/function (_BaseException2) {
   _inherits(UnknownErrorException, _BaseException2);
 
-  var _super2 = _createSuper(UnknownErrorException);
+  const _super2 = _createSuper(UnknownErrorException);
 
   function UnknownErrorException(msg, details) {
-    var _this2;
+    let _this2;
 
     _classCallCheck(this, UnknownErrorException);
 
@@ -609,10 +609,10 @@ var UnknownErrorException = /*#__PURE__*/function (_BaseException2) {
 
 exports.UnknownErrorException = UnknownErrorException;
 
-var InvalidPDFException = /*#__PURE__*/function (_BaseException3) {
+const InvalidPDFException = /*#__PURE__*/function (_BaseException3) {
   _inherits(InvalidPDFException, _BaseException3);
 
-  var _super3 = _createSuper(InvalidPDFException);
+  const _super3 = _createSuper(InvalidPDFException);
 
   function InvalidPDFException(msg) {
     _classCallCheck(this, InvalidPDFException);
@@ -625,10 +625,10 @@ var InvalidPDFException = /*#__PURE__*/function (_BaseException3) {
 
 exports.InvalidPDFException = InvalidPDFException;
 
-var MissingPDFException = /*#__PURE__*/function (_BaseException4) {
+const MissingPDFException = /*#__PURE__*/function (_BaseException4) {
   _inherits(MissingPDFException, _BaseException4);
 
-  var _super4 = _createSuper(MissingPDFException);
+  const _super4 = _createSuper(MissingPDFException);
 
   function MissingPDFException(msg) {
     _classCallCheck(this, MissingPDFException);
@@ -641,13 +641,13 @@ var MissingPDFException = /*#__PURE__*/function (_BaseException4) {
 
 exports.MissingPDFException = MissingPDFException;
 
-var UnexpectedResponseException = /*#__PURE__*/function (_BaseException5) {
+const UnexpectedResponseException = /*#__PURE__*/function (_BaseException5) {
   _inherits(UnexpectedResponseException, _BaseException5);
 
-  var _super5 = _createSuper(UnexpectedResponseException);
+  const _super5 = _createSuper(UnexpectedResponseException);
 
   function UnexpectedResponseException(msg, status) {
-    var _this3;
+    let _this3;
 
     _classCallCheck(this, UnexpectedResponseException);
 
@@ -661,10 +661,10 @@ var UnexpectedResponseException = /*#__PURE__*/function (_BaseException5) {
 
 exports.UnexpectedResponseException = UnexpectedResponseException;
 
-var FormatError = /*#__PURE__*/function (_BaseException6) {
+const FormatError = /*#__PURE__*/function (_BaseException6) {
   _inherits(FormatError, _BaseException6);
 
-  var _super6 = _createSuper(FormatError);
+  const _super6 = _createSuper(FormatError);
 
   function FormatError(msg) {
     _classCallCheck(this, FormatError);
@@ -677,10 +677,10 @@ var FormatError = /*#__PURE__*/function (_BaseException6) {
 
 exports.FormatError = FormatError;
 
-var AbortException = /*#__PURE__*/function (_BaseException7) {
+const AbortException = /*#__PURE__*/function (_BaseException7) {
   _inherits(AbortException, _BaseException7);
 
-  var _super7 = _createSuper(AbortException);
+  const _super7 = _createSuper(AbortException);
 
   function AbortException(msg) {
     _classCallCheck(this, AbortException);
@@ -698,18 +698,18 @@ function bytesToString(bytes) {
     unreachable("Invalid argument for bytesToString");
   }
 
-  var length = bytes.length;
-  var MAX_ARGUMENT_COUNT = 8192;
+  const length = bytes.length;
+  const MAX_ARGUMENT_COUNT = 8192;
 
   if (length < MAX_ARGUMENT_COUNT) {
     return String.fromCharCode.apply(null, bytes);
   }
 
-  var strBuf = [];
+  const strBuf = [];
 
-  for (var i = 0; i < length; i += MAX_ARGUMENT_COUNT) {
-    var chunkEnd = Math.min(i + MAX_ARGUMENT_COUNT, length);
-    var chunk = bytes.subarray(i, chunkEnd);
+  for (let i = 0; i < length; i += MAX_ARGUMENT_COUNT) {
+    const chunkEnd = Math.min(i + MAX_ARGUMENT_COUNT, length);
+    const chunk = bytes.subarray(i, chunkEnd);
     strBuf.push(String.fromCharCode.apply(null, chunk));
   }
 
@@ -721,10 +721,10 @@ function stringToBytes(str) {
     unreachable("Invalid argument for stringToBytes");
   }
 
-  var length = str.length;
-  var bytes = new Uint8Array(length);
+  const length = str.length;
+  const bytes = new Uint8Array(length);
 
-  for (var i = 0; i < length; ++i) {
+  for (let i = 0; i < length; ++i) {
     bytes[i] = str.charCodeAt(i) & 0xff;
   }
 
@@ -744,23 +744,23 @@ function arrayByteLength(arr) {
 }
 
 function arraysToBytes(arr) {
-  var length = arr.length;
+  const length = arr.length;
 
   if (length === 1 && arr[0] instanceof Uint8Array) {
     return arr[0];
   }
 
-  var resultLength = 0;
+  let resultLength = 0;
 
-  for (var i = 0; i < length; i++) {
+  for (let i = 0; i < length; i++) {
     resultLength += arrayByteLength(arr[i]);
   }
 
-  var pos = 0;
-  var data = new Uint8Array(resultLength);
+  let pos = 0;
+  const data = new Uint8Array(resultLength);
 
-  for (var _i = 0; _i < length; _i++) {
-    var item = arr[_i];
+  for (let _i = 0; _i < length; _i++) {
+    let item = arr[_i];
 
     if (!(item instanceof Uint8Array)) {
       if (typeof item === "string") {
@@ -770,7 +770,7 @@ function arraysToBytes(arr) {
       }
     }
 
-    var itemLength = item.byteLength;
+    const itemLength = item.byteLength;
     data.set(item, pos);
     pos += itemLength;
   }
@@ -787,14 +787,14 @@ function objectSize(obj) {
 }
 
 function objectFromMap(map) {
-  var obj = Object.create(null);
+  const obj = Object.create(null);
 
-  var _iterator = _createForOfIteratorHelper(map),
+  let _iterator = _createForOfIteratorHelper(map),
       _step;
 
   try {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var _step$value = _slicedToArray(_step.value, 2),
+      const _step$value = _slicedToArray(_step.value, 2),
           key = _step$value[0],
           value = _step$value[1];
 
@@ -810,9 +810,9 @@ function objectFromMap(map) {
 }
 
 function isLittleEndian() {
-  var buffer8 = new Uint8Array(4);
+  const buffer8 = new Uint8Array(4);
   buffer8[0] = 1;
-  var view32 = new Uint32Array(buffer8.buffer, 0, 1);
+  const view32 = new Uint32Array(buffer8.buffer, 0, 1);
   return view32[0] === 1;
 }
 
@@ -825,7 +825,7 @@ function isEvalSupported() {
   }
 }
 
-var FeatureTest = /*#__PURE__*/function () {
+const FeatureTest = /*#__PURE__*/function () {
   function FeatureTest() {
     _classCallCheck(this, FeatureTest);
   }
@@ -852,11 +852,11 @@ var FeatureTest = /*#__PURE__*/function () {
 
 exports.FeatureTest = FeatureTest;
 
-var hexNumbers = _toConsumableArray(Array(256).keys()).map(function (n) {
+const hexNumbers = _toConsumableArray(Array(256).keys()).map(function (n) {
   return n.toString(16).padStart(2, "0");
 });
 
-var Util = /*#__PURE__*/function () {
+const Util = /*#__PURE__*/function () {
   function Util() {
     _classCallCheck(this, Util);
   }
@@ -869,7 +869,7 @@ var Util = /*#__PURE__*/function () {
   }, {
     key: "scaleMinMax",
     value: function scaleMinMax(transform, minMax) {
-      var temp;
+      let temp;
 
       if (transform[0]) {
         if (transform[0] < 0) {
@@ -929,31 +929,31 @@ var Util = /*#__PURE__*/function () {
   }, {
     key: "applyTransform",
     value: function applyTransform(p, m) {
-      var xt = p[0] * m[0] + p[1] * m[2] + m[4];
-      var yt = p[0] * m[1] + p[1] * m[3] + m[5];
+      const xt = p[0] * m[0] + p[1] * m[2] + m[4];
+      const yt = p[0] * m[1] + p[1] * m[3] + m[5];
       return [xt, yt];
     }
   }, {
     key: "applyInverseTransform",
     value: function applyInverseTransform(p, m) {
-      var d = m[0] * m[3] - m[1] * m[2];
-      var xt = (p[0] * m[3] - p[1] * m[2] + m[2] * m[5] - m[4] * m[3]) / d;
-      var yt = (-p[0] * m[1] + p[1] * m[0] + m[4] * m[1] - m[5] * m[0]) / d;
+      const d = m[0] * m[3] - m[1] * m[2];
+      const xt = (p[0] * m[3] - p[1] * m[2] + m[2] * m[5] - m[4] * m[3]) / d;
+      const yt = (-p[0] * m[1] + p[1] * m[0] + m[4] * m[1] - m[5] * m[0]) / d;
       return [xt, yt];
     }
   }, {
     key: "getAxialAlignedBoundingBox",
     value: function getAxialAlignedBoundingBox(r, m) {
-      var p1 = Util.applyTransform(r, m);
-      var p2 = Util.applyTransform(r.slice(2, 4), m);
-      var p3 = Util.applyTransform([r[0], r[3]], m);
-      var p4 = Util.applyTransform([r[2], r[1]], m);
+      const p1 = Util.applyTransform(r, m);
+      const p2 = Util.applyTransform(r.slice(2, 4), m);
+      const p3 = Util.applyTransform([r[0], r[3]], m);
+      const p4 = Util.applyTransform([r[2], r[1]], m);
       return [Math.min(p1[0], p2[0], p3[0], p4[0]), Math.min(p1[1], p2[1], p3[1], p4[1]), Math.max(p1[0], p2[0], p3[0], p4[0]), Math.max(p1[1], p2[1], p3[1], p4[1])];
     }
   }, {
     key: "inverseTransform",
     value: function inverseTransform(m) {
-      var d = m[0] * m[3] - m[1] * m[2];
+      const d = m[0] * m[3] - m[1] * m[2];
       return [m[3] / d, -m[1] / d, -m[2] / d, m[0] / d, (m[2] * m[5] - m[4] * m[3]) / d, (m[4] * m[1] - m[5] * m[0]) / d];
     }
   }, {
@@ -964,21 +964,21 @@ var Util = /*#__PURE__*/function () {
   }, {
     key: "singularValueDecompose2dScale",
     value: function singularValueDecompose2dScale(m) {
-      var transpose = [m[0], m[2], m[1], m[3]];
-      var a = m[0] * transpose[0] + m[1] * transpose[2];
-      var b = m[0] * transpose[1] + m[1] * transpose[3];
-      var c = m[2] * transpose[0] + m[3] * transpose[2];
-      var d = m[2] * transpose[1] + m[3] * transpose[3];
-      var first = (a + d) / 2;
-      var second = Math.sqrt(Math.pow(a + d, 2) - 4 * (a * d - c * b)) / 2;
-      var sx = first + second || 1;
-      var sy = first - second || 1;
+      const transpose = [m[0], m[2], m[1], m[3]];
+      const a = m[0] * transpose[0] + m[1] * transpose[2];
+      const b = m[0] * transpose[1] + m[1] * transpose[3];
+      const c = m[2] * transpose[0] + m[3] * transpose[2];
+      const d = m[2] * transpose[1] + m[3] * transpose[3];
+      const first = (a + d) / 2;
+      const second = Math.sqrt(Math.pow(a + d, 2) - 4 * (a * d - c * b)) / 2;
+      const sx = first + second || 1;
+      const sy = first - second || 1;
       return [Math.sqrt(sx), Math.sqrt(sy)];
     }
   }, {
     key: "normalizeRect",
     value: function normalizeRect(rect) {
-      var r = rect.slice(0);
+      const r = rect.slice(0);
 
       if (rect[0] > rect[2]) {
         r[0] = rect[2];
@@ -995,15 +995,15 @@ var Util = /*#__PURE__*/function () {
   }, {
     key: "intersect",
     value: function intersect(rect1, rect2) {
-      var xLow = Math.max(Math.min(rect1[0], rect1[2]), Math.min(rect2[0], rect2[2]));
-      var xHigh = Math.min(Math.max(rect1[0], rect1[2]), Math.max(rect2[0], rect2[2]));
+      const xLow = Math.max(Math.min(rect1[0], rect1[2]), Math.min(rect2[0], rect2[2]));
+      const xHigh = Math.min(Math.max(rect1[0], rect1[2]), Math.max(rect2[0], rect2[2]));
 
       if (xLow > xHigh) {
         return null;
       }
 
-      var yLow = Math.max(Math.min(rect1[1], rect1[3]), Math.min(rect2[1], rect2[3]));
-      var yHigh = Math.min(Math.max(rect1[1], rect1[3]), Math.max(rect2[1], rect2[3]));
+      const yLow = Math.max(Math.min(rect1[1], rect1[3]), Math.min(rect2[1], rect2[3]));
+      const yHigh = Math.min(Math.max(rect1[1], rect1[3]), Math.max(rect2[1], rect2[3]));
 
       if (yLow > yHigh) {
         return null;
@@ -1014,11 +1014,11 @@ var Util = /*#__PURE__*/function () {
   }, {
     key: "bezierBoundingBox",
     value: function bezierBoundingBox(x0, y0, x1, y1, x2, y2, x3, y3) {
-      var tvalues = [],
+      const tvalues = [],
           bounds = [[], []];
-      var a, b, c, t, t1, t2, b2ac, sqrtb2ac;
+      let a, b, c, t, t1, t2, b2ac, sqrtb2ac;
 
-      for (var i = 0; i < 2; ++i) {
+      for (let i = 0; i < 2; ++i) {
         if (i === 0) {
           b = 6 * x0 - 12 * x1 + 6 * x2;
           a = -3 * x0 + 9 * x1 - 9 * x2 + 3 * x3;
@@ -1063,9 +1063,9 @@ var Util = /*#__PURE__*/function () {
         }
       }
 
-      var j = tvalues.length,
+      let j = tvalues.length,
           mt;
-      var jlen = j;
+      const jlen = j;
 
       while (j--) {
         t = tvalues[j];
@@ -1087,11 +1087,11 @@ var Util = /*#__PURE__*/function () {
 }();
 
 exports.Util = Util;
-var PDFStringTranslateTable = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2d8, 0x2c7, 0x2c6, 0x2d9, 0x2dd, 0x2db, 0x2da, 0x2dc, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2022, 0x2020, 0x2021, 0x2026, 0x2014, 0x2013, 0x192, 0x2044, 0x2039, 0x203a, 0x2212, 0x2030, 0x201e, 0x201c, 0x201d, 0x2018, 0x2019, 0x201a, 0x2122, 0xfb01, 0xfb02, 0x141, 0x152, 0x160, 0x178, 0x17d, 0x131, 0x142, 0x153, 0x161, 0x17e, 0, 0x20ac];
+const PDFStringTranslateTable = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2d8, 0x2c7, 0x2c6, 0x2d9, 0x2dd, 0x2db, 0x2da, 0x2dc, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x2022, 0x2020, 0x2021, 0x2026, 0x2014, 0x2013, 0x192, 0x2044, 0x2039, 0x203a, 0x2212, 0x2030, 0x201e, 0x201c, 0x201d, 0x2018, 0x2019, 0x201a, 0x2122, 0xfb01, 0xfb02, 0x141, 0x152, 0x160, 0x178, 0x17d, 0x131, 0x142, 0x153, 0x161, 0x17e, 0, 0x20ac];
 
 function stringToPDFString(str) {
   if (str[0] >= "\xEF") {
-    var encoding;
+    let encoding;
 
     if (str[0] === "\xFE" && str[1] === "\xFF") {
       encoding = "utf-16be";
@@ -1103,10 +1103,10 @@ function stringToPDFString(str) {
 
     if (encoding) {
       try {
-        var decoder = new TextDecoder(encoding, {
+        const decoder = new TextDecoder(encoding, {
           fatal: true
         });
-        var buffer = stringToBytes(str);
+        const buffer = stringToBytes(str);
         return decoder.decode(buffer);
       } catch (ex) {
         warn("stringToPDFString: \"".concat(ex, "\"."));
@@ -1114,10 +1114,10 @@ function stringToPDFString(str) {
     }
   }
 
-  var strBuf = [];
+  const strBuf = [];
 
-  for (var i = 0, ii = str.length; i < ii; i++) {
-    var code = PDFStringTranslateTable[str.charCodeAt(i)];
+  for (let i = 0, ii = str.length; i < ii; i++) {
+    const code = PDFStringTranslateTable[str.charCodeAt(i)];
     strBuf.push(code ? String.fromCharCode(code) : str.charAt(i));
   }
 
@@ -1141,10 +1141,10 @@ function isAscii(str) {
 }
 
 function stringToUTF16BEString(str) {
-  var buf = ["\xFE\xFF"];
+  const buf = ["\xFE\xFF"];
 
-  for (var i = 0, ii = str.length; i < ii; i++) {
-    var _char = str.charCodeAt(i);
+  for (let i = 0, ii = str.length; i < ii; i++) {
+    const _char = str.charCodeAt(i);
 
     buf.push(String.fromCharCode(_char >> 8 & 0xff), String.fromCharCode(_char & 0xff));
   }
@@ -1169,7 +1169,7 @@ function isArrayEqual(arr1, arr2) {
     return false;
   }
 
-  for (var i = 0, ii = arr1.length; i < ii; i++) {
+  for (let i = 0, ii = arr1.length; i < ii; i++) {
     if (arr1[i] !== arr2[i]) {
       return false;
     }
@@ -1179,14 +1179,14 @@ function isArrayEqual(arr1, arr2) {
 }
 
 function getModificationDate() {
-  var date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
-  var buffer = [date.getUTCFullYear().toString(), (date.getUTCMonth() + 1).toString().padStart(2, "0"), date.getUTCDate().toString().padStart(2, "0"), date.getUTCHours().toString().padStart(2, "0"), date.getUTCMinutes().toString().padStart(2, "0"), date.getUTCSeconds().toString().padStart(2, "0")];
+  const date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : new Date();
+  const buffer = [date.getUTCFullYear().toString(), (date.getUTCMonth() + 1).toString().padStart(2, "0"), date.getUTCDate().toString().padStart(2, "0"), date.getUTCHours().toString().padStart(2, "0"), date.getUTCMinutes().toString().padStart(2, "0"), date.getUTCSeconds().toString().padStart(2, "0")];
   return buffer.join("");
 }
 
 function createPromiseCapability() {
-  var capability = Object.create(null);
-  var isSettled = false;
+  const capability = Object.create(null);
+  let isSettled = false;
   Object.defineProperty(capability, "settled", {
     get: function get() {
       return isSettled;
@@ -1213,7 +1213,7 @@ function createPromiseCapability() {
 "use strict";
 
 
-var _is_node = __w_pdfjs_require__(3);
+const _is_node = __w_pdfjs_require__(3);
 
 if (!globalThis._pdfjsCompatibilityChecked) {
   globalThis._pdfjsCompatibilityChecked = true;
@@ -1285,7 +1285,7 @@ exports.isNodeJS = void 0;
 
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
-var isNodeJS = (typeof process === "undefined" ? "undefined" : _typeof(process)) === "object" && process + "" === "[object process]" && !process.versions.nw && !(process.versions.electron && process.type && process.type !== "browser");
+const isNodeJS = (typeof process === "undefined" ? "undefined" : _typeof(process)) === "object" && process + "" === "[object process]" && !process.versions.nw && !(process.versions.electron && process.type && process.type !== "browser");
 exports.isNodeJS = isNodeJS;
 
 /***/ }),
@@ -1300,7 +1300,7 @@ __w_pdfjs_require__(131);
 __w_pdfjs_require__(132);
 __w_pdfjs_require__(133);
 __w_pdfjs_require__(134);
-var path = __w_pdfjs_require__(136);
+const path = __w_pdfjs_require__(136);
 module.exports = path.Promise;
 
 /***/ }),
@@ -1315,28 +1315,28 @@ __w_pdfjs_require__(6);
 
 "use strict";
 
-var $ = __w_pdfjs_require__(7);
-var global = __w_pdfjs_require__(8);
-var isPrototypeOf = __w_pdfjs_require__(27);
-var getPrototypeOf = __w_pdfjs_require__(69);
-var setPrototypeOf = __w_pdfjs_require__(71);
-var copyConstructorProperties = __w_pdfjs_require__(57);
-var create = __w_pdfjs_require__(73);
-var createNonEnumerableProperty = __w_pdfjs_require__(46);
-var createPropertyDescriptor = __w_pdfjs_require__(15);
-var clearErrorStack = __w_pdfjs_require__(77);
-var installErrorCause = __w_pdfjs_require__(78);
-var iterate = __w_pdfjs_require__(79);
-var normalizeStringArgument = __w_pdfjs_require__(88);
-var wellKnownSymbol = __w_pdfjs_require__(36);
-var ERROR_STACK_INSTALLABLE = __w_pdfjs_require__(90);
-var TO_STRING_TAG = wellKnownSymbol('toStringTag');
-var Error = global.Error;
-var push = [].push;
-var $AggregateError = function AggregateError(errors, message) {
- var options = arguments.length > 2 ? arguments[2] : undefined;
- var isInstance = isPrototypeOf(AggregateErrorPrototype, this);
- var that;
+const $ = __w_pdfjs_require__(7);
+const global = __w_pdfjs_require__(8);
+const isPrototypeOf = __w_pdfjs_require__(27);
+const getPrototypeOf = __w_pdfjs_require__(69);
+const setPrototypeOf = __w_pdfjs_require__(71);
+const copyConstructorProperties = __w_pdfjs_require__(57);
+const create = __w_pdfjs_require__(73);
+const createNonEnumerableProperty = __w_pdfjs_require__(46);
+const createPropertyDescriptor = __w_pdfjs_require__(15);
+const clearErrorStack = __w_pdfjs_require__(77);
+const installErrorCause = __w_pdfjs_require__(78);
+const iterate = __w_pdfjs_require__(79);
+const normalizeStringArgument = __w_pdfjs_require__(88);
+const wellKnownSymbol = __w_pdfjs_require__(36);
+const ERROR_STACK_INSTALLABLE = __w_pdfjs_require__(90);
+const TO_STRING_TAG = wellKnownSymbol('toStringTag');
+const Error = global.Error;
+const push = [].push;
+const $AggregateError = function AggregateError(errors, message) {
+ const options = arguments.length > 2 ? arguments[2] : undefined;
+ const isInstance = isPrototypeOf(AggregateErrorPrototype, this);
+ let that;
  if (setPrototypeOf) {
   that = setPrototypeOf(new Error(), isInstance ? getPrototypeOf(this) : AggregateErrorPrototype);
  } else {
@@ -1348,7 +1348,7 @@ var $AggregateError = function AggregateError(errors, message) {
  if (ERROR_STACK_INSTALLABLE)
   createNonEnumerableProperty(that, 'stack', clearErrorStack(that.stack, 1));
  installErrorCause(that, options);
- var errorsArray = [];
+ const errorsArray = [];
  iterate(errors, push, { that: errorsArray });
  createNonEnumerableProperty(that, 'errors', errorsArray);
  return that;
@@ -1368,18 +1368,18 @@ $({ global: true }, { AggregateError: $AggregateError });
 /* 7 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var getOwnPropertyDescriptor = (__w_pdfjs_require__(9).f);
-var createNonEnumerableProperty = __w_pdfjs_require__(46);
-var redefine = __w_pdfjs_require__(50);
-var setGlobal = __w_pdfjs_require__(40);
-var copyConstructorProperties = __w_pdfjs_require__(57);
-var isForced = __w_pdfjs_require__(68);
+const global = __w_pdfjs_require__(8);
+const getOwnPropertyDescriptor = (__w_pdfjs_require__(9).f);
+const createNonEnumerableProperty = __w_pdfjs_require__(46);
+const redefine = __w_pdfjs_require__(50);
+const setGlobal = __w_pdfjs_require__(40);
+const copyConstructorProperties = __w_pdfjs_require__(57);
+const isForced = __w_pdfjs_require__(68);
 module.exports = function (options, source) {
- var TARGET = options.target;
- var GLOBAL = options.global;
- var STATIC = options.stat;
- var FORCED, target, key, targetProperty, sourceProperty, descriptor;
+ const TARGET = options.target;
+ const GLOBAL = options.global;
+ const STATIC = options.stat;
+ let FORCED, target, key, targetProperty, sourceProperty, descriptor;
  if (GLOBAL) {
   target = global;
  } else if (STATIC) {
@@ -1412,7 +1412,7 @@ module.exports = function (options, source) {
 /* 8 */
 /***/ ((module) => {
 
-var check = function (it) {
+const check = function (it) {
  return it && it.Math == Math && it;
 };
 module.exports = check(typeof globalThis == 'object' && globalThis) || check(typeof window == 'object' && window) || check(typeof self == 'object' && self) || check(typeof global == 'object' && global) || (function () {
@@ -1423,15 +1423,15 @@ module.exports = check(typeof globalThis == 'object' && globalThis) || check(typ
 /* 9 */
 /***/ ((__unused_webpack_module, exports, __w_pdfjs_require__) => {
 
-var DESCRIPTORS = __w_pdfjs_require__(10);
-var call = __w_pdfjs_require__(12);
-var propertyIsEnumerableModule = __w_pdfjs_require__(14);
-var createPropertyDescriptor = __w_pdfjs_require__(15);
-var toIndexedObject = __w_pdfjs_require__(16);
-var toPropertyKey = __w_pdfjs_require__(21);
-var hasOwn = __w_pdfjs_require__(41);
-var IE8_DOM_DEFINE = __w_pdfjs_require__(44);
-var $getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+const DESCRIPTORS = __w_pdfjs_require__(10);
+const call = __w_pdfjs_require__(12);
+const propertyIsEnumerableModule = __w_pdfjs_require__(14);
+const createPropertyDescriptor = __w_pdfjs_require__(15);
+const toIndexedObject = __w_pdfjs_require__(16);
+const toPropertyKey = __w_pdfjs_require__(21);
+const hasOwn = __w_pdfjs_require__(41);
+const IE8_DOM_DEFINE = __w_pdfjs_require__(44);
+const $getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
 exports.f = DESCRIPTORS ? $getOwnPropertyDescriptor : function getOwnPropertyDescriptor(O, P) {
  O = toIndexedObject(O);
  P = toPropertyKey(P);
@@ -1448,7 +1448,7 @@ exports.f = DESCRIPTORS ? $getOwnPropertyDescriptor : function getOwnPropertyDes
 /* 10 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var fails = __w_pdfjs_require__(11);
+const fails = __w_pdfjs_require__(11);
 module.exports = !fails(function () {
  return Object.defineProperty({}, 1, {
   get: function () {
@@ -1473,8 +1473,8 @@ module.exports = function (exec) {
 /* 12 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var NATIVE_BIND = __w_pdfjs_require__(13);
-var call = Function.prototype.call;
+const NATIVE_BIND = __w_pdfjs_require__(13);
+const call = Function.prototype.call;
 module.exports = NATIVE_BIND ? call.bind(call) : function () {
  return call.apply(call, arguments);
 };
@@ -1483,9 +1483,9 @@ module.exports = NATIVE_BIND ? call.bind(call) : function () {
 /* 13 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var fails = __w_pdfjs_require__(11);
+const fails = __w_pdfjs_require__(11);
 module.exports = !fails(function () {
- var test = function () {
+ const test = function () {
  }.bind();
  return typeof test != 'function' || test.hasOwnProperty('prototype');
 });
@@ -1496,11 +1496,11 @@ module.exports = !fails(function () {
 
 "use strict";
 
-var $propertyIsEnumerable = {}.propertyIsEnumerable;
-var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
-var NASHORN_BUG = getOwnPropertyDescriptor && !$propertyIsEnumerable.call({ 1: 2 }, 1);
+const $propertyIsEnumerable = {}.propertyIsEnumerable;
+const getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+const NASHORN_BUG = getOwnPropertyDescriptor && !$propertyIsEnumerable.call({ 1: 2 }, 1);
 exports.f = NASHORN_BUG ? function propertyIsEnumerable(V) {
- var descriptor = getOwnPropertyDescriptor(this, V);
+ const descriptor = getOwnPropertyDescriptor(this, V);
  return !!descriptor && descriptor.enumerable;
 } : $propertyIsEnumerable;
 
@@ -1521,8 +1521,8 @@ module.exports = function (bitmap, value) {
 /* 16 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var IndexedObject = __w_pdfjs_require__(17);
-var requireObjectCoercible = __w_pdfjs_require__(20);
+const IndexedObject = __w_pdfjs_require__(17);
+const requireObjectCoercible = __w_pdfjs_require__(20);
 module.exports = function (it) {
  return IndexedObject(requireObjectCoercible(it));
 };
@@ -1531,12 +1531,12 @@ module.exports = function (it) {
 /* 17 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var uncurryThis = __w_pdfjs_require__(18);
-var fails = __w_pdfjs_require__(11);
-var classof = __w_pdfjs_require__(19);
-var Object = global.Object;
-var split = uncurryThis(''.split);
+const global = __w_pdfjs_require__(8);
+const uncurryThis = __w_pdfjs_require__(18);
+const fails = __w_pdfjs_require__(11);
+const classof = __w_pdfjs_require__(19);
+const Object = global.Object;
+const split = uncurryThis(''.split);
 module.exports = fails(function () {
  return !Object('z').propertyIsEnumerable(0);
 }) ? function (it) {
@@ -1547,11 +1547,11 @@ module.exports = fails(function () {
 /* 18 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var NATIVE_BIND = __w_pdfjs_require__(13);
-var FunctionPrototype = Function.prototype;
-var bind = FunctionPrototype.bind;
-var call = FunctionPrototype.call;
-var uncurryThis = NATIVE_BIND && bind.bind(call, call);
+const NATIVE_BIND = __w_pdfjs_require__(13);
+const FunctionPrototype = Function.prototype;
+const bind = FunctionPrototype.bind;
+const call = FunctionPrototype.call;
+const uncurryThis = NATIVE_BIND && bind.bind(call, call);
 module.exports = NATIVE_BIND ? function (fn) {
  return fn && uncurryThis(fn);
 } : function (fn) {
@@ -1564,9 +1564,9 @@ module.exports = NATIVE_BIND ? function (fn) {
 /* 19 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var uncurryThis = __w_pdfjs_require__(18);
-var toString = uncurryThis({}.toString);
-var stringSlice = uncurryThis(''.slice);
+const uncurryThis = __w_pdfjs_require__(18);
+const toString = uncurryThis({}.toString);
+const stringSlice = uncurryThis(''.slice);
 module.exports = function (it) {
  return stringSlice(toString(it), 8, -1);
 };
@@ -1575,8 +1575,8 @@ module.exports = function (it) {
 /* 20 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var TypeError = global.TypeError;
+const global = __w_pdfjs_require__(8);
+const TypeError = global.TypeError;
 module.exports = function (it) {
  if (it == undefined)
   throw TypeError("Can't call method on " + it);
@@ -1587,10 +1587,10 @@ module.exports = function (it) {
 /* 21 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var toPrimitive = __w_pdfjs_require__(22);
-var isSymbol = __w_pdfjs_require__(25);
+const toPrimitive = __w_pdfjs_require__(22);
+const isSymbol = __w_pdfjs_require__(25);
 module.exports = function (argument) {
- var key = toPrimitive(argument, 'string');
+ const key = toPrimitive(argument, 'string');
  return isSymbol(key) ? key : key + '';
 };
 
@@ -1598,20 +1598,20 @@ module.exports = function (argument) {
 /* 22 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var call = __w_pdfjs_require__(12);
-var isObject = __w_pdfjs_require__(23);
-var isSymbol = __w_pdfjs_require__(25);
-var getMethod = __w_pdfjs_require__(32);
-var ordinaryToPrimitive = __w_pdfjs_require__(35);
-var wellKnownSymbol = __w_pdfjs_require__(36);
-var TypeError = global.TypeError;
-var TO_PRIMITIVE = wellKnownSymbol('toPrimitive');
+const global = __w_pdfjs_require__(8);
+const call = __w_pdfjs_require__(12);
+const isObject = __w_pdfjs_require__(23);
+const isSymbol = __w_pdfjs_require__(25);
+const getMethod = __w_pdfjs_require__(32);
+const ordinaryToPrimitive = __w_pdfjs_require__(35);
+const wellKnownSymbol = __w_pdfjs_require__(36);
+const TypeError = global.TypeError;
+const TO_PRIMITIVE = wellKnownSymbol('toPrimitive');
 module.exports = function (input, pref) {
  if (!isObject(input) || isSymbol(input))
   return input;
- var exoticToPrim = getMethod(input, TO_PRIMITIVE);
- var result;
+ const exoticToPrim = getMethod(input, TO_PRIMITIVE);
+ let result;
  if (exoticToPrim) {
   if (pref === undefined)
    pref = 'default';
@@ -1629,7 +1629,7 @@ module.exports = function (input, pref) {
 /* 23 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var isCallable = __w_pdfjs_require__(24);
+const isCallable = __w_pdfjs_require__(24);
 module.exports = function (it) {
  return typeof it == 'object' ? it !== null : isCallable(it);
 };
@@ -1646,16 +1646,16 @@ module.exports = function (argument) {
 /* 25 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var getBuiltIn = __w_pdfjs_require__(26);
-var isCallable = __w_pdfjs_require__(24);
-var isPrototypeOf = __w_pdfjs_require__(27);
-var USE_SYMBOL_AS_UID = __w_pdfjs_require__(28);
-var Object = global.Object;
+const global = __w_pdfjs_require__(8);
+const getBuiltIn = __w_pdfjs_require__(26);
+const isCallable = __w_pdfjs_require__(24);
+const isPrototypeOf = __w_pdfjs_require__(27);
+const USE_SYMBOL_AS_UID = __w_pdfjs_require__(28);
+const Object = global.Object;
 module.exports = USE_SYMBOL_AS_UID ? function (it) {
  return typeof it == 'symbol';
 } : function (it) {
- var $Symbol = getBuiltIn('Symbol');
+ const $Symbol = getBuiltIn('Symbol');
  return isCallable($Symbol) && isPrototypeOf($Symbol.prototype, Object(it));
 };
 
@@ -1663,9 +1663,9 @@ module.exports = USE_SYMBOL_AS_UID ? function (it) {
 /* 26 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var isCallable = __w_pdfjs_require__(24);
-var aFunction = function (argument) {
+const global = __w_pdfjs_require__(8);
+const isCallable = __w_pdfjs_require__(24);
+const aFunction = function (argument) {
  return isCallable(argument) ? argument : undefined;
 };
 module.exports = function (namespace, method) {
@@ -1676,24 +1676,24 @@ module.exports = function (namespace, method) {
 /* 27 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var uncurryThis = __w_pdfjs_require__(18);
+const uncurryThis = __w_pdfjs_require__(18);
 module.exports = uncurryThis({}.isPrototypeOf);
 
 /***/ }),
 /* 28 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var NATIVE_SYMBOL = __w_pdfjs_require__(29);
+const NATIVE_SYMBOL = __w_pdfjs_require__(29);
 module.exports = NATIVE_SYMBOL && !Symbol.sham && typeof Symbol.iterator == 'symbol';
 
 /***/ }),
 /* 29 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var V8_VERSION = __w_pdfjs_require__(30);
-var fails = __w_pdfjs_require__(11);
+const V8_VERSION = __w_pdfjs_require__(30);
+const fails = __w_pdfjs_require__(11);
 module.exports = !!Object.getOwnPropertySymbols && !fails(function () {
- var symbol = Symbol();
+ const symbol = Symbol();
  return !String(symbol) || !(Object(symbol) instanceof Symbol) || !Symbol.sham && V8_VERSION && V8_VERSION < 41;
 });
 
@@ -1701,13 +1701,13 @@ module.exports = !!Object.getOwnPropertySymbols && !fails(function () {
 /* 30 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var userAgent = __w_pdfjs_require__(31);
-var process = global.process;
-var Deno = global.Deno;
-var versions = process && process.versions || Deno && Deno.version;
-var v8 = versions && versions.v8;
-var match, version;
+const global = __w_pdfjs_require__(8);
+const userAgent = __w_pdfjs_require__(31);
+const process = global.process;
+const Deno = global.Deno;
+const versions = process && process.versions || Deno && Deno.version;
+const v8 = versions && versions.v8;
+let match, version;
 if (v8) {
  match = v8.split('.');
  version = match[0] > 0 && match[0] < 4 ? 1 : +(match[0] + match[1]);
@@ -1726,16 +1726,16 @@ module.exports = version;
 /* 31 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var getBuiltIn = __w_pdfjs_require__(26);
+const getBuiltIn = __w_pdfjs_require__(26);
 module.exports = getBuiltIn('navigator', 'userAgent') || '';
 
 /***/ }),
 /* 32 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var aCallable = __w_pdfjs_require__(33);
+const aCallable = __w_pdfjs_require__(33);
 module.exports = function (V, P) {
- var func = V[P];
+ const func = V[P];
  return func == null ? undefined : aCallable(func);
 };
 
@@ -1743,10 +1743,10 @@ module.exports = function (V, P) {
 /* 33 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var isCallable = __w_pdfjs_require__(24);
-var tryToString = __w_pdfjs_require__(34);
-var TypeError = global.TypeError;
+const global = __w_pdfjs_require__(8);
+const isCallable = __w_pdfjs_require__(24);
+const tryToString = __w_pdfjs_require__(34);
+const TypeError = global.TypeError;
 module.exports = function (argument) {
  if (isCallable(argument))
   return argument;
@@ -1757,8 +1757,8 @@ module.exports = function (argument) {
 /* 34 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var String = global.String;
+const global = __w_pdfjs_require__(8);
+const String = global.String;
 module.exports = function (argument) {
  try {
   return String(argument);
@@ -1771,13 +1771,13 @@ module.exports = function (argument) {
 /* 35 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var call = __w_pdfjs_require__(12);
-var isCallable = __w_pdfjs_require__(24);
-var isObject = __w_pdfjs_require__(23);
-var TypeError = global.TypeError;
+const global = __w_pdfjs_require__(8);
+const call = __w_pdfjs_require__(12);
+const isCallable = __w_pdfjs_require__(24);
+const isObject = __w_pdfjs_require__(23);
+const TypeError = global.TypeError;
 module.exports = function (input, pref) {
- var fn, val;
+ let fn, val;
  if (pref === 'string' && isCallable(fn = input.toString) && !isObject(val = call(fn, input)))
   return val;
  if (isCallable(fn = input.valueOf) && !isObject(val = call(fn, input)))
@@ -1791,19 +1791,19 @@ module.exports = function (input, pref) {
 /* 36 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var shared = __w_pdfjs_require__(37);
-var hasOwn = __w_pdfjs_require__(41);
-var uid = __w_pdfjs_require__(43);
-var NATIVE_SYMBOL = __w_pdfjs_require__(29);
-var USE_SYMBOL_AS_UID = __w_pdfjs_require__(28);
-var WellKnownSymbolsStore = shared('wks');
-var Symbol = global.Symbol;
-var symbolFor = Symbol && Symbol['for'];
-var createWellKnownSymbol = USE_SYMBOL_AS_UID ? Symbol : Symbol && Symbol.withoutSetter || uid;
+const global = __w_pdfjs_require__(8);
+const shared = __w_pdfjs_require__(37);
+const hasOwn = __w_pdfjs_require__(41);
+const uid = __w_pdfjs_require__(43);
+const NATIVE_SYMBOL = __w_pdfjs_require__(29);
+const USE_SYMBOL_AS_UID = __w_pdfjs_require__(28);
+const WellKnownSymbolsStore = shared('wks');
+const Symbol = global.Symbol;
+const symbolFor = Symbol && Symbol['for'];
+const createWellKnownSymbol = USE_SYMBOL_AS_UID ? Symbol : Symbol && Symbol.withoutSetter || uid;
 module.exports = function (name) {
  if (!hasOwn(WellKnownSymbolsStore, name) || !(NATIVE_SYMBOL || typeof WellKnownSymbolsStore[name] == 'string')) {
-  var description = 'Symbol.' + name;
+  const description = 'Symbol.' + name;
   if (NATIVE_SYMBOL && hasOwn(Symbol, name)) {
    WellKnownSymbolsStore[name] = Symbol[name];
   } else if (USE_SYMBOL_AS_UID && symbolFor) {
@@ -1819,8 +1819,8 @@ module.exports = function (name) {
 /* 37 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var IS_PURE = __w_pdfjs_require__(38);
-var store = __w_pdfjs_require__(39);
+const IS_PURE = __w_pdfjs_require__(38);
+const store = __w_pdfjs_require__(39);
 (module.exports = function (key, value) {
  return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
@@ -1841,18 +1841,18 @@ module.exports = false;
 /* 39 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var setGlobal = __w_pdfjs_require__(40);
-var SHARED = '__core-js_shared__';
-var store = global[SHARED] || setGlobal(SHARED, {});
+const global = __w_pdfjs_require__(8);
+const setGlobal = __w_pdfjs_require__(40);
+const SHARED = '__core-js_shared__';
+const store = global[SHARED] || setGlobal(SHARED, {});
 module.exports = store;
 
 /***/ }),
 /* 40 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var defineProperty = Object.defineProperty;
+const global = __w_pdfjs_require__(8);
+const defineProperty = Object.defineProperty;
 module.exports = function (key, value) {
  try {
   defineProperty(global, key, {
@@ -1870,9 +1870,9 @@ module.exports = function (key, value) {
 /* 41 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var uncurryThis = __w_pdfjs_require__(18);
-var toObject = __w_pdfjs_require__(42);
-var hasOwnProperty = uncurryThis({}.hasOwnProperty);
+const uncurryThis = __w_pdfjs_require__(18);
+const toObject = __w_pdfjs_require__(42);
+const hasOwnProperty = uncurryThis({}.hasOwnProperty);
 module.exports = Object.hasOwn || function hasOwn(it, key) {
  return hasOwnProperty(toObject(it), key);
 };
@@ -1881,9 +1881,9 @@ module.exports = Object.hasOwn || function hasOwn(it, key) {
 /* 42 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var requireObjectCoercible = __w_pdfjs_require__(20);
-var Object = global.Object;
+const global = __w_pdfjs_require__(8);
+const requireObjectCoercible = __w_pdfjs_require__(20);
+const Object = global.Object;
 module.exports = function (argument) {
  return Object(requireObjectCoercible(argument));
 };
@@ -1892,10 +1892,10 @@ module.exports = function (argument) {
 /* 43 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var uncurryThis = __w_pdfjs_require__(18);
-var id = 0;
-var postfix = Math.random();
-var toString = uncurryThis(1.0.toString);
+const uncurryThis = __w_pdfjs_require__(18);
+let id = 0;
+const postfix = Math.random();
+const toString = uncurryThis(1.0.toString);
 module.exports = function (key) {
  return 'Symbol(' + (key === undefined ? '' : key) + ')_' + toString(++id + postfix, 36);
 };
@@ -1904,9 +1904,9 @@ module.exports = function (key) {
 /* 44 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var DESCRIPTORS = __w_pdfjs_require__(10);
-var fails = __w_pdfjs_require__(11);
-var createElement = __w_pdfjs_require__(45);
+const DESCRIPTORS = __w_pdfjs_require__(10);
+const fails = __w_pdfjs_require__(11);
+const createElement = __w_pdfjs_require__(45);
 module.exports = !DESCRIPTORS && !fails(function () {
  return Object.defineProperty(createElement('div'), 'a', {
   get: function () {
@@ -1919,10 +1919,10 @@ module.exports = !DESCRIPTORS && !fails(function () {
 /* 45 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var isObject = __w_pdfjs_require__(23);
-var document = global.document;
-var EXISTS = isObject(document) && isObject(document.createElement);
+const global = __w_pdfjs_require__(8);
+const isObject = __w_pdfjs_require__(23);
+const document = global.document;
+const EXISTS = isObject(document) && isObject(document.createElement);
 module.exports = function (it) {
  return EXISTS ? document.createElement(it) : {};
 };
@@ -1931,9 +1931,9 @@ module.exports = function (it) {
 /* 46 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var DESCRIPTORS = __w_pdfjs_require__(10);
-var definePropertyModule = __w_pdfjs_require__(47);
-var createPropertyDescriptor = __w_pdfjs_require__(15);
+const DESCRIPTORS = __w_pdfjs_require__(10);
+const definePropertyModule = __w_pdfjs_require__(47);
+const createPropertyDescriptor = __w_pdfjs_require__(15);
 module.exports = DESCRIPTORS ? function (object, key, value) {
  return definePropertyModule.f(object, key, createPropertyDescriptor(1, value));
 } : function (object, key, value) {
@@ -1945,24 +1945,24 @@ module.exports = DESCRIPTORS ? function (object, key, value) {
 /* 47 */
 /***/ ((__unused_webpack_module, exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var DESCRIPTORS = __w_pdfjs_require__(10);
-var IE8_DOM_DEFINE = __w_pdfjs_require__(44);
-var V8_PROTOTYPE_DEFINE_BUG = __w_pdfjs_require__(48);
-var anObject = __w_pdfjs_require__(49);
-var toPropertyKey = __w_pdfjs_require__(21);
-var TypeError = global.TypeError;
-var $defineProperty = Object.defineProperty;
-var $getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
-var ENUMERABLE = 'enumerable';
-var CONFIGURABLE = 'configurable';
-var WRITABLE = 'writable';
+const global = __w_pdfjs_require__(8);
+const DESCRIPTORS = __w_pdfjs_require__(10);
+const IE8_DOM_DEFINE = __w_pdfjs_require__(44);
+const V8_PROTOTYPE_DEFINE_BUG = __w_pdfjs_require__(48);
+const anObject = __w_pdfjs_require__(49);
+const toPropertyKey = __w_pdfjs_require__(21);
+const TypeError = global.TypeError;
+const $defineProperty = Object.defineProperty;
+const $getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+const ENUMERABLE = 'enumerable';
+const CONFIGURABLE = 'configurable';
+const WRITABLE = 'writable';
 exports.f = DESCRIPTORS ? V8_PROTOTYPE_DEFINE_BUG ? function defineProperty(O, P, Attributes) {
  anObject(O);
  P = toPropertyKey(P);
  anObject(Attributes);
  if (typeof O === 'function' && P === 'prototype' && 'value' in Attributes && WRITABLE in Attributes && !Attributes[WRITABLE]) {
-  var current = $getOwnPropertyDescriptor(O, P);
+  const current = $getOwnPropertyDescriptor(O, P);
   if (current && current[WRITABLE]) {
    O[P] = Attributes.value;
    Attributes = {
@@ -1993,8 +1993,8 @@ exports.f = DESCRIPTORS ? V8_PROTOTYPE_DEFINE_BUG ? function defineProperty(O, P
 /* 48 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var DESCRIPTORS = __w_pdfjs_require__(10);
-var fails = __w_pdfjs_require__(11);
+const DESCRIPTORS = __w_pdfjs_require__(10);
+const fails = __w_pdfjs_require__(11);
 module.exports = DESCRIPTORS && fails(function () {
  return Object.defineProperty(function () {
  }, 'prototype', {
@@ -2007,10 +2007,10 @@ module.exports = DESCRIPTORS && fails(function () {
 /* 49 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var isObject = __w_pdfjs_require__(23);
-var String = global.String;
-var TypeError = global.TypeError;
+const global = __w_pdfjs_require__(8);
+const isObject = __w_pdfjs_require__(23);
+const String = global.String;
+const TypeError = global.TypeError;
 module.exports = function (argument) {
  if (isObject(argument))
   return argument;
@@ -2021,23 +2021,23 @@ module.exports = function (argument) {
 /* 50 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var isCallable = __w_pdfjs_require__(24);
-var hasOwn = __w_pdfjs_require__(41);
-var createNonEnumerableProperty = __w_pdfjs_require__(46);
-var setGlobal = __w_pdfjs_require__(40);
-var inspectSource = __w_pdfjs_require__(51);
-var InternalStateModule = __w_pdfjs_require__(52);
-var CONFIGURABLE_FUNCTION_NAME = (__w_pdfjs_require__(56).CONFIGURABLE);
-var getInternalState = InternalStateModule.get;
-var enforceInternalState = InternalStateModule.enforce;
-var TEMPLATE = String(String).split('String');
+const global = __w_pdfjs_require__(8);
+const isCallable = __w_pdfjs_require__(24);
+const hasOwn = __w_pdfjs_require__(41);
+const createNonEnumerableProperty = __w_pdfjs_require__(46);
+const setGlobal = __w_pdfjs_require__(40);
+const inspectSource = __w_pdfjs_require__(51);
+const InternalStateModule = __w_pdfjs_require__(52);
+const CONFIGURABLE_FUNCTION_NAME = (__w_pdfjs_require__(56).CONFIGURABLE);
+const getInternalState = InternalStateModule.get;
+const enforceInternalState = InternalStateModule.enforce;
+const TEMPLATE = String(String).split('String');
 (module.exports = function (O, key, value, options) {
- var unsafe = options ? !!options.unsafe : false;
- var simple = options ? !!options.enumerable : false;
- var noTargetGet = options ? !!options.noTargetGet : false;
- var name = options && options.name !== undefined ? options.name : key;
- var state;
+ const unsafe = options ? !!options.unsafe : false;
+ let simple = options ? !!options.enumerable : false;
+ const noTargetGet = options ? !!options.noTargetGet : false;
+ let name = options && options.name !== undefined ? options.name : key;
+ let state;
  if (isCallable(value)) {
   if (String(name).slice(0, 7) === 'Symbol(') {
    name = '[' + String(name).replace(/^Symbol\(([^)]*)\)/, '$1') + ']';
@@ -2073,10 +2073,10 @@ var TEMPLATE = String(String).split('String');
 /* 51 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var uncurryThis = __w_pdfjs_require__(18);
-var isCallable = __w_pdfjs_require__(24);
-var store = __w_pdfjs_require__(39);
-var functionToString = uncurryThis(Function.toString);
+const uncurryThis = __w_pdfjs_require__(18);
+const isCallable = __w_pdfjs_require__(24);
+const store = __w_pdfjs_require__(39);
+const functionToString = uncurryThis(Function.toString);
 if (!isCallable(store.inspectSource)) {
  store.inspectSource = function (it) {
   return functionToString(it);
@@ -2088,25 +2088,25 @@ module.exports = store.inspectSource;
 /* 52 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var NATIVE_WEAK_MAP = __w_pdfjs_require__(53);
-var global = __w_pdfjs_require__(8);
-var uncurryThis = __w_pdfjs_require__(18);
-var isObject = __w_pdfjs_require__(23);
-var createNonEnumerableProperty = __w_pdfjs_require__(46);
-var hasOwn = __w_pdfjs_require__(41);
-var shared = __w_pdfjs_require__(39);
-var sharedKey = __w_pdfjs_require__(54);
-var hiddenKeys = __w_pdfjs_require__(55);
-var OBJECT_ALREADY_INITIALIZED = 'Object already initialized';
-var TypeError = global.TypeError;
-var WeakMap = global.WeakMap;
-var set, get, has;
-var enforce = function (it) {
+const NATIVE_WEAK_MAP = __w_pdfjs_require__(53);
+const global = __w_pdfjs_require__(8);
+const uncurryThis = __w_pdfjs_require__(18);
+const isObject = __w_pdfjs_require__(23);
+const createNonEnumerableProperty = __w_pdfjs_require__(46);
+const hasOwn = __w_pdfjs_require__(41);
+const shared = __w_pdfjs_require__(39);
+const sharedKey = __w_pdfjs_require__(54);
+const hiddenKeys = __w_pdfjs_require__(55);
+const OBJECT_ALREADY_INITIALIZED = 'Object already initialized';
+const TypeError = global.TypeError;
+const WeakMap = global.WeakMap;
+let set, get, has;
+const enforce = function (it) {
  return has(it) ? get(it) : set(it, {});
 };
-var getterFor = function (TYPE) {
+const getterFor = function (TYPE) {
  return function (it) {
-  var state;
+  let state;
   if (!isObject(it) || (state = get(it)).type !== TYPE) {
    throw TypeError('Incompatible receiver, ' + TYPE + ' required');
   }
@@ -2114,10 +2114,10 @@ var getterFor = function (TYPE) {
  };
 };
 if (NATIVE_WEAK_MAP || shared.state) {
- var store = shared.state || (shared.state = new WeakMap());
- var wmget = uncurryThis(store.get);
- var wmhas = uncurryThis(store.has);
- var wmset = uncurryThis(store.set);
+ const store = shared.state || (shared.state = new WeakMap());
+ const wmget = uncurryThis(store.get);
+ const wmhas = uncurryThis(store.has);
+ const wmset = uncurryThis(store.set);
  set = function (it, metadata) {
   if (wmhas(store, it))
    throw new TypeError(OBJECT_ALREADY_INITIALIZED);
@@ -2132,7 +2132,7 @@ if (NATIVE_WEAK_MAP || shared.state) {
   return wmhas(store, it);
  };
 } else {
- var STATE = sharedKey('state');
+ const STATE = sharedKey('state');
  hiddenKeys[STATE] = true;
  set = function (it, metadata) {
   if (hasOwn(it, STATE))
@@ -2160,19 +2160,19 @@ module.exports = {
 /* 53 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var isCallable = __w_pdfjs_require__(24);
-var inspectSource = __w_pdfjs_require__(51);
-var WeakMap = global.WeakMap;
+const global = __w_pdfjs_require__(8);
+const isCallable = __w_pdfjs_require__(24);
+const inspectSource = __w_pdfjs_require__(51);
+const WeakMap = global.WeakMap;
 module.exports = isCallable(WeakMap) && /native code/.test(inspectSource(WeakMap));
 
 /***/ }),
 /* 54 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var shared = __w_pdfjs_require__(37);
-var uid = __w_pdfjs_require__(43);
-var keys = shared('keys');
+const shared = __w_pdfjs_require__(37);
+const uid = __w_pdfjs_require__(43);
+const keys = shared('keys');
 module.exports = function (key) {
  return keys[key] || (keys[key] = uid(key));
 };
@@ -2187,14 +2187,14 @@ module.exports = {};
 /* 56 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var DESCRIPTORS = __w_pdfjs_require__(10);
-var hasOwn = __w_pdfjs_require__(41);
-var FunctionPrototype = Function.prototype;
-var getDescriptor = DESCRIPTORS && Object.getOwnPropertyDescriptor;
-var EXISTS = hasOwn(FunctionPrototype, 'name');
-var PROPER = EXISTS && function something() {
+const DESCRIPTORS = __w_pdfjs_require__(10);
+const hasOwn = __w_pdfjs_require__(41);
+const FunctionPrototype = Function.prototype;
+const getDescriptor = DESCRIPTORS && Object.getOwnPropertyDescriptor;
+const EXISTS = hasOwn(FunctionPrototype, 'name');
+const PROPER = EXISTS && function something() {
 }.name === 'something';
-var CONFIGURABLE = EXISTS && (!DESCRIPTORS || DESCRIPTORS && getDescriptor(FunctionPrototype, 'name').configurable);
+const CONFIGURABLE = EXISTS && (!DESCRIPTORS || DESCRIPTORS && getDescriptor(FunctionPrototype, 'name').configurable);
 module.exports = {
  EXISTS: EXISTS,
  PROPER: PROPER,
@@ -2205,16 +2205,16 @@ module.exports = {
 /* 57 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var hasOwn = __w_pdfjs_require__(41);
-var ownKeys = __w_pdfjs_require__(58);
-var getOwnPropertyDescriptorModule = __w_pdfjs_require__(9);
-var definePropertyModule = __w_pdfjs_require__(47);
+const hasOwn = __w_pdfjs_require__(41);
+const ownKeys = __w_pdfjs_require__(58);
+const getOwnPropertyDescriptorModule = __w_pdfjs_require__(9);
+const definePropertyModule = __w_pdfjs_require__(47);
 module.exports = function (target, source, exceptions) {
- var keys = ownKeys(source);
- var defineProperty = definePropertyModule.f;
- var getOwnPropertyDescriptor = getOwnPropertyDescriptorModule.f;
- for (var i = 0; i < keys.length; i++) {
-  var key = keys[i];
+ const keys = ownKeys(source);
+ const defineProperty = definePropertyModule.f;
+ const getOwnPropertyDescriptor = getOwnPropertyDescriptorModule.f;
+ for (let i = 0; i < keys.length; i++) {
+  const key = keys[i];
   if (!hasOwn(target, key) && !(exceptions && hasOwn(exceptions, key))) {
    defineProperty(target, key, getOwnPropertyDescriptor(source, key));
   }
@@ -2225,15 +2225,15 @@ module.exports = function (target, source, exceptions) {
 /* 58 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var getBuiltIn = __w_pdfjs_require__(26);
-var uncurryThis = __w_pdfjs_require__(18);
-var getOwnPropertyNamesModule = __w_pdfjs_require__(59);
-var getOwnPropertySymbolsModule = __w_pdfjs_require__(67);
-var anObject = __w_pdfjs_require__(49);
-var concat = uncurryThis([].concat);
+const getBuiltIn = __w_pdfjs_require__(26);
+const uncurryThis = __w_pdfjs_require__(18);
+const getOwnPropertyNamesModule = __w_pdfjs_require__(59);
+const getOwnPropertySymbolsModule = __w_pdfjs_require__(67);
+const anObject = __w_pdfjs_require__(49);
+const concat = uncurryThis([].concat);
 module.exports = getBuiltIn('Reflect', 'ownKeys') || function ownKeys(it) {
- var keys = getOwnPropertyNamesModule.f(anObject(it));
- var getOwnPropertySymbols = getOwnPropertySymbolsModule.f;
+ const keys = getOwnPropertyNamesModule.f(anObject(it));
+ const getOwnPropertySymbols = getOwnPropertySymbolsModule.f;
  return getOwnPropertySymbols ? concat(keys, getOwnPropertySymbols(it)) : keys;
 };
 
@@ -2241,9 +2241,9 @@ module.exports = getBuiltIn('Reflect', 'ownKeys') || function ownKeys(it) {
 /* 59 */
 /***/ ((__unused_webpack_module, exports, __w_pdfjs_require__) => {
 
-var internalObjectKeys = __w_pdfjs_require__(60);
-var enumBugKeys = __w_pdfjs_require__(66);
-var hiddenKeys = enumBugKeys.concat('length', 'prototype');
+const internalObjectKeys = __w_pdfjs_require__(60);
+const enumBugKeys = __w_pdfjs_require__(66);
+const hiddenKeys = enumBugKeys.concat('length', 'prototype');
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
  return internalObjectKeys(O, hiddenKeys);
 };
@@ -2252,17 +2252,17 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 /* 60 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var uncurryThis = __w_pdfjs_require__(18);
-var hasOwn = __w_pdfjs_require__(41);
-var toIndexedObject = __w_pdfjs_require__(16);
-var indexOf = (__w_pdfjs_require__(61).indexOf);
-var hiddenKeys = __w_pdfjs_require__(55);
-var push = uncurryThis([].push);
+const uncurryThis = __w_pdfjs_require__(18);
+const hasOwn = __w_pdfjs_require__(41);
+const toIndexedObject = __w_pdfjs_require__(16);
+const indexOf = (__w_pdfjs_require__(61).indexOf);
+const hiddenKeys = __w_pdfjs_require__(55);
+const push = uncurryThis([].push);
 module.exports = function (object, names) {
- var O = toIndexedObject(object);
- var i = 0;
- var result = [];
- var key;
+ const O = toIndexedObject(object);
+ let i = 0;
+ const result = [];
+ let key;
  for (key in O)
   !hasOwn(hiddenKeys, key) && hasOwn(O, key) && push(result, key);
  while (names.length > i)
@@ -2276,15 +2276,15 @@ module.exports = function (object, names) {
 /* 61 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var toIndexedObject = __w_pdfjs_require__(16);
-var toAbsoluteIndex = __w_pdfjs_require__(62);
-var lengthOfArrayLike = __w_pdfjs_require__(64);
-var createMethod = function (IS_INCLUDES) {
+const toIndexedObject = __w_pdfjs_require__(16);
+const toAbsoluteIndex = __w_pdfjs_require__(62);
+const lengthOfArrayLike = __w_pdfjs_require__(64);
+const createMethod = function (IS_INCLUDES) {
  return function ($this, el, fromIndex) {
-  var O = toIndexedObject($this);
-  var length = lengthOfArrayLike(O);
-  var index = toAbsoluteIndex(fromIndex, length);
-  var value;
+  const O = toIndexedObject($this);
+  const length = lengthOfArrayLike(O);
+  let index = toAbsoluteIndex(fromIndex, length);
+  let value;
   if (IS_INCLUDES && el != el)
    while (length > index) {
     value = O[index++];
@@ -2308,11 +2308,11 @@ module.exports = {
 /* 62 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var toIntegerOrInfinity = __w_pdfjs_require__(63);
-var max = Math.max;
-var min = Math.min;
+const toIntegerOrInfinity = __w_pdfjs_require__(63);
+const max = Math.max;
+const min = Math.min;
 module.exports = function (index, length) {
- var integer = toIntegerOrInfinity(index);
+ const integer = toIntegerOrInfinity(index);
  return integer < 0 ? max(integer + length, 0) : min(integer, length);
 };
 
@@ -2320,10 +2320,10 @@ module.exports = function (index, length) {
 /* 63 */
 /***/ ((module) => {
 
-var ceil = Math.ceil;
-var floor = Math.floor;
+const ceil = Math.ceil;
+const floor = Math.floor;
 module.exports = function (argument) {
- var number = +argument;
+ const number = +argument;
  return number !== number || number === 0 ? 0 : (number > 0 ? floor : ceil)(number);
 };
 
@@ -2331,7 +2331,7 @@ module.exports = function (argument) {
 /* 64 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var toLength = __w_pdfjs_require__(65);
+const toLength = __w_pdfjs_require__(65);
 module.exports = function (obj) {
  return toLength(obj.length);
 };
@@ -2340,8 +2340,8 @@ module.exports = function (obj) {
 /* 65 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var toIntegerOrInfinity = __w_pdfjs_require__(63);
-var min = Math.min;
+const toIntegerOrInfinity = __w_pdfjs_require__(63);
+const min = Math.min;
 module.exports = function (argument) {
  return argument > 0 ? min(toIntegerOrInfinity(argument), 0x1FFFFFFFFFFFFF) : 0;
 };
@@ -2370,11 +2370,11 @@ exports.f = Object.getOwnPropertySymbols;
 /* 68 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var fails = __w_pdfjs_require__(11);
-var isCallable = __w_pdfjs_require__(24);
-var replacement = /#|\.prototype\./;
-var isForced = function (feature, detection) {
- var value = data[normalize(feature)];
+const fails = __w_pdfjs_require__(11);
+const isCallable = __w_pdfjs_require__(24);
+const replacement = /#|\.prototype\./;
+const isForced = function (feature, detection) {
+ const value = data[normalize(feature)];
  return value == POLYFILL ? true : value == NATIVE ? false : isCallable(detection) ? fails(detection) : !!detection;
 };
 var normalize = isForced.normalize = function (string) {
@@ -2389,20 +2389,20 @@ module.exports = isForced;
 /* 69 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var hasOwn = __w_pdfjs_require__(41);
-var isCallable = __w_pdfjs_require__(24);
-var toObject = __w_pdfjs_require__(42);
-var sharedKey = __w_pdfjs_require__(54);
-var CORRECT_PROTOTYPE_GETTER = __w_pdfjs_require__(70);
-var IE_PROTO = sharedKey('IE_PROTO');
-var Object = global.Object;
-var ObjectPrototype = Object.prototype;
+const global = __w_pdfjs_require__(8);
+const hasOwn = __w_pdfjs_require__(41);
+const isCallable = __w_pdfjs_require__(24);
+const toObject = __w_pdfjs_require__(42);
+const sharedKey = __w_pdfjs_require__(54);
+const CORRECT_PROTOTYPE_GETTER = __w_pdfjs_require__(70);
+const IE_PROTO = sharedKey('IE_PROTO');
+const Object = global.Object;
+const ObjectPrototype = Object.prototype;
 module.exports = CORRECT_PROTOTYPE_GETTER ? Object.getPrototypeOf : function (O) {
- var object = toObject(O);
+ const object = toObject(O);
  if (hasOwn(object, IE_PROTO))
   return object[IE_PROTO];
- var constructor = object.constructor;
+ const constructor = object.constructor;
  if (isCallable(constructor) && object instanceof constructor) {
   return constructor.prototype;
  }
@@ -2413,7 +2413,7 @@ module.exports = CORRECT_PROTOTYPE_GETTER ? Object.getPrototypeOf : function (O)
 /* 70 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var fails = __w_pdfjs_require__(11);
+const fails = __w_pdfjs_require__(11);
 module.exports = !fails(function () {
  function F() {
  }
@@ -2425,13 +2425,13 @@ module.exports = !fails(function () {
 /* 71 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var uncurryThis = __w_pdfjs_require__(18);
-var anObject = __w_pdfjs_require__(49);
-var aPossiblePrototype = __w_pdfjs_require__(72);
+const uncurryThis = __w_pdfjs_require__(18);
+const anObject = __w_pdfjs_require__(49);
+const aPossiblePrototype = __w_pdfjs_require__(72);
 module.exports = Object.setPrototypeOf || ('__proto__' in {} ? (function () {
- var CORRECT_SETTER = false;
- var test = {};
- var setter;
+ let CORRECT_SETTER = false;
+ const test = {};
+ let setter;
  try {
   setter = uncurryThis(Object.getOwnPropertyDescriptor(Object.prototype, '__proto__').set);
   setter(test, []);
@@ -2453,10 +2453,10 @@ module.exports = Object.setPrototypeOf || ('__proto__' in {} ? (function () {
 /* 72 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var isCallable = __w_pdfjs_require__(24);
-var String = global.String;
-var TypeError = global.TypeError;
+const global = __w_pdfjs_require__(8);
+const isCallable = __w_pdfjs_require__(24);
+const String = global.String;
+const TypeError = global.TypeError;
 module.exports = function (argument) {
  if (typeof argument == 'object' || isCallable(argument))
   return argument;
@@ -2467,34 +2467,34 @@ module.exports = function (argument) {
 /* 73 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var anObject = __w_pdfjs_require__(49);
-var definePropertiesModule = __w_pdfjs_require__(74);
-var enumBugKeys = __w_pdfjs_require__(66);
-var hiddenKeys = __w_pdfjs_require__(55);
-var html = __w_pdfjs_require__(76);
-var documentCreateElement = __w_pdfjs_require__(45);
-var sharedKey = __w_pdfjs_require__(54);
-var GT = '>';
-var LT = '<';
-var PROTOTYPE = 'prototype';
-var SCRIPT = 'script';
-var IE_PROTO = sharedKey('IE_PROTO');
-var EmptyConstructor = function () {
+const anObject = __w_pdfjs_require__(49);
+const definePropertiesModule = __w_pdfjs_require__(74);
+const enumBugKeys = __w_pdfjs_require__(66);
+const hiddenKeys = __w_pdfjs_require__(55);
+const html = __w_pdfjs_require__(76);
+const documentCreateElement = __w_pdfjs_require__(45);
+const sharedKey = __w_pdfjs_require__(54);
+const GT = '>';
+const LT = '<';
+const PROTOTYPE = 'prototype';
+const SCRIPT = 'script';
+const IE_PROTO = sharedKey('IE_PROTO');
+const EmptyConstructor = function () {
 };
-var scriptTag = function (content) {
+const scriptTag = function (content) {
  return LT + SCRIPT + GT + content + LT + '/' + SCRIPT + GT;
 };
-var NullProtoObjectViaActiveX = function (activeXDocument) {
+const NullProtoObjectViaActiveX = function (activeXDocument) {
  activeXDocument.write(scriptTag(''));
  activeXDocument.close();
- var temp = activeXDocument.parentWindow.Object;
+ const temp = activeXDocument.parentWindow.Object;
  activeXDocument = null;
  return temp;
 };
-var NullProtoObjectViaIFrame = function () {
- var iframe = documentCreateElement('iframe');
- var JS = 'java' + SCRIPT + ':';
- var iframeDocument;
+const NullProtoObjectViaIFrame = function () {
+ const iframe = documentCreateElement('iframe');
+ const JS = 'java' + SCRIPT + ':';
+ let iframeDocument;
  iframe.style.display = 'none';
  html.appendChild(iframe);
  iframe.src = String(JS);
@@ -2504,21 +2504,21 @@ var NullProtoObjectViaIFrame = function () {
  iframeDocument.close();
  return iframeDocument.F;
 };
-var activeXDocument;
-var NullProtoObject = function () {
+let activeXDocument;
+let NullProtoObject = function () {
  try {
   activeXDocument = new ActiveXObject('htmlfile');
  } catch (error) {
  }
  NullProtoObject = typeof document != 'undefined' ? document.domain && activeXDocument ? NullProtoObjectViaActiveX(activeXDocument) : NullProtoObjectViaIFrame() : NullProtoObjectViaActiveX(activeXDocument);
- var length = enumBugKeys.length;
+ let length = enumBugKeys.length;
  while (length--)
   delete NullProtoObject[PROTOTYPE][enumBugKeys[length]];
  return NullProtoObject();
 };
 hiddenKeys[IE_PROTO] = true;
 module.exports = Object.create || function create(O, Properties) {
- var result;
+ let result;
  if (O !== null) {
   EmptyConstructor[PROTOTYPE] = anObject(O);
   result = new EmptyConstructor();
@@ -2533,19 +2533,19 @@ module.exports = Object.create || function create(O, Properties) {
 /* 74 */
 /***/ ((__unused_webpack_module, exports, __w_pdfjs_require__) => {
 
-var DESCRIPTORS = __w_pdfjs_require__(10);
-var V8_PROTOTYPE_DEFINE_BUG = __w_pdfjs_require__(48);
-var definePropertyModule = __w_pdfjs_require__(47);
-var anObject = __w_pdfjs_require__(49);
-var toIndexedObject = __w_pdfjs_require__(16);
-var objectKeys = __w_pdfjs_require__(75);
+const DESCRIPTORS = __w_pdfjs_require__(10);
+const V8_PROTOTYPE_DEFINE_BUG = __w_pdfjs_require__(48);
+const definePropertyModule = __w_pdfjs_require__(47);
+const anObject = __w_pdfjs_require__(49);
+const toIndexedObject = __w_pdfjs_require__(16);
+const objectKeys = __w_pdfjs_require__(75);
 exports.f = DESCRIPTORS && !V8_PROTOTYPE_DEFINE_BUG ? Object.defineProperties : function defineProperties(O, Properties) {
  anObject(O);
- var props = toIndexedObject(Properties);
- var keys = objectKeys(Properties);
- var length = keys.length;
- var index = 0;
- var key;
+ const props = toIndexedObject(Properties);
+ const keys = objectKeys(Properties);
+ const length = keys.length;
+ let index = 0;
+ let key;
  while (length > index)
   definePropertyModule.f(O, key = keys[index++], props[key]);
  return O;
@@ -2555,8 +2555,8 @@ exports.f = DESCRIPTORS && !V8_PROTOTYPE_DEFINE_BUG ? Object.defineProperties : 
 /* 75 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var internalObjectKeys = __w_pdfjs_require__(60);
-var enumBugKeys = __w_pdfjs_require__(66);
+const internalObjectKeys = __w_pdfjs_require__(60);
+const enumBugKeys = __w_pdfjs_require__(66);
 module.exports = Object.keys || function keys(O) {
  return internalObjectKeys(O, enumBugKeys);
 };
@@ -2565,21 +2565,21 @@ module.exports = Object.keys || function keys(O) {
 /* 76 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var getBuiltIn = __w_pdfjs_require__(26);
+const getBuiltIn = __w_pdfjs_require__(26);
 module.exports = getBuiltIn('document', 'documentElement');
 
 /***/ }),
 /* 77 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var uncurryThis = __w_pdfjs_require__(18);
-var $Error = Error;
-var replace = uncurryThis(''.replace);
-var TEST = function (arg) {
+const uncurryThis = __w_pdfjs_require__(18);
+const $Error = Error;
+const replace = uncurryThis(''.replace);
+const TEST = function (arg) {
  return String($Error(arg).stack);
 }('zxcasd');
-var V8_OR_CHAKRA_STACK_ENTRY = /\n\s*at [^:]*:[^\n]*/;
-var IS_V8_OR_CHAKRA_STACK = V8_OR_CHAKRA_STACK_ENTRY.test(TEST);
+const V8_OR_CHAKRA_STACK_ENTRY = /\n\s*at [^:]*:[^\n]*/;
+const IS_V8_OR_CHAKRA_STACK = V8_OR_CHAKRA_STACK_ENTRY.test(TEST);
 module.exports = function (stack, dropEntries) {
  if (IS_V8_OR_CHAKRA_STACK && typeof stack == 'string' && !$Error.prepareStackTrace) {
   while (dropEntries--)
@@ -2592,8 +2592,8 @@ module.exports = function (stack, dropEntries) {
 /* 78 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var isObject = __w_pdfjs_require__(23);
-var createNonEnumerableProperty = __w_pdfjs_require__(46);
+const isObject = __w_pdfjs_require__(23);
+const createNonEnumerableProperty = __w_pdfjs_require__(46);
 module.exports = function (O, options) {
  if (isObject(options) && 'cause' in options) {
   createNonEnumerableProperty(O, 'cause', options.cause);
@@ -2604,36 +2604,36 @@ module.exports = function (O, options) {
 /* 79 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var bind = __w_pdfjs_require__(80);
-var call = __w_pdfjs_require__(12);
-var anObject = __w_pdfjs_require__(49);
-var tryToString = __w_pdfjs_require__(34);
-var isArrayIteratorMethod = __w_pdfjs_require__(81);
-var lengthOfArrayLike = __w_pdfjs_require__(64);
-var isPrototypeOf = __w_pdfjs_require__(27);
-var getIterator = __w_pdfjs_require__(83);
-var getIteratorMethod = __w_pdfjs_require__(84);
-var iteratorClose = __w_pdfjs_require__(87);
-var TypeError = global.TypeError;
-var Result = function (stopped, result) {
+const global = __w_pdfjs_require__(8);
+const bind = __w_pdfjs_require__(80);
+const call = __w_pdfjs_require__(12);
+const anObject = __w_pdfjs_require__(49);
+const tryToString = __w_pdfjs_require__(34);
+const isArrayIteratorMethod = __w_pdfjs_require__(81);
+const lengthOfArrayLike = __w_pdfjs_require__(64);
+const isPrototypeOf = __w_pdfjs_require__(27);
+const getIterator = __w_pdfjs_require__(83);
+const getIteratorMethod = __w_pdfjs_require__(84);
+const iteratorClose = __w_pdfjs_require__(87);
+const TypeError = global.TypeError;
+const Result = function (stopped, result) {
  this.stopped = stopped;
  this.result = result;
 };
-var ResultPrototype = Result.prototype;
+const ResultPrototype = Result.prototype;
 module.exports = function (iterable, unboundFunction, options) {
- var that = options && options.that;
- var AS_ENTRIES = !!(options && options.AS_ENTRIES);
- var IS_ITERATOR = !!(options && options.IS_ITERATOR);
- var INTERRUPTED = !!(options && options.INTERRUPTED);
- var fn = bind(unboundFunction, that);
- var iterator, iterFn, index, length, result, next, step;
- var stop = function (condition) {
+ const that = options && options.that;
+ const AS_ENTRIES = !!(options && options.AS_ENTRIES);
+ const IS_ITERATOR = !!(options && options.IS_ITERATOR);
+ const INTERRUPTED = !!(options && options.INTERRUPTED);
+ const fn = bind(unboundFunction, that);
+ let iterator, iterFn, index, length, result, next, step;
+ const stop = function (condition) {
   if (iterator)
    iteratorClose(iterator, 'normal', condition);
   return new Result(true, condition);
  };
- var callFn = function (value) {
+ const callFn = function (value) {
   if (AS_ENTRIES) {
    anObject(value);
    return INTERRUPTED ? fn(value[0], value[1], stop) : fn(value[0], value[1]);
@@ -2673,10 +2673,10 @@ module.exports = function (iterable, unboundFunction, options) {
 /* 80 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var uncurryThis = __w_pdfjs_require__(18);
-var aCallable = __w_pdfjs_require__(33);
-var NATIVE_BIND = __w_pdfjs_require__(13);
-var bind = uncurryThis(uncurryThis.bind);
+const uncurryThis = __w_pdfjs_require__(18);
+const aCallable = __w_pdfjs_require__(33);
+const NATIVE_BIND = __w_pdfjs_require__(13);
+const bind = uncurryThis(uncurryThis.bind);
 module.exports = function (fn, that) {
  aCallable(fn);
  return that === undefined ? fn : NATIVE_BIND ? bind(fn, that) : function () {
@@ -2688,10 +2688,10 @@ module.exports = function (fn, that) {
 /* 81 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var wellKnownSymbol = __w_pdfjs_require__(36);
-var Iterators = __w_pdfjs_require__(82);
-var ITERATOR = wellKnownSymbol('iterator');
-var ArrayPrototype = Array.prototype;
+const wellKnownSymbol = __w_pdfjs_require__(36);
+const Iterators = __w_pdfjs_require__(82);
+const ITERATOR = wellKnownSymbol('iterator');
+const ArrayPrototype = Array.prototype;
 module.exports = function (it) {
  return it !== undefined && (Iterators.Array === it || ArrayPrototype[ITERATOR] === it);
 };
@@ -2706,15 +2706,15 @@ module.exports = {};
 /* 83 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var call = __w_pdfjs_require__(12);
-var aCallable = __w_pdfjs_require__(33);
-var anObject = __w_pdfjs_require__(49);
-var tryToString = __w_pdfjs_require__(34);
-var getIteratorMethod = __w_pdfjs_require__(84);
-var TypeError = global.TypeError;
+const global = __w_pdfjs_require__(8);
+const call = __w_pdfjs_require__(12);
+const aCallable = __w_pdfjs_require__(33);
+const anObject = __w_pdfjs_require__(49);
+const tryToString = __w_pdfjs_require__(34);
+const getIteratorMethod = __w_pdfjs_require__(84);
+const TypeError = global.TypeError;
 module.exports = function (argument, usingIterator) {
- var iteratorMethod = arguments.length < 2 ? getIteratorMethod(argument) : usingIterator;
+ const iteratorMethod = arguments.length < 2 ? getIteratorMethod(argument) : usingIterator;
  if (aCallable(iteratorMethod))
   return anObject(call(iteratorMethod, argument));
  throw TypeError(tryToString(argument) + ' is not iterable');
@@ -2724,11 +2724,11 @@ module.exports = function (argument, usingIterator) {
 /* 84 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var classof = __w_pdfjs_require__(85);
-var getMethod = __w_pdfjs_require__(32);
-var Iterators = __w_pdfjs_require__(82);
-var wellKnownSymbol = __w_pdfjs_require__(36);
-var ITERATOR = wellKnownSymbol('iterator');
+const classof = __w_pdfjs_require__(85);
+const getMethod = __w_pdfjs_require__(32);
+const Iterators = __w_pdfjs_require__(82);
+const wellKnownSymbol = __w_pdfjs_require__(36);
+const ITERATOR = wellKnownSymbol('iterator');
 module.exports = function (it) {
  if (it != undefined)
   return getMethod(it, ITERATOR) || getMethod(it, '@@iterator') || Iterators[classof(it)];
@@ -2738,24 +2738,24 @@ module.exports = function (it) {
 /* 85 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var TO_STRING_TAG_SUPPORT = __w_pdfjs_require__(86);
-var isCallable = __w_pdfjs_require__(24);
-var classofRaw = __w_pdfjs_require__(19);
-var wellKnownSymbol = __w_pdfjs_require__(36);
-var TO_STRING_TAG = wellKnownSymbol('toStringTag');
-var Object = global.Object;
-var CORRECT_ARGUMENTS = classofRaw((function () {
+const global = __w_pdfjs_require__(8);
+const TO_STRING_TAG_SUPPORT = __w_pdfjs_require__(86);
+const isCallable = __w_pdfjs_require__(24);
+const classofRaw = __w_pdfjs_require__(19);
+const wellKnownSymbol = __w_pdfjs_require__(36);
+const TO_STRING_TAG = wellKnownSymbol('toStringTag');
+const Object = global.Object;
+const CORRECT_ARGUMENTS = classofRaw((function () {
  return arguments;
 }())) == 'Arguments';
-var tryGet = function (it, key) {
+const tryGet = function (it, key) {
  try {
   return it[key];
  } catch (error) {
  }
 };
 module.exports = TO_STRING_TAG_SUPPORT ? classofRaw : function (it) {
- var O, tag, result;
+ let O, tag, result;
  return it === undefined ? 'Undefined' : it === null ? 'Null' : typeof (tag = tryGet(O = Object(it), TO_STRING_TAG)) == 'string' ? tag : CORRECT_ARGUMENTS ? classofRaw(O) : (result = classofRaw(O)) == 'Object' && isCallable(O.callee) ? 'Arguments' : result;
 };
 
@@ -2763,9 +2763,9 @@ module.exports = TO_STRING_TAG_SUPPORT ? classofRaw : function (it) {
 /* 86 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var wellKnownSymbol = __w_pdfjs_require__(36);
-var TO_STRING_TAG = wellKnownSymbol('toStringTag');
-var test = {};
+const wellKnownSymbol = __w_pdfjs_require__(36);
+const TO_STRING_TAG = wellKnownSymbol('toStringTag');
+const test = {};
 test[TO_STRING_TAG] = 'z';
 module.exports = String(test) === '[object z]';
 
@@ -2773,11 +2773,11 @@ module.exports = String(test) === '[object z]';
 /* 87 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var call = __w_pdfjs_require__(12);
-var anObject = __w_pdfjs_require__(49);
-var getMethod = __w_pdfjs_require__(32);
+const call = __w_pdfjs_require__(12);
+const anObject = __w_pdfjs_require__(49);
+const getMethod = __w_pdfjs_require__(32);
 module.exports = function (iterator, kind, value) {
- var innerResult, innerError;
+ let innerResult, innerError;
  anObject(iterator);
  try {
   innerResult = getMethod(iterator, 'return');
@@ -2803,7 +2803,7 @@ module.exports = function (iterator, kind, value) {
 /* 88 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var toString = __w_pdfjs_require__(89);
+const toString = __w_pdfjs_require__(89);
 module.exports = function (argument, $default) {
  return argument === undefined ? arguments.length < 2 ? '' : $default : toString(argument);
 };
@@ -2812,9 +2812,9 @@ module.exports = function (argument, $default) {
 /* 89 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var classof = __w_pdfjs_require__(85);
-var String = global.String;
+const global = __w_pdfjs_require__(8);
+const classof = __w_pdfjs_require__(85);
+const String = global.String;
 module.exports = function (argument) {
  if (classof(argument) === 'Symbol')
   throw TypeError('Cannot convert a Symbol value to a string');
@@ -2825,10 +2825,10 @@ module.exports = function (argument) {
 /* 90 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var fails = __w_pdfjs_require__(11);
-var createPropertyDescriptor = __w_pdfjs_require__(15);
+const fails = __w_pdfjs_require__(11);
+const createPropertyDescriptor = __w_pdfjs_require__(15);
 module.exports = !fails(function () {
- var error = Error('a');
+ const error = Error('a');
  if (!('stack' in error))
   return true;
  Object.defineProperty(error, 'stack', createPropertyDescriptor(1, 7));
@@ -2841,17 +2841,17 @@ module.exports = !fails(function () {
 
 "use strict";
 
-var toIndexedObject = __w_pdfjs_require__(16);
-var addToUnscopables = __w_pdfjs_require__(92);
-var Iterators = __w_pdfjs_require__(82);
-var InternalStateModule = __w_pdfjs_require__(52);
-var defineProperty = (__w_pdfjs_require__(47).f);
-var defineIterator = __w_pdfjs_require__(93);
-var IS_PURE = __w_pdfjs_require__(38);
-var DESCRIPTORS = __w_pdfjs_require__(10);
-var ARRAY_ITERATOR = 'Array Iterator';
-var setInternalState = InternalStateModule.set;
-var getInternalState = InternalStateModule.getterFor(ARRAY_ITERATOR);
+const toIndexedObject = __w_pdfjs_require__(16);
+const addToUnscopables = __w_pdfjs_require__(92);
+const Iterators = __w_pdfjs_require__(82);
+const InternalStateModule = __w_pdfjs_require__(52);
+const defineProperty = (__w_pdfjs_require__(47).f);
+const defineIterator = __w_pdfjs_require__(93);
+const IS_PURE = __w_pdfjs_require__(38);
+const DESCRIPTORS = __w_pdfjs_require__(10);
+const ARRAY_ITERATOR = 'Array Iterator';
+const setInternalState = InternalStateModule.set;
+const getInternalState = InternalStateModule.getterFor(ARRAY_ITERATOR);
 module.exports = defineIterator(Array, 'Array', function (iterated, kind) {
  setInternalState(this, {
   type: ARRAY_ITERATOR,
@@ -2860,10 +2860,10 @@ module.exports = defineIterator(Array, 'Array', function (iterated, kind) {
   kind: kind
  });
 }, function () {
- var state = getInternalState(this);
- var target = state.target;
- var kind = state.kind;
- var index = state.index++;
+ const state = getInternalState(this);
+ const target = state.target;
+ const kind = state.kind;
+ const index = state.index++;
  if (!target || index >= target.length) {
   state.target = undefined;
   return {
@@ -2889,7 +2889,7 @@ module.exports = defineIterator(Array, 'Array', function (iterated, kind) {
   done: false
  };
 }, 'values');
-var values = Iterators.Arguments = Iterators.Array;
+const values = Iterators.Arguments = Iterators.Array;
 addToUnscopables('keys');
 addToUnscopables('values');
 addToUnscopables('entries');
@@ -2903,11 +2903,11 @@ if (!IS_PURE && DESCRIPTORS && values.name !== 'values')
 /* 92 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var wellKnownSymbol = __w_pdfjs_require__(36);
-var create = __w_pdfjs_require__(73);
-var definePropertyModule = __w_pdfjs_require__(47);
-var UNSCOPABLES = wellKnownSymbol('unscopables');
-var ArrayPrototype = Array.prototype;
+const wellKnownSymbol = __w_pdfjs_require__(36);
+const create = __w_pdfjs_require__(73);
+const definePropertyModule = __w_pdfjs_require__(47);
+const UNSCOPABLES = wellKnownSymbol('unscopables');
+const ArrayPrototype = Array.prototype;
 if (ArrayPrototype[UNSCOPABLES] == undefined) {
  definePropertyModule.f(ArrayPrototype, UNSCOPABLES, {
   configurable: true,
@@ -2924,34 +2924,34 @@ module.exports = function (key) {
 
 "use strict";
 
-var $ = __w_pdfjs_require__(7);
-var call = __w_pdfjs_require__(12);
-var IS_PURE = __w_pdfjs_require__(38);
-var FunctionName = __w_pdfjs_require__(56);
-var isCallable = __w_pdfjs_require__(24);
-var createIteratorConstructor = __w_pdfjs_require__(94);
-var getPrototypeOf = __w_pdfjs_require__(69);
-var setPrototypeOf = __w_pdfjs_require__(71);
-var setToStringTag = __w_pdfjs_require__(96);
-var createNonEnumerableProperty = __w_pdfjs_require__(46);
-var redefine = __w_pdfjs_require__(50);
-var wellKnownSymbol = __w_pdfjs_require__(36);
-var Iterators = __w_pdfjs_require__(82);
-var IteratorsCore = __w_pdfjs_require__(95);
-var PROPER_FUNCTION_NAME = FunctionName.PROPER;
-var CONFIGURABLE_FUNCTION_NAME = FunctionName.CONFIGURABLE;
-var IteratorPrototype = IteratorsCore.IteratorPrototype;
-var BUGGY_SAFARI_ITERATORS = IteratorsCore.BUGGY_SAFARI_ITERATORS;
-var ITERATOR = wellKnownSymbol('iterator');
-var KEYS = 'keys';
-var VALUES = 'values';
-var ENTRIES = 'entries';
-var returnThis = function () {
+const $ = __w_pdfjs_require__(7);
+const call = __w_pdfjs_require__(12);
+const IS_PURE = __w_pdfjs_require__(38);
+const FunctionName = __w_pdfjs_require__(56);
+const isCallable = __w_pdfjs_require__(24);
+const createIteratorConstructor = __w_pdfjs_require__(94);
+const getPrototypeOf = __w_pdfjs_require__(69);
+const setPrototypeOf = __w_pdfjs_require__(71);
+const setToStringTag = __w_pdfjs_require__(96);
+const createNonEnumerableProperty = __w_pdfjs_require__(46);
+const redefine = __w_pdfjs_require__(50);
+const wellKnownSymbol = __w_pdfjs_require__(36);
+const Iterators = __w_pdfjs_require__(82);
+const IteratorsCore = __w_pdfjs_require__(95);
+const PROPER_FUNCTION_NAME = FunctionName.PROPER;
+const CONFIGURABLE_FUNCTION_NAME = FunctionName.CONFIGURABLE;
+const IteratorPrototype = IteratorsCore.IteratorPrototype;
+const BUGGY_SAFARI_ITERATORS = IteratorsCore.BUGGY_SAFARI_ITERATORS;
+const ITERATOR = wellKnownSymbol('iterator');
+const KEYS = 'keys';
+const VALUES = 'values';
+const ENTRIES = 'entries';
+const returnThis = function () {
  return this;
 };
 module.exports = function (Iterable, NAME, IteratorConstructor, next, DEFAULT, IS_SET, FORCED) {
  createIteratorConstructor(IteratorConstructor, NAME, next);
- var getIterationMethod = function (KIND) {
+ const getIterationMethod = function (KIND) {
   if (KIND === DEFAULT && defaultIterator)
    return defaultIterator;
   if (!BUGGY_SAFARI_ITERATORS && KIND in IterablePrototype)
@@ -2974,13 +2974,13 @@ module.exports = function (Iterable, NAME, IteratorConstructor, next, DEFAULT, I
    return new IteratorConstructor(this);
   };
  };
- var TO_STRING_TAG = NAME + ' Iterator';
- var INCORRECT_VALUES_NAME = false;
+ const TO_STRING_TAG = NAME + ' Iterator';
+ let INCORRECT_VALUES_NAME = false;
  var IterablePrototype = Iterable.prototype;
- var nativeIterator = IterablePrototype[ITERATOR] || IterablePrototype['@@iterator'] || DEFAULT && IterablePrototype[DEFAULT];
+ const nativeIterator = IterablePrototype[ITERATOR] || IterablePrototype['@@iterator'] || DEFAULT && IterablePrototype[DEFAULT];
  var defaultIterator = !BUGGY_SAFARI_ITERATORS && nativeIterator || getIterationMethod(DEFAULT);
- var anyNativeIterator = NAME == 'Array' ? IterablePrototype.entries || nativeIterator : nativeIterator;
- var CurrentIteratorPrototype, methods, KEY;
+ const anyNativeIterator = NAME == 'Array' ? IterablePrototype.entries || nativeIterator : nativeIterator;
+ let CurrentIteratorPrototype, methods, KEY;
  if (anyNativeIterator) {
   CurrentIteratorPrototype = getPrototypeOf(anyNativeIterator.call(new Iterable()));
   if (CurrentIteratorPrototype !== Object.prototype && CurrentIteratorPrototype.next) {
@@ -3038,16 +3038,16 @@ module.exports = function (Iterable, NAME, IteratorConstructor, next, DEFAULT, I
 
 "use strict";
 
-var IteratorPrototype = (__w_pdfjs_require__(95).IteratorPrototype);
-var create = __w_pdfjs_require__(73);
-var createPropertyDescriptor = __w_pdfjs_require__(15);
-var setToStringTag = __w_pdfjs_require__(96);
-var Iterators = __w_pdfjs_require__(82);
-var returnThis = function () {
+const IteratorPrototype = (__w_pdfjs_require__(95).IteratorPrototype);
+const create = __w_pdfjs_require__(73);
+const createPropertyDescriptor = __w_pdfjs_require__(15);
+const setToStringTag = __w_pdfjs_require__(96);
+const Iterators = __w_pdfjs_require__(82);
+const returnThis = function () {
  return this;
 };
 module.exports = function (IteratorConstructor, NAME, next, ENUMERABLE_NEXT) {
- var TO_STRING_TAG = NAME + ' Iterator';
+ const TO_STRING_TAG = NAME + ' Iterator';
  IteratorConstructor.prototype = create(IteratorPrototype, { next: createPropertyDescriptor(+!ENUMERABLE_NEXT, next) });
  setToStringTag(IteratorConstructor, TO_STRING_TAG, false, true);
  Iterators[TO_STRING_TAG] = returnThis;
@@ -3060,16 +3060,16 @@ module.exports = function (IteratorConstructor, NAME, next, ENUMERABLE_NEXT) {
 
 "use strict";
 
-var fails = __w_pdfjs_require__(11);
-var isCallable = __w_pdfjs_require__(24);
-var create = __w_pdfjs_require__(73);
-var getPrototypeOf = __w_pdfjs_require__(69);
-var redefine = __w_pdfjs_require__(50);
-var wellKnownSymbol = __w_pdfjs_require__(36);
-var IS_PURE = __w_pdfjs_require__(38);
-var ITERATOR = wellKnownSymbol('iterator');
-var BUGGY_SAFARI_ITERATORS = false;
-var IteratorPrototype, PrototypeOfArrayIteratorPrototype, arrayIterator;
+const fails = __w_pdfjs_require__(11);
+const isCallable = __w_pdfjs_require__(24);
+const create = __w_pdfjs_require__(73);
+const getPrototypeOf = __w_pdfjs_require__(69);
+const redefine = __w_pdfjs_require__(50);
+const wellKnownSymbol = __w_pdfjs_require__(36);
+const IS_PURE = __w_pdfjs_require__(38);
+const ITERATOR = wellKnownSymbol('iterator');
+let BUGGY_SAFARI_ITERATORS = false;
+let IteratorPrototype, PrototypeOfArrayIteratorPrototype, arrayIterator;
 if ([].keys) {
  arrayIterator = [].keys();
  if (!('next' in arrayIterator))
@@ -3080,8 +3080,8 @@ if ([].keys) {
    IteratorPrototype = PrototypeOfArrayIteratorPrototype;
  }
 }
-var NEW_ITERATOR_PROTOTYPE = IteratorPrototype == undefined || fails(function () {
- var test = {};
+const NEW_ITERATOR_PROTOTYPE = IteratorPrototype == undefined || fails(function () {
+ const test = {};
  return IteratorPrototype[ITERATOR].call(test) !== test;
 });
 if (NEW_ITERATOR_PROTOTYPE)
@@ -3102,10 +3102,10 @@ module.exports = {
 /* 96 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var defineProperty = (__w_pdfjs_require__(47).f);
-var hasOwn = __w_pdfjs_require__(41);
-var wellKnownSymbol = __w_pdfjs_require__(36);
-var TO_STRING_TAG = wellKnownSymbol('toStringTag');
+const defineProperty = (__w_pdfjs_require__(47).f);
+const hasOwn = __w_pdfjs_require__(41);
+const wellKnownSymbol = __w_pdfjs_require__(36);
+const TO_STRING_TAG = wellKnownSymbol('toStringTag');
 module.exports = function (target, TAG, STATIC) {
  if (target && !STATIC)
   target = target.prototype;
@@ -3121,9 +3121,9 @@ module.exports = function (target, TAG, STATIC) {
 /* 97 */
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var TO_STRING_TAG_SUPPORT = __w_pdfjs_require__(86);
-var redefine = __w_pdfjs_require__(50);
-var toString = __w_pdfjs_require__(98);
+const TO_STRING_TAG_SUPPORT = __w_pdfjs_require__(86);
+const redefine = __w_pdfjs_require__(50);
+const toString = __w_pdfjs_require__(98);
 if (!TO_STRING_TAG_SUPPORT) {
  redefine(Object.prototype, 'toString', toString, { unsafe: true });
 }
@@ -3134,8 +3134,8 @@ if (!TO_STRING_TAG_SUPPORT) {
 
 "use strict";
 
-var TO_STRING_TAG_SUPPORT = __w_pdfjs_require__(86);
-var classof = __w_pdfjs_require__(85);
+const TO_STRING_TAG_SUPPORT = __w_pdfjs_require__(86);
+const classof = __w_pdfjs_require__(85);
 module.exports = TO_STRING_TAG_SUPPORT ? {}.toString : function toString() {
  return '[object ' + classof(this) + ']';
 };
@@ -3157,65 +3157,65 @@ __w_pdfjs_require__(129);
 
 "use strict";
 
-var $ = __w_pdfjs_require__(7);
-var IS_PURE = __w_pdfjs_require__(38);
-var IS_NODE = __w_pdfjs_require__(101);
-var global = __w_pdfjs_require__(8);
-var call = __w_pdfjs_require__(12);
-var redefine = __w_pdfjs_require__(50);
-var redefineAll = __w_pdfjs_require__(102);
-var setPrototypeOf = __w_pdfjs_require__(71);
-var setToStringTag = __w_pdfjs_require__(96);
-var setSpecies = __w_pdfjs_require__(103);
-var aCallable = __w_pdfjs_require__(33);
-var isCallable = __w_pdfjs_require__(24);
-var isObject = __w_pdfjs_require__(23);
-var anInstance = __w_pdfjs_require__(104);
-var speciesConstructor = __w_pdfjs_require__(105);
-var task = (__w_pdfjs_require__(108).set);
-var microtask = __w_pdfjs_require__(113);
-var hostReportErrors = __w_pdfjs_require__(116);
-var perform = __w_pdfjs_require__(117);
-var Queue = __w_pdfjs_require__(118);
-var InternalStateModule = __w_pdfjs_require__(52);
-var NativePromiseConstructor = __w_pdfjs_require__(119);
-var PromiseConstructorDetection = __w_pdfjs_require__(120);
-var newPromiseCapabilityModule = __w_pdfjs_require__(122);
-var PROMISE = 'Promise';
-var FORCED_PROMISE_CONSTRUCTOR = PromiseConstructorDetection.CONSTRUCTOR;
-var NATIVE_PROMISE_REJECTION_EVENT = PromiseConstructorDetection.REJECTION_EVENT;
-var NATIVE_PROMISE_SUBCLASSING = PromiseConstructorDetection.SUBCLASSING;
-var getInternalPromiseState = InternalStateModule.getterFor(PROMISE);
-var setInternalState = InternalStateModule.set;
-var NativePromisePrototype = NativePromiseConstructor && NativePromiseConstructor.prototype;
-var PromiseConstructor = NativePromiseConstructor;
-var PromisePrototype = NativePromisePrototype;
-var TypeError = global.TypeError;
-var document = global.document;
-var process = global.process;
-var newPromiseCapability = newPromiseCapabilityModule.f;
-var newGenericPromiseCapability = newPromiseCapability;
-var DISPATCH_EVENT = !!(document && document.createEvent && global.dispatchEvent);
-var UNHANDLED_REJECTION = 'unhandledrejection';
-var REJECTION_HANDLED = 'rejectionhandled';
-var PENDING = 0;
-var FULFILLED = 1;
-var REJECTED = 2;
-var HANDLED = 1;
-var UNHANDLED = 2;
-var Internal, OwnPromiseCapability, PromiseWrapper, nativeThen;
-var isThenable = function (it) {
- var then;
+const $ = __w_pdfjs_require__(7);
+const IS_PURE = __w_pdfjs_require__(38);
+const IS_NODE = __w_pdfjs_require__(101);
+const global = __w_pdfjs_require__(8);
+const call = __w_pdfjs_require__(12);
+const redefine = __w_pdfjs_require__(50);
+const redefineAll = __w_pdfjs_require__(102);
+const setPrototypeOf = __w_pdfjs_require__(71);
+const setToStringTag = __w_pdfjs_require__(96);
+const setSpecies = __w_pdfjs_require__(103);
+const aCallable = __w_pdfjs_require__(33);
+const isCallable = __w_pdfjs_require__(24);
+const isObject = __w_pdfjs_require__(23);
+const anInstance = __w_pdfjs_require__(104);
+const speciesConstructor = __w_pdfjs_require__(105);
+const task = (__w_pdfjs_require__(108).set);
+const microtask = __w_pdfjs_require__(113);
+const hostReportErrors = __w_pdfjs_require__(116);
+const perform = __w_pdfjs_require__(117);
+const Queue = __w_pdfjs_require__(118);
+const InternalStateModule = __w_pdfjs_require__(52);
+const NativePromiseConstructor = __w_pdfjs_require__(119);
+const PromiseConstructorDetection = __w_pdfjs_require__(120);
+const newPromiseCapabilityModule = __w_pdfjs_require__(122);
+const PROMISE = 'Promise';
+const FORCED_PROMISE_CONSTRUCTOR = PromiseConstructorDetection.CONSTRUCTOR;
+const NATIVE_PROMISE_REJECTION_EVENT = PromiseConstructorDetection.REJECTION_EVENT;
+const NATIVE_PROMISE_SUBCLASSING = PromiseConstructorDetection.SUBCLASSING;
+const getInternalPromiseState = InternalStateModule.getterFor(PROMISE);
+const setInternalState = InternalStateModule.set;
+const NativePromisePrototype = NativePromiseConstructor && NativePromiseConstructor.prototype;
+let PromiseConstructor = NativePromiseConstructor;
+let PromisePrototype = NativePromisePrototype;
+const TypeError = global.TypeError;
+const document = global.document;
+const process = global.process;
+let newPromiseCapability = newPromiseCapabilityModule.f;
+const newGenericPromiseCapability = newPromiseCapability;
+const DISPATCH_EVENT = !!(document && document.createEvent && global.dispatchEvent);
+const UNHANDLED_REJECTION = 'unhandledrejection';
+const REJECTION_HANDLED = 'rejectionhandled';
+const PENDING = 0;
+const FULFILLED = 1;
+const REJECTED = 2;
+const HANDLED = 1;
+const UNHANDLED = 2;
+let Internal, OwnPromiseCapability, PromiseWrapper, nativeThen;
+const isThenable = function (it) {
+ let then;
  return isObject(it) && isCallable(then = it.then) ? then : false;
 };
-var callReaction = function (reaction, state) {
- var value = state.value;
- var ok = state.state == FULFILLED;
- var handler = ok ? reaction.ok : reaction.fail;
- var resolve = reaction.resolve;
- var reject = reaction.reject;
- var domain = reaction.domain;
- var result, then, exited;
+const callReaction = function (reaction, state) {
+ const value = state.value;
+ const ok = state.state == FULFILLED;
+ const handler = ok ? reaction.ok : reaction.fail;
+ const resolve = reaction.resolve;
+ const reject = reaction.reject;
+ const domain = reaction.domain;
+ let result, then, exited;
  try {
   if (handler) {
    if (!ok) {
@@ -3248,13 +3248,13 @@ var callReaction = function (reaction, state) {
   reject(error);
  }
 };
-var notify = function (state, isReject) {
+const notify = function (state, isReject) {
  if (state.notified)
   return;
  state.notified = true;
  microtask(function () {
-  var reactions = state.reactions;
-  var reaction;
+  const reactions = state.reactions;
+  let reaction;
   while (reaction = reactions.get()) {
    callReaction(reaction, state);
   }
@@ -3263,8 +3263,8 @@ var notify = function (state, isReject) {
    onUnhandled(state);
  });
 };
-var dispatchEvent = function (name, promise, reason) {
- var event, handler;
+const dispatchEvent = function (name, promise, reason) {
+ let event, handler;
  if (DISPATCH_EVENT) {
   event = document.createEvent('Event');
   event.promise = promise;
@@ -3283,10 +3283,10 @@ var dispatchEvent = function (name, promise, reason) {
 };
 var onUnhandled = function (state) {
  call(task, global, function () {
-  var promise = state.facade;
-  var value = state.value;
-  var IS_UNHANDLED = isUnhandled(state);
-  var result;
+  const promise = state.facade;
+  const value = state.value;
+  const IS_UNHANDLED = isUnhandled(state);
+  let result;
   if (IS_UNHANDLED) {
    result = perform(function () {
     if (IS_NODE) {
@@ -3305,19 +3305,19 @@ var isUnhandled = function (state) {
 };
 var onHandleUnhandled = function (state) {
  call(task, global, function () {
-  var promise = state.facade;
+  const promise = state.facade;
   if (IS_NODE) {
    process.emit('rejectionHandled', promise);
   } else
    dispatchEvent(REJECTION_HANDLED, promise, state.value);
  });
 };
-var bind = function (fn, state, unwrap) {
+const bind = function (fn, state, unwrap) {
  return function (value) {
   fn(state, value, unwrap);
  };
 };
-var internalReject = function (state, value, unwrap) {
+const internalReject = function (state, value, unwrap) {
  if (state.done)
   return;
  state.done = true;
@@ -3327,7 +3327,7 @@ var internalReject = function (state, value, unwrap) {
  state.state = REJECTED;
  notify(state, true);
 };
-var internalResolve = function (state, value, unwrap) {
+const internalResolve = function (state, value, unwrap) {
  if (state.done)
   return;
  state.done = true;
@@ -3336,10 +3336,10 @@ var internalResolve = function (state, value, unwrap) {
  try {
   if (state.facade === value)
    throw TypeError("Promise can't be resolved itself");
-  var then = isThenable(value);
+  const then = isThenable(value);
   if (then) {
    microtask(function () {
-    var wrapper = { done: false };
+    const wrapper = { done: false };
     try {
      call(then, value, bind(internalResolve, wrapper, state), bind(internalReject, wrapper, state));
     } catch (error) {
@@ -3360,7 +3360,7 @@ if (FORCED_PROMISE_CONSTRUCTOR) {
   anInstance(this, PromisePrototype);
   aCallable(executor);
   call(Internal, this);
-  var state = getInternalPromiseState(this);
+  const state = getInternalPromiseState(this);
   try {
    executor(bind(internalResolve, state), bind(internalReject, state));
   } catch (error) {
@@ -3382,8 +3382,8 @@ if (FORCED_PROMISE_CONSTRUCTOR) {
  };
  Internal.prototype = redefineAll(PromisePrototype, {
   then: function then(onFulfilled, onRejected) {
-   var state = getInternalPromiseState(this);
-   var reaction = newPromiseCapability(speciesConstructor(this, PromiseConstructor));
+   const state = getInternalPromiseState(this);
+   const reaction = newPromiseCapability(speciesConstructor(this, PromiseConstructor));
    state.parent = true;
    reaction.ok = isCallable(onFulfilled) ? onFulfilled : true;
    reaction.fail = isCallable(onRejected) && onRejected;
@@ -3398,8 +3398,8 @@ if (FORCED_PROMISE_CONSTRUCTOR) {
   }
  });
  OwnPromiseCapability = function () {
-  var promise = new Internal();
-  var state = getInternalPromiseState(promise);
+  const promise = new Internal();
+  const state = getInternalPromiseState(promise);
   this.promise = promise;
   this.resolve = bind(internalResolve, state);
   this.reject = bind(internalReject, state);
@@ -3411,7 +3411,7 @@ if (FORCED_PROMISE_CONSTRUCTOR) {
   nativeThen = NativePromisePrototype.then;
   if (!NATIVE_PROMISE_SUBCLASSING) {
    redefine(NativePromisePrototype, 'then', function then(onFulfilled, onRejected) {
-    var that = this;
+    const that = this;
     return new PromiseConstructor(function (resolve, reject) {
      call(nativeThen, that, resolve, reject);
     }).then(onFulfilled, onRejected);
@@ -3438,17 +3438,17 @@ setSpecies(PROMISE);
 /* 101 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var classof = __w_pdfjs_require__(19);
-var global = __w_pdfjs_require__(8);
+const classof = __w_pdfjs_require__(19);
+const global = __w_pdfjs_require__(8);
 module.exports = classof(global.process) == 'process';
 
 /***/ }),
 /* 102 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var redefine = __w_pdfjs_require__(50);
+const redefine = __w_pdfjs_require__(50);
 module.exports = function (target, src, options) {
- for (var key in src)
+ for (const key in src)
   redefine(target, key, src[key], options);
  return target;
 };
@@ -3459,14 +3459,14 @@ module.exports = function (target, src, options) {
 
 "use strict";
 
-var getBuiltIn = __w_pdfjs_require__(26);
-var definePropertyModule = __w_pdfjs_require__(47);
-var wellKnownSymbol = __w_pdfjs_require__(36);
-var DESCRIPTORS = __w_pdfjs_require__(10);
-var SPECIES = wellKnownSymbol('species');
+const getBuiltIn = __w_pdfjs_require__(26);
+const definePropertyModule = __w_pdfjs_require__(47);
+const wellKnownSymbol = __w_pdfjs_require__(36);
+const DESCRIPTORS = __w_pdfjs_require__(10);
+const SPECIES = wellKnownSymbol('species');
 module.exports = function (CONSTRUCTOR_NAME) {
- var Constructor = getBuiltIn(CONSTRUCTOR_NAME);
- var defineProperty = definePropertyModule.f;
+ const Constructor = getBuiltIn(CONSTRUCTOR_NAME);
+ const defineProperty = definePropertyModule.f;
  if (DESCRIPTORS && Constructor && !Constructor[SPECIES]) {
   defineProperty(Constructor, SPECIES, {
    configurable: true,
@@ -3481,9 +3481,9 @@ module.exports = function (CONSTRUCTOR_NAME) {
 /* 104 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var isPrototypeOf = __w_pdfjs_require__(27);
-var TypeError = global.TypeError;
+const global = __w_pdfjs_require__(8);
+const isPrototypeOf = __w_pdfjs_require__(27);
+const TypeError = global.TypeError;
 module.exports = function (it, Prototype) {
  if (isPrototypeOf(Prototype, it))
   return it;
@@ -3494,13 +3494,13 @@ module.exports = function (it, Prototype) {
 /* 105 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var anObject = __w_pdfjs_require__(49);
-var aConstructor = __w_pdfjs_require__(106);
-var wellKnownSymbol = __w_pdfjs_require__(36);
-var SPECIES = wellKnownSymbol('species');
+const anObject = __w_pdfjs_require__(49);
+const aConstructor = __w_pdfjs_require__(106);
+const wellKnownSymbol = __w_pdfjs_require__(36);
+const SPECIES = wellKnownSymbol('species');
 module.exports = function (O, defaultConstructor) {
- var C = anObject(O).constructor;
- var S;
+ const C = anObject(O).constructor;
+ let S;
  return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? defaultConstructor : aConstructor(S);
 };
 
@@ -3508,10 +3508,10 @@ module.exports = function (O, defaultConstructor) {
 /* 106 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var isConstructor = __w_pdfjs_require__(107);
-var tryToString = __w_pdfjs_require__(34);
-var TypeError = global.TypeError;
+const global = __w_pdfjs_require__(8);
+const isConstructor = __w_pdfjs_require__(107);
+const tryToString = __w_pdfjs_require__(34);
+const TypeError = global.TypeError;
 module.exports = function (argument) {
  if (isConstructor(argument))
   return argument;
@@ -3522,20 +3522,20 @@ module.exports = function (argument) {
 /* 107 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var uncurryThis = __w_pdfjs_require__(18);
-var fails = __w_pdfjs_require__(11);
-var isCallable = __w_pdfjs_require__(24);
-var classof = __w_pdfjs_require__(85);
-var getBuiltIn = __w_pdfjs_require__(26);
-var inspectSource = __w_pdfjs_require__(51);
-var noop = function () {
+const uncurryThis = __w_pdfjs_require__(18);
+const fails = __w_pdfjs_require__(11);
+const isCallable = __w_pdfjs_require__(24);
+const classof = __w_pdfjs_require__(85);
+const getBuiltIn = __w_pdfjs_require__(26);
+const inspectSource = __w_pdfjs_require__(51);
+const noop = function () {
 };
-var empty = [];
-var construct = getBuiltIn('Reflect', 'construct');
-var constructorRegExp = /^\s*(?:class|function)\b/;
-var exec = uncurryThis(constructorRegExp.exec);
-var INCORRECT_TO_STRING = !constructorRegExp.exec(noop);
-var isConstructorModern = function isConstructor(argument) {
+const empty = [];
+const construct = getBuiltIn('Reflect', 'construct');
+const constructorRegExp = /^\s*(?:class|function)\b/;
+const exec = uncurryThis(constructorRegExp.exec);
+const INCORRECT_TO_STRING = !constructorRegExp.exec(noop);
+const isConstructorModern = function isConstructor(argument) {
  if (!isCallable(argument))
   return false;
  try {
@@ -3545,7 +3545,7 @@ var isConstructorModern = function isConstructor(argument) {
   return false;
  }
 };
-var isConstructorLegacy = function isConstructor(argument) {
+const isConstructorLegacy = function isConstructor(argument) {
  if (!isCallable(argument))
   return false;
  switch (classof(argument)) {
@@ -3562,7 +3562,7 @@ var isConstructorLegacy = function isConstructor(argument) {
 };
 isConstructorLegacy.sham = true;
 module.exports = !construct || fails(function () {
- var called;
+ let called;
  return isConstructorModern(isConstructorModern.call) || !isConstructorModern(Object) || !isConstructorModern(function () {
   called = true;
  }) || called;
@@ -3572,56 +3572,56 @@ module.exports = !construct || fails(function () {
 /* 108 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var apply = __w_pdfjs_require__(109);
-var bind = __w_pdfjs_require__(80);
-var isCallable = __w_pdfjs_require__(24);
-var hasOwn = __w_pdfjs_require__(41);
-var fails = __w_pdfjs_require__(11);
-var html = __w_pdfjs_require__(76);
-var arraySlice = __w_pdfjs_require__(110);
-var createElement = __w_pdfjs_require__(45);
-var validateArgumentsLength = __w_pdfjs_require__(111);
-var IS_IOS = __w_pdfjs_require__(112);
-var IS_NODE = __w_pdfjs_require__(101);
-var set = global.setImmediate;
-var clear = global.clearImmediate;
-var process = global.process;
-var Dispatch = global.Dispatch;
-var Function = global.Function;
-var MessageChannel = global.MessageChannel;
-var String = global.String;
-var counter = 0;
-var queue = {};
-var ONREADYSTATECHANGE = 'onreadystatechange';
-var location, defer, channel, port;
+const global = __w_pdfjs_require__(8);
+const apply = __w_pdfjs_require__(109);
+const bind = __w_pdfjs_require__(80);
+const isCallable = __w_pdfjs_require__(24);
+const hasOwn = __w_pdfjs_require__(41);
+const fails = __w_pdfjs_require__(11);
+const html = __w_pdfjs_require__(76);
+const arraySlice = __w_pdfjs_require__(110);
+const createElement = __w_pdfjs_require__(45);
+const validateArgumentsLength = __w_pdfjs_require__(111);
+const IS_IOS = __w_pdfjs_require__(112);
+const IS_NODE = __w_pdfjs_require__(101);
+let set = global.setImmediate;
+let clear = global.clearImmediate;
+const process = global.process;
+const Dispatch = global.Dispatch;
+const Function = global.Function;
+const MessageChannel = global.MessageChannel;
+const String = global.String;
+let counter = 0;
+const queue = {};
+const ONREADYSTATECHANGE = 'onreadystatechange';
+let location, defer, channel, port;
 try {
  location = global.location;
 } catch (error) {
 }
-var run = function (id) {
+const run = function (id) {
  if (hasOwn(queue, id)) {
-  var fn = queue[id];
+  const fn = queue[id];
   delete queue[id];
   fn();
  }
 };
-var runner = function (id) {
+const runner = function (id) {
  return function () {
   run(id);
  };
 };
-var listener = function (event) {
+const listener = function (event) {
  run(event.data);
 };
-var post = function (id) {
+const post = function (id) {
  global.postMessage(String(id), location.protocol + '//' + location.host);
 };
 if (!set || !clear) {
  set = function setImmediate(handler) {
   validateArgumentsLength(arguments.length, 1);
-  var fn = isCallable(handler) ? handler : Function(handler);
-  var args = arraySlice(arguments, 1);
+  const fn = isCallable(handler) ? handler : Function(handler);
+  const args = arraySlice(arguments, 1);
   queue[++counter] = function () {
    apply(fn, undefined, args);
   };
@@ -3669,10 +3669,10 @@ module.exports = {
 /* 109 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var NATIVE_BIND = __w_pdfjs_require__(13);
-var FunctionPrototype = Function.prototype;
-var apply = FunctionPrototype.apply;
-var call = FunctionPrototype.call;
+const NATIVE_BIND = __w_pdfjs_require__(13);
+const FunctionPrototype = Function.prototype;
+const apply = FunctionPrototype.apply;
+const call = FunctionPrototype.call;
 module.exports = typeof Reflect == 'object' && Reflect.apply || (NATIVE_BIND ? call.bind(apply) : function () {
  return call.apply(apply, arguments);
 });
@@ -3681,15 +3681,15 @@ module.exports = typeof Reflect == 'object' && Reflect.apply || (NATIVE_BIND ? c
 /* 110 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var uncurryThis = __w_pdfjs_require__(18);
+const uncurryThis = __w_pdfjs_require__(18);
 module.exports = uncurryThis([].slice);
 
 /***/ }),
 /* 111 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var TypeError = global.TypeError;
+const global = __w_pdfjs_require__(8);
+const TypeError = global.TypeError;
 module.exports = function (passed, required) {
  if (passed < required)
   throw TypeError('Not enough arguments');
@@ -3700,31 +3700,31 @@ module.exports = function (passed, required) {
 /* 112 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var userAgent = __w_pdfjs_require__(31);
+const userAgent = __w_pdfjs_require__(31);
 module.exports = /(?:ipad|iphone|ipod).*applewebkit/i.test(userAgent);
 
 /***/ }),
 /* 113 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var bind = __w_pdfjs_require__(80);
-var getOwnPropertyDescriptor = (__w_pdfjs_require__(9).f);
-var macrotask = (__w_pdfjs_require__(108).set);
-var IS_IOS = __w_pdfjs_require__(112);
-var IS_IOS_PEBBLE = __w_pdfjs_require__(114);
-var IS_WEBOS_WEBKIT = __w_pdfjs_require__(115);
-var IS_NODE = __w_pdfjs_require__(101);
-var MutationObserver = global.MutationObserver || global.WebKitMutationObserver;
-var document = global.document;
-var process = global.process;
-var Promise = global.Promise;
-var queueMicrotaskDescriptor = getOwnPropertyDescriptor(global, 'queueMicrotask');
-var queueMicrotask = queueMicrotaskDescriptor && queueMicrotaskDescriptor.value;
-var flush, head, last, notify, toggle, node, promise, then;
+const global = __w_pdfjs_require__(8);
+const bind = __w_pdfjs_require__(80);
+const getOwnPropertyDescriptor = (__w_pdfjs_require__(9).f);
+let macrotask = (__w_pdfjs_require__(108).set);
+const IS_IOS = __w_pdfjs_require__(112);
+const IS_IOS_PEBBLE = __w_pdfjs_require__(114);
+const IS_WEBOS_WEBKIT = __w_pdfjs_require__(115);
+const IS_NODE = __w_pdfjs_require__(101);
+const MutationObserver = global.MutationObserver || global.WebKitMutationObserver;
+const document = global.document;
+const process = global.process;
+const Promise = global.Promise;
+const queueMicrotaskDescriptor = getOwnPropertyDescriptor(global, 'queueMicrotask');
+const queueMicrotask = queueMicrotaskDescriptor && queueMicrotaskDescriptor.value;
+let flush, head, last, notify, toggle, node, promise, then;
 if (!queueMicrotask) {
  flush = function () {
-  var parent, fn;
+  let parent, fn;
   if (IS_NODE && (parent = process.domain))
    parent.exit();
   while (head) {
@@ -3770,7 +3770,7 @@ if (!queueMicrotask) {
  }
 }
 module.exports = queueMicrotask || function (fn) {
- var task = {
+ const task = {
   fn: fn,
   next: undefined
  };
@@ -3787,24 +3787,24 @@ module.exports = queueMicrotask || function (fn) {
 /* 114 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var userAgent = __w_pdfjs_require__(31);
-var global = __w_pdfjs_require__(8);
+const userAgent = __w_pdfjs_require__(31);
+const global = __w_pdfjs_require__(8);
 module.exports = /ipad|iphone|ipod/i.test(userAgent) && global.Pebble !== undefined;
 
 /***/ }),
 /* 115 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var userAgent = __w_pdfjs_require__(31);
+const userAgent = __w_pdfjs_require__(31);
 module.exports = /web0s(?!.*chrome)/i.test(userAgent);
 
 /***/ }),
 /* 116 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
+const global = __w_pdfjs_require__(8);
 module.exports = function (a, b) {
- var console = global.console;
+ const console = global.console;
  if (console && console.error) {
   arguments.length == 1 ? console.error(a) : console.error(a, b);
  }
@@ -3832,13 +3832,13 @@ module.exports = function (exec) {
 /* 118 */
 /***/ ((module) => {
 
-var Queue = function () {
+const Queue = function () {
  this.head = null;
  this.tail = null;
 };
 Queue.prototype = {
  add: function (item) {
-  var entry = {
+  const entry = {
    item: item,
    next: null
   };
@@ -3849,7 +3849,7 @@ Queue.prototype = {
   this.tail = entry;
  },
  get: function () {
-  var entry = this.head;
+  const entry = this.head;
   if (entry) {
    this.head = entry.next;
    if (this.tail === entry)
@@ -3864,44 +3864,44 @@ module.exports = Queue;
 /* 119 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
+const global = __w_pdfjs_require__(8);
 module.exports = global.Promise;
 
 /***/ }),
 /* 120 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var NativePromiseConstructor = __w_pdfjs_require__(119);
-var isCallable = __w_pdfjs_require__(24);
-var isForced = __w_pdfjs_require__(68);
-var inspectSource = __w_pdfjs_require__(51);
-var wellKnownSymbol = __w_pdfjs_require__(36);
-var IS_BROWSER = __w_pdfjs_require__(121);
-var IS_PURE = __w_pdfjs_require__(38);
-var V8_VERSION = __w_pdfjs_require__(30);
-var NativePromisePrototype = NativePromiseConstructor && NativePromiseConstructor.prototype;
-var SPECIES = wellKnownSymbol('species');
-var SUBCLASSING = false;
-var NATIVE_PROMISE_REJECTION_EVENT = isCallable(global.PromiseRejectionEvent);
-var FORCED_PROMISE_CONSTRUCTOR = isForced('Promise', function () {
- var PROMISE_CONSTRUCTOR_SOURCE = inspectSource(NativePromiseConstructor);
- var GLOBAL_CORE_JS_PROMISE = PROMISE_CONSTRUCTOR_SOURCE !== String(NativePromiseConstructor);
+const global = __w_pdfjs_require__(8);
+const NativePromiseConstructor = __w_pdfjs_require__(119);
+const isCallable = __w_pdfjs_require__(24);
+const isForced = __w_pdfjs_require__(68);
+const inspectSource = __w_pdfjs_require__(51);
+const wellKnownSymbol = __w_pdfjs_require__(36);
+const IS_BROWSER = __w_pdfjs_require__(121);
+const IS_PURE = __w_pdfjs_require__(38);
+const V8_VERSION = __w_pdfjs_require__(30);
+const NativePromisePrototype = NativePromiseConstructor && NativePromiseConstructor.prototype;
+const SPECIES = wellKnownSymbol('species');
+let SUBCLASSING = false;
+const NATIVE_PROMISE_REJECTION_EVENT = isCallable(global.PromiseRejectionEvent);
+const FORCED_PROMISE_CONSTRUCTOR = isForced('Promise', function () {
+ const PROMISE_CONSTRUCTOR_SOURCE = inspectSource(NativePromiseConstructor);
+ const GLOBAL_CORE_JS_PROMISE = PROMISE_CONSTRUCTOR_SOURCE !== String(NativePromiseConstructor);
  if (!GLOBAL_CORE_JS_PROMISE && V8_VERSION === 66)
   return true;
  if (IS_PURE && !(NativePromisePrototype['catch'] && NativePromisePrototype['finally']))
   return true;
  if (V8_VERSION >= 51 && /native code/.test(PROMISE_CONSTRUCTOR_SOURCE))
   return false;
- var promise = new NativePromiseConstructor(function (resolve) {
+ const promise = new NativePromiseConstructor(function (resolve) {
   resolve(1);
  });
- var FakePromise = function (exec) {
+ const FakePromise = function (exec) {
   exec(function () {
   }, function () {
   });
  };
- var constructor = promise.constructor = {};
+ const constructor = promise.constructor = {};
  constructor[SPECIES] = FakePromise;
  SUBCLASSING = promise.then(function () {
  }) instanceof FakePromise;
@@ -3927,9 +3927,9 @@ module.exports = typeof window == 'object' && typeof Deno != 'object';
 
 "use strict";
 
-var aCallable = __w_pdfjs_require__(33);
-var PromiseCapability = function (C) {
- var resolve, reject;
+const aCallable = __w_pdfjs_require__(33);
+const PromiseCapability = function (C) {
+ let resolve, reject;
  this.promise = new C(function ($$resolve, $$reject) {
   if (resolve !== undefined || reject !== undefined)
    throw TypeError('Bad Promise constructor');
@@ -3949,31 +3949,31 @@ module.exports.f = function (C) {
 
 "use strict";
 
-var $ = __w_pdfjs_require__(7);
-var call = __w_pdfjs_require__(12);
-var aCallable = __w_pdfjs_require__(33);
-var newPromiseCapabilityModule = __w_pdfjs_require__(122);
-var perform = __w_pdfjs_require__(117);
-var iterate = __w_pdfjs_require__(79);
-var PROMISE_STATICS_INCORRECT_ITERATION = __w_pdfjs_require__(124);
+const $ = __w_pdfjs_require__(7);
+const call = __w_pdfjs_require__(12);
+const aCallable = __w_pdfjs_require__(33);
+const newPromiseCapabilityModule = __w_pdfjs_require__(122);
+const perform = __w_pdfjs_require__(117);
+const iterate = __w_pdfjs_require__(79);
+const PROMISE_STATICS_INCORRECT_ITERATION = __w_pdfjs_require__(124);
 $({
  target: 'Promise',
  stat: true,
  forced: PROMISE_STATICS_INCORRECT_ITERATION
 }, {
  all: function all(iterable) {
-  var C = this;
-  var capability = newPromiseCapabilityModule.f(C);
-  var resolve = capability.resolve;
-  var reject = capability.reject;
-  var result = perform(function () {
-   var $promiseResolve = aCallable(C.resolve);
-   var values = [];
-   var counter = 0;
-   var remaining = 1;
+  const C = this;
+  const capability = newPromiseCapabilityModule.f(C);
+  const resolve = capability.resolve;
+  const reject = capability.reject;
+  const result = perform(function () {
+   const $promiseResolve = aCallable(C.resolve);
+   const values = [];
+   let counter = 0;
+   let remaining = 1;
    iterate(iterable, function (promise) {
-    var index = counter++;
-    var alreadyCalled = false;
+    const index = counter++;
+    let alreadyCalled = false;
     remaining++;
     call($promiseResolve, C, promise).then(function (value) {
      if (alreadyCalled)
@@ -3995,9 +3995,9 @@ $({
 /* 124 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var NativePromiseConstructor = __w_pdfjs_require__(119);
-var checkCorrectnessOfIteration = __w_pdfjs_require__(125);
-var FORCED_PROMISE_CONSTRUCTOR = (__w_pdfjs_require__(120).CONSTRUCTOR);
+const NativePromiseConstructor = __w_pdfjs_require__(119);
+const checkCorrectnessOfIteration = __w_pdfjs_require__(125);
+const FORCED_PROMISE_CONSTRUCTOR = (__w_pdfjs_require__(120).CONSTRUCTOR);
 module.exports = FORCED_PROMISE_CONSTRUCTOR || !checkCorrectnessOfIteration(function (iterable) {
  NativePromiseConstructor.all(iterable).then(undefined, function () {
  });
@@ -4007,12 +4007,12 @@ module.exports = FORCED_PROMISE_CONSTRUCTOR || !checkCorrectnessOfIteration(func
 /* 125 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var wellKnownSymbol = __w_pdfjs_require__(36);
-var ITERATOR = wellKnownSymbol('iterator');
-var SAFE_CLOSING = false;
+const wellKnownSymbol = __w_pdfjs_require__(36);
+const ITERATOR = wellKnownSymbol('iterator');
+let SAFE_CLOSING = false;
 try {
- var called = 0;
- var iteratorWithReturn = {
+ let called = 0;
+ const iteratorWithReturn = {
   next: function () {
    return { done: !!called++ };
   },
@@ -4031,9 +4031,9 @@ try {
 module.exports = function (exec, SKIP_CLOSING) {
  if (!SKIP_CLOSING && !SAFE_CLOSING)
   return false;
- var ITERATION_SUPPORT = false;
+ let ITERATION_SUPPORT = false;
  try {
-  var object = {};
+  const object = {};
   object[ITERATOR] = function () {
    return {
     next: function () {
@@ -4053,14 +4053,14 @@ module.exports = function (exec, SKIP_CLOSING) {
 
 "use strict";
 
-var $ = __w_pdfjs_require__(7);
-var IS_PURE = __w_pdfjs_require__(38);
-var FORCED_PROMISE_CONSTRUCTOR = (__w_pdfjs_require__(120).CONSTRUCTOR);
-var NativePromiseConstructor = __w_pdfjs_require__(119);
-var getBuiltIn = __w_pdfjs_require__(26);
-var isCallable = __w_pdfjs_require__(24);
-var redefine = __w_pdfjs_require__(50);
-var NativePromisePrototype = NativePromiseConstructor && NativePromiseConstructor.prototype;
+const $ = __w_pdfjs_require__(7);
+const IS_PURE = __w_pdfjs_require__(38);
+const FORCED_PROMISE_CONSTRUCTOR = (__w_pdfjs_require__(120).CONSTRUCTOR);
+const NativePromiseConstructor = __w_pdfjs_require__(119);
+const getBuiltIn = __w_pdfjs_require__(26);
+const isCallable = __w_pdfjs_require__(24);
+const redefine = __w_pdfjs_require__(50);
+const NativePromisePrototype = NativePromiseConstructor && NativePromiseConstructor.prototype;
 $({
  target: 'Promise',
  proto: true,
@@ -4072,7 +4072,7 @@ $({
  }
 });
 if (!IS_PURE && isCallable(NativePromiseConstructor)) {
- var method = getBuiltIn('Promise').prototype['catch'];
+ const method = getBuiltIn('Promise').prototype['catch'];
  if (NativePromisePrototype['catch'] !== method) {
   redefine(NativePromisePrototype, 'catch', method, { unsafe: true });
  }
@@ -4084,24 +4084,24 @@ if (!IS_PURE && isCallable(NativePromiseConstructor)) {
 
 "use strict";
 
-var $ = __w_pdfjs_require__(7);
-var call = __w_pdfjs_require__(12);
-var aCallable = __w_pdfjs_require__(33);
-var newPromiseCapabilityModule = __w_pdfjs_require__(122);
-var perform = __w_pdfjs_require__(117);
-var iterate = __w_pdfjs_require__(79);
-var PROMISE_STATICS_INCORRECT_ITERATION = __w_pdfjs_require__(124);
+const $ = __w_pdfjs_require__(7);
+const call = __w_pdfjs_require__(12);
+const aCallable = __w_pdfjs_require__(33);
+const newPromiseCapabilityModule = __w_pdfjs_require__(122);
+const perform = __w_pdfjs_require__(117);
+const iterate = __w_pdfjs_require__(79);
+const PROMISE_STATICS_INCORRECT_ITERATION = __w_pdfjs_require__(124);
 $({
  target: 'Promise',
  stat: true,
  forced: PROMISE_STATICS_INCORRECT_ITERATION
 }, {
  race: function race(iterable) {
-  var C = this;
-  var capability = newPromiseCapabilityModule.f(C);
-  var reject = capability.reject;
-  var result = perform(function () {
-   var $promiseResolve = aCallable(C.resolve);
+  const C = this;
+  const capability = newPromiseCapabilityModule.f(C);
+  const reject = capability.reject;
+  const result = perform(function () {
+   const $promiseResolve = aCallable(C.resolve);
    iterate(iterable, function (promise) {
     call($promiseResolve, C, promise).then(capability.resolve, reject);
    });
@@ -4118,17 +4118,17 @@ $({
 
 "use strict";
 
-var $ = __w_pdfjs_require__(7);
-var call = __w_pdfjs_require__(12);
-var newPromiseCapabilityModule = __w_pdfjs_require__(122);
-var FORCED_PROMISE_CONSTRUCTOR = (__w_pdfjs_require__(120).CONSTRUCTOR);
+const $ = __w_pdfjs_require__(7);
+const call = __w_pdfjs_require__(12);
+const newPromiseCapabilityModule = __w_pdfjs_require__(122);
+const FORCED_PROMISE_CONSTRUCTOR = (__w_pdfjs_require__(120).CONSTRUCTOR);
 $({
  target: 'Promise',
  stat: true,
  forced: FORCED_PROMISE_CONSTRUCTOR
 }, {
  reject: function reject(r) {
-  var capability = newPromiseCapabilityModule.f(this);
+  const capability = newPromiseCapabilityModule.f(this);
   call(capability.reject, undefined, r);
   return capability.promise;
  }
@@ -4140,14 +4140,14 @@ $({
 
 "use strict";
 
-var $ = __w_pdfjs_require__(7);
-var getBuiltIn = __w_pdfjs_require__(26);
-var IS_PURE = __w_pdfjs_require__(38);
-var NativePromiseConstructor = __w_pdfjs_require__(119);
-var FORCED_PROMISE_CONSTRUCTOR = (__w_pdfjs_require__(120).CONSTRUCTOR);
-var promiseResolve = __w_pdfjs_require__(130);
-var PromiseConstructorWrapper = getBuiltIn('Promise');
-var CHECK_WRAPPER = IS_PURE && !FORCED_PROMISE_CONSTRUCTOR;
+const $ = __w_pdfjs_require__(7);
+const getBuiltIn = __w_pdfjs_require__(26);
+const IS_PURE = __w_pdfjs_require__(38);
+const NativePromiseConstructor = __w_pdfjs_require__(119);
+const FORCED_PROMISE_CONSTRUCTOR = (__w_pdfjs_require__(120).CONSTRUCTOR);
+const promiseResolve = __w_pdfjs_require__(130);
+const PromiseConstructorWrapper = getBuiltIn('Promise');
+const CHECK_WRAPPER = IS_PURE && !FORCED_PROMISE_CONSTRUCTOR;
 $({
  target: 'Promise',
  stat: true,
@@ -4162,15 +4162,15 @@ $({
 /* 130 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var anObject = __w_pdfjs_require__(49);
-var isObject = __w_pdfjs_require__(23);
-var newPromiseCapability = __w_pdfjs_require__(122);
+const anObject = __w_pdfjs_require__(49);
+const isObject = __w_pdfjs_require__(23);
+const newPromiseCapability = __w_pdfjs_require__(122);
 module.exports = function (C, x) {
  anObject(C);
  if (isObject(x) && x.constructor === C)
   return x;
- var promiseCapability = newPromiseCapability.f(C);
- var resolve = promiseCapability.resolve;
+ const promiseCapability = newPromiseCapability.f(C);
+ const resolve = promiseCapability.resolve;
  resolve(x);
  return promiseCapability.promise;
 };
@@ -4181,29 +4181,29 @@ module.exports = function (C, x) {
 
 "use strict";
 
-var $ = __w_pdfjs_require__(7);
-var call = __w_pdfjs_require__(12);
-var aCallable = __w_pdfjs_require__(33);
-var newPromiseCapabilityModule = __w_pdfjs_require__(122);
-var perform = __w_pdfjs_require__(117);
-var iterate = __w_pdfjs_require__(79);
+const $ = __w_pdfjs_require__(7);
+const call = __w_pdfjs_require__(12);
+const aCallable = __w_pdfjs_require__(33);
+const newPromiseCapabilityModule = __w_pdfjs_require__(122);
+const perform = __w_pdfjs_require__(117);
+const iterate = __w_pdfjs_require__(79);
 $({
  target: 'Promise',
  stat: true
 }, {
  allSettled: function allSettled(iterable) {
-  var C = this;
-  var capability = newPromiseCapabilityModule.f(C);
-  var resolve = capability.resolve;
-  var reject = capability.reject;
-  var result = perform(function () {
-   var promiseResolve = aCallable(C.resolve);
-   var values = [];
-   var counter = 0;
-   var remaining = 1;
+  const C = this;
+  const capability = newPromiseCapabilityModule.f(C);
+  const resolve = capability.resolve;
+  const reject = capability.reject;
+  const result = perform(function () {
+   const promiseResolve = aCallable(C.resolve);
+   const values = [];
+   let counter = 0;
+   let remaining = 1;
    iterate(iterable, function (promise) {
-    var index = counter++;
-    var alreadyCalled = false;
+    const index = counter++;
+    let alreadyCalled = false;
     remaining++;
     call(promiseResolve, C, promise).then(function (value) {
      if (alreadyCalled)
@@ -4239,33 +4239,33 @@ $({
 
 "use strict";
 
-var $ = __w_pdfjs_require__(7);
-var call = __w_pdfjs_require__(12);
-var aCallable = __w_pdfjs_require__(33);
-var getBuiltIn = __w_pdfjs_require__(26);
-var newPromiseCapabilityModule = __w_pdfjs_require__(122);
-var perform = __w_pdfjs_require__(117);
-var iterate = __w_pdfjs_require__(79);
-var PROMISE_ANY_ERROR = 'No one promise resolved';
+const $ = __w_pdfjs_require__(7);
+const call = __w_pdfjs_require__(12);
+const aCallable = __w_pdfjs_require__(33);
+const getBuiltIn = __w_pdfjs_require__(26);
+const newPromiseCapabilityModule = __w_pdfjs_require__(122);
+const perform = __w_pdfjs_require__(117);
+const iterate = __w_pdfjs_require__(79);
+const PROMISE_ANY_ERROR = 'No one promise resolved';
 $({
  target: 'Promise',
  stat: true
 }, {
  any: function any(iterable) {
-  var C = this;
-  var AggregateError = getBuiltIn('AggregateError');
-  var capability = newPromiseCapabilityModule.f(C);
-  var resolve = capability.resolve;
-  var reject = capability.reject;
-  var result = perform(function () {
-   var promiseResolve = aCallable(C.resolve);
-   var errors = [];
-   var counter = 0;
-   var remaining = 1;
-   var alreadyResolved = false;
+  const C = this;
+  const AggregateError = getBuiltIn('AggregateError');
+  const capability = newPromiseCapabilityModule.f(C);
+  const resolve = capability.resolve;
+  const reject = capability.reject;
+  const result = perform(function () {
+   const promiseResolve = aCallable(C.resolve);
+   const errors = [];
+   let counter = 0;
+   let remaining = 1;
+   let alreadyResolved = false;
    iterate(iterable, function (promise) {
-    var index = counter++;
-    var alreadyRejected = false;
+    const index = counter++;
+    let alreadyRejected = false;
     remaining++;
     call(promiseResolve, C, promise).then(function (value) {
      if (alreadyRejected || alreadyResolved)
@@ -4294,17 +4294,17 @@ $({
 
 "use strict";
 
-var $ = __w_pdfjs_require__(7);
-var IS_PURE = __w_pdfjs_require__(38);
-var NativePromiseConstructor = __w_pdfjs_require__(119);
-var fails = __w_pdfjs_require__(11);
-var getBuiltIn = __w_pdfjs_require__(26);
-var isCallable = __w_pdfjs_require__(24);
-var speciesConstructor = __w_pdfjs_require__(105);
-var promiseResolve = __w_pdfjs_require__(130);
-var redefine = __w_pdfjs_require__(50);
-var NativePromisePrototype = NativePromiseConstructor && NativePromiseConstructor.prototype;
-var NON_GENERIC = !!NativePromiseConstructor && fails(function () {
+const $ = __w_pdfjs_require__(7);
+const IS_PURE = __w_pdfjs_require__(38);
+const NativePromiseConstructor = __w_pdfjs_require__(119);
+const fails = __w_pdfjs_require__(11);
+const getBuiltIn = __w_pdfjs_require__(26);
+const isCallable = __w_pdfjs_require__(24);
+const speciesConstructor = __w_pdfjs_require__(105);
+const promiseResolve = __w_pdfjs_require__(130);
+const redefine = __w_pdfjs_require__(50);
+const NativePromisePrototype = NativePromiseConstructor && NativePromiseConstructor.prototype;
+const NON_GENERIC = !!NativePromiseConstructor && fails(function () {
  NativePromisePrototype['finally'].call({
   then: function () {
   }
@@ -4318,8 +4318,8 @@ $({
  forced: NON_GENERIC
 }, {
  'finally': function (onFinally) {
-  var C = speciesConstructor(this, getBuiltIn('Promise'));
-  var isFunction = isCallable(onFinally);
+  const C = speciesConstructor(this, getBuiltIn('Promise'));
+  const isFunction = isCallable(onFinally);
   return this.then(isFunction ? function (x) {
    return promiseResolve(C, onFinally()).then(function () {
     return x;
@@ -4332,7 +4332,7 @@ $({
  }
 });
 if (!IS_PURE && isCallable(NativePromiseConstructor)) {
- var method = getBuiltIn('Promise').prototype['finally'];
+ const method = getBuiltIn('Promise').prototype['finally'];
  if (NativePromisePrototype['finally'] !== method) {
   redefine(NativePromisePrototype, 'finally', method, { unsafe: true });
  }
@@ -4344,13 +4344,13 @@ if (!IS_PURE && isCallable(NativePromiseConstructor)) {
 
 "use strict";
 
-var charAt = (__w_pdfjs_require__(135).charAt);
-var toString = __w_pdfjs_require__(89);
-var InternalStateModule = __w_pdfjs_require__(52);
-var defineIterator = __w_pdfjs_require__(93);
-var STRING_ITERATOR = 'String Iterator';
-var setInternalState = InternalStateModule.set;
-var getInternalState = InternalStateModule.getterFor(STRING_ITERATOR);
+const charAt = (__w_pdfjs_require__(135).charAt);
+const toString = __w_pdfjs_require__(89);
+const InternalStateModule = __w_pdfjs_require__(52);
+const defineIterator = __w_pdfjs_require__(93);
+const STRING_ITERATOR = 'String Iterator';
+const setInternalState = InternalStateModule.set;
+const getInternalState = InternalStateModule.getterFor(STRING_ITERATOR);
 defineIterator(String, 'String', function (iterated) {
  setInternalState(this, {
   type: STRING_ITERATOR,
@@ -4358,10 +4358,10 @@ defineIterator(String, 'String', function (iterated) {
   index: 0
  });
 }, function next() {
- var state = getInternalState(this);
- var string = state.string;
- var index = state.index;
- var point;
+ const state = getInternalState(this);
+ const string = state.string;
+ const index = state.index;
+ let point;
  if (index >= string.length)
   return {
    value: undefined,
@@ -4379,19 +4379,19 @@ defineIterator(String, 'String', function (iterated) {
 /* 135 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var uncurryThis = __w_pdfjs_require__(18);
-var toIntegerOrInfinity = __w_pdfjs_require__(63);
-var toString = __w_pdfjs_require__(89);
-var requireObjectCoercible = __w_pdfjs_require__(20);
-var charAt = uncurryThis(''.charAt);
-var charCodeAt = uncurryThis(''.charCodeAt);
-var stringSlice = uncurryThis(''.slice);
-var createMethod = function (CONVERT_TO_STRING) {
+const uncurryThis = __w_pdfjs_require__(18);
+const toIntegerOrInfinity = __w_pdfjs_require__(63);
+const toString = __w_pdfjs_require__(89);
+const requireObjectCoercible = __w_pdfjs_require__(20);
+const charAt = uncurryThis(''.charAt);
+const charCodeAt = uncurryThis(''.charCodeAt);
+const stringSlice = uncurryThis(''.slice);
+const createMethod = function (CONVERT_TO_STRING) {
  return function ($this, pos) {
-  var S = toString(requireObjectCoercible($this));
-  var position = toIntegerOrInfinity(pos);
-  var size = S.length;
-  var first, second;
+  const S = toString(requireObjectCoercible($this));
+  const position = toIntegerOrInfinity(pos);
+  const size = S.length;
+  let first, second;
   if (position < 0 || position >= size)
    return CONVERT_TO_STRING ? '' : undefined;
   first = charCodeAt(S, position);
@@ -4407,7 +4407,7 @@ module.exports = {
 /* 136 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
+const global = __w_pdfjs_require__(8);
 module.exports = global;
 
 /***/ }),
@@ -4419,7 +4419,7 @@ __w_pdfjs_require__(97);
 __w_pdfjs_require__(138);
 __w_pdfjs_require__(150);
 __w_pdfjs_require__(152);
-var path = __w_pdfjs_require__(136);
+const path = __w_pdfjs_require__(136);
 module.exports = path.structuredClone;
 
 /***/ }),
@@ -4434,8 +4434,8 @@ __w_pdfjs_require__(139);
 
 "use strict";
 
-var collection = __w_pdfjs_require__(140);
-var collectionStrong = __w_pdfjs_require__(149);
+const collection = __w_pdfjs_require__(140);
+const collectionStrong = __w_pdfjs_require__(149);
 collection('Map', function (init) {
  return function Map() {
   return init(this, arguments.length ? arguments[0] : undefined);
@@ -4448,30 +4448,30 @@ collection('Map', function (init) {
 
 "use strict";
 
-var $ = __w_pdfjs_require__(7);
-var global = __w_pdfjs_require__(8);
-var uncurryThis = __w_pdfjs_require__(18);
-var isForced = __w_pdfjs_require__(68);
-var redefine = __w_pdfjs_require__(50);
-var InternalMetadataModule = __w_pdfjs_require__(141);
-var iterate = __w_pdfjs_require__(79);
-var anInstance = __w_pdfjs_require__(104);
-var isCallable = __w_pdfjs_require__(24);
-var isObject = __w_pdfjs_require__(23);
-var fails = __w_pdfjs_require__(11);
-var checkCorrectnessOfIteration = __w_pdfjs_require__(125);
-var setToStringTag = __w_pdfjs_require__(96);
-var inheritIfRequired = __w_pdfjs_require__(148);
+const $ = __w_pdfjs_require__(7);
+const global = __w_pdfjs_require__(8);
+const uncurryThis = __w_pdfjs_require__(18);
+const isForced = __w_pdfjs_require__(68);
+const redefine = __w_pdfjs_require__(50);
+const InternalMetadataModule = __w_pdfjs_require__(141);
+const iterate = __w_pdfjs_require__(79);
+const anInstance = __w_pdfjs_require__(104);
+const isCallable = __w_pdfjs_require__(24);
+const isObject = __w_pdfjs_require__(23);
+const fails = __w_pdfjs_require__(11);
+const checkCorrectnessOfIteration = __w_pdfjs_require__(125);
+const setToStringTag = __w_pdfjs_require__(96);
+const inheritIfRequired = __w_pdfjs_require__(148);
 module.exports = function (CONSTRUCTOR_NAME, wrapper, common) {
- var IS_MAP = CONSTRUCTOR_NAME.indexOf('Map') !== -1;
- var IS_WEAK = CONSTRUCTOR_NAME.indexOf('Weak') !== -1;
- var ADDER = IS_MAP ? 'set' : 'add';
- var NativeConstructor = global[CONSTRUCTOR_NAME];
- var NativePrototype = NativeConstructor && NativeConstructor.prototype;
- var Constructor = NativeConstructor;
- var exported = {};
- var fixMethod = function (KEY) {
-  var uncurriedNativeMethod = uncurryThis(NativePrototype[KEY]);
+ const IS_MAP = CONSTRUCTOR_NAME.indexOf('Map') !== -1;
+ const IS_WEAK = CONSTRUCTOR_NAME.indexOf('Weak') !== -1;
+ const ADDER = IS_MAP ? 'set' : 'add';
+ const NativeConstructor = global[CONSTRUCTOR_NAME];
+ const NativePrototype = NativeConstructor && NativeConstructor.prototype;
+ let Constructor = NativeConstructor;
+ const exported = {};
+ const fixMethod = function (KEY) {
+  const uncurriedNativeMethod = uncurryThis(NativePrototype[KEY]);
   redefine(NativePrototype, KEY, KEY == 'add' ? function add(value) {
    uncurriedNativeMethod(this, value === 0 ? 0 : value);
    return this;
@@ -4486,24 +4486,24 @@ module.exports = function (CONSTRUCTOR_NAME, wrapper, common) {
    return this;
   });
  };
- var REPLACE = isForced(CONSTRUCTOR_NAME, !isCallable(NativeConstructor) || !(IS_WEAK || NativePrototype.forEach && !fails(function () {
+ const REPLACE = isForced(CONSTRUCTOR_NAME, !isCallable(NativeConstructor) || !(IS_WEAK || NativePrototype.forEach && !fails(function () {
   new NativeConstructor().entries().next();
  })));
  if (REPLACE) {
   Constructor = common.getConstructor(wrapper, CONSTRUCTOR_NAME, IS_MAP, ADDER);
   InternalMetadataModule.enable();
  } else if (isForced(CONSTRUCTOR_NAME, true)) {
-  var instance = new Constructor();
-  var HASNT_CHAINING = instance[ADDER](IS_WEAK ? {} : -0, 1) != instance;
-  var THROWS_ON_PRIMITIVES = fails(function () {
+  const instance = new Constructor();
+  const HASNT_CHAINING = instance[ADDER](IS_WEAK ? {} : -0, 1) != instance;
+  const THROWS_ON_PRIMITIVES = fails(function () {
    instance.has(1);
   });
-  var ACCEPT_ITERABLES = checkCorrectnessOfIteration(function (iterable) {
+  const ACCEPT_ITERABLES = checkCorrectnessOfIteration(function (iterable) {
    new NativeConstructor(iterable);
   });
-  var BUGGY_ZERO = !IS_WEAK && fails(function () {
-   var $instance = new NativeConstructor();
-   var index = 5;
+  const BUGGY_ZERO = !IS_WEAK && fails(function () {
+   const $instance = new NativeConstructor();
+   let index = 5;
    while (index--)
     $instance[ADDER](index, index);
    return !$instance.has(-0);
@@ -4511,7 +4511,7 @@ module.exports = function (CONSTRUCTOR_NAME, wrapper, common) {
   if (!ACCEPT_ITERABLES) {
    Constructor = wrapper(function (dummy, iterable) {
     anInstance(dummy, NativePrototype);
-    var that = inheritIfRequired(new NativeConstructor(), dummy, Constructor);
+    const that = inheritIfRequired(new NativeConstructor(), dummy, Constructor);
     if (iterable != undefined)
      iterate(iterable, that[ADDER], {
       that: that,
@@ -4547,21 +4547,21 @@ module.exports = function (CONSTRUCTOR_NAME, wrapper, common) {
 /* 141 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var $ = __w_pdfjs_require__(7);
-var uncurryThis = __w_pdfjs_require__(18);
-var hiddenKeys = __w_pdfjs_require__(55);
-var isObject = __w_pdfjs_require__(23);
-var hasOwn = __w_pdfjs_require__(41);
-var defineProperty = (__w_pdfjs_require__(47).f);
-var getOwnPropertyNamesModule = __w_pdfjs_require__(59);
-var getOwnPropertyNamesExternalModule = __w_pdfjs_require__(142);
-var isExtensible = __w_pdfjs_require__(145);
-var uid = __w_pdfjs_require__(43);
-var FREEZING = __w_pdfjs_require__(147);
-var REQUIRED = false;
-var METADATA = uid('meta');
-var id = 0;
-var setMetadata = function (it) {
+const $ = __w_pdfjs_require__(7);
+const uncurryThis = __w_pdfjs_require__(18);
+const hiddenKeys = __w_pdfjs_require__(55);
+const isObject = __w_pdfjs_require__(23);
+const hasOwn = __w_pdfjs_require__(41);
+const defineProperty = (__w_pdfjs_require__(47).f);
+const getOwnPropertyNamesModule = __w_pdfjs_require__(59);
+const getOwnPropertyNamesExternalModule = __w_pdfjs_require__(142);
+const isExtensible = __w_pdfjs_require__(145);
+const uid = __w_pdfjs_require__(43);
+const FREEZING = __w_pdfjs_require__(147);
+let REQUIRED = false;
+const METADATA = uid('meta');
+let id = 0;
+const setMetadata = function (it) {
  defineProperty(it, METADATA, {
   value: {
    objectID: 'O' + id++,
@@ -4569,7 +4569,7 @@ var setMetadata = function (it) {
   }
  });
 };
-var fastKey = function (it, create) {
+const fastKey = function (it, create) {
  if (!isObject(it))
   return typeof it == 'symbol' ? it : (typeof it == 'string' ? 'S' : 'P') + it;
  if (!hasOwn(it, METADATA)) {
@@ -4581,7 +4581,7 @@ var fastKey = function (it, create) {
  }
  return it[METADATA].objectID;
 };
-var getWeakData = function (it, create) {
+const getWeakData = function (it, create) {
  if (!hasOwn(it, METADATA)) {
   if (!isExtensible(it))
    return true;
@@ -4591,23 +4591,23 @@ var getWeakData = function (it, create) {
  }
  return it[METADATA].weakData;
 };
-var onFreeze = function (it) {
+const onFreeze = function (it) {
  if (FREEZING && REQUIRED && isExtensible(it) && !hasOwn(it, METADATA))
   setMetadata(it);
  return it;
 };
-var enable = function () {
+const enable = function () {
  meta.enable = function () {
  };
  REQUIRED = true;
- var getOwnPropertyNames = getOwnPropertyNamesModule.f;
- var splice = uncurryThis([].splice);
- var test = {};
+ const getOwnPropertyNames = getOwnPropertyNamesModule.f;
+ const splice = uncurryThis([].splice);
+ const test = {};
  test[METADATA] = 1;
  if (getOwnPropertyNames(test).length) {
   getOwnPropertyNamesModule.f = function (it) {
-   var result = getOwnPropertyNames(it);
-   for (var i = 0, length = result.length; i < length; i++) {
+   const result = getOwnPropertyNames(it);
+   for (let i = 0, length = result.length; i < length; i++) {
     if (result[i] === METADATA) {
      splice(result, i, 1);
      break;
@@ -4634,12 +4634,12 @@ hiddenKeys[METADATA] = true;
 /* 142 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var classof = __w_pdfjs_require__(19);
-var toIndexedObject = __w_pdfjs_require__(16);
-var $getOwnPropertyNames = (__w_pdfjs_require__(59).f);
-var arraySlice = __w_pdfjs_require__(143);
-var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
-var getWindowNames = function (it) {
+const classof = __w_pdfjs_require__(19);
+const toIndexedObject = __w_pdfjs_require__(16);
+const $getOwnPropertyNames = (__w_pdfjs_require__(59).f);
+const arraySlice = __w_pdfjs_require__(143);
+const windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
+const getWindowNames = function (it) {
  try {
   return $getOwnPropertyNames(it);
  } catch (error) {
@@ -4654,17 +4654,17 @@ module.exports.f = function getOwnPropertyNames(it) {
 /* 143 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var global = __w_pdfjs_require__(8);
-var toAbsoluteIndex = __w_pdfjs_require__(62);
-var lengthOfArrayLike = __w_pdfjs_require__(64);
-var createProperty = __w_pdfjs_require__(144);
-var Array = global.Array;
-var max = Math.max;
+const global = __w_pdfjs_require__(8);
+const toAbsoluteIndex = __w_pdfjs_require__(62);
+const lengthOfArrayLike = __w_pdfjs_require__(64);
+const createProperty = __w_pdfjs_require__(144);
+const Array = global.Array;
+const max = Math.max;
 module.exports = function (O, start, end) {
- var length = lengthOfArrayLike(O);
- var k = toAbsoluteIndex(start, length);
- var fin = toAbsoluteIndex(end === undefined ? length : end, length);
- var result = Array(max(fin - k, 0));
+ const length = lengthOfArrayLike(O);
+ let k = toAbsoluteIndex(start, length);
+ const fin = toAbsoluteIndex(end === undefined ? length : end, length);
+ const result = Array(max(fin - k, 0));
  for (var n = 0; k < fin; k++, n++)
   createProperty(result, n, O[k]);
  result.length = n;
@@ -4677,11 +4677,11 @@ module.exports = function (O, start, end) {
 
 "use strict";
 
-var toPropertyKey = __w_pdfjs_require__(21);
-var definePropertyModule = __w_pdfjs_require__(47);
-var createPropertyDescriptor = __w_pdfjs_require__(15);
+const toPropertyKey = __w_pdfjs_require__(21);
+const definePropertyModule = __w_pdfjs_require__(47);
+const createPropertyDescriptor = __w_pdfjs_require__(15);
 module.exports = function (object, key, value) {
- var propertyKey = toPropertyKey(key);
+ const propertyKey = toPropertyKey(key);
  if (propertyKey in object)
   definePropertyModule.f(object, propertyKey, createPropertyDescriptor(0, value));
  else
@@ -4692,12 +4692,12 @@ module.exports = function (object, key, value) {
 /* 145 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var fails = __w_pdfjs_require__(11);
-var isObject = __w_pdfjs_require__(23);
-var classof = __w_pdfjs_require__(19);
-var ARRAY_BUFFER_NON_EXTENSIBLE = __w_pdfjs_require__(146);
-var $isExtensible = Object.isExtensible;
-var FAILS_ON_PRIMITIVES = fails(function () {
+const fails = __w_pdfjs_require__(11);
+const isObject = __w_pdfjs_require__(23);
+const classof = __w_pdfjs_require__(19);
+const ARRAY_BUFFER_NON_EXTENSIBLE = __w_pdfjs_require__(146);
+const $isExtensible = Object.isExtensible;
+const FAILS_ON_PRIMITIVES = fails(function () {
  $isExtensible(1);
 });
 module.exports = FAILS_ON_PRIMITIVES || ARRAY_BUFFER_NON_EXTENSIBLE ? function isExtensible(it) {
@@ -4712,10 +4712,10 @@ module.exports = FAILS_ON_PRIMITIVES || ARRAY_BUFFER_NON_EXTENSIBLE ? function i
 /* 146 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var fails = __w_pdfjs_require__(11);
+const fails = __w_pdfjs_require__(11);
 module.exports = fails(function () {
  if (typeof ArrayBuffer == 'function') {
-  var buffer = new ArrayBuffer(8);
+  const buffer = new ArrayBuffer(8);
   if (Object.isExtensible(buffer))
    Object.defineProperty(buffer, 'a', { value: 8 });
  }
@@ -4725,7 +4725,7 @@ module.exports = fails(function () {
 /* 147 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var fails = __w_pdfjs_require__(11);
+const fails = __w_pdfjs_require__(11);
 module.exports = !fails(function () {
  return Object.isExtensible(Object.preventExtensions({}));
 });
@@ -4734,11 +4734,11 @@ module.exports = !fails(function () {
 /* 148 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var isCallable = __w_pdfjs_require__(24);
-var isObject = __w_pdfjs_require__(23);
-var setPrototypeOf = __w_pdfjs_require__(71);
+const isCallable = __w_pdfjs_require__(24);
+const isObject = __w_pdfjs_require__(23);
+const setPrototypeOf = __w_pdfjs_require__(71);
 module.exports = function ($this, dummy, Wrapper) {
- var NewTarget, NewTargetPrototype;
+ let NewTarget, NewTargetPrototype;
  if (setPrototypeOf && isCallable(NewTarget = dummy.constructor) && NewTarget !== Wrapper && isObject(NewTargetPrototype = NewTarget.prototype) && NewTargetPrototype !== Wrapper.prototype)
   setPrototypeOf($this, NewTargetPrototype);
  return $this;
@@ -4750,22 +4750,22 @@ module.exports = function ($this, dummy, Wrapper) {
 
 "use strict";
 
-var defineProperty = (__w_pdfjs_require__(47).f);
-var create = __w_pdfjs_require__(73);
-var redefineAll = __w_pdfjs_require__(102);
-var bind = __w_pdfjs_require__(80);
-var anInstance = __w_pdfjs_require__(104);
-var iterate = __w_pdfjs_require__(79);
-var defineIterator = __w_pdfjs_require__(93);
-var setSpecies = __w_pdfjs_require__(103);
-var DESCRIPTORS = __w_pdfjs_require__(10);
-var fastKey = (__w_pdfjs_require__(141).fastKey);
-var InternalStateModule = __w_pdfjs_require__(52);
-var setInternalState = InternalStateModule.set;
-var internalStateGetterFor = InternalStateModule.getterFor;
+const defineProperty = (__w_pdfjs_require__(47).f);
+const create = __w_pdfjs_require__(73);
+const redefineAll = __w_pdfjs_require__(102);
+const bind = __w_pdfjs_require__(80);
+const anInstance = __w_pdfjs_require__(104);
+const iterate = __w_pdfjs_require__(79);
+const defineIterator = __w_pdfjs_require__(93);
+const setSpecies = __w_pdfjs_require__(103);
+const DESCRIPTORS = __w_pdfjs_require__(10);
+const fastKey = (__w_pdfjs_require__(141).fastKey);
+const InternalStateModule = __w_pdfjs_require__(52);
+const setInternalState = InternalStateModule.set;
+const internalStateGetterFor = InternalStateModule.getterFor;
 module.exports = {
  getConstructor: function (wrapper, CONSTRUCTOR_NAME, IS_MAP, ADDER) {
-  var Constructor = wrapper(function (that, iterable) {
+  const Constructor = wrapper(function (that, iterable) {
    anInstance(that, Prototype);
    setInternalState(that, {
     type: CONSTRUCTOR_NAME,
@@ -4783,11 +4783,11 @@ module.exports = {
     });
   });
   var Prototype = Constructor.prototype;
-  var getInternalState = internalStateGetterFor(CONSTRUCTOR_NAME);
-  var define = function (that, key, value) {
-   var state = getInternalState(that);
-   var entry = getEntry(that, key);
-   var previous, index;
+  const getInternalState = internalStateGetterFor(CONSTRUCTOR_NAME);
+  const define = function (that, key, value) {
+   const state = getInternalState(that);
+   let entry = getEntry(that, key);
+   let previous, index;
    if (entry) {
     entry.value = value;
    } else {
@@ -4813,9 +4813,9 @@ module.exports = {
    return that;
   };
   var getEntry = function (that, key) {
-   var state = getInternalState(that);
-   var index = fastKey(key);
-   var entry;
+   const state = getInternalState(that);
+   const index = fastKey(key);
+   let entry;
    if (index !== 'F')
     return state.index[index];
    for (entry = state.first; entry; entry = entry.next) {
@@ -4825,10 +4825,10 @@ module.exports = {
   };
   redefineAll(Prototype, {
    clear: function clear() {
-    var that = this;
-    var state = getInternalState(that);
-    var data = state.index;
-    var entry = state.first;
+    const that = this;
+    const state = getInternalState(that);
+    const data = state.index;
+    let entry = state.first;
     while (entry) {
      entry.removed = true;
      if (entry.previous)
@@ -4843,12 +4843,12 @@ module.exports = {
      that.size = 0;
    },
    'delete': function (key) {
-    var that = this;
-    var state = getInternalState(that);
-    var entry = getEntry(that, key);
+    const that = this;
+    const state = getInternalState(that);
+    const entry = getEntry(that, key);
     if (entry) {
-     var next = entry.next;
-     var prev = entry.previous;
+     const next = entry.next;
+     const prev = entry.previous;
      delete state.index[entry.index];
      entry.removed = true;
      if (prev)
@@ -4867,9 +4867,9 @@ module.exports = {
     return !!entry;
    },
    forEach: function forEach(callbackfn) {
-    var state = getInternalState(this);
-    var boundFunction = bind(callbackfn, arguments.length > 1 ? arguments[1] : undefined);
-    var entry;
+    const state = getInternalState(this);
+    const boundFunction = bind(callbackfn, arguments.length > 1 ? arguments[1] : undefined);
+    let entry;
     while (entry = entry ? entry.next : state.first) {
      boundFunction(entry.value, entry.key, this);
      while (entry && entry.removed)
@@ -4882,7 +4882,7 @@ module.exports = {
   });
   redefineAll(Prototype, IS_MAP ? {
    get: function get(key) {
-    var entry = getEntry(this, key);
+    const entry = getEntry(this, key);
     return entry && entry.value;
    },
    set: function set(key, value) {
@@ -4902,9 +4902,9 @@ module.exports = {
   return Constructor;
  },
  setStrong: function (Constructor, CONSTRUCTOR_NAME, IS_MAP) {
-  var ITERATOR_NAME = CONSTRUCTOR_NAME + ' Iterator';
-  var getInternalCollectionState = internalStateGetterFor(CONSTRUCTOR_NAME);
-  var getInternalIteratorState = internalStateGetterFor(ITERATOR_NAME);
+  const ITERATOR_NAME = CONSTRUCTOR_NAME + ' Iterator';
+  const getInternalCollectionState = internalStateGetterFor(CONSTRUCTOR_NAME);
+  const getInternalIteratorState = internalStateGetterFor(ITERATOR_NAME);
   defineIterator(Constructor, CONSTRUCTOR_NAME, function (iterated, kind) {
    setInternalState(this, {
     type: ITERATOR_NAME,
@@ -4914,9 +4914,9 @@ module.exports = {
     last: undefined
    });
   }, function () {
-   var state = getInternalIteratorState(this);
-   var kind = state.kind;
-   var entry = state.last;
+   const state = getInternalIteratorState(this);
+   const kind = state.kind;
+   let entry = state.last;
    while (entry && entry.removed)
     entry = entry.previous;
    if (!state.target || !(state.last = entry = entry ? entry.next : state.state.first)) {
@@ -4960,8 +4960,8 @@ __w_pdfjs_require__(151);
 
 "use strict";
 
-var collection = __w_pdfjs_require__(140);
-var collectionStrong = __w_pdfjs_require__(149);
+const collection = __w_pdfjs_require__(140);
+const collectionStrong = __w_pdfjs_require__(149);
 collection('Set', function (init) {
  return function Set() {
   return init(this, arguments.length ? arguments[0] : undefined);
@@ -4972,85 +4972,85 @@ collection('Set', function (init) {
 /* 152 */
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var IS_PURE = __w_pdfjs_require__(38);
-var $ = __w_pdfjs_require__(7);
-var global = __w_pdfjs_require__(8);
-var getBuiltin = __w_pdfjs_require__(26);
-var uncurryThis = __w_pdfjs_require__(18);
-var fails = __w_pdfjs_require__(11);
-var uid = __w_pdfjs_require__(43);
-var isCallable = __w_pdfjs_require__(24);
-var isConstructor = __w_pdfjs_require__(107);
-var isObject = __w_pdfjs_require__(23);
-var isSymbol = __w_pdfjs_require__(25);
-var iterate = __w_pdfjs_require__(79);
-var anObject = __w_pdfjs_require__(49);
-var classof = __w_pdfjs_require__(85);
-var hasOwn = __w_pdfjs_require__(41);
-var createProperty = __w_pdfjs_require__(144);
-var createNonEnumerableProperty = __w_pdfjs_require__(46);
-var lengthOfArrayLike = __w_pdfjs_require__(64);
-var validateArgumentsLength = __w_pdfjs_require__(111);
-var getRegExpFlags = __w_pdfjs_require__(153);
-var ERROR_STACK_INSTALLABLE = __w_pdfjs_require__(90);
-var Object = global.Object;
-var Date = global.Date;
-var Error = global.Error;
-var EvalError = global.EvalError;
-var RangeError = global.RangeError;
-var ReferenceError = global.ReferenceError;
-var SyntaxError = global.SyntaxError;
-var TypeError = global.TypeError;
-var URIError = global.URIError;
-var PerformanceMark = global.PerformanceMark;
-var WebAssembly = global.WebAssembly;
-var CompileError = WebAssembly && WebAssembly.CompileError || Error;
-var LinkError = WebAssembly && WebAssembly.LinkError || Error;
-var RuntimeError = WebAssembly && WebAssembly.RuntimeError || Error;
-var DOMException = getBuiltin('DOMException');
-var Set = getBuiltin('Set');
-var Map = getBuiltin('Map');
-var MapPrototype = Map.prototype;
-var mapHas = uncurryThis(MapPrototype.has);
-var mapGet = uncurryThis(MapPrototype.get);
-var mapSet = uncurryThis(MapPrototype.set);
-var setAdd = uncurryThis(Set.prototype.add);
-var objectKeys = getBuiltin('Object', 'keys');
-var push = uncurryThis([].push);
-var booleanValueOf = uncurryThis(true.valueOf);
-var numberValueOf = uncurryThis(1.0.valueOf);
-var stringValueOf = uncurryThis(''.valueOf);
-var getTime = uncurryThis(Date.prototype.getTime);
-var PERFORMANCE_MARK = uid('structuredClone');
-var DATA_CLONE_ERROR = 'DataCloneError';
-var TRANSFERRING = 'Transferring';
-var checkBasicSemantic = function (structuredCloneImplementation) {
+const IS_PURE = __w_pdfjs_require__(38);
+const $ = __w_pdfjs_require__(7);
+const global = __w_pdfjs_require__(8);
+const getBuiltin = __w_pdfjs_require__(26);
+const uncurryThis = __w_pdfjs_require__(18);
+const fails = __w_pdfjs_require__(11);
+const uid = __w_pdfjs_require__(43);
+const isCallable = __w_pdfjs_require__(24);
+const isConstructor = __w_pdfjs_require__(107);
+const isObject = __w_pdfjs_require__(23);
+const isSymbol = __w_pdfjs_require__(25);
+const iterate = __w_pdfjs_require__(79);
+const anObject = __w_pdfjs_require__(49);
+const classof = __w_pdfjs_require__(85);
+const hasOwn = __w_pdfjs_require__(41);
+const createProperty = __w_pdfjs_require__(144);
+const createNonEnumerableProperty = __w_pdfjs_require__(46);
+const lengthOfArrayLike = __w_pdfjs_require__(64);
+const validateArgumentsLength = __w_pdfjs_require__(111);
+const getRegExpFlags = __w_pdfjs_require__(153);
+const ERROR_STACK_INSTALLABLE = __w_pdfjs_require__(90);
+const Object = global.Object;
+const Date = global.Date;
+const Error = global.Error;
+const EvalError = global.EvalError;
+const RangeError = global.RangeError;
+const ReferenceError = global.ReferenceError;
+const SyntaxError = global.SyntaxError;
+const TypeError = global.TypeError;
+const URIError = global.URIError;
+const PerformanceMark = global.PerformanceMark;
+const WebAssembly = global.WebAssembly;
+const CompileError = WebAssembly && WebAssembly.CompileError || Error;
+const LinkError = WebAssembly && WebAssembly.LinkError || Error;
+const RuntimeError = WebAssembly && WebAssembly.RuntimeError || Error;
+const DOMException = getBuiltin('DOMException');
+const Set = getBuiltin('Set');
+const Map = getBuiltin('Map');
+const MapPrototype = Map.prototype;
+const mapHas = uncurryThis(MapPrototype.has);
+const mapGet = uncurryThis(MapPrototype.get);
+const mapSet = uncurryThis(MapPrototype.set);
+const setAdd = uncurryThis(Set.prototype.add);
+const objectKeys = getBuiltin('Object', 'keys');
+const push = uncurryThis([].push);
+const booleanValueOf = uncurryThis(true.valueOf);
+const numberValueOf = uncurryThis(1.0.valueOf);
+const stringValueOf = uncurryThis(''.valueOf);
+const getTime = uncurryThis(Date.prototype.getTime);
+const PERFORMANCE_MARK = uid('structuredClone');
+const DATA_CLONE_ERROR = 'DataCloneError';
+const TRANSFERRING = 'Transferring';
+const checkBasicSemantic = function (structuredCloneImplementation) {
  return !fails(function () {
-  var set1 = new global.Set([7]);
-  var set2 = structuredCloneImplementation(set1);
-  var number = structuredCloneImplementation(Object(7));
+  const set1 = new global.Set([7]);
+  const set2 = structuredCloneImplementation(set1);
+  const number = structuredCloneImplementation(Object(7));
   return set2 == set1 || !set2.has(7) || typeof number != 'object' || number != 7;
  }) && structuredCloneImplementation;
 };
-var checkNewErrorsSemantic = function (structuredCloneImplementation) {
+const checkNewErrorsSemantic = function (structuredCloneImplementation) {
  return !fails(function () {
-  var test = structuredCloneImplementation(new global.AggregateError([1], PERFORMANCE_MARK, { cause: 3 }));
+  const test = structuredCloneImplementation(new global.AggregateError([1], PERFORMANCE_MARK, { cause: 3 }));
   return test.name != 'AggregateError' || test.errors[0] != 1 || test.message != PERFORMANCE_MARK || test.cause != 3;
  }) && structuredCloneImplementation;
 };
-var nativeStructuredClone = global.structuredClone;
-var FORCED_REPLACEMENT = IS_PURE || !checkNewErrorsSemantic(nativeStructuredClone);
-var structuredCloneFromMark = !nativeStructuredClone && checkBasicSemantic(function (value) {
+const nativeStructuredClone = global.structuredClone;
+const FORCED_REPLACEMENT = IS_PURE || !checkNewErrorsSemantic(nativeStructuredClone);
+const structuredCloneFromMark = !nativeStructuredClone && checkBasicSemantic(function (value) {
  return new PerformanceMark(PERFORMANCE_MARK, { detail: value }).detail;
 });
-var nativeRestrictedStructuredClone = checkBasicSemantic(nativeStructuredClone) || structuredCloneFromMark;
-var throwUncloneable = function (type) {
+const nativeRestrictedStructuredClone = checkBasicSemantic(nativeStructuredClone) || structuredCloneFromMark;
+const throwUncloneable = function (type) {
  throw new DOMException('Uncloneable type: ' + type, DATA_CLONE_ERROR);
 };
-var throwUnpolyfillable = function (type, kind) {
+const throwUnpolyfillable = function (type, kind) {
  throw new DOMException((kind || 'Cloning') + ' of ' + type + ' cannot be properly polyfilled in this engine', DATA_CLONE_ERROR);
 };
-var structuredCloneInternal = function (value, map) {
+const structuredCloneInternal = function (value, map) {
  if (isSymbol(value))
   throwUncloneable('Symbol');
  if (!isObject(value))
@@ -5060,9 +5060,9 @@ var structuredCloneInternal = function (value, map) {
    return mapGet(map, value);
  } else
   map = new Map();
- var type = classof(value);
- var deep = false;
- var C, name, cloned, dataTransfer, i, length, keys, key, source, target;
+ const type = classof(value);
+ let deep = false;
+ let C, name, cloned, dataTransfer, i, length, keys, key, source, target;
  switch (type) {
  case 'Array':
   cloned = [];
@@ -5316,21 +5316,21 @@ var structuredCloneInternal = function (value, map) {
   }
  return cloned;
 };
-var PROPER_TRANSFER = nativeStructuredClone && !fails(function () {
- var buffer = new ArrayBuffer(8);
- var clone = nativeStructuredClone(buffer, { transfer: [buffer] });
+const PROPER_TRANSFER = nativeStructuredClone && !fails(function () {
+ const buffer = new ArrayBuffer(8);
+ const clone = nativeStructuredClone(buffer, { transfer: [buffer] });
  return buffer.byteLength != 0 || clone.byteLength != 8;
 });
-var tryToTransfer = function (rawTransfer, map) {
+const tryToTransfer = function (rawTransfer, map) {
  if (!isObject(rawTransfer))
   throw TypeError('Transfer option cannot be converted to a sequence');
- var transfer = [];
+ const transfer = [];
  iterate(rawTransfer, function (value) {
   push(transfer, anObject(value));
  });
- var i = 0;
- var length = lengthOfArrayLike(transfer);
- var value, type, C, transferredArray, transferred, canvas, context;
+ let i = 0;
+ const length = lengthOfArrayLike(transfer);
+ let value, type, C, transferredArray, transferred, canvas, context;
  if (PROPER_TRANSFER) {
   transferredArray = nativeStructuredClone(transfer, { transfer: transfer });
   while (i < length)
@@ -5384,9 +5384,9 @@ $({
  forced: FORCED_REPLACEMENT
 }, {
  structuredClone: function structuredClone(value) {
-  var options = validateArgumentsLength(arguments.length, 1) > 1 && arguments[1] != null ? anObject(arguments[1]) : undefined;
-  var transfer = options ? options.transfer : undefined;
-  var map;
+  const options = validateArgumentsLength(arguments.length, 1) > 1 && arguments[1] != null ? anObject(arguments[1]) : undefined;
+  const transfer = options ? options.transfer : undefined;
+  let map;
   if (transfer !== undefined) {
    map = new Map();
    tryToTransfer(transfer, map);
@@ -5399,13 +5399,13 @@ $({
 /* 153 */
 /***/ ((module, __unused_webpack_exports, __w_pdfjs_require__) => {
 
-var call = __w_pdfjs_require__(12);
-var hasOwn = __w_pdfjs_require__(41);
-var isPrototypeOf = __w_pdfjs_require__(27);
-var regExpFlags = __w_pdfjs_require__(154);
-var RegExpPrototype = RegExp.prototype;
+const call = __w_pdfjs_require__(12);
+const hasOwn = __w_pdfjs_require__(41);
+const isPrototypeOf = __w_pdfjs_require__(27);
+const regExpFlags = __w_pdfjs_require__(154);
+const RegExpPrototype = RegExp.prototype;
 module.exports = function (R) {
- var flags = R.flags;
+ const flags = R.flags;
  return flags === undefined && !('flags' in RegExpPrototype) && !hasOwn(R, 'flags') && isPrototypeOf(RegExpPrototype, R) ? call(regExpFlags, R) : flags;
 };
 
@@ -5415,10 +5415,10 @@ module.exports = function (R) {
 
 "use strict";
 
-var anObject = __w_pdfjs_require__(49);
+const anObject = __w_pdfjs_require__(49);
 module.exports = function () {
- var that = anObject(this);
- var result = '';
+ const that = anObject(this);
+ let result = '';
  if (that.hasIndices)
   result += 'd';
  if (that.global)
@@ -5451,31 +5451,31 @@ exports.getDocument = getDocument;
 exports.setPDFNetworkStreamFactory = setPDFNetworkStreamFactory;
 exports.version = void 0;
 
-var _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
+const _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
-var _display_utils = __w_pdfjs_require__(158);
+const _display_utils = __w_pdfjs_require__(158);
 
-var _font_loader = __w_pdfjs_require__(160);
+const _font_loader = __w_pdfjs_require__(160);
 
-var _annotation_storage = __w_pdfjs_require__(161);
+const _annotation_storage = __w_pdfjs_require__(161);
 
-var _canvas = __w_pdfjs_require__(163);
+const _canvas = __w_pdfjs_require__(163);
 
-var _worker_options = __w_pdfjs_require__(166);
+const _worker_options = __w_pdfjs_require__(166);
 
-var _is_node = __w_pdfjs_require__(3);
+const _is_node = __w_pdfjs_require__(3);
 
-var _message_handler = __w_pdfjs_require__(167);
+const _message_handler = __w_pdfjs_require__(167);
 
-var _metadata = __w_pdfjs_require__(168);
+const _metadata = __w_pdfjs_require__(168);
 
-var _optional_content_config = __w_pdfjs_require__(169);
+const _optional_content_config = __w_pdfjs_require__(169);
 
-var _transport_stream = __w_pdfjs_require__(170);
+const _transport_stream = __w_pdfjs_require__(170);
 
-var _xfa_text = __w_pdfjs_require__(171);
+const _xfa_text = __w_pdfjs_require__(171);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -5487,9 +5487,9 @@ function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedec
 
 function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
 
-function _classPrivateFieldSet(receiver, privateMap, value) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set"); _classApplyDescriptorSet(receiver, descriptor, value); return value; }
+function _classPrivateFieldSet(receiver, privateMap, value) { const descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set"); _classApplyDescriptorSet(receiver, descriptor, value); return value; }
 
-function _classPrivateFieldGet(receiver, privateMap) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get"); return _classApplyDescriptorGet(receiver, descriptor); }
+function _classPrivateFieldGet(receiver, privateMap) { const descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get"); return _classApplyDescriptorGet(receiver, descriptor); }
 
 function _classExtractFieldDescriptor(receiver, privateMap, action) { if (!privateMap.has(receiver)) { throw new TypeError("attempted to " + action + " private field on non-instance"); } return privateMap.get(receiver); }
 
@@ -5501,11 +5501,11 @@ function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symb
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
@@ -5523,33 +5523,33 @@ function _classApplyDescriptorGet(receiver, descriptor) { if (descriptor.get) { 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _asyncToGenerator(fn) { return function () { const self = this, args = arguments; return new Promise(function (resolve, reject) { const gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { let _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; const _arr = []; let _n = true; let _d = false; let _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
-var DEFAULT_RANGE_CHUNK_SIZE = 65536;
-var RENDERING_CANCELLED_TIMEOUT = 100;
-var DefaultCanvasFactory = _display_utils.DOMCanvasFactory;
+const DEFAULT_RANGE_CHUNK_SIZE = 65536;
+const RENDERING_CANCELLED_TIMEOUT = 100;
+let DefaultCanvasFactory = _display_utils.DOMCanvasFactory;
 exports.DefaultCanvasFactory = DefaultCanvasFactory;
-var DefaultCMapReaderFactory = _display_utils.DOMCMapReaderFactory;
+let DefaultCMapReaderFactory = _display_utils.DOMCMapReaderFactory;
 exports.DefaultCMapReaderFactory = DefaultCMapReaderFactory;
-var DefaultStandardFontDataFactory = _display_utils.DOMStandardFontDataFactory;
+let DefaultStandardFontDataFactory = _display_utils.DOMStandardFontDataFactory;
 exports.DefaultStandardFontDataFactory = DefaultStandardFontDataFactory;
 
 if (_is_node.isNodeJS) {
-  var _require = __w_pdfjs_require__(172),
+  const _require = __w_pdfjs_require__(172),
       NodeCanvasFactory = _require.NodeCanvasFactory,
       NodeCMapReaderFactory = _require.NodeCMapReaderFactory,
       NodeStandardFontDataFactory = _require.NodeStandardFontDataFactory;
@@ -5559,15 +5559,15 @@ if (_is_node.isNodeJS) {
   exports.DefaultStandardFontDataFactory = DefaultStandardFontDataFactory = NodeStandardFontDataFactory;
 }
 
-var createPDFNetworkStream;
+let createPDFNetworkStream;
 
 function setPDFNetworkStreamFactory(pdfNetworkStreamFactory) {
   createPDFNetworkStream = pdfNetworkStreamFactory;
 }
 
 function getDocument(src) {
-  var task = new PDFDocumentLoadingTask();
-  var source;
+  const task = new PDFDocumentLoadingTask();
+  let source;
 
   if (typeof src === "string" || src instanceof URL) {
     source = {
@@ -5593,12 +5593,12 @@ function getDocument(src) {
     source = src;
   }
 
-  var params = Object.create(null);
-  var rangeTransport = null,
+  const params = Object.create(null);
+  let rangeTransport = null,
       worker = null;
 
-  for (var key in source) {
-    var value = source[key];
+  for (const key in source) {
+    const value = source[key];
 
     switch (key) {
       case "url":
@@ -5707,7 +5707,7 @@ function getDocument(src) {
   (0, _util.setVerbosityLevel)(params.verbosity);
 
   if (!worker) {
-    var workerParams = {
+    const workerParams = {
       verbosity: params.verbosity,
       port: _worker_options.GlobalWorkerOptions.workerPort
     };
@@ -5715,16 +5715,16 @@ function getDocument(src) {
     task._worker = worker;
   }
 
-  var docId = task.docId;
+  const docId = task.docId;
   worker.promise.then(function () {
     if (task.destroyed) {
       throw new Error("Loading aborted");
     }
 
-    var workerIdPromise = _fetchDocument(worker, params, rangeTransport, docId);
+    const workerIdPromise = _fetchDocument(worker, params, rangeTransport, docId);
 
-    var networkStreamPromise = new Promise(function (resolve) {
-      var networkStream;
+    const networkStreamPromise = new Promise(function (resolve) {
+      let networkStream;
 
       if (rangeTransport) {
         networkStream = new _transport_stream.PDFDataTransportStream({
@@ -5750,7 +5750,7 @@ function getDocument(src) {
       resolve(networkStream);
     });
     return Promise.all([workerIdPromise, networkStreamPromise]).then(function (_ref) {
-      var _ref2 = _slicedToArray(_ref, 2),
+      const _ref2 = _slicedToArray(_ref, 2),
           workerId = _ref2[0],
           networkStream = _ref2[1];
 
@@ -5758,8 +5758,8 @@ function getDocument(src) {
         throw new Error("Loading aborted");
       }
 
-      var messageHandler = new _message_handler.MessageHandler(docId, workerId, worker.port);
-      var transport = new WorkerTransport(messageHandler, task, networkStream, params);
+      const messageHandler = new _message_handler.MessageHandler(docId, workerId, worker.port);
+      const transport = new WorkerTransport(messageHandler, task, networkStream, params);
       task._transport = transport;
       messageHandler.send("Ready", null);
     });
@@ -5773,7 +5773,7 @@ function _fetchDocument(_x, _x2, _x3, _x4) {
 
 function _fetchDocument2() {
   _fetchDocument2 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee7(worker, source, pdfDataRangeTransport, docId) {
-    var workerId;
+    let workerId;
     return _regenerator["default"].wrap(function _callee7$(_context7) {
       while (1) {
         switch (_context7.prev = _context7.next) {
@@ -5842,7 +5842,7 @@ function _fetchDocument2() {
 
 var PDFDocumentLoadingTask = /*#__PURE__*/function () {
   function PDFDocumentLoadingTask() {
-    var _PDFDocumentLoadingTa, _PDFDocumentLoadingTa2;
+    let _PDFDocumentLoadingTa, _PDFDocumentLoadingTa2;
 
     _classCallCheck(this, PDFDocumentLoadingTask);
 
@@ -5864,8 +5864,8 @@ var PDFDocumentLoadingTask = /*#__PURE__*/function () {
   }, {
     key: "destroy",
     value: function () {
-      var _destroy = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
-        var _this$_transport;
+      const _destroy = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
+        let _this$_transport;
 
         return _regenerator["default"].wrap(function _callee$(_context) {
           while (1) {
@@ -5911,8 +5911,8 @@ var _docId = {
 
 var PDFDataRangeTransport = /*#__PURE__*/function () {
   function PDFDataRangeTransport(length, initialData) {
-    var progressiveDone = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-    var contentDispositionFilename = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+    const progressiveDone = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+    const contentDispositionFilename = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
 
     _classCallCheck(this, PDFDataRangeTransport);
 
@@ -5950,12 +5950,12 @@ var PDFDataRangeTransport = /*#__PURE__*/function () {
   }, {
     key: "onDataRange",
     value: function onDataRange(begin, chunk) {
-      var _iterator = _createForOfIteratorHelper(this._rangeListeners),
+      let _iterator = _createForOfIteratorHelper(this._rangeListeners),
           _step;
 
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var listener = _step.value;
+          const listener = _step.value;
           listener(begin, chunk);
         }
       } catch (err) {
@@ -5967,15 +5967,15 @@ var PDFDataRangeTransport = /*#__PURE__*/function () {
   }, {
     key: "onDataProgress",
     value: function onDataProgress(loaded, total) {
-      var _this = this;
+      const _this = this;
 
       this._readyCapability.promise.then(function () {
-        var _iterator2 = _createForOfIteratorHelper(_this._progressListeners),
+        let _iterator2 = _createForOfIteratorHelper(_this._progressListeners),
             _step2;
 
         try {
           for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-            var listener = _step2.value;
+            const listener = _step2.value;
             listener(loaded, total);
           }
         } catch (err) {
@@ -5988,15 +5988,15 @@ var PDFDataRangeTransport = /*#__PURE__*/function () {
   }, {
     key: "onDataProgressiveRead",
     value: function onDataProgressiveRead(chunk) {
-      var _this2 = this;
+      const _this2 = this;
 
       this._readyCapability.promise.then(function () {
-        var _iterator3 = _createForOfIteratorHelper(_this2._progressiveReadListeners),
+        let _iterator3 = _createForOfIteratorHelper(_this2._progressiveReadListeners),
             _step3;
 
         try {
           for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-            var listener = _step3.value;
+            const listener = _step3.value;
             listener(chunk);
           }
         } catch (err) {
@@ -6009,15 +6009,15 @@ var PDFDataRangeTransport = /*#__PURE__*/function () {
   }, {
     key: "onDataProgressiveDone",
     value: function onDataProgressiveDone() {
-      var _this3 = this;
+      const _this3 = this;
 
       this._readyCapability.promise.then(function () {
-        var _iterator4 = _createForOfIteratorHelper(_this3._progressiveDoneListeners),
+        let _iterator4 = _createForOfIteratorHelper(_this3._progressiveDoneListeners),
             _step4;
 
         try {
           for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-            var listener = _step4.value;
+            const listener = _step4.value;
             listener();
           }
         } catch (err) {
@@ -6047,9 +6047,9 @@ var PDFDataRangeTransport = /*#__PURE__*/function () {
 
 exports.PDFDataRangeTransport = PDFDataRangeTransport;
 
-var PDFDocumentProxy = /*#__PURE__*/function () {
+const PDFDocumentProxy = /*#__PURE__*/function () {
   function PDFDocumentProxy(pdfInfo, transport) {
-    var _this4 = this;
+    const _this4 = this;
 
     _classCallCheck(this, PDFDocumentProxy);
 
@@ -6063,7 +6063,7 @@ var PDFDocumentProxy = /*#__PURE__*/function () {
     });
     Object.defineProperty(this, "getStats", {
       value: function () {
-        var _value = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee2() {
+        const _value = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee2() {
           return _regenerator["default"].wrap(function _callee2$(_context2) {
             while (1) {
               switch (_context2.prev = _context2.next) {
@@ -6219,7 +6219,7 @@ var PDFDocumentProxy = /*#__PURE__*/function () {
   }, {
     key: "cleanup",
     value: function cleanup() {
-      var keepLoadedFonts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      const keepLoadedFonts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
       return this._transport.startCleanup(keepLoadedFonts || this.isPureXfa);
     }
   }, {
@@ -6268,9 +6268,9 @@ var PDFDocumentProxy = /*#__PURE__*/function () {
 
 exports.PDFDocumentProxy = PDFDocumentProxy;
 
-var PDFPageProxy = /*#__PURE__*/function () {
+const PDFPageProxy = /*#__PURE__*/function () {
   function PDFPageProxy(pageIndex, pageInfo, transport, ownerDocument) {
-    var pdfBug = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
+    const pdfBug = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
 
     _classCallCheck(this, PDFPageProxy);
 
@@ -6318,7 +6318,7 @@ var PDFPageProxy = /*#__PURE__*/function () {
   }, {
     key: "getViewport",
     value: function getViewport() {
-      var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      const _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
           scale = _ref3.scale,
           _ref3$rotation = _ref3.rotation,
           rotation = _ref3$rotation === void 0 ? this.rotate : _ref3$rotation,
@@ -6341,13 +6341,13 @@ var PDFPageProxy = /*#__PURE__*/function () {
   }, {
     key: "getAnnotations",
     value: function getAnnotations() {
-      var _ref4 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      const _ref4 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
           _ref4$intent = _ref4.intent,
           intent = _ref4$intent === void 0 ? "display" : _ref4$intent;
 
-      var intentArgs = this._transport.getRenderingIntent(intent);
+      const intentArgs = this._transport.getRenderingIntent(intent);
 
-      var promise = this._annotationPromises.get(intentArgs.cacheKey);
+      let promise = this._annotationPromises.get(intentArgs.cacheKey);
 
       if (!promise) {
         promise = this._transport.getAnnotations(this._pageIndex, intentArgs.renderingIntent);
@@ -6355,12 +6355,12 @@ var PDFPageProxy = /*#__PURE__*/function () {
         this._annotationPromises.set(intentArgs.cacheKey, promise);
 
         promise = promise.then(function (annotations) {
-          var _iterator5 = _createForOfIteratorHelper(annotations),
+          let _iterator5 = _createForOfIteratorHelper(annotations),
               _step5;
 
           try {
-            var _loop = function _loop() {
-              var annotation = _step5.value;
+            const _loop = function _loop() {
+              const annotation = _step5.value;
 
               if (annotation.titleObj !== undefined) {
                 Object.defineProperty(annotation, "title", {
@@ -6404,8 +6404,8 @@ var PDFPageProxy = /*#__PURE__*/function () {
   }, {
     key: "getXfa",
     value: function () {
-      var _getXfa = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee3() {
-        var _this$_transport$_htm;
+      const _getXfa = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee3() {
+        let _this$_transport$_htm;
 
         return _regenerator["default"].wrap(function _callee3$(_context3) {
           while (1) {
@@ -6430,12 +6430,12 @@ var PDFPageProxy = /*#__PURE__*/function () {
   }, {
     key: "render",
     value: function render(_ref5) {
-      var _arguments$,
+      let _arguments$,
           _arguments$2,
           _this5 = this,
           _intentState;
 
-      var canvasContext = _ref5.canvasContext,
+      let canvasContext = _ref5.canvasContext,
           viewport = _ref5.viewport,
           _ref5$intent = _ref5.intent,
           intent = _ref5$intent === void 0 ? "display" : _ref5$intent,
@@ -6476,7 +6476,7 @@ var PDFPageProxy = /*#__PURE__*/function () {
         this._stats.time("Overall");
       }
 
-      var intentArgs = this._transport.getRenderingIntent(intent, annotationMode);
+      const intentArgs = this._transport.getRenderingIntent(intent, annotationMode);
 
       this.pendingCleanup = false;
 
@@ -6484,7 +6484,7 @@ var PDFPageProxy = /*#__PURE__*/function () {
         optionalContentConfigPromise = this._transport.getOptionalContentConfig();
       }
 
-      var intentState = this._intentStates.get(intentArgs.cacheKey);
+      let intentState = this._intentStates.get(intentArgs.cacheKey);
 
       if (!intentState) {
         intentState = Object.create(null);
@@ -6497,10 +6497,10 @@ var PDFPageProxy = /*#__PURE__*/function () {
         intentState.streamReaderCancelTimeout = null;
       }
 
-      var canvasFactoryInstance = canvasFactory || new DefaultCanvasFactory({
+      const canvasFactoryInstance = canvasFactory || new DefaultCanvasFactory({
         ownerDocument: this._ownerDocument
       });
-      var intentPrint = !!(intentArgs.renderingIntent & _util.RenderingIntentFlag.PRINT);
+      const intentPrint = !!(intentArgs.renderingIntent & _util.RenderingIntentFlag.PRINT);
 
       if (!intentState.displayReadyCapability) {
         intentState.displayReadyCapability = (0, _util.createPromiseCapability)();
@@ -6517,7 +6517,7 @@ var PDFPageProxy = /*#__PURE__*/function () {
         this._pumpOperatorList(intentArgs);
       }
 
-      var complete = function complete(error) {
+      const complete = function complete(error) {
         intentState.renderTasks["delete"](internalRenderTask);
 
         if (_this5.cleanupAfterRender || intentPrint) {
@@ -6564,9 +6564,9 @@ var PDFPageProxy = /*#__PURE__*/function () {
         pageColors: pageColors
       });
       ((_intentState = intentState).renderTasks || (_intentState.renderTasks = new Set())).add(internalRenderTask);
-      var renderTask = internalRenderTask.task;
+      const renderTask = internalRenderTask.task;
       Promise.all([intentState.displayReadyCapability.promise, optionalContentConfigPromise]).then(function (_ref6) {
-        var _ref7 = _slicedToArray(_ref6, 2),
+        const _ref7 = _slicedToArray(_ref6, 2),
             transparency = _ref7[0],
             optionalContentConfig = _ref7[1];
 
@@ -6590,7 +6590,7 @@ var PDFPageProxy = /*#__PURE__*/function () {
   }, {
     key: "getOperatorList",
     value: function getOperatorList() {
-      var _ref8 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      const _ref8 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
           _ref8$intent = _ref8.intent,
           intent = _ref8$intent === void 0 ? "display" : _ref8$intent,
           _ref8$annotationMode = _ref8.annotationMode,
@@ -6603,7 +6603,7 @@ var PDFPageProxy = /*#__PURE__*/function () {
         }
       }
 
-      var intentArgs = this._transport.getRenderingIntent(intent, annotationMode, true);
+      const intentArgs = this._transport.getRenderingIntent(intent, annotationMode, true);
 
       var intentState = this._intentStates.get(intentArgs.cacheKey);
 
@@ -6613,10 +6613,10 @@ var PDFPageProxy = /*#__PURE__*/function () {
         this._intentStates.set(intentArgs.cacheKey, intentState);
       }
 
-      var opListTask;
+      let opListTask;
 
       if (!intentState.opListReadCapability) {
-        var _intentState2;
+        let _intentState2;
 
         opListTask = Object.create(null);
         opListTask.operatorListChanged = operatorListChanged;
@@ -6640,13 +6640,13 @@ var PDFPageProxy = /*#__PURE__*/function () {
   }, {
     key: "streamTextContent",
     value: function streamTextContent() {
-      var _ref9 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      const _ref9 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
           _ref9$disableCombineT = _ref9.disableCombineTextItems,
           disableCombineTextItems = _ref9$disableCombineT === void 0 ? false : _ref9$disableCombineT,
           _ref9$includeMarkedCo = _ref9.includeMarkedContent,
           includeMarkedContent = _ref9$includeMarkedCo === void 0 ? false : _ref9$includeMarkedCo;
 
-      var TEXT_CONTENT_CHUNK_SIZE = 100;
+      const TEXT_CONTENT_CHUNK_SIZE = 100;
       return this._transport.messageHandler.sendWithStream("GetTextContent", {
         pageIndex: this._pageIndex,
         combineTextItems: disableCombineTextItems !== true,
@@ -6661,7 +6661,7 @@ var PDFPageProxy = /*#__PURE__*/function () {
   }, {
     key: "getTextContent",
     value: function getTextContent() {
-      var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      const params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
       if (this._transport._htmlForXfa) {
         return this.getXfa().then(function (xfa) {
@@ -6669,13 +6669,13 @@ var PDFPageProxy = /*#__PURE__*/function () {
         });
       }
 
-      var readableStream = this.streamTextContent(params);
+      const readableStream = this.streamTextContent(params);
       return new Promise(function (resolve, reject) {
         function pump() {
           reader.read().then(function (_ref10) {
-            var _textContent$items;
+            let _textContent$items;
 
-            var value = _ref10.value,
+            const value = _ref10.value,
                 done = _ref10.done;
 
             if (done) {
@@ -6708,14 +6708,14 @@ var PDFPageProxy = /*#__PURE__*/function () {
     key: "_destroy",
     value: function _destroy() {
       this.destroyed = true;
-      var waitOn = [];
+      const waitOn = [];
 
-      var _iterator6 = _createForOfIteratorHelper(this._intentStates.values()),
+      let _iterator6 = _createForOfIteratorHelper(this._intentStates.values()),
           _step6;
 
       try {
         for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
-          var intentState = _step6.value;
+          const intentState = _step6.value;
 
           this._abortOperatorList({
             intentState: intentState,
@@ -6732,7 +6732,7 @@ var PDFPageProxy = /*#__PURE__*/function () {
 
           try {
             for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
-              var internalRenderTask = _step8.value;
+              const internalRenderTask = _step8.value;
               waitOn.push(internalRenderTask.completed);
               internalRenderTask.cancel();
             }
@@ -6750,12 +6750,12 @@ var PDFPageProxy = /*#__PURE__*/function () {
 
       this.objs.clear();
 
-      var _iterator7 = _createForOfIteratorHelper(this._bitmaps),
+      let _iterator7 = _createForOfIteratorHelper(this._bitmaps),
           _step7;
 
       try {
         for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
-          var bitmap = _step7.value;
+          const bitmap = _step7.value;
           bitmap.close();
         }
       } catch (err) {
@@ -6776,25 +6776,25 @@ var PDFPageProxy = /*#__PURE__*/function () {
   }, {
     key: "cleanup",
     value: function cleanup() {
-      var resetStats = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      const resetStats = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
       this.pendingCleanup = true;
       return this._tryCleanup(resetStats);
     }
   }, {
     key: "_tryCleanup",
     value: function _tryCleanup() {
-      var resetStats = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      const resetStats = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
       if (!this.pendingCleanup) {
         return false;
       }
 
-      var _iterator9 = _createForOfIteratorHelper(this._intentStates.values()),
+      let _iterator9 = _createForOfIteratorHelper(this._intentStates.values()),
           _step9;
 
       try {
         for (_iterator9.s(); !(_step9 = _iterator9.n()).done;) {
-          var _step9$value = _step9.value,
+          const _step9$value = _step9.value,
               renderTasks = _step9$value.renderTasks,
               operatorList = _step9$value.operatorList;
 
@@ -6821,12 +6821,12 @@ var PDFPageProxy = /*#__PURE__*/function () {
         this._stats = new _display_utils.StatTimer();
       }
 
-      var _iterator10 = _createForOfIteratorHelper(this._bitmaps),
+      let _iterator10 = _createForOfIteratorHelper(this._bitmaps),
           _step10;
 
       try {
         for (_iterator10.s(); !(_step10 = _iterator10.n()).done;) {
-          var bitmap = _step10.value;
+          const bitmap = _step10.value;
           bitmap.close();
         }
       } catch (err) {
@@ -6843,7 +6843,7 @@ var PDFPageProxy = /*#__PURE__*/function () {
   }, {
     key: "_startRenderPage",
     value: function _startRenderPage(transparency, cacheKey) {
-      var intentState = this._intentStates.get(cacheKey);
+      const intentState = this._intentStates.get(cacheKey);
 
       if (!intentState) {
         return;
@@ -6860,19 +6860,19 @@ var PDFPageProxy = /*#__PURE__*/function () {
   }, {
     key: "_renderPageChunk",
     value: function _renderPageChunk(operatorListChunk, intentState) {
-      for (var i = 0, ii = operatorListChunk.length; i < ii; i++) {
+      for (let i = 0, ii = operatorListChunk.length; i < ii; i++) {
         intentState.operatorList.fnArray.push(operatorListChunk.fnArray[i]);
         intentState.operatorList.argsArray.push(operatorListChunk.argsArray[i]);
       }
 
       intentState.operatorList.lastChunk = operatorListChunk.lastChunk;
 
-      var _iterator11 = _createForOfIteratorHelper(intentState.renderTasks),
+      let _iterator11 = _createForOfIteratorHelper(intentState.renderTasks),
           _step11;
 
       try {
         for (_iterator11.s(); !(_step11 = _iterator11.n()).done;) {
-          var internalRenderTask = _step11.value;
+          const internalRenderTask = _step11.value;
           internalRenderTask.operatorListChanged();
         }
       } catch (err) {
@@ -6888,27 +6888,27 @@ var PDFPageProxy = /*#__PURE__*/function () {
   }, {
     key: "_pumpOperatorList",
     value: function _pumpOperatorList(_ref11) {
-      var _this6 = this;
+      const _this6 = this;
 
-      var renderingIntent = _ref11.renderingIntent,
+      const renderingIntent = _ref11.renderingIntent,
           cacheKey = _ref11.cacheKey;
 
-      var readableStream = this._transport.messageHandler.sendWithStream("GetOperatorList", {
+      const readableStream = this._transport.messageHandler.sendWithStream("GetOperatorList", {
         pageIndex: this._pageIndex,
         intent: renderingIntent,
         cacheKey: cacheKey,
         annotationStorage: renderingIntent & _util.RenderingIntentFlag.ANNOTATIONS_STORAGE ? this._transport.annotationStorage.serializable : null
       });
 
-      var reader = readableStream.getReader();
+      const reader = readableStream.getReader();
 
-      var intentState = this._intentStates.get(cacheKey);
+      const intentState = this._intentStates.get(cacheKey);
 
       intentState.streamReader = reader;
 
-      var pump = function pump() {
+      const pump = function pump() {
         reader.read().then(function (_ref12) {
-          var value = _ref12.value,
+          const value = _ref12.value,
               done = _ref12.done;
 
           if (done) {
@@ -6933,12 +6933,12 @@ var PDFPageProxy = /*#__PURE__*/function () {
           if (intentState.operatorList) {
             intentState.operatorList.lastChunk = true;
 
-            var _iterator12 = _createForOfIteratorHelper(intentState.renderTasks),
+            let _iterator12 = _createForOfIteratorHelper(intentState.renderTasks),
                 _step12;
 
             try {
               for (_iterator12.s(); !(_step12 = _iterator12.n()).done;) {
-                var internalRenderTask = _step12.value;
+                const internalRenderTask = _step12.value;
                 internalRenderTask.operatorListChanged();
               }
             } catch (err) {
@@ -6965,9 +6965,9 @@ var PDFPageProxy = /*#__PURE__*/function () {
   }, {
     key: "_abortOperatorList",
     value: function _abortOperatorList(_ref13) {
-      var _this7 = this;
+      const _this7 = this;
 
-      var intentState = _ref13.intentState,
+      const intentState = _ref13.intentState,
           reason = _ref13.reason,
           _ref13$force = _ref13.force,
           force = _ref13$force === void 0 ? false : _ref13$force;
@@ -7002,12 +7002,12 @@ var PDFPageProxy = /*#__PURE__*/function () {
         return;
       }
 
-      var _iterator13 = _createForOfIteratorHelper(this._intentStates),
+      let _iterator13 = _createForOfIteratorHelper(this._intentStates),
           _step13;
 
       try {
         for (_iterator13.s(); !(_step13 = _iterator13.n()).done;) {
-          var _step13$value = _slicedToArray(_step13.value, 2),
+          const _step13$value = _slicedToArray(_step13.value, 2),
               curCacheKey = _step13$value[0],
               curIntentState = _step13$value[1];
 
@@ -7037,7 +7037,7 @@ var PDFPageProxy = /*#__PURE__*/function () {
 
 exports.PDFPageProxy = PDFPageProxy;
 
-var LoopbackPort = /*#__PURE__*/function () {
+const LoopbackPort = /*#__PURE__*/function () {
   function LoopbackPort() {
     _classCallCheck(this, LoopbackPort);
 
@@ -7048,19 +7048,19 @@ var LoopbackPort = /*#__PURE__*/function () {
   _createClass(LoopbackPort, [{
     key: "postMessage",
     value: function postMessage(obj, transfers) {
-      var _this8 = this;
+      const _this8 = this;
 
-      var event = {
+      const event = {
         data: structuredClone(obj, transfers)
       };
 
       this._deferred.then(function () {
-        var _iterator14 = _createForOfIteratorHelper(_this8._listeners),
+        let _iterator14 = _createForOfIteratorHelper(_this8._listeners),
             _step14;
 
         try {
           for (_iterator14.s(); !(_step14 = _iterator14.n()).done;) {
-            var listener = _step14.value;
+            const listener = _step14.value;
             listener.call(_this8, event);
           }
         } catch (err) {
@@ -7078,7 +7078,7 @@ var LoopbackPort = /*#__PURE__*/function () {
   }, {
     key: "removeEventListener",
     value: function removeEventListener(name, listener) {
-      var i = this._listeners.indexOf(listener);
+      const i = this._listeners.indexOf(listener);
 
       this._listeners.splice(i, 1);
     }
@@ -7093,7 +7093,7 @@ var LoopbackPort = /*#__PURE__*/function () {
 }();
 
 exports.LoopbackPort = LoopbackPort;
-var PDFWorkerUtil = {
+const PDFWorkerUtil = {
   isWorkerDisabled: false,
   fallbackWorkerSrc: null,
   fakeWorkerId: 0
@@ -7104,9 +7104,9 @@ exports.PDFWorkerUtil = PDFWorkerUtil;
     PDFWorkerUtil.isWorkerDisabled = true;
     PDFWorkerUtil.fallbackWorkerSrc = "./pdf.worker.js";
   } else if ((typeof document === "undefined" ? "undefined" : _typeof(document)) === "object") {
-    var _document, _document$currentScri;
+    let _document, _document$currentScri;
 
-    var pdfjsFilePath = (_document = document) === null || _document === void 0 ? void 0 : (_document$currentScri = _document.currentScript) === null || _document$currentScri === void 0 ? void 0 : _document$currentScri.src;
+    const pdfjsFilePath = (_document = document) === null || _document === void 0 ? void 0 : (_document$currentScri = _document.currentScript) === null || _document$currentScri === void 0 ? void 0 : _document$currentScri.src;
 
     if (pdfjsFilePath) {
       PDFWorkerUtil.fallbackWorkerSrc = pdfjsFilePath.replace(/(\.(?:min\.)?js)(\?.*)?$/i, ".worker$1$2");
@@ -7114,7 +7114,7 @@ exports.PDFWorkerUtil = PDFWorkerUtil;
   }
 
   PDFWorkerUtil.isSameOrigin = function (baseUrl, otherUrl) {
-    var base;
+    let base;
 
     try {
       base = new URL(baseUrl);
@@ -7126,19 +7126,19 @@ exports.PDFWorkerUtil = PDFWorkerUtil;
       return false;
     }
 
-    var other = new URL(otherUrl, base);
+    const other = new URL(otherUrl, base);
     return base.origin === other.origin;
   };
 
   PDFWorkerUtil.createCDNWrapper = function (url) {
-    var wrapper = "importScripts(\"".concat(url, "\");");
+    const wrapper = "importScripts(\"".concat(url, "\");");
     return URL.createObjectURL(new Blob([wrapper]));
   };
 }
 
 var PDFWorker = /*#__PURE__*/function () {
   function PDFWorker() {
-    var _ref14 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+    const _ref14 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
         _ref14$name = _ref14.name,
         name = _ref14$name === void 0 ? null : _ref14$name,
         _ref14$port = _ref14.port,
@@ -7199,20 +7199,20 @@ var PDFWorker = /*#__PURE__*/function () {
   }, {
     key: "_initialize",
     value: function _initialize() {
-      var _this9 = this;
+      const _this9 = this;
 
       if (typeof Worker !== "undefined" && !PDFWorkerUtil.isWorkerDisabled && !PDFWorker._mainThreadWorkerMessageHandler) {
-        var workerSrc = PDFWorker.workerSrc;
+        let workerSrc = PDFWorker.workerSrc;
 
         try {
           if (!PDFWorkerUtil.isSameOrigin(window.location.href, workerSrc)) {
             workerSrc = PDFWorkerUtil.createCDNWrapper(new URL(workerSrc, window.location).href);
           }
 
-          var worker = new Worker(workerSrc);
-          var messageHandler = new _message_handler.MessageHandler("main", "worker", worker);
+          const worker = new Worker(workerSrc);
+          const messageHandler = new _message_handler.MessageHandler("main", "worker", worker);
 
-          var terminateEarly = function terminateEarly() {
+          const terminateEarly = function terminateEarly() {
             worker.removeEventListener("error", onWorkerError);
             messageHandler.destroy();
             worker.terminate();
@@ -7272,7 +7272,7 @@ var PDFWorker = /*#__PURE__*/function () {
           });
 
           var sendTest = function sendTest() {
-            var testObj = new Uint8Array();
+            const testObj = new Uint8Array();
             messageHandler.send("test", testObj, [testObj.buffer]);
           };
 
@@ -7288,7 +7288,7 @@ var PDFWorker = /*#__PURE__*/function () {
   }, {
     key: "_setupFakeWorker",
     value: function _setupFakeWorker() {
-      var _this10 = this;
+      const _this10 = this;
 
       if (!PDFWorkerUtil.isWorkerDisabled) {
         (0, _util.warn)("Setting up fake worker.");
@@ -7302,12 +7302,12 @@ var PDFWorker = /*#__PURE__*/function () {
           return;
         }
 
-        var port = new LoopbackPort();
+        const port = new LoopbackPort();
         _this10._port = port;
-        var id = "fake".concat(PDFWorkerUtil.fakeWorkerId++);
-        var workerHandler = new _message_handler.MessageHandler(id + "_worker", id, port);
+        const id = "fake".concat(PDFWorkerUtil.fakeWorkerId++);
+        const workerHandler = new _message_handler.MessageHandler(id + "_worker", id, port);
         WorkerMessageHandler.setup(workerHandler, port);
-        var messageHandler = new _message_handler.MessageHandler(id, id + "_worker", port);
+        const messageHandler = new _message_handler.MessageHandler(id, id + "_worker", port);
         _this10._messageHandler = messageHandler;
 
         _this10._readyCapability.resolve();
@@ -7374,7 +7374,7 @@ var PDFWorker = /*#__PURE__*/function () {
     key: "_mainThreadWorkerMessageHandler",
     get: function get() {
       try {
-        var _globalThis$pdfjsWork;
+        let _globalThis$pdfjsWork;
 
         return ((_globalThis$pdfjsWork = globalThis.pdfjsWorker) === null || _globalThis$pdfjsWork === void 0 ? void 0 : _globalThis$pdfjsWork.WorkerMessageHandler) || null;
       } catch (ex) {
@@ -7384,11 +7384,11 @@ var PDFWorker = /*#__PURE__*/function () {
   }, {
     key: "_setupFakeWorkerGlobal",
     get: function get() {
-      var _this11 = this;
+      const _this11 = this;
 
-      var loader = /*#__PURE__*/function () {
-        var _ref15 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee4() {
-          var mainWorkerMessageHandler, worker;
+      const loader = /*#__PURE__*/function () {
+        const _ref15 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee4() {
+          let mainWorkerMessageHandler, worker;
           return _regenerator["default"].wrap(function _callee4$(_context4) {
             while (1) {
               switch (_context4.prev = _context4.next) {
@@ -7450,13 +7450,13 @@ var _workerPorts = {
   };
 }
 
-var _docStats = /*#__PURE__*/new WeakMap();
+const _docStats = /*#__PURE__*/new WeakMap();
 
-var _pageCache = /*#__PURE__*/new WeakMap();
+const _pageCache = /*#__PURE__*/new WeakMap();
 
-var _pagePromises = /*#__PURE__*/new WeakMap();
+const _pagePromises = /*#__PURE__*/new WeakMap();
 
-var _metadataPromise = /*#__PURE__*/new WeakMap();
+const _metadataPromise = /*#__PURE__*/new WeakMap();
 
 var WorkerTransport = /*#__PURE__*/function () {
   function WorkerTransport(messageHandler, loadingTask, networkStream, params) {
@@ -7526,10 +7526,10 @@ var WorkerTransport = /*#__PURE__*/function () {
   }, {
     key: "getRenderingIntent",
     value: function getRenderingIntent(intent) {
-      var annotationMode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _util.AnnotationMode.ENABLE;
-      var isOpList = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-      var renderingIntent = _util.RenderingIntentFlag.DISPLAY;
-      var annotationHash = "";
+      const annotationMode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _util.AnnotationMode.ENABLE;
+      const isOpList = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      let renderingIntent = _util.RenderingIntentFlag.DISPLAY;
+      let annotationHash = "";
 
       switch (intent) {
         case "any":
@@ -7580,7 +7580,7 @@ var WorkerTransport = /*#__PURE__*/function () {
   }, {
     key: "destroy",
     value: function destroy() {
-      var _this12 = this;
+      const _this12 = this;
 
       if (this.destroyCapability) {
         return this.destroyCapability.promise;
@@ -7593,14 +7593,14 @@ var WorkerTransport = /*#__PURE__*/function () {
         this._passwordCapability.reject(new Error("Worker was destroyed during onPassword callback"));
       }
 
-      var waitOn = [];
+      const waitOn = [];
 
-      var _iterator15 = _createForOfIteratorHelper(_classPrivateFieldGet(this, _pageCache).values()),
+      let _iterator15 = _createForOfIteratorHelper(_classPrivateFieldGet(this, _pageCache).values()),
           _step15;
 
       try {
         for (_iterator15.s(); !(_step15 = _iterator15.n()).done;) {
-          var page = _step15.value;
+          const page = _step15.value;
           waitOn.push(page._destroy());
         }
       } catch (err) {
@@ -7617,7 +7617,7 @@ var WorkerTransport = /*#__PURE__*/function () {
         this.annotationStorage.resetModified();
       }
 
-      var terminated = this.messageHandler.sendWithPromise("Terminate", null);
+      const terminated = this.messageHandler.sendWithPromise("Terminate", null);
       waitOn.push(terminated);
       Promise.all(waitOn).then(function () {
         _this12.commonObjs.clear();
@@ -7646,9 +7646,9 @@ var WorkerTransport = /*#__PURE__*/function () {
   }, {
     key: "setupMessageHandler",
     value: function setupMessageHandler() {
-      var _this13 = this;
+      const _this13 = this;
 
-      var messageHandler = this.messageHandler,
+      const messageHandler = this.messageHandler,
           loadingTask = this.loadingTask;
       messageHandler.on("GetReader", function (data, sink) {
         (0, _util.assert)(_this13._networkStream, "GetReader - no `IPDFStream` instance available.");
@@ -7663,7 +7663,7 @@ var WorkerTransport = /*#__PURE__*/function () {
 
         sink.onPull = function () {
           _this13._fullReader.read().then(function (_ref16) {
-            var value = _ref16.value,
+            const value = _ref16.value,
                 done = _ref16.done;
 
             if (done) {
@@ -7691,18 +7691,18 @@ var WorkerTransport = /*#__PURE__*/function () {
         };
       });
       messageHandler.on("ReaderHeadersReady", function (data) {
-        var headersCapability = (0, _util.createPromiseCapability)();
-        var fullReader = _this13._fullReader;
+        const headersCapability = (0, _util.createPromiseCapability)();
+        const fullReader = _this13._fullReader;
         fullReader.headersReady.then(function () {
           if (!fullReader.isStreamingSupported || !fullReader.isRangeSupported) {
             if (_this13._lastProgress) {
-              var _loadingTask$onProgre;
+              let _loadingTask$onProgre;
 
               (_loadingTask$onProgre = loadingTask.onProgress) === null || _loadingTask$onProgre === void 0 ? void 0 : _loadingTask$onProgre.call(loadingTask, _this13._lastProgress);
             }
 
             fullReader.onProgress = function (evt) {
-              var _loadingTask$onProgre2;
+              let _loadingTask$onProgre2;
 
               (_loadingTask$onProgre2 = loadingTask.onProgress) === null || _loadingTask$onProgre2 === void 0 ? void 0 : _loadingTask$onProgre2.call(loadingTask, {
                 loaded: evt.loaded,
@@ -7722,7 +7722,7 @@ var WorkerTransport = /*#__PURE__*/function () {
       messageHandler.on("GetRangeReader", function (data, sink) {
         (0, _util.assert)(_this13._networkStream, "GetRangeReader - no `IPDFStream` instance available.");
 
-        var rangeReader = _this13._networkStream.getRangeReader(data.begin, data.end);
+        const rangeReader = _this13._networkStream.getRangeReader(data.begin, data.end);
 
         if (!rangeReader) {
           sink.close();
@@ -7731,7 +7731,7 @@ var WorkerTransport = /*#__PURE__*/function () {
 
         sink.onPull = function () {
           rangeReader.read().then(function (_ref17) {
-            var value = _ref17.value,
+            const value = _ref17.value,
                 done = _ref17.done;
 
             if (done) {
@@ -7758,7 +7758,7 @@ var WorkerTransport = /*#__PURE__*/function () {
         };
       });
       messageHandler.on("GetDoc", function (_ref18) {
-        var pdfInfo = _ref18.pdfInfo;
+        const pdfInfo = _ref18.pdfInfo;
         _this13._numPages = pdfInfo.numPages;
         _this13._htmlForXfa = pdfInfo.htmlForXfa;
         delete pdfInfo.htmlForXfa;
@@ -7766,7 +7766,7 @@ var WorkerTransport = /*#__PURE__*/function () {
         loadingTask._capability.resolve(new PDFDocumentProxy(pdfInfo, _this13));
       });
       messageHandler.on("DocException", function (ex) {
-        var reason;
+        let reason;
 
         switch (ex.name) {
           case "PasswordException":
@@ -7799,7 +7799,7 @@ var WorkerTransport = /*#__PURE__*/function () {
         _this13._passwordCapability = (0, _util.createPromiseCapability)();
 
         if (loadingTask.onPassword) {
-          var updatePassword = function updatePassword(password) {
+          const updatePassword = function updatePassword(password) {
             if (password instanceof Error) {
               _this13._passwordCapability.reject(password);
             } else {
@@ -7821,7 +7821,7 @@ var WorkerTransport = /*#__PURE__*/function () {
         return _this13._passwordCapability.promise;
       });
       messageHandler.on("DataLoaded", function (data) {
-        var _loadingTask$onProgre3;
+        let _loadingTask$onProgre3;
 
         (_loadingTask$onProgre3 = loadingTask.onProgress) === null || _loadingTask$onProgre3 === void 0 ? void 0 : _loadingTask$onProgre3.call(loadingTask, {
           loaded: data.length,
@@ -7835,14 +7835,14 @@ var WorkerTransport = /*#__PURE__*/function () {
           return;
         }
 
-        var page = _classPrivateFieldGet(_this13, _pageCache).get(data.pageIndex);
+        const page = _classPrivateFieldGet(_this13, _pageCache).get(data.pageIndex);
 
         page._startRenderPage(data.transparency, data.cacheKey);
       });
       messageHandler.on("commonobj", function (_ref19) {
-        var _globalThis$FontInspe;
+        let _globalThis$FontInspe;
 
-        var _ref20 = _slicedToArray(_ref19, 3),
+        const _ref20 = _slicedToArray(_ref19, 3),
             id = _ref20[0],
             type = _ref20[1],
             exportedData = _ref20[2];
@@ -7860,7 +7860,7 @@ var WorkerTransport = /*#__PURE__*/function () {
             var params = _this13._params;
 
             if ("error" in exportedData) {
-              var exportedError = exportedData.error;
+              const exportedError = exportedData.error;
               (0, _util.warn)("Error during font loading: ".concat(exportedError));
 
               _this13.commonObjs.resolve(id, exportedError);
@@ -7911,7 +7911,7 @@ var WorkerTransport = /*#__PURE__*/function () {
         }
       });
       messageHandler.on("obj", function (_ref21) {
-        var _ref22 = _slicedToArray(_ref21, 4),
+        const _ref22 = _slicedToArray(_ref21, 4),
             id = _ref22[0],
             pageIndex = _ref22[1],
             type = _ref22[2],
@@ -7921,7 +7921,7 @@ var WorkerTransport = /*#__PURE__*/function () {
           return;
         }
 
-        var pageProxy = _classPrivateFieldGet(_this13, _pageCache).get(pageIndex);
+        const pageProxy = _classPrivateFieldGet(_this13, _pageCache).get(pageIndex);
 
         if (pageProxy.objs.has(id)) {
           return;
@@ -7933,17 +7933,17 @@ var WorkerTransport = /*#__PURE__*/function () {
             var MAX_IMAGE_SIZE_TO_STORE = 8000000;
 
             if (imageData) {
-              var length;
+              let length;
 
               if (imageData.bitmap) {
-                var bitmap = imageData.bitmap,
+                const bitmap = imageData.bitmap,
                     width = imageData.width,
                     height = imageData.height;
                 length = width * height * 4;
 
                 pageProxy._bitmaps.add(bitmap);
               } else {
-                var _imageData$data;
+                let _imageData$data;
 
                 length = ((_imageData$data = imageData.data) === null || _imageData$data === void 0 ? void 0 : _imageData$data.length) || 0;
               }
@@ -7964,7 +7964,7 @@ var WorkerTransport = /*#__PURE__*/function () {
         }
       });
       messageHandler.on("DocProgress", function (data) {
-        var _loadingTask$onProgre4;
+        let _loadingTask$onProgre4;
 
         if (_this13.destroyed) {
           return;
@@ -8012,9 +8012,9 @@ var WorkerTransport = /*#__PURE__*/function () {
   }, {
     key: "_onUnsupportedFeature",
     value: function _onUnsupportedFeature(_ref23) {
-      var _this$loadingTask$onU, _this$loadingTask;
+      let _this$loadingTask$onU, _this$loadingTask;
 
-      var featureId = _ref23.featureId;
+      const featureId = _ref23.featureId;
 
       if (this.destroyed) {
         return;
@@ -8030,27 +8030,27 @@ var WorkerTransport = /*#__PURE__*/function () {
   }, {
     key: "getPage",
     value: function getPage(pageNumber) {
-      var _this14 = this;
+      const _this14 = this;
 
       if (!Number.isInteger(pageNumber) || pageNumber <= 0 || pageNumber > this._numPages) {
         return Promise.reject(new Error("Invalid page request."));
       }
 
-      var pageIndex = pageNumber - 1,
+      const pageIndex = pageNumber - 1,
           cachedPromise = _classPrivateFieldGet(this, _pagePromises).get(pageIndex);
 
       if (cachedPromise) {
         return cachedPromise;
       }
 
-      var promise = this.messageHandler.sendWithPromise("GetPage", {
+      const promise = this.messageHandler.sendWithPromise("GetPage", {
         pageIndex: pageIndex
       }).then(function (pageInfo) {
         if (_this14.destroyed) {
           throw new Error("Transport destroyed");
         }
 
-        var page = new PDFPageProxy(pageIndex, pageInfo, _this14, _this14._params.ownerDocument, _this14._params.pdfBug);
+        const page = new PDFPageProxy(pageIndex, pageInfo, _this14, _this14._params.ownerDocument, _this14._params.pdfBug);
 
         _classPrivateFieldGet(_this14, _pageCache).set(pageIndex, page);
 
@@ -8084,7 +8084,7 @@ var WorkerTransport = /*#__PURE__*/function () {
   }, {
     key: "saveDocument",
     value: function saveDocument() {
-      var _this$_fullReader$fil,
+      let _this$_fullReader$fil,
           _this$_fullReader,
           _this15 = this;
 
@@ -8202,10 +8202,10 @@ var WorkerTransport = /*#__PURE__*/function () {
   }, {
     key: "getMetadata",
     value: function getMetadata() {
-      var _this16 = this;
+      const _this16 = this;
 
       return _classPrivateFieldGet(this, _metadataPromise) || _classPrivateFieldSet(this, _metadataPromise, this.messageHandler.sendWithPromise("GetMetadata", null).then(function (results) {
-        var _this16$_fullReader$f, _this16$_fullReader, _this16$_fullReader$c, _this16$_fullReader2;
+        let _this16$_fullReader$f, _this16$_fullReader, _this16$_fullReader$c, _this16$_fullReader2;
 
         return {
           info: results[0],
@@ -8223,8 +8223,8 @@ var WorkerTransport = /*#__PURE__*/function () {
   }, {
     key: "startCleanup",
     value: function () {
-      var _startCleanup = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee5() {
-        var keepLoadedFonts,
+      const _startCleanup = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee5() {
+        let keepLoadedFonts,
             _iterator16,
             _step16,
             page,
@@ -8319,7 +8319,7 @@ var WorkerTransport = /*#__PURE__*/function () {
   }, {
     key: "loadingParams",
     get: function get() {
-      var params = this._params;
+      const params = this._params;
       return (0, _util.shadow)(this, "loadingParams", {
         disableAutoFetch: params.disableAutoFetch,
         enableXfa: params.enableXfa
@@ -8330,9 +8330,9 @@ var WorkerTransport = /*#__PURE__*/function () {
   return WorkerTransport;
 }();
 
-var _objs = /*#__PURE__*/new WeakMap();
+const _objs = /*#__PURE__*/new WeakMap();
 
-var _ensureObj = /*#__PURE__*/new WeakSet();
+const _ensureObj = /*#__PURE__*/new WeakSet();
 
 var PDFObjects = /*#__PURE__*/function () {
   function PDFObjects() {
@@ -8349,10 +8349,10 @@ var PDFObjects = /*#__PURE__*/function () {
   _createClass(PDFObjects, [{
     key: "get",
     value: function get(objId) {
-      var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      const callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
 
       if (callback) {
-        var _obj = _classPrivateMethodGet(this, _ensureObj, _ensureObj2).call(this, objId);
+        const _obj = _classPrivateMethodGet(this, _ensureObj, _ensureObj2).call(this, objId);
 
         _obj.capability.promise.then(function () {
           return callback(_obj.data);
@@ -8361,7 +8361,7 @@ var PDFObjects = /*#__PURE__*/function () {
         return null;
       }
 
-      var obj = _classPrivateFieldGet(this, _objs)[objId];
+      const obj = _classPrivateFieldGet(this, _objs)[objId];
 
       if (!(obj !== null && obj !== void 0 && obj.capability.settled)) {
         throw new Error("Requesting object that isn't resolved yet ".concat(objId, "."));
@@ -8372,16 +8372,16 @@ var PDFObjects = /*#__PURE__*/function () {
   }, {
     key: "has",
     value: function has(objId) {
-      var obj = _classPrivateFieldGet(this, _objs)[objId];
+      const obj = _classPrivateFieldGet(this, _objs)[objId];
 
       return (obj === null || obj === void 0 ? void 0 : obj.capability.settled) || false;
     }
   }, {
     key: "resolve",
     value: function resolve(objId) {
-      var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      const data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
 
-      var obj = _classPrivateMethodGet(this, _ensureObj, _ensureObj2).call(this, objId);
+      const obj = _classPrivateMethodGet(this, _ensureObj, _ensureObj2).call(this, objId);
 
       obj.data = data;
       obj.capability.resolve();
@@ -8397,7 +8397,7 @@ var PDFObjects = /*#__PURE__*/function () {
 }();
 
 function _ensureObj2(objId) {
-  var obj = _classPrivateFieldGet(this, _objs)[objId];
+  const obj = _classPrivateFieldGet(this, _objs)[objId];
 
   if (obj) {
     return obj;
@@ -8409,7 +8409,7 @@ function _ensureObj2(objId) {
   };
 }
 
-var RenderTask = /*#__PURE__*/function () {
+const RenderTask = /*#__PURE__*/function () {
   function RenderTask(internalRenderTask) {
     _classCallCheck(this, RenderTask);
 
@@ -8436,7 +8436,7 @@ exports.RenderTask = RenderTask;
 
 var InternalRenderTask = /*#__PURE__*/function () {
   function InternalRenderTask(_ref24) {
-    var callback = _ref24.callback,
+    const callback = _ref24.callback,
         params = _ref24.params,
         objs = _ref24.objs,
         commonObjs = _ref24.commonObjs,
@@ -8486,9 +8486,9 @@ var InternalRenderTask = /*#__PURE__*/function () {
   }, {
     key: "initializeGraphics",
     value: function initializeGraphics(_ref25) {
-      var _globalThis$StepperMa;
+      let _globalThis$StepperMa;
 
-      var _ref25$transparency = _ref25.transparency,
+      const _ref25$transparency = _ref25.transparency,
           transparency = _ref25$transparency === void 0 ? false : _ref25$transparency,
           optionalContentConfig = _ref25.optionalContentConfig;
 
@@ -8510,7 +8510,7 @@ var InternalRenderTask = /*#__PURE__*/function () {
         this.stepper.nextBreakPoint = this.stepper.getNextBreakPoint();
       }
 
-      var _this$params = this.params,
+      const _this$params = this.params,
           canvasContext = _this$params.canvasContext,
           viewport = _this$params.viewport,
           transform = _this$params.transform,
@@ -8533,7 +8533,7 @@ var InternalRenderTask = /*#__PURE__*/function () {
   }, {
     key: "cancel",
     value: function cancel() {
-      var error = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      const error = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
       this.running = false;
       this.cancelled = true;
 
@@ -8586,7 +8586,7 @@ var InternalRenderTask = /*#__PURE__*/function () {
   }, {
     key: "_scheduleNext",
     value: function _scheduleNext() {
-      var _this17 = this;
+      const _this17 = this;
 
       if (this._useRequestAnimationFrame) {
         window.requestAnimationFrame(function () {
@@ -8599,7 +8599,7 @@ var InternalRenderTask = /*#__PURE__*/function () {
   }, {
     key: "_next",
     value: function () {
-      var _next2 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee6() {
+      const _next2 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee6() {
         return _regenerator["default"].wrap(function _callee6$(_context6) {
           while (1) {
             switch (_context6.prev = _context6.next) {
@@ -8651,9 +8651,9 @@ var _canvasInUse = {
   writable: true,
   value: new WeakSet()
 };
-var version = '2.14.305';
+const version = '2.14.305';
 exports.version = version;
-var build = 'eaaa8b4ad';
+const build = 'eaaa8b4ad';
 exports.build = build;
 
 /***/ }),
@@ -8675,16 +8675,16 @@ module.exports = __w_pdfjs_require__(157);
 
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
-var runtime = function (exports) {
+const runtime = function (exports) {
   "use strict";
 
-  var Op = Object.prototype;
-  var hasOwn = Op.hasOwnProperty;
-  var undefined;
-  var $Symbol = typeof Symbol === "function" ? Symbol : {};
-  var iteratorSymbol = $Symbol.iterator || "@@iterator";
-  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
-  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+  const Op = Object.prototype;
+  const hasOwn = Op.hasOwnProperty;
+  let undefined;
+  const $Symbol = typeof Symbol === "function" ? Symbol : {};
+  const iteratorSymbol = $Symbol.iterator || "@@iterator";
+  const asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  const toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
 
   function define(obj, key, value) {
     Object.defineProperty(obj, key, {
@@ -8705,9 +8705,9 @@ var runtime = function (exports) {
   }
 
   function wrap(innerFn, outerFn, self, tryLocsList) {
-    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
-    var generator = Object.create(protoGenerator.prototype);
-    var context = new Context(tryLocsList || []);
+    const protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    const generator = Object.create(protoGenerator.prototype);
+    const context = new Context(tryLocsList || []);
     generator._invoke = makeInvokeMethod(innerFn, self, context);
     return generator;
   }
@@ -8728,11 +8728,11 @@ var runtime = function (exports) {
     }
   }
 
-  var GenStateSuspendedStart = "suspendedStart";
-  var GenStateSuspendedYield = "suspendedYield";
-  var GenStateExecuting = "executing";
-  var GenStateCompleted = "completed";
-  var ContinueSentinel = {};
+  const GenStateSuspendedStart = "suspendedStart";
+  const GenStateSuspendedYield = "suspendedYield";
+  const GenStateExecuting = "executing";
+  const GenStateCompleted = "completed";
+  const ContinueSentinel = {};
 
   function Generator() {}
 
@@ -8740,18 +8740,18 @@ var runtime = function (exports) {
 
   function GeneratorFunctionPrototype() {}
 
-  var IteratorPrototype = {};
+  let IteratorPrototype = {};
   define(IteratorPrototype, iteratorSymbol, function () {
     return this;
   });
-  var getProto = Object.getPrototypeOf;
-  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  const getProto = Object.getPrototypeOf;
+  const NativeIteratorPrototype = getProto && getProto(getProto(values([])));
 
   if (NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
     IteratorPrototype = NativeIteratorPrototype;
   }
 
-  var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype);
+  const Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype);
   GeneratorFunction.prototype = GeneratorFunctionPrototype;
   define(Gp, "constructor", GeneratorFunctionPrototype);
   define(GeneratorFunctionPrototype, "constructor", GeneratorFunction);
@@ -8766,7 +8766,7 @@ var runtime = function (exports) {
   }
 
   exports.isGeneratorFunction = function (genFun) {
-    var ctor = typeof genFun === "function" && genFun.constructor;
+    const ctor = typeof genFun === "function" && genFun.constructor;
     return ctor ? ctor === GeneratorFunction || (ctor.displayName || ctor.name) === "GeneratorFunction" : false;
   };
 
@@ -8790,13 +8790,13 @@ var runtime = function (exports) {
 
   function AsyncIterator(generator, PromiseImpl) {
     function invoke(method, arg, resolve, reject) {
-      var record = tryCatch(generator[method], generator, arg);
+      const record = tryCatch(generator[method], generator, arg);
 
       if (record.type === "throw") {
         reject(record.arg);
       } else {
-        var result = record.arg;
-        var value = result.value;
+        const result = record.arg;
+        const value = result.value;
 
         if (value && _typeof(value) === "object" && hasOwn.call(value, "__await")) {
           return PromiseImpl.resolve(value.__await).then(function (value) {
@@ -8815,7 +8815,7 @@ var runtime = function (exports) {
       }
     }
 
-    var previousPromise;
+    let previousPromise;
 
     function enqueue(method, arg) {
       function callInvokeWithMethodAndArg() {
@@ -8838,14 +8838,14 @@ var runtime = function (exports) {
 
   exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) {
     if (PromiseImpl === void 0) PromiseImpl = Promise;
-    var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl);
+    const iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl);
     return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) {
       return result.done ? result.value : iter.next();
     });
   };
 
   function makeInvokeMethod(innerFn, self, context) {
-    var state = GenStateSuspendedStart;
+    let state = GenStateSuspendedStart;
     return function invoke(method, arg) {
       if (state === GenStateExecuting) {
         throw new Error("Generator is already running");
@@ -8863,10 +8863,10 @@ var runtime = function (exports) {
       context.arg = arg;
 
       while (true) {
-        var delegate = context.delegate;
+        const delegate = context.delegate;
 
         if (delegate) {
-          var delegateResult = maybeInvokeDelegate(delegate, context);
+          const delegateResult = maybeInvokeDelegate(delegate, context);
 
           if (delegateResult) {
             if (delegateResult === ContinueSentinel) continue;
@@ -8888,7 +8888,7 @@ var runtime = function (exports) {
         }
 
         state = GenStateExecuting;
-        var record = tryCatch(innerFn, self, context);
+        const record = tryCatch(innerFn, self, context);
 
         if (record.type === "normal") {
           state = context.done ? GenStateCompleted : GenStateSuspendedYield;
@@ -8911,7 +8911,7 @@ var runtime = function (exports) {
   }
 
   function maybeInvokeDelegate(delegate, context) {
-    var method = delegate.iterator[context.method];
+    const method = delegate.iterator[context.method];
 
     if (method === undefined) {
       context.delegate = null;
@@ -8934,7 +8934,7 @@ var runtime = function (exports) {
       return ContinueSentinel;
     }
 
-    var record = tryCatch(method, delegate.iterator, context.arg);
+    const record = tryCatch(method, delegate.iterator, context.arg);
 
     if (record.type === "throw") {
       context.method = "throw";
@@ -8943,7 +8943,7 @@ var runtime = function (exports) {
       return ContinueSentinel;
     }
 
-    var info = record.arg;
+    const info = record.arg;
 
     if (!info) {
       context.method = "throw";
@@ -8978,7 +8978,7 @@ var runtime = function (exports) {
   });
 
   function pushTryEntry(locs) {
-    var entry = {
+    const entry = {
       tryLoc: locs[0]
     };
 
@@ -8995,7 +8995,7 @@ var runtime = function (exports) {
   }
 
   function resetTryEntry(entry) {
-    var record = entry.completion || {};
+    const record = entry.completion || {};
     record.type = "normal";
     delete record.arg;
     entry.completion = record;
@@ -9010,16 +9010,16 @@ var runtime = function (exports) {
   }
 
   exports.keys = function (object) {
-    var keys = [];
+    const keys = [];
 
-    for (var key in object) {
+    for (const key in object) {
       keys.push(key);
     }
 
     keys.reverse();
     return function next() {
       while (keys.length) {
-        var key = keys.pop();
+        const key = keys.pop();
 
         if (key in object) {
           next.value = key;
@@ -9035,7 +9035,7 @@ var runtime = function (exports) {
 
   function values(iterable) {
     if (iterable) {
-      var iteratorMethod = iterable[iteratorSymbol];
+      const iteratorMethod = iterable[iteratorSymbol];
 
       if (iteratorMethod) {
         return iteratorMethod.call(iterable);
@@ -9046,7 +9046,7 @@ var runtime = function (exports) {
       }
 
       if (!isNaN(iterable.length)) {
-        var i = -1,
+        let i = -1,
             next = function next() {
           while (++i < iterable.length) {
             if (hasOwn.call(iterable, i)) {
@@ -9092,7 +9092,7 @@ var runtime = function (exports) {
       this.tryEntries.forEach(resetTryEntry);
 
       if (!skipTempReset) {
-        for (var name in this) {
+        for (const name in this) {
           if (name.charAt(0) === "t" && hasOwn.call(this, name) && !isNaN(+name.slice(1))) {
             this[name] = undefined;
           }
@@ -9101,8 +9101,8 @@ var runtime = function (exports) {
     },
     stop: function stop() {
       this.done = true;
-      var rootEntry = this.tryEntries[0];
-      var rootRecord = rootEntry.completion;
+      const rootEntry = this.tryEntries[0];
+      const rootRecord = rootEntry.completion;
 
       if (rootRecord.type === "throw") {
         throw rootRecord.arg;
@@ -9115,7 +9115,7 @@ var runtime = function (exports) {
         throw exception;
       }
 
-      var context = this;
+      const context = this;
 
       function handle(loc, caught) {
         record.type = "throw";
@@ -9130,8 +9130,8 @@ var runtime = function (exports) {
         return !!caught;
       }
 
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
+      for (let i = this.tryEntries.length - 1; i >= 0; --i) {
+        const entry = this.tryEntries[i];
         var record = entry.completion;
 
         if (entry.tryLoc === "root") {
@@ -9139,8 +9139,8 @@ var runtime = function (exports) {
         }
 
         if (entry.tryLoc <= this.prev) {
-          var hasCatch = hasOwn.call(entry, "catchLoc");
-          var hasFinally = hasOwn.call(entry, "finallyLoc");
+          const hasCatch = hasOwn.call(entry, "catchLoc");
+          const hasFinally = hasOwn.call(entry, "finallyLoc");
 
           if (hasCatch && hasFinally) {
             if (this.prev < entry.catchLoc) {
@@ -9163,8 +9163,8 @@ var runtime = function (exports) {
       }
     },
     abrupt: function abrupt(type, arg) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
+      for (let i = this.tryEntries.length - 1; i >= 0; --i) {
+        const entry = this.tryEntries[i];
 
         if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) {
           var finallyEntry = entry;
@@ -9176,7 +9176,7 @@ var runtime = function (exports) {
         finallyEntry = null;
       }
 
-      var record = finallyEntry ? finallyEntry.completion : {};
+      const record = finallyEntry ? finallyEntry.completion : {};
       record.type = type;
       record.arg = arg;
 
@@ -9206,8 +9206,8 @@ var runtime = function (exports) {
       return ContinueSentinel;
     },
     finish: function finish(finallyLoc) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
+      for (let i = this.tryEntries.length - 1; i >= 0; --i) {
+        const entry = this.tryEntries[i];
 
         if (entry.finallyLoc === finallyLoc) {
           this.complete(entry.completion, entry.afterLoc);
@@ -9217,11 +9217,11 @@ var runtime = function (exports) {
       }
     },
     "catch": function _catch(tryLoc) {
-      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-        var entry = this.tryEntries[i];
+      for (let i = this.tryEntries.length - 1; i >= 0; --i) {
+        const entry = this.tryEntries[i];
 
         if (entry.tryLoc === tryLoc) {
-          var record = entry.completion;
+          const record = entry.completion;
 
           if (record.type === "throw") {
             var thrown = record.arg;
@@ -9283,29 +9283,29 @@ exports.isPdfFile = isPdfFile;
 exports.isValidFetchUrl = isValidFetchUrl;
 exports.loadScript = loadScript;
 
-var _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
+const _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
 
-var _base_factory = __w_pdfjs_require__(159);
+const _base_factory = __w_pdfjs_require__(159);
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _asyncToGenerator(fn) { return function () { const self = this, args = arguments; return new Promise(function (resolve, reject) { const gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { const hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { let Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { const NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 
@@ -9315,7 +9315,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
@@ -9323,9 +9323,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var SVG_NS = "http://www.w3.org/2000/svg";
+const SVG_NS = "http://www.w3.org/2000/svg";
 
-var PixelsPerInch = /*#__PURE__*/_createClass(function PixelsPerInch() {
+const PixelsPerInch = /*#__PURE__*/_createClass(function PixelsPerInch() {
   _classCallCheck(this, PixelsPerInch);
 });
 
@@ -9337,15 +9337,15 @@ _defineProperty(PixelsPerInch, "PDF", 72.0);
 
 _defineProperty(PixelsPerInch, "PDF_TO_CSS_UNITS", PixelsPerInch.CSS / PixelsPerInch.PDF);
 
-var DOMCanvasFactory = /*#__PURE__*/function (_BaseCanvasFactory) {
+const DOMCanvasFactory = /*#__PURE__*/function (_BaseCanvasFactory) {
   _inherits(DOMCanvasFactory, _BaseCanvasFactory);
 
-  var _super = _createSuper(DOMCanvasFactory);
+  const _super = _createSuper(DOMCanvasFactory);
 
   function DOMCanvasFactory() {
-    var _this;
+    let _this;
 
-    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+    const _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
         _ref$ownerDocument = _ref.ownerDocument,
         ownerDocument = _ref$ownerDocument === void 0 ? globalThis.document : _ref$ownerDocument;
 
@@ -9359,7 +9359,7 @@ var DOMCanvasFactory = /*#__PURE__*/function (_BaseCanvasFactory) {
   _createClass(DOMCanvasFactory, [{
     key: "_createCanvas",
     value: function _createCanvas(width, height) {
-      var canvas = this._document.createElement("canvas");
+      const canvas = this._document.createElement("canvas");
 
       canvas.width = width;
       canvas.height = height;
@@ -9378,7 +9378,7 @@ function fetchData(_x) {
 
 function _fetchData() {
   _fetchData = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee(url) {
-    var asTypedArray,
+    let asTypedArray,
         response,
         _args = arguments;
     return _regenerator["default"].wrap(function _callee$(_context) {
@@ -9435,7 +9435,7 @@ function _fetchData() {
 
           case 21:
             return _context.abrupt("return", new Promise(function (resolve, reject) {
-              var request = new XMLHttpRequest();
+              const request = new XMLHttpRequest();
               request.open("GET", url, true);
 
               if (asTypedArray) {
@@ -9448,7 +9448,7 @@ function _fetchData() {
                 }
 
                 if (request.status === 200 || request.status === 0) {
-                  var data;
+                  let data;
 
                   if (asTypedArray && request.response) {
                     data = new Uint8Array(request.response);
@@ -9478,10 +9478,10 @@ function _fetchData() {
   return _fetchData.apply(this, arguments);
 }
 
-var DOMCMapReaderFactory = /*#__PURE__*/function (_BaseCMapReaderFactor) {
+const DOMCMapReaderFactory = /*#__PURE__*/function (_BaseCMapReaderFactor) {
   _inherits(DOMCMapReaderFactory, _BaseCMapReaderFactor);
 
-  var _super2 = _createSuper(DOMCMapReaderFactory);
+  const _super2 = _createSuper(DOMCMapReaderFactory);
 
   function DOMCMapReaderFactory() {
     _classCallCheck(this, DOMCMapReaderFactory);
@@ -9506,10 +9506,10 @@ var DOMCMapReaderFactory = /*#__PURE__*/function (_BaseCMapReaderFactor) {
 
 exports.DOMCMapReaderFactory = DOMCMapReaderFactory;
 
-var DOMStandardFontDataFactory = /*#__PURE__*/function (_BaseStandardFontData) {
+const DOMStandardFontDataFactory = /*#__PURE__*/function (_BaseStandardFontData) {
   _inherits(DOMStandardFontDataFactory, _BaseStandardFontData);
 
-  var _super3 = _createSuper(DOMStandardFontDataFactory);
+  const _super3 = _createSuper(DOMStandardFontDataFactory);
 
   function DOMStandardFontDataFactory() {
     _classCallCheck(this, DOMStandardFontDataFactory);
@@ -9529,10 +9529,10 @@ var DOMStandardFontDataFactory = /*#__PURE__*/function (_BaseStandardFontData) {
 
 exports.DOMStandardFontDataFactory = DOMStandardFontDataFactory;
 
-var DOMSVGFactory = /*#__PURE__*/function (_BaseSVGFactory) {
+const DOMSVGFactory = /*#__PURE__*/function (_BaseSVGFactory) {
   _inherits(DOMSVGFactory, _BaseSVGFactory);
 
-  var _super4 = _createSuper(DOMSVGFactory);
+  const _super4 = _createSuper(DOMSVGFactory);
 
   function DOMSVGFactory() {
     _classCallCheck(this, DOMSVGFactory);
@@ -9552,9 +9552,9 @@ var DOMSVGFactory = /*#__PURE__*/function (_BaseSVGFactory) {
 
 exports.DOMSVGFactory = DOMSVGFactory;
 
-var PageViewport = /*#__PURE__*/function () {
+const PageViewport = /*#__PURE__*/function () {
   function PageViewport(_ref2) {
-    var viewBox = _ref2.viewBox,
+    let viewBox = _ref2.viewBox,
         scale = _ref2.scale,
         rotation = _ref2.rotation,
         _ref2$offsetX = _ref2.offsetX,
@@ -9571,9 +9571,9 @@ var PageViewport = /*#__PURE__*/function () {
     this.rotation = rotation;
     this.offsetX = offsetX;
     this.offsetY = offsetY;
-    var centerX = (viewBox[2] + viewBox[0]) / 2;
-    var centerY = (viewBox[3] + viewBox[1]) / 2;
-    var rotateA, rotateB, rotateC, rotateD;
+    const centerX = (viewBox[2] + viewBox[0]) / 2;
+    const centerY = (viewBox[3] + viewBox[1]) / 2;
+    let rotateA, rotateB, rotateC, rotateD;
     rotation %= 360;
 
     if (rotation < 0) {
@@ -9618,8 +9618,8 @@ var PageViewport = /*#__PURE__*/function () {
       rotateD = -rotateD;
     }
 
-    var offsetCanvasX, offsetCanvasY;
-    var width, height;
+    let offsetCanvasX, offsetCanvasY;
+    let width, height;
 
     if (rotateA === 0) {
       offsetCanvasX = Math.abs(centerY - viewBox[1]) * scale + offsetX;
@@ -9641,7 +9641,7 @@ var PageViewport = /*#__PURE__*/function () {
   _createClass(PageViewport, [{
     key: "clone",
     value: function clone() {
-      var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      const _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
           _ref3$scale = _ref3.scale,
           scale = _ref3$scale === void 0 ? this.scale : _ref3$scale,
           _ref3$rotation = _ref3.rotation,
@@ -9670,9 +9670,9 @@ var PageViewport = /*#__PURE__*/function () {
   }, {
     key: "convertToViewportRectangle",
     value: function convertToViewportRectangle(rect) {
-      var topLeft = _util.Util.applyTransform([rect[0], rect[1]], this.transform);
+      const topLeft = _util.Util.applyTransform([rect[0], rect[1]], this.transform);
 
-      var bottomRight = _util.Util.applyTransform([rect[2], rect[3]], this.transform);
+      const bottomRight = _util.Util.applyTransform([rect[2], rect[3]], this.transform);
 
       return [topLeft[0], topLeft[1], bottomRight[0], bottomRight[1]];
     }
@@ -9688,13 +9688,13 @@ var PageViewport = /*#__PURE__*/function () {
 
 exports.PageViewport = PageViewport;
 
-var RenderingCancelledException = /*#__PURE__*/function (_BaseException) {
+const RenderingCancelledException = /*#__PURE__*/function (_BaseException) {
   _inherits(RenderingCancelledException, _BaseException);
 
-  var _super5 = _createSuper(RenderingCancelledException);
+  const _super5 = _createSuper(RenderingCancelledException);
 
   function RenderingCancelledException(msg, type) {
-    var _this2;
+    let _this2;
 
     _classCallCheck(this, RenderingCancelledException);
 
@@ -9709,8 +9709,8 @@ var RenderingCancelledException = /*#__PURE__*/function (_BaseException) {
 exports.RenderingCancelledException = RenderingCancelledException;
 
 function isDataScheme(url) {
-  var ii = url.length;
-  var i = 0;
+  const ii = url.length;
+  let i = 0;
 
   while (i < ii && url[i].trim() === "") {
     i++;
@@ -9724,14 +9724,14 @@ function isPdfFile(filename) {
 }
 
 function getFilenameFromUrl(url) {
-  var anchor = url.indexOf("#");
-  var query = url.indexOf("?");
-  var end = Math.min(anchor > 0 ? anchor : url.length, query > 0 ? query : url.length);
+  const anchor = url.indexOf("#");
+  const query = url.indexOf("?");
+  const end = Math.min(anchor > 0 ? anchor : url.length, query > 0 ? query : url.length);
   return url.substring(url.lastIndexOf("/", end) + 1, end);
 }
 
 function getPdfFilenameFromUrl(url) {
-  var defaultFilename = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "document.pdf";
+  const defaultFilename = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "document.pdf";
 
   if (typeof url !== "string") {
     return defaultFilename;
@@ -9742,10 +9742,10 @@ function getPdfFilenameFromUrl(url) {
     return defaultFilename;
   }
 
-  var reURI = /^(?:(?:[^:]+:)?\/\/[^/]+)?([^?#]*)(\?[^#]*)?(#.*)?$/;
-  var reFilename = /[^/?#=]+\.pdf\b(?!.*\.pdf\b)/i;
-  var splitURI = reURI.exec(url);
-  var suggestedFilename = reFilename.exec(splitURI[1]) || reFilename.exec(splitURI[2]) || reFilename.exec(splitURI[3]);
+  const reURI = /^(?:(?:[^:]+:)?\/\/[^/]+)?([^?#]*)(\?[^#]*)?(#.*)?$/;
+  const reFilename = /[^/?#=]+\.pdf\b(?!.*\.pdf\b)/i;
+  const splitURI = reURI.exec(url);
+  let suggestedFilename = reFilename.exec(splitURI[1]) || reFilename.exec(splitURI[2]) || reFilename.exec(splitURI[3]);
 
   if (suggestedFilename) {
     suggestedFilename = suggestedFilename[0];
@@ -9760,7 +9760,7 @@ function getPdfFilenameFromUrl(url) {
   return suggestedFilename || defaultFilename;
 }
 
-var StatTimer = /*#__PURE__*/function () {
+const StatTimer = /*#__PURE__*/function () {
   function StatTimer() {
     _classCallCheck(this, StatTimer);
 
@@ -9794,16 +9794,16 @@ var StatTimer = /*#__PURE__*/function () {
   }, {
     key: "toString",
     value: function toString() {
-      var outBuf = [];
-      var longest = 0;
+      const outBuf = [];
+      let longest = 0;
 
-      var _iterator = _createForOfIteratorHelper(this.times),
+      let _iterator = _createForOfIteratorHelper(this.times),
           _step;
 
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var time = _step.value;
-          var name = time.name;
+          const time = _step.value;
+          const name = time.name;
 
           if (name.length > longest) {
             longest = name.length;
@@ -9815,13 +9815,13 @@ var StatTimer = /*#__PURE__*/function () {
         _iterator.f();
       }
 
-      var _iterator2 = _createForOfIteratorHelper(this.times),
+      let _iterator2 = _createForOfIteratorHelper(this.times),
           _step2;
 
       try {
         for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-          var _time = _step2.value;
-          var duration = _time.end - _time.start;
+          const _time = _step2.value;
+          const duration = _time.end - _time.start;
           outBuf.push("".concat(_time.name.padEnd(longest), " ").concat(duration, "ms\n"));
         }
       } catch (err) {
@@ -9841,7 +9841,7 @@ exports.StatTimer = StatTimer;
 
 function isValidFetchUrl(url, baseUrl) {
   try {
-    var _ref4 = baseUrl ? new URL(url, baseUrl) : new URL(url),
+    const _ref4 = baseUrl ? new URL(url, baseUrl) : new URL(url),
         protocol = _ref4.protocol;
 
     return protocol === "http:" || protocol === "https:";
@@ -9851,9 +9851,9 @@ function isValidFetchUrl(url, baseUrl) {
 }
 
 function loadScript(src) {
-  var removeScriptElement = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+  const removeScriptElement = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
   return new Promise(function (resolve, reject) {
-    var script = document.createElement("script");
+    const script = document.createElement("script");
     script.src = src;
 
     script.onload = function (evt) {
@@ -9876,9 +9876,9 @@ function deprecated(details) {
   console.log("Deprecated API usage: " + details);
 }
 
-var pdfDateStringRegex;
+let pdfDateStringRegex;
 
-var PDFDateString = /*#__PURE__*/function () {
+const PDFDateString = /*#__PURE__*/function () {
   function PDFDateString() {
     _classCallCheck(this, PDFDateString);
   }
@@ -9894,27 +9894,27 @@ var PDFDateString = /*#__PURE__*/function () {
         pdfDateStringRegex = new RegExp("^D:" + "(\\d{4})" + "(\\d{2})?" + "(\\d{2})?" + "(\\d{2})?" + "(\\d{2})?" + "(\\d{2})?" + "([Z|+|-])?" + "(\\d{2})?" + "'?" + "(\\d{2})?" + "'?");
       }
 
-      var matches = pdfDateStringRegex.exec(input);
+      const matches = pdfDateStringRegex.exec(input);
 
       if (!matches) {
         return null;
       }
 
-      var year = parseInt(matches[1], 10);
-      var month = parseInt(matches[2], 10);
+      const year = parseInt(matches[1], 10);
+      let month = parseInt(matches[2], 10);
       month = month >= 1 && month <= 12 ? month - 1 : 0;
-      var day = parseInt(matches[3], 10);
+      let day = parseInt(matches[3], 10);
       day = day >= 1 && day <= 31 ? day : 1;
-      var hour = parseInt(matches[4], 10);
+      let hour = parseInt(matches[4], 10);
       hour = hour >= 0 && hour <= 23 ? hour : 0;
-      var minute = parseInt(matches[5], 10);
+      let minute = parseInt(matches[5], 10);
       minute = minute >= 0 && minute <= 59 ? minute : 0;
-      var second = parseInt(matches[6], 10);
+      let second = parseInt(matches[6], 10);
       second = second >= 0 && second <= 59 ? second : 0;
-      var universalTimeRelation = matches[7] || "Z";
-      var offsetHour = parseInt(matches[8], 10);
+      const universalTimeRelation = matches[7] || "Z";
+      let offsetHour = parseInt(matches[8], 10);
       offsetHour = offsetHour >= 0 && offsetHour <= 23 ? offsetHour : 0;
-      var offsetMinute = parseInt(matches[9], 10) || 0;
+      let offsetMinute = parseInt(matches[9], 10) || 0;
       offsetMinute = offsetMinute >= 0 && offsetMinute <= 59 ? offsetMinute : 0;
 
       if (universalTimeRelation === "-") {
@@ -9935,14 +9935,14 @@ var PDFDateString = /*#__PURE__*/function () {
 exports.PDFDateString = PDFDateString;
 
 function getXfaPageViewport(xfaPage, _ref5) {
-  var _ref5$scale = _ref5.scale,
+  const _ref5$scale = _ref5.scale,
       scale = _ref5$scale === void 0 ? 1 : _ref5$scale,
       _ref5$rotation = _ref5.rotation,
       rotation = _ref5$rotation === void 0 ? 0 : _ref5$rotation;
-  var _xfaPage$attributes$s = xfaPage.attributes.style,
+  const _xfaPage$attributes$s = xfaPage.attributes.style,
       width = _xfaPage$attributes$s.width,
       height = _xfaPage$attributes$s.height;
-  var viewBox = [0, 0, parseInt(width), parseInt(height)];
+  const viewBox = [0, 0, parseInt(width), parseInt(height)];
   return new PageViewport({
     viewBox: viewBox,
     scale: scale,
@@ -9962,23 +9962,23 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.BaseStandardFontDataFactory = exports.BaseSVGFactory = exports.BaseCanvasFactory = exports.BaseCMapReaderFactory = void 0;
 
-var _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
+const _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _asyncToGenerator(fn) { return function () { const self = this, args = arguments; return new Promise(function (resolve, reject) { const gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
-var BaseCanvasFactory = /*#__PURE__*/function () {
+const BaseCanvasFactory = /*#__PURE__*/function () {
   function BaseCanvasFactory() {
     _classCallCheck(this, BaseCanvasFactory);
 
@@ -9994,7 +9994,7 @@ var BaseCanvasFactory = /*#__PURE__*/function () {
         throw new Error("Invalid canvas size");
       }
 
-      var canvas = this._createCanvas(width, height);
+      const canvas = this._createCanvas(width, height);
 
       return {
         canvas: canvas,
@@ -10039,9 +10039,9 @@ var BaseCanvasFactory = /*#__PURE__*/function () {
 
 exports.BaseCanvasFactory = BaseCanvasFactory;
 
-var BaseCMapReaderFactory = /*#__PURE__*/function () {
+const BaseCMapReaderFactory = /*#__PURE__*/function () {
   function BaseCMapReaderFactory(_ref) {
-    var _ref$baseUrl = _ref.baseUrl,
+    const _ref$baseUrl = _ref.baseUrl,
         baseUrl = _ref$baseUrl === void 0 ? null : _ref$baseUrl,
         _ref$isCompressed = _ref.isCompressed,
         isCompressed = _ref$isCompressed === void 0 ? false : _ref$isCompressed;
@@ -10059,10 +10059,10 @@ var BaseCMapReaderFactory = /*#__PURE__*/function () {
   _createClass(BaseCMapReaderFactory, [{
     key: "fetch",
     value: function () {
-      var _fetch = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee(_ref2) {
-        var _this = this;
+      const _fetch = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee(_ref2) {
+        const _this = this;
 
-        var name, url, compressionType;
+        let name, url, compressionType;
         return _regenerator["default"].wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -10117,9 +10117,9 @@ var BaseCMapReaderFactory = /*#__PURE__*/function () {
 
 exports.BaseCMapReaderFactory = BaseCMapReaderFactory;
 
-var BaseStandardFontDataFactory = /*#__PURE__*/function () {
+const BaseStandardFontDataFactory = /*#__PURE__*/function () {
   function BaseStandardFontDataFactory(_ref3) {
-    var _ref3$baseUrl = _ref3.baseUrl,
+    const _ref3$baseUrl = _ref3.baseUrl,
         baseUrl = _ref3$baseUrl === void 0 ? null : _ref3$baseUrl;
 
     _classCallCheck(this, BaseStandardFontDataFactory);
@@ -10134,8 +10134,8 @@ var BaseStandardFontDataFactory = /*#__PURE__*/function () {
   _createClass(BaseStandardFontDataFactory, [{
     key: "fetch",
     value: function () {
-      var _fetch2 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee2(_ref4) {
-        var filename, url;
+      const _fetch2 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee2(_ref4) {
+        let filename, url;
         return _regenerator["default"].wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -10189,7 +10189,7 @@ var BaseStandardFontDataFactory = /*#__PURE__*/function () {
 
 exports.BaseStandardFontDataFactory = BaseStandardFontDataFactory;
 
-var BaseSVGFactory = /*#__PURE__*/function () {
+const BaseSVGFactory = /*#__PURE__*/function () {
   function BaseSVGFactory() {
     _classCallCheck(this, BaseSVGFactory);
 
@@ -10205,7 +10205,7 @@ var BaseSVGFactory = /*#__PURE__*/function () {
         throw new Error("Invalid SVG dimensions");
       }
 
-      var svg = this._createSVG("svg:svg");
+      const svg = this._createSVG("svg:svg");
 
       svg.setAttribute("version", "1.1");
       svg.setAttribute("width", "".concat(width, "px"));
@@ -10249,9 +10249,9 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.FontLoader = exports.FontFaceObject = void 0;
 
-var _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
+const _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -10259,7 +10259,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { const hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { let Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { const NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 
@@ -10271,23 +10271,23 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _asyncToGenerator(fn) { return function () { const self = this, args = arguments; return new Promise(function (resolve, reject) { const gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
-var BaseFontLoader = /*#__PURE__*/function () {
+const BaseFontLoader = /*#__PURE__*/function () {
   function BaseFontLoader(_ref) {
-    var docId = _ref.docId,
+    const docId = _ref.docId,
         onUnsupportedFeature = _ref.onUnsupportedFeature,
         _ref$ownerDocument = _ref.ownerDocument,
         ownerDocument = _ref$ownerDocument === void 0 ? globalThis.document : _ref$ownerDocument,
@@ -10317,7 +10317,7 @@ var BaseFontLoader = /*#__PURE__*/function () {
   }, {
     key: "insertRule",
     value: function insertRule(rule) {
-      var styleElement = this.styleElement;
+      let styleElement = this.styleElement;
 
       if (!styleElement) {
         styleElement = this.styleElement = this._document.createElement("style");
@@ -10326,18 +10326,18 @@ var BaseFontLoader = /*#__PURE__*/function () {
         this._document.documentElement.getElementsByTagName("head")[0].appendChild(styleElement);
       }
 
-      var styleSheet = styleElement.sheet;
+      const styleSheet = styleElement.sheet;
       styleSheet.insertRule(rule, styleSheet.cssRules.length);
     }
   }, {
     key: "clear",
     value: function clear() {
-      var _iterator = _createForOfIteratorHelper(this.nativeFontFaces),
+      let _iterator = _createForOfIteratorHelper(this.nativeFontFaces),
           _step;
 
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var nativeFontFace = _step.value;
+          const nativeFontFace = _step.value;
 
           this._document.fonts["delete"](nativeFontFace);
         }
@@ -10357,10 +10357,10 @@ var BaseFontLoader = /*#__PURE__*/function () {
   }, {
     key: "bind",
     value: function () {
-      var _bind = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee(font) {
-        var _this = this;
+      const _bind = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee(font) {
+        const _this = this;
 
-        var nativeFontFace, rule;
+        let nativeFontFace, rule;
         return _regenerator["default"].wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -10431,7 +10431,7 @@ var BaseFontLoader = /*#__PURE__*/function () {
               case 24:
                 _context.next = 26;
                 return new Promise(function (resolve) {
-                  var request = _this._queueLoadingCallback(resolve);
+                  const request = _this._queueLoadingCallback(resolve);
 
                   _this._prepareFontLoadEvent([rule], [font], request);
                 });
@@ -10458,9 +10458,9 @@ var BaseFontLoader = /*#__PURE__*/function () {
   }, {
     key: "isFontLoadingAPISupported",
     get: function get() {
-      var _this$_document;
+      let _this$_document;
 
-      var hasFonts = !!((_this$_document = this._document) !== null && _this$_document !== void 0 && _this$_document.fonts);
+      const hasFonts = !!((_this$_document = this._document) !== null && _this$_document !== void 0 && _this$_document.fonts);
       return (0, _util.shadow)(this, "isFontLoadingAPISupported", hasFonts);
     }
   }, {
@@ -10483,16 +10483,16 @@ var BaseFontLoader = /*#__PURE__*/function () {
   return BaseFontLoader;
 }();
 
-var FontLoader;
+let FontLoader;
 exports.FontLoader = FontLoader;
 {
   exports.FontLoader = FontLoader = /*#__PURE__*/function (_BaseFontLoader) {
     _inherits(GenericFontLoader, _BaseFontLoader);
 
-    var _super = _createSuper(GenericFontLoader);
+    const _super = _createSuper(GenericFontLoader);
 
     function GenericFontLoader(params) {
-      var _this2;
+      let _this2;
 
       _classCallCheck(this, GenericFontLoader);
 
@@ -10508,12 +10508,12 @@ exports.FontLoader = FontLoader;
     _createClass(GenericFontLoader, [{
       key: "isSyncFontLoadingSupported",
       get: function get() {
-        var supported = false;
+        let supported = false;
 
         if (typeof navigator === "undefined") {
           supported = true;
         } else {
-          var m = /Mozilla\/5.0.*?rv:(\d+).*? Gecko/.exec(navigator.userAgent);
+          const m = /Mozilla\/5.0.*?rv:(\d+).*? Gecko/.exec(navigator.userAgent);
 
           if ((m === null || m === void 0 ? void 0 : m[1]) >= 14) {
             supported = true;
@@ -10530,7 +10530,7 @@ exports.FontLoader = FontLoader;
           request.done = true;
 
           while (context.requests.length > 0 && context.requests[0].done) {
-            var otherRequest = context.requests.shift();
+            const otherRequest = context.requests.shift();
             setTimeout(otherRequest.callback, 0);
           }
         }
@@ -10548,7 +10548,7 @@ exports.FontLoader = FontLoader;
     }, {
       key: "_loadTestFont",
       get: function get() {
-        var getLoadTestFont = function getLoadTestFont() {
+        const getLoadTestFont = function getLoadTestFont() {
           return atob("T1RUTwALAIAAAwAwQ0ZGIDHtZg4AAAOYAAAAgUZGVE1lkzZwAAAEHAAAABxHREVGABQA" + "FQAABDgAAAAeT1MvMlYNYwkAAAEgAAAAYGNtYXABDQLUAAACNAAAAUJoZWFk/xVFDQAA" + "ALwAAAA2aGhlYQdkA+oAAAD0AAAAJGhtdHgD6AAAAAAEWAAAAAZtYXhwAAJQAAAAARgA" + "AAAGbmFtZVjmdH4AAAGAAAAAsXBvc3T/hgAzAAADeAAAACAAAQAAAAEAALZRFsRfDzz1" + "AAsD6AAAAADOBOTLAAAAAM4KHDwAAAAAA+gDIQAAAAgAAgAAAAAAAAABAAADIQAAAFoD" + "6AAAAAAD6AABAAAAAAAAAAAAAAAAAAAAAQAAUAAAAgAAAAQD6AH0AAUAAAKKArwAAACM" + "AooCvAAAAeAAMQECAAACAAYJAAAAAAAAAAAAAQAAAAAAAAAAAAAAAFBmRWQAwAAuAC4D" + "IP84AFoDIQAAAAAAAQAAAAAAAAAAACAAIAABAAAADgCuAAEAAAAAAAAAAQAAAAEAAAAA" + "AAEAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAMAAQAAAAEAAAAAAAQAAQAAAAEAAAAAAAUA" + "AQAAAAEAAAAAAAYAAQAAAAMAAQQJAAAAAgABAAMAAQQJAAEAAgABAAMAAQQJAAIAAgAB" + "AAMAAQQJAAMAAgABAAMAAQQJAAQAAgABAAMAAQQJAAUAAgABAAMAAQQJAAYAAgABWABY" + "AAAAAAAAAwAAAAMAAAAcAAEAAAAAADwAAwABAAAAHAAEACAAAAAEAAQAAQAAAC7//wAA" + "AC7////TAAEAAAAAAAABBgAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + "AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAD/gwAyAAAAAQAAAAAAAAAAAAAAAAAA" + "AAABAAQEAAEBAQJYAAEBASH4DwD4GwHEAvgcA/gXBIwMAYuL+nz5tQXkD5j3CBLnEQAC" + "AQEBIVhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYAAABAQAADwACAQEEE/t3" + "Dov6fAH6fAT+fPp8+nwHDosMCvm1Cvm1DAz6fBQAAAAAAAABAAAAAMmJbzEAAAAAzgTj" + "FQAAAADOBOQpAAEAAAAAAAAADAAUAAQAAAABAAAAAgABAAAAAAAAAAAD6AAAAAAAAA==");
         };
 
@@ -10562,19 +10562,19 @@ exports.FontLoader = FontLoader;
         }
 
         function spliceString(s, offset, remove, insert) {
-          var chunk1 = s.substring(0, offset);
-          var chunk2 = s.substring(offset + remove);
+          const chunk1 = s.substring(0, offset);
+          const chunk2 = s.substring(offset + remove);
           return chunk1 + insert + chunk2;
         }
 
-        var i, ii;
+        let i, ii;
 
-        var canvas = this._document.createElement("canvas");
+        const canvas = this._document.createElement("canvas");
 
         canvas.width = 1;
         canvas.height = 1;
-        var ctx = canvas.getContext("2d");
-        var called = 0;
+        const ctx = canvas.getContext("2d");
+        let called = 0;
 
         function isFontReady(name, callback) {
           called++;
@@ -10587,7 +10587,7 @@ exports.FontLoader = FontLoader;
 
           ctx.font = "30px " + name;
           ctx.fillText(".", 0, 20);
-          var imageData = ctx.getImageData(0, 0, 1, 1);
+          const imageData = ctx.getImageData(0, 0, 1, 1);
 
           if (imageData.data[3] > 0) {
             callback();
@@ -10597,13 +10597,13 @@ exports.FontLoader = FontLoader;
           setTimeout(isFontReady.bind(null, name, callback));
         }
 
-        var loadTestFontId = "lt".concat(Date.now()).concat(this.loadTestFontId++);
-        var data = this._loadTestFont;
-        var COMMENT_OFFSET = 976;
+        const loadTestFontId = "lt".concat(Date.now()).concat(this.loadTestFontId++);
+        let data = this._loadTestFont;
+        const COMMENT_OFFSET = 976;
         data = spliceString(data, COMMENT_OFFSET, loadTestFontId.length, loadTestFontId);
-        var CFF_CHECKSUM_OFFSET = 16;
-        var XXXX_VALUE = 0x58585858;
-        var checksum = int32(data, CFF_CHECKSUM_OFFSET);
+        const CFF_CHECKSUM_OFFSET = 16;
+        const XXXX_VALUE = 0x58585858;
+        let checksum = int32(data, CFF_CHECKSUM_OFFSET);
 
         for (i = 0, ii = loadTestFontId.length - 3; i < ii; i += 4) {
           checksum = checksum - XXXX_VALUE + int32(loadTestFontId, i) | 0;
@@ -10614,17 +10614,17 @@ exports.FontLoader = FontLoader;
         }
 
         data = spliceString(data, CFF_CHECKSUM_OFFSET, 4, (0, _util.string32)(checksum));
-        var url = "url(data:font/opentype;base64,".concat(btoa(data), ");");
-        var rule = "@font-face {font-family:\"".concat(loadTestFontId, "\";src:").concat(url, "}");
+        const url = "url(data:font/opentype;base64,".concat(btoa(data), ");");
+        const rule = "@font-face {font-family:\"".concat(loadTestFontId, "\";src:").concat(url, "}");
         this.insertRule(rule);
-        var names = [];
+        const names = [];
 
-        var _iterator2 = _createForOfIteratorHelper(fonts),
+        let _iterator2 = _createForOfIteratorHelper(fonts),
             _step2;
 
         try {
           for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-            var font = _step2.value;
+            const font = _step2.value;
             names.push(font.loadedName);
           }
         } catch (err) {
@@ -10635,17 +10635,17 @@ exports.FontLoader = FontLoader;
 
         names.push(loadTestFontId);
 
-        var div = this._document.createElement("div");
+        const div = this._document.createElement("div");
 
         div.style.visibility = "hidden";
         div.style.width = div.style.height = "10px";
         div.style.position = "absolute";
         div.style.top = div.style.left = "0px";
 
-        for (var _i = 0, _names = names; _i < _names.length; _i++) {
-          var name = _names[_i];
+        for (let _i = 0, _names = names; _i < _names.length; _i++) {
+          const name = _names[_i];
 
-          var span = this._document.createElement("span");
+          const span = this._document.createElement("span");
 
           span.textContent = "Hi";
           span.style.fontFamily = name;
@@ -10665,9 +10665,9 @@ exports.FontLoader = FontLoader;
   }(BaseFontLoader);
 }
 
-var FontFaceObject = /*#__PURE__*/function () {
+const FontFaceObject = /*#__PURE__*/function () {
   function FontFaceObject(translatedData, _ref2) {
-    var _ref2$isEvalSupported = _ref2.isEvalSupported,
+    const _ref2$isEvalSupported = _ref2.isEvalSupported,
         isEvalSupported = _ref2$isEvalSupported === void 0 ? true : _ref2$isEvalSupported,
         _ref2$disableFontFace = _ref2.disableFontFace,
         disableFontFace = _ref2$disableFontFace === void 0 ? false : _ref2$disableFontFace,
@@ -10681,7 +10681,7 @@ var FontFaceObject = /*#__PURE__*/function () {
 
     this.compiledGlyphs = Object.create(null);
 
-    for (var i in translatedData) {
+    for (const i in translatedData) {
       this[i] = translatedData[i];
     }
 
@@ -10699,12 +10699,12 @@ var FontFaceObject = /*#__PURE__*/function () {
         return null;
       }
 
-      var nativeFontFace;
+      let nativeFontFace;
 
       if (!this.cssFontInfo) {
         nativeFontFace = new FontFace(this.loadedName, this.data, {});
       } else {
-        var css = {
+        const css = {
           weight: this.cssFontInfo.fontWeight
         };
 
@@ -10728,14 +10728,14 @@ var FontFaceObject = /*#__PURE__*/function () {
         return null;
       }
 
-      var data = (0, _util.bytesToString)(this.data);
-      var url = "url(data:".concat(this.mimetype, ";base64,").concat(btoa(data), ");");
-      var rule;
+      const data = (0, _util.bytesToString)(this.data);
+      const url = "url(data:".concat(this.mimetype, ";base64,").concat(btoa(data), ");");
+      let rule;
 
       if (!this.cssFontInfo) {
         rule = "@font-face {font-family:\"".concat(this.loadedName, "\";src:").concat(url, "}");
       } else {
-        var css = "font-weight: ".concat(this.cssFontInfo.fontWeight, ";");
+        let css = "font-weight: ".concat(this.cssFontInfo.fontWeight, ";");
 
         if (this.cssFontInfo.italicAngle) {
           css += "font-style: oblique ".concat(this.cssFontInfo.italicAngle, "deg;");
@@ -10757,7 +10757,7 @@ var FontFaceObject = /*#__PURE__*/function () {
         return this.compiledGlyphs[character];
       }
 
-      var cmds;
+      let cmds;
 
       try {
         cmds = objs.get(this.loadedName + "_path_" + character);
@@ -10775,15 +10775,15 @@ var FontFaceObject = /*#__PURE__*/function () {
       }
 
       if (this.isEvalSupported && _util.FeatureTest.isEvalSupported) {
-        var jsBuf = [];
+        const jsBuf = [];
 
-        var _iterator3 = _createForOfIteratorHelper(cmds),
+        let _iterator3 = _createForOfIteratorHelper(cmds),
             _step3;
 
         try {
           for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-            var current = _step3.value;
-            var args = current.args !== undefined ? current.args.join(",") : "";
+            const current = _step3.value;
+            const args = current.args !== undefined ? current.args.join(",") : "";
             jsBuf.push("c.", current.cmd, "(", args, ");\n");
           }
         } catch (err) {
@@ -10796,12 +10796,12 @@ var FontFaceObject = /*#__PURE__*/function () {
       }
 
       return this.compiledGlyphs[character] = function (c, size) {
-        var _iterator4 = _createForOfIteratorHelper(cmds),
+        let _iterator4 = _createForOfIteratorHelper(cmds),
             _step4;
 
         try {
           for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-            var _current = _step4.value;
+            const _current = _step4.value;
 
             if (_current.cmd === "scale") {
               _current.args = [size, -size];
@@ -10835,31 +10835,31 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.AnnotationStorage = void 0;
 
-var _murmurhash = __w_pdfjs_require__(162);
+const _murmurhash = __w_pdfjs_require__(162);
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { let _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; const _arr = []; let _n = true; let _d = false; let _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
-var AnnotationStorage = /*#__PURE__*/function () {
+const AnnotationStorage = /*#__PURE__*/function () {
   function AnnotationStorage() {
     _classCallCheck(this, AnnotationStorage);
 
@@ -10872,7 +10872,7 @@ var AnnotationStorage = /*#__PURE__*/function () {
   _createClass(AnnotationStorage, [{
     key: "getValue",
     value: function getValue(key, defaultValue) {
-      var value = this._storage.get(key);
+      const value = this._storage.get(key);
 
       if (value === undefined) {
         return defaultValue;
@@ -10888,13 +10888,13 @@ var AnnotationStorage = /*#__PURE__*/function () {
   }, {
     key: "setValue",
     value: function setValue(key, value) {
-      var obj = this._storage.get(key);
+      const obj = this._storage.get(key);
 
-      var modified = false;
+      let modified = false;
 
       if (obj !== undefined) {
-        for (var _i = 0, _Object$entries = Object.entries(value); _i < _Object$entries.length; _i++) {
-          var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+        for (let _i = 0, _Object$entries = Object.entries(value); _i < _Object$entries.length; _i++) {
+          const _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
               entry = _Object$entries$_i[0],
               val = _Object$entries$_i[1];
 
@@ -10953,14 +10953,14 @@ var AnnotationStorage = /*#__PURE__*/function () {
   }, {
     key: "hash",
     get: function get() {
-      var hash = new _murmurhash.MurmurHash3_64();
+      const hash = new _murmurhash.MurmurHash3_64();
 
-      var _iterator = _createForOfIteratorHelper(this._storage),
+      let _iterator = _createForOfIteratorHelper(this._storage),
           _step;
 
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var _step$value = _slicedToArray(_step.value, 2),
+          const _step$value = _slicedToArray(_step.value, 2),
               key = _step$value[0],
               value = _step$value[1];
 
@@ -10993,19 +10993,19 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.MurmurHash3_64 = void 0;
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
-var SEED = 0xc3d2e1f0;
-var MASK_HIGH = 0xffff0000;
-var MASK_LOW = 0xffff;
+const SEED = 0xc3d2e1f0;
+const MASK_HIGH = 0xffff0000;
+const MASK_LOW = 0xffff;
 
-var MurmurHash3_64 = /*#__PURE__*/function () {
+const MurmurHash3_64 = /*#__PURE__*/function () {
   function MurmurHash3_64(seed) {
     _classCallCheck(this, MurmurHash3_64);
 
@@ -11016,14 +11016,14 @@ var MurmurHash3_64 = /*#__PURE__*/function () {
   _createClass(MurmurHash3_64, [{
     key: "update",
     value: function update(input) {
-      var data, length;
+      let data, length;
 
       if (typeof input === "string") {
         data = new Uint8Array(input.length * 2);
         length = 0;
 
-        for (var i = 0, ii = input.length; i < ii; i++) {
-          var code = input.charCodeAt(i);
+        for (let i = 0, ii = input.length; i < ii; i++) {
+          const code = input.charCodeAt(i);
 
           if (code <= 0xff) {
             data[length++] = code;
@@ -11039,19 +11039,19 @@ var MurmurHash3_64 = /*#__PURE__*/function () {
         throw new Error("Wrong data format in MurmurHash3_64_update. " + "Input must be a string or array.");
       }
 
-      var blockCounts = length >> 2;
-      var tailLength = length - blockCounts * 4;
-      var dataUint32 = new Uint32Array(data.buffer, 0, blockCounts);
-      var k1 = 0,
+      const blockCounts = length >> 2;
+      const tailLength = length - blockCounts * 4;
+      const dataUint32 = new Uint32Array(data.buffer, 0, blockCounts);
+      let k1 = 0,
           k2 = 0;
-      var h1 = this.h1,
+      let h1 = this.h1,
           h2 = this.h2;
-      var C1 = 0xcc9e2d51,
+      const C1 = 0xcc9e2d51,
           C2 = 0x1b873593;
-      var C1_LOW = C1 & MASK_LOW,
+      const C1_LOW = C1 & MASK_LOW,
           C2_LOW = C2 & MASK_LOW;
 
-      for (var _i = 0; _i < blockCounts; _i++) {
+      for (let _i = 0; _i < blockCounts; _i++) {
         if (_i & 1) {
           k1 = dataUint32[_i];
           k1 = k1 * C1 & MASK_HIGH | k1 * C1_LOW & MASK_LOW;
@@ -11100,7 +11100,7 @@ var MurmurHash3_64 = /*#__PURE__*/function () {
   }, {
     key: "hexdigest",
     value: function hexdigest() {
-      var h1 = this.h1,
+      let h1 = this.h1,
           h2 = this.h2;
       h1 ^= h2 >>> 1;
       h1 = h1 * 0xed558ccd & MASK_HIGH | h1 * 0x8ccd & MASK_LOW;
@@ -11109,7 +11109,7 @@ var MurmurHash3_64 = /*#__PURE__*/function () {
       h1 = h1 * 0x1a85ec53 & MASK_HIGH | h1 * 0xec53 & MASK_LOW;
       h2 = h2 * 0xc4ceb9fe & MASK_HIGH | ((h2 << 16 | h1 >>> 16) * 0xb9fe1a85 & MASK_HIGH) >>> 16;
       h1 ^= h2 >>> 1;
-      var hex1 = (h1 >>> 0).toString(16),
+      const hex1 = (h1 >>> 0).toString(16),
           hex2 = (h2 >>> 0).toString(16);
       return hex1.padStart(8, "0") + hex2.padStart(8, "0");
     }
@@ -11132,15 +11132,15 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.CanvasGraphics = void 0;
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
-var _pattern_helper = __w_pdfjs_require__(164);
+const _pattern_helper = __w_pdfjs_require__(164);
 
-var _image_utils = __w_pdfjs_require__(165);
+const _image_utils = __w_pdfjs_require__(165);
 
-var _is_node = __w_pdfjs_require__(3);
+const _is_node = __w_pdfjs_require__(3);
 
-var _display_utils = __w_pdfjs_require__(158);
+const _display_utils = __w_pdfjs_require__(158);
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
@@ -11152,11 +11152,11 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
@@ -11164,23 +11164,23 @@ function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArra
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { let _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; const _arr = []; let _n = true; let _d = false; let _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var MIN_FONT_SIZE = 16;
-var MAX_FONT_SIZE = 100;
-var MAX_GROUP_SIZE = 4096;
-var EXECUTION_TIME = 15;
-var EXECUTION_STEPS = 10;
-var COMPILE_TYPE3_GLYPHS = true;
-var MAX_SIZE_TO_COMPILE = 1000;
-var FULL_CHUNK_HEIGHT = 16;
-var LINEWIDTH_SCALE_FACTOR = 1.000001;
+const MIN_FONT_SIZE = 16;
+const MAX_FONT_SIZE = 100;
+const MAX_GROUP_SIZE = 4096;
+const EXECUTION_TIME = 15;
+const EXECUTION_STEPS = 10;
+const COMPILE_TYPE3_GLYPHS = true;
+const MAX_SIZE_TO_COMPILE = 1000;
+const FULL_CHUNK_HEIGHT = 16;
+const LINEWIDTH_SCALE_FACTOR = 1.000001;
 
 function mirrorContextOperations(ctx, destCtx) {
   if (ctx._removeMirroring) {
@@ -11334,7 +11334,7 @@ function addContextCurrentTransform(ctx) {
   ctx._transformStack = [];
 
   try {
-    var desc = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(ctx), "lineWidth");
+    const desc = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(ctx), "lineWidth");
     ctx._setLineWidth = desc.set;
     ctx._getLineWidth = desc.get;
     Object.defineProperty(ctx, "lineWidth", {
@@ -11354,7 +11354,7 @@ function addContextCurrentTransform(ctx) {
   });
   Object.defineProperty(ctx, "mozCurrentTransformInverse", {
     get: function getCurrentTransformInverse() {
-      var _this$_transformMatri = _slicedToArray(this._transformMatrix, 6),
+      const _this$_transformMatri = _slicedToArray(this._transformMatrix, 6),
           a = _this$_transformMatri[0],
           b = _this$_transformMatri[1],
           c = _this$_transformMatri[2],
@@ -11362,14 +11362,14 @@ function addContextCurrentTransform(ctx) {
           e = _this$_transformMatri[4],
           f = _this$_transformMatri[5];
 
-      var ad_bc = a * d - b * c;
-      var bc_ad = b * c - a * d;
+      const ad_bc = a * d - b * c;
+      const bc_ad = b * c - a * d;
       return [d / ad_bc, b / bc_ad, c / bc_ad, a / ad_bc, (d * e - c * f) / bc_ad, (b * e - a * f) / ad_bc];
     }
   });
 
   ctx.save = function ctxSave() {
-    var old = this._transformMatrix;
+    const old = this._transformMatrix;
 
     this._transformStack.push(old);
 
@@ -11383,7 +11383,7 @@ function addContextCurrentTransform(ctx) {
       (0, _util.warn)("Tried to restore a ctx when the stack was already empty.");
     }
 
-    var prev = this._transformStack.pop();
+    const prev = this._transformStack.pop();
 
     if (prev) {
       this._transformMatrix = prev;
@@ -11393,7 +11393,7 @@ function addContextCurrentTransform(ctx) {
   };
 
   ctx.translate = function ctxTranslate(x, y) {
-    var m = this._transformMatrix;
+    const m = this._transformMatrix;
     m[4] = m[0] * x + m[2] * y + m[4];
     m[5] = m[1] * x + m[3] * y + m[5];
 
@@ -11401,7 +11401,7 @@ function addContextCurrentTransform(ctx) {
   };
 
   ctx.scale = function ctxScale(x, y) {
-    var m = this._transformMatrix;
+    const m = this._transformMatrix;
     m[0] *= x;
     m[1] *= x;
     m[2] *= y;
@@ -11411,7 +11411,7 @@ function addContextCurrentTransform(ctx) {
   };
 
   ctx.transform = function ctxTransform(a, b, c, d, e, f) {
-    var m = this._transformMatrix;
+    const m = this._transformMatrix;
     this._transformMatrix = [m[0] * a + m[2] * b, m[1] * a + m[3] * b, m[0] * c + m[2] * d, m[1] * c + m[3] * d, m[0] * e + m[2] * f + m[4], m[1] * e + m[3] * f + m[5]];
 
     ctx._originalTransform(a, b, c, d, e, f);
@@ -11430,16 +11430,16 @@ function addContextCurrentTransform(ctx) {
   };
 
   ctx.rotate = function ctxRotate(angle) {
-    var cosValue = Math.cos(angle);
-    var sinValue = Math.sin(angle);
-    var m = this._transformMatrix;
+    const cosValue = Math.cos(angle);
+    const sinValue = Math.sin(angle);
+    const m = this._transformMatrix;
     this._transformMatrix = [m[0] * cosValue + m[2] * sinValue, m[1] * cosValue + m[3] * sinValue, m[0] * -sinValue + m[2] * cosValue, m[1] * -sinValue + m[3] * cosValue, m[4], m[5]];
 
     this._originalRotate(angle);
   };
 }
 
-var CachedCanvases = /*#__PURE__*/function () {
+const CachedCanvases = /*#__PURE__*/function () {
   function CachedCanvases(canvasFactory) {
     _classCallCheck(this, CachedCanvases);
 
@@ -11450,7 +11450,7 @@ var CachedCanvases = /*#__PURE__*/function () {
   _createClass(CachedCanvases, [{
     key: "getCanvas",
     value: function getCanvas(id, width, height, trackTransform) {
-      var canvasEntry;
+      let canvasEntry;
 
       if (this.cache[id] !== undefined) {
         canvasEntry = this.cache[id];
@@ -11475,8 +11475,8 @@ var CachedCanvases = /*#__PURE__*/function () {
   }, {
     key: "clear",
     value: function clear() {
-      for (var id in this.cache) {
-        var canvasEntry = this.cache[id];
+      for (const id in this.cache) {
+        const canvasEntry = this.cache[id];
         this.canvasFactory.destroy(canvasEntry);
         delete this.cache[id];
       }
@@ -11487,7 +11487,7 @@ var CachedCanvases = /*#__PURE__*/function () {
 }();
 
 function drawImageAtIntegerCoords(ctx, srcImg, srcX, srcY, srcW, srcH, destX, destY, destW, destH) {
-  var _ctx$mozCurrentTransf = _slicedToArray(ctx.mozCurrentTransform, 6),
+  const _ctx$mozCurrentTransf = _slicedToArray(ctx.mozCurrentTransform, 6),
       a = _ctx$mozCurrentTransf[0],
       b = _ctx$mozCurrentTransf[1],
       c = _ctx$mozCurrentTransf[2],
@@ -11496,14 +11496,14 @@ function drawImageAtIntegerCoords(ctx, srcImg, srcX, srcY, srcW, srcH, destX, de
       ty = _ctx$mozCurrentTransf[5];
 
   if (b === 0 && c === 0) {
-    var tlX = destX * a + tx;
-    var rTlX = Math.round(tlX);
-    var tlY = destY * d + ty;
-    var rTlY = Math.round(tlY);
-    var brX = (destX + destW) * a + tx;
-    var rWidth = Math.abs(Math.round(brX) - rTlX) || 1;
-    var brY = (destY + destH) * d + ty;
-    var rHeight = Math.abs(Math.round(brY) - rTlY) || 1;
+    const tlX = destX * a + tx;
+    const rTlX = Math.round(tlX);
+    const tlY = destY * d + ty;
+    const rTlY = Math.round(tlY);
+    const brX = (destX + destW) * a + tx;
+    const rWidth = Math.abs(Math.round(brX) - rTlX) || 1;
+    const brY = (destY + destH) * d + ty;
+    const rHeight = Math.abs(Math.round(brY) - rTlY) || 1;
     ctx.setTransform(Math.sign(a), 0, 0, Math.sign(d), rTlX, rTlY);
     ctx.drawImage(srcImg, srcX, srcY, srcW, srcH, 0, 0, rWidth, rHeight);
     ctx.setTransform(a, b, c, d, tx, ty);
@@ -11511,21 +11511,21 @@ function drawImageAtIntegerCoords(ctx, srcImg, srcX, srcY, srcW, srcH, destX, de
   }
 
   if (a === 0 && d === 0) {
-    var _tlX = destY * c + tx;
+    const _tlX = destY * c + tx;
 
-    var _rTlX = Math.round(_tlX);
+    const _rTlX = Math.round(_tlX);
 
-    var _tlY = destX * b + ty;
+    const _tlY = destX * b + ty;
 
-    var _rTlY = Math.round(_tlY);
+    const _rTlY = Math.round(_tlY);
 
-    var _brX = (destY + destH) * c + tx;
+    const _brX = (destY + destH) * c + tx;
 
-    var _rWidth = Math.abs(Math.round(_brX) - _rTlX) || 1;
+    const _rWidth = Math.abs(Math.round(_brX) - _rTlX) || 1;
 
-    var _brY = (destX + destW) * b + ty;
+    const _brY = (destX + destW) * b + ty;
 
-    var _rHeight = Math.abs(Math.round(_brY) - _rTlY) || 1;
+    const _rHeight = Math.abs(Math.round(_brY) - _rTlY) || 1;
 
     ctx.setTransform(0, Math.sign(b), Math.sign(c), 0, _rTlX, _rTlY);
     ctx.drawImage(srcImg, srcX, srcY, srcW, srcH, 0, 0, _rHeight, _rWidth);
@@ -11534,35 +11534,35 @@ function drawImageAtIntegerCoords(ctx, srcImg, srcX, srcY, srcW, srcH, destX, de
   }
 
   ctx.drawImage(srcImg, srcX, srcY, srcW, srcH, destX, destY, destW, destH);
-  var scaleX = Math.hypot(a, b);
-  var scaleY = Math.hypot(c, d);
+  const scaleX = Math.hypot(a, b);
+  const scaleY = Math.hypot(c, d);
   return [scaleX * destW, scaleY * destH];
 }
 
 function compileType3Glyph(imgData) {
-  var width = imgData.width,
+  const width = imgData.width,
       height = imgData.height;
 
   if (!COMPILE_TYPE3_GLYPHS || width > MAX_SIZE_TO_COMPILE || height > MAX_SIZE_TO_COMPILE) {
     return null;
   }
 
-  var POINT_TO_PROCESS_LIMIT = 1000;
-  var POINT_TYPES = new Uint8Array([0, 2, 4, 0, 1, 0, 5, 4, 8, 10, 0, 8, 0, 2, 1, 0]);
-  var width1 = width + 1;
-  var points = new Uint8Array(width1 * (height + 1));
-  var i, j, j0;
-  var lineSize = width + 7 & ~7;
-  var data = new Uint8Array(lineSize * height),
+  const POINT_TO_PROCESS_LIMIT = 1000;
+  const POINT_TYPES = new Uint8Array([0, 2, 4, 0, 1, 0, 5, 4, 8, 10, 0, 8, 0, 2, 1, 0]);
+  const width1 = width + 1;
+  let points = new Uint8Array(width1 * (height + 1));
+  let i, j, j0;
+  const lineSize = width + 7 & ~7;
+  let data = new Uint8Array(lineSize * height),
       pos = 0;
 
-  var _iterator = _createForOfIteratorHelper(imgData.data),
+  let _iterator = _createForOfIteratorHelper(imgData.data),
       _step;
 
   try {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var elem = _step.value;
-      var mask = 128;
+      const elem = _step.value;
+      let mask = 128;
 
       while (mask > 0) {
         data[pos++] = elem & mask ? 0 : 255;
@@ -11575,7 +11575,7 @@ function compileType3Glyph(imgData) {
     _iterator.f();
   }
 
-  var count = 0;
+  let count = 0;
   pos = 0;
 
   if (data[pos] !== 0) {
@@ -11606,7 +11606,7 @@ function compileType3Glyph(imgData) {
       ++count;
     }
 
-    var sum = (data[pos] ? 4 : 0) + (data[pos - lineSize] ? 8 : 0);
+    let sum = (data[pos] ? 4 : 0) + (data[pos - lineSize] ? 8 : 0);
 
     for (j = 1; j < width; j++) {
       sum = (sum >> 2) + (data[pos + 1] ? 4 : 0) + (data[pos - lineSize + 1] ? 8 : 0);
@@ -11655,8 +11655,8 @@ function compileType3Glyph(imgData) {
     return null;
   }
 
-  var steps = new Int32Array([0, width1, -1, 0, -width1, 0, 0, 0, 1]);
-  var path, outlines, coords;
+  const steps = new Int32Array([0, width1, -1, 0, -width1, 0, 0, 0, 1]);
+  let path, outlines, coords;
 
   if (!_is_node.isNodeJS) {
     path = new Path2D();
@@ -11665,8 +11665,8 @@ function compileType3Glyph(imgData) {
   }
 
   for (i = 0; count && i <= height; i++) {
-    var p = i * width1;
-    var end = p + width;
+    let p = i * width1;
+    const end = p + width;
 
     while (p < end && !points[p]) {
       p++;
@@ -11682,17 +11682,17 @@ function compileType3Glyph(imgData) {
       coords = [p % width1, i];
     }
 
-    var p0 = p;
-    var type = points[p];
+    const p0 = p;
+    let type = points[p];
 
     do {
-      var step = steps[type];
+      const step = steps[type];
 
       do {
         p += step;
       } while (!points[p]);
 
-      var pp = points[p];
+      const pp = points[p];
 
       if (pp !== 5 && pp !== 10) {
         type = pp;
@@ -11723,7 +11723,7 @@ function compileType3Glyph(imgData) {
   data = null;
   points = null;
 
-  var drawOutline = function drawOutline(c) {
+  const drawOutline = function drawOutline(c) {
     c.save();
     c.scale(1 / width, -1 / height);
     c.translate(0, -height);
@@ -11733,15 +11733,15 @@ function compileType3Glyph(imgData) {
     } else {
       c.beginPath();
 
-      var _iterator2 = _createForOfIteratorHelper(outlines),
+      let _iterator2 = _createForOfIteratorHelper(outlines),
           _step2;
 
       try {
         for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-          var o = _step2.value;
+          const o = _step2.value;
           c.moveTo(o[0], o[1]);
 
-          for (var l = 2, ll = o.length; l < ll; l += 2) {
+          for (let l = 2, ll = o.length; l < ll; l += 2) {
             c.lineTo(o[l], o[l + 1]);
           }
         }
@@ -11761,7 +11761,7 @@ function compileType3Glyph(imgData) {
   return drawOutline;
 }
 
-var CanvasExtraState = /*#__PURE__*/function () {
+const CanvasExtraState = /*#__PURE__*/function () {
   function CanvasExtraState(width, height) {
     _classCallCheck(this, CanvasExtraState);
 
@@ -11795,7 +11795,7 @@ var CanvasExtraState = /*#__PURE__*/function () {
   _createClass(CanvasExtraState, [{
     key: "clone",
     value: function clone() {
-      var clone = Object.create(this);
+      const clone = Object.create(this);
       clone.clipBox = this.clipBox.slice();
       return clone;
     }
@@ -11808,9 +11808,9 @@ var CanvasExtraState = /*#__PURE__*/function () {
   }, {
     key: "updatePathMinMax",
     value: function updatePathMinMax(transform, x, y) {
-      var _Util$applyTransform = _util.Util.applyTransform([x, y], transform);
+      const _Util$applyTransform = _util.Util.applyTransform([x, y], transform);
 
-      var _Util$applyTransform2 = _slicedToArray(_Util$applyTransform, 2);
+      const _Util$applyTransform2 = _slicedToArray(_Util$applyTransform, 2);
 
       x = _Util$applyTransform2[0];
       y = _Util$applyTransform2[1];
@@ -11822,9 +11822,9 @@ var CanvasExtraState = /*#__PURE__*/function () {
   }, {
     key: "updateRectMinMax",
     value: function updateRectMinMax(transform, rect) {
-      var p1 = _util.Util.applyTransform(rect, transform);
+      const p1 = _util.Util.applyTransform(rect, transform);
 
-      var p2 = _util.Util.applyTransform(rect.slice(2), transform);
+      const p2 = _util.Util.applyTransform(rect.slice(2), transform);
 
       this.minX = Math.min(this.minX, p1[0], p2[0]);
       this.minY = Math.min(this.minY, p1[1], p2[1]);
@@ -11844,7 +11844,7 @@ var CanvasExtraState = /*#__PURE__*/function () {
   }, {
     key: "updateCurvePathMinMax",
     value: function updateCurvePathMinMax(transform, x0, y0, x1, y1, x2, y2, x3, y3, minMax) {
-      var box = _util.Util.bezierBoundingBox(x0, y0, x1, y1, x2, y2, x3, y3);
+      const box = _util.Util.bezierBoundingBox(x0, y0, x1, y1, x2, y2, x3, y3);
 
       if (minMax) {
         minMax[0] = Math.min(minMax[0], box[0], box[2]);
@@ -11859,19 +11859,19 @@ var CanvasExtraState = /*#__PURE__*/function () {
   }, {
     key: "getPathBoundingBox",
     value: function getPathBoundingBox() {
-      var pathType = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _pattern_helper.PathType.FILL;
-      var transform = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-      var box = [this.minX, this.minY, this.maxX, this.maxY];
+      const pathType = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _pattern_helper.PathType.FILL;
+      const transform = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      const box = [this.minX, this.minY, this.maxX, this.maxY];
 
       if (pathType === _pattern_helper.PathType.STROKE) {
         if (!transform) {
           (0, _util.unreachable)("Stroke bounding box must include transform.");
         }
 
-        var scale = _util.Util.singularValueDecompose2dScale(transform);
+        const scale = _util.Util.singularValueDecompose2dScale(transform);
 
-        var xStrokePad = scale[0] * this.lineWidth / 2;
-        var yStrokePad = scale[1] * this.lineWidth / 2;
+        const xStrokePad = scale[0] * this.lineWidth / 2;
+        const yStrokePad = scale[1] * this.lineWidth / 2;
         box[0] -= xStrokePad;
         box[1] -= yStrokePad;
         box[2] += xStrokePad;
@@ -11883,7 +11883,7 @@ var CanvasExtraState = /*#__PURE__*/function () {
   }, {
     key: "updateClipFromPath",
     value: function updateClipFromPath() {
-      var intersect = _util.Util.intersect(this.clipBox, this.getPathBoundingBox());
+      const intersect = _util.Util.intersect(this.clipBox, this.getPathBoundingBox());
 
       this.startNewPathAndClipBox(intersect || [0, 0, 0, 0]);
     }
@@ -11904,8 +11904,8 @@ var CanvasExtraState = /*#__PURE__*/function () {
   }, {
     key: "getClippedPathBoundingBox",
     value: function getClippedPathBoundingBox() {
-      var pathType = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _pattern_helper.PathType.FILL;
-      var transform = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      const pathType = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _pattern_helper.PathType.FILL;
+      const transform = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
       return _util.Util.intersect(this.clipBox, this.getPathBoundingBox(pathType, transform));
     }
   }]);
@@ -11914,25 +11914,25 @@ var CanvasExtraState = /*#__PURE__*/function () {
 }();
 
 function putBinaryImageData(ctx, imgData) {
-  var transferMaps = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+  const transferMaps = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
   if (typeof ImageData !== "undefined" && imgData instanceof ImageData) {
     ctx.putImageData(imgData, 0, 0);
     return;
   }
 
-  var height = imgData.height,
+  const height = imgData.height,
       width = imgData.width;
-  var partialChunkHeight = height % FULL_CHUNK_HEIGHT;
-  var fullChunks = (height - partialChunkHeight) / FULL_CHUNK_HEIGHT;
-  var totalChunks = partialChunkHeight === 0 ? fullChunks : fullChunks + 1;
-  var chunkImgData = ctx.createImageData(width, FULL_CHUNK_HEIGHT);
-  var srcPos = 0,
+  const partialChunkHeight = height % FULL_CHUNK_HEIGHT;
+  const fullChunks = (height - partialChunkHeight) / FULL_CHUNK_HEIGHT;
+  const totalChunks = partialChunkHeight === 0 ? fullChunks : fullChunks + 1;
+  const chunkImgData = ctx.createImageData(width, FULL_CHUNK_HEIGHT);
+  let srcPos = 0,
       destPos;
-  var src = imgData.data;
-  var dest = chunkImgData.data;
-  var i, j, thisChunkHeight, elemsInThisChunk;
-  var transferMapRed, transferMapGreen, transferMapBlue, transferMapGray;
+  const src = imgData.data;
+  const dest = chunkImgData.data;
+  let i, j, thisChunkHeight, elemsInThisChunk;
+  let transferMapRed, transferMapGreen, transferMapBlue, transferMapGray;
 
   if (transferMaps) {
     switch (transferMaps.length) {
@@ -11953,16 +11953,16 @@ function putBinaryImageData(ctx, imgData) {
   }
 
   if (imgData.kind === _util.ImageKind.GRAYSCALE_1BPP) {
-    var srcLength = src.byteLength;
-    var dest32 = new Uint32Array(dest.buffer, 0, dest.byteLength >> 2);
-    var dest32DataLength = dest32.length;
-    var fullSrcDiff = width + 7 >> 3;
-    var white = 0xffffffff;
-    var black = _util.FeatureTest.isLittleEndian ? 0xff000000 : 0x000000ff;
+    const srcLength = src.byteLength;
+    const dest32 = new Uint32Array(dest.buffer, 0, dest.byteLength >> 2);
+    const dest32DataLength = dest32.length;
+    const fullSrcDiff = width + 7 >> 3;
+    let white = 0xffffffff;
+    let black = _util.FeatureTest.isLittleEndian ? 0xff000000 : 0x000000ff;
 
     if (transferMapGray) {
       if (transferMapGray[0] === 0xff && transferMapGray[0xff] === 0) {
-        var _ref = [black, white];
+        const _ref = [black, white];
         white = _ref[0];
         black = _ref[1];
       }
@@ -11973,12 +11973,12 @@ function putBinaryImageData(ctx, imgData) {
       destPos = 0;
 
       for (j = 0; j < thisChunkHeight; j++) {
-        var srcDiff = srcLength - srcPos;
-        var k = 0;
-        var kEnd = srcDiff > fullSrcDiff ? width : srcDiff * 8 - 7;
-        var kEndUnrolled = kEnd & ~7;
-        var mask = 0;
-        var srcByte = 0;
+        const srcDiff = srcLength - srcPos;
+        let k = 0;
+        const kEnd = srcDiff > fullSrcDiff ? width : srcDiff * 8 - 7;
+        const kEndUnrolled = kEnd & ~7;
+        let mask = 0;
+        let srcByte = 0;
 
         for (; k < kEndUnrolled; k += 8) {
           srcByte = src[srcPos++];
@@ -12010,7 +12010,7 @@ function putBinaryImageData(ctx, imgData) {
       ctx.putImageData(chunkImgData, 0, i * FULL_CHUNK_HEIGHT);
     }
   } else if (imgData.kind === _util.ImageKind.RGBA_32BPP) {
-    var hasTransferMaps = !!(transferMapRed || transferMapGreen || transferMapBlue);
+    const hasTransferMaps = !!(transferMapRed || transferMapGreen || transferMapBlue);
     j = 0;
     elemsInThisChunk = width * FULL_CHUNK_HEIGHT * 4;
 
@@ -12019,7 +12019,7 @@ function putBinaryImageData(ctx, imgData) {
       srcPos += elemsInThisChunk;
 
       if (hasTransferMaps) {
-        for (var _k = 0; _k < elemsInThisChunk; _k += 4) {
+        for (let _k = 0; _k < elemsInThisChunk; _k += 4) {
           if (transferMapRed) {
             dest[_k + 0] = transferMapRed[dest[_k + 0]];
           }
@@ -12043,7 +12043,7 @@ function putBinaryImageData(ctx, imgData) {
       dest.set(src.subarray(srcPos, srcPos + elemsInThisChunk));
 
       if (hasTransferMaps) {
-        for (var _k2 = 0; _k2 < elemsInThisChunk; _k2 += 4) {
+        for (let _k2 = 0; _k2 < elemsInThisChunk; _k2 += 4) {
           if (transferMapRed) {
             dest[_k2 + 0] = transferMapRed[dest[_k2 + 0]];
           }
@@ -12061,7 +12061,7 @@ function putBinaryImageData(ctx, imgData) {
       ctx.putImageData(chunkImgData, 0, j);
     }
   } else if (imgData.kind === _util.ImageKind.RGB_24BPP) {
-    var _hasTransferMaps = !!(transferMapRed || transferMapGreen || transferMapBlue);
+    const _hasTransferMaps = !!(transferMapRed || transferMapGreen || transferMapBlue);
 
     thisChunkHeight = FULL_CHUNK_HEIGHT;
     elemsInThisChunk = width * thisChunkHeight;
@@ -12082,7 +12082,7 @@ function putBinaryImageData(ctx, imgData) {
       }
 
       if (_hasTransferMaps) {
-        for (var _k3 = 0; _k3 < destPos; _k3 += 4) {
+        for (let _k3 = 0; _k3 < destPos; _k3 += 4) {
           if (transferMapRed) {
             dest[_k3 + 0] = transferMapRed[dest[_k3 + 0]];
           }
@@ -12110,20 +12110,20 @@ function putBinaryImageMask(ctx, imgData) {
     return;
   }
 
-  var height = imgData.height,
+  const height = imgData.height,
       width = imgData.width;
-  var partialChunkHeight = height % FULL_CHUNK_HEIGHT;
-  var fullChunks = (height - partialChunkHeight) / FULL_CHUNK_HEIGHT;
-  var totalChunks = partialChunkHeight === 0 ? fullChunks : fullChunks + 1;
-  var chunkImgData = ctx.createImageData(width, FULL_CHUNK_HEIGHT);
-  var srcPos = 0;
-  var src = imgData.data;
-  var dest = chunkImgData.data;
+  const partialChunkHeight = height % FULL_CHUNK_HEIGHT;
+  const fullChunks = (height - partialChunkHeight) / FULL_CHUNK_HEIGHT;
+  const totalChunks = partialChunkHeight === 0 ? fullChunks : fullChunks + 1;
+  const chunkImgData = ctx.createImageData(width, FULL_CHUNK_HEIGHT);
+  let srcPos = 0;
+  const src = imgData.data;
+  const dest = chunkImgData.data;
 
-  for (var i = 0; i < totalChunks; i++) {
-    var thisChunkHeight = i < fullChunks ? FULL_CHUNK_HEIGHT : partialChunkHeight;
+  for (let i = 0; i < totalChunks; i++) {
+    const thisChunkHeight = i < fullChunks ? FULL_CHUNK_HEIGHT : partialChunkHeight;
 
-    var _applyMaskImageData = (0, _image_utils.applyMaskImageData)({
+    const _applyMaskImageData = (0, _image_utils.applyMaskImageData)({
       src: src,
       srcPos: srcPos,
       dest: dest,
@@ -12137,10 +12137,10 @@ function putBinaryImageMask(ctx, imgData) {
 }
 
 function copyCtxState(sourceCtx, destCtx) {
-  var properties = ["strokeStyle", "fillStyle", "fillRule", "globalAlpha", "lineWidth", "lineCap", "lineJoin", "miterLimit", "globalCompositeOperation", "font"];
+  const properties = ["strokeStyle", "fillStyle", "fillRule", "globalAlpha", "lineWidth", "lineCap", "lineJoin", "miterLimit", "globalCompositeOperation", "font"];
 
-  for (var i = 0, ii = properties.length; i < ii; i++) {
-    var property = properties[i];
+  for (let i = 0, ii = properties.length; i < ii; i++) {
+    const property = properties[i];
 
     if (sourceCtx[property] !== undefined) {
       destCtx[property] = sourceCtx[property];
@@ -12171,17 +12171,17 @@ function resetCtxToDefault(ctx, foregroundColor) {
 }
 
 function composeSMaskBackdrop(bytes, r0, g0, b0) {
-  var length = bytes.length;
+  const length = bytes.length;
 
-  for (var i = 3; i < length; i += 4) {
-    var alpha = bytes[i];
+  for (let i = 3; i < length; i += 4) {
+    const alpha = bytes[i];
 
     if (alpha === 0) {
       bytes[i - 3] = r0;
       bytes[i - 2] = g0;
       bytes[i - 1] = b0;
     } else if (alpha < 255) {
-      var alpha_ = 255 - alpha;
+      const alpha_ = 255 - alpha;
       bytes[i - 3] = bytes[i - 3] * alpha + r0 * alpha_ >> 8;
       bytes[i - 2] = bytes[i - 2] * alpha + g0 * alpha_ >> 8;
       bytes[i - 1] = bytes[i - 1] * alpha + b0 * alpha_ >> 8;
@@ -12190,30 +12190,30 @@ function composeSMaskBackdrop(bytes, r0, g0, b0) {
 }
 
 function composeSMaskAlpha(maskData, layerData, transferMap) {
-  var length = maskData.length;
-  var scale = 1 / 255;
+  const length = maskData.length;
+  const scale = 1 / 255;
 
-  for (var i = 3; i < length; i += 4) {
-    var alpha = transferMap ? transferMap[maskData[i]] : maskData[i];
+  for (let i = 3; i < length; i += 4) {
+    const alpha = transferMap ? transferMap[maskData[i]] : maskData[i];
     layerData[i] = layerData[i] * alpha * scale | 0;
   }
 }
 
 function composeSMaskLuminosity(maskData, layerData, transferMap) {
-  var length = maskData.length;
+  const length = maskData.length;
 
-  for (var i = 3; i < length; i += 4) {
-    var y = maskData[i - 3] * 77 + maskData[i - 2] * 152 + maskData[i - 1] * 28;
+  for (let i = 3; i < length; i += 4) {
+    const y = maskData[i - 3] * 77 + maskData[i - 2] * 152 + maskData[i - 1] * 28;
     layerData[i] = transferMap ? layerData[i] * transferMap[y >> 8] >> 8 : layerData[i] * y >> 16;
   }
 }
 
 function genericComposeSMask(maskCtx, layerCtx, width, height, subtype, backdrop, transferMap, layerOffsetX, layerOffsetY, maskOffsetX, maskOffsetY) {
-  var hasBackdrop = !!backdrop;
-  var r0 = hasBackdrop ? backdrop[0] : 0;
-  var g0 = hasBackdrop ? backdrop[1] : 0;
-  var b0 = hasBackdrop ? backdrop[2] : 0;
-  var composeFn;
+  const hasBackdrop = !!backdrop;
+  const r0 = hasBackdrop ? backdrop[0] : 0;
+  const g0 = hasBackdrop ? backdrop[1] : 0;
+  const b0 = hasBackdrop ? backdrop[2] : 0;
+  let composeFn;
 
   if (subtype === "Luminosity") {
     composeFn = composeSMaskLuminosity;
@@ -12221,13 +12221,13 @@ function genericComposeSMask(maskCtx, layerCtx, width, height, subtype, backdrop
     composeFn = composeSMaskAlpha;
   }
 
-  var PIXELS_TO_PROCESS = 1048576;
-  var chunkSize = Math.min(height, Math.ceil(PIXELS_TO_PROCESS / width));
+  const PIXELS_TO_PROCESS = 1048576;
+  const chunkSize = Math.min(height, Math.ceil(PIXELS_TO_PROCESS / width));
 
-  for (var row = 0; row < height; row += chunkSize) {
-    var chunkHeight = Math.min(chunkSize, height - row);
-    var maskData = maskCtx.getImageData(layerOffsetX - maskOffsetX, row + (layerOffsetY - maskOffsetY), width, chunkHeight);
-    var layerData = layerCtx.getImageData(layerOffsetX, row + layerOffsetY, width, chunkHeight);
+  for (let row = 0; row < height; row += chunkSize) {
+    const chunkHeight = Math.min(chunkSize, height - row);
+    const maskData = maskCtx.getImageData(layerOffsetX - maskOffsetX, row + (layerOffsetY - maskOffsetY), width, chunkHeight);
+    const layerData = layerCtx.getImageData(layerOffsetX, row + layerOffsetY, width, chunkHeight);
 
     if (hasBackdrop) {
       composeSMaskBackdrop(maskData.data, r0, g0, b0);
@@ -12239,10 +12239,10 @@ function genericComposeSMask(maskCtx, layerCtx, width, height, subtype, backdrop
 }
 
 function composeSMask(ctx, smask, layerCtx, layerBox) {
-  var layerOffsetX = layerBox[0];
-  var layerOffsetY = layerBox[1];
-  var layerWidth = layerBox[2] - layerOffsetX;
-  var layerHeight = layerBox[3] - layerOffsetY;
+  const layerOffsetX = layerBox[0];
+  const layerOffsetY = layerBox[1];
+  const layerWidth = layerBox[2] - layerOffsetX;
+  const layerHeight = layerBox[3] - layerOffsetY;
 
   if (layerWidth === 0 || layerHeight === 0) {
     return;
@@ -12258,11 +12258,11 @@ function composeSMask(ctx, smask, layerCtx, layerBox) {
 }
 
 function getImageSmoothingEnabled(transform, interpolate) {
-  var scale = _util.Util.singularValueDecompose2dScale(transform);
+  const scale = _util.Util.singularValueDecompose2dScale(transform);
 
   scale[0] = Math.fround(scale[0]);
   scale[1] = Math.fround(scale[1]);
-  var actualScale = Math.fround((globalThis.devicePixelRatio || 1) * _display_utils.PixelsPerInch.PDF_TO_CSS_UNITS);
+  const actualScale = Math.fround((globalThis.devicePixelRatio || 1) * _display_utils.PixelsPerInch.PDF_TO_CSS_UNITS);
 
   if (interpolate !== undefined) {
     return interpolate;
@@ -12273,12 +12273,12 @@ function getImageSmoothingEnabled(transform, interpolate) {
   return false;
 }
 
-var LINE_CAP_STYLES = ["butt", "round", "square"];
-var LINE_JOIN_STYLES = ["miter", "round", "bevel"];
-var NORMAL_CLIP = {};
-var EO_CLIP = {};
+const LINE_CAP_STYLES = ["butt", "round", "square"];
+const LINE_JOIN_STYLES = ["miter", "round", "bevel"];
+const NORMAL_CLIP = {};
+const EO_CLIP = {};
 
-var CanvasGraphics = /*#__PURE__*/function () {
+const CanvasGraphics = /*#__PURE__*/function () {
   function CanvasGraphics(canvasCtx, commonObjs, objs, canvasFactory, imageLayer, optionalContentConfig, annotationCanvasMap, pageColors) {
     _classCallCheck(this, CanvasGraphics);
 
@@ -12326,7 +12326,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
   _createClass(CanvasGraphics, [{
     key: "getObject",
     value: function getObject(data) {
-      var fallback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      const fallback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
 
       if (typeof data === "string") {
         return data.startsWith("g_") ? this.commonObjs.get(data) : this.objs.get(data);
@@ -12337,24 +12337,24 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "beginDrawing",
     value: function beginDrawing(_ref2) {
-      var transform = _ref2.transform,
+      const transform = _ref2.transform,
           viewport = _ref2.viewport,
           _ref2$transparency = _ref2.transparency,
           transparency = _ref2$transparency === void 0 ? false : _ref2$transparency,
           _ref2$background = _ref2.background,
           background = _ref2$background === void 0 ? null : _ref2$background;
-      var width = this.ctx.canvas.width;
-      var height = this.ctx.canvas.height;
-      var defaultBackgroundColor = background || "#ffffff";
+      const width = this.ctx.canvas.width;
+      const height = this.ctx.canvas.height;
+      const defaultBackgroundColor = background || "#ffffff";
       this.ctx.save();
 
       if (this.foregroundColor && this.backgroundColor) {
         this.ctx.fillStyle = this.foregroundColor;
-        var fg = this.foregroundColor = this.ctx.fillStyle;
+        const fg = this.foregroundColor = this.ctx.fillStyle;
         this.ctx.fillStyle = this.backgroundColor;
-        var bg = this.backgroundColor = this.ctx.fillStyle;
-        var isValidDefaultBg = true;
-        var defaultBg = defaultBackgroundColor;
+        const bg = this.backgroundColor = this.ctx.fillStyle;
+        let isValidDefaultBg = true;
+        let defaultBg = defaultBackgroundColor;
         this.ctx.fillStyle = defaultBackgroundColor;
         defaultBg = this.ctx.fillStyle;
         isValidDefaultBg = typeof defaultBg === "string" && /^#[0-9A-Fa-f]{6}$/.test(defaultBg);
@@ -12362,20 +12362,20 @@ var CanvasGraphics = /*#__PURE__*/function () {
         if (fg === "#000000" && bg === "#ffffff" || fg === bg || !isValidDefaultBg) {
           this.foregroundColor = this.backgroundColor = null;
         } else {
-          var cB = parseInt(defaultBg.slice(1), 16);
-          var rB = (cB && 0xff0000) >> 16;
-          var gB = (cB && 0x00ff00) >> 8;
-          var bB = cB && 0x0000ff;
+          const cB = parseInt(defaultBg.slice(1), 16);
+          const rB = (cB && 0xff0000) >> 16;
+          const gB = (cB && 0x00ff00) >> 8;
+          const bB = cB && 0x0000ff;
 
-          var newComp = function newComp(x) {
+          const newComp = function newComp(x) {
             x /= 255;
             return x <= 0.03928 ? x / 12.92 : Math.pow((x + 0.055) / 1.055, 2.4);
           };
 
-          var lumB = Math.round(0.2126 * newComp(rB) + 0.7152 * newComp(gB) + 0.0722 * newComp(bB));
+          const lumB = Math.round(0.2126 * newComp(rB) + 0.7152 * newComp(gB) + 0.0722 * newComp(bB));
 
           this.selectColor = function (r, g, b) {
-            var lumC = 0.2126 * newComp(r) + 0.7152 * newComp(g) + 0.0722 * newComp(b);
+            const lumC = 0.2126 * newComp(r) + 0.7152 * newComp(g) + 0.0722 * newComp(b);
             return Math.round(lumC) === lumB ? bg : fg;
           };
         }
@@ -12386,7 +12386,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
       this.ctx.restore();
 
       if (transparency) {
-        var transparentCanvas = this.cachedCanvases.getCanvas("transparent", width, height, true);
+        const transparentCanvas = this.cachedCanvases.getCanvas("transparent", width, height, true);
         this.compositeCtx = this.ctx;
         this.transparentCanvas = transparentCanvas.canvas;
         this.ctx = transparentCanvas.context;
@@ -12414,21 +12414,21 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "executeOperatorList",
     value: function executeOperatorList(operatorList, executionStartIdx, continueCallback, stepper) {
-      var argsArray = operatorList.argsArray;
-      var fnArray = operatorList.fnArray;
-      var i = executionStartIdx || 0;
-      var argsArrayLen = argsArray.length;
+      const argsArray = operatorList.argsArray;
+      const fnArray = operatorList.fnArray;
+      let i = executionStartIdx || 0;
+      const argsArrayLen = argsArray.length;
 
       if (argsArrayLen === i) {
         return i;
       }
 
-      var chunkOperations = argsArrayLen - i > EXECUTION_STEPS && typeof continueCallback === "function";
-      var endTime = chunkOperations ? Date.now() + EXECUTION_TIME : 0;
-      var steps = 0;
-      var commonObjs = this.commonObjs;
-      var objs = this.objs;
-      var fnId;
+      const chunkOperations = argsArrayLen - i > EXECUTION_STEPS && typeof continueCallback === "function";
+      const endTime = chunkOperations ? Date.now() + EXECUTION_TIME : 0;
+      let steps = 0;
+      const commonObjs = this.commonObjs;
+      const objs = this.objs;
+      let fnId;
 
       while (true) {
         if (stepper !== undefined && i === stepper.nextBreakPoint) {
@@ -12446,8 +12446,8 @@ var CanvasGraphics = /*#__PURE__*/function () {
 
           try {
             for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-              var depObjId = _step3.value;
-              var objsPool = depObjId.startsWith("g_") ? commonObjs : objs;
+              const depObjId = _step3.value;
+              const objsPool = depObjId.startsWith("g_") ? commonObjs : objs;
 
               if (!objsPool.has(depObjId)) {
                 objsPool.get(depObjId, continueCallback);
@@ -12498,19 +12498,19 @@ var CanvasGraphics = /*#__PURE__*/function () {
       this.cachedCanvases.clear();
       this.cachedPatterns.clear();
 
-      var _iterator4 = _createForOfIteratorHelper(this._cachedBitmapsMap.values()),
+      let _iterator4 = _createForOfIteratorHelper(this._cachedBitmapsMap.values()),
           _step4;
 
       try {
         for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-          var cache = _step4.value;
+          const cache = _step4.value;
 
           var _iterator5 = _createForOfIteratorHelper(cache.values()),
               _step5;
 
           try {
             for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-              var canvas = _step5.value;
+              const canvas = _step5.value;
 
               if (typeof HTMLCanvasElement !== "undefined" && canvas instanceof HTMLCanvasElement) {
                 canvas.width = canvas.height = 0;
@@ -12539,17 +12539,17 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "_scaleImage",
     value: function _scaleImage(img, inverseTransform) {
-      var width = img.width;
-      var height = img.height;
-      var widthScale = Math.max(Math.hypot(inverseTransform[0], inverseTransform[1]), 1);
-      var heightScale = Math.max(Math.hypot(inverseTransform[2], inverseTransform[3]), 1);
-      var paintWidth = width,
+      const width = img.width;
+      const height = img.height;
+      let widthScale = Math.max(Math.hypot(inverseTransform[0], inverseTransform[1]), 1);
+      let heightScale = Math.max(Math.hypot(inverseTransform[2], inverseTransform[3]), 1);
+      let paintWidth = width,
           paintHeight = height;
-      var tmpCanvasId = "prescale1";
-      var tmpCanvas, tmpCtx;
+      let tmpCanvasId = "prescale1";
+      let tmpCanvas, tmpCtx;
 
       while (widthScale > 2 && paintWidth > 1 || heightScale > 2 && paintHeight > 1) {
-        var newWidth = paintWidth,
+        let newWidth = paintWidth,
             newHeight = paintHeight;
 
         if (widthScale > 2 && paintWidth > 1) {
@@ -12581,17 +12581,17 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "_createMaskCanvas",
     value: function _createMaskCanvas(img) {
-      var ctx = this.ctx;
-      var width = img.width,
+      const ctx = this.ctx;
+      const width = img.width,
           height = img.height;
-      var fillColor = this.current.fillColor;
-      var isPatternFill = this.current.patternFill;
-      var currentTransform = ctx.mozCurrentTransform;
-      var cache, cacheKey, scaled, maskCanvas;
+      const fillColor = this.current.fillColor;
+      const isPatternFill = this.current.patternFill;
+      const currentTransform = ctx.mozCurrentTransform;
+      let cache, cacheKey, scaled, maskCanvas;
 
       if ((img.bitmap || img.data) && img.count > 1) {
-        var mainKey = img.bitmap || img.data.buffer;
-        var withoutTranslation = currentTransform.slice(0, 4);
+        const mainKey = img.bitmap || img.data.buffer;
+        const withoutTranslation = currentTransform.slice(0, 4);
         cacheKey = JSON.stringify(isPatternFill ? withoutTranslation : [withoutTranslation, fillColor]);
         cache = this._cachedBitmapsMap.get(mainKey);
 
@@ -12601,12 +12601,12 @@ var CanvasGraphics = /*#__PURE__*/function () {
           this._cachedBitmapsMap.set(mainKey, cache);
         }
 
-        var cachedImage = cache.get(cacheKey);
+        const cachedImage = cache.get(cacheKey);
 
         if (cachedImage && !isPatternFill) {
-          var _offsetX = Math.round(Math.min(currentTransform[0], currentTransform[2]) + currentTransform[4]);
+          const _offsetX = Math.round(Math.min(currentTransform[0], currentTransform[2]) + currentTransform[4]);
 
-          var _offsetY = Math.round(Math.min(currentTransform[1], currentTransform[3]) + currentTransform[5]);
+          const _offsetY = Math.round(Math.min(currentTransform[1], currentTransform[3]) + currentTransform[5]);
 
           return {
             canvas: cachedImage,
@@ -12623,22 +12623,22 @@ var CanvasGraphics = /*#__PURE__*/function () {
         putBinaryImageMask(maskCanvas.context, img);
       }
 
-      var maskToCanvas = _util.Util.transform(currentTransform, [1 / width, 0, 0, -1 / height, 0, 0]);
+      let maskToCanvas = _util.Util.transform(currentTransform, [1 / width, 0, 0, -1 / height, 0, 0]);
 
       maskToCanvas = _util.Util.transform(maskToCanvas, [1, 0, 0, 1, 0, -height]);
 
-      var cord1 = _util.Util.applyTransform([0, 0], maskToCanvas);
+      const cord1 = _util.Util.applyTransform([0, 0], maskToCanvas);
 
-      var cord2 = _util.Util.applyTransform([width, height], maskToCanvas);
+      const cord2 = _util.Util.applyTransform([width, height], maskToCanvas);
 
-      var rect = _util.Util.normalizeRect([cord1[0], cord1[1], cord2[0], cord2[1]]);
+      const rect = _util.Util.normalizeRect([cord1[0], cord1[1], cord2[0], cord2[1]]);
 
-      var drawnWidth = Math.round(rect[2] - rect[0]) || 1;
-      var drawnHeight = Math.round(rect[3] - rect[1]) || 1;
-      var fillCanvas = this.cachedCanvases.getCanvas("fillCanvas", drawnWidth, drawnHeight, true);
-      var fillCtx = fillCanvas.context;
-      var offsetX = Math.min(cord1[0], cord2[0]);
-      var offsetY = Math.min(cord1[1], cord2[1]);
+      const drawnWidth = Math.round(rect[2] - rect[0]) || 1;
+      const drawnHeight = Math.round(rect[3] - rect[1]) || 1;
+      const fillCanvas = this.cachedCanvases.getCanvas("fillCanvas", drawnWidth, drawnHeight, true);
+      const fillCtx = fillCanvas.context;
+      const offsetX = Math.min(cord1[0], cord2[0]);
+      const offsetY = Math.min(cord1[1], cord2[1]);
       fillCtx.translate(-offsetX, -offsetY);
       fillCtx.transform.apply(fillCtx, maskToCanvas);
 
@@ -12655,7 +12655,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
       drawImageAtIntegerCoords(fillCtx, scaled, 0, 0, scaled.width, scaled.height, 0, 0, width, height);
       fillCtx.globalCompositeOperation = "source-in";
 
-      var inverse = _util.Util.transform(fillCtx.mozCurrentTransformInverse, [1, 0, 0, 1, -offsetX, -offsetY]);
+      const inverse = _util.Util.transform(fillCtx.mozCurrentTransformInverse, [1, 0, 0, 1, -offsetX, -offsetY]);
 
       fillCtx.fillStyle = isPatternFill ? fillColor.getPattern(ctx, this, inverse, _pattern_helper.PathType.FILL) : fillColor;
       fillCtx.fillRect(0, 0, width, height);
@@ -12699,7 +12699,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "setDash",
     value: function setDash(dashArray, dashPhase) {
-      var ctx = this.ctx;
+      const ctx = this.ctx;
 
       if (ctx.setLineDash !== undefined) {
         ctx.setLineDash(dashArray);
@@ -12715,10 +12715,10 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "setGState",
     value: function setGState(states) {
-      for (var i = 0, ii = states.length; i < ii; i++) {
-        var state = states[i];
-        var key = state[0];
-        var value = state[1];
+      for (let i = 0, ii = states.length; i < ii; i++) {
+        const state = states[i];
+        const key = state[0];
+        const value = state[1];
 
         switch (key) {
           case "LW":
@@ -12785,7 +12785,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "checkSMaskState",
     value: function checkSMaskState() {
-      var inSMaskMode = this.inSMaskMode;
+      const inSMaskMode = this.inSMaskMode;
 
       if (this.current.activeSMask && !inSMaskMode) {
         this.beginSMaskMode();
@@ -12800,13 +12800,13 @@ var CanvasGraphics = /*#__PURE__*/function () {
         throw new Error("beginSMaskMode called while already in smask mode");
       }
 
-      var drawnWidth = this.ctx.canvas.width;
-      var drawnHeight = this.ctx.canvas.height;
-      var cacheId = "smaskGroupAt" + this.groupLevel;
-      var scratchCanvas = this.cachedCanvases.getCanvas(cacheId, drawnWidth, drawnHeight, true);
+      const drawnWidth = this.ctx.canvas.width;
+      const drawnHeight = this.ctx.canvas.height;
+      const cacheId = "smaskGroupAt" + this.groupLevel;
+      const scratchCanvas = this.cachedCanvases.getCanvas(cacheId, drawnWidth, drawnHeight, true);
       this.suspendedCtx = this.ctx;
       this.ctx = scratchCanvas.context;
-      var ctx = this.ctx;
+      const ctx = this.ctx;
       ctx.setTransform.apply(ctx, this.suspendedCtx.mozCurrentTransform);
       copyCtxState(this.suspendedCtx, ctx);
       mirrorContextOperations(ctx, this.suspendedCtx);
@@ -12841,8 +12841,8 @@ var CanvasGraphics = /*#__PURE__*/function () {
         dirtyBox[3] = Math.ceil(dirtyBox[3]);
       }
 
-      var smask = this.current.activeSMask;
-      var suspendedCtx = this.suspendedCtx;
+      const smask = this.current.activeSMask;
+      const suspendedCtx = this.suspendedCtx;
       composeSMask(suspendedCtx, smask, this.ctx, dirtyBox);
       this.ctx.save();
       this.ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -12859,7 +12859,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
         this.ctx.save();
       }
 
-      var old = this.current;
+      const old = this.current;
       this.stateStack.push(old);
       this.current = old.clone();
     }
@@ -12896,16 +12896,16 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "constructPath",
     value: function constructPath(ops, args, minMax) {
-      var ctx = this.ctx;
-      var current = this.current;
-      var x = current.x,
+      const ctx = this.ctx;
+      const current = this.current;
+      let x = current.x,
           y = current.y;
-      var startX, startY;
-      var currentTransform = ctx.mozCurrentTransform;
-      var isScalingMatrix = currentTransform[0] === 0 && currentTransform[3] === 0 || currentTransform[1] === 0 && currentTransform[2] === 0;
-      var minMaxForBezier = isScalingMatrix ? minMax.slice(0) : null;
+      let startX, startY;
+      const currentTransform = ctx.mozCurrentTransform;
+      const isScalingMatrix = currentTransform[0] === 0 && currentTransform[3] === 0 || currentTransform[1] === 0 && currentTransform[2] === 0;
+      const minMaxForBezier = isScalingMatrix ? minMax.slice(0) : null;
 
-      for (var i = 0, j = 0, ii = ops.length; i < ii; i++) {
+      for (let i = 0, j = 0, ii = ops.length; i < ii; i++) {
         switch (ops[i] | 0) {
           case _util.OPS.rectangle:
             x = args[j++];
@@ -13004,8 +13004,8 @@ var CanvasGraphics = /*#__PURE__*/function () {
     key: "stroke",
     value: function stroke(consumePath) {
       consumePath = typeof consumePath !== "undefined" ? consumePath : true;
-      var ctx = this.ctx;
-      var strokeColor = this.current.strokeColor;
+      const ctx = this.ctx;
+      const strokeColor = this.current.strokeColor;
       ctx.globalAlpha = this.current.strokeAlpha;
 
       if (this.contentVisible) {
@@ -13035,10 +13035,10 @@ var CanvasGraphics = /*#__PURE__*/function () {
     key: "fill",
     value: function fill(consumePath) {
       consumePath = typeof consumePath !== "undefined" ? consumePath : true;
-      var ctx = this.ctx;
-      var fillColor = this.current.fillColor;
-      var isPatternFill = this.current.patternFill;
-      var needRestore = false;
+      const ctx = this.ctx;
+      const fillColor = this.current.fillColor;
+      const isPatternFill = this.current.patternFill;
+      let needRestore = false;
 
       if (isPatternFill) {
         ctx.save();
@@ -13046,7 +13046,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
         needRestore = true;
       }
 
-      var intersect = this.current.getClippedPathBoundingBox();
+      const intersect = this.current.getClippedPathBoundingBox();
 
       if (this.contentVisible && intersect !== null) {
         if (this.pendingEOFill) {
@@ -13123,8 +13123,8 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "endText",
     value: function endText() {
-      var paths = this.pendingTextPaths;
-      var ctx = this.ctx;
+      const paths = this.pendingTextPaths;
+      const ctx = this.ctx;
 
       if (paths === undefined) {
         ctx.beginPath();
@@ -13134,8 +13134,8 @@ var CanvasGraphics = /*#__PURE__*/function () {
       ctx.save();
       ctx.beginPath();
 
-      for (var i = 0; i < paths.length; i++) {
-        var path = paths[i];
+      for (let i = 0; i < paths.length; i++) {
+        const path = paths[i];
         ctx.setTransform.apply(ctx, path.transform);
         ctx.translate(path.x, path.y);
         path.addToPath(ctx, path.fontSize);
@@ -13169,8 +13169,8 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "setFont",
     value: function setFont(fontRefName, size) {
-      var fontObj = this.commonObjs.get(fontRefName);
-      var current = this.current;
+      const fontObj = this.commonObjs.get(fontRefName);
+      const current = this.current;
 
       if (!fontObj) {
         throw new Error("Can't find font for ".concat(fontRefName));
@@ -13196,8 +13196,8 @@ var CanvasGraphics = /*#__PURE__*/function () {
         return;
       }
 
-      var name = fontObj.loadedName || "sans-serif";
-      var bold = "normal";
+      const name = fontObj.loadedName || "sans-serif";
+      let bold = "normal";
 
       if (fontObj.black) {
         bold = "900";
@@ -13205,9 +13205,9 @@ var CanvasGraphics = /*#__PURE__*/function () {
         bold = "bold";
       }
 
-      var italic = fontObj.italic ? "italic" : "normal";
-      var typeface = "\"".concat(name, "\", ").concat(fontObj.fallbackName);
-      var browserFontSize = size;
+      const italic = fontObj.italic ? "italic" : "normal";
+      const typeface = "\"".concat(name, "\", ").concat(fontObj.fallbackName);
+      let browserFontSize = size;
 
       if (size < MIN_FONT_SIZE) {
         browserFontSize = MIN_FONT_SIZE;
@@ -13256,15 +13256,15 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "paintChar",
     value: function paintChar(character, x, y, patternTransform) {
-      var ctx = this.ctx;
-      var current = this.current;
-      var font = current.font;
-      var textRenderingMode = current.textRenderingMode;
-      var fontSize = current.fontSize / current.fontSizeScale;
-      var fillStrokeMode = textRenderingMode & _util.TextRenderingMode.FILL_STROKE_MASK;
-      var isAddToPathSet = !!(textRenderingMode & _util.TextRenderingMode.ADD_TO_PATH_FLAG);
-      var patternFill = current.patternFill && !font.missingFile;
-      var addToPath;
+      const ctx = this.ctx;
+      const current = this.current;
+      const font = current.font;
+      const textRenderingMode = current.textRenderingMode;
+      const fontSize = current.fontSize / current.fontSizeScale;
+      const fillStrokeMode = textRenderingMode & _util.TextRenderingMode.FILL_STROKE_MASK;
+      const isAddToPathSet = !!(textRenderingMode & _util.TextRenderingMode.ADD_TO_PATH_FLAG);
+      const patternFill = current.patternFill && !font.missingFile;
+      let addToPath;
 
       if (font.disableFontFace || isAddToPathSet || patternFill) {
         addToPath = font.getPathGenerator(this.commonObjs, character);
@@ -13300,7 +13300,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
       }
 
       if (isAddToPathSet) {
-        var paths = this.pendingTextPaths || (this.pendingTextPaths = []);
+        const paths = this.pendingTextPaths || (this.pendingTextPaths = []);
         paths.push({
           transform: ctx.mozCurrentTransform,
           x: x,
@@ -13313,15 +13313,15 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "isFontSubpixelAAEnabled",
     get: function get() {
-      var _this$cachedCanvases$ = this.cachedCanvases.getCanvas("isFontSubpixelAAEnabled", 10, 10, false),
+      const _this$cachedCanvases$ = this.cachedCanvases.getCanvas("isFontSubpixelAAEnabled", 10, 10, false),
           ctx = _this$cachedCanvases$.context;
 
       ctx.scale(1.5, 1);
       ctx.fillText("I", 0, 10);
-      var data = ctx.getImageData(0, 0, 10, 10).data;
-      var enabled = false;
+      const data = ctx.getImageData(0, 0, 10, 10).data;
+      let enabled = false;
 
-      for (var i = 3; i < data.length; i += 4) {
+      for (let i = 3; i < data.length; i += 4) {
         if (data[i] > 0 && data[i] < 255) {
           enabled = true;
           break;
@@ -13333,31 +13333,31 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "showText",
     value: function showText(glyphs) {
-      var current = this.current;
-      var font = current.font;
+      const current = this.current;
+      const font = current.font;
 
       if (font.isType3Font) {
         return this.showType3Text(glyphs);
       }
 
-      var fontSize = current.fontSize;
+      const fontSize = current.fontSize;
 
       if (fontSize === 0) {
         return undefined;
       }
 
-      var ctx = this.ctx;
-      var fontSizeScale = current.fontSizeScale;
-      var charSpacing = current.charSpacing;
-      var wordSpacing = current.wordSpacing;
-      var fontDirection = current.fontDirection;
-      var textHScale = current.textHScale * fontDirection;
-      var glyphsLength = glyphs.length;
-      var vertical = font.vertical;
-      var spacingDir = vertical ? 1 : -1;
-      var defaultVMetrics = font.defaultVMetrics;
-      var widthAdvanceScale = fontSize * current.fontMatrix[0];
-      var simpleFillText = current.textRenderingMode === _util.TextRenderingMode.FILL && !font.disableFontFace && !current.patternFill;
+      const ctx = this.ctx;
+      const fontSizeScale = current.fontSizeScale;
+      const charSpacing = current.charSpacing;
+      const wordSpacing = current.wordSpacing;
+      const fontDirection = current.fontDirection;
+      const textHScale = current.textHScale * fontDirection;
+      const glyphsLength = glyphs.length;
+      const vertical = font.vertical;
+      const spacingDir = vertical ? 1 : -1;
+      const defaultVMetrics = font.defaultVMetrics;
+      const widthAdvanceScale = fontSize * current.fontMatrix[0];
+      const simpleFillText = current.textRenderingMode === _util.TextRenderingMode.FILL && !font.disableFontFace && !current.patternFill;
       ctx.save();
       ctx.transform.apply(ctx, current.textMatrix);
       ctx.translate(current.x, current.y + current.textRise);
@@ -13368,21 +13368,21 @@ var CanvasGraphics = /*#__PURE__*/function () {
         ctx.scale(textHScale, 1);
       }
 
-      var patternTransform;
+      let patternTransform;
 
       if (current.patternFill) {
         ctx.save();
-        var pattern = current.fillColor.getPattern(ctx, this, ctx.mozCurrentTransformInverse, _pattern_helper.PathType.FILL);
+        const pattern = current.fillColor.getPattern(ctx, this, ctx.mozCurrentTransformInverse, _pattern_helper.PathType.FILL);
         patternTransform = ctx.mozCurrentTransform;
         ctx.restore();
         ctx.fillStyle = pattern;
       }
 
-      var lineWidth = current.lineWidth;
-      var scale = current.textMatrixScale;
+      let lineWidth = current.lineWidth;
+      const scale = current.textMatrixScale;
 
       if (scale === 0 || lineWidth === 0) {
-        var fillStrokeMode = current.textRenderingMode & _util.TextRenderingMode.FILL_STROKE_MASK;
+        const fillStrokeMode = current.textRenderingMode & _util.TextRenderingMode.FILL_STROKE_MASK;
 
         if (fillStrokeMode === _util.TextRenderingMode.STROKE || fillStrokeMode === _util.TextRenderingMode.FILL_STROKE) {
           lineWidth = this.getSinglePixelWidth();
@@ -13397,29 +13397,29 @@ var CanvasGraphics = /*#__PURE__*/function () {
       }
 
       ctx.lineWidth = lineWidth;
-      var x = 0,
+      let x = 0,
           i;
 
       for (i = 0; i < glyphsLength; ++i) {
-        var glyph = glyphs[i];
+        const glyph = glyphs[i];
 
         if (typeof glyph === "number") {
           x += spacingDir * glyph * fontSize / 1000;
           continue;
         }
 
-        var restoreNeeded = false;
-        var spacing = (glyph.isSpace ? wordSpacing : 0) + charSpacing;
-        var character = glyph.fontChar;
-        var accent = glyph.accent;
-        var scaledX = void 0,
+        let restoreNeeded = false;
+        const spacing = (glyph.isSpace ? wordSpacing : 0) + charSpacing;
+        const character = glyph.fontChar;
+        const accent = glyph.accent;
+        let scaledX = void 0,
             scaledY = void 0;
-        var width = glyph.width;
+        let width = glyph.width;
 
         if (vertical) {
-          var vmetric = glyph.vmetric || defaultVMetrics;
-          var vx = -(glyph.vmetric ? vmetric[1] : width * 0.5) * widthAdvanceScale;
-          var vy = vmetric[2] * widthAdvanceScale;
+          const vmetric = glyph.vmetric || defaultVMetrics;
+          const vx = -(glyph.vmetric ? vmetric[1] : width * 0.5) * widthAdvanceScale;
+          const vy = vmetric[2] * widthAdvanceScale;
           width = vmetric ? -vmetric[0] : width;
           scaledX = vx / fontSizeScale;
           scaledY = (x + vy) / fontSizeScale;
@@ -13429,10 +13429,10 @@ var CanvasGraphics = /*#__PURE__*/function () {
         }
 
         if (font.remeasure && width > 0) {
-          var measuredWidth = ctx.measureText(character).width * 1000 / fontSize * fontSizeScale;
+          const measuredWidth = ctx.measureText(character).width * 1000 / fontSize * fontSizeScale;
 
           if (width < measuredWidth && this.isFontSubpixelAAEnabled) {
-            var characterScaleX = width / measuredWidth;
+            const characterScaleX = width / measuredWidth;
             restoreNeeded = true;
             ctx.save();
             ctx.scale(characterScaleX, 1);
@@ -13449,14 +13449,14 @@ var CanvasGraphics = /*#__PURE__*/function () {
             this.paintChar(character, scaledX, scaledY, patternTransform);
 
             if (accent) {
-              var scaledAccentX = scaledX + fontSize * accent.offset.x / fontSizeScale;
-              var scaledAccentY = scaledY - fontSize * accent.offset.y / fontSizeScale;
+              const scaledAccentX = scaledX + fontSize * accent.offset.x / fontSizeScale;
+              const scaledAccentY = scaledY - fontSize * accent.offset.y / fontSizeScale;
               this.paintChar(accent.fontChar, scaledAccentX, scaledAccentY, patternTransform);
             }
           }
         }
 
-        var charWidth = void 0;
+        let charWidth = void 0;
 
         if (vertical) {
           charWidth = width * widthAdvanceScale - spacing * fontDirection;
@@ -13484,19 +13484,19 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "showType3Text",
     value: function showType3Text(glyphs) {
-      var ctx = this.ctx;
-      var current = this.current;
-      var font = current.font;
-      var fontSize = current.fontSize;
-      var fontDirection = current.fontDirection;
-      var spacingDir = font.vertical ? 1 : -1;
-      var charSpacing = current.charSpacing;
-      var wordSpacing = current.wordSpacing;
-      var textHScale = current.textHScale * fontDirection;
-      var fontMatrix = current.fontMatrix || _util.FONT_IDENTITY_MATRIX;
-      var glyphsLength = glyphs.length;
-      var isTextInvisible = current.textRenderingMode === _util.TextRenderingMode.INVISIBLE;
-      var i, glyph, width, spacingLength;
+      const ctx = this.ctx;
+      const current = this.current;
+      const font = current.font;
+      const fontSize = current.fontSize;
+      const fontDirection = current.fontDirection;
+      const spacingDir = font.vertical ? 1 : -1;
+      const charSpacing = current.charSpacing;
+      const wordSpacing = current.wordSpacing;
+      const textHScale = current.textHScale * fontDirection;
+      const fontMatrix = current.fontMatrix || _util.FONT_IDENTITY_MATRIX;
+      const glyphsLength = glyphs.length;
+      const isTextInvisible = current.textRenderingMode === _util.TextRenderingMode.INVISIBLE;
+      let i, glyph, width, spacingLength;
 
       if (isTextInvisible || fontSize === 0) {
         return;
@@ -13519,8 +13519,8 @@ var CanvasGraphics = /*#__PURE__*/function () {
           continue;
         }
 
-        var spacing = (glyph.isSpace ? wordSpacing : 0) + charSpacing;
-        var operatorList = font.charProcOperatorList[glyph.operatorListId];
+        const spacing = (glyph.isSpace ? wordSpacing : 0) + charSpacing;
+        const operatorList = font.charProcOperatorList[glyph.operatorListId];
 
         if (!operatorList) {
           (0, _util.warn)("Type3 character \"".concat(glyph.operatorListId, "\" is not available."));
@@ -13536,7 +13536,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
           this.restore();
         }
 
-        var transformed = _util.Util.applyTransform([glyph.width, 0], fontMatrix);
+        const transformed = _util.Util.applyTransform([glyph.width, 0], fontMatrix);
 
         width = transformed[0] * fontSize + spacing;
         ctx.translate(width, 0);
@@ -13559,14 +13559,14 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "getColorN_Pattern",
     value: function getColorN_Pattern(IR) {
-      var _this = this;
+      const _this = this;
 
-      var pattern;
+      let pattern;
 
       if (IR[0] === "TilingPattern") {
-        var color = IR[1];
-        var baseTransform = this.baseTransform || this.ctx.mozCurrentTransform.slice();
-        var canvasGraphicsFactory = {
+        const color = IR[1];
+        const baseTransform = this.baseTransform || this.ctx.mozCurrentTransform.slice();
+        const canvasGraphicsFactory = {
           createCanvasGraphics: function createCanvasGraphics(ctx) {
             return new CanvasGraphics(ctx, _this.commonObjs, _this.objs, _this.canvasFactory);
           }
@@ -13592,9 +13592,9 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "setStrokeRGBColor",
     value: function setStrokeRGBColor(r, g, b) {
-      var _this$selectColor;
+      let _this$selectColor;
 
-      var color = ((_this$selectColor = this.selectColor) === null || _this$selectColor === void 0 ? void 0 : _this$selectColor.call(this, r, g, b)) || _util.Util.makeHexColor(r, g, b);
+      const color = ((_this$selectColor = this.selectColor) === null || _this$selectColor === void 0 ? void 0 : _this$selectColor.call(this, r, g, b)) || _util.Util.makeHexColor(r, g, b);
 
       this.ctx.strokeStyle = color;
       this.current.strokeColor = color;
@@ -13602,9 +13602,9 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "setFillRGBColor",
     value: function setFillRGBColor(r, g, b) {
-      var _this$selectColor2;
+      let _this$selectColor2;
 
-      var color = ((_this$selectColor2 = this.selectColor) === null || _this$selectColor2 === void 0 ? void 0 : _this$selectColor2.call(this, r, g, b)) || _util.Util.makeHexColor(r, g, b);
+      const color = ((_this$selectColor2 = this.selectColor) === null || _this$selectColor2 === void 0 ? void 0 : _this$selectColor2.call(this, r, g, b)) || _util.Util.makeHexColor(r, g, b);
 
       this.ctx.fillStyle = color;
       this.current.fillColor = color;
@@ -13613,8 +13613,8 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "_getPattern",
     value: function _getPattern(objId) {
-      var matrix = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-      var pattern;
+      const matrix = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      let pattern;
 
       if (this.cachedPatterns.has(objId)) {
         pattern = this.cachedPatterns.get(objId);
@@ -13636,31 +13636,31 @@ var CanvasGraphics = /*#__PURE__*/function () {
         return;
       }
 
-      var ctx = this.ctx;
+      const ctx = this.ctx;
       this.save();
 
-      var pattern = this._getPattern(objId);
+      const pattern = this._getPattern(objId);
 
       ctx.fillStyle = pattern.getPattern(ctx, this, ctx.mozCurrentTransformInverse, _pattern_helper.PathType.SHADING);
-      var inv = ctx.mozCurrentTransformInverse;
+      const inv = ctx.mozCurrentTransformInverse;
 
       if (inv) {
-        var canvas = ctx.canvas;
-        var width = canvas.width;
-        var height = canvas.height;
+        const canvas = ctx.canvas;
+        const width = canvas.width;
+        const height = canvas.height;
 
-        var bl = _util.Util.applyTransform([0, 0], inv);
+        const bl = _util.Util.applyTransform([0, 0], inv);
 
-        var br = _util.Util.applyTransform([0, height], inv);
+        const br = _util.Util.applyTransform([0, height], inv);
 
-        var ul = _util.Util.applyTransform([width, 0], inv);
+        const ul = _util.Util.applyTransform([width, 0], inv);
 
-        var ur = _util.Util.applyTransform([width, height], inv);
+        const ur = _util.Util.applyTransform([width, height], inv);
 
-        var x0 = Math.min(bl[0], br[0], ul[0], ur[0]);
-        var y0 = Math.min(bl[1], br[1], ul[1], ur[1]);
-        var x1 = Math.max(bl[0], br[0], ul[0], ur[0]);
-        var y1 = Math.max(bl[1], br[1], ul[1], ur[1]);
+        const x0 = Math.min(bl[0], br[0], ul[0], ur[0]);
+        const y0 = Math.min(bl[1], br[1], ul[1], ur[1]);
+        const x1 = Math.max(bl[0], br[0], ul[0], ur[0]);
+        const y1 = Math.max(bl[1], br[1], ul[1], ur[1]);
         this.ctx.fillRect(x0, y0, x1 - x0, y1 - y0);
       } else {
         this.ctx.fillRect(-1e10, -1e10, 2e10, 2e10);
@@ -13696,8 +13696,8 @@ var CanvasGraphics = /*#__PURE__*/function () {
       this.baseTransform = this.ctx.mozCurrentTransform;
 
       if (bbox) {
-        var width = bbox[2] - bbox[0];
-        var height = bbox[3] - bbox[1];
+        const width = bbox[2] - bbox[0];
+        const height = bbox[3] - bbox[1];
         this.ctx.rect(bbox[0], bbox[1], width, height);
         this.current.updateRectMinMax(this.ctx.mozCurrentTransform, bbox);
         this.clip();
@@ -13728,7 +13728,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
         this.current.activeSMask = null;
       }
 
-      var currentCtx = this.ctx;
+      const currentCtx = this.ctx;
 
       if (!group.isolated) {
         (0, _util.info)("TODO: Support non-isolated groups.");
@@ -13738,7 +13738,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
         (0, _util.warn)("Knockout groups not supported.");
       }
 
-      var currentTransform = currentCtx.mozCurrentTransform;
+      const currentTransform = currentCtx.mozCurrentTransform;
 
       if (group.matrix) {
         currentCtx.transform.apply(currentCtx, group.matrix);
@@ -13748,15 +13748,15 @@ var CanvasGraphics = /*#__PURE__*/function () {
         throw new Error("Bounding box is required.");
       }
 
-      var bounds = _util.Util.getAxialAlignedBoundingBox(group.bbox, currentCtx.mozCurrentTransform);
+      let bounds = _util.Util.getAxialAlignedBoundingBox(group.bbox, currentCtx.mozCurrentTransform);
 
-      var canvasBounds = [0, 0, currentCtx.canvas.width, currentCtx.canvas.height];
+      const canvasBounds = [0, 0, currentCtx.canvas.width, currentCtx.canvas.height];
       bounds = _util.Util.intersect(bounds, canvasBounds) || [0, 0, 0, 0];
-      var offsetX = Math.floor(bounds[0]);
-      var offsetY = Math.floor(bounds[1]);
-      var drawnWidth = Math.max(Math.ceil(bounds[2]) - offsetX, 1);
-      var drawnHeight = Math.max(Math.ceil(bounds[3]) - offsetY, 1);
-      var scaleX = 1,
+      const offsetX = Math.floor(bounds[0]);
+      const offsetY = Math.floor(bounds[1]);
+      let drawnWidth = Math.max(Math.ceil(bounds[2]) - offsetX, 1);
+      let drawnHeight = Math.max(Math.ceil(bounds[3]) - offsetY, 1);
+      let scaleX = 1,
           scaleY = 1;
 
       if (drawnWidth > MAX_GROUP_SIZE) {
@@ -13770,14 +13770,14 @@ var CanvasGraphics = /*#__PURE__*/function () {
       }
 
       this.current.startNewPathAndClipBox([0, 0, drawnWidth, drawnHeight]);
-      var cacheId = "groupAt" + this.groupLevel;
+      let cacheId = "groupAt" + this.groupLevel;
 
       if (group.smask) {
         cacheId += "_smask_" + this.smaskCounter++ % 2;
       }
 
-      var scratchCanvas = this.cachedCanvases.getCanvas(cacheId, drawnWidth, drawnHeight, true);
-      var groupCtx = scratchCanvas.context;
+      const scratchCanvas = this.cachedCanvases.getCanvas(cacheId, drawnWidth, drawnHeight, true);
+      const groupCtx = scratchCanvas.context;
       groupCtx.scale(1 / scaleX, 1 / scaleY);
       groupCtx.translate(-offsetX, -offsetY);
       groupCtx.transform.apply(groupCtx, currentTransform);
@@ -13816,8 +13816,8 @@ var CanvasGraphics = /*#__PURE__*/function () {
       }
 
       this.groupLevel--;
-      var groupCtx = this.ctx;
-      var ctx = this.groupStack.pop();
+      const groupCtx = this.ctx;
+      const ctx = this.groupStack.pop();
       this.ctx = ctx;
       this.ctx.imageSmoothingEnabled = false;
 
@@ -13826,12 +13826,12 @@ var CanvasGraphics = /*#__PURE__*/function () {
         this.restore();
       } else {
         this.ctx.restore();
-        var currentMtx = this.ctx.mozCurrentTransform;
+        const currentMtx = this.ctx.mozCurrentTransform;
         this.restore();
         this.ctx.save();
         this.ctx.setTransform.apply(this.ctx, currentMtx);
 
-        var dirtyBox = _util.Util.getAxialAlignedBoundingBox([0, 0, groupCtx.canvas.width, groupCtx.canvas.height], currentMtx);
+        const dirtyBox = _util.Util.getAxialAlignedBoundingBox([0, 0, groupCtx.canvas.width, groupCtx.canvas.height], currentMtx);
 
         this.ctx.drawImage(groupCtx.canvas, 0, 0);
         this.ctx.restore();
@@ -13858,8 +13858,8 @@ var CanvasGraphics = /*#__PURE__*/function () {
       this.save();
 
       if (Array.isArray(rect) && rect.length === 4) {
-        var width = rect[2] - rect[0];
-        var height = rect[3] - rect[1];
+        const width = rect[2] - rect[0];
+        const height = rect[3] - rect[1];
 
         if (hasOwnCanvas && this.annotationCanvasMap) {
           transform = transform.slice();
@@ -13870,19 +13870,19 @@ var CanvasGraphics = /*#__PURE__*/function () {
           rect[2] = width;
           rect[3] = height;
 
-          var _Util$singularValueDe = _util.Util.singularValueDecompose2dScale(this.ctx.mozCurrentTransform),
+          const _Util$singularValueDe = _util.Util.singularValueDecompose2dScale(this.ctx.mozCurrentTransform),
               _Util$singularValueDe2 = _slicedToArray(_Util$singularValueDe, 2),
               scaleX = _Util$singularValueDe2[0],
               scaleY = _Util$singularValueDe2[1];
 
-          var viewportScale = this.viewportScale;
-          var canvasWidth = Math.ceil(width * this.outputScaleX * viewportScale);
-          var canvasHeight = Math.ceil(height * this.outputScaleY * viewportScale);
+          const viewportScale = this.viewportScale;
+          const canvasWidth = Math.ceil(width * this.outputScaleX * viewportScale);
+          const canvasHeight = Math.ceil(height * this.outputScaleY * viewportScale);
           this.annotationCanvas = this.canvasFactory.create(canvasWidth, canvasHeight);
-          var _this$annotationCanva = this.annotationCanvas,
+          const _this$annotationCanva = this.annotationCanvas,
               canvas = _this$annotationCanva.canvas,
               context = _this$annotationCanva.context;
-          var viewportScaleFactorStr = "var(--zoom-factor) * ".concat(_display_utils.PixelsPerInch.PDF_TO_CSS_UNITS);
+          const viewportScaleFactorStr = "var(--zoom-factor) * ".concat(_display_utils.PixelsPerInch.PDF_TO_CSS_UNITS);
           canvas.style.width = "calc(".concat(width, "px * ").concat(viewportScaleFactorStr, ")");
           canvas.style.height = "calc(".concat(height, "px * ").concat(viewportScaleFactorStr, ")");
           this.annotationCanvasMap.set(id, canvas);
@@ -13921,11 +13921,11 @@ var CanvasGraphics = /*#__PURE__*/function () {
         return;
       }
 
-      var count = img.count;
+      const count = img.count;
       img = this.getObject(img.data, img);
       img.count = count;
-      var ctx = this.ctx;
-      var glyph = this.processingType3;
+      const ctx = this.ctx;
+      const glyph = this.processingType3;
 
       if (glyph) {
         if (glyph.compiled === undefined) {
@@ -13938,9 +13938,9 @@ var CanvasGraphics = /*#__PURE__*/function () {
         }
       }
 
-      var mask = this._createMaskCanvas(img);
+      const mask = this._createMaskCanvas(img);
 
-      var maskCanvas = mask.canvas;
+      const maskCanvas = mask.canvas;
       ctx.save();
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.drawImage(maskCanvas, mask.offsetX, mask.offsetY);
@@ -13950,29 +13950,29 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "paintImageMaskXObjectRepeat",
     value: function paintImageMaskXObjectRepeat(img, scaleX) {
-      var skewX = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-      var skewY = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 0;
-      var scaleY = arguments.length > 4 ? arguments[4] : undefined;
-      var positions = arguments.length > 5 ? arguments[5] : undefined;
+      const skewX = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+      const skewY = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 0;
+      const scaleY = arguments.length > 4 ? arguments[4] : undefined;
+      const positions = arguments.length > 5 ? arguments[5] : undefined;
 
       if (!this.contentVisible) {
         return;
       }
 
       img = this.getObject(img.data, img);
-      var ctx = this.ctx;
+      const ctx = this.ctx;
       ctx.save();
-      var currentTransform = ctx.mozCurrentTransform;
+      const currentTransform = ctx.mozCurrentTransform;
       ctx.transform(scaleX, skewX, skewY, scaleY, 0, 0);
 
-      var mask = this._createMaskCanvas(img);
+      const mask = this._createMaskCanvas(img);
 
       ctx.setTransform(1, 0, 0, 1, 0, 0);
 
-      for (var i = 0, ii = positions.length; i < ii; i += 2) {
-        var trans = _util.Util.transform(currentTransform, [scaleX, skewX, skewY, scaleY, positions[i], positions[i + 1]]);
+      for (let i = 0, ii = positions.length; i < ii; i += 2) {
+        const trans = _util.Util.transform(currentTransform, [scaleX, skewX, skewY, scaleY, positions[i], positions[i + 1]]);
 
-        var _Util$applyTransform3 = _util.Util.applyTransform([0, 0], trans),
+        const _Util$applyTransform3 = _util.Util.applyTransform([0, 0], trans),
             _Util$applyTransform4 = _slicedToArray(_Util$applyTransform3, 2),
             x = _Util$applyTransform4[0],
             y = _Util$applyTransform4[1];
@@ -13990,16 +13990,16 @@ var CanvasGraphics = /*#__PURE__*/function () {
         return;
       }
 
-      var ctx = this.ctx;
-      var fillColor = this.current.fillColor;
-      var isPatternFill = this.current.patternFill;
+      const ctx = this.ctx;
+      const fillColor = this.current.fillColor;
+      const isPatternFill = this.current.patternFill;
 
-      for (var i = 0, ii = images.length; i < ii; i++) {
-        var image = images[i];
-        var width = image.width,
+      for (let i = 0, ii = images.length; i < ii; i++) {
+        const image = images[i];
+        const width = image.width,
             height = image.height;
-        var maskCanvas = this.cachedCanvases.getCanvas("maskCanvas", width, height, false);
-        var maskCtx = maskCanvas.context;
+        const maskCanvas = this.cachedCanvases.getCanvas("maskCanvas", width, height, false);
+        const maskCtx = maskCanvas.context;
         maskCtx.save();
         putBinaryImageMask(maskCtx, image);
         maskCtx.globalCompositeOperation = "source-in";
@@ -14022,7 +14022,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
         return;
       }
 
-      var imgData = this.getObject(objId);
+      const imgData = this.getObject(objId);
 
       if (!imgData) {
         (0, _util.warn)("Dependent image isn't ready yet");
@@ -14038,18 +14038,18 @@ var CanvasGraphics = /*#__PURE__*/function () {
         return;
       }
 
-      var imgData = this.getObject(objId);
+      const imgData = this.getObject(objId);
 
       if (!imgData) {
         (0, _util.warn)("Dependent image isn't ready yet");
         return;
       }
 
-      var width = imgData.width;
-      var height = imgData.height;
-      var map = [];
+      const width = imgData.width;
+      const height = imgData.height;
+      const map = [];
 
-      for (var i = 0, ii = positions.length; i < ii; i += 2) {
+      for (let i = 0, ii = positions.length; i < ii; i += 2) {
         map.push({
           transform: [scaleX, 0, 0, scaleY, positions[i], positions[i + 1]],
           x: 0,
@@ -14068,33 +14068,33 @@ var CanvasGraphics = /*#__PURE__*/function () {
         return;
       }
 
-      var width = imgData.width;
-      var height = imgData.height;
-      var ctx = this.ctx;
+      const width = imgData.width;
+      const height = imgData.height;
+      const ctx = this.ctx;
       this.save();
       ctx.scale(1 / width, -1 / height);
-      var imgToPaint;
+      let imgToPaint;
 
       if (typeof HTMLElement === "function" && imgData instanceof HTMLElement || !imgData.data) {
         imgToPaint = imgData;
       } else {
-        var tmpCanvas = this.cachedCanvases.getCanvas("inlineImage", width, height, false);
-        var tmpCtx = tmpCanvas.context;
+        const tmpCanvas = this.cachedCanvases.getCanvas("inlineImage", width, height, false);
+        const tmpCtx = tmpCanvas.context;
         putBinaryImageData(tmpCtx, imgData, this.current.transferMaps);
         imgToPaint = tmpCanvas.canvas;
       }
 
-      var scaled = this._scaleImage(imgToPaint, ctx.mozCurrentTransformInverse);
+      const scaled = this._scaleImage(imgToPaint, ctx.mozCurrentTransformInverse);
 
       ctx.imageSmoothingEnabled = getImageSmoothingEnabled(ctx.mozCurrentTransform, imgData.interpolate);
 
-      var _drawImageAtIntegerCo = drawImageAtIntegerCoords(ctx, scaled.img, 0, 0, scaled.paintWidth, scaled.paintHeight, 0, -height, width, height),
+      const _drawImageAtIntegerCo = drawImageAtIntegerCoords(ctx, scaled.img, 0, 0, scaled.paintWidth, scaled.paintHeight, 0, -height, width, height),
           _drawImageAtIntegerCo2 = _slicedToArray(_drawImageAtIntegerCo, 2),
           rWidth = _drawImageAtIntegerCo2[0],
           rHeight = _drawImageAtIntegerCo2[1];
 
       if (this.imageLayer) {
-        var position = this.getCanvasPosition(0, -height);
+        const position = this.getCanvasPosition(0, -height);
         this.imageLayer.appendImage({
           imgData: imgData,
           left: position[0],
@@ -14114,22 +14114,22 @@ var CanvasGraphics = /*#__PURE__*/function () {
         return;
       }
 
-      var ctx = this.ctx;
-      var w = imgData.width;
-      var h = imgData.height;
-      var tmpCanvas = this.cachedCanvases.getCanvas("inlineImage", w, h, false);
-      var tmpCtx = tmpCanvas.context;
+      const ctx = this.ctx;
+      const w = imgData.width;
+      const h = imgData.height;
+      const tmpCanvas = this.cachedCanvases.getCanvas("inlineImage", w, h, false);
+      const tmpCtx = tmpCanvas.context;
       putBinaryImageData(tmpCtx, imgData, this.current.transferMaps);
 
-      for (var i = 0, ii = map.length; i < ii; i++) {
-        var entry = map[i];
+      for (let i = 0, ii = map.length; i < ii; i++) {
+        const entry = map[i];
         ctx.save();
         ctx.transform.apply(ctx, entry.transform);
         ctx.scale(1, -1);
         drawImageAtIntegerCoords(ctx, tmpCanvas.canvas, entry.x, entry.y, entry.w, entry.h, 0, -1, 1, 1);
 
         if (this.imageLayer) {
-          var position = this.getCanvasPosition(entry.x, entry.y);
+          const position = this.getCanvasPosition(entry.x, entry.y);
           this.imageLayer.appendImage({
             imgData: imgData,
             left: position[0],
@@ -14197,7 +14197,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "consumePath",
     value: function consumePath(clipBox) {
-      var isEmpty = this.current.isEmptyClip();
+      const isEmpty = this.current.isEmptyClip();
 
       if (this.pendingClip) {
         this.current.updateClipFromPath();
@@ -14207,7 +14207,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
         this.compose(clipBox);
       }
 
-      var ctx = this.ctx;
+      const ctx = this.ctx;
 
       if (this.pendingClip) {
         if (!isEmpty) {
@@ -14228,14 +14228,14 @@ var CanvasGraphics = /*#__PURE__*/function () {
     key: "getSinglePixelWidth",
     value: function getSinglePixelWidth() {
       if (!this._cachedGetSinglePixelWidth) {
-        var m = this.ctx.mozCurrentTransform;
+        const m = this.ctx.mozCurrentTransform;
 
         if (m[1] === 0 && m[2] === 0) {
           this._cachedGetSinglePixelWidth = 1 / Math.min(Math.abs(m[0]), Math.abs(m[3]));
         } else {
-          var absDet = Math.abs(m[0] * m[3] - m[2] * m[1]);
-          var normX = Math.hypot(m[0], m[2]);
-          var normY = Math.hypot(m[1], m[3]);
+          const absDet = Math.abs(m[0] * m[3] - m[2] * m[1]);
+          const normX = Math.hypot(m[0], m[2]);
+          const normY = Math.hypot(m[1], m[3]);
           this._cachedGetSinglePixelWidth = Math.max(normX, normY) / absDet;
         }
       }
@@ -14246,35 +14246,35 @@ var CanvasGraphics = /*#__PURE__*/function () {
     key: "getScaleForStroking",
     value: function getScaleForStroking() {
       if (!this._cachedScaleForStroking) {
-        var lineWidth = this.current.lineWidth;
-        var m = this.ctx.mozCurrentTransform;
-        var scaleX, scaleY;
+        const lineWidth = this.current.lineWidth;
+        const m = this.ctx.mozCurrentTransform;
+        let scaleX, scaleY;
 
         if (m[1] === 0 && m[2] === 0) {
-          var normX = Math.abs(m[0]);
-          var normY = Math.abs(m[3]);
+          const normX = Math.abs(m[0]);
+          const normY = Math.abs(m[3]);
 
           if (lineWidth === 0) {
             scaleX = 1 / normX;
             scaleY = 1 / normY;
           } else {
-            var scaledXLineWidth = normX * lineWidth;
-            var scaledYLineWidth = normY * lineWidth;
+            const scaledXLineWidth = normX * lineWidth;
+            const scaledYLineWidth = normY * lineWidth;
             scaleX = scaledXLineWidth < 1 ? 1 / scaledXLineWidth : 1;
             scaleY = scaledYLineWidth < 1 ? 1 / scaledYLineWidth : 1;
           }
         } else {
-          var absDet = Math.abs(m[0] * m[3] - m[2] * m[1]);
+          const absDet = Math.abs(m[0] * m[3] - m[2] * m[1]);
 
-          var _normX = Math.hypot(m[0], m[1]);
+          const _normX = Math.hypot(m[0], m[1]);
 
-          var _normY = Math.hypot(m[2], m[3]);
+          const _normY = Math.hypot(m[2], m[3]);
 
           if (lineWidth === 0) {
             scaleX = _normY / absDet;
             scaleY = _normX / absDet;
           } else {
-            var baseArea = lineWidth * absDet;
+            const baseArea = lineWidth * absDet;
             scaleX = _normY > baseArea ? _normY / baseArea : 1;
             scaleY = _normX > baseArea ? _normX / baseArea : 1;
           }
@@ -14288,10 +14288,10 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "rescaleAndStroke",
     value: function rescaleAndStroke(saveRestore) {
-      var ctx = this.ctx;
-      var lineWidth = this.current.lineWidth;
+      const ctx = this.ctx;
+      const lineWidth = this.current.lineWidth;
 
-      var _this$getScaleForStro = this.getScaleForStroking(),
+      const _this$getScaleForStro = this.getScaleForStroking(),
           _this$getScaleForStro2 = _slicedToArray(_this$getScaleForStro, 2),
           scaleX = _this$getScaleForStro2[0],
           scaleY = _this$getScaleForStro2[1];
@@ -14303,7 +14303,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
         return;
       }
 
-      var savedMatrix, savedDashes, savedDashOffset;
+      let savedMatrix, savedDashes, savedDashOffset;
 
       if (saveRestore) {
         savedMatrix = ctx.mozCurrentTransform.slice();
@@ -14312,7 +14312,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
       }
 
       ctx.scale(scaleX, scaleY);
-      var scale = Math.max(scaleX, scaleY);
+      const scale = Math.max(scaleX, scaleY);
       ctx.setLineDash(ctx.getLineDash().map(function (x) {
         return x / scale;
       }));
@@ -14328,13 +14328,13 @@ var CanvasGraphics = /*#__PURE__*/function () {
   }, {
     key: "getCanvasPosition",
     value: function getCanvasPosition(x, y) {
-      var transform = this.ctx.mozCurrentTransform;
+      const transform = this.ctx.mozCurrentTransform;
       return [transform[0] * x + transform[2] * y + transform[4], transform[1] * x + transform[3] * y + transform[5]];
     }
   }, {
     key: "isContentVisible",
     value: function isContentVisible() {
-      for (var i = this.markedContentStack.length - 1; i >= 0; i--) {
+      for (let i = this.markedContentStack.length - 1; i >= 0; i--) {
         if (!this.markedContentStack[i].visible) {
           return false;
         }
@@ -14349,7 +14349,7 @@ var CanvasGraphics = /*#__PURE__*/function () {
 
 exports.CanvasGraphics = CanvasGraphics;
 
-for (var op in _util.OPS) {
+for (const op in _util.OPS) {
   if (CanvasGraphics.prototype[op] !== undefined) {
     CanvasGraphics.prototype[_util.OPS[op]] = CanvasGraphics.prototype[op];
   }
@@ -14370,13 +14370,13 @@ Object.defineProperty(exports, "__esModule", ({
 exports.TilingPattern = exports.PathType = void 0;
 exports.getShadingPattern = getShadingPattern;
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
-var _is_node = __w_pdfjs_require__(3);
+const _is_node = __w_pdfjs_require__(3);
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
@@ -14384,7 +14384,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { const hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { let Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { const NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 
@@ -14396,11 +14396,11 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
-var PathType = {
+const PathType = {
   FILL: "Fill",
   STROKE: "Stroke",
   SHADING: "Shading"
@@ -14412,14 +14412,14 @@ function applyBoundingBox(ctx, bbox) {
     return;
   }
 
-  var width = bbox[2] - bbox[0];
-  var height = bbox[3] - bbox[1];
-  var region = new Path2D();
+  const width = bbox[2] - bbox[0];
+  const height = bbox[3] - bbox[1];
+  const region = new Path2D();
   region.rect(bbox[0], bbox[1], width, height);
   ctx.clip(region);
 }
 
-var BaseShadingPattern = /*#__PURE__*/function () {
+const BaseShadingPattern = /*#__PURE__*/function () {
   function BaseShadingPattern() {
     _classCallCheck(this, BaseShadingPattern);
 
@@ -14438,13 +14438,13 @@ var BaseShadingPattern = /*#__PURE__*/function () {
   return BaseShadingPattern;
 }();
 
-var RadialAxialShadingPattern = /*#__PURE__*/function (_BaseShadingPattern) {
+const RadialAxialShadingPattern = /*#__PURE__*/function (_BaseShadingPattern) {
   _inherits(RadialAxialShadingPattern, _BaseShadingPattern);
 
-  var _super = _createSuper(RadialAxialShadingPattern);
+  const _super = _createSuper(RadialAxialShadingPattern);
 
   function RadialAxialShadingPattern(IR) {
-    var _this;
+    let _this;
 
     _classCallCheck(this, RadialAxialShadingPattern);
 
@@ -14463,7 +14463,7 @@ var RadialAxialShadingPattern = /*#__PURE__*/function (_BaseShadingPattern) {
   _createClass(RadialAxialShadingPattern, [{
     key: "_createGradient",
     value: function _createGradient(ctx) {
-      var grad;
+      let grad;
 
       if (this._type === "axial") {
         grad = ctx.createLinearGradient(this._p0[0], this._p0[1], this._p1[0], this._p1[1]);
@@ -14471,12 +14471,12 @@ var RadialAxialShadingPattern = /*#__PURE__*/function (_BaseShadingPattern) {
         grad = ctx.createRadialGradient(this._p0[0], this._p0[1], this._r0, this._p1[0], this._p1[1], this._r1);
       }
 
-      var _iterator = _createForOfIteratorHelper(this._colorStops),
+      let _iterator = _createForOfIteratorHelper(this._colorStops),
           _step;
 
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var colorStop = _step.value;
+          const colorStop = _step.value;
           grad.addColorStop(colorStop[0], colorStop[1]);
         }
       } catch (err) {
@@ -14490,14 +14490,14 @@ var RadialAxialShadingPattern = /*#__PURE__*/function (_BaseShadingPattern) {
   }, {
     key: "getPattern",
     value: function getPattern(ctx, owner, inverse, pathType) {
-      var pattern;
+      let pattern;
 
       if (pathType === PathType.STROKE || pathType === PathType.FILL) {
-        var ownerBBox = owner.current.getClippedPathBoundingBox(pathType, ctx.mozCurrentTransform) || [0, 0, 0, 0];
-        var width = Math.ceil(ownerBBox[2] - ownerBBox[0]) || 1;
-        var height = Math.ceil(ownerBBox[3] - ownerBBox[1]) || 1;
-        var tmpCanvas = owner.cachedCanvases.getCanvas("pattern", width, height, true);
-        var tmpCtx = tmpCanvas.context;
+        const ownerBBox = owner.current.getClippedPathBoundingBox(pathType, ctx.mozCurrentTransform) || [0, 0, 0, 0];
+        const width = Math.ceil(ownerBBox[2] - ownerBBox[0]) || 1;
+        const height = Math.ceil(ownerBBox[3] - ownerBBox[1]) || 1;
+        const tmpCanvas = owner.cachedCanvases.getCanvas("pattern", width, height, true);
+        const tmpCtx = tmpCanvas.context;
         tmpCtx.clearRect(0, 0, tmpCtx.canvas.width, tmpCtx.canvas.height);
         tmpCtx.beginPath();
         tmpCtx.rect(0, 0, tmpCtx.canvas.width, tmpCtx.canvas.height);
@@ -14513,7 +14513,7 @@ var RadialAxialShadingPattern = /*#__PURE__*/function (_BaseShadingPattern) {
         tmpCtx.fillStyle = this._createGradient(tmpCtx);
         tmpCtx.fill();
         pattern = ctx.createPattern(tmpCanvas.canvas, "no-repeat");
-        var domMatrix = new DOMMatrix(inverse);
+        const domMatrix = new DOMMatrix(inverse);
 
         try {
           pattern.setTransform(domMatrix);
@@ -14533,11 +14533,11 @@ var RadialAxialShadingPattern = /*#__PURE__*/function (_BaseShadingPattern) {
 }(BaseShadingPattern);
 
 function drawTriangle(data, context, p1, p2, p3, c1, c2, c3) {
-  var coords = context.coords,
+  const coords = context.coords,
       colors = context.colors;
-  var bytes = data.data,
+  const bytes = data.data,
       rowSize = data.width * 4;
-  var tmp;
+  let tmp;
 
   if (coords[p1 + 1] > coords[p2 + 1]) {
     tmp = p1;
@@ -14566,34 +14566,34 @@ function drawTriangle(data, context, p1, p2, p3, c1, c2, c3) {
     c2 = tmp;
   }
 
-  var x1 = (coords[p1] + context.offsetX) * context.scaleX;
-  var y1 = (coords[p1 + 1] + context.offsetY) * context.scaleY;
-  var x2 = (coords[p2] + context.offsetX) * context.scaleX;
-  var y2 = (coords[p2 + 1] + context.offsetY) * context.scaleY;
-  var x3 = (coords[p3] + context.offsetX) * context.scaleX;
-  var y3 = (coords[p3 + 1] + context.offsetY) * context.scaleY;
+  const x1 = (coords[p1] + context.offsetX) * context.scaleX;
+  const y1 = (coords[p1 + 1] + context.offsetY) * context.scaleY;
+  const x2 = (coords[p2] + context.offsetX) * context.scaleX;
+  const y2 = (coords[p2 + 1] + context.offsetY) * context.scaleY;
+  const x3 = (coords[p3] + context.offsetX) * context.scaleX;
+  const y3 = (coords[p3 + 1] + context.offsetY) * context.scaleY;
 
   if (y1 >= y3) {
     return;
   }
 
-  var c1r = colors[c1],
+  const c1r = colors[c1],
       c1g = colors[c1 + 1],
       c1b = colors[c1 + 2];
-  var c2r = colors[c2],
+  const c2r = colors[c2],
       c2g = colors[c2 + 1],
       c2b = colors[c2 + 2];
-  var c3r = colors[c3],
+  const c3r = colors[c3],
       c3g = colors[c3 + 1],
       c3b = colors[c3 + 2];
-  var minY = Math.round(y1),
+  const minY = Math.round(y1),
       maxY = Math.round(y3);
-  var xa, car, cag, cab;
-  var xb, cbr, cbg, cbb;
+  let xa, car, cag, cab;
+  let xb, cbr, cbg, cbb;
 
-  for (var y = minY; y <= maxY; y++) {
+  for (let y = minY; y <= maxY; y++) {
     if (y < y2) {
-      var _k = void 0;
+      let _k = void 0;
 
       if (y < y1) {
         _k = 0;
@@ -14606,7 +14606,7 @@ function drawTriangle(data, context, p1, p2, p3, c1, c2, c3) {
       cag = c1g - (c1g - c2g) * _k;
       cab = c1b - (c1b - c2b) * _k;
     } else {
-      var _k2 = void 0;
+      let _k2 = void 0;
 
       if (y > y3) {
         _k2 = 1;
@@ -14622,7 +14622,7 @@ function drawTriangle(data, context, p1, p2, p3, c1, c2, c3) {
       cab = c2b - (c2b - c3b) * _k2;
     }
 
-    var k = void 0;
+    let k = void 0;
 
     if (y < y1) {
       k = 0;
@@ -14636,11 +14636,11 @@ function drawTriangle(data, context, p1, p2, p3, c1, c2, c3) {
     cbr = c1r - (c1r - c3r) * k;
     cbg = c1g - (c1g - c3g) * k;
     cbb = c1b - (c1b - c3b) * k;
-    var x1_ = Math.round(Math.min(xa, xb));
-    var x2_ = Math.round(Math.max(xa, xb));
-    var j = rowSize * y + x1_ * 4;
+    const x1_ = Math.round(Math.min(xa, xb));
+    const x2_ = Math.round(Math.max(xa, xb));
+    let j = rowSize * y + x1_ * 4;
 
-    for (var x = x1_; x <= x2_; x++) {
+    for (let x = x1_; x <= x2_; x++) {
       k = (xa - x) / (xa - xb);
 
       if (k < 0) {
@@ -14658,9 +14658,9 @@ function drawTriangle(data, context, p1, p2, p3, c1, c2, c3) {
 }
 
 function drawFigure(data, figure, context) {
-  var ps = figure.coords;
-  var cs = figure.colors;
-  var i, ii;
+  const ps = figure.coords;
+  const cs = figure.colors;
+  let i, ii;
 
   switch (figure.type) {
     case "lattice":
@@ -14669,9 +14669,9 @@ function drawFigure(data, figure, context) {
       var cols = verticesPerRow - 1;
 
       for (i = 0; i < rows; i++) {
-        var q = i * verticesPerRow;
+        let q = i * verticesPerRow;
 
-        for (var j = 0; j < cols; j++, q++) {
+        for (let j = 0; j < cols; j++, q++) {
           drawTriangle(data, context, ps[q], ps[q + 1], ps[q + verticesPerRow], cs[q], cs[q + 1], cs[q + verticesPerRow]);
           drawTriangle(data, context, ps[q + verticesPerRow + 1], ps[q + 1], ps[q + verticesPerRow], cs[q + verticesPerRow + 1], cs[q + 1], cs[q + verticesPerRow]);
         }
@@ -14691,13 +14691,13 @@ function drawFigure(data, figure, context) {
   }
 }
 
-var MeshShadingPattern = /*#__PURE__*/function (_BaseShadingPattern2) {
+const MeshShadingPattern = /*#__PURE__*/function (_BaseShadingPattern2) {
   _inherits(MeshShadingPattern, _BaseShadingPattern2);
 
-  var _super2 = _createSuper(MeshShadingPattern);
+  const _super2 = _createSuper(MeshShadingPattern);
 
   function MeshShadingPattern(IR) {
-    var _this2;
+    let _this2;
 
     _classCallCheck(this, MeshShadingPattern);
 
@@ -14715,18 +14715,18 @@ var MeshShadingPattern = /*#__PURE__*/function (_BaseShadingPattern2) {
   _createClass(MeshShadingPattern, [{
     key: "_createMeshCanvas",
     value: function _createMeshCanvas(combinedScale, backgroundColor, cachedCanvases) {
-      var EXPECTED_SCALE = 1.1;
-      var MAX_PATTERN_SIZE = 3000;
-      var BORDER_SIZE = 2;
-      var offsetX = Math.floor(this._bounds[0]);
-      var offsetY = Math.floor(this._bounds[1]);
-      var boundsWidth = Math.ceil(this._bounds[2]) - offsetX;
-      var boundsHeight = Math.ceil(this._bounds[3]) - offsetY;
-      var width = Math.min(Math.ceil(Math.abs(boundsWidth * combinedScale[0] * EXPECTED_SCALE)), MAX_PATTERN_SIZE);
-      var height = Math.min(Math.ceil(Math.abs(boundsHeight * combinedScale[1] * EXPECTED_SCALE)), MAX_PATTERN_SIZE);
-      var scaleX = boundsWidth / width;
-      var scaleY = boundsHeight / height;
-      var context = {
+      const EXPECTED_SCALE = 1.1;
+      const MAX_PATTERN_SIZE = 3000;
+      const BORDER_SIZE = 2;
+      const offsetX = Math.floor(this._bounds[0]);
+      const offsetY = Math.floor(this._bounds[1]);
+      const boundsWidth = Math.ceil(this._bounds[2]) - offsetX;
+      const boundsHeight = Math.ceil(this._bounds[3]) - offsetY;
+      const width = Math.min(Math.ceil(Math.abs(boundsWidth * combinedScale[0] * EXPECTED_SCALE)), MAX_PATTERN_SIZE);
+      const height = Math.min(Math.ceil(Math.abs(boundsHeight * combinedScale[1] * EXPECTED_SCALE)), MAX_PATTERN_SIZE);
+      const scaleX = boundsWidth / width;
+      const scaleY = boundsHeight / height;
+      const context = {
         coords: this._coords,
         colors: this._colors,
         offsetX: -offsetX,
@@ -14734,16 +14734,16 @@ var MeshShadingPattern = /*#__PURE__*/function (_BaseShadingPattern2) {
         scaleX: 1 / scaleX,
         scaleY: 1 / scaleY
       };
-      var paddedWidth = width + BORDER_SIZE * 2;
-      var paddedHeight = height + BORDER_SIZE * 2;
-      var tmpCanvas = cachedCanvases.getCanvas("mesh", paddedWidth, paddedHeight, false);
-      var tmpCtx = tmpCanvas.context;
-      var data = tmpCtx.createImageData(width, height);
+      const paddedWidth = width + BORDER_SIZE * 2;
+      const paddedHeight = height + BORDER_SIZE * 2;
+      const tmpCanvas = cachedCanvases.getCanvas("mesh", paddedWidth, paddedHeight, false);
+      const tmpCtx = tmpCanvas.context;
+      const data = tmpCtx.createImageData(width, height);
 
       if (backgroundColor) {
-        var bytes = data.data;
+        const bytes = data.data;
 
-        for (var i = 0, ii = bytes.length; i < ii; i += 4) {
+        for (let i = 0, ii = bytes.length; i < ii; i += 4) {
           bytes[i] = backgroundColor[0];
           bytes[i + 1] = backgroundColor[1];
           bytes[i + 2] = backgroundColor[2];
@@ -14751,12 +14751,12 @@ var MeshShadingPattern = /*#__PURE__*/function (_BaseShadingPattern2) {
         }
       }
 
-      var _iterator2 = _createForOfIteratorHelper(this._figures),
+      let _iterator2 = _createForOfIteratorHelper(this._figures),
           _step2;
 
       try {
         for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-          var figure = _step2.value;
+          const figure = _step2.value;
           drawFigure(data, figure, context);
         }
       } catch (err) {
@@ -14766,7 +14766,7 @@ var MeshShadingPattern = /*#__PURE__*/function (_BaseShadingPattern2) {
       }
 
       tmpCtx.putImageData(data, BORDER_SIZE, BORDER_SIZE);
-      var canvas = tmpCanvas.canvas;
+      const canvas = tmpCanvas.canvas;
       return {
         canvas: canvas,
         offsetX: offsetX - BORDER_SIZE * scaleX,
@@ -14779,7 +14779,7 @@ var MeshShadingPattern = /*#__PURE__*/function (_BaseShadingPattern2) {
     key: "getPattern",
     value: function getPattern(ctx, owner, inverse, pathType) {
       applyBoundingBox(ctx, this._bbox);
-      var scale;
+      let scale;
 
       if (pathType === PathType.SHADING) {
         scale = _util.Util.singularValueDecompose2dScale(ctx.mozCurrentTransform);
@@ -14787,13 +14787,13 @@ var MeshShadingPattern = /*#__PURE__*/function (_BaseShadingPattern2) {
         scale = _util.Util.singularValueDecompose2dScale(owner.baseTransform);
 
         if (this.matrix) {
-          var matrixScale = _util.Util.singularValueDecompose2dScale(this.matrix);
+          const matrixScale = _util.Util.singularValueDecompose2dScale(this.matrix);
 
           scale = [scale[0] * matrixScale[0], scale[1] * matrixScale[1]];
         }
       }
 
-      var temporaryPatternCanvas = this._createMeshCanvas(scale, pathType === PathType.SHADING ? null : this._background, owner.cachedCanvases);
+      const temporaryPatternCanvas = this._createMeshCanvas(scale, pathType === PathType.SHADING ? null : this._background, owner.cachedCanvases);
 
       if (pathType !== PathType.SHADING) {
         ctx.setTransform.apply(ctx, owner.baseTransform);
@@ -14812,10 +14812,10 @@ var MeshShadingPattern = /*#__PURE__*/function (_BaseShadingPattern2) {
   return MeshShadingPattern;
 }(BaseShadingPattern);
 
-var DummyShadingPattern = /*#__PURE__*/function (_BaseShadingPattern3) {
+const DummyShadingPattern = /*#__PURE__*/function (_BaseShadingPattern3) {
   _inherits(DummyShadingPattern, _BaseShadingPattern3);
 
-  var _super3 = _createSuper(DummyShadingPattern);
+  const _super3 = _createSuper(DummyShadingPattern);
 
   function DummyShadingPattern() {
     _classCallCheck(this, DummyShadingPattern);
@@ -14848,12 +14848,12 @@ function getShadingPattern(IR) {
   throw new Error("Unknown IR type: ".concat(IR[0]));
 }
 
-var PaintType = {
+const PaintType = {
   COLORED: 1,
   UNCOLORED: 2
 };
 
-var TilingPattern = /*#__PURE__*/function () {
+const TilingPattern = /*#__PURE__*/function () {
   function TilingPattern(IR, color, ctx, canvasGraphicsFactory, baseTransform) {
     _classCallCheck(this, TilingPattern);
 
@@ -14873,36 +14873,36 @@ var TilingPattern = /*#__PURE__*/function () {
   _createClass(TilingPattern, [{
     key: "createPatternCanvas",
     value: function createPatternCanvas(owner) {
-      var operatorList = this.operatorList;
-      var bbox = this.bbox;
-      var xstep = this.xstep;
-      var ystep = this.ystep;
-      var paintType = this.paintType;
-      var tilingType = this.tilingType;
-      var color = this.color;
-      var canvasGraphicsFactory = this.canvasGraphicsFactory;
+      const operatorList = this.operatorList;
+      const bbox = this.bbox;
+      const xstep = this.xstep;
+      const ystep = this.ystep;
+      const paintType = this.paintType;
+      const tilingType = this.tilingType;
+      const color = this.color;
+      const canvasGraphicsFactory = this.canvasGraphicsFactory;
       (0, _util.info)("TilingType: " + tilingType);
-      var x0 = bbox[0],
+      const x0 = bbox[0],
           y0 = bbox[1],
           x1 = bbox[2],
           y1 = bbox[3];
 
-      var matrixScale = _util.Util.singularValueDecompose2dScale(this.matrix);
+      const matrixScale = _util.Util.singularValueDecompose2dScale(this.matrix);
 
-      var curMatrixScale = _util.Util.singularValueDecompose2dScale(this.baseTransform);
+      const curMatrixScale = _util.Util.singularValueDecompose2dScale(this.baseTransform);
 
-      var combinedScale = [matrixScale[0] * curMatrixScale[0], matrixScale[1] * curMatrixScale[1]];
-      var dimx = this.getSizeAndScale(xstep, this.ctx.canvas.width, combinedScale[0]);
-      var dimy = this.getSizeAndScale(ystep, this.ctx.canvas.height, combinedScale[1]);
-      var tmpCanvas = owner.cachedCanvases.getCanvas("pattern", dimx.size, dimy.size, true);
-      var tmpCtx = tmpCanvas.context;
-      var graphics = canvasGraphicsFactory.createCanvasGraphics(tmpCtx);
+      const combinedScale = [matrixScale[0] * curMatrixScale[0], matrixScale[1] * curMatrixScale[1]];
+      const dimx = this.getSizeAndScale(xstep, this.ctx.canvas.width, combinedScale[0]);
+      const dimy = this.getSizeAndScale(ystep, this.ctx.canvas.height, combinedScale[1]);
+      const tmpCanvas = owner.cachedCanvases.getCanvas("pattern", dimx.size, dimy.size, true);
+      const tmpCtx = tmpCanvas.context;
+      const graphics = canvasGraphicsFactory.createCanvasGraphics(tmpCtx);
       graphics.groupLevel = owner.groupLevel;
       this.setFillAndStrokeStyleToContext(graphics, paintType, color);
-      var adjustedX0 = x0;
-      var adjustedY0 = y0;
-      var adjustedX1 = x1;
-      var adjustedY1 = y1;
+      let adjustedX0 = x0;
+      let adjustedY0 = y0;
+      let adjustedX1 = x1;
+      let adjustedY1 = y1;
 
       if (x0 < 0) {
         adjustedX0 = 0;
@@ -14933,8 +14933,8 @@ var TilingPattern = /*#__PURE__*/function () {
     key: "getSizeAndScale",
     value: function getSizeAndScale(step, realOutputSize, scale) {
       step = Math.abs(step);
-      var maxSize = Math.max(TilingPattern.MAX_PATTERN_SIZE, realOutputSize);
-      var size = Math.ceil(step * scale);
+      const maxSize = Math.max(TilingPattern.MAX_PATTERN_SIZE, realOutputSize);
+      let size = Math.ceil(step * scale);
 
       if (size >= maxSize) {
         size = maxSize;
@@ -14950,8 +14950,8 @@ var TilingPattern = /*#__PURE__*/function () {
   }, {
     key: "clipBbox",
     value: function clipBbox(graphics, x0, y0, x1, y1) {
-      var bboxWidth = x1 - x0;
-      var bboxHeight = y1 - y0;
+      const bboxWidth = x1 - x0;
+      const bboxHeight = y1 - y0;
       graphics.ctx.rect(x0, y0, bboxWidth, bboxHeight);
       graphics.current.updateRectMinMax(graphics.ctx.mozCurrentTransform, [x0, y0, x1, y1]);
       graphics.clip();
@@ -14960,7 +14960,7 @@ var TilingPattern = /*#__PURE__*/function () {
   }, {
     key: "setFillAndStrokeStyleToContext",
     value: function setFillAndStrokeStyleToContext(graphics, paintType, color) {
-      var context = graphics.ctx,
+      const context = graphics.ctx,
           current = graphics.current;
 
       switch (paintType) {
@@ -14988,7 +14988,7 @@ var TilingPattern = /*#__PURE__*/function () {
   }, {
     key: "getPattern",
     value: function getPattern(ctx, owner, inverse, pathType) {
-      var matrix = inverse;
+      let matrix = inverse;
 
       if (pathType !== PathType.SHADING) {
         matrix = _util.Util.transform(matrix, owner.baseTransform);
@@ -14998,11 +14998,11 @@ var TilingPattern = /*#__PURE__*/function () {
         }
       }
 
-      var temporaryPatternCanvas = this.createPatternCanvas(owner);
-      var domMatrix = new DOMMatrix(matrix);
+      const temporaryPatternCanvas = this.createPatternCanvas(owner);
+      let domMatrix = new DOMMatrix(matrix);
       domMatrix = domMatrix.translate(temporaryPatternCanvas.offsetX, temporaryPatternCanvas.offsetY);
       domMatrix = domMatrix.scale(1 / temporaryPatternCanvas.scaleX, 1 / temporaryPatternCanvas.scaleY);
-      var pattern = ctx.createPattern(temporaryPatternCanvas.canvas, "repeat");
+      const pattern = ctx.createPattern(temporaryPatternCanvas.canvas, "repeat");
 
       try {
         pattern.setTransform(domMatrix);
@@ -15036,22 +15036,22 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.applyMaskImageData = applyMaskImageData;
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { let _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; const _arr = []; let _n = true; let _d = false; let _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function applyMaskImageData(_ref) {
-  var src = _ref.src,
+  let src = _ref.src,
       _ref$srcPos = _ref.srcPos,
       srcPos = _ref$srcPos === void 0 ? 0 : _ref$srcPos,
       dest = _ref.dest,
@@ -15061,21 +15061,21 @@ function applyMaskImageData(_ref) {
       height = _ref.height,
       _ref$inverseDecode = _ref.inverseDecode,
       inverseDecode = _ref$inverseDecode === void 0 ? false : _ref$inverseDecode;
-  var opaque = _util.FeatureTest.isLittleEndian ? 0xff000000 : 0x000000ff;
+  const opaque = _util.FeatureTest.isLittleEndian ? 0xff000000 : 0x000000ff;
 
-  var _ref2 = !inverseDecode ? [opaque, 0] : [0, opaque],
+  const _ref2 = !inverseDecode ? [opaque, 0] : [0, opaque],
       _ref3 = _slicedToArray(_ref2, 2),
       zeroMapping = _ref3[0],
       oneMapping = _ref3[1];
 
-  var widthInSource = width >> 3;
-  var widthRemainder = width & 7;
-  var srcLength = src.length;
+  const widthInSource = width >> 3;
+  const widthRemainder = width & 7;
+  const srcLength = src.length;
   dest = new Uint32Array(dest.buffer);
 
-  for (var i = 0; i < height; i++) {
-    for (var max = srcPos + widthInSource; srcPos < max; srcPos++) {
-      var _elem = srcPos < srcLength ? src[srcPos] : 255;
+  for (let i = 0; i < height; i++) {
+    for (let max = srcPos + widthInSource; srcPos < max; srcPos++) {
+      const _elem = srcPos < srcLength ? src[srcPos] : 255;
 
       dest[destPos++] = _elem & 128 ? oneMapping : zeroMapping;
       dest[destPos++] = _elem & 64 ? oneMapping : zeroMapping;
@@ -15091,9 +15091,9 @@ function applyMaskImageData(_ref) {
       continue;
     }
 
-    var elem = srcPos < srcLength ? src[srcPos++] : 255;
+    const elem = srcPos < srcLength ? src[srcPos++] : 255;
 
-    for (var j = 0; j < widthRemainder; j++) {
+    for (let j = 0; j < widthRemainder; j++) {
       dest[destPos++] = elem & 1 << 7 - j ? oneMapping : zeroMapping;
     }
   }
@@ -15115,7 +15115,7 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 exports.GlobalWorkerOptions = void 0;
-var GlobalWorkerOptions = Object.create(null);
+const GlobalWorkerOptions = Object.create(null);
 exports.GlobalWorkerOptions = GlobalWorkerOptions;
 GlobalWorkerOptions.workerPort = GlobalWorkerOptions.workerPort === undefined ? null : GlobalWorkerOptions.workerPort;
 GlobalWorkerOptions.workerSrc = GlobalWorkerOptions.workerSrc === undefined ? "" : GlobalWorkerOptions.workerSrc;
@@ -15132,30 +15132,30 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.MessageHandler = void 0;
 
-var _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
+const _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _asyncToGenerator(fn) { return function () { const self = this, args = arguments; return new Promise(function (resolve, reject) { const gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
-var CallbackKind = {
+const CallbackKind = {
   UNKNOWN: 0,
   DATA: 1,
   ERROR: 2
 };
-var StreamKind = {
+const StreamKind = {
   UNKNOWN: 0,
   CANCEL: 1,
   CANCEL_COMPLETE: 2,
@@ -15193,9 +15193,9 @@ function wrapReason(reason) {
   }
 }
 
-var MessageHandler = /*#__PURE__*/function () {
+const MessageHandler = /*#__PURE__*/function () {
   function MessageHandler(sourceName, targetName, comObj) {
-    var _this = this;
+    const _this = this;
 
     _classCallCheck(this, MessageHandler);
 
@@ -15210,7 +15210,7 @@ var MessageHandler = /*#__PURE__*/function () {
     this.actionHandler = Object.create(null);
 
     this._onComObjOnMessage = function (event) {
-      var data = event.data;
+      const data = event.data;
 
       if (data.targetName !== _this.sourceName) {
         return;
@@ -15223,8 +15223,8 @@ var MessageHandler = /*#__PURE__*/function () {
       }
 
       if (data.callback) {
-        var callbackId = data.callbackId;
-        var capability = _this.callbackCapabilities[callbackId];
+        const callbackId = data.callbackId;
+        const capability = _this.callbackCapabilities[callbackId];
 
         if (!capability) {
           throw new Error("Cannot resolve callback ".concat(callbackId));
@@ -15243,15 +15243,15 @@ var MessageHandler = /*#__PURE__*/function () {
         return;
       }
 
-      var action = _this.actionHandler[data.action];
+      const action = _this.actionHandler[data.action];
 
       if (!action) {
         throw new Error("Unknown action from worker: ".concat(data.action));
       }
 
       if (data.callbackId) {
-        var cbSourceName = _this.sourceName;
-        var cbTargetName = data.sourceName;
+        const cbSourceName = _this.sourceName;
+        const cbTargetName = data.sourceName;
         new Promise(function (resolve) {
           resolve(action(data.data));
         }).then(function (result) {
@@ -15289,7 +15289,7 @@ var MessageHandler = /*#__PURE__*/function () {
   _createClass(MessageHandler, [{
     key: "on",
     value: function on(actionName, handler) {
-      var ah = this.actionHandler;
+      const ah = this.actionHandler;
 
       if (ah[actionName]) {
         throw new Error("There is already an actionName called \"".concat(actionName, "\""));
@@ -15310,8 +15310,8 @@ var MessageHandler = /*#__PURE__*/function () {
   }, {
     key: "sendWithPromise",
     value: function sendWithPromise(actionName, data, transfers) {
-      var callbackId = this.callbackId++;
-      var capability = (0, _util.createPromiseCapability)();
+      const callbackId = this.callbackId++;
+      const capability = (0, _util.createPromiseCapability)();
       this.callbackCapabilities[callbackId] = capability;
 
       try {
@@ -15331,15 +15331,15 @@ var MessageHandler = /*#__PURE__*/function () {
   }, {
     key: "sendWithStream",
     value: function sendWithStream(actionName, data, queueingStrategy, transfers) {
-      var _this2 = this;
+      const _this2 = this;
 
-      var streamId = this.streamId++,
+      const streamId = this.streamId++,
           sourceName = this.sourceName,
           targetName = this.targetName,
           comObj = this.comObj;
       return new ReadableStream({
         start: function start(controller) {
-          var startCapability = (0, _util.createPromiseCapability)();
+          const startCapability = (0, _util.createPromiseCapability)();
           _this2.streamControllers[streamId] = {
             controller: controller,
             startCall: startCapability,
@@ -15358,7 +15358,7 @@ var MessageHandler = /*#__PURE__*/function () {
           return startCapability.promise;
         },
         pull: function pull(controller) {
-          var pullCapability = (0, _util.createPromiseCapability)();
+          const pullCapability = (0, _util.createPromiseCapability)();
           _this2.streamControllers[streamId].pullCall = pullCapability;
           comObj.postMessage({
             sourceName: sourceName,
@@ -15371,7 +15371,7 @@ var MessageHandler = /*#__PURE__*/function () {
         },
         cancel: function cancel(reason) {
           (0, _util.assert)(reason instanceof Error, "cancel must have a valid reason");
-          var cancelCapability = (0, _util.createPromiseCapability)();
+          const cancelCapability = (0, _util.createPromiseCapability)();
           _this2.streamControllers[streamId].cancelCall = cancelCapability;
           _this2.streamControllers[streamId].isClosed = true;
           comObj.postMessage({
@@ -15388,22 +15388,22 @@ var MessageHandler = /*#__PURE__*/function () {
   }, {
     key: "_createStreamSink",
     value: function _createStreamSink(data) {
-      var streamId = data.streamId,
+      const streamId = data.streamId,
           sourceName = this.sourceName,
           targetName = data.sourceName,
           comObj = this.comObj;
-      var self = this,
+      const self = this,
           action = this.actionHandler[data.action];
-      var streamSink = {
+      const streamSink = {
         enqueue: function enqueue(chunk) {
-          var size = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-          var transfers = arguments.length > 2 ? arguments[2] : undefined;
+          const size = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+          const transfers = arguments.length > 2 ? arguments[2] : undefined;
 
           if (this.isCancelled) {
             return;
           }
 
-          var lastDesiredSize = this.desiredSize;
+          const lastDesiredSize = this.desiredSize;
           this.desiredSize -= size;
 
           if (lastDesiredSize > 0 && this.desiredSize <= 0) {
@@ -15482,11 +15482,11 @@ var MessageHandler = /*#__PURE__*/function () {
   }, {
     key: "_processStreamMessage",
     value: function _processStreamMessage(data) {
-      var streamId = data.streamId,
+      const streamId = data.streamId,
           sourceName = this.sourceName,
           targetName = data.sourceName,
           comObj = this.comObj;
-      var streamController = this.streamControllers[streamId],
+      const streamController = this.streamControllers[streamId],
           streamSink = this.streamSinks[streamId];
 
       switch (data.stream) {
@@ -15625,7 +15625,7 @@ var MessageHandler = /*#__PURE__*/function () {
   }, {
     key: "_deleteStreamController",
     value: function () {
-      var _deleteStreamController2 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee(streamController, streamId) {
+      const _deleteStreamController2 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee(streamController, streamId) {
         return _regenerator["default"].wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -15674,11 +15674,11 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.Metadata = void 0;
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
@@ -15686,23 +15686,23 @@ function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedec
 
 function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
 
-function _classPrivateFieldGet(receiver, privateMap) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get"); return _classApplyDescriptorGet(receiver, descriptor); }
+function _classPrivateFieldGet(receiver, privateMap) { const descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get"); return _classApplyDescriptorGet(receiver, descriptor); }
 
 function _classApplyDescriptorGet(receiver, descriptor) { if (descriptor.get) { return descriptor.get.call(receiver); } return descriptor.value; }
 
-function _classPrivateFieldSet(receiver, privateMap, value) { var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set"); _classApplyDescriptorSet(receiver, descriptor, value); return value; }
+function _classPrivateFieldSet(receiver, privateMap, value) { const descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set"); _classApplyDescriptorSet(receiver, descriptor, value); return value; }
 
 function _classExtractFieldDescriptor(receiver, privateMap, action) { if (!privateMap.has(receiver)) { throw new TypeError("attempted to " + action + " private field on non-instance"); } return privateMap.get(receiver); }
 
 function _classApplyDescriptorSet(receiver, descriptor, value) { if (descriptor.set) { descriptor.set.call(receiver, value); } else { if (!descriptor.writable) { throw new TypeError("attempted to set read only private field"); } descriptor.value = value; } }
 
-var _metadataMap = /*#__PURE__*/new WeakMap();
+const _metadataMap = /*#__PURE__*/new WeakMap();
 
-var _data = /*#__PURE__*/new WeakMap();
+const _data = /*#__PURE__*/new WeakMap();
 
-var Metadata = /*#__PURE__*/function () {
+const Metadata = /*#__PURE__*/function () {
   function Metadata(_ref) {
-    var parsedData = _ref.parsedData,
+    const parsedData = _ref.parsedData,
         rawData = _ref.rawData;
 
     _classCallCheck(this, Metadata);
@@ -15730,7 +15730,7 @@ var Metadata = /*#__PURE__*/function () {
   }, {
     key: "get",
     value: function get(name) {
-      var _classPrivateFieldGet2;
+      let _classPrivateFieldGet2;
 
       return (_classPrivateFieldGet2 = _classPrivateFieldGet(this, _metadataMap).get(name)) !== null && _classPrivateFieldGet2 !== void 0 ? _classPrivateFieldGet2 : null;
     }
@@ -15763,21 +15763,21 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.OptionalContentConfig = void 0;
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var OptionalContentGroup = /*#__PURE__*/_createClass(function OptionalContentGroup(name, intent) {
+const OptionalContentGroup = /*#__PURE__*/_createClass(function OptionalContentGroup(name, intent) {
   _classCallCheck(this, OptionalContentGroup);
 
   this.visible = true;
@@ -15785,7 +15785,7 @@ var OptionalContentGroup = /*#__PURE__*/_createClass(function OptionalContentGro
   this.intent = intent;
 });
 
-var OptionalContentConfig = /*#__PURE__*/function () {
+const OptionalContentConfig = /*#__PURE__*/function () {
   function OptionalContentConfig(data) {
     _classCallCheck(this, OptionalContentConfig);
 
@@ -15802,12 +15802,12 @@ var OptionalContentConfig = /*#__PURE__*/function () {
     this.creator = data.creator;
     this._order = data.order;
 
-    var _iterator = _createForOfIteratorHelper(data.groups),
+    let _iterator = _createForOfIteratorHelper(data.groups),
         _step;
 
     try {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var _group = _step.value;
+        const _group = _step.value;
 
         this._groups.set(_group.id, new OptionalContentGroup(_group.name, _group.intent));
       }
@@ -15818,12 +15818,12 @@ var OptionalContentConfig = /*#__PURE__*/function () {
     }
 
     if (data.baseState === "OFF") {
-      var _iterator2 = _createForOfIteratorHelper(this._groups),
+      let _iterator2 = _createForOfIteratorHelper(this._groups),
           _step2;
 
       try {
         for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-          var group = _step2.value;
+          const group = _step2.value;
           group.visible = false;
         }
       } catch (err) {
@@ -15833,12 +15833,12 @@ var OptionalContentConfig = /*#__PURE__*/function () {
       }
     }
 
-    var _iterator3 = _createForOfIteratorHelper(data.on),
+    let _iterator3 = _createForOfIteratorHelper(data.on),
         _step3;
 
     try {
       for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-        var on = _step3.value;
+        const on = _step3.value;
         this._groups.get(on).visible = true;
       }
     } catch (err) {
@@ -15847,12 +15847,12 @@ var OptionalContentConfig = /*#__PURE__*/function () {
       _iterator3.f();
     }
 
-    var _iterator4 = _createForOfIteratorHelper(data.off),
+    let _iterator4 = _createForOfIteratorHelper(data.off),
         _step4;
 
     try {
       for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-        var off = _step4.value;
+        const off = _step4.value;
         this._groups.get(off).visible = false;
       }
     } catch (err) {
@@ -15865,17 +15865,17 @@ var OptionalContentConfig = /*#__PURE__*/function () {
   _createClass(OptionalContentConfig, [{
     key: "_evaluateVisibilityExpression",
     value: function _evaluateVisibilityExpression(array) {
-      var length = array.length;
+      const length = array.length;
 
       if (length < 2) {
         return true;
       }
 
-      var operator = array[0];
+      const operator = array[0];
 
-      for (var i = 1; i < length; i++) {
-        var element = array[i];
-        var state = void 0;
+      for (let i = 1; i < length; i++) {
+        const element = array[i];
+        let state = void 0;
 
         if (Array.isArray(element)) {
           state = this._evaluateVisibilityExpression(element);
@@ -15936,12 +15936,12 @@ var OptionalContentConfig = /*#__PURE__*/function () {
         }
 
         if (!group.policy || group.policy === "AnyOn") {
-          var _iterator5 = _createForOfIteratorHelper(group.ids),
+          let _iterator5 = _createForOfIteratorHelper(group.ids),
               _step5;
 
           try {
             for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-              var id = _step5.value;
+              const id = _step5.value;
 
               if (!this._groups.has(id)) {
                 (0, _util.warn)("Optional content group not found: ".concat(id));
@@ -15960,12 +15960,12 @@ var OptionalContentConfig = /*#__PURE__*/function () {
 
           return false;
         } else if (group.policy === "AllOn") {
-          var _iterator6 = _createForOfIteratorHelper(group.ids),
+          let _iterator6 = _createForOfIteratorHelper(group.ids),
               _step6;
 
           try {
             for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
-              var _id = _step6.value;
+              const _id = _step6.value;
 
               if (!this._groups.has(_id)) {
                 (0, _util.warn)("Optional content group not found: ".concat(_id));
@@ -15984,12 +15984,12 @@ var OptionalContentConfig = /*#__PURE__*/function () {
 
           return true;
         } else if (group.policy === "AnyOff") {
-          var _iterator7 = _createForOfIteratorHelper(group.ids),
+          let _iterator7 = _createForOfIteratorHelper(group.ids),
               _step7;
 
           try {
             for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
-              var _id2 = _step7.value;
+              const _id2 = _step7.value;
 
               if (!this._groups.has(_id2)) {
                 (0, _util.warn)("Optional content group not found: ".concat(_id2));
@@ -16008,12 +16008,12 @@ var OptionalContentConfig = /*#__PURE__*/function () {
 
           return false;
         } else if (group.policy === "AllOff") {
-          var _iterator8 = _createForOfIteratorHelper(group.ids),
+          let _iterator8 = _createForOfIteratorHelper(group.ids),
               _step8;
 
           try {
             for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
-              var _id3 = _step8.value;
+              const _id3 = _step8.value;
 
               if (!this._groups.has(_id3)) {
                 (0, _util.warn)("Optional content group not found: ".concat(_id3));
@@ -16043,7 +16043,7 @@ var OptionalContentConfig = /*#__PURE__*/function () {
   }, {
     key: "setVisibility",
     value: function setVisibility(id) {
-      var visible = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+      const visible = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
 
       if (!this._groups.has(id)) {
         (0, _util.warn)("Optional content group not found: ".concat(id));
@@ -16094,33 +16094,33 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.PDFDataTransportStream = void 0;
 
-var _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
+const _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
-var _display_utils = __w_pdfjs_require__(158);
+const _display_utils = __w_pdfjs_require__(158);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _asyncToGenerator(fn) { return function () { const self = this, args = arguments; return new Promise(function (resolve, reject) { const gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
-var PDFDataTransportStream = /*#__PURE__*/function () {
+const PDFDataTransportStream = /*#__PURE__*/function () {
   function PDFDataTransportStream(params, pdfDataRangeTransport) {
-    var _this = this;
+    const _this = this;
 
     _classCallCheck(this, PDFDataTransportStream);
 
@@ -16128,10 +16128,10 @@ var PDFDataTransportStream = /*#__PURE__*/function () {
     this._queuedChunks = [];
     this._progressiveDone = params.progressiveDone || false;
     this._contentDispositionFilename = params.contentDispositionFilename || null;
-    var initialData = params.initialData;
+    const initialData = params.initialData;
 
     if ((initialData === null || initialData === void 0 ? void 0 : initialData.length) > 0) {
-      var buffer = new Uint8Array(initialData).buffer;
+      const buffer = new Uint8Array(initialData).buffer;
 
       this._queuedChunks.push(buffer);
     }
@@ -16173,7 +16173,7 @@ var PDFDataTransportStream = /*#__PURE__*/function () {
   _createClass(PDFDataTransportStream, [{
     key: "_onReceiveData",
     value: function _onReceiveData(args) {
-      var buffer = new Uint8Array(args.chunk).buffer;
+      const buffer = new Uint8Array(args.chunk).buffer;
 
       if (args.begin === undefined) {
         if (this._fullRequestReader) {
@@ -16182,7 +16182,7 @@ var PDFDataTransportStream = /*#__PURE__*/function () {
           this._queuedChunks.push(buffer);
         }
       } else {
-        var found = this._rangeReaders.some(function (rangeReader) {
+        const found = this._rangeReaders.some(function (rangeReader) {
           if (rangeReader._begin !== args.begin) {
             return false;
           }
@@ -16198,7 +16198,7 @@ var PDFDataTransportStream = /*#__PURE__*/function () {
   }, {
     key: "_progressiveDataLength",
     get: function get() {
-      var _this$_fullRequestRea, _this$_fullRequestRea2;
+      let _this$_fullRequestRea, _this$_fullRequestRea2;
 
       return (_this$_fullRequestRea = (_this$_fullRequestRea2 = this._fullRequestReader) === null || _this$_fullRequestRea2 === void 0 ? void 0 : _this$_fullRequestRea2._loaded) !== null && _this$_fullRequestRea !== void 0 ? _this$_fullRequestRea : 0;
     }
@@ -16206,7 +16206,7 @@ var PDFDataTransportStream = /*#__PURE__*/function () {
     key: "_onProgress",
     value: function _onProgress(evt) {
       if (evt.total === undefined) {
-        var firstReader = this._rangeReaders[0];
+        const firstReader = this._rangeReaders[0];
 
         if (firstReader !== null && firstReader !== void 0 && firstReader.onProgress) {
           firstReader.onProgress({
@@ -16214,7 +16214,7 @@ var PDFDataTransportStream = /*#__PURE__*/function () {
           });
         }
       } else {
-        var fullReader = this._fullRequestReader;
+        const fullReader = this._fullRequestReader;
 
         if (fullReader !== null && fullReader !== void 0 && fullReader.onProgress) {
           fullReader.onProgress({
@@ -16236,7 +16236,7 @@ var PDFDataTransportStream = /*#__PURE__*/function () {
   }, {
     key: "_removeRangeReader",
     value: function _removeRangeReader(reader) {
-      var i = this._rangeReaders.indexOf(reader);
+      const i = this._rangeReaders.indexOf(reader);
 
       if (i >= 0) {
         this._rangeReaders.splice(i, 1);
@@ -16246,7 +16246,7 @@ var PDFDataTransportStream = /*#__PURE__*/function () {
     key: "getFullReader",
     value: function getFullReader() {
       (0, _util.assert)(!this._fullRequestReader, "PDFDataTransportStream.getFullReader can only be called once.");
-      var queuedChunks = this._queuedChunks;
+      const queuedChunks = this._queuedChunks;
       this._queuedChunks = null;
       return new PDFDataTransportStreamReader(this, queuedChunks, this._progressiveDone, this._contentDispositionFilename);
     }
@@ -16257,7 +16257,7 @@ var PDFDataTransportStream = /*#__PURE__*/function () {
         return null;
       }
 
-      var reader = new PDFDataTransportStreamRangeReader(this, begin, end);
+      const reader = new PDFDataTransportStreamRangeReader(this, begin, end);
 
       this._pdfDataRangeTransport.requestDataRange(begin, end);
 
@@ -16272,12 +16272,12 @@ var PDFDataTransportStream = /*#__PURE__*/function () {
         this._fullRequestReader.cancel(reason);
       }
 
-      var _iterator = _createForOfIteratorHelper(this._rangeReaders.slice(0)),
+      let _iterator = _createForOfIteratorHelper(this._rangeReaders.slice(0)),
           _step;
 
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var reader = _step.value;
+          const reader = _step.value;
           reader.cancel(reason);
         }
       } catch (err) {
@@ -16297,8 +16297,8 @@ exports.PDFDataTransportStream = PDFDataTransportStream;
 
 var PDFDataTransportStreamReader = /*#__PURE__*/function () {
   function PDFDataTransportStreamReader(stream, queuedChunks) {
-    var progressiveDone = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-    var contentDispositionFilename = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+    const progressiveDone = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+    const contentDispositionFilename = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
 
     _classCallCheck(this, PDFDataTransportStreamReader);
 
@@ -16308,12 +16308,12 @@ var PDFDataTransportStreamReader = /*#__PURE__*/function () {
     this._queuedChunks = queuedChunks || [];
     this._loaded = 0;
 
-    var _iterator2 = _createForOfIteratorHelper(this._queuedChunks),
+    let _iterator2 = _createForOfIteratorHelper(this._queuedChunks),
         _step2;
 
     try {
       for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-        var chunk = _step2.value;
+        const chunk = _step2.value;
         this._loaded += chunk.byteLength;
       }
     } catch (err) {
@@ -16336,7 +16336,7 @@ var PDFDataTransportStreamReader = /*#__PURE__*/function () {
       }
 
       if (this._requests.length > 0) {
-        var requestCapability = this._requests.shift();
+        const requestCapability = this._requests.shift();
 
         requestCapability.resolve({
           value: chunk,
@@ -16376,8 +16376,8 @@ var PDFDataTransportStreamReader = /*#__PURE__*/function () {
   }, {
     key: "read",
     value: function () {
-      var _read = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
-        var chunk, requestCapability;
+      const _read = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
+        let chunk, requestCapability;
         return _regenerator["default"].wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -16430,12 +16430,12 @@ var PDFDataTransportStreamReader = /*#__PURE__*/function () {
     value: function cancel(reason) {
       this._done = true;
 
-      var _iterator3 = _createForOfIteratorHelper(this._requests),
+      let _iterator3 = _createForOfIteratorHelper(this._requests),
           _step3;
 
       try {
         for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-          var requestCapability = _step3.value;
+          const requestCapability = _step3.value;
           requestCapability.resolve({
             value: undefined,
             done: true
@@ -16486,19 +16486,19 @@ var PDFDataTransportStreamRangeReader = /*#__PURE__*/function () {
       if (this._requests.length === 0) {
         this._queuedChunk = chunk;
       } else {
-        var requestsCapability = this._requests.shift();
+        const requestsCapability = this._requests.shift();
 
         requestsCapability.resolve({
           value: chunk,
           done: false
         });
 
-        var _iterator4 = _createForOfIteratorHelper(this._requests),
+        let _iterator4 = _createForOfIteratorHelper(this._requests),
             _step4;
 
         try {
           for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-            var requestCapability = _step4.value;
+            const requestCapability = _step4.value;
             requestCapability.resolve({
               value: undefined,
               done: true
@@ -16525,8 +16525,8 @@ var PDFDataTransportStreamRangeReader = /*#__PURE__*/function () {
   }, {
     key: "read",
     value: function () {
-      var _read2 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee2() {
-        var chunk, requestCapability;
+      const _read2 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee2() {
+        let chunk, requestCapability;
         return _regenerator["default"].wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -16580,12 +16580,12 @@ var PDFDataTransportStreamRangeReader = /*#__PURE__*/function () {
     value: function cancel(reason) {
       this._done = true;
 
-      var _iterator5 = _createForOfIteratorHelper(this._requests),
+      let _iterator5 = _createForOfIteratorHelper(this._requests),
           _step5;
 
       try {
         for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-          var requestCapability = _step5.value;
+          const requestCapability = _step5.value;
           requestCapability.resolve({
             value: undefined,
             done: true
@@ -16618,19 +16618,19 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.XfaText = void 0;
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
-var XfaText = /*#__PURE__*/function () {
+const XfaText = /*#__PURE__*/function () {
   function XfaText() {
     _classCallCheck(this, XfaText);
   }
@@ -16638,21 +16638,21 @@ var XfaText = /*#__PURE__*/function () {
   _createClass(XfaText, null, [{
     key: "textContent",
     value: function textContent(xfa) {
-      var items = [];
-      var output = {
+      const items = [];
+      const output = {
         items: items,
         styles: Object.create(null)
       };
 
       function walk(node) {
-        var _node$attributes;
+        let _node$attributes;
 
         if (!node) {
           return;
         }
 
-        var str = null;
-        var name = node.name;
+        let str = null;
+        const name = node.name;
 
         if (name === "#text") {
           str = node.value;
@@ -16674,12 +16674,12 @@ var XfaText = /*#__PURE__*/function () {
           return;
         }
 
-        var _iterator = _createForOfIteratorHelper(node.children),
+        let _iterator = _createForOfIteratorHelper(node.children),
             _step;
 
         try {
           for (_iterator.s(); !(_step = _iterator.n()).done;) {
-            var child = _step.value;
+            const child = _step.value;
             walk(child);
           }
         } catch (err) {
@@ -16718,11 +16718,11 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.NodeStandardFontDataFactory = exports.NodeCanvasFactory = exports.NodeCMapReaderFactory = void 0;
 
-var _base_factory = __w_pdfjs_require__(159);
+const _base_factory = __w_pdfjs_require__(159);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
@@ -16730,7 +16730,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { const hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { let Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { const NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 
@@ -16742,9 +16742,9 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 ;
 
-var fetchData = function fetchData(url) {
+const fetchData = function fetchData(url) {
   return new Promise(function (resolve, reject) {
-    var fs = require("fs");
+    const fs = require("fs");
 
     fs.readFile(url, function (error, data) {
       if (error || !data) {
@@ -16757,10 +16757,10 @@ var fetchData = function fetchData(url) {
   });
 };
 
-var NodeCanvasFactory = /*#__PURE__*/function (_BaseCanvasFactory) {
+const NodeCanvasFactory = /*#__PURE__*/function (_BaseCanvasFactory) {
   _inherits(NodeCanvasFactory, _BaseCanvasFactory);
 
-  var _super = _createSuper(NodeCanvasFactory);
+  const _super = _createSuper(NodeCanvasFactory);
 
   function NodeCanvasFactory() {
     _classCallCheck(this, NodeCanvasFactory);
@@ -16771,7 +16771,7 @@ var NodeCanvasFactory = /*#__PURE__*/function (_BaseCanvasFactory) {
   _createClass(NodeCanvasFactory, [{
     key: "_createCanvas",
     value: function _createCanvas(width, height) {
-      var Canvas = require("canvas");
+      const Canvas = require("canvas");
 
       return Canvas.createCanvas(width, height);
     }
@@ -16782,10 +16782,10 @@ var NodeCanvasFactory = /*#__PURE__*/function (_BaseCanvasFactory) {
 
 exports.NodeCanvasFactory = NodeCanvasFactory;
 
-var NodeCMapReaderFactory = /*#__PURE__*/function (_BaseCMapReaderFactor) {
+const NodeCMapReaderFactory = /*#__PURE__*/function (_BaseCMapReaderFactor) {
   _inherits(NodeCMapReaderFactory, _BaseCMapReaderFactor);
 
-  var _super2 = _createSuper(NodeCMapReaderFactory);
+  const _super2 = _createSuper(NodeCMapReaderFactory);
 
   function NodeCMapReaderFactory() {
     _classCallCheck(this, NodeCMapReaderFactory);
@@ -16810,10 +16810,10 @@ var NodeCMapReaderFactory = /*#__PURE__*/function (_BaseCMapReaderFactor) {
 
 exports.NodeCMapReaderFactory = NodeCMapReaderFactory;
 
-var NodeStandardFontDataFactory = /*#__PURE__*/function (_BaseStandardFontData) {
+const NodeStandardFontDataFactory = /*#__PURE__*/function (_BaseStandardFontData) {
   _inherits(NodeStandardFontDataFactory, _BaseStandardFontData);
 
-  var _super3 = _createSuper(NodeStandardFontDataFactory);
+  const _super3 = _createSuper(NodeStandardFontDataFactory);
 
   function NodeStandardFontDataFactory() {
     _classCallCheck(this, NodeStandardFontDataFactory);
@@ -16847,21 +16847,21 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.AnnotationLayer = void 0;
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
-var _display_utils = __w_pdfjs_require__(158);
+const _display_utils = __w_pdfjs_require__(158);
 
-var _annotation_storage = __w_pdfjs_require__(161);
+const _annotation_storage = __w_pdfjs_require__(161);
 
-var _scripting_utils = __w_pdfjs_require__(174);
+const _scripting_utils = __w_pdfjs_require__(174);
 
-var _xfa_layer = __w_pdfjs_require__(175);
+const _xfa_layer = __w_pdfjs_require__(175);
 
 function _classStaticPrivateMethodGet(receiver, classConstructor, method) { _classCheckPrivateStaticAccess(receiver, classConstructor); return method; }
 
 function _classCheckPrivateStaticAccess(receiver, classConstructor) { if (receiver !== classConstructor) { throw new TypeError("Private static access of wrong provenance"); } }
 
-function _get() { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(arguments.length < 3 ? target : receiver); } return desc.value; }; } return _get.apply(this, arguments); }
+function _get() { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { const base = _superPropBase(target, property); if (!base) return; const desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(arguments.length < 3 ? target : receiver); } return desc.value; }; } return _get.apply(this, arguments); }
 
 function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
 
@@ -16879,7 +16879,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { const hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { let Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { const NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 
@@ -16889,28 +16889,28 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { let _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; const _arr = []; let _n = true; let _d = false; let _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
-var DEFAULT_TAB_INDEX = 1000;
-var GetElementsByNameSet = new WeakSet();
+const DEFAULT_TAB_INDEX = 1000;
+const GetElementsByNameSet = new WeakSet();
 
 function getRectDims(rect) {
   return {
@@ -16919,7 +16919,7 @@ function getRectDims(rect) {
   };
 }
 
-var AnnotationElementFactory = /*#__PURE__*/function () {
+const AnnotationElementFactory = /*#__PURE__*/function () {
   function AnnotationElementFactory() {
     _classCallCheck(this, AnnotationElementFactory);
   }
@@ -16927,7 +16927,7 @@ var AnnotationElementFactory = /*#__PURE__*/function () {
   _createClass(AnnotationElementFactory, null, [{
     key: "create",
     value: function create(parameters) {
-      var subtype = parameters.data.annotationType;
+      const subtype = parameters.data.annotationType;
 
       switch (subtype) {
         case _util.AnnotationType.LINK:
@@ -17014,7 +17014,7 @@ var AnnotationElementFactory = /*#__PURE__*/function () {
 
 var AnnotationElement = /*#__PURE__*/function () {
   function AnnotationElement(parameters) {
-    var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+    const _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
         _ref$isRenderable = _ref.isRenderable,
         isRenderable = _ref$isRenderable === void 0 ? false : _ref$isRenderable,
         _ref$ignoreBorder = _ref.ignoreBorder,
@@ -17052,24 +17052,24 @@ var AnnotationElement = /*#__PURE__*/function () {
   _createClass(AnnotationElement, [{
     key: "_createContainer",
     value: function _createContainer() {
-      var ignoreBorder = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-      var data = this.data,
+      const ignoreBorder = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      const data = this.data,
           page = this.page,
           viewport = this.viewport;
-      var container = document.createElement("section");
+      const container = document.createElement("section");
 
-      var _getRectDims = getRectDims(data.rect),
+      let _getRectDims = getRectDims(data.rect),
           width = _getRectDims.width,
           height = _getRectDims.height;
 
       container.setAttribute("data-annotation-id", data.id);
 
-      var rect = _util.Util.normalizeRect([data.rect[0], page.view[3] - data.rect[1] + page.view[1], data.rect[2], page.view[3] - data.rect[3] + page.view[1]]);
+      const rect = _util.Util.normalizeRect([data.rect[0], page.view[3] - data.rect[1] + page.view[1], data.rect[2], page.view[3] - data.rect[3] + page.view[1]]);
 
       if (data.hasOwnCanvas) {
-        var transform = viewport.transform.slice();
+        const transform = viewport.transform.slice();
 
-        var _Util$singularValueDe = _util.Util.singularValueDecompose2dScale(transform),
+        const _Util$singularValueDe = _util.Util.singularValueDecompose2dScale(transform),
             _Util$singularValueDe2 = _slicedToArray(_Util$singularValueDe, 2),
             scaleX = _Util$singularValueDe2[0],
             scaleY = _Util$singularValueDe2[1];
@@ -17079,7 +17079,7 @@ var AnnotationElement = /*#__PURE__*/function () {
         rect[0] *= scaleX;
         rect[1] *= scaleY;
 
-        for (var i = 0; i < 4; i++) {
+        for (let i = 0; i < 4; i++) {
           transform[i] = Math.sign(transform[i]);
         }
 
@@ -17098,11 +17098,11 @@ var AnnotationElement = /*#__PURE__*/function () {
           height -= 2 * data.borderStyle.width;
         }
 
-        var horizontalRadius = data.borderStyle.horizontalCornerRadius;
-        var verticalRadius = data.borderStyle.verticalCornerRadius;
+        const horizontalRadius = data.borderStyle.horizontalCornerRadius;
+        const verticalRadius = data.borderStyle.verticalCornerRadius;
 
         if (horizontalRadius > 0 || verticalRadius > 0) {
-          var radius = "".concat(horizontalRadius, "px / ").concat(verticalRadius, "px");
+          const radius = "".concat(horizontalRadius, "px / ").concat(verticalRadius, "px");
           container.style.borderRadius = radius;
         }
 
@@ -17131,7 +17131,7 @@ var AnnotationElement = /*#__PURE__*/function () {
             break;
         }
 
-        var borderColor = data.borderColor || data.color || null;
+        const borderColor = data.borderColor || data.color || null;
 
         if (borderColor) {
           container.style.borderColor = _util.Util.makeHexColor(data.color[0] | 0, data.color[1] | 0, data.color[2] | 0);
@@ -17155,16 +17155,16 @@ var AnnotationElement = /*#__PURE__*/function () {
   }, {
     key: "_commonActions",
     get: function get() {
-      var _this = this;
+      const _this = this;
 
-      var setColor = function setColor(jsName, styleName, event) {
-        var color = event.detail[jsName];
+      const setColor = function setColor(jsName, styleName, event) {
+        const color = event.detail[jsName];
         event.target.style[styleName] = _scripting_utils.ColorConverters["".concat(color[0], "_HTML")](color.slice(1));
       };
 
       return (0, _util.shadow)(this, "_commonActions", {
         display: function display(event) {
-          var hidden = event.detail.display % 2 === 1;
+          const hidden = event.detail.display % 2 === 1;
           event.target.style.visibility = hidden ? "hidden" : "visible";
 
           _this.annotationStorage.setValue(_this.data.id, {
@@ -17231,11 +17231,11 @@ var AnnotationElement = /*#__PURE__*/function () {
   }, {
     key: "_dispatchEventFromSandbox",
     value: function _dispatchEventFromSandbox(actions, jsEvent) {
-      var commonActions = this._commonActions;
+      const commonActions = this._commonActions;
 
-      for (var _i2 = 0, _Object$keys = Object.keys(jsEvent.detail); _i2 < _Object$keys.length; _i2++) {
-        var name = _Object$keys[_i2];
-        var action = actions[name] || commonActions[name];
+      for (let _i2 = 0, _Object$keys = Object.keys(jsEvent.detail); _i2 < _Object$keys.length; _i2++) {
+        const name = _Object$keys[_i2];
+        const action = actions[name] || commonActions[name];
 
         if (action) {
           action(jsEvent);
@@ -17249,20 +17249,20 @@ var AnnotationElement = /*#__PURE__*/function () {
         return;
       }
 
-      var storedData = this.annotationStorage.getRawValue(this.data.id);
+      const storedData = this.annotationStorage.getRawValue(this.data.id);
 
       if (!storedData) {
         return;
       }
 
-      var commonActions = this._commonActions;
+      const commonActions = this._commonActions;
 
-      for (var _i3 = 0, _Object$entries = Object.entries(storedData); _i3 < _Object$entries.length; _i3++) {
-        var _Object$entries$_i = _slicedToArray(_Object$entries[_i3], 2),
+      for (let _i3 = 0, _Object$entries = Object.entries(storedData); _i3 < _Object$entries.length; _i3++) {
+        const _Object$entries$_i = _slicedToArray(_Object$entries[_i3], 2),
             actionName = _Object$entries$_i[0],
             detail = _Object$entries$_i[1];
 
-        var action = commonActions[actionName];
+        const action = commonActions[actionName];
 
         if (action) {
           action({
@@ -17276,21 +17276,21 @@ var AnnotationElement = /*#__PURE__*/function () {
   }, {
     key: "_createQuadrilaterals",
     value: function _createQuadrilaterals() {
-      var ignoreBorder = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      const ignoreBorder = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
       if (!this.data.quadPoints) {
         return null;
       }
 
-      var quadrilaterals = [];
-      var savedRect = this.data.rect;
+      const quadrilaterals = [];
+      const savedRect = this.data.rect;
 
-      var _iterator = _createForOfIteratorHelper(this.data.quadPoints),
+      let _iterator = _createForOfIteratorHelper(this.data.quadPoints),
           _step;
 
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var quadPoint = _step.value;
+          const quadPoint = _step.value;
           this.data.rect = [quadPoint[2].x, quadPoint[2].y, quadPoint[1].x, quadPoint[1].y];
           quadrilaterals.push(this._createContainer(ignoreBorder));
         }
@@ -17306,7 +17306,7 @@ var AnnotationElement = /*#__PURE__*/function () {
   }, {
     key: "_createPopup",
     value: function _createPopup(trigger, data) {
-      var container = this.container;
+      let container = this.container;
 
       if (this.quadrilaterals) {
         trigger = trigger || this.quadrilaterals;
@@ -17320,7 +17320,7 @@ var AnnotationElement = /*#__PURE__*/function () {
         container.appendChild(trigger);
       }
 
-      var popupElement = new PopupElement({
+      const popupElement = new PopupElement({
         container: container,
         trigger: trigger,
         color: data.color,
@@ -17330,19 +17330,19 @@ var AnnotationElement = /*#__PURE__*/function () {
         richText: data.richText,
         hideWrapper: true
       });
-      var popup = popupElement.render();
+      const popup = popupElement.render();
       popup.style.left = container.style.width;
       container.appendChild(popup);
     }
   }, {
     key: "_renderQuadrilaterals",
     value: function _renderQuadrilaterals(className) {
-      var _iterator2 = _createForOfIteratorHelper(this.quadrilaterals),
+      let _iterator2 = _createForOfIteratorHelper(this.quadrilaterals),
           _step2;
 
       try {
         for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-          var quadrilateral = _step2.value;
+          const quadrilateral = _step2.value;
           quadrilateral.className = className;
         }
       } catch (err) {
@@ -17361,19 +17361,19 @@ var AnnotationElement = /*#__PURE__*/function () {
   }, {
     key: "_getElementsByName",
     value: function _getElementsByName(name) {
-      var skipId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-      var fields = [];
+      const skipId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      const fields = [];
 
       if (this._fieldObjects) {
-        var fieldObj = this._fieldObjects[name];
+        const fieldObj = this._fieldObjects[name];
 
         if (fieldObj) {
-          var _iterator3 = _createForOfIteratorHelper(fieldObj),
+          let _iterator3 = _createForOfIteratorHelper(fieldObj),
               _step3;
 
           try {
             for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-              var _step3$value = _step3.value,
+              const _step3$value = _step3.value,
                   page = _step3$value.page,
                   id = _step3$value.id,
                   exportValues = _step3$value.exportValues;
@@ -17386,8 +17386,8 @@ var AnnotationElement = /*#__PURE__*/function () {
                 continue;
               }
 
-              var exportValue = typeof exportValues === "string" ? exportValues : null;
-              var domElement = document.getElementById(id);
+              const exportValue = typeof exportValues === "string" ? exportValues : null;
+              const domElement = document.getElementById(id);
 
               if (domElement && !GetElementsByNameSet.has(domElement)) {
                 (0, _util.warn)("_getElementsByName - element not allowed: ".concat(id));
@@ -17410,13 +17410,13 @@ var AnnotationElement = /*#__PURE__*/function () {
         return fields;
       }
 
-      var _iterator4 = _createForOfIteratorHelper(document.getElementsByName(name)),
+      let _iterator4 = _createForOfIteratorHelper(document.getElementsByName(name)),
           _step4;
 
       try {
         for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-          var _domElement = _step4.value;
-          var _id = _domElement.id,
+          const _domElement = _step4.value;
+          const _id = _domElement.id,
               _exportValue = _domElement.exportValue;
 
           if (_id === skipId) {
@@ -17444,7 +17444,7 @@ var AnnotationElement = /*#__PURE__*/function () {
   }], [{
     key: "platform",
     get: function get() {
-      var platform = typeof navigator !== "undefined" ? navigator.platform : "";
+      const platform = typeof navigator !== "undefined" ? navigator.platform : "";
       return (0, _util.shadow)(this, "platform", {
         isWin: platform.includes("Win"),
         isMac: platform.includes("Mac")
@@ -17458,14 +17458,14 @@ var AnnotationElement = /*#__PURE__*/function () {
 var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
   _inherits(LinkAnnotationElement, _AnnotationElement);
 
-  var _super = _createSuper(LinkAnnotationElement);
+  const _super = _createSuper(LinkAnnotationElement);
 
   function LinkAnnotationElement(parameters) {
-    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    const options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
 
     _classCallCheck(this, LinkAnnotationElement);
 
-    var isRenderable = !!(parameters.data.url || parameters.data.dest || parameters.data.action || parameters.data.isTooltipOnly || parameters.data.resetForm || parameters.data.actions && (parameters.data.actions.Action || parameters.data.actions["Mouse Up"] || parameters.data.actions["Mouse Down"]));
+    const isRenderable = !!(parameters.data.url || parameters.data.dest || parameters.data.action || parameters.data.isTooltipOnly || parameters.data.resetForm || parameters.data.actions && (parameters.data.actions.Action || parameters.data.actions["Mouse Up"] || parameters.data.actions["Mouse Down"]));
     return _super.call(this, parameters, {
       isRenderable: isRenderable,
       ignoreBorder: !!(options !== null && options !== void 0 && options.ignoreBorder),
@@ -17476,9 +17476,9 @@ var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
   _createClass(LinkAnnotationElement, [{
     key: "render",
     value: function render() {
-      var data = this.data,
+      const data = this.data,
           linkService = this.linkService;
-      var link = document.createElement("a");
+      const link = document.createElement("a");
 
       if (data.url) {
         linkService.addLinkAttributes(link, data.url, data.newWindow);
@@ -17487,7 +17487,7 @@ var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
       } else if (data.dest) {
         this._bindLink(link, data.dest);
       } else {
-        var hasClickAction = false;
+        let hasClickAction = false;
 
         if (data.actions && (data.actions.Action || data.actions["Mouse Up"] || data.actions["Mouse Down"]) && this.enableScripting && this.hasJSActions) {
           hasClickAction = true;
@@ -17504,7 +17504,7 @@ var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
 
       if (this.quadrilaterals) {
         return this._renderQuadrilaterals("linkAnnotation").map(function (quadrilateral, index) {
-          var linkElement = index === 0 ? link : link.cloneNode();
+          const linkElement = index === 0 ? link : link.cloneNode();
           quadrilateral.appendChild(linkElement);
           return quadrilateral;
         });
@@ -17517,7 +17517,7 @@ var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
   }, {
     key: "_bindLink",
     value: function _bindLink(link, destination) {
-      var _this2 = this;
+      const _this2 = this;
 
       link.href = this.linkService.getDestinationHash(destination);
 
@@ -17536,7 +17536,7 @@ var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
   }, {
     key: "_bindNamedAction",
     value: function _bindNamedAction(link, action) {
-      var _this3 = this;
+      const _this3 = this;
 
       link.href = this.linkService.getAnchorUrl("");
 
@@ -17551,21 +17551,21 @@ var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
   }, {
     key: "_bindJSAction",
     value: function _bindJSAction(link, data) {
-      var _this4 = this;
+      const _this4 = this;
 
       link.href = this.linkService.getAnchorUrl("");
-      var map = new Map([["Action", "onclick"], ["Mouse Up", "onmouseup"], ["Mouse Down", "onmousedown"]]);
+      const map = new Map([["Action", "onclick"], ["Mouse Up", "onmouseup"], ["Mouse Down", "onmousedown"]]);
 
-      var _loop = function _loop() {
-        var name = _Object$keys2[_i4];
-        var jsName = map.get(name);
+      const _loop = function _loop() {
+        const name = _Object$keys2[_i4];
+        const jsName = map.get(name);
 
         if (!jsName) {
           return "continue";
         }
 
         link[jsName] = function () {
-          var _this4$linkService$ev;
+          let _this4$linkService$ev;
 
           (_this4$linkService$ev = _this4.linkService.eventBus) === null || _this4$linkService$ev === void 0 ? void 0 : _this4$linkService$ev.dispatch("dispatcheventinsandbox", {
             source: _this4,
@@ -17579,7 +17579,7 @@ var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
       };
 
       for (var _i4 = 0, _Object$keys2 = Object.keys(data.actions); _i4 < _Object$keys2.length; _i4++) {
-        var _ret = _loop();
+        const _ret = _loop();
 
         if (_ret === "continue") continue;
       }
@@ -17595,9 +17595,9 @@ var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
   }, {
     key: "_bindResetFormAction",
     value: function _bindResetFormAction(link, resetForm) {
-      var _this5 = this;
+      const _this5 = this;
 
-      var otherClickAction = link.onclick;
+      const otherClickAction = link.onclick;
 
       if (!otherClickAction) {
         link.href = this.linkService.getAnchorUrl("");
@@ -17622,29 +17622,29 @@ var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
           otherClickAction();
         }
 
-        var resetFormFields = resetForm.fields,
+        const resetFormFields = resetForm.fields,
             resetFormRefs = resetForm.refs,
             include = resetForm.include;
-        var allFields = [];
+        const allFields = [];
 
         if (resetFormFields.length !== 0 || resetFormRefs.length !== 0) {
-          var fieldIds = new Set(resetFormRefs);
+          const fieldIds = new Set(resetFormRefs);
 
-          var _iterator5 = _createForOfIteratorHelper(resetFormFields),
+          let _iterator5 = _createForOfIteratorHelper(resetFormFields),
               _step5;
 
           try {
             for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-              var fieldName = _step5.value;
+              const fieldName = _step5.value;
 
-              var _fields = _this5._fieldObjects[fieldName] || [];
+              const _fields = _this5._fieldObjects[fieldName] || [];
 
               var _iterator7 = _createForOfIteratorHelper(_fields),
                   _step7;
 
               try {
                 for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
-                  var id = _step7.value.id;
+                  const id = _step7.value.id;
                   fieldIds.add(id);
                 }
               } catch (err) {
@@ -17659,15 +17659,15 @@ var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
             _iterator5.f();
           }
 
-          for (var _i5 = 0, _Object$values = Object.values(_this5._fieldObjects); _i5 < _Object$values.length; _i5++) {
-            var fields = _Object$values[_i5];
+          for (let _i5 = 0, _Object$values = Object.values(_this5._fieldObjects); _i5 < _Object$values.length; _i5++) {
+            const fields = _Object$values[_i5];
 
             var _iterator6 = _createForOfIteratorHelper(fields),
                 _step6;
 
             try {
               for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
-                var field = _step6.value;
+                const field = _step6.value;
 
                 if (fieldIds.has(field.id) === include) {
                   allFields.push(field);
@@ -17680,24 +17680,24 @@ var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
             }
           }
         } else {
-          for (var _i6 = 0, _Object$values2 = Object.values(_this5._fieldObjects); _i6 < _Object$values2.length; _i6++) {
-            var _fields2 = _Object$values2[_i6];
+          for (let _i6 = 0, _Object$values2 = Object.values(_this5._fieldObjects); _i6 < _Object$values2.length; _i6++) {
+            const _fields2 = _Object$values2[_i6];
             allFields.push.apply(allFields, _toConsumableArray(_fields2));
           }
         }
 
-        var storage = _this5.annotationStorage;
-        var allIds = [];
+        const storage = _this5.annotationStorage;
+        const allIds = [];
 
-        for (var _i7 = 0, _allFields = allFields; _i7 < _allFields.length; _i7++) {
-          var _field = _allFields[_i7];
-          var _id2 = _field.id;
+        for (let _i7 = 0, _allFields = allFields; _i7 < _allFields.length; _i7++) {
+          const _field = _allFields[_i7];
+          const _id2 = _field.id;
           allIds.push(_id2);
 
           switch (_field.type) {
             case "text":
               {
-                var value = _field.defaultValue || "";
+                const value = _field.defaultValue || "";
                 storage.setValue(_id2, {
                   value: value
                 });
@@ -17707,7 +17707,7 @@ var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
             case "checkbox":
             case "radiobutton":
               {
-                var _value = _field.defaultValue === _field.exportValues;
+                const _value = _field.defaultValue === _field.exportValues;
 
                 storage.setValue(_id2, {
                   value: _value
@@ -17718,7 +17718,7 @@ var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
             case "combobox":
             case "listbox":
               {
-                var _value2 = _field.defaultValue || "";
+                const _value2 = _field.defaultValue || "";
 
                 storage.setValue(_id2, {
                   value: _value2
@@ -17730,7 +17730,7 @@ var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
               continue;
           }
 
-          var domElement = document.getElementById(_id2);
+          const domElement = document.getElementById(_id2);
 
           if (!domElement || !GetElementsByNameSet.has(domElement)) {
             continue;
@@ -17740,7 +17740,7 @@ var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
         }
 
         if (_this5.enableScripting) {
-          var _this5$linkService$ev;
+          let _this5$linkService$ev;
 
           (_this5$linkService$ev = _this5.linkService.eventBus) === null || _this5$linkService$ev === void 0 ? void 0 : _this5$linkService$ev.dispatch("dispatcheventinsandbox", {
             source: _this5,
@@ -17763,14 +17763,14 @@ var LinkAnnotationElement = /*#__PURE__*/function (_AnnotationElement) {
 var TextAnnotationElement = /*#__PURE__*/function (_AnnotationElement2) {
   _inherits(TextAnnotationElement, _AnnotationElement2);
 
-  var _super2 = _createSuper(TextAnnotationElement);
+  const _super2 = _createSuper(TextAnnotationElement);
 
   function TextAnnotationElement(parameters) {
-    var _parameters$data$titl, _parameters$data$cont, _parameters$data$rich;
+    let _parameters$data$titl, _parameters$data$cont, _parameters$data$rich;
 
     _classCallCheck(this, TextAnnotationElement);
 
-    var isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl = parameters.data.titleObj) !== null && _parameters$data$titl !== void 0 && _parameters$data$titl.str || (_parameters$data$cont = parameters.data.contentsObj) !== null && _parameters$data$cont !== void 0 && _parameters$data$cont.str || (_parameters$data$rich = parameters.data.richText) !== null && _parameters$data$rich !== void 0 && _parameters$data$rich.str);
+    const isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl = parameters.data.titleObj) !== null && _parameters$data$titl !== void 0 && _parameters$data$titl.str || (_parameters$data$cont = parameters.data.contentsObj) !== null && _parameters$data$cont !== void 0 && _parameters$data$cont.str || (_parameters$data$rich = parameters.data.richText) !== null && _parameters$data$rich !== void 0 && _parameters$data$rich.str);
     return _super2.call(this, parameters, {
       isRenderable: isRenderable
     });
@@ -17780,7 +17780,7 @@ var TextAnnotationElement = /*#__PURE__*/function (_AnnotationElement2) {
     key: "render",
     value: function render() {
       this.container.className = "textAnnotation";
-      var image = document.createElement("img");
+      const image = document.createElement("img");
       image.style.height = this.container.style.height;
       image.style.width = this.container.style.width;
       image.src = this.imageResourcesPath + "annotation-" + this.data.name.toLowerCase() + ".svg";
@@ -17805,7 +17805,7 @@ var TextAnnotationElement = /*#__PURE__*/function (_AnnotationElement2) {
 var WidgetAnnotationElement = /*#__PURE__*/function (_AnnotationElement3) {
   _inherits(WidgetAnnotationElement, _AnnotationElement3);
 
-  var _super3 = _createSuper(WidgetAnnotationElement);
+  const _super3 = _createSuper(WidgetAnnotationElement);
 
   function WidgetAnnotationElement() {
     _classCallCheck(this, WidgetAnnotationElement);
@@ -17825,7 +17825,7 @@ var WidgetAnnotationElement = /*#__PURE__*/function (_AnnotationElement3) {
   }, {
     key: "_getKeyModifier",
     value: function _getKeyModifier(event) {
-      var _AnnotationElement$pl = AnnotationElement.platform,
+      const _AnnotationElement$pl = AnnotationElement.platform,
           isWin = _AnnotationElement$pl.isWin,
           isMac = _AnnotationElement$pl.isMac;
       return isWin && event.ctrlKey || isMac && event.metaKey;
@@ -17833,11 +17833,11 @@ var WidgetAnnotationElement = /*#__PURE__*/function (_AnnotationElement3) {
   }, {
     key: "_setEventListener",
     value: function _setEventListener(element, baseName, eventName, valueGetter) {
-      var _this6 = this;
+      const _this6 = this;
 
       if (baseName.includes("mouse")) {
         element.addEventListener(baseName, function (event) {
-          var _this6$linkService$ev;
+          let _this6$linkService$ev;
 
           (_this6$linkService$ev = _this6.linkService.eventBus) === null || _this6$linkService$ev === void 0 ? void 0 : _this6$linkService$ev.dispatch("dispatcheventinsandbox", {
             source: _this6,
@@ -17852,7 +17852,7 @@ var WidgetAnnotationElement = /*#__PURE__*/function (_AnnotationElement3) {
         });
       } else {
         element.addEventListener(baseName, function (event) {
-          var _this6$linkService$ev2;
+          let _this6$linkService$ev2;
 
           (_this6$linkService$ev2 = _this6.linkService.eventBus) === null || _this6$linkService$ev2 === void 0 ? void 0 : _this6$linkService$ev2.dispatch("dispatcheventinsandbox", {
             source: _this6,
@@ -17868,14 +17868,14 @@ var WidgetAnnotationElement = /*#__PURE__*/function (_AnnotationElement3) {
   }, {
     key: "_setEventListeners",
     value: function _setEventListeners(element, names, getter) {
-      var _iterator8 = _createForOfIteratorHelper(names),
+      let _iterator8 = _createForOfIteratorHelper(names),
           _step8;
 
       try {
         for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
           var _this$data$actions;
 
-          var _step8$value = _slicedToArray(_step8.value, 2),
+          const _step8$value = _slicedToArray(_step8.value, 2),
               baseName = _step8$value[0],
               eventName = _step8$value[1];
 
@@ -17892,7 +17892,7 @@ var WidgetAnnotationElement = /*#__PURE__*/function (_AnnotationElement3) {
   }, {
     key: "_setBackgroundColor",
     value: function _setBackgroundColor(element) {
-      var color = this.data.backgroundColor || null;
+      const color = this.data.backgroundColor || null;
       element.style.backgroundColor = color === null ? "transparent" : _util.Util.makeHexColor(color[0], color[1], color[2]);
     }
   }]);
@@ -17903,12 +17903,12 @@ var WidgetAnnotationElement = /*#__PURE__*/function (_AnnotationElement3) {
 var TextWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem) {
   _inherits(TextWidgetAnnotationElement, _WidgetAnnotationElem);
 
-  var _super4 = _createSuper(TextWidgetAnnotationElement);
+  const _super4 = _createSuper(TextWidgetAnnotationElement);
 
   function TextWidgetAnnotationElement(parameters) {
     _classCallCheck(this, TextWidgetAnnotationElement);
 
-    var isRenderable = parameters.renderForms || !parameters.data.hasAppearance && !!parameters.data.fieldValue;
+    const isRenderable = parameters.renderForms || !parameters.data.hasAppearance && !!parameters.data.fieldValue;
     return _super4.call(this, parameters, {
       isRenderable: isRenderable
     });
@@ -17917,14 +17917,14 @@ var TextWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem) 
   _createClass(TextWidgetAnnotationElement, [{
     key: "setPropertyOnSiblings",
     value: function setPropertyOnSiblings(base, key, value, keyInStorage) {
-      var storage = this.annotationStorage;
+      const storage = this.annotationStorage;
 
-      var _iterator9 = _createForOfIteratorHelper(this._getElementsByName(base.name, base.id)),
+      let _iterator9 = _createForOfIteratorHelper(this._getElementsByName(base.name, base.id)),
           _step9;
 
       try {
         for (_iterator9.s(); !(_step9 = _iterator9.n()).done;) {
-          var element = _step9.value;
+          const element = _step9.value;
 
           if (element.domElement) {
             element.domElement[key] = value;
@@ -17941,19 +17941,19 @@ var TextWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem) 
   }, {
     key: "render",
     value: function render() {
-      var _this7 = this;
+      const _this7 = this;
 
-      var storage = this.annotationStorage;
-      var id = this.data.id;
+      const storage = this.annotationStorage;
+      const id = this.data.id;
       this.container.className = "textWidgetAnnotation";
-      var element = null;
+      let element = null;
 
       if (this.renderForms) {
-        var storedData = storage.getValue(id, {
+        const storedData = storage.getValue(id, {
           value: this.data.fieldValue
         });
-        var textContent = storedData.formattedValue || storedData.value || "";
-        var elementData = {
+        const textContent = storedData.formattedValue || storedData.value || "";
+        const elementData = {
           userValue: null,
           formattedValue: null,
           valueOnFocus: ""
@@ -17982,15 +17982,15 @@ var TextWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem) 
           _this7.setPropertyOnSiblings(element, "value", event.target.value, "value");
         });
         element.addEventListener("resetform", function (event) {
-          var _this7$data$defaultFi;
+          let _this7$data$defaultFi;
 
-          var defaultValue = (_this7$data$defaultFi = _this7.data.defaultFieldValue) !== null && _this7$data$defaultFi !== void 0 ? _this7$data$defaultFi : "";
+          const defaultValue = (_this7$data$defaultFi = _this7.data.defaultFieldValue) !== null && _this7$data$defaultFi !== void 0 ? _this7$data$defaultFi : "";
           element.value = elementData.userValue = defaultValue;
           elementData.formattedValue = null;
         });
 
-        var blurListener = function blurListener(event) {
-          var formattedValue = elementData.formattedValue;
+        let blurListener = function blurListener(event) {
+          const formattedValue = elementData.formattedValue;
 
           if (formattedValue !== null && formattedValue !== undefined) {
             event.target.value = formattedValue;
@@ -18000,7 +18000,7 @@ var TextWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem) 
         };
 
         if (this.enableScripting && this.hasJSActions) {
-          var _this$data$actions2;
+          let _this$data$actions2;
 
           element.addEventListener("focus", function (event) {
             if (elementData.userValue) {
@@ -18010,9 +18010,9 @@ var TextWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem) 
             elementData.valueOnFocus = event.target.value;
           });
           element.addEventListener("updatefromsandbox", function (jsEvent) {
-            var actions = {
+            const actions = {
               value: function value(event) {
-                var _event$detail$value;
+                let _event$detail$value;
 
                 elementData.userValue = (_event$detail$value = event.detail.value) !== null && _event$detail$value !== void 0 ? _event$detail$value : "";
                 storage.setValue(id, {
@@ -18021,7 +18021,7 @@ var TextWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem) 
                 event.target.value = elementData.userValue;
               },
               formattedValue: function formattedValue(event) {
-                var formattedValue = event.detail.formattedValue;
+                const formattedValue = event.detail.formattedValue;
                 elementData.formattedValue = formattedValue;
 
                 if (formattedValue !== null && formattedValue !== undefined && event.target !== document.activeElement) {
@@ -18033,7 +18033,7 @@ var TextWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem) 
                 });
               },
               selRange: function selRange(event) {
-                var _event$target;
+                let _event$target;
 
                 (_event$target = event.target).setSelectionRange.apply(_event$target, _toConsumableArray(event.detail.selRange));
               }
@@ -18042,9 +18042,9 @@ var TextWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem) 
             _this7._dispatchEventFromSandbox(actions, jsEvent);
           });
           element.addEventListener("keydown", function (event) {
-            var _this7$linkService$ev;
+            let _this7$linkService$ev;
 
-            var commitKey = -1;
+            let commitKey = -1;
 
             if (event.key === "Escape") {
               commitKey = 0;
@@ -18058,7 +18058,7 @@ var TextWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem) 
               return;
             }
 
-            var value = event.target.value;
+            const value = event.target.value;
 
             if (elementData.valueOnFocus === value) {
               return;
@@ -18078,14 +18078,14 @@ var TextWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem) 
               }
             });
           });
-          var _blurListener = blurListener;
+          const _blurListener = blurListener;
           blurListener = null;
           element.addEventListener("blur", function (event) {
-            var value = event.target.value;
+            const value = event.target.value;
             elementData.userValue = value;
 
             if (_this7._mouseState.isDown && elementData.valueOnFocus !== value) {
-              var _this7$linkService$ev2;
+              let _this7$linkService$ev2;
 
               (_this7$linkService$ev2 = _this7.linkService.eventBus) === null || _this7$linkService$ev2 === void 0 ? void 0 : _this7$linkService$ev2.dispatch("dispatcheventinsandbox", {
                 source: _this7,
@@ -18106,20 +18106,20 @@ var TextWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem) 
 
           if ((_this$data$actions2 = this.data.actions) !== null && _this$data$actions2 !== void 0 && _this$data$actions2.Keystroke) {
             element.addEventListener("beforeinput", function (event) {
-              var _this7$linkService$ev3;
+              let _this7$linkService$ev3;
 
-              var data = event.data,
+              const data = event.data,
                   target = event.target;
-              var value = target.value,
+              const value = target.value,
                   selectionStart = target.selectionStart,
                   selectionEnd = target.selectionEnd;
-              var selStart = selectionStart,
+              let selStart = selectionStart,
                   selEnd = selectionEnd;
 
               switch (event.inputType) {
                 case "deleteWordBackward":
                   {
-                    var match = value.substring(0, selectionStart).match(/\w*[^\w]*$/);
+                    const match = value.substring(0, selectionStart).match(/\w*[^\w]*$/);
 
                     if (match) {
                       selStart -= match[0].length;
@@ -18130,7 +18130,7 @@ var TextWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem) 
 
                 case "deleteWordForward":
                   {
-                    var _match = value.substring(selectionStart).match(/^[^\w]*\w*/);
+                    const _match = value.substring(selectionStart).match(/^[^\w]*\w*/);
 
                     if (_match) {
                       selEnd += _match[0].length;
@@ -18184,8 +18184,8 @@ var TextWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem) 
         }
 
         if (this.data.comb) {
-          var fieldWidth = this.data.rect[2] - this.data.rect[0];
-          var combWidth = fieldWidth / this.data.maxLen;
+          const fieldWidth = this.data.rect[2] - this.data.rect[0];
+          const combWidth = fieldWidth / this.data.maxLen;
           element.classList.add("comb");
           element.style.letterSpacing = "calc(".concat(combWidth, "px - 1ch)");
         }
@@ -18208,11 +18208,11 @@ var TextWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem) 
   }, {
     key: "_setTextStyle",
     value: function _setTextStyle(element) {
-      var TEXT_ALIGNMENT = ["left", "center", "right"];
-      var _this$data$defaultApp = this.data.defaultAppearanceData,
+      const TEXT_ALIGNMENT = ["left", "center", "right"];
+      const _this$data$defaultApp = this.data.defaultAppearanceData,
           fontSize = _this$data$defaultApp.fontSize,
           fontColor = _this$data$defaultApp.fontColor;
-      var style = element.style;
+      const style = element.style;
 
       if (fontSize) {
         style.fontSize = "".concat(fontSize, "px");
@@ -18232,7 +18232,7 @@ var TextWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem) 
 var CheckboxWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem2) {
   _inherits(CheckboxWidgetAnnotationElement, _WidgetAnnotationElem2);
 
-  var _super5 = _createSuper(CheckboxWidgetAnnotationElement);
+  const _super5 = _createSuper(CheckboxWidgetAnnotationElement);
 
   function CheckboxWidgetAnnotationElement(parameters) {
     _classCallCheck(this, CheckboxWidgetAnnotationElement);
@@ -18245,12 +18245,12 @@ var CheckboxWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationEl
   _createClass(CheckboxWidgetAnnotationElement, [{
     key: "render",
     value: function render() {
-      var _this8 = this;
+      const _this8 = this;
 
-      var storage = this.annotationStorage;
-      var data = this.data;
-      var id = data.id;
-      var value = storage.getValue(id, {
+      const storage = this.annotationStorage;
+      const data = this.data;
+      const id = data.id;
+      let value = storage.getValue(id, {
         value: data.exportValue === data.fieldValue
       }).value;
 
@@ -18262,7 +18262,7 @@ var CheckboxWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationEl
       }
 
       this.container.className = "buttonWidgetAnnotation checkBox";
-      var element = document.createElement("input");
+      const element = document.createElement("input");
       GetElementsByNameSet.add(element);
       element.disabled = data.readOnly;
       element.type = "checkbox";
@@ -18276,17 +18276,17 @@ var CheckboxWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationEl
       element.setAttribute("exportValue", data.exportValue);
       element.tabIndex = DEFAULT_TAB_INDEX;
       element.addEventListener("change", function (event) {
-        var _event$target2 = event.target,
+        const _event$target2 = event.target,
             name = _event$target2.name,
             checked = _event$target2.checked;
 
-        var _iterator10 = _createForOfIteratorHelper(_this8._getElementsByName(name, id)),
+        let _iterator10 = _createForOfIteratorHelper(_this8._getElementsByName(name, id)),
             _step10;
 
         try {
           for (_iterator10.s(); !(_step10 = _iterator10.n()).done;) {
-            var checkbox = _step10.value;
-            var curChecked = checked && checkbox.exportValue === data.exportValue;
+            const checkbox = _step10.value;
+            const curChecked = checked && checkbox.exportValue === data.exportValue;
 
             if (checkbox.domElement) {
               checkbox.domElement.checked = curChecked;
@@ -18307,13 +18307,13 @@ var CheckboxWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationEl
         });
       });
       element.addEventListener("resetform", function (event) {
-        var defaultValue = data.defaultFieldValue || "Off";
+        const defaultValue = data.defaultFieldValue || "Off";
         event.target.checked = defaultValue === data.exportValue;
       });
 
       if (this.enableScripting && this.hasJSActions) {
         element.addEventListener("updatefromsandbox", function (jsEvent) {
-          var actions = {
+          const actions = {
             value: function value(event) {
               event.target.checked = event.detail.value !== "Off";
               storage.setValue(id, {
@@ -18345,7 +18345,7 @@ var CheckboxWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationEl
 var RadioButtonWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem3) {
   _inherits(RadioButtonWidgetAnnotationElement, _WidgetAnnotationElem3);
 
-  var _super6 = _createSuper(RadioButtonWidgetAnnotationElement);
+  const _super6 = _createSuper(RadioButtonWidgetAnnotationElement);
 
   function RadioButtonWidgetAnnotationElement(parameters) {
     _classCallCheck(this, RadioButtonWidgetAnnotationElement);
@@ -18358,13 +18358,13 @@ var RadioButtonWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotatio
   _createClass(RadioButtonWidgetAnnotationElement, [{
     key: "render",
     value: function render() {
-      var _this9 = this;
+      const _this9 = this;
 
       this.container.className = "buttonWidgetAnnotation radioButton";
-      var storage = this.annotationStorage;
-      var data = this.data;
-      var id = data.id;
-      var value = storage.getValue(id, {
+      const storage = this.annotationStorage;
+      const data = this.data;
+      const id = data.id;
+      let value = storage.getValue(id, {
         value: data.fieldValue === data.buttonValue
       }).value;
 
@@ -18375,7 +18375,7 @@ var RadioButtonWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotatio
         });
       }
 
-      var element = document.createElement("input");
+      const element = document.createElement("input");
       GetElementsByNameSet.add(element);
       element.disabled = data.readOnly;
       element.type = "radio";
@@ -18388,16 +18388,16 @@ var RadioButtonWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotatio
       element.setAttribute("id", id);
       element.tabIndex = DEFAULT_TAB_INDEX;
       element.addEventListener("change", function (event) {
-        var _event$target3 = event.target,
+        const _event$target3 = event.target,
             name = _event$target3.name,
             checked = _event$target3.checked;
 
-        var _iterator11 = _createForOfIteratorHelper(_this9._getElementsByName(name, id)),
+        let _iterator11 = _createForOfIteratorHelper(_this9._getElementsByName(name, id)),
             _step11;
 
         try {
           for (_iterator11.s(); !(_step11 = _iterator11.n()).done;) {
-            var radio = _step11.value;
+            const radio = _step11.value;
             storage.setValue(radio.id, {
               value: false
             });
@@ -18413,24 +18413,24 @@ var RadioButtonWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotatio
         });
       });
       element.addEventListener("resetform", function (event) {
-        var defaultValue = data.defaultFieldValue;
+        const defaultValue = data.defaultFieldValue;
         event.target.checked = defaultValue !== null && defaultValue !== undefined && defaultValue === data.buttonValue;
       });
 
       if (this.enableScripting && this.hasJSActions) {
-        var pdfButtonValue = data.buttonValue;
+        const pdfButtonValue = data.buttonValue;
         element.addEventListener("updatefromsandbox", function (jsEvent) {
-          var actions = {
+          const actions = {
             value: function value(event) {
-              var checked = pdfButtonValue === event.detail.value;
+              const checked = pdfButtonValue === event.detail.value;
 
-              var _iterator12 = _createForOfIteratorHelper(_this9._getElementsByName(event.target.name)),
+              let _iterator12 = _createForOfIteratorHelper(_this9._getElementsByName(event.target.name)),
                   _step12;
 
               try {
                 for (_iterator12.s(); !(_step12 = _iterator12.n()).done;) {
-                  var radio = _step12.value;
-                  var curChecked = checked && radio.id === id;
+                  const radio = _step12.value;
+                  const curChecked = checked && radio.id === id;
 
                   if (radio.domElement) {
                     radio.domElement.checked = curChecked;
@@ -18471,7 +18471,7 @@ var RadioButtonWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotatio
 var PushButtonWidgetAnnotationElement = /*#__PURE__*/function (_LinkAnnotationElemen) {
   _inherits(PushButtonWidgetAnnotationElement, _LinkAnnotationElemen);
 
-  var _super7 = _createSuper(PushButtonWidgetAnnotationElement);
+  const _super7 = _createSuper(PushButtonWidgetAnnotationElement);
 
   function PushButtonWidgetAnnotationElement(parameters) {
     _classCallCheck(this, PushButtonWidgetAnnotationElement);
@@ -18484,7 +18484,7 @@ var PushButtonWidgetAnnotationElement = /*#__PURE__*/function (_LinkAnnotationEl
   _createClass(PushButtonWidgetAnnotationElement, [{
     key: "render",
     value: function render() {
-      var container = _get(_getPrototypeOf(PushButtonWidgetAnnotationElement.prototype), "render", this).call(this);
+      const container = _get(_getPrototypeOf(PushButtonWidgetAnnotationElement.prototype), "render", this).call(this);
 
       container.className = "buttonWidgetAnnotation pushButton";
 
@@ -18504,7 +18504,7 @@ var PushButtonWidgetAnnotationElement = /*#__PURE__*/function (_LinkAnnotationEl
 var ChoiceWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem4) {
   _inherits(ChoiceWidgetAnnotationElement, _WidgetAnnotationElem4);
 
-  var _super8 = _createSuper(ChoiceWidgetAnnotationElement);
+  const _super8 = _createSuper(ChoiceWidgetAnnotationElement);
 
   function ChoiceWidgetAnnotationElement(parameters) {
     _classCallCheck(this, ChoiceWidgetAnnotationElement);
@@ -18517,22 +18517,22 @@ var ChoiceWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem
   _createClass(ChoiceWidgetAnnotationElement, [{
     key: "render",
     value: function render() {
-      var _this10 = this;
+      const _this10 = this;
 
       this.container.className = "choiceWidgetAnnotation";
-      var storage = this.annotationStorage;
-      var id = this.data.id;
-      var storedData = storage.getValue(id, {
+      const storage = this.annotationStorage;
+      const id = this.data.id;
+      const storedData = storage.getValue(id, {
         value: this.data.fieldValue
       });
-      var fontSize = this.data.defaultAppearanceData.fontSize;
+      let fontSize = this.data.defaultAppearanceData.fontSize;
 
       if (!fontSize) {
         fontSize = 9;
       }
 
-      var fontSizeStyle = "calc(".concat(fontSize, "px * var(--zoom-factor))");
-      var selectElement = document.createElement("select");
+      const fontSizeStyle = "calc(".concat(fontSize, "px * var(--zoom-factor))");
+      const selectElement = document.createElement("select");
       GetElementsByNameSet.add(selectElement);
       selectElement.disabled = this.data.readOnly;
       selectElement.name = this.data.fieldName;
@@ -18549,14 +18549,14 @@ var ChoiceWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem
       }
 
       selectElement.addEventListener("resetform", function (event) {
-        var defaultValue = _this10.data.defaultFieldValue;
+        const defaultValue = _this10.data.defaultFieldValue;
 
-        var _iterator13 = _createForOfIteratorHelper(selectElement.options),
+        let _iterator13 = _createForOfIteratorHelper(selectElement.options),
             _step13;
 
         try {
           for (_iterator13.s(); !(_step13 = _iterator13.n()).done;) {
-            var option = _step13.value;
+            const option = _step13.value;
             option.selected = option.value === defaultValue;
           }
         } catch (err) {
@@ -18566,13 +18566,13 @@ var ChoiceWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem
         }
       });
 
-      var _iterator14 = _createForOfIteratorHelper(this.data.options),
+      let _iterator14 = _createForOfIteratorHelper(this.data.options),
           _step14;
 
       try {
         for (_iterator14.s(); !(_step14 = _iterator14.n()).done;) {
-          var option = _step14.value;
-          var optionElement = document.createElement("option");
+          const option = _step14.value;
+          const optionElement = document.createElement("option");
           optionElement.textContent = option.displayValue;
           optionElement.value = option.exportValue;
 
@@ -18592,9 +18592,9 @@ var ChoiceWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem
         _iterator14.f();
       }
 
-      var getValue = function getValue(event, isExport) {
-        var name = isExport ? "value" : "textContent";
-        var options = event.target.options;
+      const getValue = function getValue(event, isExport) {
+        const name = isExport ? "value" : "textContent";
+        const options = event.target.options;
 
         if (!event.target.multiple) {
           return options.selectedIndex === -1 ? null : options[options.selectedIndex][name];
@@ -18607,8 +18607,8 @@ var ChoiceWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem
         });
       };
 
-      var getItems = function getItems(event) {
-        var options = event.target.options;
+      const getItems = function getItems(event) {
+        const options = event.target.options;
         return Array.prototype.map.call(options, function (option) {
           return {
             displayValue: option.textContent,
@@ -18619,17 +18619,17 @@ var ChoiceWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem
 
       if (this.enableScripting && this.hasJSActions) {
         selectElement.addEventListener("updatefromsandbox", function (jsEvent) {
-          var actions = {
+          const actions = {
             value: function value(event) {
-              var value = event.detail.value;
-              var values = new Set(Array.isArray(value) ? value : [value]);
+              const value = event.detail.value;
+              const values = new Set(Array.isArray(value) ? value : [value]);
 
-              var _iterator15 = _createForOfIteratorHelper(selectElement.options),
+              let _iterator15 = _createForOfIteratorHelper(selectElement.options),
                   _step15;
 
               try {
                 for (_iterator15.s(); !(_step15 = _iterator15.n()).done;) {
-                  var option = _step15.value;
+                  const option = _step15.value;
                   option.selected = values.has(option.value);
                 }
               } catch (err) {
@@ -18646,13 +18646,13 @@ var ChoiceWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem
               selectElement.multiple = true;
             },
             remove: function remove(event) {
-              var options = selectElement.options;
-              var index = event.detail.remove;
+              const options = selectElement.options;
+              const index = event.detail.remove;
               options[index].selected = false;
               selectElement.remove(index);
 
               if (options.length > 0) {
-                var i = Array.prototype.findIndex.call(options, function (option) {
+                const i = Array.prototype.findIndex.call(options, function (option) {
                   return option.selected;
                 });
 
@@ -18677,11 +18677,11 @@ var ChoiceWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem
               });
             },
             insert: function insert(event) {
-              var _event$detail$insert = event.detail.insert,
+              const _event$detail$insert = event.detail.insert,
                   index = _event$detail$insert.index,
                   displayValue = _event$detail$insert.displayValue,
                   exportValue = _event$detail$insert.exportValue;
-              var optionElement = document.createElement("option");
+              const optionElement = document.createElement("option");
               optionElement.textContent = displayValue;
               optionElement.value = exportValue;
               selectElement.insertBefore(optionElement, selectElement.children[index]);
@@ -18691,21 +18691,21 @@ var ChoiceWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem
               });
             },
             items: function items(event) {
-              var items = event.detail.items;
+              const items = event.detail.items;
 
               while (selectElement.length !== 0) {
                 selectElement.remove(0);
               }
 
-              var _iterator16 = _createForOfIteratorHelper(items),
+              let _iterator16 = _createForOfIteratorHelper(items),
                   _step16;
 
               try {
                 for (_iterator16.s(); !(_step16 = _iterator16.n()).done;) {
-                  var item = _step16.value;
-                  var displayValue = item.displayValue,
+                  const item = _step16.value;
+                  const displayValue = item.displayValue,
                       exportValue = item.exportValue;
-                  var optionElement = document.createElement("option");
+                  const optionElement = document.createElement("option");
                   optionElement.textContent = displayValue;
                   optionElement.value = exportValue;
                   selectElement.appendChild(optionElement);
@@ -18726,14 +18726,14 @@ var ChoiceWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem
               });
             },
             indices: function indices(event) {
-              var indices = new Set(event.detail.indices);
+              const indices = new Set(event.detail.indices);
 
-              var _iterator17 = _createForOfIteratorHelper(event.target.options),
+              let _iterator17 = _createForOfIteratorHelper(event.target.options),
                   _step17;
 
               try {
                 for (_iterator17.s(); !(_step17 = _iterator17.n()).done;) {
-                  var option = _step17.value;
+                  const option = _step17.value;
                   option.selected = indices.has(option.index);
                 }
               } catch (err) {
@@ -18754,10 +18754,10 @@ var ChoiceWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem
           _this10._dispatchEventFromSandbox(actions, jsEvent);
         });
         selectElement.addEventListener("input", function (event) {
-          var _this10$linkService$e;
+          let _this10$linkService$e;
 
-          var exportValue = getValue(event, true);
-          var value = getValue(event, false);
+          const exportValue = getValue(event, true);
+          const value = getValue(event, false);
           storage.setValue(id, {
             value: exportValue
           });
@@ -18801,14 +18801,14 @@ var ChoiceWidgetAnnotationElement = /*#__PURE__*/function (_WidgetAnnotationElem
 var PopupAnnotationElement = /*#__PURE__*/function (_AnnotationElement4) {
   _inherits(PopupAnnotationElement, _AnnotationElement4);
 
-  var _super9 = _createSuper(PopupAnnotationElement);
+  const _super9 = _createSuper(PopupAnnotationElement);
 
   function PopupAnnotationElement(parameters) {
-    var _parameters$data$titl2, _parameters$data$cont2, _parameters$data$rich2;
+    let _parameters$data$titl2, _parameters$data$cont2, _parameters$data$rich2;
 
     _classCallCheck(this, PopupAnnotationElement);
 
-    var isRenderable = !!((_parameters$data$titl2 = parameters.data.titleObj) !== null && _parameters$data$titl2 !== void 0 && _parameters$data$titl2.str || (_parameters$data$cont2 = parameters.data.contentsObj) !== null && _parameters$data$cont2 !== void 0 && _parameters$data$cont2.str || (_parameters$data$rich2 = parameters.data.richText) !== null && _parameters$data$rich2 !== void 0 && _parameters$data$rich2.str);
+    const isRenderable = !!((_parameters$data$titl2 = parameters.data.titleObj) !== null && _parameters$data$titl2 !== void 0 && _parameters$data$titl2.str || (_parameters$data$cont2 = parameters.data.contentsObj) !== null && _parameters$data$cont2 !== void 0 && _parameters$data$cont2.str || (_parameters$data$rich2 = parameters.data.richText) !== null && _parameters$data$rich2 !== void 0 && _parameters$data$rich2.str);
     return _super9.call(this, parameters, {
       isRenderable: isRenderable
     });
@@ -18817,21 +18817,21 @@ var PopupAnnotationElement = /*#__PURE__*/function (_AnnotationElement4) {
   _createClass(PopupAnnotationElement, [{
     key: "render",
     value: function render() {
-      var IGNORE_TYPES = ["Line", "Square", "Circle", "PolyLine", "Polygon", "Ink"];
+      const IGNORE_TYPES = ["Line", "Square", "Circle", "PolyLine", "Polygon", "Ink"];
       this.container.className = "popupAnnotation";
 
       if (IGNORE_TYPES.includes(this.data.parentType)) {
         return this.container;
       }
 
-      var selector = "[data-annotation-id=\"".concat(this.data.parentId, "\"]");
-      var parentElements = this.layer.querySelectorAll(selector);
+      const selector = "[data-annotation-id=\"".concat(this.data.parentId, "\"]");
+      const parentElements = this.layer.querySelectorAll(selector);
 
       if (parentElements.length === 0) {
         return this.container;
       }
 
-      var popup = new PopupElement({
+      const popup = new PopupElement({
         container: this.container,
         trigger: Array.from(parentElements),
         color: this.data.color,
@@ -18840,12 +18840,12 @@ var PopupAnnotationElement = /*#__PURE__*/function (_AnnotationElement4) {
         contentsObj: this.data.contentsObj,
         richText: this.data.richText
       });
-      var page = this.page;
+      const page = this.page;
 
-      var rect = _util.Util.normalizeRect([this.data.parentRect[0], page.view[3] - this.data.parentRect[1] + page.view[1], this.data.parentRect[2], page.view[3] - this.data.parentRect[3] + page.view[1]]);
+      const rect = _util.Util.normalizeRect([this.data.parentRect[0], page.view[3] - this.data.parentRect[1] + page.view[1], this.data.parentRect[2], page.view[3] - this.data.parentRect[3] + page.view[1]]);
 
-      var popupLeft = rect[0] + this.data.parentRect[2] - this.data.parentRect[0];
-      var popupTop = rect[1];
+      const popupLeft = rect[0] + this.data.parentRect[2] - this.data.parentRect[0];
+      const popupTop = rect[1];
       this.container.style.transformOrigin = "".concat(-popupLeft, "px ").concat(-popupTop, "px");
       this.container.style.left = "".concat(popupLeft, "px");
       this.container.style.top = "".concat(popupTop, "px");
@@ -18875,33 +18875,33 @@ var PopupElement = /*#__PURE__*/function () {
   _createClass(PopupElement, [{
     key: "render",
     value: function render() {
-      var _this$richText, _this$contentsObj;
+      let _this$richText, _this$contentsObj;
 
-      var BACKGROUND_ENLIGHT = 0.7;
-      var wrapper = document.createElement("div");
+      const BACKGROUND_ENLIGHT = 0.7;
+      const wrapper = document.createElement("div");
       wrapper.className = "popupWrapper";
       this.hideElement = this.hideWrapper ? wrapper : this.container;
       this.hideElement.hidden = true;
-      var popup = document.createElement("div");
+      const popup = document.createElement("div");
       popup.className = "popup";
-      var color = this.color;
+      const color = this.color;
 
       if (color) {
-        var r = BACKGROUND_ENLIGHT * (255 - color[0]) + color[0];
-        var g = BACKGROUND_ENLIGHT * (255 - color[1]) + color[1];
-        var b = BACKGROUND_ENLIGHT * (255 - color[2]) + color[2];
+        const r = BACKGROUND_ENLIGHT * (255 - color[0]) + color[0];
+        const g = BACKGROUND_ENLIGHT * (255 - color[1]) + color[1];
+        const b = BACKGROUND_ENLIGHT * (255 - color[2]) + color[2];
         popup.style.backgroundColor = _util.Util.makeHexColor(r | 0, g | 0, b | 0);
       }
 
-      var title = document.createElement("h1");
+      const title = document.createElement("h1");
       title.dir = this.titleObj.dir;
       title.textContent = this.titleObj.str;
       popup.appendChild(title);
 
-      var dateObject = _display_utils.PDFDateString.toDateObject(this.modificationDate);
+      const dateObject = _display_utils.PDFDateString.toDateObject(this.modificationDate);
 
       if (dateObject) {
-        var modificationDate = document.createElement("span");
+        const modificationDate = document.createElement("span");
         modificationDate.className = "popupDate";
         modificationDate.textContent = "{{date}}, {{time}}";
         modificationDate.dataset.l10nId = "annotation_date_string";
@@ -18921,7 +18921,7 @@ var PopupElement = /*#__PURE__*/function () {
 
         popup.lastChild.className = "richText popupContent";
       } else {
-        var contents = this._formatContents(this.contentsObj);
+        const contents = this._formatContents(this.contentsObj);
 
         popup.appendChild(contents);
       }
@@ -18930,12 +18930,12 @@ var PopupElement = /*#__PURE__*/function () {
         this.trigger = [this.trigger];
       }
 
-      var _iterator18 = _createForOfIteratorHelper(this.trigger),
+      let _iterator18 = _createForOfIteratorHelper(this.trigger),
           _step18;
 
       try {
         for (_iterator18.s(); !(_step18 = _iterator18.n()).done;) {
-          var element = _step18.value;
+          const element = _step18.value;
           element.addEventListener("click", this._toggle.bind(this));
           element.addEventListener("mouseover", this._show.bind(this, false));
           element.addEventListener("mouseout", this._hide.bind(this, false));
@@ -18953,15 +18953,15 @@ var PopupElement = /*#__PURE__*/function () {
   }, {
     key: "_formatContents",
     value: function _formatContents(_ref2) {
-      var str = _ref2.str,
+      const str = _ref2.str,
           dir = _ref2.dir;
-      var p = document.createElement("p");
+      const p = document.createElement("p");
       p.className = "popupContent";
       p.dir = dir;
-      var lines = str.split(/(?:\r\n?|\n)/);
+      const lines = str.split(/(?:\r\n?|\n)/);
 
-      for (var i = 0, ii = lines.length; i < ii; ++i) {
-        var line = lines[i];
+      for (let i = 0, ii = lines.length; i < ii; ++i) {
+        const line = lines[i];
         p.appendChild(document.createTextNode(line));
 
         if (i < ii - 1) {
@@ -18983,7 +18983,7 @@ var PopupElement = /*#__PURE__*/function () {
   }, {
     key: "_show",
     value: function _show() {
-      var pin = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      const pin = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
       if (pin) {
         this.pinned = true;
@@ -18997,7 +18997,7 @@ var PopupElement = /*#__PURE__*/function () {
   }, {
     key: "_hide",
     value: function _hide() {
-      var unpin = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+      const unpin = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
       if (unpin) {
         this.pinned = false;
@@ -19016,14 +19016,14 @@ var PopupElement = /*#__PURE__*/function () {
 var FreeTextAnnotationElement = /*#__PURE__*/function (_AnnotationElement5) {
   _inherits(FreeTextAnnotationElement, _AnnotationElement5);
 
-  var _super10 = _createSuper(FreeTextAnnotationElement);
+  const _super10 = _createSuper(FreeTextAnnotationElement);
 
   function FreeTextAnnotationElement(parameters) {
-    var _parameters$data$titl3, _parameters$data$cont3, _parameters$data$rich3;
+    let _parameters$data$titl3, _parameters$data$cont3, _parameters$data$rich3;
 
     _classCallCheck(this, FreeTextAnnotationElement);
 
-    var isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl3 = parameters.data.titleObj) !== null && _parameters$data$titl3 !== void 0 && _parameters$data$titl3.str || (_parameters$data$cont3 = parameters.data.contentsObj) !== null && _parameters$data$cont3 !== void 0 && _parameters$data$cont3.str || (_parameters$data$rich3 = parameters.data.richText) !== null && _parameters$data$rich3 !== void 0 && _parameters$data$rich3.str);
+    const isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl3 = parameters.data.titleObj) !== null && _parameters$data$titl3 !== void 0 && _parameters$data$titl3.str || (_parameters$data$cont3 = parameters.data.contentsObj) !== null && _parameters$data$cont3 !== void 0 && _parameters$data$cont3.str || (_parameters$data$rich3 = parameters.data.richText) !== null && _parameters$data$rich3 !== void 0 && _parameters$data$rich3.str);
     return _super10.call(this, parameters, {
       isRenderable: isRenderable,
       ignoreBorder: true
@@ -19049,14 +19049,14 @@ var FreeTextAnnotationElement = /*#__PURE__*/function (_AnnotationElement5) {
 var LineAnnotationElement = /*#__PURE__*/function (_AnnotationElement6) {
   _inherits(LineAnnotationElement, _AnnotationElement6);
 
-  var _super11 = _createSuper(LineAnnotationElement);
+  const _super11 = _createSuper(LineAnnotationElement);
 
   function LineAnnotationElement(parameters) {
-    var _parameters$data$titl4, _parameters$data$cont4, _parameters$data$rich4;
+    let _parameters$data$titl4, _parameters$data$cont4, _parameters$data$rich4;
 
     _classCallCheck(this, LineAnnotationElement);
 
-    var isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl4 = parameters.data.titleObj) !== null && _parameters$data$titl4 !== void 0 && _parameters$data$titl4.str || (_parameters$data$cont4 = parameters.data.contentsObj) !== null && _parameters$data$cont4 !== void 0 && _parameters$data$cont4.str || (_parameters$data$rich4 = parameters.data.richText) !== null && _parameters$data$rich4 !== void 0 && _parameters$data$rich4.str);
+    const isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl4 = parameters.data.titleObj) !== null && _parameters$data$titl4 !== void 0 && _parameters$data$titl4.str || (_parameters$data$cont4 = parameters.data.contentsObj) !== null && _parameters$data$cont4 !== void 0 && _parameters$data$cont4.str || (_parameters$data$rich4 = parameters.data.richText) !== null && _parameters$data$rich4 !== void 0 && _parameters$data$rich4.str);
     return _super11.call(this, parameters, {
       isRenderable: isRenderable,
       ignoreBorder: true
@@ -19067,14 +19067,14 @@ var LineAnnotationElement = /*#__PURE__*/function (_AnnotationElement6) {
     key: "render",
     value: function render() {
       this.container.className = "lineAnnotation";
-      var data = this.data;
+      const data = this.data;
 
-      var _getRectDims2 = getRectDims(data.rect),
+      const _getRectDims2 = getRectDims(data.rect),
           width = _getRectDims2.width,
           height = _getRectDims2.height;
 
-      var svg = this.svgFactory.create(width, height);
-      var line = this.svgFactory.createElement("svg:line");
+      const svg = this.svgFactory.create(width, height);
+      const line = this.svgFactory.createElement("svg:line");
       line.setAttribute("x1", data.rect[2] - data.lineCoordinates[0]);
       line.setAttribute("y1", data.rect[3] - data.lineCoordinates[1]);
       line.setAttribute("x2", data.rect[2] - data.lineCoordinates[2]);
@@ -19097,14 +19097,14 @@ var LineAnnotationElement = /*#__PURE__*/function (_AnnotationElement6) {
 var SquareAnnotationElement = /*#__PURE__*/function (_AnnotationElement7) {
   _inherits(SquareAnnotationElement, _AnnotationElement7);
 
-  var _super12 = _createSuper(SquareAnnotationElement);
+  const _super12 = _createSuper(SquareAnnotationElement);
 
   function SquareAnnotationElement(parameters) {
-    var _parameters$data$titl5, _parameters$data$cont5, _parameters$data$rich5;
+    let _parameters$data$titl5, _parameters$data$cont5, _parameters$data$rich5;
 
     _classCallCheck(this, SquareAnnotationElement);
 
-    var isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl5 = parameters.data.titleObj) !== null && _parameters$data$titl5 !== void 0 && _parameters$data$titl5.str || (_parameters$data$cont5 = parameters.data.contentsObj) !== null && _parameters$data$cont5 !== void 0 && _parameters$data$cont5.str || (_parameters$data$rich5 = parameters.data.richText) !== null && _parameters$data$rich5 !== void 0 && _parameters$data$rich5.str);
+    const isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl5 = parameters.data.titleObj) !== null && _parameters$data$titl5 !== void 0 && _parameters$data$titl5.str || (_parameters$data$cont5 = parameters.data.contentsObj) !== null && _parameters$data$cont5 !== void 0 && _parameters$data$cont5.str || (_parameters$data$rich5 = parameters.data.richText) !== null && _parameters$data$rich5 !== void 0 && _parameters$data$rich5.str);
     return _super12.call(this, parameters, {
       isRenderable: isRenderable,
       ignoreBorder: true
@@ -19115,15 +19115,15 @@ var SquareAnnotationElement = /*#__PURE__*/function (_AnnotationElement7) {
     key: "render",
     value: function render() {
       this.container.className = "squareAnnotation";
-      var data = this.data;
+      const data = this.data;
 
-      var _getRectDims3 = getRectDims(data.rect),
+      const _getRectDims3 = getRectDims(data.rect),
           width = _getRectDims3.width,
           height = _getRectDims3.height;
 
-      var svg = this.svgFactory.create(width, height);
-      var borderWidth = data.borderStyle.width;
-      var square = this.svgFactory.createElement("svg:rect");
+      const svg = this.svgFactory.create(width, height);
+      const borderWidth = data.borderStyle.width;
+      const square = this.svgFactory.createElement("svg:rect");
       square.setAttribute("x", borderWidth / 2);
       square.setAttribute("y", borderWidth / 2);
       square.setAttribute("width", width - borderWidth);
@@ -19146,14 +19146,14 @@ var SquareAnnotationElement = /*#__PURE__*/function (_AnnotationElement7) {
 var CircleAnnotationElement = /*#__PURE__*/function (_AnnotationElement8) {
   _inherits(CircleAnnotationElement, _AnnotationElement8);
 
-  var _super13 = _createSuper(CircleAnnotationElement);
+  const _super13 = _createSuper(CircleAnnotationElement);
 
   function CircleAnnotationElement(parameters) {
-    var _parameters$data$titl6, _parameters$data$cont6, _parameters$data$rich6;
+    let _parameters$data$titl6, _parameters$data$cont6, _parameters$data$rich6;
 
     _classCallCheck(this, CircleAnnotationElement);
 
-    var isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl6 = parameters.data.titleObj) !== null && _parameters$data$titl6 !== void 0 && _parameters$data$titl6.str || (_parameters$data$cont6 = parameters.data.contentsObj) !== null && _parameters$data$cont6 !== void 0 && _parameters$data$cont6.str || (_parameters$data$rich6 = parameters.data.richText) !== null && _parameters$data$rich6 !== void 0 && _parameters$data$rich6.str);
+    const isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl6 = parameters.data.titleObj) !== null && _parameters$data$titl6 !== void 0 && _parameters$data$titl6.str || (_parameters$data$cont6 = parameters.data.contentsObj) !== null && _parameters$data$cont6 !== void 0 && _parameters$data$cont6.str || (_parameters$data$rich6 = parameters.data.richText) !== null && _parameters$data$rich6 !== void 0 && _parameters$data$rich6.str);
     return _super13.call(this, parameters, {
       isRenderable: isRenderable,
       ignoreBorder: true
@@ -19164,15 +19164,15 @@ var CircleAnnotationElement = /*#__PURE__*/function (_AnnotationElement8) {
     key: "render",
     value: function render() {
       this.container.className = "circleAnnotation";
-      var data = this.data;
+      const data = this.data;
 
-      var _getRectDims4 = getRectDims(data.rect),
+      const _getRectDims4 = getRectDims(data.rect),
           width = _getRectDims4.width,
           height = _getRectDims4.height;
 
-      var svg = this.svgFactory.create(width, height);
-      var borderWidth = data.borderStyle.width;
-      var circle = this.svgFactory.createElement("svg:ellipse");
+      const svg = this.svgFactory.create(width, height);
+      const borderWidth = data.borderStyle.width;
+      const circle = this.svgFactory.createElement("svg:ellipse");
       circle.setAttribute("cx", width / 2);
       circle.setAttribute("cy", height / 2);
       circle.setAttribute("rx", width / 2 - borderWidth / 2);
@@ -19195,16 +19195,16 @@ var CircleAnnotationElement = /*#__PURE__*/function (_AnnotationElement8) {
 var PolylineAnnotationElement = /*#__PURE__*/function (_AnnotationElement9) {
   _inherits(PolylineAnnotationElement, _AnnotationElement9);
 
-  var _super14 = _createSuper(PolylineAnnotationElement);
+  const _super14 = _createSuper(PolylineAnnotationElement);
 
   function PolylineAnnotationElement(parameters) {
-    var _parameters$data$titl7, _parameters$data$cont7, _parameters$data$rich7;
+    let _parameters$data$titl7, _parameters$data$cont7, _parameters$data$rich7;
 
-    var _this11;
+    let _this11;
 
     _classCallCheck(this, PolylineAnnotationElement);
 
-    var isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl7 = parameters.data.titleObj) !== null && _parameters$data$titl7 !== void 0 && _parameters$data$titl7.str || (_parameters$data$cont7 = parameters.data.contentsObj) !== null && _parameters$data$cont7 !== void 0 && _parameters$data$cont7.str || (_parameters$data$rich7 = parameters.data.richText) !== null && _parameters$data$rich7 !== void 0 && _parameters$data$rich7.str);
+    const isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl7 = parameters.data.titleObj) !== null && _parameters$data$titl7 !== void 0 && _parameters$data$titl7.str || (_parameters$data$cont7 = parameters.data.contentsObj) !== null && _parameters$data$cont7 !== void 0 && _parameters$data$cont7.str || (_parameters$data$rich7 = parameters.data.richText) !== null && _parameters$data$rich7 !== void 0 && _parameters$data$rich7.str);
     _this11 = _super14.call(this, parameters, {
       isRenderable: isRenderable,
       ignoreBorder: true
@@ -19218,23 +19218,23 @@ var PolylineAnnotationElement = /*#__PURE__*/function (_AnnotationElement9) {
     key: "render",
     value: function render() {
       this.container.className = this.containerClassName;
-      var data = this.data;
+      const data = this.data;
 
-      var _getRectDims5 = getRectDims(data.rect),
+      const _getRectDims5 = getRectDims(data.rect),
           width = _getRectDims5.width,
           height = _getRectDims5.height;
 
-      var svg = this.svgFactory.create(width, height);
-      var points = [];
+      const svg = this.svgFactory.create(width, height);
+      let points = [];
 
-      var _iterator19 = _createForOfIteratorHelper(data.vertices),
+      let _iterator19 = _createForOfIteratorHelper(data.vertices),
           _step19;
 
       try {
         for (_iterator19.s(); !(_step19 = _iterator19.n()).done;) {
-          var coordinate = _step19.value;
-          var x = coordinate.x - data.rect[0];
-          var y = data.rect[3] - coordinate.y;
+          const coordinate = _step19.value;
+          const x = coordinate.x - data.rect[0];
+          const y = data.rect[3] - coordinate.y;
           points.push(x + "," + y);
         }
       } catch (err) {
@@ -19244,7 +19244,7 @@ var PolylineAnnotationElement = /*#__PURE__*/function (_AnnotationElement9) {
       }
 
       points = points.join(" ");
-      var polyline = this.svgFactory.createElement(this.svgElementName);
+      const polyline = this.svgFactory.createElement(this.svgElementName);
       polyline.setAttribute("points", points);
       polyline.setAttribute("stroke-width", data.borderStyle.width || 1);
       polyline.setAttribute("stroke", "transparent");
@@ -19264,10 +19264,10 @@ var PolylineAnnotationElement = /*#__PURE__*/function (_AnnotationElement9) {
 var PolygonAnnotationElement = /*#__PURE__*/function (_PolylineAnnotationEl) {
   _inherits(PolygonAnnotationElement, _PolylineAnnotationEl);
 
-  var _super15 = _createSuper(PolygonAnnotationElement);
+  const _super15 = _createSuper(PolygonAnnotationElement);
 
   function PolygonAnnotationElement(parameters) {
-    var _this12;
+    let _this12;
 
     _classCallCheck(this, PolygonAnnotationElement);
 
@@ -19283,14 +19283,14 @@ var PolygonAnnotationElement = /*#__PURE__*/function (_PolylineAnnotationEl) {
 var CaretAnnotationElement = /*#__PURE__*/function (_AnnotationElement10) {
   _inherits(CaretAnnotationElement, _AnnotationElement10);
 
-  var _super16 = _createSuper(CaretAnnotationElement);
+  const _super16 = _createSuper(CaretAnnotationElement);
 
   function CaretAnnotationElement(parameters) {
-    var _parameters$data$titl8, _parameters$data$cont8, _parameters$data$rich8;
+    let _parameters$data$titl8, _parameters$data$cont8, _parameters$data$rich8;
 
     _classCallCheck(this, CaretAnnotationElement);
 
-    var isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl8 = parameters.data.titleObj) !== null && _parameters$data$titl8 !== void 0 && _parameters$data$titl8.str || (_parameters$data$cont8 = parameters.data.contentsObj) !== null && _parameters$data$cont8 !== void 0 && _parameters$data$cont8.str || (_parameters$data$rich8 = parameters.data.richText) !== null && _parameters$data$rich8 !== void 0 && _parameters$data$rich8.str);
+    const isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl8 = parameters.data.titleObj) !== null && _parameters$data$titl8 !== void 0 && _parameters$data$titl8.str || (_parameters$data$cont8 = parameters.data.contentsObj) !== null && _parameters$data$cont8 !== void 0 && _parameters$data$cont8.str || (_parameters$data$rich8 = parameters.data.richText) !== null && _parameters$data$rich8 !== void 0 && _parameters$data$rich8.str);
     return _super16.call(this, parameters, {
       isRenderable: isRenderable,
       ignoreBorder: true
@@ -19316,16 +19316,16 @@ var CaretAnnotationElement = /*#__PURE__*/function (_AnnotationElement10) {
 var InkAnnotationElement = /*#__PURE__*/function (_AnnotationElement11) {
   _inherits(InkAnnotationElement, _AnnotationElement11);
 
-  var _super17 = _createSuper(InkAnnotationElement);
+  const _super17 = _createSuper(InkAnnotationElement);
 
   function InkAnnotationElement(parameters) {
-    var _parameters$data$titl9, _parameters$data$cont9, _parameters$data$rich9;
+    let _parameters$data$titl9, _parameters$data$cont9, _parameters$data$rich9;
 
-    var _this13;
+    let _this13;
 
     _classCallCheck(this, InkAnnotationElement);
 
-    var isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl9 = parameters.data.titleObj) !== null && _parameters$data$titl9 !== void 0 && _parameters$data$titl9.str || (_parameters$data$cont9 = parameters.data.contentsObj) !== null && _parameters$data$cont9 !== void 0 && _parameters$data$cont9.str || (_parameters$data$rich9 = parameters.data.richText) !== null && _parameters$data$rich9 !== void 0 && _parameters$data$rich9.str);
+    const isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl9 = parameters.data.titleObj) !== null && _parameters$data$titl9 !== void 0 && _parameters$data$titl9.str || (_parameters$data$cont9 = parameters.data.contentsObj) !== null && _parameters$data$cont9 !== void 0 && _parameters$data$cont9.str || (_parameters$data$rich9 = parameters.data.richText) !== null && _parameters$data$rich9 !== void 0 && _parameters$data$rich9.str);
     _this13 = _super17.call(this, parameters, {
       isRenderable: isRenderable,
       ignoreBorder: true
@@ -19339,30 +19339,30 @@ var InkAnnotationElement = /*#__PURE__*/function (_AnnotationElement11) {
     key: "render",
     value: function render() {
       this.container.className = this.containerClassName;
-      var data = this.data;
+      const data = this.data;
 
-      var _getRectDims6 = getRectDims(data.rect),
+      const _getRectDims6 = getRectDims(data.rect),
           width = _getRectDims6.width,
           height = _getRectDims6.height;
 
-      var svg = this.svgFactory.create(width, height);
+      const svg = this.svgFactory.create(width, height);
 
-      var _iterator20 = _createForOfIteratorHelper(data.inkLists),
+      let _iterator20 = _createForOfIteratorHelper(data.inkLists),
           _step20;
 
       try {
         for (_iterator20.s(); !(_step20 = _iterator20.n()).done;) {
-          var inkList = _step20.value;
-          var points = [];
+          const inkList = _step20.value;
+          let points = [];
 
           var _iterator21 = _createForOfIteratorHelper(inkList),
               _step21;
 
           try {
             for (_iterator21.s(); !(_step21 = _iterator21.n()).done;) {
-              var coordinate = _step21.value;
-              var x = coordinate.x - data.rect[0];
-              var y = data.rect[3] - coordinate.y;
+              const coordinate = _step21.value;
+              const x = coordinate.x - data.rect[0];
+              const y = data.rect[3] - coordinate.y;
               points.push("".concat(x, ",").concat(y));
             }
           } catch (err) {
@@ -19372,7 +19372,7 @@ var InkAnnotationElement = /*#__PURE__*/function (_AnnotationElement11) {
           }
 
           points = points.join(" ");
-          var polyline = this.svgFactory.createElement(this.svgElementName);
+          const polyline = this.svgFactory.createElement(this.svgElementName);
           polyline.setAttribute("points", points);
           polyline.setAttribute("stroke-width", data.borderStyle.width || 1);
           polyline.setAttribute("stroke", "transparent");
@@ -19399,14 +19399,14 @@ var InkAnnotationElement = /*#__PURE__*/function (_AnnotationElement11) {
 var HighlightAnnotationElement = /*#__PURE__*/function (_AnnotationElement12) {
   _inherits(HighlightAnnotationElement, _AnnotationElement12);
 
-  var _super18 = _createSuper(HighlightAnnotationElement);
+  const _super18 = _createSuper(HighlightAnnotationElement);
 
   function HighlightAnnotationElement(parameters) {
-    var _parameters$data$titl10, _parameters$data$cont10, _parameters$data$rich10;
+    let _parameters$data$titl10, _parameters$data$cont10, _parameters$data$rich10;
 
     _classCallCheck(this, HighlightAnnotationElement);
 
-    var isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl10 = parameters.data.titleObj) !== null && _parameters$data$titl10 !== void 0 && _parameters$data$titl10.str || (_parameters$data$cont10 = parameters.data.contentsObj) !== null && _parameters$data$cont10 !== void 0 && _parameters$data$cont10.str || (_parameters$data$rich10 = parameters.data.richText) !== null && _parameters$data$rich10 !== void 0 && _parameters$data$rich10.str);
+    const isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl10 = parameters.data.titleObj) !== null && _parameters$data$titl10 !== void 0 && _parameters$data$titl10.str || (_parameters$data$cont10 = parameters.data.contentsObj) !== null && _parameters$data$cont10 !== void 0 && _parameters$data$cont10.str || (_parameters$data$rich10 = parameters.data.richText) !== null && _parameters$data$rich10 !== void 0 && _parameters$data$rich10.str);
     return _super18.call(this, parameters, {
       isRenderable: isRenderable,
       ignoreBorder: true,
@@ -19436,14 +19436,14 @@ var HighlightAnnotationElement = /*#__PURE__*/function (_AnnotationElement12) {
 var UnderlineAnnotationElement = /*#__PURE__*/function (_AnnotationElement13) {
   _inherits(UnderlineAnnotationElement, _AnnotationElement13);
 
-  var _super19 = _createSuper(UnderlineAnnotationElement);
+  const _super19 = _createSuper(UnderlineAnnotationElement);
 
   function UnderlineAnnotationElement(parameters) {
-    var _parameters$data$titl11, _parameters$data$cont11, _parameters$data$rich11;
+    let _parameters$data$titl11, _parameters$data$cont11, _parameters$data$rich11;
 
     _classCallCheck(this, UnderlineAnnotationElement);
 
-    var isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl11 = parameters.data.titleObj) !== null && _parameters$data$titl11 !== void 0 && _parameters$data$titl11.str || (_parameters$data$cont11 = parameters.data.contentsObj) !== null && _parameters$data$cont11 !== void 0 && _parameters$data$cont11.str || (_parameters$data$rich11 = parameters.data.richText) !== null && _parameters$data$rich11 !== void 0 && _parameters$data$rich11.str);
+    const isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl11 = parameters.data.titleObj) !== null && _parameters$data$titl11 !== void 0 && _parameters$data$titl11.str || (_parameters$data$cont11 = parameters.data.contentsObj) !== null && _parameters$data$cont11 !== void 0 && _parameters$data$cont11.str || (_parameters$data$rich11 = parameters.data.richText) !== null && _parameters$data$rich11 !== void 0 && _parameters$data$rich11.str);
     return _super19.call(this, parameters, {
       isRenderable: isRenderable,
       ignoreBorder: true,
@@ -19473,14 +19473,14 @@ var UnderlineAnnotationElement = /*#__PURE__*/function (_AnnotationElement13) {
 var SquigglyAnnotationElement = /*#__PURE__*/function (_AnnotationElement14) {
   _inherits(SquigglyAnnotationElement, _AnnotationElement14);
 
-  var _super20 = _createSuper(SquigglyAnnotationElement);
+  const _super20 = _createSuper(SquigglyAnnotationElement);
 
   function SquigglyAnnotationElement(parameters) {
-    var _parameters$data$titl12, _parameters$data$cont12, _parameters$data$rich12;
+    let _parameters$data$titl12, _parameters$data$cont12, _parameters$data$rich12;
 
     _classCallCheck(this, SquigglyAnnotationElement);
 
-    var isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl12 = parameters.data.titleObj) !== null && _parameters$data$titl12 !== void 0 && _parameters$data$titl12.str || (_parameters$data$cont12 = parameters.data.contentsObj) !== null && _parameters$data$cont12 !== void 0 && _parameters$data$cont12.str || (_parameters$data$rich12 = parameters.data.richText) !== null && _parameters$data$rich12 !== void 0 && _parameters$data$rich12.str);
+    const isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl12 = parameters.data.titleObj) !== null && _parameters$data$titl12 !== void 0 && _parameters$data$titl12.str || (_parameters$data$cont12 = parameters.data.contentsObj) !== null && _parameters$data$cont12 !== void 0 && _parameters$data$cont12.str || (_parameters$data$rich12 = parameters.data.richText) !== null && _parameters$data$rich12 !== void 0 && _parameters$data$rich12.str);
     return _super20.call(this, parameters, {
       isRenderable: isRenderable,
       ignoreBorder: true,
@@ -19510,14 +19510,14 @@ var SquigglyAnnotationElement = /*#__PURE__*/function (_AnnotationElement14) {
 var StrikeOutAnnotationElement = /*#__PURE__*/function (_AnnotationElement15) {
   _inherits(StrikeOutAnnotationElement, _AnnotationElement15);
 
-  var _super21 = _createSuper(StrikeOutAnnotationElement);
+  const _super21 = _createSuper(StrikeOutAnnotationElement);
 
   function StrikeOutAnnotationElement(parameters) {
-    var _parameters$data$titl13, _parameters$data$cont13, _parameters$data$rich13;
+    let _parameters$data$titl13, _parameters$data$cont13, _parameters$data$rich13;
 
     _classCallCheck(this, StrikeOutAnnotationElement);
 
-    var isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl13 = parameters.data.titleObj) !== null && _parameters$data$titl13 !== void 0 && _parameters$data$titl13.str || (_parameters$data$cont13 = parameters.data.contentsObj) !== null && _parameters$data$cont13 !== void 0 && _parameters$data$cont13.str || (_parameters$data$rich13 = parameters.data.richText) !== null && _parameters$data$rich13 !== void 0 && _parameters$data$rich13.str);
+    const isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl13 = parameters.data.titleObj) !== null && _parameters$data$titl13 !== void 0 && _parameters$data$titl13.str || (_parameters$data$cont13 = parameters.data.contentsObj) !== null && _parameters$data$cont13 !== void 0 && _parameters$data$cont13.str || (_parameters$data$rich13 = parameters.data.richText) !== null && _parameters$data$rich13 !== void 0 && _parameters$data$rich13.str);
     return _super21.call(this, parameters, {
       isRenderable: isRenderable,
       ignoreBorder: true,
@@ -19547,14 +19547,14 @@ var StrikeOutAnnotationElement = /*#__PURE__*/function (_AnnotationElement15) {
 var StampAnnotationElement = /*#__PURE__*/function (_AnnotationElement16) {
   _inherits(StampAnnotationElement, _AnnotationElement16);
 
-  var _super22 = _createSuper(StampAnnotationElement);
+  const _super22 = _createSuper(StampAnnotationElement);
 
   function StampAnnotationElement(parameters) {
-    var _parameters$data$titl14, _parameters$data$cont14, _parameters$data$rich14;
+    let _parameters$data$titl14, _parameters$data$cont14, _parameters$data$rich14;
 
     _classCallCheck(this, StampAnnotationElement);
 
-    var isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl14 = parameters.data.titleObj) !== null && _parameters$data$titl14 !== void 0 && _parameters$data$titl14.str || (_parameters$data$cont14 = parameters.data.contentsObj) !== null && _parameters$data$cont14 !== void 0 && _parameters$data$cont14.str || (_parameters$data$rich14 = parameters.data.richText) !== null && _parameters$data$rich14 !== void 0 && _parameters$data$rich14.str);
+    const isRenderable = !!(parameters.data.hasPopup || (_parameters$data$titl14 = parameters.data.titleObj) !== null && _parameters$data$titl14 !== void 0 && _parameters$data$titl14.str || (_parameters$data$cont14 = parameters.data.contentsObj) !== null && _parameters$data$cont14 !== void 0 && _parameters$data$cont14.str || (_parameters$data$rich14 = parameters.data.richText) !== null && _parameters$data$rich14 !== void 0 && _parameters$data$rich14.str);
     return _super22.call(this, parameters, {
       isRenderable: isRenderable,
       ignoreBorder: true
@@ -19580,19 +19580,19 @@ var StampAnnotationElement = /*#__PURE__*/function (_AnnotationElement16) {
 var FileAttachmentAnnotationElement = /*#__PURE__*/function (_AnnotationElement17) {
   _inherits(FileAttachmentAnnotationElement, _AnnotationElement17);
 
-  var _super23 = _createSuper(FileAttachmentAnnotationElement);
+  const _super23 = _createSuper(FileAttachmentAnnotationElement);
 
   function FileAttachmentAnnotationElement(parameters) {
-    var _this14$linkService$e;
+    let _this14$linkService$e;
 
-    var _this14;
+    let _this14;
 
     _classCallCheck(this, FileAttachmentAnnotationElement);
 
     _this14 = _super23.call(this, parameters, {
       isRenderable: true
     });
-    var _this14$data$file = _this14.data.file,
+    const _this14$data$file = _this14.data.file,
         filename = _this14$data$file.filename,
         content = _this14$data$file.content;
     _this14.filename = (0, _display_utils.getFilenameFromUrl)(filename);
@@ -19608,10 +19608,10 @@ var FileAttachmentAnnotationElement = /*#__PURE__*/function (_AnnotationElement1
   _createClass(FileAttachmentAnnotationElement, [{
     key: "render",
     value: function render() {
-      var _this$data$titleObj, _this$data$contentsOb;
+      let _this$data$titleObj, _this$data$contentsOb;
 
       this.container.className = "fileAttachmentAnnotation";
-      var trigger = document.createElement("div");
+      const trigger = document.createElement("div");
       trigger.style.height = this.container.style.height;
       trigger.style.width = this.container.style.width;
       trigger.addEventListener("dblclick", this._download.bind(this));
@@ -19626,7 +19626,7 @@ var FileAttachmentAnnotationElement = /*#__PURE__*/function (_AnnotationElement1
   }, {
     key: "_download",
     value: function _download() {
-      var _this$downloadManager;
+      let _this$downloadManager;
 
       (_this$downloadManager = this.downloadManager) === null || _this$downloadManager === void 0 ? void 0 : _this$downloadManager.openOrDownloadData(this.container, this.content, this.filename);
     }
@@ -19635,7 +19635,7 @@ var FileAttachmentAnnotationElement = /*#__PURE__*/function (_AnnotationElement1
   return FileAttachmentAnnotationElement;
 }(AnnotationElement);
 
-var AnnotationLayer = /*#__PURE__*/function () {
+const AnnotationLayer = /*#__PURE__*/function () {
   function AnnotationLayer() {
     _classCallCheck(this, AnnotationLayer);
   }
@@ -19643,21 +19643,21 @@ var AnnotationLayer = /*#__PURE__*/function () {
   _createClass(AnnotationLayer, null, [{
     key: "render",
     value: function render(parameters) {
-      var sortedAnnotations = [],
+      const sortedAnnotations = [],
           popupAnnotations = [];
 
-      var _iterator22 = _createForOfIteratorHelper(parameters.annotations),
+      let _iterator22 = _createForOfIteratorHelper(parameters.annotations),
           _step22;
 
       try {
         for (_iterator22.s(); !(_step22 = _iterator22.n()).done;) {
-          var _data = _step22.value;
+          const _data = _step22.value;
 
           if (!_data) {
             continue;
           }
 
-          var _getRectDims7 = getRectDims(_data.rect),
+          const _getRectDims7 = getRectDims(_data.rect),
               width = _getRectDims7.width,
               height = _getRectDims7.height;
 
@@ -19682,11 +19682,11 @@ var AnnotationLayer = /*#__PURE__*/function () {
         sortedAnnotations.push.apply(sortedAnnotations, popupAnnotations);
       }
 
-      var div = parameters.div;
+      const div = parameters.div;
 
-      for (var _i8 = 0, _sortedAnnotations = sortedAnnotations; _i8 < _sortedAnnotations.length; _i8++) {
-        var data = _sortedAnnotations[_i8];
-        var element = AnnotationElementFactory.create({
+      for (let _i8 = 0, _sortedAnnotations = sortedAnnotations; _i8 < _sortedAnnotations.length; _i8++) {
+        const data = _sortedAnnotations[_i8];
+        const element = AnnotationElementFactory.create({
           data: data,
           layer: div,
           page: parameters.page,
@@ -19706,7 +19706,7 @@ var AnnotationLayer = /*#__PURE__*/function () {
         });
 
         if (element.isRenderable) {
-          var rendered = element.render();
+          const rendered = element.render();
 
           if (data.hidden) {
             rendered.style.visibility = "hidden";
@@ -19718,7 +19718,7 @@ var AnnotationLayer = /*#__PURE__*/function () {
 
             try {
               for (_iterator23.s(); !(_step23 = _iterator23.n()).done;) {
-                var renderedElement = _step23.value;
+                const renderedElement = _step23.value;
                 div.appendChild(renderedElement);
               }
             } catch (err) {
@@ -19741,22 +19741,22 @@ var AnnotationLayer = /*#__PURE__*/function () {
   }, {
     key: "update",
     value: function update(parameters) {
-      var page = parameters.page,
+      const page = parameters.page,
           viewport = parameters.viewport,
           annotations = parameters.annotations,
           annotationCanvasMap = parameters.annotationCanvasMap,
           div = parameters.div;
-      var transform = viewport.transform;
-      var matrix = "matrix(".concat(transform.join(","), ")");
-      var scale, ownMatrix;
+      const transform = viewport.transform;
+      const matrix = "matrix(".concat(transform.join(","), ")");
+      let scale, ownMatrix;
 
-      var _iterator24 = _createForOfIteratorHelper(annotations),
+      let _iterator24 = _createForOfIteratorHelper(annotations),
           _step24;
 
       try {
         for (_iterator24.s(); !(_step24 = _iterator24.n()).done;) {
-          var data = _step24.value;
-          var elements = div.querySelectorAll("[data-annotation-id=\"".concat(data.id, "\"]"));
+          const data = _step24.value;
+          const elements = div.querySelectorAll("[data-annotation-id=\"".concat(data.id, "\"]"));
 
           if (elements) {
             var _iterator25 = _createForOfIteratorHelper(elements),
@@ -19764,24 +19764,24 @@ var AnnotationLayer = /*#__PURE__*/function () {
 
             try {
               for (_iterator25.s(); !(_step25 = _iterator25.n()).done;) {
-                var element = _step25.value;
+                const element = _step25.value;
 
                 if (data.hasOwnCanvas) {
-                  var rect = _util.Util.normalizeRect([data.rect[0], page.view[3] - data.rect[1] + page.view[1], data.rect[2], page.view[3] - data.rect[3] + page.view[1]]);
+                  const rect = _util.Util.normalizeRect([data.rect[0], page.view[3] - data.rect[1] + page.view[1], data.rect[2], page.view[3] - data.rect[3] + page.view[1]]);
 
                   if (!ownMatrix) {
                     scale = Math.abs(transform[0] || transform[1]);
-                    var ownTransform = transform.slice();
+                    const ownTransform = transform.slice();
 
-                    for (var i = 0; i < 4; i++) {
+                    for (let i = 0; i < 4; i++) {
                       ownTransform[i] = Math.sign(ownTransform[i]);
                     }
 
                     ownMatrix = "matrix(".concat(ownTransform.join(","), ")");
                   }
 
-                  var left = rect[0] * scale;
-                  var top = rect[1] * scale;
+                  const left = rect[0] * scale;
+                  const top = rect[1] * scale;
                   element.style.left = "".concat(left, "px");
                   element.style.top = "".concat(top, "px");
                   element.style.transformOrigin = "".concat(-left, "px ").concat(-top, "px");
@@ -19819,22 +19819,22 @@ function _setAnnotationCanvasMap(div, annotationCanvasMap) {
     return;
   }
 
-  var _iterator26 = _createForOfIteratorHelper(annotationCanvasMap),
+  let _iterator26 = _createForOfIteratorHelper(annotationCanvasMap),
       _step26;
 
   try {
     for (_iterator26.s(); !(_step26 = _iterator26.n()).done;) {
-      var _step26$value = _slicedToArray(_step26.value, 2),
+      const _step26$value = _slicedToArray(_step26.value, 2),
           id = _step26$value[0],
           canvas = _step26$value[1];
 
-      var element = div.querySelector("[data-annotation-id=\"".concat(id, "\"]"));
+      const element = div.querySelector("[data-annotation-id=\"".concat(id, "\"]"));
 
       if (!element) {
         continue;
       }
 
-      var firstChild = element.firstChild;
+      const firstChild = element.firstChild;
 
       if (firstChild.nodeName === "CANVAS") {
         element.replaceChild(canvas, firstChild);
@@ -19867,17 +19867,17 @@ function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArra
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { let _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; const _arr = []; let _n = true; let _d = false; let _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
@@ -19885,7 +19885,7 @@ function makeColorComp(n) {
   return Math.floor(Math.max(0, Math.min(1, n)) * 255).toString(16).padStart(2, "0");
 }
 
-var ColorConverters = /*#__PURE__*/function () {
+const ColorConverters = /*#__PURE__*/function () {
   function ColorConverters() {
     _classCallCheck(this, ColorConverters);
   }
@@ -19893,7 +19893,7 @@ var ColorConverters = /*#__PURE__*/function () {
   _createClass(ColorConverters, null, [{
     key: "CMYK_G",
     value: function CMYK_G(_ref) {
-      var _ref2 = _slicedToArray(_ref, 4),
+      const _ref2 = _slicedToArray(_ref, 4),
           c = _ref2[0],
           y = _ref2[1],
           m = _ref2[2],
@@ -19904,7 +19904,7 @@ var ColorConverters = /*#__PURE__*/function () {
   }, {
     key: "G_CMYK",
     value: function G_CMYK(_ref3) {
-      var _ref4 = _slicedToArray(_ref3, 1),
+      const _ref4 = _slicedToArray(_ref3, 1),
           g = _ref4[0];
 
       return ["CMYK", 0, 0, 0, 1 - g];
@@ -19912,7 +19912,7 @@ var ColorConverters = /*#__PURE__*/function () {
   }, {
     key: "G_RGB",
     value: function G_RGB(_ref5) {
-      var _ref6 = _slicedToArray(_ref5, 1),
+      const _ref6 = _slicedToArray(_ref5, 1),
           g = _ref6[0];
 
       return ["RGB", g, g, g];
@@ -19920,16 +19920,16 @@ var ColorConverters = /*#__PURE__*/function () {
   }, {
     key: "G_HTML",
     value: function G_HTML(_ref7) {
-      var _ref8 = _slicedToArray(_ref7, 1),
+      const _ref8 = _slicedToArray(_ref7, 1),
           g = _ref8[0];
 
-      var G = makeColorComp(g);
+      const G = makeColorComp(g);
       return "#".concat(G).concat(G).concat(G);
     }
   }, {
     key: "RGB_G",
     value: function RGB_G(_ref9) {
-      var _ref10 = _slicedToArray(_ref9, 3),
+      const _ref10 = _slicedToArray(_ref9, 3),
           r = _ref10[0],
           g = _ref10[1],
           b = _ref10[2];
@@ -19939,14 +19939,14 @@ var ColorConverters = /*#__PURE__*/function () {
   }, {
     key: "RGB_HTML",
     value: function RGB_HTML(_ref11) {
-      var _ref12 = _slicedToArray(_ref11, 3),
+      const _ref12 = _slicedToArray(_ref11, 3),
           r = _ref12[0],
           g = _ref12[1],
           b = _ref12[2];
 
-      var R = makeColorComp(r);
-      var G = makeColorComp(g);
-      var B = makeColorComp(b);
+      const R = makeColorComp(r);
+      const G = makeColorComp(g);
+      const B = makeColorComp(b);
       return "#".concat(R).concat(G).concat(B);
     }
   }, {
@@ -19957,7 +19957,7 @@ var ColorConverters = /*#__PURE__*/function () {
   }, {
     key: "CMYK_RGB",
     value: function CMYK_RGB(_ref13) {
-      var _ref14 = _slicedToArray(_ref13, 4),
+      const _ref14 = _slicedToArray(_ref13, 4),
           c = _ref14[0],
           y = _ref14[1],
           m = _ref14[2],
@@ -19973,15 +19973,15 @@ var ColorConverters = /*#__PURE__*/function () {
   }, {
     key: "RGB_CMYK",
     value: function RGB_CMYK(_ref15) {
-      var _ref16 = _slicedToArray(_ref15, 3),
+      const _ref16 = _slicedToArray(_ref15, 3),
           r = _ref16[0],
           g = _ref16[1],
           b = _ref16[2];
 
-      var c = 1 - r;
-      var m = 1 - g;
-      var y = 1 - b;
-      var k = Math.min(c, m, y);
+      const c = 1 - r;
+      const m = 1 - g;
+      const y = 1 - b;
+      const k = Math.min(c, m, y);
       return ["CMYK", c, m, y, k];
     }
   }]);
@@ -20003,29 +20003,29 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.XfaLayer = void 0;
 
-var _xfa_text = __w_pdfjs_require__(171);
+const _xfa_text = __w_pdfjs_require__(171);
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { let _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; const _arr = []; let _n = true; let _d = false; let _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
-var XfaLayer = /*#__PURE__*/function () {
+const XfaLayer = /*#__PURE__*/function () {
   function XfaLayer() {
     _classCallCheck(this, XfaLayer);
   }
@@ -20033,7 +20033,7 @@ var XfaLayer = /*#__PURE__*/function () {
   _createClass(XfaLayer, null, [{
     key: "setupStorage",
     value: function setupStorage(html, id, element, storage, intent) {
-      var storedData = storage.getValue(id, {
+      const storedData = storage.getValue(id, {
         value: null
       });
 
@@ -20091,12 +20091,12 @@ var XfaLayer = /*#__PURE__*/function () {
 
         case "select":
           if (storedData.value !== null) {
-            var _iterator = _createForOfIteratorHelper(element.children),
+            let _iterator = _createForOfIteratorHelper(element.children),
                 _step;
 
             try {
               for (_iterator.s(); !(_step = _iterator.n()).done;) {
-                var option = _step.value;
+                const option = _step.value;
 
                 if (option.attributes.value === storedData.value) {
                   option.attributes.selected = true;
@@ -20110,8 +20110,8 @@ var XfaLayer = /*#__PURE__*/function () {
           }
 
           html.addEventListener("input", function (event) {
-            var options = event.target.options;
-            var value = options.selectedIndex === -1 ? "" : options[options.selectedIndex].value;
+            const options = event.target.options;
+            const value = options.selectedIndex === -1 ? "" : options[options.selectedIndex].value;
             storage.setValue(id, {
               value: value
             });
@@ -20122,21 +20122,21 @@ var XfaLayer = /*#__PURE__*/function () {
   }, {
     key: "setAttributes",
     value: function setAttributes(_ref) {
-      var html = _ref.html,
+      const html = _ref.html,
           element = _ref.element,
           _ref$storage = _ref.storage,
           storage = _ref$storage === void 0 ? null : _ref$storage,
           intent = _ref.intent,
           linkService = _ref.linkService;
-      var attributes = element.attributes;
-      var isHTMLAnchorElement = html instanceof HTMLAnchorElement;
+      const attributes = element.attributes;
+      const isHTMLAnchorElement = html instanceof HTMLAnchorElement;
 
       if (attributes.type === "radio") {
         attributes.name = "".concat(attributes.name, "-").concat(intent);
       }
 
-      for (var _i = 0, _Object$entries = Object.entries(attributes); _i < _Object$entries.length; _i++) {
-        var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+      for (let _i = 0, _Object$entries = Object.entries(attributes); _i < _Object$entries.length; _i++) {
+        const _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
             key = _Object$entries$_i[0],
             value = _Object$entries$_i[1];
 
@@ -20174,11 +20174,11 @@ var XfaLayer = /*#__PURE__*/function () {
   }, {
     key: "render",
     value: function render(parameters) {
-      var storage = parameters.annotationStorage;
-      var linkService = parameters.linkService;
-      var root = parameters.xfaHtml;
-      var intent = parameters.intent || "display";
-      var rootHtml = document.createElement(root.name);
+      const storage = parameters.annotationStorage;
+      const linkService = parameters.linkService;
+      const root = parameters.xfaHtml;
+      const intent = parameters.intent || "display";
+      const rootHtml = document.createElement(root.name);
 
       if (root.attributes) {
         this.setAttributes({
@@ -20189,12 +20189,12 @@ var XfaLayer = /*#__PURE__*/function () {
         });
       }
 
-      var stack = [[root, -1, rootHtml]];
-      var rootDiv = parameters.div;
+      const stack = [[root, -1, rootHtml]];
+      const rootDiv = parameters.div;
       rootDiv.appendChild(rootHtml);
 
       if (parameters.viewport) {
-        var transform = "matrix(".concat(parameters.viewport.transform.join(","), ")");
+        const transform = "matrix(".concat(parameters.viewport.transform.join(","), ")");
         rootDiv.style.transform = transform;
       }
 
@@ -20202,12 +20202,12 @@ var XfaLayer = /*#__PURE__*/function () {
         rootDiv.setAttribute("class", "xfaLayer xfaFont");
       }
 
-      var textDivs = [];
+      const textDivs = [];
 
       while (stack.length > 0) {
         var _child$attributes;
 
-        var _stack = _slicedToArray(stack[stack.length - 1], 3),
+        const _stack = _slicedToArray(stack[stack.length - 1], 3),
             parent = _stack[0],
             i = _stack[1],
             html = _stack[2];
@@ -20217,22 +20217,22 @@ var XfaLayer = /*#__PURE__*/function () {
           continue;
         }
 
-        var child = parent.children[++stack[stack.length - 1][1]];
+        const child = parent.children[++stack[stack.length - 1][1]];
 
         if (child === null) {
           continue;
         }
 
-        var name = child.name;
+        const name = child.name;
 
         if (name === "#text") {
-          var node = document.createTextNode(child.value);
+          const node = document.createTextNode(child.value);
           textDivs.push(node);
           html.appendChild(node);
           continue;
         }
 
-        var childHtml = void 0;
+        let childHtml = void 0;
 
         if (child !== null && child !== void 0 && (_child$attributes = child.attributes) !== null && _child$attributes !== void 0 && _child$attributes.xmlns) {
           childHtml = document.createElementNS(child.attributes.xmlns, name);
@@ -20255,7 +20255,7 @@ var XfaLayer = /*#__PURE__*/function () {
         if (child.children && child.children.length > 0) {
           stack.push([child, -1, childHtml]);
         } else if (child.value) {
-          var _node = document.createTextNode(child.value);
+          const _node = document.createTextNode(child.value);
 
           if (_xfa_text.XfaText.shouldBuildText(name)) {
             textDivs.push(_node);
@@ -20265,12 +20265,12 @@ var XfaLayer = /*#__PURE__*/function () {
         }
       }
 
-      var _iterator2 = _createForOfIteratorHelper(rootDiv.querySelectorAll(".xfaNonInteractive input, .xfaNonInteractive textarea")),
+      let _iterator2 = _createForOfIteratorHelper(rootDiv.querySelectorAll(".xfaNonInteractive input, .xfaNonInteractive textarea")),
           _step2;
 
       try {
         for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-          var el = _step2.value;
+          const el = _step2.value;
           el.setAttribute("readOnly", true);
         }
       } catch (err) {
@@ -20286,7 +20286,7 @@ var XfaLayer = /*#__PURE__*/function () {
   }, {
     key: "update",
     value: function update(parameters) {
-      var transform = "matrix(".concat(parameters.viewport.transform.join(","), ")");
+      const transform = "matrix(".concat(parameters.viewport.transform.join(","), ")");
       parameters.div.style.transform = transform;
       parameters.div.hidden = false;
     }
@@ -20309,28 +20309,28 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.renderTextLayer = renderTextLayer;
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-var MAX_TEXT_DIVS_TO_RENDER = 100000;
-var DEFAULT_FONT_SIZE = 30;
-var DEFAULT_FONT_ASCENT = 0.8;
-var ascentCache = new Map();
-var AllWhitespaceRegexp = /^\s+$/g;
+const MAX_TEXT_DIVS_TO_RENDER = 100000;
+const DEFAULT_FONT_SIZE = 30;
+const DEFAULT_FONT_ASCENT = 0.8;
+const ascentCache = new Map();
+const AllWhitespaceRegexp = /^\s+$/g;
 
 function getAscent(fontFamily, ctx) {
-  var cachedAscent = ascentCache.get(fontFamily);
+  const cachedAscent = ascentCache.get(fontFamily);
 
   if (cachedAscent) {
     return cachedAscent;
@@ -20338,13 +20338,13 @@ function getAscent(fontFamily, ctx) {
 
   ctx.save();
   ctx.font = "".concat(DEFAULT_FONT_SIZE, "px ").concat(fontFamily);
-  var metrics = ctx.measureText("");
-  var ascent = metrics.fontBoundingBoxAscent;
-  var descent = Math.abs(metrics.fontBoundingBoxDescent);
+  const metrics = ctx.measureText("");
+  let ascent = metrics.fontBoundingBoxAscent;
+  let descent = Math.abs(metrics.fontBoundingBoxDescent);
 
   if (ascent) {
     ctx.restore();
-    var ratio = ascent / (ascent + descent);
+    const ratio = ascent / (ascent + descent);
     ascentCache.set(fontFamily, ratio);
     return ratio;
   }
@@ -20352,10 +20352,10 @@ function getAscent(fontFamily, ctx) {
   ctx.strokeStyle = "red";
   ctx.clearRect(0, 0, DEFAULT_FONT_SIZE, DEFAULT_FONT_SIZE);
   ctx.strokeText("g", 0, 0);
-  var pixels = ctx.getImageData(0, 0, DEFAULT_FONT_SIZE, DEFAULT_FONT_SIZE).data;
+  let pixels = ctx.getImageData(0, 0, DEFAULT_FONT_SIZE, DEFAULT_FONT_SIZE).data;
   descent = 0;
 
-  for (var i = pixels.length - 1 - 3; i >= 0; i -= 4) {
+  for (let i = pixels.length - 1 - 3; i >= 0; i -= 4) {
     if (pixels[i] > 0) {
       descent = Math.ceil(i / 4 / DEFAULT_FONT_SIZE);
       break;
@@ -20367,7 +20367,7 @@ function getAscent(fontFamily, ctx) {
   pixels = ctx.getImageData(0, 0, DEFAULT_FONT_SIZE, DEFAULT_FONT_SIZE).data;
   ascent = 0;
 
-  for (var _i = 0, ii = pixels.length; _i < ii; _i += 4) {
+  for (let _i = 0, ii = pixels.length; _i < ii; _i += 4) {
     if (pixels[_i] > 0) {
       ascent = DEFAULT_FONT_SIZE - Math.floor(_i / 4 / DEFAULT_FONT_SIZE);
       break;
@@ -20377,7 +20377,7 @@ function getAscent(fontFamily, ctx) {
   ctx.restore();
 
   if (ascent) {
-    var _ratio = ascent / (ascent + descent);
+    const _ratio = ascent / (ascent + descent);
 
     ascentCache.set(fontFamily, _ratio);
     return _ratio;
@@ -20388,8 +20388,8 @@ function getAscent(fontFamily, ctx) {
 }
 
 function appendText(task, geom, styles, ctx) {
-  var textDiv = document.createElement("span");
-  var textDivProperties = task._enhanceTextSelection ? {
+  const textDiv = document.createElement("span");
+  const textDivProperties = task._enhanceTextSelection ? {
     angle: 0,
     canvasWidth: 0,
     hasText: geom.str !== "",
@@ -20409,18 +20409,18 @@ function appendText(task, geom, styles, ctx) {
 
   task._textDivs.push(textDiv);
 
-  var tx = _util.Util.transform(task._viewport.transform, geom.transform);
+  const tx = _util.Util.transform(task._viewport.transform, geom.transform);
 
-  var angle = Math.atan2(tx[1], tx[0]);
-  var style = styles[geom.fontName];
+  let angle = Math.atan2(tx[1], tx[0]);
+  const style = styles[geom.fontName];
 
   if (style.vertical) {
     angle += Math.PI / 2;
   }
 
-  var fontHeight = Math.hypot(tx[2], tx[3]);
-  var fontAscent = fontHeight * getAscent(style.fontFamily, ctx);
-  var left, top;
+  const fontHeight = Math.hypot(tx[2], tx[3]);
+  const fontAscent = fontHeight * getAscent(style.fontFamily, ctx);
+  let left, top;
 
   if (angle === 0) {
     left = tx[4];
@@ -20446,12 +20446,12 @@ function appendText(task, geom, styles, ctx) {
     textDivProperties.angle = angle * (180 / Math.PI);
   }
 
-  var shouldScaleText = false;
+  let shouldScaleText = false;
 
   if (geom.str.length > 1 || task._enhanceTextSelection && AllWhitespaceRegexp.test(geom.str)) {
     shouldScaleText = true;
   } else if (geom.str !== " " && geom.transform[0] !== geom.transform[3]) {
-    var absScaleX = Math.abs(geom.transform[0]),
+    const absScaleX = Math.abs(geom.transform[0]),
         absScaleY = Math.abs(geom.transform[3]);
 
     if (absScaleX !== absScaleY && Math.max(absScaleX, absScaleY) / Math.min(absScaleX, absScaleY) > 1.5) {
@@ -20474,7 +20474,7 @@ function appendText(task, geom, styles, ctx) {
   }
 
   if (task._enhanceTextSelection && textDivProperties.hasText) {
-    var angleCos = 1,
+    let angleCos = 1,
         angleSin = 0;
 
     if (angle !== 0) {
@@ -20482,9 +20482,9 @@ function appendText(task, geom, styles, ctx) {
       angleSin = Math.sin(angle);
     }
 
-    var divWidth = (style.vertical ? geom.height : geom.width) * task._viewport.scale;
-    var divHeight = fontHeight;
-    var m, b;
+    const divWidth = (style.vertical ? geom.height : geom.width) * task._viewport.scale;
+    const divHeight = fontHeight;
+    let m, b;
 
     if (angle !== 0) {
       m = [angleCos, angleSin, -angleSin, angleCos, left, top];
@@ -20510,9 +20510,9 @@ function render(task) {
     return;
   }
 
-  var textDivs = task._textDivs;
-  var capability = task._capability;
-  var textDivsLength = textDivs.length;
+  const textDivs = task._textDivs;
+  const capability = task._capability;
+  const textDivsLength = textDivs.length;
 
   if (textDivsLength > MAX_TEXT_DIVS_TO_RENDER) {
     task._renderingDone = true;
@@ -20521,7 +20521,7 @@ function render(task) {
   }
 
   if (!task._textContentStream) {
-    for (var i = 0; i < textDivsLength; i++) {
+    for (let i = 0; i < textDivsLength; i++) {
       task._layoutText(textDivs[i]);
     }
   }
@@ -20531,10 +20531,10 @@ function render(task) {
 }
 
 function findPositiveMin(ts, offset, count) {
-  var result = 0;
+  let result = 0;
 
-  for (var i = 0; i < count; i++) {
-    var t = ts[offset++];
+  for (let i = 0; i < count; i++) {
+    const t = ts[offset++];
 
     if (t > 0) {
       result = result ? Math.min(t, result) : t;
@@ -20545,14 +20545,14 @@ function findPositiveMin(ts, offset, count) {
 }
 
 function expand(task) {
-  var bounds = task._bounds;
-  var viewport = task._viewport;
-  var expanded = expandBounds(viewport.width, viewport.height, bounds);
+  const bounds = task._bounds;
+  const viewport = task._viewport;
+  const expanded = expandBounds(viewport.width, viewport.height, bounds);
 
-  for (var i = 0; i < expanded.length; i++) {
-    var div = bounds[i].div;
+  for (let i = 0; i < expanded.length; i++) {
+    const div = bounds[i].div;
 
-    var divProperties = task._textDivProperties.get(div);
+    const divProperties = task._textDivProperties.get(div);
 
     if (divProperties.angle === 0) {
       divProperties.paddingLeft = bounds[i].left - expanded[i].left;
@@ -20565,16 +20565,16 @@ function expand(task) {
       continue;
     }
 
-    var e = expanded[i],
+    const e = expanded[i],
         b = bounds[i];
-    var m = b.m,
+    const m = b.m,
         c = m[0],
         s = m[1];
-    var points = [[0, 0], [0, b.size[1]], [b.size[0], 0], b.size];
-    var ts = new Float64Array(64);
+    const points = [[0, 0], [0, b.size[1]], [b.size[0], 0], b.size];
+    const ts = new Float64Array(64);
 
-    for (var j = 0, jj = points.length; j < jj; j++) {
-      var t = _util.Util.applyTransform(points[j], m);
+    for (let j = 0, jj = points.length; j < jj; j++) {
+      const t = _util.Util.applyTransform(points[j], m);
 
       ts[j + 0] = c && (e.left - t[0]) / c;
       ts[j + 4] = s && (e.top - t[1]) / s;
@@ -20594,7 +20594,7 @@ function expand(task) {
       ts[j + 60] = c && (e.bottom - t[1]) / -c;
     }
 
-    var boxScale = 1 + Math.min(Math.abs(c), Math.abs(s));
+    const boxScale = 1 + Math.min(Math.abs(c), Math.abs(s));
     divProperties.paddingLeft = findPositiveMin(ts, 32, 16) / boxScale;
     divProperties.paddingTop = findPositiveMin(ts, 48, 16) / boxScale;
     divProperties.paddingRight = findPositiveMin(ts, 0, 16) / boxScale;
@@ -20605,7 +20605,7 @@ function expand(task) {
 }
 
 function expandBounds(width, height, boxes) {
-  var bounds = boxes.map(function (box, i) {
+  const bounds = boxes.map(function (box, i) {
     return {
       x1: box.left,
       y1: box.top,
@@ -20617,15 +20617,15 @@ function expandBounds(width, height, boxes) {
     };
   });
   expandBoundsLTR(width, bounds);
-  var expanded = new Array(boxes.length);
+  const expanded = new Array(boxes.length);
 
-  var _iterator = _createForOfIteratorHelper(bounds),
+  let _iterator = _createForOfIteratorHelper(bounds),
       _step;
 
   try {
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
-      var b = _step.value;
-      var i = b.index;
+      const b = _step.value;
+      const i = b.index;
       expanded[i] = {
         left: b.x1New,
         top: 0,
@@ -20640,7 +20640,7 @@ function expandBounds(width, height, boxes) {
   }
 
   boxes.map(function (box, i) {
-    var e = expanded[i],
+    const e = expanded[i],
         b = bounds[i];
     b.x1 = box.top;
     b.y1 = width - e.right;
@@ -20652,13 +20652,13 @@ function expandBounds(width, height, boxes) {
   });
   expandBoundsLTR(height, bounds);
 
-  var _iterator2 = _createForOfIteratorHelper(bounds),
+  let _iterator2 = _createForOfIteratorHelper(bounds),
       _step2;
 
   try {
     for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-      var _b = _step2.value;
-      var _i2 = _b.index;
+      const _b = _step2.value;
+      const _i2 = _b.index;
       expanded[_i2].top = _b.x1New;
       expanded[_i2].bottom = _b.x2New;
     }
@@ -20675,7 +20675,7 @@ function expandBoundsLTR(width, bounds) {
   bounds.sort(function (a, b) {
     return a.x1 - b.x1 || a.index - b.index;
   });
-  var fakeBoundary = {
+  const fakeBoundary = {
     x1: -Infinity,
     y1: -Infinity,
     x2: 0,
@@ -20684,41 +20684,41 @@ function expandBoundsLTR(width, bounds) {
     x1New: 0,
     x2New: 0
   };
-  var horizon = [{
+  const horizon = [{
     start: -Infinity,
     end: Infinity,
     boundary: fakeBoundary
   }];
 
-  var _iterator3 = _createForOfIteratorHelper(bounds),
+  let _iterator3 = _createForOfIteratorHelper(bounds),
       _step3;
 
   try {
     for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-      var boundary = _step3.value;
-      var i = 0;
+      const boundary = _step3.value;
+      let i = 0;
 
       while (i < horizon.length && horizon[i].end <= boundary.y1) {
         i++;
       }
 
-      var j = horizon.length - 1;
+      let j = horizon.length - 1;
 
       while (j >= 0 && horizon[j].start >= boundary.y2) {
         j--;
       }
 
-      var _horizonPart = void 0,
+      let _horizonPart = void 0,
           _affectedBoundary = void 0;
 
-      var q = void 0,
+      let q = void 0,
           k = void 0,
           maxXNew = -Infinity;
 
       for (q = i; q <= j; q++) {
         _horizonPart = horizon[q];
         _affectedBoundary = _horizonPart.boundary;
-        var xNew = void 0;
+        let xNew = void 0;
 
         if (_affectedBoundary.x2 > boundary.x1) {
           xNew = _affectedBoundary.index > boundary.index ? _affectedBoundary.x1New : boundary.x1;
@@ -20752,13 +20752,13 @@ function expandBoundsLTR(width, bounds) {
         }
       }
 
-      var changedHorizon = [];
-      var lastBoundary = null;
+      const changedHorizon = [];
+      let lastBoundary = null;
 
       for (q = i; q <= j; q++) {
         _horizonPart = horizon[q];
         _affectedBoundary = _horizonPart.boundary;
-        var useBoundary = _affectedBoundary.x2 > boundary.x2 ? _affectedBoundary : boundary;
+        const useBoundary = _affectedBoundary.x2 > boundary.x2 ? _affectedBoundary : boundary;
 
         if (lastBoundary === useBoundary) {
           changedHorizon[changedHorizon.length - 1].end = _horizonPart.end;
@@ -20798,7 +20798,7 @@ function expandBoundsLTR(width, bounds) {
           continue;
         }
 
-        var used = false;
+        let used = false;
 
         for (k = i - 1; !used && k >= 0 && horizon[k].start >= _affectedBoundary.y1; k--) {
           used = horizon[k].boundary === _affectedBoundary;
@@ -20825,9 +20825,9 @@ function expandBoundsLTR(width, bounds) {
     _iterator3.f();
   }
 
-  for (var _i3 = 0, _horizon = horizon; _i3 < _horizon.length; _i3++) {
-    var horizonPart = _horizon[_i3];
-    var affectedBoundary = horizonPart.boundary;
+  for (let _i3 = 0, _horizon = horizon; _i3 < _horizon.length; _i3++) {
+    const horizonPart = _horizon[_i3];
+    const affectedBoundary = horizonPart.boundary;
 
     if (affectedBoundary.x2New === undefined) {
       affectedBoundary.x2New = Math.max(width, affectedBoundary.x2);
@@ -20835,12 +20835,12 @@ function expandBoundsLTR(width, bounds) {
   }
 }
 
-var TextLayerRenderTask = /*#__PURE__*/function () {
+const TextLayerRenderTask = /*#__PURE__*/function () {
   function TextLayerRenderTask(_ref) {
-    var _globalThis$FontInspe,
+    let _globalThis$FontInspe,
         _this = this;
 
-    var textContent = _ref.textContent,
+    const textContent = _ref.textContent,
         textContentStream = _ref.textContentStream,
         container = _ref.container,
         viewport = _ref.viewport,
@@ -20909,10 +20909,10 @@ var TextLayerRenderTask = /*#__PURE__*/function () {
   }, {
     key: "_processItems",
     value: function _processItems(items, styleCache) {
-      for (var i = 0, len = items.length; i < len; i++) {
+      for (let i = 0, len = items.length; i < len; i++) {
         if (items[i].str === undefined) {
           if (items[i].type === "beginMarkedContentProps" || items[i].type === "beginMarkedContent") {
-            var parent = this._container;
+            const parent = this._container;
             this._container = document.createElement("span");
 
             this._container.classList.add("markedContent");
@@ -20937,12 +20937,12 @@ var TextLayerRenderTask = /*#__PURE__*/function () {
   }, {
     key: "_layoutText",
     value: function _layoutText(textDiv) {
-      var textDivProperties = this._textDivProperties.get(textDiv);
+      const textDivProperties = this._textDivProperties.get(textDiv);
 
-      var transform = "";
+      let transform = "";
 
       if (textDivProperties.canvasWidth !== 0 && textDivProperties.hasText) {
-        var _textDiv$style = textDiv.style,
+        const _textDiv$style = textDiv.style,
             fontSize = _textDiv$style.fontSize,
             fontFamily = _textDiv$style.fontFamily;
 
@@ -20952,11 +20952,11 @@ var TextLayerRenderTask = /*#__PURE__*/function () {
           this._layoutTextLastFontFamily = fontFamily;
         }
 
-        var _this$_layoutTextCtx$ = this._layoutTextCtx.measureText(textDiv.textContent),
+        const _this$_layoutTextCtx$ = this._layoutTextCtx.measureText(textDiv.textContent),
             width = _this$_layoutTextCtx$.width;
 
         if (width > 0) {
-          var scale = textDivProperties.canvasWidth / width;
+          const scale = textDivProperties.canvasWidth / width;
 
           if (this._enhanceTextSelection) {
             textDivProperties.scale = scale;
@@ -20983,7 +20983,7 @@ var TextLayerRenderTask = /*#__PURE__*/function () {
       }
 
       if (textDivProperties.hasEOL) {
-        var br = document.createElement("br");
+        const br = document.createElement("br");
         br.setAttribute("role", "presentation");
 
         this._container.appendChild(br);
@@ -20992,13 +20992,13 @@ var TextLayerRenderTask = /*#__PURE__*/function () {
   }, {
     key: "_render",
     value: function _render() {
-      var _this2 = this;
+      const _this2 = this;
 
-      var timeout = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-      var capability = (0, _util.createPromiseCapability)();
-      var styleCache = Object.create(null);
+      const timeout = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+      const capability = (0, _util.createPromiseCapability)();
+      let styleCache = Object.create(null);
 
-      var canvas = this._document.createElement("canvas");
+      const canvas = this._document.createElement("canvas");
 
       canvas.height = canvas.width = DEFAULT_FONT_SIZE;
       this._layoutTextCtx = canvas.getContext("2d", {
@@ -21006,16 +21006,16 @@ var TextLayerRenderTask = /*#__PURE__*/function () {
       });
 
       if (this._textContent) {
-        var textItems = this._textContent.items;
-        var textStyles = this._textContent.styles;
+        const textItems = this._textContent.items;
+        const textStyles = this._textContent.styles;
 
         this._processItems(textItems, textStyles);
 
         capability.resolve();
       } else if (this._textContentStream) {
-        var pump = function pump() {
+        const pump = function pump() {
           _this2._reader.read().then(function (_ref2) {
-            var value = _ref2.value,
+            const value = _ref2.value,
                 done = _ref2.done;
 
             if (done) {
@@ -21053,7 +21053,7 @@ var TextLayerRenderTask = /*#__PURE__*/function () {
   }, {
     key: "expandTextDivs",
     value: function expandTextDivs() {
-      var expandDivs = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      const expandDivs = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
       if (!this._enhanceTextSelection || !this._renderingDone) {
         return;
@@ -21064,13 +21064,13 @@ var TextLayerRenderTask = /*#__PURE__*/function () {
         this._bounds = null;
       }
 
-      var transformBuf = [],
+      const transformBuf = [],
           paddingBuf = [];
 
-      for (var i = 0, ii = this._textDivs.length; i < ii; i++) {
-        var div = this._textDivs[i];
+      for (let i = 0, ii = this._textDivs.length; i < ii; i++) {
+        const div = this._textDivs[i];
 
-        var divProps = this._textDivProperties.get(div);
+        const divProps = this._textDivProperties.get(div);
 
         if (!divProps.hasText) {
           continue;
@@ -21127,7 +21127,7 @@ var TextLayerRenderTask = /*#__PURE__*/function () {
 }();
 
 function renderTextLayer(renderParameters) {
-  var task = new TextLayerRenderTask({
+  const task = new TextLayerRenderTask({
     textContent: renderParameters.textContent,
     textContentStream: renderParameters.textContentStream,
     container: renderParameters.container,
@@ -21154,11 +21154,11 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.SVGGraphics = void 0;
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
-var _display_utils = __w_pdfjs_require__(158);
+const _display_utils = __w_pdfjs_require__(158);
 
-var _is_node = __w_pdfjs_require__(3);
+const _is_node = __w_pdfjs_require__(3);
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
@@ -21172,23 +21172,23 @@ function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArra
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { let _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; const _arr = []; let _n = true; let _d = false; let _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var SVGGraphics = /*#__PURE__*/_createClass(function SVGGraphics() {
+let SVGGraphics = /*#__PURE__*/_createClass(function SVGGraphics() {
   _classCallCheck(this, SVGGraphics);
 
   (0, _util.unreachable)("Not implemented: SVGGraphics");
@@ -21196,16 +21196,16 @@ var SVGGraphics = /*#__PURE__*/_createClass(function SVGGraphics() {
 
 exports.SVGGraphics = SVGGraphics;
 {
-  var opListToTree = function opListToTree(opList) {
-    var opTree = [];
-    var tmp = [];
+  const opListToTree = function opListToTree(opList) {
+    let opTree = [];
+    const tmp = [];
 
-    var _iterator = _createForOfIteratorHelper(opList),
+    let _iterator = _createForOfIteratorHelper(opList),
         _step;
 
     try {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var opListElement = _step.value;
+        const opListElement = _step.value;
 
         if (opListElement.fn === "save") {
           opTree.push({
@@ -21233,13 +21233,13 @@ exports.SVGGraphics = SVGGraphics;
     return opTree;
   };
 
-  var pf = function pf(value) {
+  const pf = function pf(value) {
     if (Number.isInteger(value)) {
       return value.toString();
     }
 
-    var s = value.toFixed(10);
-    var i = s.length - 1;
+    const s = value.toFixed(10);
+    let i = s.length - 1;
 
     if (s[i] !== "0") {
       return s;
@@ -21252,7 +21252,7 @@ exports.SVGGraphics = SVGGraphics;
     return s.substring(0, s[i] === "." ? i : i + 1);
   };
 
-  var pm = function pm(m) {
+  const pm = function pm(m) {
     if (m[4] === 0 && m[5] === 0) {
       if (m[1] === 0 && m[2] === 0) {
         if (m[0] === 1 && m[3] === 1) {
@@ -21263,7 +21263,7 @@ exports.SVGGraphics = SVGGraphics;
       }
 
       if (m[0] === m[3] && m[1] === -m[2]) {
-        var a = Math.acos(m[0]) * 180 / Math.PI;
+        const a = Math.acos(m[0]) * 180 / Math.PI;
         return "rotate(".concat(pf(a), ")");
       }
     } else {
@@ -21275,19 +21275,19 @@ exports.SVGGraphics = SVGGraphics;
     return "matrix(".concat(pf(m[0]), " ").concat(pf(m[1]), " ").concat(pf(m[2]), " ").concat(pf(m[3]), " ").concat(pf(m[4]), " ") + "".concat(pf(m[5]), ")");
   };
 
-  var SVG_DEFAULTS = {
+  const SVG_DEFAULTS = {
     fontStyle: "normal",
     fontWeight: "normal",
     fillColor: "#000000"
   };
-  var XML_NS = "http://www.w3.org/XML/1998/namespace";
-  var XLINK_NS = "http://www.w3.org/1999/xlink";
-  var LINE_CAP_STYLES = ["butt", "round", "square"];
-  var LINE_JOIN_STYLES = ["miter", "round", "bevel"];
+  const XML_NS = "http://www.w3.org/XML/1998/namespace";
+  const XLINK_NS = "http://www.w3.org/1999/xlink";
+  const LINE_CAP_STYLES = ["butt", "round", "square"];
+  const LINE_JOIN_STYLES = ["miter", "round", "bevel"];
 
-  var createObjectURL = function createObjectURL(data) {
-    var contentType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-    var forceDataSchema = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  const createObjectURL = function createObjectURL(data) {
+    const contentType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+    const forceDataSchema = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 
     if (URL.createObjectURL && typeof Blob !== "undefined" && !forceDataSchema) {
       return URL.createObjectURL(new Blob([data], {
@@ -21295,32 +21295,32 @@ exports.SVGGraphics = SVGGraphics;
       }));
     }
 
-    var digits = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-    var buffer = "data:".concat(contentType, ";base64,");
+    const digits = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+    let buffer = "data:".concat(contentType, ";base64,");
 
-    for (var i = 0, ii = data.length; i < ii; i += 3) {
-      var b1 = data[i] & 0xff;
-      var b2 = data[i + 1] & 0xff;
-      var b3 = data[i + 2] & 0xff;
-      var d1 = b1 >> 2,
+    for (let i = 0, ii = data.length; i < ii; i += 3) {
+      const b1 = data[i] & 0xff;
+      const b2 = data[i + 1] & 0xff;
+      const b3 = data[i + 2] & 0xff;
+      const d1 = b1 >> 2,
           d2 = (b1 & 3) << 4 | b2 >> 4;
-      var d3 = i + 1 < ii ? (b2 & 0xf) << 2 | b3 >> 6 : 64;
-      var d4 = i + 2 < ii ? b3 & 0x3f : 64;
+      const d3 = i + 1 < ii ? (b2 & 0xf) << 2 | b3 >> 6 : 64;
+      const d4 = i + 2 < ii ? b3 & 0x3f : 64;
       buffer += digits[d1] + digits[d2] + digits[d3] + digits[d4];
     }
 
     return buffer;
   };
 
-  var convertImgDataToPng = function () {
-    var PNG_HEADER = new Uint8Array([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
-    var CHUNK_WRAPPER_SIZE = 12;
-    var crcTable = new Int32Array(256);
+  const convertImgDataToPng = function () {
+    const PNG_HEADER = new Uint8Array([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
+    const CHUNK_WRAPPER_SIZE = 12;
+    const crcTable = new Int32Array(256);
 
-    for (var i = 0; i < 256; i++) {
-      var c = i;
+    for (let i = 0; i < 256; i++) {
+      let c = i;
 
-      for (var h = 0; h < 8; h++) {
+      for (let h = 0; h < 8; h++) {
         if (c & 1) {
           c = 0xedb88320 ^ c >> 1 & 0x7fffffff;
         } else {
@@ -21332,11 +21332,11 @@ exports.SVGGraphics = SVGGraphics;
     }
 
     function crc32(data, start, end) {
-      var crc = -1;
+      let crc = -1;
 
-      for (var _i = start; _i < end; _i++) {
-        var a = (crc ^ data[_i]) & 0xff;
-        var b = crcTable[a];
+      for (let _i = start; _i < end; _i++) {
+        const a = (crc ^ data[_i]) & 0xff;
+        const b = crcTable[a];
         crc = crc >>> 8 ^ b;
       }
 
@@ -21344,8 +21344,8 @@ exports.SVGGraphics = SVGGraphics;
     }
 
     function writePngChunk(type, body, data, offset) {
-      var p = offset;
-      var len = body.length;
+      let p = offset;
+      const len = body.length;
       data[p] = len >> 24 & 0xff;
       data[p + 1] = len >> 16 & 0xff;
       data[p + 2] = len >> 8 & 0xff;
@@ -21358,7 +21358,7 @@ exports.SVGGraphics = SVGGraphics;
       p += 4;
       data.set(body, p);
       p += body.length;
-      var crc = crc32(data, offset + 4, p);
+      const crc = crc32(data, offset + 4, p);
       data[p] = crc >> 24 & 0xff;
       data[p + 1] = crc >> 16 & 0xff;
       data[p + 2] = crc >> 8 & 0xff;
@@ -21366,10 +21366,10 @@ exports.SVGGraphics = SVGGraphics;
     }
 
     function adler32(data, start, end) {
-      var a = 1;
-      var b = 0;
+      let a = 1;
+      let b = 0;
 
-      for (var _i2 = start; _i2 < end; ++_i2) {
+      for (let _i2 = start; _i2 < end; ++_i2) {
         a = (a + (data[_i2] & 0xff)) % 65521;
         b = (b + a) % 65521;
       }
@@ -21383,7 +21383,7 @@ exports.SVGGraphics = SVGGraphics;
       }
 
       try {
-        var input;
+        let input;
 
         if (parseInt(process.versions.node) >= 8) {
           input = literals;
@@ -21391,7 +21391,7 @@ exports.SVGGraphics = SVGGraphics;
           input = Buffer.from(literals);
         }
 
-        var output = require("zlib").deflateSync(input, {
+        const output = require("zlib").deflateSync(input, {
           level: 9
         });
 
@@ -21404,14 +21404,14 @@ exports.SVGGraphics = SVGGraphics;
     }
 
     function deflateSyncUncompressed(literals) {
-      var len = literals.length;
-      var maxBlockLength = 0xffff;
-      var deflateBlocks = Math.ceil(len / maxBlockLength);
-      var idat = new Uint8Array(2 + len + deflateBlocks * 5 + 4);
-      var pi = 0;
+      let len = literals.length;
+      const maxBlockLength = 0xffff;
+      const deflateBlocks = Math.ceil(len / maxBlockLength);
+      const idat = new Uint8Array(2 + len + deflateBlocks * 5 + 4);
+      let pi = 0;
       idat[pi++] = 0x78;
       idat[pi++] = 0x9c;
-      var pos = 0;
+      let pos = 0;
 
       while (len > maxBlockLength) {
         idat[pi++] = 0x00;
@@ -21432,7 +21432,7 @@ exports.SVGGraphics = SVGGraphics;
       idat[pi++] = (~len & 0xffff) >> 8 & 0xff;
       idat.set(literals.subarray(pos), pi);
       pi += literals.length - pos;
-      var adler = adler32(literals, 0, literals.length);
+      const adler = adler32(literals, 0, literals.length);
       idat[pi++] = adler >> 24 & 0xff;
       idat[pi++] = adler >> 16 & 0xff;
       idat[pi++] = adler >> 8 & 0xff;
@@ -21441,10 +21441,10 @@ exports.SVGGraphics = SVGGraphics;
     }
 
     function encode(imgData, kind, forceDataSchema, isMask) {
-      var width = imgData.width;
-      var height = imgData.height;
-      var bitDepth, colorType, lineSize;
-      var bytes = imgData.data;
+      const width = imgData.width;
+      const height = imgData.height;
+      let bitDepth, colorType, lineSize;
+      const bytes = imgData.data;
 
       switch (kind) {
         case _util.ImageKind.GRAYSCALE_1BPP:
@@ -21469,11 +21469,11 @@ exports.SVGGraphics = SVGGraphics;
           throw new Error("invalid format");
       }
 
-      var literals = new Uint8Array((1 + lineSize) * height);
-      var offsetLiterals = 0,
+      const literals = new Uint8Array((1 + lineSize) * height);
+      let offsetLiterals = 0,
           offsetBytes = 0;
 
-      for (var y = 0; y < height; ++y) {
+      for (let y = 0; y < height; ++y) {
         literals[offsetLiterals++] = 0;
         literals.set(bytes.subarray(offsetBytes, offsetBytes + lineSize), offsetLiterals);
         offsetBytes += lineSize;
@@ -21483,20 +21483,20 @@ exports.SVGGraphics = SVGGraphics;
       if (kind === _util.ImageKind.GRAYSCALE_1BPP && isMask) {
         offsetLiterals = 0;
 
-        for (var _y = 0; _y < height; _y++) {
+        for (let _y = 0; _y < height; _y++) {
           offsetLiterals++;
 
-          for (var _i3 = 0; _i3 < lineSize; _i3++) {
+          for (let _i3 = 0; _i3 < lineSize; _i3++) {
             literals[offsetLiterals++] ^= 0xff;
           }
         }
       }
 
-      var ihdr = new Uint8Array([width >> 24 & 0xff, width >> 16 & 0xff, width >> 8 & 0xff, width & 0xff, height >> 24 & 0xff, height >> 16 & 0xff, height >> 8 & 0xff, height & 0xff, bitDepth, colorType, 0x00, 0x00, 0x00]);
-      var idat = deflateSync(literals);
-      var pngLength = PNG_HEADER.length + CHUNK_WRAPPER_SIZE * 3 + ihdr.length + idat.length;
-      var data = new Uint8Array(pngLength);
-      var offset = 0;
+      const ihdr = new Uint8Array([width >> 24 & 0xff, width >> 16 & 0xff, width >> 8 & 0xff, width & 0xff, height >> 24 & 0xff, height >> 16 & 0xff, height >> 8 & 0xff, height & 0xff, bitDepth, colorType, 0x00, 0x00, 0x00]);
+      const idat = deflateSync(literals);
+      const pngLength = PNG_HEADER.length + CHUNK_WRAPPER_SIZE * 3 + ihdr.length + idat.length;
+      const data = new Uint8Array(pngLength);
+      let offset = 0;
       data.set(PNG_HEADER, offset);
       offset += PNG_HEADER.length;
       writePngChunk("IHDR", ihdr, data, offset);
@@ -21508,12 +21508,12 @@ exports.SVGGraphics = SVGGraphics;
     }
 
     return function convertImgDataToPng(imgData, forceDataSchema, isMask) {
-      var kind = imgData.kind === undefined ? _util.ImageKind.GRAYSCALE_1BPP : imgData.kind;
+      const kind = imgData.kind === undefined ? _util.ImageKind.GRAYSCALE_1BPP : imgData.kind;
       return encode(imgData, kind, forceDataSchema, isMask);
     };
   }();
 
-  var SVGExtraState = /*#__PURE__*/function () {
+  const SVGExtraState = /*#__PURE__*/function () {
     function SVGExtraState() {
       _classCallCheck(this, SVGExtraState);
 
@@ -21565,13 +21565,13 @@ exports.SVGGraphics = SVGGraphics;
     return SVGExtraState;
   }();
 
-  var clipCount = 0;
-  var maskCount = 0;
-  var shadingCount = 0;
+  let clipCount = 0;
+  let maskCount = 0;
+  let shadingCount = 0;
 
   exports.SVGGraphics = SVGGraphics = /*#__PURE__*/function () {
     function SVGGraphics(commonObjs, objs) {
-      var forceDataSchema = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      const forceDataSchema = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 
       _classCallCheck(this, SVGGraphics);
 
@@ -21590,7 +21590,7 @@ exports.SVGGraphics = SVGGraphics;
       this.forceDataSchema = !!forceDataSchema;
       this._operatorIdMapping = [];
 
-      for (var op in _util.OPS) {
+      for (const op in _util.OPS) {
         this._operatorIdMapping[_util.OPS[op]] = op;
       }
     }
@@ -21599,7 +21599,7 @@ exports.SVGGraphics = SVGGraphics;
       key: "save",
       value: function save() {
         this.transformStack.push(this.transformMatrix);
-        var old = this.current;
+        const old = this.current;
         this.extraStack.push(old);
         this.current = old.clone();
       }
@@ -21621,12 +21621,12 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "loadDependencies",
       value: function loadDependencies(operatorList) {
-        var _this = this;
+        const _this = this;
 
-        var fnArray = operatorList.fnArray;
-        var argsArray = operatorList.argsArray;
+        const fnArray = operatorList.fnArray;
+        const argsArray = operatorList.argsArray;
 
-        for (var i = 0, ii = fnArray.length; i < ii; i++) {
+        for (let i = 0, ii = fnArray.length; i < ii; i++) {
           if (fnArray[i] !== _util.OPS.dependency) {
             continue;
           }
@@ -21635,10 +21635,10 @@ exports.SVGGraphics = SVGGraphics;
               _step2;
 
           try {
-            var _loop = function _loop() {
-              var obj = _step2.value;
-              var objsPool = obj.startsWith("g_") ? _this.commonObjs : _this.objs;
-              var promise = new Promise(function (resolve) {
+            const _loop = function _loop() {
+              const obj = _step2.value;
+              const objsPool = obj.startsWith("g_") ? _this.commonObjs : _this.objs;
+              const promise = new Promise(function (resolve) {
                 objsPool.get(obj, resolve);
               });
 
@@ -21660,18 +21660,18 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "transform",
       value: function transform(a, b, c, d, e, f) {
-        var transformMatrix = [a, b, c, d, e, f];
+        const transformMatrix = [a, b, c, d, e, f];
         this.transformMatrix = _util.Util.transform(this.transformMatrix, transformMatrix);
         this.tgrp = null;
       }
     }, {
       key: "getSVG",
       value: function getSVG(operatorList, viewport) {
-        var _this2 = this;
+        const _this2 = this;
 
         this.viewport = viewport;
 
-        var svgElement = this._initialize(viewport);
+        const svgElement = this._initialize(viewport);
 
         return this.loadDependencies(operatorList).then(function () {
           _this2.transformMatrix = _util.IDENTITY_MATRIX;
@@ -21684,13 +21684,13 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "convertOpList",
       value: function convertOpList(operatorList) {
-        var operatorIdMapping = this._operatorIdMapping;
-        var argsArray = operatorList.argsArray;
-        var fnArray = operatorList.fnArray;
-        var opList = [];
+        const operatorIdMapping = this._operatorIdMapping;
+        const argsArray = operatorList.argsArray;
+        const fnArray = operatorList.fnArray;
+        const opList = [];
 
-        for (var i = 0, ii = fnArray.length; i < ii; i++) {
-          var fnId = fnArray[i];
+        for (let i = 0, ii = fnArray.length; i < ii; i++) {
+          const fnId = fnArray[i];
           opList.push({
             fnId: fnId,
             fn: operatorIdMapping[fnId],
@@ -21703,15 +21703,15 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "executeOpTree",
       value: function executeOpTree(opTree) {
-        var _iterator3 = _createForOfIteratorHelper(opTree),
+        let _iterator3 = _createForOfIteratorHelper(opTree),
             _step3;
 
         try {
           for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-            var opTreeElement = _step3.value;
-            var fn = opTreeElement.fn;
-            var fnId = opTreeElement.fnId;
-            var args = opTreeElement.args;
+            const opTreeElement = _step3.value;
+            const fn = opTreeElement.fn;
+            const fnId = opTreeElement.fnId;
+            const args = opTreeElement.args;
 
             switch (fnId | 0) {
               case _util.OPS.beginText:
@@ -21942,7 +21942,7 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "setTextMatrix",
       value: function setTextMatrix(a, b, c, d, e, f) {
-        var current = this.current;
+        const current = this.current;
         current.textMatrix = current.lineMatrix = [a, b, c, d, e, f];
         current.textMatrixScale = Math.hypot(a, b);
         current.x = current.lineX = 0;
@@ -21959,7 +21959,7 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "beginText",
       value: function beginText() {
-        var current = this.current;
+        const current = this.current;
         current.x = current.lineX = 0;
         current.y = current.lineY = 0;
         current.textMatrix = _util.IDENTITY_MATRIX;
@@ -21974,7 +21974,7 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "moveText",
       value: function moveText(x, y) {
-        var current = this.current;
+        const current = this.current;
         current.x = current.lineX += x;
         current.y = current.lineY += y;
         current.xcoords = [];
@@ -21987,31 +21987,31 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "showText",
       value: function showText(glyphs) {
-        var current = this.current;
-        var font = current.font;
-        var fontSize = current.fontSize;
+        const current = this.current;
+        const font = current.font;
+        const fontSize = current.fontSize;
 
         if (fontSize === 0) {
           return;
         }
 
-        var fontSizeScale = current.fontSizeScale;
-        var charSpacing = current.charSpacing;
-        var wordSpacing = current.wordSpacing;
-        var fontDirection = current.fontDirection;
-        var textHScale = current.textHScale * fontDirection;
-        var vertical = font.vertical;
-        var spacingDir = vertical ? 1 : -1;
-        var defaultVMetrics = font.defaultVMetrics;
-        var widthAdvanceScale = fontSize * current.fontMatrix[0];
-        var x = 0;
+        const fontSizeScale = current.fontSizeScale;
+        const charSpacing = current.charSpacing;
+        const wordSpacing = current.wordSpacing;
+        const fontDirection = current.fontDirection;
+        const textHScale = current.textHScale * fontDirection;
+        const vertical = font.vertical;
+        const spacingDir = vertical ? 1 : -1;
+        const defaultVMetrics = font.defaultVMetrics;
+        const widthAdvanceScale = fontSize * current.fontMatrix[0];
+        let x = 0;
 
-        var _iterator4 = _createForOfIteratorHelper(glyphs),
+        let _iterator4 = _createForOfIteratorHelper(glyphs),
             _step4;
 
         try {
           for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-            var glyph = _step4.value;
+            const glyph = _step4.value;
 
             if (glyph === null) {
               x += fontDirection * wordSpacing;
@@ -22021,18 +22021,18 @@ exports.SVGGraphics = SVGGraphics;
               continue;
             }
 
-            var spacing = (glyph.isSpace ? wordSpacing : 0) + charSpacing;
-            var character = glyph.fontChar;
-            var scaledX = void 0,
+            const spacing = (glyph.isSpace ? wordSpacing : 0) + charSpacing;
+            const character = glyph.fontChar;
+            let scaledX = void 0,
                 scaledY = void 0;
-            var width = glyph.width;
+            let width = glyph.width;
 
             if (vertical) {
-              var vx = void 0;
-              var vmetric = glyph.vmetric || defaultVMetrics;
+              let vx = void 0;
+              const vmetric = glyph.vmetric || defaultVMetrics;
               vx = glyph.vmetric ? vmetric[1] : width * 0.5;
               vx = -vx * widthAdvanceScale;
-              var vy = vmetric[2] * widthAdvanceScale;
+              const vy = vmetric[2] * widthAdvanceScale;
               width = vmetric ? -vmetric[0] : width;
               scaledX = vx / fontSizeScale;
               scaledY = (x + vy) / fontSizeScale;
@@ -22051,7 +22051,7 @@ exports.SVGGraphics = SVGGraphics;
               current.tspan.textContent += character;
             } else {}
 
-            var charWidth = void 0;
+            let charWidth = void 0;
 
             if (vertical) {
               charWidth = width * widthAdvanceScale - spacing * fontDirection;
@@ -22092,7 +22092,7 @@ exports.SVGGraphics = SVGGraphics;
           current.tspan.setAttributeNS(null, "font-weight", current.fontWeight);
         }
 
-        var fillStrokeMode = current.textRenderingMode & _util.TextRenderingMode.FILL_STROKE_MASK;
+        const fillStrokeMode = current.textRenderingMode & _util.TextRenderingMode.FILL_STROKE_MASK;
 
         if (fillStrokeMode === _util.TextRenderingMode.FILL || fillStrokeMode === _util.TextRenderingMode.FILL_STROKE) {
           if (current.fillColor !== SVG_DEFAULTS.fillColor) {
@@ -22109,12 +22109,12 @@ exports.SVGGraphics = SVGGraphics;
         }
 
         if (fillStrokeMode === _util.TextRenderingMode.STROKE || fillStrokeMode === _util.TextRenderingMode.FILL_STROKE) {
-          var lineWidthScale = 1 / (current.textMatrixScale || 1);
+          const lineWidthScale = 1 / (current.textMatrixScale || 1);
 
           this._setStrokeAttributes(current.tspan, lineWidthScale);
         }
 
-        var textMatrix = current.textMatrix;
+        let textMatrix = current.textMatrix;
 
         if (current.textRise !== 0) {
           textMatrix = textMatrix.slice();
@@ -22147,15 +22147,15 @@ exports.SVGGraphics = SVGGraphics;
           this.defs.appendChild(this.cssStyle);
         }
 
-        var url = createObjectURL(fontObj.data, fontObj.mimetype, this.forceDataSchema);
+        const url = createObjectURL(fontObj.data, fontObj.mimetype, this.forceDataSchema);
         this.cssStyle.textContent += "@font-face { font-family: \"".concat(fontObj.loadedName, "\";") + " src: url(".concat(url, "); }\n");
       }
     }, {
       key: "setFont",
       value: function setFont(details) {
-        var current = this.current;
-        var fontObj = this.commonObjs.get(details[0]);
-        var size = details[1];
+        const current = this.current;
+        const fontObj = this.commonObjs.get(details[0]);
+        let size = details[1];
         current.font = fontObj;
 
         if (this.embedFonts && !fontObj.missingFile && !this.embeddedFonts[fontObj.loadedName]) {
@@ -22164,7 +22164,7 @@ exports.SVGGraphics = SVGGraphics;
         }
 
         current.fontMatrix = fontObj.fontMatrix || _util.FONT_IDENTITY_MATRIX;
-        var bold = "normal";
+        let bold = "normal";
 
         if (fontObj.black) {
           bold = "900";
@@ -22172,7 +22172,7 @@ exports.SVGGraphics = SVGGraphics;
           bold = "bold";
         }
 
-        var italic = fontObj.italic ? "italic" : "normal";
+        const italic = fontObj.italic ? "italic" : "normal";
 
         if (size < 0) {
           size = -size;
@@ -22193,9 +22193,9 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "endText",
       value: function endText() {
-        var _current$txtElement;
+        let _current$txtElement;
 
-        var current = this.current;
+        const current = this.current;
 
         if (current.textRenderingMode & _util.TextRenderingMode.ADD_TO_PATH_FLAG && (_current$txtElement = current.txtElement) !== null && _current$txtElement !== void 0 && _current$txtElement.hasChildNodes()) {
           current.element = current.txtElement;
@@ -22261,24 +22261,24 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "shadingFill",
       value: function shadingFill(args) {
-        var width = this.viewport.width;
-        var height = this.viewport.height;
+        const width = this.viewport.width;
+        const height = this.viewport.height;
 
-        var inv = _util.Util.inverseTransform(this.transformMatrix);
+        const inv = _util.Util.inverseTransform(this.transformMatrix);
 
-        var bl = _util.Util.applyTransform([0, 0], inv);
+        const bl = _util.Util.applyTransform([0, 0], inv);
 
-        var br = _util.Util.applyTransform([0, height], inv);
+        const br = _util.Util.applyTransform([0, height], inv);
 
-        var ul = _util.Util.applyTransform([width, 0], inv);
+        const ul = _util.Util.applyTransform([width, 0], inv);
 
-        var ur = _util.Util.applyTransform([width, height], inv);
+        const ur = _util.Util.applyTransform([width, height], inv);
 
-        var x0 = Math.min(bl[0], br[0], ul[0], ur[0]);
-        var y0 = Math.min(bl[1], br[1], ul[1], ur[1]);
-        var x1 = Math.max(bl[0], br[0], ul[0], ur[0]);
-        var y1 = Math.max(bl[1], br[1], ul[1], ur[1]);
-        var rect = this.svgFactory.createElement("svg:rect");
+        const x0 = Math.min(bl[0], br[0], ul[0], ur[0]);
+        const y0 = Math.min(bl[1], br[1], ul[1], ur[1]);
+        const x1 = Math.max(bl[0], br[0], ul[0], ur[0]);
+        const y1 = Math.max(bl[1], br[1], ul[1], ur[1]);
+        const rect = this.svgFactory.createElement("svg:rect");
         rect.setAttributeNS(null, "x", x0);
         rect.setAttributeNS(null, "y", y0);
         rect.setAttributeNS(null, "width", x1 - x0);
@@ -22303,52 +22303,52 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "_makeTilingPattern",
       value: function _makeTilingPattern(args) {
-        var color = args[1];
-        var operatorList = args[2];
-        var matrix = args[3] || _util.IDENTITY_MATRIX;
+        const color = args[1];
+        const operatorList = args[2];
+        const matrix = args[3] || _util.IDENTITY_MATRIX;
 
-        var _args$ = _slicedToArray(args[4], 4),
+        const _args$ = _slicedToArray(args[4], 4),
             x0 = _args$[0],
             y0 = _args$[1],
             x1 = _args$[2],
             y1 = _args$[3];
 
-        var xstep = args[5];
-        var ystep = args[6];
-        var paintType = args[7];
-        var tilingId = "shading".concat(shadingCount++);
+        const xstep = args[5];
+        const ystep = args[6];
+        const paintType = args[7];
+        const tilingId = "shading".concat(shadingCount++);
 
-        var _Util$normalizeRect = _util.Util.normalizeRect([].concat(_toConsumableArray(_util.Util.applyTransform([x0, y0], matrix)), _toConsumableArray(_util.Util.applyTransform([x1, y1], matrix)))),
+        const _Util$normalizeRect = _util.Util.normalizeRect([].concat(_toConsumableArray(_util.Util.applyTransform([x0, y0], matrix)), _toConsumableArray(_util.Util.applyTransform([x1, y1], matrix)))),
             _Util$normalizeRect2 = _slicedToArray(_Util$normalizeRect, 4),
             tx0 = _Util$normalizeRect2[0],
             ty0 = _Util$normalizeRect2[1],
             tx1 = _Util$normalizeRect2[2],
             ty1 = _Util$normalizeRect2[3];
 
-        var _Util$singularValueDe = _util.Util.singularValueDecompose2dScale(matrix),
+        const _Util$singularValueDe = _util.Util.singularValueDecompose2dScale(matrix),
             _Util$singularValueDe2 = _slicedToArray(_Util$singularValueDe, 2),
             xscale = _Util$singularValueDe2[0],
             yscale = _Util$singularValueDe2[1];
 
-        var txstep = xstep * xscale;
-        var tystep = ystep * yscale;
-        var tiling = this.svgFactory.createElement("svg:pattern");
+        const txstep = xstep * xscale;
+        const tystep = ystep * yscale;
+        const tiling = this.svgFactory.createElement("svg:pattern");
         tiling.setAttributeNS(null, "id", tilingId);
         tiling.setAttributeNS(null, "patternUnits", "userSpaceOnUse");
         tiling.setAttributeNS(null, "width", txstep);
         tiling.setAttributeNS(null, "height", tystep);
         tiling.setAttributeNS(null, "x", "".concat(tx0));
         tiling.setAttributeNS(null, "y", "".concat(ty0));
-        var svg = this.svg;
-        var transformMatrix = this.transformMatrix;
-        var fillColor = this.current.fillColor;
-        var strokeColor = this.current.strokeColor;
-        var bbox = this.svgFactory.create(tx1 - tx0, ty1 - ty0);
+        const svg = this.svg;
+        const transformMatrix = this.transformMatrix;
+        const fillColor = this.current.fillColor;
+        const strokeColor = this.current.strokeColor;
+        const bbox = this.svgFactory.create(tx1 - tx0, ty1 - ty0);
         this.svg = bbox;
         this.transformMatrix = matrix;
 
         if (paintType === 2) {
-          var cssColor = _util.Util.makeHexColor.apply(_util.Util, _toConsumableArray(color));
+          const cssColor = _util.Util.makeHexColor.apply(_util.Util, _toConsumableArray(color));
 
           this.current.fillColor = cssColor;
           this.current.strokeColor = cssColor;
@@ -22414,8 +22414,8 @@ exports.SVGGraphics = SVGGraphics;
 
             try {
               for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-                var colorStop = _step5.value;
-                var stop = this.svgFactory.createElement("svg:stop");
+                const colorStop = _step5.value;
+                const stop = this.svgFactory.createElement("svg:stop");
                 stop.setAttributeNS(null, "offset", colorStop[0]);
                 stop.setAttributeNS(null, "stop-color", colorStop[1]);
                 gradient.appendChild(stop);
@@ -22449,18 +22449,18 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "constructPath",
       value: function constructPath(ops, args) {
-        var current = this.current;
-        var x = current.x,
+        const current = this.current;
+        let x = current.x,
             y = current.y;
-        var d = [];
-        var j = 0;
+        let d = [];
+        let j = 0;
 
-        var _iterator6 = _createForOfIteratorHelper(ops),
+        let _iterator6 = _createForOfIteratorHelper(ops),
             _step6;
 
         try {
           for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
-            var op = _step6.value;
+            const op = _step6.value;
 
             switch (op | 0) {
               case _util.OPS.rectangle:
@@ -22535,7 +22535,7 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "endPath",
       value: function endPath() {
-        var current = this.current;
+        const current = this.current;
         current.path = null;
 
         if (!this.pendingClip) {
@@ -22547,11 +22547,11 @@ exports.SVGGraphics = SVGGraphics;
           return;
         }
 
-        var clipId = "clippath".concat(clipCount++);
-        var clipPath = this.svgFactory.createElement("svg:clipPath");
+        const clipId = "clippath".concat(clipCount++);
+        const clipPath = this.svgFactory.createElement("svg:clipPath");
         clipPath.setAttributeNS(null, "id", clipId);
         clipPath.setAttributeNS(null, "transform", pm(this.transformMatrix));
-        var clipElement = current.element.cloneNode(true);
+        const clipElement = current.element.cloneNode(true);
 
         if (this.pendingClip === "evenodd") {
           clipElement.setAttributeNS(null, "clip-rule", "evenodd");
@@ -22566,12 +22566,12 @@ exports.SVGGraphics = SVGGraphics;
         if (current.activeClipUrl) {
           current.clipGroup = null;
 
-          var _iterator7 = _createForOfIteratorHelper(this.extraStack),
+          let _iterator7 = _createForOfIteratorHelper(this.extraStack),
               _step7;
 
           try {
             for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
-              var prev = _step7.value;
+              const prev = _step7.value;
               prev.clipGroup = null;
             }
           } catch (err) {
@@ -22594,10 +22594,10 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "closePath",
       value: function closePath() {
-        var current = this.current;
+        const current = this.current;
 
         if (current.path) {
-          var d = "".concat(current.path.getAttributeNS(null, "d"), "Z");
+          const d = "".concat(current.path.getAttributeNS(null, "d"), "Z");
           current.path.setAttributeNS(null, "d", d);
         }
       }
@@ -22630,12 +22630,12 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "setGState",
       value: function setGState(states) {
-        var _iterator8 = _createForOfIteratorHelper(states),
+        let _iterator8 = _createForOfIteratorHelper(states),
             _step8;
 
         try {
           for (_iterator8.s(); !(_step8 = _iterator8.n()).done;) {
-            var _step8$value = _slicedToArray(_step8.value, 2),
+            const _step8$value = _slicedToArray(_step8.value, 2),
                 key = _step8$value[0],
                 value = _step8$value[1];
 
@@ -22694,7 +22694,7 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "fill",
       value: function fill() {
-        var current = this.current;
+        const current = this.current;
 
         if (current.element) {
           current.element.setAttributeNS(null, "fill", current.fillColor);
@@ -22705,7 +22705,7 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "stroke",
       value: function stroke() {
-        var current = this.current;
+        const current = this.current;
 
         if (current.element) {
           this._setStrokeAttributes(current.element);
@@ -22717,9 +22717,9 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "_setStrokeAttributes",
       value: function _setStrokeAttributes(element) {
-        var lineWidthScale = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-        var current = this.current;
-        var dashArray = current.dashArray;
+        const lineWidthScale = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+        const current = this.current;
+        let dashArray = current.dashArray;
 
         if (lineWidthScale !== 1 && dashArray.length > 0) {
           dashArray = dashArray.map(function (value) {
@@ -22781,7 +22781,7 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "paintSolidColorImageMask",
       value: function paintSolidColorImageMask() {
-        var rect = this.svgFactory.createElement("svg:rect");
+        const rect = this.svgFactory.createElement("svg:rect");
         rect.setAttributeNS(null, "x", "0");
         rect.setAttributeNS(null, "y", "0");
         rect.setAttributeNS(null, "width", "1px");
@@ -22793,7 +22793,7 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "paintImageXObject",
       value: function paintImageXObject(objId) {
-        var imgData = objId.startsWith("g_") ? this.commonObjs.get(objId) : this.objs.get(objId);
+        const imgData = objId.startsWith("g_") ? this.commonObjs.get(objId) : this.objs.get(objId);
 
         if (!imgData) {
           (0, _util.warn)("Dependent image with object ID ".concat(objId, " is not ready yet"));
@@ -22805,17 +22805,17 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "paintInlineImageXObject",
       value: function paintInlineImageXObject(imgData, mask) {
-        var width = imgData.width;
-        var height = imgData.height;
-        var imgSrc = convertImgDataToPng(imgData, this.forceDataSchema, !!mask);
-        var cliprect = this.svgFactory.createElement("svg:rect");
+        const width = imgData.width;
+        const height = imgData.height;
+        const imgSrc = convertImgDataToPng(imgData, this.forceDataSchema, !!mask);
+        const cliprect = this.svgFactory.createElement("svg:rect");
         cliprect.setAttributeNS(null, "x", "0");
         cliprect.setAttributeNS(null, "y", "0");
         cliprect.setAttributeNS(null, "width", pf(width));
         cliprect.setAttributeNS(null, "height", pf(height));
         this.current.element = cliprect;
         this.clip("nonzero");
-        var imgEl = this.svgFactory.createElement("svg:image");
+        const imgEl = this.svgFactory.createElement("svg:image");
         imgEl.setAttributeNS(XLINK_NS, "xlink:href", imgSrc);
         imgEl.setAttributeNS(null, "x", "0");
         imgEl.setAttributeNS(null, "y", pf(-height));
@@ -22832,14 +22832,14 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "paintImageMaskXObject",
       value: function paintImageMaskXObject(imgData) {
-        var current = this.current;
-        var width = imgData.width;
-        var height = imgData.height;
-        var fillColor = current.fillColor;
+        const current = this.current;
+        const width = imgData.width;
+        const height = imgData.height;
+        const fillColor = current.fillColor;
         current.maskId = "mask".concat(maskCount++);
-        var mask = this.svgFactory.createElement("svg:mask");
+        const mask = this.svgFactory.createElement("svg:mask");
         mask.setAttributeNS(null, "id", current.maskId);
-        var rect = this.svgFactory.createElement("svg:rect");
+        const rect = this.svgFactory.createElement("svg:rect");
         rect.setAttributeNS(null, "x", "0");
         rect.setAttributeNS(null, "y", "0");
         rect.setAttributeNS(null, "width", pf(width));
@@ -22860,9 +22860,9 @@ exports.SVGGraphics = SVGGraphics;
         }
 
         if (bbox) {
-          var width = bbox[2] - bbox[0];
-          var height = bbox[3] - bbox[1];
-          var cliprect = this.svgFactory.createElement("svg:rect");
+          const width = bbox[2] - bbox[0];
+          const height = bbox[3] - bbox[1];
+          const cliprect = this.svgFactory.createElement("svg:rect");
           cliprect.setAttributeNS(null, "x", bbox[0]);
           cliprect.setAttributeNS(null, "y", bbox[1]);
           cliprect.setAttributeNS(null, "width", pf(width));
@@ -22878,11 +22878,11 @@ exports.SVGGraphics = SVGGraphics;
     }, {
       key: "_initialize",
       value: function _initialize(viewport) {
-        var svg = this.svgFactory.create(viewport.width, viewport.height);
-        var definitions = this.svgFactory.createElement("svg:defs");
+        const svg = this.svgFactory.create(viewport.width, viewport.height);
+        const definitions = this.svgFactory.createElement("svg:defs");
         svg.appendChild(definitions);
         this.defs = definitions;
-        var rootGroup = this.svgFactory.createElement("svg:g");
+        const rootGroup = this.svgFactory.createElement("svg:g");
         rootGroup.setAttributeNS(null, "transform", pm(viewport.transform));
         svg.appendChild(rootGroup);
         this.svg = rootGroup;
@@ -22892,7 +22892,7 @@ exports.SVGGraphics = SVGGraphics;
       key: "_ensureClipGroup",
       value: function _ensureClipGroup() {
         if (!this.current.clipGroup) {
-          var clipGroup = this.svgFactory.createElement("svg:g");
+          const clipGroup = this.svgFactory.createElement("svg:g");
           clipGroup.setAttributeNS(null, "clip-path", this.current.activeClipUrl);
           this.svg.appendChild(clipGroup);
           this.current.clipGroup = clipGroup;
@@ -22936,11 +22936,11 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.PDFNodeStream = void 0;
 
-var _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
+const _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
-var _network_utils = __w_pdfjs_require__(179);
+const _network_utils = __w_pdfjs_require__(179);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -22948,7 +22948,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { const hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { let Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { const NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 
@@ -22960,34 +22960,34 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _asyncToGenerator(fn) { return function () { const self = this, args = arguments; return new Promise(function (resolve, reject) { const gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 ;
 
-var fs = require("fs");
+const fs = require("fs");
 
-var http = require("http");
+const http = require("http");
 
-var https = require("https");
+const https = require("https");
 
-var url = require("url");
+const url = require("url");
 
-var fileUriRegex = /^file:\/\/\/[a-zA-Z]:\//;
+const fileUriRegex = /^file:\/\/\/[a-zA-Z]:\//;
 
 function parseUrl(sourceUrl) {
-  var parsedUrl = url.parse(sourceUrl);
+  const parsedUrl = url.parse(sourceUrl);
 
   if (parsedUrl.protocol === "file:" || parsedUrl.host) {
     return parsedUrl;
@@ -23004,7 +23004,7 @@ function parseUrl(sourceUrl) {
   return parsedUrl;
 }
 
-var PDFNodeStream = /*#__PURE__*/function () {
+const PDFNodeStream = /*#__PURE__*/function () {
   function PDFNodeStream(source) {
     _classCallCheck(this, PDFNodeStream);
 
@@ -23020,7 +23020,7 @@ var PDFNodeStream = /*#__PURE__*/function () {
   _createClass(PDFNodeStream, [{
     key: "_progressiveDataLength",
     get: function get() {
-      var _this$_fullRequestRea, _this$_fullRequestRea2;
+      let _this$_fullRequestRea, _this$_fullRequestRea2;
 
       return (_this$_fullRequestRea = (_this$_fullRequestRea2 = this._fullRequestReader) === null || _this$_fullRequestRea2 === void 0 ? void 0 : _this$_fullRequestRea2._loaded) !== null && _this$_fullRequestRea !== void 0 ? _this$_fullRequestRea : 0;
     }
@@ -23038,7 +23038,7 @@ var PDFNodeStream = /*#__PURE__*/function () {
         return null;
       }
 
-      var rangeReader = this.isFsUrl ? new PDFNodeStreamFsRangeReader(this, start, end) : new PDFNodeStreamRangeReader(this, start, end);
+      const rangeReader = this.isFsUrl ? new PDFNodeStreamFsRangeReader(this, start, end) : new PDFNodeStreamRangeReader(this, start, end);
 
       this._rangeRequestReaders.push(rangeReader);
 
@@ -23051,12 +23051,12 @@ var PDFNodeStream = /*#__PURE__*/function () {
         this._fullRequestReader.cancel(reason);
       }
 
-      var _iterator = _createForOfIteratorHelper(this._rangeRequestReaders.slice(0)),
+      let _iterator = _createForOfIteratorHelper(this._rangeRequestReaders.slice(0)),
           _step;
 
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var reader = _step.value;
+          const reader = _step.value;
           reader.cancel(reason);
         }
       } catch (err) {
@@ -23072,7 +23072,7 @@ var PDFNodeStream = /*#__PURE__*/function () {
 
 exports.PDFNodeStream = PDFNodeStream;
 
-var BaseFullReader = /*#__PURE__*/function () {
+const BaseFullReader = /*#__PURE__*/function () {
   function BaseFullReader(stream) {
     _classCallCheck(this, BaseFullReader);
 
@@ -23080,7 +23080,7 @@ var BaseFullReader = /*#__PURE__*/function () {
     this._done = false;
     this._storedError = null;
     this.onProgress = null;
-    var source = stream.source;
+    const source = stream.source;
     this._contentLength = source.length;
     this._loaded = 0;
     this._filename = null;
@@ -23126,8 +23126,8 @@ var BaseFullReader = /*#__PURE__*/function () {
   }, {
     key: "read",
     value: function () {
-      var _read = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
-        var chunk, buffer;
+      const _read = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
+        let chunk, buffer;
         return _regenerator["default"].wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -23216,7 +23216,7 @@ var BaseFullReader = /*#__PURE__*/function () {
   }, {
     key: "_setReadableStream",
     value: function _setReadableStream(readableStream) {
-      var _this = this;
+      const _this = this;
 
       this._readableStream = readableStream;
       readableStream.on("readable", function () {
@@ -23245,7 +23245,7 @@ var BaseFullReader = /*#__PURE__*/function () {
   return BaseFullReader;
 }();
 
-var BaseRangeReader = /*#__PURE__*/function () {
+const BaseRangeReader = /*#__PURE__*/function () {
   function BaseRangeReader(stream) {
     _classCallCheck(this, BaseRangeReader);
 
@@ -23256,7 +23256,7 @@ var BaseRangeReader = /*#__PURE__*/function () {
     this._loaded = 0;
     this._readableStream = null;
     this._readCapability = (0, _util.createPromiseCapability)();
-    var source = stream.source;
+    const source = stream.source;
     this._isStreamingSupported = !source.disableStream;
   }
 
@@ -23268,8 +23268,8 @@ var BaseRangeReader = /*#__PURE__*/function () {
   }, {
     key: "read",
     value: function () {
-      var _read2 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee2() {
-        var chunk, buffer;
+      const _read2 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee2() {
+        let chunk, buffer;
         return _regenerator["default"].wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -23357,7 +23357,7 @@ var BaseRangeReader = /*#__PURE__*/function () {
   }, {
     key: "_setReadableStream",
     value: function _setReadableStream(readableStream) {
-      var _this2 = this;
+      const _this2 = this;
 
       this._readableStream = readableStream;
       readableStream.on("readable", function () {
@@ -23397,18 +23397,18 @@ function createRequestOptions(parsedUrl, headers) {
 var PDFNodeStreamFullReader = /*#__PURE__*/function (_BaseFullReader) {
   _inherits(PDFNodeStreamFullReader, _BaseFullReader);
 
-  var _super = _createSuper(PDFNodeStreamFullReader);
+  const _super = _createSuper(PDFNodeStreamFullReader);
 
   function PDFNodeStreamFullReader(stream) {
-    var _this3;
+    let _this3;
 
     _classCallCheck(this, PDFNodeStreamFullReader);
 
     _this3 = _super.call(this, stream);
 
-    var handleResponse = function handleResponse(response) {
+    const handleResponse = function handleResponse(response) {
       if (response.statusCode === 404) {
-        var error = new _util.MissingPDFException("Missing PDF \"".concat(_this3._url, "\"."));
+        const error = new _util.MissingPDFException("Missing PDF \"".concat(_this3._url, "\"."));
         _this3._storedError = error;
 
         _this3._headersCapability.reject(error);
@@ -23420,11 +23420,11 @@ var PDFNodeStreamFullReader = /*#__PURE__*/function (_BaseFullReader) {
 
       _this3._setReadableStream(response);
 
-      var getResponseHeader = function getResponseHeader(name) {
+      const getResponseHeader = function getResponseHeader(name) {
         return _this3._readableStream.headers[name.toLowerCase()];
       };
 
-      var _validateRangeRequest = (0, _network_utils.validateRangeRequestCapabilities)({
+      const _validateRangeRequest = (0, _network_utils.validateRangeRequestCapabilities)({
         getResponseHeader: getResponseHeader,
         isHttp: stream.isHttp,
         rangeChunkSize: _this3._rangeChunkSize,
@@ -23463,18 +23463,18 @@ var PDFNodeStreamFullReader = /*#__PURE__*/function (_BaseFullReader) {
 var PDFNodeStreamRangeReader = /*#__PURE__*/function (_BaseRangeReader) {
   _inherits(PDFNodeStreamRangeReader, _BaseRangeReader);
 
-  var _super2 = _createSuper(PDFNodeStreamRangeReader);
+  const _super2 = _createSuper(PDFNodeStreamRangeReader);
 
   function PDFNodeStreamRangeReader(stream, start, end) {
-    var _this4;
+    let _this4;
 
     _classCallCheck(this, PDFNodeStreamRangeReader);
 
     _this4 = _super2.call(this, stream);
     _this4._httpHeaders = {};
 
-    for (var property in stream.httpHeaders) {
-      var value = stream.httpHeaders[property];
+    for (const property in stream.httpHeaders) {
+      const value = stream.httpHeaders[property];
 
       if (typeof value === "undefined") {
         continue;
@@ -23485,9 +23485,9 @@ var PDFNodeStreamRangeReader = /*#__PURE__*/function (_BaseRangeReader) {
 
     _this4._httpHeaders.Range = "bytes=".concat(start, "-").concat(end - 1);
 
-    var handleResponse = function handleResponse(response) {
+    const handleResponse = function handleResponse(response) {
       if (response.statusCode === 404) {
-        var error = new _util.MissingPDFException("Missing PDF \"".concat(_this4._url, "\"."));
+        const error = new _util.MissingPDFException("Missing PDF \"".concat(_this4._url, "\"."));
         _this4._storedError = error;
         return;
       }
@@ -23518,15 +23518,15 @@ var PDFNodeStreamRangeReader = /*#__PURE__*/function (_BaseRangeReader) {
 var PDFNodeStreamFsFullReader = /*#__PURE__*/function (_BaseFullReader2) {
   _inherits(PDFNodeStreamFsFullReader, _BaseFullReader2);
 
-  var _super3 = _createSuper(PDFNodeStreamFsFullReader);
+  const _super3 = _createSuper(PDFNodeStreamFsFullReader);
 
   function PDFNodeStreamFsFullReader(stream) {
-    var _this5;
+    let _this5;
 
     _classCallCheck(this, PDFNodeStreamFsFullReader);
 
     _this5 = _super3.call(this, stream);
-    var path = decodeURIComponent(_this5._url.path);
+    let path = decodeURIComponent(_this5._url.path);
 
     if (fileUriRegex.test(_this5._url.href)) {
       path = path.replace(/^\//, "");
@@ -23560,15 +23560,15 @@ var PDFNodeStreamFsFullReader = /*#__PURE__*/function (_BaseFullReader2) {
 var PDFNodeStreamFsRangeReader = /*#__PURE__*/function (_BaseRangeReader2) {
   _inherits(PDFNodeStreamFsRangeReader, _BaseRangeReader2);
 
-  var _super4 = _createSuper(PDFNodeStreamFsRangeReader);
+  const _super4 = _createSuper(PDFNodeStreamFsRangeReader);
 
   function PDFNodeStreamFsRangeReader(stream, start, end) {
-    var _this6;
+    let _this6;
 
     _classCallCheck(this, PDFNodeStreamFsRangeReader);
 
     _this6 = _super4.call(this, stream);
-    var path = decodeURIComponent(_this6._url.path);
+    let path = decodeURIComponent(_this6._url.path);
 
     if (fileUriRegex.test(_this6._url.href)) {
       path = path.replace(/^\//, "");
@@ -23600,22 +23600,22 @@ exports.extractFilenameFromHeader = extractFilenameFromHeader;
 exports.validateRangeRequestCapabilities = validateRangeRequestCapabilities;
 exports.validateResponseStatus = validateResponseStatus;
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
-var _content_disposition = __w_pdfjs_require__(180);
+const _content_disposition = __w_pdfjs_require__(180);
 
-var _display_utils = __w_pdfjs_require__(158);
+const _display_utils = __w_pdfjs_require__(158);
 
 function validateRangeRequestCapabilities(_ref) {
-  var getResponseHeader = _ref.getResponseHeader,
+  const getResponseHeader = _ref.getResponseHeader,
       isHttp = _ref.isHttp,
       rangeChunkSize = _ref.rangeChunkSize,
       disableRange = _ref.disableRange;
-  var returnValues = {
+  const returnValues = {
     allowRangeRequests: false,
     suggestedLength: undefined
   };
-  var length = parseInt(getResponseHeader("Content-Length"), 10);
+  const length = parseInt(getResponseHeader("Content-Length"), 10);
 
   if (!Number.isInteger(length)) {
     return returnValues;
@@ -23635,7 +23635,7 @@ function validateRangeRequestCapabilities(_ref) {
     return returnValues;
   }
 
-  var contentEncoding = getResponseHeader("Content-Encoding") || "identity";
+  const contentEncoding = getResponseHeader("Content-Encoding") || "identity";
 
   if (contentEncoding !== "identity") {
     return returnValues;
@@ -23646,10 +23646,10 @@ function validateRangeRequestCapabilities(_ref) {
 }
 
 function extractFilenameFromHeader(getResponseHeader) {
-  var contentDisposition = getResponseHeader("Content-Disposition");
+  const contentDisposition = getResponseHeader("Content-Disposition");
 
   if (contentDisposition) {
-    var filename = (0, _content_disposition.getFilenameFromContentDispositionHeader)(contentDisposition);
+    let filename = (0, _content_disposition.getFilenameFromContentDispositionHeader)(contentDisposition);
 
     if (filename.includes("%")) {
       try {
@@ -23689,27 +23689,27 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.getFilenameFromContentDispositionHeader = getFilenameFromContentDispositionHeader;
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { let _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; const _arr = []; let _n = true; let _d = false; let _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function getFilenameFromContentDispositionHeader(contentDisposition) {
-  var needsEncodingFixup = true;
-  var tmp = toParamRegExp("filename\\*", "i").exec(contentDisposition);
+  let needsEncodingFixup = true;
+  let tmp = toParamRegExp("filename\\*", "i").exec(contentDisposition);
 
   if (tmp) {
     tmp = tmp[1];
-    var filename = rfc2616unquote(tmp);
+    let filename = rfc2616unquote(tmp);
     filename = unescape(filename);
     filename = rfc5987decode(filename);
     filename = rfc2047decode(filename);
@@ -23719,7 +23719,7 @@ function getFilenameFromContentDispositionHeader(contentDisposition) {
   tmp = rfc2231getparam(contentDisposition);
 
   if (tmp) {
-    var _filename = rfc2047decode(tmp);
+    const _filename = rfc2047decode(tmp);
 
     return fixupEncoding(_filename);
   }
@@ -23729,7 +23729,7 @@ function getFilenameFromContentDispositionHeader(contentDisposition) {
   if (tmp) {
     tmp = tmp[1];
 
-    var _filename2 = rfc2616unquote(tmp);
+    let _filename2 = rfc2616unquote(tmp);
 
     _filename2 = rfc2047decode(_filename2);
     return fixupEncoding(_filename2);
@@ -23746,10 +23746,10 @@ function getFilenameFromContentDispositionHeader(contentDisposition) {
       }
 
       try {
-        var decoder = new TextDecoder(encoding, {
+        const decoder = new TextDecoder(encoding, {
           fatal: true
         });
-        var buffer = (0, _util.stringToBytes)(value);
+        const buffer = (0, _util.stringToBytes)(value);
         value = decoder.decode(buffer);
         needsEncodingFixup = false;
       } catch (e) {}
@@ -23771,12 +23771,12 @@ function getFilenameFromContentDispositionHeader(contentDisposition) {
   }
 
   function rfc2231getparam(contentDispositionStr) {
-    var matches = [];
-    var match;
-    var iter = toParamRegExp("filename\\*((?!0\\d)\\d+)(\\*?)", "ig");
+    const matches = [];
+    let match;
+    const iter = toParamRegExp("filename\\*((?!0\\d)\\d+)(\\*?)", "ig");
 
     while ((match = iter.exec(contentDispositionStr)) !== null) {
-      var _match = match,
+      let _match = match,
           _match2 = _slicedToArray(_match, 4),
           n = _match2[1],
           quot = _match2[2],
@@ -23795,14 +23795,14 @@ function getFilenameFromContentDispositionHeader(contentDisposition) {
       matches[n] = [quot, part];
     }
 
-    var parts = [];
+    const parts = [];
 
-    for (var _n2 = 0; _n2 < matches.length; ++_n2) {
+    for (let _n2 = 0; _n2 < matches.length; ++_n2) {
       if (!(_n2 in matches)) {
         break;
       }
 
-      var _matches$_n = _slicedToArray(matches[_n2], 2),
+      let _matches$_n = _slicedToArray(matches[_n2], 2),
           _quot = _matches$_n[0],
           _part = _matches$_n[1];
 
@@ -23824,10 +23824,10 @@ function getFilenameFromContentDispositionHeader(contentDisposition) {
 
   function rfc2616unquote(value) {
     if (value.startsWith('"')) {
-      var parts = value.slice(1).split('\\"');
+      const parts = value.slice(1).split('\\"');
 
-      for (var i = 0; i < parts.length; ++i) {
-        var quotindex = parts[i].indexOf('"');
+      for (let i = 0; i < parts.length; ++i) {
+        const quotindex = parts[i].indexOf('"');
 
         if (quotindex !== -1) {
           parts[i] = parts[i].slice(0, quotindex);
@@ -23844,15 +23844,15 @@ function getFilenameFromContentDispositionHeader(contentDisposition) {
   }
 
   function rfc5987decode(extvalue) {
-    var encodingend = extvalue.indexOf("'");
+    const encodingend = extvalue.indexOf("'");
 
     if (encodingend === -1) {
       return extvalue;
     }
 
-    var encoding = extvalue.slice(0, encodingend);
-    var langvalue = extvalue.slice(encodingend + 1);
-    var value = langvalue.replace(/^[^']*'/, "");
+    const encoding = extvalue.slice(0, encodingend);
+    const langvalue = extvalue.slice(encodingend + 1);
+    const value = langvalue.replace(/^[^']*'/, "");
     return textdecode(encoding, value);
   }
 
@@ -23893,48 +23893,48 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.PDFNetworkStream = void 0;
 
-var _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
+const _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
-var _network_utils = __w_pdfjs_require__(179);
+const _network_utils = __w_pdfjs_require__(179);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _asyncToGenerator(fn) { return function () { const self = this, args = arguments; return new Promise(function (resolve, reject) { const gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 ;
-var OK_RESPONSE = 200;
-var PARTIAL_CONTENT_RESPONSE = 206;
+const OK_RESPONSE = 200;
+const PARTIAL_CONTENT_RESPONSE = 206;
 
 function getArrayBuffer(xhr) {
-  var data = xhr.response;
+  const data = xhr.response;
 
   if (typeof data !== "string") {
     return data;
   }
 
-  var array = (0, _util.stringToBytes)(data);
+  const array = (0, _util.stringToBytes)(data);
   return array.buffer;
 }
 
-var NetworkManager = /*#__PURE__*/function () {
+const NetworkManager = /*#__PURE__*/function () {
   function NetworkManager(url) {
-    var args = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    const args = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
     _classCallCheck(this, NetworkManager);
 
@@ -23954,12 +23954,12 @@ var NetworkManager = /*#__PURE__*/function () {
   _createClass(NetworkManager, [{
     key: "requestRange",
     value: function requestRange(begin, end, listeners) {
-      var args = {
+      const args = {
         begin: begin,
         end: end
       };
 
-      for (var prop in listeners) {
+      for (const prop in listeners) {
         args[prop] = listeners[prop];
       }
 
@@ -23973,16 +23973,16 @@ var NetworkManager = /*#__PURE__*/function () {
   }, {
     key: "request",
     value: function request(args) {
-      var xhr = this.getXhr();
-      var xhrId = this.currXhrId++;
-      var pendingRequest = this.pendingRequests[xhrId] = {
+      const xhr = this.getXhr();
+      const xhrId = this.currXhrId++;
+      const pendingRequest = this.pendingRequests[xhrId] = {
         xhr: xhr
       };
       xhr.open("GET", this.url);
       xhr.withCredentials = this.withCredentials;
 
-      for (var property in this.httpHeaders) {
-        var value = this.httpHeaders[property];
+      for (const property in this.httpHeaders) {
+        const value = this.httpHeaders[property];
 
         if (typeof value === "undefined") {
           continue;
@@ -24018,9 +24018,9 @@ var NetworkManager = /*#__PURE__*/function () {
   }, {
     key: "onProgress",
     value: function onProgress(xhrId, evt) {
-      var _pendingRequest$onPro;
+      let _pendingRequest$onPro;
 
-      var pendingRequest = this.pendingRequests[xhrId];
+      const pendingRequest = this.pendingRequests[xhrId];
 
       if (!pendingRequest) {
         return;
@@ -24031,13 +24031,13 @@ var NetworkManager = /*#__PURE__*/function () {
   }, {
     key: "onStateChange",
     value: function onStateChange(xhrId, evt) {
-      var pendingRequest = this.pendingRequests[xhrId];
+      const pendingRequest = this.pendingRequests[xhrId];
 
       if (!pendingRequest) {
         return;
       }
 
-      var xhr = pendingRequest.xhr;
+      const xhr = pendingRequest.xhr;
 
       if (xhr.readyState >= 2 && pendingRequest.onHeadersReceived) {
         pendingRequest.onHeadersReceived();
@@ -24055,27 +24055,27 @@ var NetworkManager = /*#__PURE__*/function () {
       delete this.pendingRequests[xhrId];
 
       if (xhr.status === 0 && this.isHttp) {
-        var _pendingRequest$onErr;
+        let _pendingRequest$onErr;
 
         (_pendingRequest$onErr = pendingRequest.onError) === null || _pendingRequest$onErr === void 0 ? void 0 : _pendingRequest$onErr.call(pendingRequest, xhr.status);
         return;
       }
 
-      var xhrStatus = xhr.status || OK_RESPONSE;
-      var ok_response_on_range_request = xhrStatus === OK_RESPONSE && pendingRequest.expectedStatus === PARTIAL_CONTENT_RESPONSE;
+      const xhrStatus = xhr.status || OK_RESPONSE;
+      const ok_response_on_range_request = xhrStatus === OK_RESPONSE && pendingRequest.expectedStatus === PARTIAL_CONTENT_RESPONSE;
 
       if (!ok_response_on_range_request && xhrStatus !== pendingRequest.expectedStatus) {
-        var _pendingRequest$onErr2;
+        let _pendingRequest$onErr2;
 
         (_pendingRequest$onErr2 = pendingRequest.onError) === null || _pendingRequest$onErr2 === void 0 ? void 0 : _pendingRequest$onErr2.call(pendingRequest, xhr.status);
         return;
       }
 
-      var chunk = getArrayBuffer(xhr);
+      const chunk = getArrayBuffer(xhr);
 
       if (xhrStatus === PARTIAL_CONTENT_RESPONSE) {
-        var rangeHeader = xhr.getResponseHeader("Content-Range");
-        var matches = /bytes (\d+)-(\d+)\/(\d+)/.exec(rangeHeader);
+        const rangeHeader = xhr.getResponseHeader("Content-Range");
+        const matches = /bytes (\d+)-(\d+)\/(\d+)/.exec(rangeHeader);
         pendingRequest.onDone({
           begin: parseInt(matches[1], 10),
           chunk: chunk
@@ -24086,7 +24086,7 @@ var NetworkManager = /*#__PURE__*/function () {
           chunk: chunk
         });
       } else {
-        var _pendingRequest$onErr3;
+        let _pendingRequest$onErr3;
 
         (_pendingRequest$onErr3 = pendingRequest.onError) === null || _pendingRequest$onErr3 === void 0 ? void 0 : _pendingRequest$onErr3.call(pendingRequest, xhr.status);
       }
@@ -24104,7 +24104,7 @@ var NetworkManager = /*#__PURE__*/function () {
   }, {
     key: "abortRequest",
     value: function abortRequest(xhrId) {
-      var xhr = this.pendingRequests[xhrId].xhr;
+      const xhr = this.pendingRequests[xhrId].xhr;
       delete this.pendingRequests[xhrId];
       xhr.abort();
     }
@@ -24113,7 +24113,7 @@ var NetworkManager = /*#__PURE__*/function () {
   return NetworkManager;
 }();
 
-var PDFNetworkStream = /*#__PURE__*/function () {
+const PDFNetworkStream = /*#__PURE__*/function () {
   function PDFNetworkStream(source) {
     _classCallCheck(this, PDFNetworkStream);
 
@@ -24130,7 +24130,7 @@ var PDFNetworkStream = /*#__PURE__*/function () {
   _createClass(PDFNetworkStream, [{
     key: "_onRangeRequestReaderClosed",
     value: function _onRangeRequestReaderClosed(reader) {
-      var i = this._rangeRequestReaders.indexOf(reader);
+      const i = this._rangeRequestReaders.indexOf(reader);
 
       if (i >= 0) {
         this._rangeRequestReaders.splice(i, 1);
@@ -24146,7 +24146,7 @@ var PDFNetworkStream = /*#__PURE__*/function () {
   }, {
     key: "getRangeReader",
     value: function getRangeReader(begin, end) {
-      var reader = new PDFNetworkStreamRangeRequestReader(this._manager, begin, end);
+      const reader = new PDFNetworkStreamRangeRequestReader(this._manager, begin, end);
       reader.onClosed = this._onRangeRequestReaderClosed.bind(this);
 
       this._rangeRequestReaders.push(reader);
@@ -24156,16 +24156,16 @@ var PDFNetworkStream = /*#__PURE__*/function () {
   }, {
     key: "cancelAllRequests",
     value: function cancelAllRequests(reason) {
-      var _this$_fullRequestRea;
+      let _this$_fullRequestRea;
 
       (_this$_fullRequestRea = this._fullRequestReader) === null || _this$_fullRequestRea === void 0 ? void 0 : _this$_fullRequestRea.cancel(reason);
 
-      var _iterator = _createForOfIteratorHelper(this._rangeRequestReaders.slice(0)),
+      let _iterator = _createForOfIteratorHelper(this._rangeRequestReaders.slice(0)),
           _step;
 
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var reader = _step.value;
+          const reader = _step.value;
           reader.cancel(reason);
         }
       } catch (err) {
@@ -24186,7 +24186,7 @@ var PDFNetworkStreamFullRequestReader = /*#__PURE__*/function () {
     _classCallCheck(this, PDFNetworkStreamFullRequestReader);
 
     this._manager = manager;
-    var args = {
+    const args = {
       onHeadersReceived: this._onHeadersReceived.bind(this),
       onDone: this._onDone.bind(this),
       onError: this._onError.bind(this),
@@ -24216,15 +24216,15 @@ var PDFNetworkStreamFullRequestReader = /*#__PURE__*/function () {
   _createClass(PDFNetworkStreamFullRequestReader, [{
     key: "_onHeadersReceived",
     value: function _onHeadersReceived() {
-      var fullRequestXhrId = this._fullRequestId;
+      const fullRequestXhrId = this._fullRequestId;
 
-      var fullRequestXhr = this._manager.getRequestXhr(fullRequestXhrId);
+      const fullRequestXhr = this._manager.getRequestXhr(fullRequestXhrId);
 
-      var getResponseHeader = function getResponseHeader(name) {
+      const getResponseHeader = function getResponseHeader(name) {
         return fullRequestXhr.getResponseHeader(name);
       };
 
-      var _validateRangeRequest = (0, _network_utils.validateRangeRequestCapabilities)({
+      const _validateRangeRequest = (0, _network_utils.validateRangeRequestCapabilities)({
         getResponseHeader: getResponseHeader,
         isHttp: this._manager.isHttp,
         rangeChunkSize: this._rangeChunkSize,
@@ -24251,7 +24251,7 @@ var PDFNetworkStreamFullRequestReader = /*#__PURE__*/function () {
     value: function _onDone(data) {
       if (data) {
         if (this._requests.length > 0) {
-          var requestCapability = this._requests.shift();
+          const requestCapability = this._requests.shift();
 
           requestCapability.resolve({
             value: data.chunk,
@@ -24268,12 +24268,12 @@ var PDFNetworkStreamFullRequestReader = /*#__PURE__*/function () {
         return;
       }
 
-      var _iterator2 = _createForOfIteratorHelper(this._requests),
+      let _iterator2 = _createForOfIteratorHelper(this._requests),
           _step2;
 
       try {
         for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-          var _requestCapability = _step2.value;
+          const _requestCapability = _step2.value;
 
           _requestCapability.resolve({
             value: undefined,
@@ -24295,12 +24295,12 @@ var PDFNetworkStreamFullRequestReader = /*#__PURE__*/function () {
 
       this._headersReceivedCapability.reject(this._storedError);
 
-      var _iterator3 = _createForOfIteratorHelper(this._requests),
+      let _iterator3 = _createForOfIteratorHelper(this._requests),
           _step3;
 
       try {
         for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-          var requestCapability = _step3.value;
+          const requestCapability = _step3.value;
           requestCapability.reject(this._storedError);
         }
       } catch (err) {
@@ -24315,7 +24315,7 @@ var PDFNetworkStreamFullRequestReader = /*#__PURE__*/function () {
   }, {
     key: "_onProgress",
     value: function _onProgress(evt) {
-      var _this$onProgress;
+      let _this$onProgress;
 
       (_this$onProgress = this.onProgress) === null || _this$onProgress === void 0 ? void 0 : _this$onProgress.call(this, {
         loaded: evt.loaded,
@@ -24350,8 +24350,8 @@ var PDFNetworkStreamFullRequestReader = /*#__PURE__*/function () {
   }, {
     key: "read",
     value: function () {
-      var _read = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
-        var chunk, requestCapability;
+      const _read = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
+        let chunk, requestCapability;
         return _regenerator["default"].wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -24414,12 +24414,12 @@ var PDFNetworkStreamFullRequestReader = /*#__PURE__*/function () {
 
       this._headersReceivedCapability.reject(reason);
 
-      var _iterator4 = _createForOfIteratorHelper(this._requests),
+      let _iterator4 = _createForOfIteratorHelper(this._requests),
           _step4;
 
       try {
         for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-          var requestCapability = _step4.value;
+          const requestCapability = _step4.value;
           requestCapability.resolve({
             value: undefined,
             done: true
@@ -24449,7 +24449,7 @@ var PDFNetworkStreamRangeRequestReader = /*#__PURE__*/function () {
     _classCallCheck(this, PDFNetworkStreamRangeRequestReader);
 
     this._manager = manager;
-    var args = {
+    const args = {
       onDone: this._onDone.bind(this),
       onError: this._onError.bind(this),
       onProgress: this._onProgress.bind(this)
@@ -24467,17 +24467,17 @@ var PDFNetworkStreamRangeRequestReader = /*#__PURE__*/function () {
   _createClass(PDFNetworkStreamRangeRequestReader, [{
     key: "_close",
     value: function _close() {
-      var _this$onClosed;
+      let _this$onClosed;
 
       (_this$onClosed = this.onClosed) === null || _this$onClosed === void 0 ? void 0 : _this$onClosed.call(this, this);
     }
   }, {
     key: "_onDone",
     value: function _onDone(data) {
-      var chunk = data.chunk;
+      const chunk = data.chunk;
 
       if (this._requests.length > 0) {
-        var requestCapability = this._requests.shift();
+        const requestCapability = this._requests.shift();
 
         requestCapability.resolve({
           value: chunk,
@@ -24489,12 +24489,12 @@ var PDFNetworkStreamRangeRequestReader = /*#__PURE__*/function () {
 
       this._done = true;
 
-      var _iterator5 = _createForOfIteratorHelper(this._requests),
+      let _iterator5 = _createForOfIteratorHelper(this._requests),
           _step5;
 
       try {
         for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-          var _requestCapability2 = _step5.value;
+          const _requestCapability2 = _step5.value;
 
           _requestCapability2.resolve({
             value: undefined,
@@ -24516,12 +24516,12 @@ var PDFNetworkStreamRangeRequestReader = /*#__PURE__*/function () {
     value: function _onError(status) {
       this._storedError = (0, _network_utils.createResponseStatusError)(status, this._url);
 
-      var _iterator6 = _createForOfIteratorHelper(this._requests),
+      let _iterator6 = _createForOfIteratorHelper(this._requests),
           _step6;
 
       try {
         for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
-          var requestCapability = _step6.value;
+          const requestCapability = _step6.value;
           requestCapability.reject(this._storedError);
         }
       } catch (err) {
@@ -24537,7 +24537,7 @@ var PDFNetworkStreamRangeRequestReader = /*#__PURE__*/function () {
     key: "_onProgress",
     value: function _onProgress(evt) {
       if (!this.isStreamingSupported) {
-        var _this$onProgress2;
+        let _this$onProgress2;
 
         (_this$onProgress2 = this.onProgress) === null || _this$onProgress2 === void 0 ? void 0 : _this$onProgress2.call(this, {
           loaded: evt.loaded
@@ -24552,8 +24552,8 @@ var PDFNetworkStreamRangeRequestReader = /*#__PURE__*/function () {
   }, {
     key: "read",
     value: function () {
-      var _read2 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee2() {
-        var chunk, requestCapability;
+      const _read2 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee2() {
+        let chunk, requestCapability;
         return _regenerator["default"].wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -24615,12 +24615,12 @@ var PDFNetworkStreamRangeRequestReader = /*#__PURE__*/function () {
     value: function cancel(reason) {
       this._done = true;
 
-      var _iterator7 = _createForOfIteratorHelper(this._requests),
+      let _iterator7 = _createForOfIteratorHelper(this._requests),
           _step7;
 
       try {
         for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
-          var requestCapability = _step7.value;
+          const requestCapability = _step7.value;
           requestCapability.resolve({
             value: undefined,
             done: true
@@ -24657,27 +24657,27 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.PDFFetchStream = void 0;
 
-var _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
+const _regenerator = _interopRequireDefault(__w_pdfjs_require__(156));
 
-var _util = __w_pdfjs_require__(1);
+const _util = __w_pdfjs_require__(1);
 
-var _network_utils = __w_pdfjs_require__(179);
+const _network_utils = __w_pdfjs_require__(179);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+function _asyncToGenerator(fn) { return function () { const self = this, args = arguments; return new Promise(function (resolve, reject) { const gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { let it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; let i = 0; const F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } let normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { const step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); let n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _defineProperties(target, props) { for (let i = 0; i < props.length; i++) { const descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
@@ -24695,10 +24695,10 @@ function createFetchOptions(headers, withCredentials, abortController) {
 }
 
 function createHeaders(httpHeaders) {
-  var headers = new Headers();
+  const headers = new Headers();
 
-  for (var property in httpHeaders) {
-    var value = httpHeaders[property];
+  for (const property in httpHeaders) {
+    const value = httpHeaders[property];
 
     if (typeof value === "undefined") {
       continue;
@@ -24710,7 +24710,7 @@ function createHeaders(httpHeaders) {
   return headers;
 }
 
-var PDFFetchStream = /*#__PURE__*/function () {
+const PDFFetchStream = /*#__PURE__*/function () {
   function PDFFetchStream(source) {
     _classCallCheck(this, PDFFetchStream);
 
@@ -24724,7 +24724,7 @@ var PDFFetchStream = /*#__PURE__*/function () {
   _createClass(PDFFetchStream, [{
     key: "_progressiveDataLength",
     get: function get() {
-      var _this$_fullRequestRea, _this$_fullRequestRea2;
+      let _this$_fullRequestRea, _this$_fullRequestRea2;
 
       return (_this$_fullRequestRea = (_this$_fullRequestRea2 = this._fullRequestReader) === null || _this$_fullRequestRea2 === void 0 ? void 0 : _this$_fullRequestRea2._loaded) !== null && _this$_fullRequestRea !== void 0 ? _this$_fullRequestRea : 0;
     }
@@ -24742,7 +24742,7 @@ var PDFFetchStream = /*#__PURE__*/function () {
         return null;
       }
 
-      var reader = new PDFFetchStreamRangeReader(this, begin, end);
+      const reader = new PDFFetchStreamRangeReader(this, begin, end);
 
       this._rangeRequestReaders.push(reader);
 
@@ -24755,12 +24755,12 @@ var PDFFetchStream = /*#__PURE__*/function () {
         this._fullRequestReader.cancel(reason);
       }
 
-      var _iterator = _createForOfIteratorHelper(this._rangeRequestReaders.slice(0)),
+      let _iterator = _createForOfIteratorHelper(this._rangeRequestReaders.slice(0)),
           _step;
 
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var reader = _step.value;
+          const reader = _step.value;
           reader.cancel(reason);
         }
       } catch (err) {
@@ -24778,7 +24778,7 @@ exports.PDFFetchStream = PDFFetchStream;
 
 var PDFFetchStreamReader = /*#__PURE__*/function () {
   function PDFFetchStreamReader(stream) {
-    var _this = this;
+    const _this = this;
 
     _classCallCheck(this, PDFFetchStreamReader);
 
@@ -24786,7 +24786,7 @@ var PDFFetchStreamReader = /*#__PURE__*/function () {
     this._reader = null;
     this._loaded = 0;
     this._filename = null;
-    var source = stream.source;
+    const source = stream.source;
     this._withCredentials = source.withCredentials || false;
     this._contentLength = source.length;
     this._headersCapability = (0, _util.createPromiseCapability)();
@@ -24804,7 +24804,7 @@ var PDFFetchStreamReader = /*#__PURE__*/function () {
     this._isStreamingSupported = !source.disableStream;
     this._isRangeSupported = !source.disableRange;
     this._headers = createHeaders(this._stream.httpHeaders);
-    var url = source.url;
+    const url = source.url;
     fetch(url, createFetchOptions(this._headers, this._withCredentials, this._abortController)).then(function (response) {
       if (!(0, _network_utils.validateResponseStatus)(response.status)) {
         throw (0, _network_utils.createResponseStatusError)(response.status, url);
@@ -24814,11 +24814,11 @@ var PDFFetchStreamReader = /*#__PURE__*/function () {
 
       _this._headersCapability.resolve();
 
-      var getResponseHeader = function getResponseHeader(name) {
+      const getResponseHeader = function getResponseHeader(name) {
         return response.headers.get(name);
       };
 
-      var _validateRangeRequest = (0, _network_utils.validateRangeRequestCapabilities)({
+      const _validateRangeRequest = (0, _network_utils.validateRangeRequestCapabilities)({
         getResponseHeader: getResponseHeader,
         isHttp: _this._stream.isHttp,
         rangeChunkSize: _this._rangeChunkSize,
@@ -24866,8 +24866,8 @@ var PDFFetchStreamReader = /*#__PURE__*/function () {
   }, {
     key: "read",
     value: function () {
-      var _read = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
-        var _yield$this$_reader$r, value, done, buffer;
+      const _read = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
+        let _yield$this$_reader$r, value, done, buffer;
 
         return _regenerator["default"].wrap(function _callee$(_context) {
           while (1) {
@@ -24943,14 +24943,14 @@ var PDFFetchStreamReader = /*#__PURE__*/function () {
 
 var PDFFetchStreamRangeReader = /*#__PURE__*/function () {
   function PDFFetchStreamRangeReader(stream, begin, end) {
-    var _this2 = this;
+    const _this2 = this;
 
     _classCallCheck(this, PDFFetchStreamRangeReader);
 
     this._stream = stream;
     this._reader = null;
     this._loaded = 0;
-    var source = stream.source;
+    const source = stream.source;
     this._withCredentials = source.withCredentials || false;
     this._readCapability = (0, _util.createPromiseCapability)();
     this._isStreamingSupported = !source.disableStream;
@@ -24963,7 +24963,7 @@ var PDFFetchStreamRangeReader = /*#__PURE__*/function () {
 
     this._headers.append("Range", "bytes=".concat(begin, "-").concat(end - 1));
 
-    var url = source.url;
+    const url = source.url;
     fetch(url, createFetchOptions(this._headers, this._withCredentials, this._abortController)).then(function (response) {
       if (!(0, _network_utils.validateResponseStatus)(response.status)) {
         throw (0, _network_utils.createResponseStatusError)(response.status, url);
@@ -24984,8 +24984,8 @@ var PDFFetchStreamRangeReader = /*#__PURE__*/function () {
   }, {
     key: "read",
     value: function () {
-      var _read2 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee2() {
-        var _yield$this$_reader$r2, value, done, buffer;
+      const _read2 = _asyncToGenerator( /*#__PURE__*/_regenerator["default"].mark(function _callee2() {
+        let _yield$this$_reader$r2, value, done, buffer;
 
         return _regenerator["default"].wrap(function _callee2$(_context2) {
           while (1) {
@@ -25062,17 +25062,17 @@ var PDFFetchStreamRangeReader = /*#__PURE__*/function () {
 /******/ 	]);
 /************************************************************************/
 /******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
+/******/ 	const __webpack_module_cache__ = {};
 /******/ 	
 /******/ 	// The require function
 /******/ 	function __w_pdfjs_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		const cachedModule = __webpack_module_cache__[moduleId];
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 		const module = __webpack_module_cache__[moduleId] = {
 /******/ 			id: moduleId,
 /******/ 			loaded: false,
 /******/ 			exports: {}
@@ -25099,11 +25099,11 @@ var PDFFetchStreamRangeReader = /*#__PURE__*/function () {
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
+const __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-var exports = __webpack_exports__;
+const exports = __webpack_exports__;
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -25318,7 +25318,7 @@ var _annotation_layer = __w_pdfjs_require__(173);
 
 var _worker_options = __w_pdfjs_require__(166);
 
-var _is_node = __w_pdfjs_require__(3);
+const _is_node = __w_pdfjs_require__(3);
 
 var _text_layer = __w_pdfjs_require__(176);
 
@@ -25326,21 +25326,21 @@ var _svg = __w_pdfjs_require__(177);
 
 var _xfa_layer = __w_pdfjs_require__(175);
 
-var pdfjsVersion = '2.14.305';
-var pdfjsBuild = 'eaaa8b4ad';
+const pdfjsVersion = '2.14.305';
+const pdfjsBuild = 'eaaa8b4ad';
 {
   if (_is_node.isNodeJS) {
-    var _require = __w_pdfjs_require__(178),
+    const _require = __w_pdfjs_require__(178),
         PDFNodeStream = _require.PDFNodeStream;
 
     (0, _api.setPDFNetworkStreamFactory)(function (params) {
       return new PDFNodeStream(params);
     });
   } else {
-    var _require2 = __w_pdfjs_require__(181),
+    const _require2 = __w_pdfjs_require__(181),
         PDFNetworkStream = _require2.PDFNetworkStream;
 
-    var _require3 = __w_pdfjs_require__(182),
+    const _require3 = __w_pdfjs_require__(182),
         PDFFetchStream = _require3.PDFFetchStream;
 
     (0, _api.setPDFNetworkStreamFactory)(function (params) {

@@ -265,7 +265,7 @@ const bracket_right = '〕';
         console.log(url)
         const {data} = await axios.get(url);
         const parser = new XMLParser();
-        let jObj = parser.parse(data);
+        const jObj = parser.parse(data);
         const s = JSON.parse(typeof jObj.html.body.script == 'string' ? jObj.html.body.script : jObj.html.body.script[1]);
         // contents: {index, text, type}[], comments: {index, offset, part_index,text,}[]
         return s.props.pageProps.publication_details[pub_id];
